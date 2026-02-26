@@ -2,13 +2,13 @@
   "name": "@csga-global/mcp-servers",
   "version": "1.0.0",
   "private": true,
-  "description": "CSGA Global — 36 AI Governance MCP Servers for the Model Context Protocol",
+  "description": "CSGA Global — 35 AI Governance MCP Servers for the Model Context Protocol",
   "author": "CSGA Global — Cyber Security Global Alliance",
   "license": "CC0-1.0",
   "homepage": "https://csga-global.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/csga-global/mcp-servers.git"
+    "url": "https://github.com/CSGA_Global/mcp-servers.git"
   },
   "workspaces": [
     "packages/agriculture-ai",
@@ -44,7 +44,6 @@
     "packages/sports-analytics-ai",
     "packages/supply-chain-ai",
     "packages/telecom-ai",
-    "packages/terranova-defence",
     "packages/thn-global",
     "packages/travel-hospitality-ai"
   ],
