@@ -1,0 +1,62 @@
+{
+  "name": "@csga-global/mcp-servers",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CSGA Global — 36 AI Governance MCP Servers for the Model Context Protocol",
+  "author": "CSGA Global — Cyber Security Global Alliance",
+  "license": "CC0-1.0",
+  "homepage": "https://csga-global.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers.git"
+  },
+  "workspaces": [
+    "packages/agriculture-ai",
+    "packages/ai-economy-infrastructure",
+    "packages/autonomous-vehicles-ai",
+    "packages/biometrics-ai",
+    "packages/bmcc-cyber",
+    "packages/ca3o-certification",
+    "packages/casa-certification",
+    "packages/cobol-bridge",
+    "packages/construction-ai",
+    "packages/csga-standards",
+    "packages/csoai-governance",
+    "packages/digital-human-library",
+    "packages/employment-ai",
+    "packages/energy-ai",
+    "packages/financial-ai",
+    "packages/gaming-ai",
+    "packages/healthcare-ai",
+    "packages/insurance-ai",
+    "packages/law-enforcement-ai",
+    "packages/legal-tech-ai",
+    "packages/maritime-ai",
+    "packages/media-advertising-ai",
+    "packages/mining-ai",
+    "packages/oneos-education",
+    "packages/proofof-ai",
+    "packages/quantranet-pqc",
+    "packages/real-estate-ai",
+    "packages/retail-ai",
+    "packages/smart-cities-ai",
+    "packages/space-ai",
+    "packages/sports-analytics-ai",
+    "packages/supply-chain-ai",
+    "packages/telecom-ai",
+    "packages/terranova-defence",
+    "packages/thn-global",
+    "packages/travel-hospitality-ai"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "build:all": "for dir in packages/*/; do (cd \"$dir\" && npm run build 2>/dev/null || true); done",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "tsc --noEmit --workspaces",
+    "clean": "rm -rf packages/*/dist packages/*/node_modules",
+    "publish:all": "npm publish --workspaces --access public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

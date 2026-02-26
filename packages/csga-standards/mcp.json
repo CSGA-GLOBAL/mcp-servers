@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "csga-standards-mcp": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "env": {
+        "MCP_STDIO": "true"
+      },
+      "description": "CSGA Cybersecurity Standards MCP Server",
+      "capabilities": {
+        "tools": true
+      }
+    }
+  }
+}

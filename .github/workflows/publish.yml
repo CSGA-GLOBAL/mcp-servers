@@ -1,0 +1,45 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: 'Comma-separated package names (or "all")'
+        required: true
+        default: 'all'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Publish all packages
+        if: github.event_name == 'release' || github.event.inputs.packages == 'all'
+        run: |
+          for dir in packages/*/; do
+            (cd "$dir" && npm publish --access public --provenance) || true
+          done
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish selected packages
+        if: github.event.inputs.packages != 'all' && github.event_name == 'workflow_dispatch'
+        run: |
+          IFS=',' read -ra PKGS <<< "${{ github.event.inputs.packages }}"
+          for pkg in "${PKGS[@]}"; do
+            pkg=$(echo "$pkg" | xargs)
+            (cd "packages/$pkg" && npm publish --access public --provenance) || echo "Failed: $pkg"
+          done
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

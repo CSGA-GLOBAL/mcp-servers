@@ -1,0 +1,50 @@
+{
+  "name": "@csga-global/oneos-education",
+  "version": "1.0.0",
+  "description": "MCP server for OneOS — unified MOOC & LMS platform powering the CSOAI/CSGA/Terranova ecosystem",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "oneos-education-mcp": "dist/index.js"
+  },
+  "author": "CSGA Global — Cyber Security Global Alliance",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers.git",
+    "directory": "packages/oneos-education"
+  },
+  "homepage": "https://oneos-zeta.vercel.app",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "education",
+    "mooc",
+    "lms",
+    "learning-management",
+    "certification",
+    "oneos",
+    "terranova",
+    "csoai"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}

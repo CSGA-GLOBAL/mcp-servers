@@ -1,0 +1,321 @@
+version: "3.9"
+
+services:
+  agriculture-ai:
+    build: ./packages/agriculture-ai
+    container_name: csga-agriculture-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=agriculture-ai
+    networks:
+      - csga-mcp
+
+  ai-economy-infrastructure:
+    build: ./packages/ai-economy-infrastructure
+    container_name: csga-ai-economy-infrastructure
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=ai-economy-infrastructure
+    networks:
+      - csga-mcp
+
+  autonomous-vehicles-ai:
+    build: ./packages/autonomous-vehicles-ai
+    container_name: csga-autonomous-vehicles-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=autonomous-vehicles-ai
+    networks:
+      - csga-mcp
+
+  biometrics-ai:
+    build: ./packages/biometrics-ai
+    container_name: csga-biometrics-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=biometrics-ai
+    networks:
+      - csga-mcp
+
+  bmcc-cyber:
+    build: ./packages/bmcc-cyber
+    container_name: csga-bmcc-cyber
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=bmcc-cyber
+    networks:
+      - csga-mcp
+
+  ca3o-certification:
+    build: ./packages/ca3o-certification
+    container_name: csga-ca3o-certification
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=ca3o-certification
+    networks:
+      - csga-mcp
+
+  casa-certification:
+    build: ./packages/casa-certification
+    container_name: csga-casa-certification
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=casa-certification
+    networks:
+      - csga-mcp
+
+  cobol-bridge:
+    build: ./packages/cobol-bridge
+    container_name: csga-cobol-bridge
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=cobol-bridge
+    networks:
+      - csga-mcp
+
+  construction-ai:
+    build: ./packages/construction-ai
+    container_name: csga-construction-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=construction-ai
+    networks:
+      - csga-mcp
+
+  csga-standards:
+    build: ./packages/csga-standards
+    container_name: csga-csga-standards
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=csga-standards
+    networks:
+      - csga-mcp
+
+  csoai-governance:
+    build: ./packages/csoai-governance
+    container_name: csga-csoai-governance
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=csoai-governance
+    networks:
+      - csga-mcp
+
+  digital-human-library:
+    build: ./packages/digital-human-library
+    container_name: csga-digital-human-library
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=digital-human-library
+    networks:
+      - csga-mcp
+
+  employment-ai:
+    build: ./packages/employment-ai
+    container_name: csga-employment-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=employment-ai
+    networks:
+      - csga-mcp
+
+  energy-ai:
+    build: ./packages/energy-ai
+    container_name: csga-energy-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=energy-ai
+    networks:
+      - csga-mcp
+
+  financial-ai:
+    build: ./packages/financial-ai
+    container_name: csga-financial-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=financial-ai
+    networks:
+      - csga-mcp
+
+  gaming-ai:
+    build: ./packages/gaming-ai
+    container_name: csga-gaming-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=gaming-ai
+    networks:
+      - csga-mcp
+
+  healthcare-ai:
+    build: ./packages/healthcare-ai
+    container_name: csga-healthcare-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=healthcare-ai
+    networks:
+      - csga-mcp
+
+  insurance-ai:
+    build: ./packages/insurance-ai
+    container_name: csga-insurance-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=insurance-ai
+    networks:
+      - csga-mcp
+
+  law-enforcement-ai:
+    build: ./packages/law-enforcement-ai
+    container_name: csga-law-enforcement-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=law-enforcement-ai
+    networks:
+      - csga-mcp
+
+  legal-tech-ai:
+    build: ./packages/legal-tech-ai
+    container_name: csga-legal-tech-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=legal-tech-ai
+    networks:
+      - csga-mcp
+
+  maritime-ai:
+    build: ./packages/maritime-ai
+    container_name: csga-maritime-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=maritime-ai
+    networks:
+      - csga-mcp
+
+  media-advertising-ai:
+    build: ./packages/media-advertising-ai
+    container_name: csga-media-advertising-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=media-advertising-ai
+    networks:
+      - csga-mcp
+
+  mining-ai:
+    build: ./packages/mining-ai
+    container_name: csga-mining-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=mining-ai
+    networks:
+      - csga-mcp
+
+  oneos-education:
+    build: ./packages/oneos-education
+    container_name: csga-oneos-education
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=oneos-education
+    networks:
+      - csga-mcp
+
+  proofof-ai:
+    build: ./packages/proofof-ai
+    container_name: csga-proofof-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=proofof-ai
+    networks:
+      - csga-mcp
+
+  quantranet-pqc:
+    build: ./packages/quantranet-pqc
+    container_name: csga-quantranet-pqc
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=quantranet-pqc
+    networks:
+      - csga-mcp
+
+  real-estate-ai:
+    build: ./packages/real-estate-ai
+    container_name: csga-real-estate-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=real-estate-ai
+    networks:
+      - csga-mcp
+
+  retail-ai:
+    build: ./packages/retail-ai
+    container_name: csga-retail-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=retail-ai
+    networks:
+      - csga-mcp
+
+  smart-cities-ai:
+    build: ./packages/smart-cities-ai
+    container_name: csga-smart-cities-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=smart-cities-ai
+    networks:
+      - csga-mcp
+
+  space-ai:
+    build: ./packages/space-ai
+    container_name: csga-space-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=space-ai
+    networks:
+      - csga-mcp
+
+  sports-analytics-ai:
+    build: ./packages/sports-analytics-ai
+    container_name: csga-sports-analytics-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=sports-analytics-ai
+    networks:
+      - csga-mcp
+
+  supply-chain-ai:
+    build: ./packages/supply-chain-ai
+    container_name: csga-supply-chain-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=supply-chain-ai
+    networks:
+      - csga-mcp
+
+  telecom-ai:
+    build: ./packages/telecom-ai
+    container_name: csga-telecom-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=telecom-ai
+    networks:
+      - csga-mcp
+
+  thn-global:
+    build: ./packages/thn-global
+    container_name: csga-thn-global
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=thn-global
+    networks:
+      - csga-mcp
+
+  travel-hospitality-ai:
+    build: ./packages/travel-hospitality-ai
+    container_name: csga-travel-hospitality-ai
+    restart: unless-stopped
+    environment:
+      - MCP_SERVER_NAME=travel-hospitality-ai
+    networks:
+      - csga-mcp
+
+networks:
+  csga-mcp:
+    driver: bridge

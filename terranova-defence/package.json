@@ -1,0 +1,43 @@
+{
+  "name": "@csga-global/terranova-defence",
+  "version": "1.0.0",
+  "description": "MCP server for Terranova Defence Solutions - Post-quantum encryption, blockchain security, and defence cybersecurity",
+  "author": "CSGA Global — Cyber Security Global Alliance",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers.git",
+    "directory": "packages/terranova-defence"
+  },
+  "homepage": "https://terranova-defense.com",
+  "type": "module",
+  "main": "build/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "terranova-defence-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node build/index.js",
+    "dev": "tsc && node build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

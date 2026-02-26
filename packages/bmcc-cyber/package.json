@@ -1,0 +1,46 @@
+{
+  "name": "@csga-global/bmcc-cyber",
+  "version": "1.0.0",
+  "description": "BMCC Cyber Programme MCP Server - Cybersecurity education pathway built in partnership between CSGA and Borough of Manhattan Community College (CUNY)",
+  "author": "CSGA Global — Cyber Security Global Alliance",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers.git",
+    "directory": "packages/bmcc-cyber"
+  },
+  "homepage": "https://bmcc-cyberprogram.com",
+  "type": "module",
+  "main": "build/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "bmcc-cyber-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "start": "node build/index.js",
+    "watch": "tsc --watch",
+    "test": "node --test build/**/*.test.js",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

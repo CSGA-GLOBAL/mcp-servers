@@ -1,0 +1,127 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2020",
+    "lib": [
+      "ES2020"
+    ],
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node"
+  },
+  "references": [
+    {
+      "path": "packages/agriculture-ai"
+    },
+    {
+      "path": "packages/ai-economy-infrastructure"
+    },
+    {
+      "path": "packages/autonomous-vehicles-ai"
+    },
+    {
+      "path": "packages/biometrics-ai"
+    },
+    {
+      "path": "packages/bmcc-cyber"
+    },
+    {
+      "path": "packages/ca3o-certification"
+    },
+    {
+      "path": "packages/casa-certification"
+    },
+    {
+      "path": "packages/cobol-bridge"
+    },
+    {
+      "path": "packages/construction-ai"
+    },
+    {
+      "path": "packages/csga-standards"
+    },
+    {
+      "path": "packages/csoai-governance"
+    },
+    {
+      "path": "packages/digital-human-library"
+    },
+    {
+      "path": "packages/employment-ai"
+    },
+    {
+      "path": "packages/energy-ai"
+    },
+    {
+      "path": "packages/financial-ai"
+    },
+    {
+      "path": "packages/gaming-ai"
+    },
+    {
+      "path": "packages/healthcare-ai"
+    },
+    {
+      "path": "packages/insurance-ai"
+    },
+    {
+      "path": "packages/law-enforcement-ai"
+    },
+    {
+      "path": "packages/legal-tech-ai"
+    },
+    {
+      "path": "packages/maritime-ai"
+    },
+    {
+      "path": "packages/media-advertising-ai"
+    },
+    {
+      "path": "packages/mining-ai"
+    },
+    {
+      "path": "packages/oneos-education"
+    },
+    {
+      "path": "packages/proofof-ai"
+    },
+    {
+      "path": "packages/quantranet-pqc"
+    },
+    {
+      "path": "packages/real-estate-ai"
+    },
+    {
+      "path": "packages/retail-ai"
+    },
+    {
+      "path": "packages/smart-cities-ai"
+    },
+    {
+      "path": "packages/space-ai"
+    },
+    {
+      "path": "packages/sports-analytics-ai"
+    },
+    {
+      "path": "packages/supply-chain-ai"
+    },
+    {
+      "path": "packages/telecom-ai"
+    },
+    {
+      "path": "packages/terranova-defence"
+    },
+    {
+      "path": "packages/thn-global"
+    },
+    {
+      "path": "packages/travel-hospitality-ai"
+    }
+  ],
+  "files": []
+}
