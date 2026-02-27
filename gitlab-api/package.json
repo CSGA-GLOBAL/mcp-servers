@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/gitlab-api",
+  "version": "1.0.0",
+  "description": "GitLab API integration for project management, CI/CD pipelines, merge requests, and DevOps workflow automation.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "gitlab-api-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/gitlab-api"
+  },
+  "keywords": [
+    "mcp",
+    "gitlab",
+    "api",
+    "ci-cd",
+    "devops"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

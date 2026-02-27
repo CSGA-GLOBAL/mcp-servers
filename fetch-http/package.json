@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/fetch-http",
+  "version": "1.0.0",
+  "description": "HTTP request management with API testing, response analysis, and automated endpoint monitoring.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "fetch-http-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/fetch-http"
+  },
+  "keywords": [
+    "mcp",
+    "http",
+    "fetch",
+    "api",
+    "requests"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

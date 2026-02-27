@@ -1,0 +1,40 @@
+{
+  "name": "@csgaglobal/dsrb-defence",
+  "version": "1.0.0",
+  "description": "Defence Standards Review Board compliance toolkit for military AI systems with STANAG alignment and NATO interoperability.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "dsrb-defence-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/dsrb-defence"
+  },
+  "keywords": [
+    "mcp",
+    "defence",
+    "dsrb",
+    "military",
+    "nato",
+    "stanag"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

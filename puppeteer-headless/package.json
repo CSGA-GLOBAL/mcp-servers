@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/puppeteer-headless",
+  "version": "1.0.0",
+  "description": "Headless Chrome automation with Puppeteer for web scraping, PDF generation, and automated browser interactions.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "puppeteer-headless-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/puppeteer-headless"
+  },
+  "keywords": [
+    "mcp",
+    "puppeteer",
+    "headless",
+    "chrome",
+    "scraping"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

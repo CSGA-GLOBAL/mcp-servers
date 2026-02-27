@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/notion-workspace",
+  "version": "1.0.0",
+  "description": "Notion workspace integration for page management, database operations, and collaborative content workflows.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "notion-workspace-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/notion-workspace"
+  },
+  "keywords": [
+    "mcp",
+    "notion",
+    "workspace",
+    "knowledge-base",
+    "collaboration"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
