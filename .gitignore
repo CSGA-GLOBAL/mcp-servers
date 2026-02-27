@@ -43,3 +43,4 @@ npm-debug.log*
 AUDIT_REPORT.txt
 polish-sprint.js
 scripts/
+deploy.js
