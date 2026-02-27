@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Employment AI Governance — Fair Hiring Compliance MCP | CSGA Global</title>
+ <meta name="description" content="Fair hiring AI compliance and workforce governance — NYC Local Law 144 compliance, EEOC AI hiring guidelines, automated employment decision auditing, workforce AI bias detection, and pay equity AI analysis.">
+ <meta property="og:title" content="Employment AI Governance — Fair Hiring Compliance MCP">
+ <meta property="og:description" content="Fair hiring AI compliance and workforce governance">
+ <meta property="og:type" content="website">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Employment AI Governance — Fair Hiring Compliance MCP">
+ <meta name="twitter:description" content="Fair hiring AI compliance and workforce governance">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+  :root {
+    --gold: #CC0000;
+    --gold-light: #E63946;
+    --gold-dark: #A30000;
+    --gold-glow: rgba(204, 0, 0, 0.3);
+    --gradient-gold: linear-gradient(90deg, #CC0000, #E63946);
+    --color-navy-primary: #0058A4;
+    --color-gold-accent: #0058A4;
+    --color-blue-accent: #CC0000;
+    --color-red-cta: #CC0000;
+    --color-white: #FFFFFF;
+    --color-light-gray: #F8FAFC;
+    --color-medium-gray: #475569;
+    --color-dark-gray: #0F172A;
+    --color-gold-light: #DBEAFE;
+    --color-navy-light: #1E40AF;
+    --color-navy-dark: #1E3A5F;
+    --font-primary: Inter, system-ui, -apple-system, sans-serif;
+    --font-secondary: 'Space Grotesk', monospace;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-primary);
+    color: #1F2937;
+    background: #fff;
+    line-height: 1.6;
+  }
+
+  /* ============================================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================================ */
+  .reveal {
+   opacity: 0;
+   transform: translateY(40px);
+   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+   transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+   opacity: 1;
+   transform: translateY(0);
+  }
+  .reveal-left {
+   opacity: 0;
+   transform: translateX(-40px);
+   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+   transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-left.visible {
+   opacity: 1;
+   transform: translateX(0);
+  }
+  .reveal-right {
+   opacity: 0;
+   transform: translateX(40px);
+   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+   transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-right.visible {
+   opacity: 1;
+   transform: translateX(0);
+  }
+  .reveal-scale {
+   opacity: 0;
+   transform: scale(0.92);
+   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+   transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-scale.visible {
+   opacity: 1;
+   transform: scale(1);
+  }
+  .stagger-children > * {
+   opacity: 0;
+   transform: translateY(30px);
+   transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(4) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(6) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+
+  html { scroll-behavior: smooth; }
+
+  .section-title {
+   font-family: 'Space Grotesk', sans-serif;
+   font-size: 2.5rem;
+   font-weight: 700;
+   color: #0F172A;
+   line-height: 1.15;
+   margin-bottom: 16px;
+  }
+  .section-subtitle {
+   font-size: 1.1rem;
+   color: #475569;
+   max-width: 640px;
+   margin: 0 auto 48px;
+   line-height: 1.65;
+  }
+  .section-tag {
+   display: inline-block;
+   color: #0058A4;
+   font-size: 0.82rem;
+   font-weight: 700;
+   letter-spacing: 2.5px;
+   text-transform: uppercase;
+   margin-bottom: 12px;
+  }
+  section, .section {
+   padding: 72px 32px;
+  }
+
+  @media (max-width: 1024px) {
+   .features-grid,
+   .pricing-grid,
+   .use-cases-grid { grid-template-columns: repeat(2, 1fr); }
+   .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+   .hero h1 { font-size: 2.5rem; }
+   .features-grid,
+   .pricing-grid,
+   .use-cases-grid { grid-template-columns: 1fr; }
+   .stats-bar { grid-template-columns: 1fr; }
+   .nav-bar { display: none; }
+   section, .section { padding: 48px 20px; }
+   .section-title { font-size: 1.8rem; }
+  }
+
+  /* Header Bar */
+  .header-bar {
+   background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+   padding: 16px 32px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 0.9rem;
+   color: #94A3B8;
+   border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .header-bar span { margin: 0 8px; }
+  .header-bar a { color: #E63946; text-decoration: none; transition: color 0.3s; }
+  .header-bar a:hover { color: #fff; }
+
+  /* Navigation */
+  .nav-bar {
+   background: rgba(15, 23, 42, 0.95);
+   backdrop-filter: blur(10px);
+   padding: 12px 32px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid rgba(255,255,255,0.06);
+   position: sticky;
+   top: 0;
+   z-index: 100;
+  }
+  .logo { font-weight: 700; color: #fff; font-size: 1.2rem; text-decoration: none; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: #CC0000; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+  .nav-cta:hover { background: #AA0000; }
+
+  /* Breadcrumb */
+  .breadcrumb {
+   background: #F8FAFC;
+   padding: 16px 32px;
+   font-size: 0.9rem;
+   color: #64748B;
+   border-bottom: 1px solid #E2E8F0;
+  }
+  .breadcrumb a { color: #0058A4; text-decoration: none; margin: 0 4px; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span { margin: 0 4px; }
+
+  /* Hero */
+  .hero {
+   background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+   color: white;
+   text-align: center;
+   padding: 120px 32px;
+  }
+  .hero h1 {
+   font-family: 'Space Grotesk', monospace;
+   font-size: 3.5rem;
+   font-weight: 800;
+   margin-bottom: 16px;
+   line-height: 1.1;
+  }
+  .hero-icon { font-size: 4rem; margin-bottom: 16px; display: block; }
+  .hero p {
+   font-size: 1.3rem;
+   max-width: 700px;
+   margin: 24px auto 40px;
+   color: rgba(255,255,255,0.85);
+   line-height: 1.8;
+  }
+  .hero-cta { background: #CC0000; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.5px; transition: all 0.3s; display: inline-block; margin-right: 12px; }
+  .hero-cta:hover { background: #AA0000; transform: translateY(-2px); }
+  .hero-cta-outline { background: transparent; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s; display: inline-block; }
+  .hero-cta-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+  .stats-bar {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 32px;
+   max-width: 800px;
+   margin: 60px auto 0;
+   text-align: center;
+  }
+  .stat { color: #93C5FD; }
+  .stat-num { font-size: 2.5rem; font-weight: 800; font-family: 'Space Grotesk', monospace; display: block; }
+  .stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 8px; display: block; }
+
+  /* Content Sections */
+  .problem-section, .solution-section, .features-section, .use-cases-section {
+   max-width: 1200px;
+   margin: 0 auto;
+  }
+
+  .problem-grid, .solution-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 32px;
+   align-items: center;
+  }
+
+  .problem-item, .solution-item {
+   background: #F8FAFC;
+   padding: 32px;
+   border-radius: 12px;
+   border-left: 4px solid #CC0000;
+  }
+  .problem-item h3, .solution-item h3 {
+   font-size: 1.1rem;
+   margin-bottom: 12px;
+   color: #0F172A;
+  }
+  .problem-item p, .solution-item p {
+   color: #475569;
+   line-height: 1.7;
+  }
+
+  /* Features */
+  .features-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 32px;
+   margin-top: 48px;
+  }
+  .feature-card {
+   background: white;
+   border: 1px solid #E2E8F0;
+   border-radius: 12px;
+   padding: 40px 32px;
+   text-align: center;
+   transition: all 0.3s;
+  }
+  .feature-card:hover {
+   border-color: #CC0000;
+   box-shadow: 0 12px 32px rgba(204, 0, 0, 0.12);
+   transform: translateY(-4px);
+  }
+  .feature-icon { font-size: 2.5rem; margin-bottom: 16px; }
+  .feature-card h3 {
+   font-size: 1.2rem;
+   margin-bottom: 12px;
+   color: #0F172A;
+  }
+  .feature-card p {
+   color: #475569;
+   font-size: 0.95rem;
+   line-height: 1.7;
+  }
+
+  /* Use Cases */
+  .use-cases-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 32px;
+   margin-top: 48px;
+  }
+  .use-case-card {
+   background: white;
+   border: 1px solid #E2E8F0;
+   border-radius: 12px;
+   padding: 32px;
+   transition: all 0.3s;
+   position: relative;
+   padding-left: 80px;
+  }
+  .use-case-card::before {
+   content: attr(data-number);
+   position: absolute;
+   left: 24px;
+   top: 24px;
+   width: 48px;
+   height: 48px;
+   background: rgba(204, 0, 0, 0.1);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 700;
+   color: #CC0000;
+   font-size: 1.3rem;
+  }
+  .use-case-card:hover {
+   border-color: #CC0000;
+   box-shadow: 0 12px 32px rgba(204, 0, 0, 0.12);
+   transform: translateY(-4px);
+  }
+  .use-case-card h3 {
+   font-size: 1.1rem;
+   margin-bottom: 12px;
+   color: #0F172A;
+  }
+  .use-case-card p {
+   color: #475569;
+   line-height: 1.7;
+  }
+
+  /* Implementation Steps */
+  .implementation-steps {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 32px;
+   margin-top: 48px;
+  }
+  .step-card {
+   text-align: center;
+   padding: 32px;
+   background: #F8FAFC;
+   border-radius: 12px;
+  }
+  .step-number {
+   display: inline-flex;
+   width: 56px;
+   height: 56px;
+   background: linear-gradient(135deg, #CC0000, #E63946);
+   color: white;
+   border-radius: 50%;
+   align-items: center;
+   justify-content: center;
+   font-weight: 800;
+   font-size: 1.5rem;
+   margin-bottom: 16px;
+  }
+  .step-card h3 {
+   font-size: 1.1rem;
+   margin-bottom: 12px;
+   color: #0F172A;
+  }
+  .step-card p {
+   color: #475569;
+   line-height: 1.7;
+  }
+
+  /* Technical Specs */
+  .tech-specs {
+   background: #F8FAFC;
+   border-radius: 12px;
+   padding: 32px;
+   margin-top: 48px;
+  }
+  .specs-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 32px;
+   margin-top: 24px;
+  }
+  .spec-item h4 {
+   color: #0F172A;
+   margin-bottom: 8px;
+   font-size: 0.95rem;
+  }
+  .spec-item p {
+   color: #475569;
+   font-size: 0.9rem;
+   line-height: 1.6;
+  }
+
+  /* Code Block */
+  .code-block {
+   background: #1E293B;
+   color: #E2E8F0;
+   border-radius: 12px;
+   padding: 24px;
+   font-family: 'Courier New', monospace;
+   font-size: 0.85rem;
+   overflow-x: auto;
+   margin-top: 24px;
+   position: relative;
+  }
+  .copy-btn {
+   position: absolute;
+   top: 12px;
+   right: 12px;
+   background: #CC0000;
+   color: white;
+   border: none;
+   padding: 8px 16px;
+   border-radius: 6px;
+   cursor: pointer;
+   font-size: 0.85rem;
+   transition: all 0.3s;
+  }
+  .copy-btn:hover { background: #AA0000; }
+
+  /* FAQ */
+  .faq-section {
+   max-width: 900px;
+   margin: 0 auto;
+  }
+  .faq-item {
+   margin-bottom: 16px;
+   background: white;
+   border: 1px solid #E2E8F0;
+   border-radius: 12px;
+   overflow: hidden;
+  }
+  .faq-question {
+   background: #F8FAFC;
+   padding: 20px;
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: background 0.3s;
+   font-weight: 600;
+   color: #0F172A;
+  }
+  .faq-question:hover { background: #F1F5F9; }
+  .faq-icon { font-size: 1.2rem; transition: transform 0.3s; }
+  .faq-answer {
+   display: none;
+   padding: 24px 20px;
+   color: #475569;
+   line-height: 1.7;
+   border-top: 1px solid #E2E8F0;
+  }
+  .faq-answer.visible { display: block; }
+  .faq-icon.open { transform: rotate(180deg); }
+
+  /* Pricing */
+  .pricing-section {
+   max-width: 1200px;
+   margin: 0 auto;
+  }
+  .pricing-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 32px;
+   margin-top: 48px;
+  }
+  .pricing-card {
+   background: white;
+   border: 2px solid #E2E8F0;
+   border-radius: 16px;
+   padding: 40px 32px;
+   text-align: center;
+   transition: all 0.3s;
+   position: relative;
+  }
+  .pricing-card.featured {
+   border-color: #CC0000;
+   box-shadow: 0 24px 48px rgba(204, 0, 0, 0.12);
+   transform: scale(1.05);
+  }
+  .pricing-card:hover {
+   border-color: #CC0000;
+   box-shadow: 0 12px 32px rgba(204, 0, 0, 0.12);
+   transform: translateY(-4px);
+  }
+  .pricing-badge {
+   display: inline-block;
+   background: linear-gradient(135deg, #CC0000, #E63946);
+   color: white;
+   padding: 6px 16px;
+   border-radius: 20px;
+   font-size: 0.75rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   margin-bottom: 16px;
+  }
+  .pricing-card h3 {
+   font-size: 1.3rem;
+   color: #0F172A;
+   margin-bottom: 8px;
+  }
+  .pricing-desc {
+   font-size: 0.9rem;
+   color: #475569;
+   margin-bottom: 24px;
+  }
+  .pricing-price {
+   font-size: 2.5rem;
+   font-weight: 800;
+   color: #CC0000;
+   margin-bottom: 8px;
+   font-family: 'Space Grotesk', monospace;
+  }
+  .pricing-period {
+   font-size: 0.85rem;
+   color: #94A3B8;
+   margin-bottom: 32px;
+  }
+  .pricing-features {
+   text-align: left;
+   margin: 32px 0;
+  }
+  .pricing-features li {
+   list-style: none;
+   padding: 12px 0;
+   color: #475569;
+   border-bottom: 1px solid #E2E8F0;
+   font-size: 0.95rem;
+  }
+  .pricing-features li:last-child { border-bottom: none; }
+  .pricing-features li::before {
+   content: '✓ ';
+   color: #CC0000;
+   font-weight: 700;
+   margin-right: 8px;
+  }
+  .pricing-btn {
+   width: 100%;
+   padding: 14px 24px;
+   background: #CC0000;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-weight: 700;
+   cursor: pointer;
+   transition: all 0.3s;
+   text-transform: uppercase;
+   font-size: 0.9rem;
+   letter-spacing: 0.5px;
+  }
+  .pricing-btn:hover { background: #AA0000; }
+  .pricing-card.featured .pricing-btn { background: #0058A4; }
+  .pricing-card.featured .pricing-btn:hover { background: #003D7A; }
+
+  /* Footer */
+  footer {
+   background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+   color: #94A3B8;
+   padding: 48px 32px 24px;
+   margin-top: 72px;
+  }
+  .footer-content {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 40px;
+   margin-bottom: 40px;
+  }
+  .footer-section h4 {
+   color: white;
+   margin-bottom: 16px;
+   font-size: 0.95rem;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+  }
+  .footer-section a {
+   display: block;
+   margin-bottom: 12px;
+   color: #94A3B8;
+   text-decoration: none;
+   font-size: 0.9rem;
+   transition: color 0.3s;
+  }
+  .footer-section a:hover { color: #E63946; }
+  .footer-bottom {
+   border-top: 1px solid rgba(255,255,255,0.06);
+   padding-top: 24px;
+   text-align: center;
+   font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+   .problem-grid, .solution-grid, .implementation-steps, .pricing-grid { grid-template-columns: 1fr; }
+   .stats-bar { grid-template-columns: 1fr; }
+   .specs-grid { grid-template-columns: 1fr; }
+   .footer-content { grid-template-columns: repeat(2, 1fr); }
+   .hero h1 { font-size: 2.2rem; }
+   .pricing-card.featured { transform: scale(1); }
+  }
+ </style>
+</head>
+<body>
+ <!-- Header Bar -->
+ <div class="header-bar">
+  <span>Employment AI Governance | Fair Hiring Compliance</span>
+  <div>
+   <a href="#pricing">View Pricing</a>
+   <span>•</span>
+   <a href="#docs">Documentation</a>
+   <span>•</span>
+   <a href="#contact">Contact Sales</a>
+  </div>
+ </div>
+
+ <!-- Navigation Bar -->
+ <nav class="nav-bar">
+  <a href="/" class="logo">CSGA Global</a>
+  <div class="nav-links">
+   <a href="#features">Features</a>
+   <a href="#use-cases">Use Cases</a>
+   <a href="#faq">FAQ</a>
+   <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+ </nav>
+
+ <!-- Breadcrumb -->
+ <div class="breadcrumb">
+  <a href="/">Home</a>
+  <span>/</span>
+  <a href="/mcp">MCP Catalog</a>
+  <span>/</span>
+  <span>Employment AI Governance</span>
+ </div>
+
+ <!-- Hero Section -->
+ <section class="hero">
+  <span class="hero-icon">⚖️</span>
+  <h1>Employment AI Governance</h1>
+  <p>Fair hiring AI compliance and workforce governance. Ensure your hiring AI systems comply with NYC Local Law 144, EEOC guidelines, and maintain pay equity while preventing demographic bias.</p>
+  <a href="#quickstart" class="hero-cta">Get Started Free</a>
+  <a href="#pricing" class="hero-cta-outline">View Pricing</a>
+
+  <div class="stats-bar">
+   <div class="stat">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Core Tools</span>
+   </div>
+   <div class="stat">
+    <span class="stat-num">4+</span>
+    <span class="stat-label">Use Cases</span>
+   </div>
+   <div class="stat">
+    <span class="stat-num">∞</span>
+    <span class="stat-label">API Calls/mo</span>
+   </div>
+  </div>
+ </section>
+
+ <!-- Problem Section -->
+ <section class="problem-section reveal">
+  <div style="max-width: 1200px; margin: 0 auto;">
+   <h2 class="section-title">The Challenge</h2>
+   <p class="section-subtitle">Employment AI systems face growing regulatory requirements and bias risks</p>
+   <div class="problem-grid">
+    <div class="problem-item">
+     <h3>Compliance Opacity</h3>
+     <p>Hiring AI decisions lack transparency and audit trails for regulatory compliance with NYC LL144 and EEOC guidelines.</p>
+    </div>
+    <div class="problem-item">
+     <h3>Demographic Bias</h3>
+     <p>Undetected demographic bias in recruiting systems violates EEOC AI hiring guidelines and exposes organizations to discrimination claims.</p>
+    </div>
+    <div class="problem-item">
+     <h3>Manual Auditing</h3>
+     <p>Manual compliance reviews consume hundreds of hours per quarter and require specialized legal expertise.</p>
+    </div>
+    <div class="problem-item">
+     <h3>Pay Equity Risk</h3>
+     <p>Pay equity analysis requires expensive consultants and lacks real-time monitoring across hiring systems.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Solution Section -->
+ <section class="solution-section reveal">
+  <div style="max-width: 1200px; margin: 0 auto;">
+   <h2 class="section-title">The Solution</h2>
+   <p class="section-subtitle">Automated compliance and bias detection for employment AI systems</p>
+   <div class="solution-grid">
+    <div class="solution-item">
+     <h3>Compliance Automation</h3>
+     <p>NYC LL144 + EEOC AI hiring guideline compliance automation with real-time audit trails and decision logging.</p>
+    </div>
+    <div class="solution-item">
+     <h3>Bias Detection</h3>
+     <p>Real-time demographic bias detection across ATS and hiring systems with granular statistical analysis.</p>
+    </div>
+    <div class="solution-item">
+     <h3>Equity Monitoring</h3>
+     <p>Automated pay equity monitoring and variance analysis to identify disparities before legal exposure.</p>
+    </div>
+    <div class="solution-item">
+     <h3>Evidence Trail</h3>
+     <p>Complete audit trails for employment decision justification and regulatory defense.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Features Section -->
+ <section class="features-section reveal">
+  <div style="max-width: 1200px; margin: 0 auto;">
+   <h2 class="section-title" style="text-align: center;">Core Tools</h2>
+   <p class="section-subtitle" style="text-align: center;">Three specialized tools for complete employment AI governance</p>
+   <div class="features-grid">
+    <div class="feature-card">
+     <span class="feature-icon">🎯</span>
+     <h3>hiring_ai_auditor</h3>
+     <p>Audit hiring AI decisions for compliance with NYC LL144, EEOC guidelines, and internal policies. Generate audit reports and compliance evidence trails.</p>
+    </div>
+    <div class="feature-card">
+     <span class="feature-icon">📊</span>
+     <h3>workforce_bias_detector</h3>
+     <p>Detect demographic bias across hiring systems. Analyze candidate flow, offer rates, and hiring patterns by protected characteristics.</p>
+    </div>
+    <div class="feature-card">
+     <span class="feature-icon">💰</span>
+     <h3>compensation_ai_validator</h3>
+     <p>Monitor pay equity and analyze compensation decisions. Identify pay disparities and generate equity assessment reports.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Use Cases -->
+ <section class="use-cases-section reveal">
+  <div style="max-width: 1200px; margin: 0 auto;">
+   <h2 class="section-title" style="text-align: center;">Use Cases</h2>
+   <p class="section-subtitle" style="text-align: center;">Employment AI Governance serves diverse organizational needs</p>
+   <div class="use-cases-grid">
+    <div class="use-case-card" data-number="1">
+     <h3>Enterprise HR Departments</h3>
+     <p>Large enterprises automating hiring and need to manage compliance risk across multiple divisions and hiring teams.</p>
+    </div>
+    <div class="use-case-card" data-number="2">
+     <h3>Staffing & Recruitment Agencies</h3>
+     <p>Recruitment firms using AI to source and screen candidates while meeting client compliance requirements.</p>
+    </div>
+    <div class="use-case-card" data-number="3">
+     <h3>Government & Public Sector HR</h3>
+     <p>Public agencies subject to federal hiring requirements and EEO compliance mandates.</p>
+    </div>
+    <div class="use-case-card" data-number="4">
+     <h3>Universities & Educational Institutions</h3>
+     <p>Academic institutions managing faculty and staff hiring with affirmative action and diversity monitoring requirements.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Implementation Steps -->
+ <section class="reveal">
+  <div style="max-width: 1200px; margin: 0 auto;">
+   <h2 class="section-title" style="text-align: center;">Quick Implementation</h2>
+   <p class="section-subtitle" style="text-align: center;">Three steps to compliance-ready employment AI</p>
+   <div class="implementation-steps">
+    <div class="step-card">
+     <div class="step-number">1</div>
+     <h3>Connect ATS</h3>
+     <p>Integrate with your ATS, HRIS, or hiring platform via API or file upload.</p>
+    </div>
+    <div class="step-card">
+     <div class="step-number">2</div>
+     <h3>Configure Rules</h3>
+     <p>Set compliance frameworks and bias detection parameters for your organization.</p>
+    </div>
+    <div class="step-card">
+     <div class="step-number">3</div>
+     <h3>Monitor & Audit</h3>
+     <p>Get real-time compliance alerts and generate audit reports on demand.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Technical Specifications -->
+ <section class="reveal">
+  <div style="max-width: 1200px; margin: 0 auto;">
+   <h2 class="section-title">Technical Specifications</h2>
+   <div class="tech-specs">
+    <div class="specs-grid">
+     <div class="spec-item">
+      <h4>Package</h4>
+      <p>@csoai/employment-ai</p>
+     </div>
+     <div class="spec-item">
+      <h4>API Calls</h4>
+      <p>Unlimited monthly calls for all tiers</p>
+     </div>
+     <div class="spec-item">
+      <h4>Integrations</h4>
+      <p>Workday, SAP SuccessFactors, Greenhouse, Lever, iCIMS, SmartRecruiters, ADP, BambooHR</p>
+     </div>
+     <div class="spec-item">
+      <h4>Data Processing</h4>
+      <p>Real-time and batch processing modes. All data encrypted in transit and at rest (AES-256, TLS 1.3)</p>
+     </div>
+     <div class="spec-item">
+      <h4>Compliance Frameworks</h4>
+      <p>NYC LL144, EEOC AI Hiring Guidelines, Title VII Civil Rights Act, ADA, ADEA, FCRA</p>
+     </div>
+     <div class="spec-item">
+      <h4>Audit & Reporting</h4>
+      <p>Complete audit trails, CSV/PDF exports, compliance dashboards, statistical analysis</p>
+     </div>
+    </div>
+
+    <h3 style="margin-top: 32px; color: #0F172A;">Example API Usage</h3>
+    <div class="code-block">
+     <button class="copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.textContent)">Copy</button>
+     <pre>import { EmploymentAI } from '@csoai/employment-ai';
+
+const ai = new EmploymentAI({
+  apiKey: 'your-api-key',
+  organization: 'acme-corp'
+});
+
+// Audit hiring AI decision
+const audit = await ai.hiring_ai_auditor.audit({
+  candidateId: 'cand-12345',
+  decisionType: 'offer',
+  framework: 'nyc-ll144'
+});
+
+// Detect bias
+const bias = await ai.workforce_bias_detector.analyze({
+  timeRange: '90d',
+  groupBy: ['gender', 'race', 'age']
+});
+
+// Check pay equity
+const equity = await ai.compensation_ai_validator.assess({
+  positions: ['Software Engineer', 'Product Manager'],
+  includeVariance: true
+});</pre>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- FAQ Section -->
+ <section id="faq" class="reveal">
+  <div class="faq-section">
+   <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+   <p class="section-subtitle" style="text-align: center;">Common questions about Employment AI Governance</p>
+
+   <div class="faq-item">
+    <div class="faq-question">
+     <span>What is Employment AI Governance and why do I need it?</span>
+     <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+     Employment AI Governance provides automated compliance monitoring and bias detection for hiring AI systems. It helps organizations meet NYC LL144 and EEOC requirements while reducing legal and reputational risk from biased hiring decisions.
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-question">
+     <span>Does it integrate with our ATS?</span>
+     <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+     Yes, we support integrations with Workday, SAP SuccessFactors, Greenhouse, Lever, iCIMS, SmartRecruiters, ADP, and BambooHR. We also accept CSV/JSON uploads for non-integrated systems.
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-question">
+     <span>What compliance frameworks does it cover?</span>
+     <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+     We cover NYC Local Law 144, EEOC AI Hiring Guidelines, Title VII Civil Rights Act, Americans with Disabilities Act (ADA), Age Discrimination in Employment Act (ADEA), and Fair Credit Reporting Act (FCRA).
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-question">
+     <span>How long does setup take?</span>
+     <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+     Basic setup takes 15-30 minutes. ATS integration typically takes 2-4 hours with our implementation team. Full onboarding including compliance framework configuration takes 1-2 weeks.
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-question">
+     <span>Is my hiring data secure?</span>
+     <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+     Yes, all data is encrypted in transit (TLS 1.3) and at rest (AES-256). We are SOC 2 Type II compliant, GDPR certified, and never use customer data for model training.
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-question">
+     <span>Is there a free trial?</span>
+     <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+     Yes, the Community tier is completely free with unlimited API calls. It includes basic compliance auditing and bias detection for up to 5 users. No credit card required.
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Pricing Section -->
+ <section id="pricing" class="pricing-section reveal">
+  <h2 class="section-title" style="text-align: center;">Simple, Transparent Pricing</h2>
+  <p class="section-subtitle" style="text-align: center;">Choose the plan that fits your organization</p>
+
+  <div class="pricing-grid">
+   <div class="pricing-card">
+    <span class="pricing-badge">Community</span>
+    <h3>Individual MCP</h3>
+    <p class="pricing-desc">Perfect for individuals and small teams</p>
+    <div class="pricing-price">$49<span style="font-size: 0.5em; color: #94A3B8;">/mo</span></div>
+    <p class="pricing-period">or $499/year</p>
+    <ul class="pricing-features">
+     <li>10K API credits/month</li>
+     <li>1 Individual MCP</li>
+     <li>Email support</li>
+     <li>Basic integrations</li>
+     <li>Community access</li>
+    </ul>
+    <button class="pricing-btn">Get Started Free</button>
+   </div>
+
+   <div class="pricing-card featured">
+    <span class="pricing-badge">Professional</span>
+    <h3>Governance Suite</h3>
+    <p class="pricing-desc">For growing organizations</p>
+    <div class="pricing-price">$199<span style="font-size: 0.5em; color: #94A3B8;">/mo</span></div>
+    <p class="pricing-period">Billed annually</p>
+    <ul class="pricing-features">
+     <li>Unlimited API calls</li>
+     <li>All 3 Employment AI tools</li>
+     <li>Priority support</li>
+     <li>Advanced integrations</li>
+     <li>Compliance reporting</li>
+     <li>Custom frameworks</li>
+     <li>Up to 25 users</li>
+    </ul>
+    <button class="pricing-btn">Start 14-Day Trial</button>
+   </div>
+
+   <div class="pricing-card">
+    <span class="pricing-badge">Enterprise</span>
+    <h3>Full Platform</h3>
+    <p class="pricing-desc">For enterprises and large orgs</p>
+    <div class="pricing-price">$499+<span style="font-size: 0.5em; color: #94A3B8;">/mo</span></div>
+    <p class="pricing-period">Custom quote</p>
+    <ul class="pricing-features">
+     <li>Unlimited API calls</li>
+     <li>All 47 CSGA MCPs</li>
+     <li>24/7 support</li>
+     <li>Dedicated account manager</li>
+     <li>Custom integrations</li>
+     <li>Advanced analytics</li>
+     <li>Unlimited users</li>
+    </ul>
+    <button class="pricing-btn">Contact Sales</button>
+   </div>
+  </div>
+ </section>
+
+ <!-- Related MCPs -->
+ <section class="reveal">
+  <div style="max-width: 1200px; margin: 0 auto;">
+   <h2 class="section-title" style="text-align: center;">Related MCPs</h2>
+   <p class="section-subtitle" style="text-align: center;">Complement your employment AI governance with related tools</p>
+   <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px;">
+    <div style="background: #F8FAFC; padding: 32px; border-radius: 12px; text-align: center;">
+     <span style="font-size: 2.5rem; display: block; margin-bottom: 16px;">🔍</span>
+     <h3 style="margin-bottom: 12px; color: #0F172A;">AI Governance</h3>
+     <p style="color: #475569; font-size: 0.95rem;">ISO 42001 compliance and policy enforcement</p>
+    </div>
+    <div style="background: #F8FAFC; padding: 32px; border-radius: 12px; text-align: center;">
+     <span style="font-size: 2.5rem; display: block; margin-bottom: 16px;">🛡️</span>
+     <h3 style="margin-bottom: 12px; color: #0F172A;">Risk Assessment</h3>
+     <p style="color: #475569; font-size: 0.95rem;">AI model risk analysis and mitigation</p>
+    </div>
+    <div style="background: #F8FAFC; padding: 32px; border-radius: 12px; text-align: center;">
+     <span style="font-size: 2.5rem; display: block; margin-bottom: 16px;">📋</span>
+     <h3 style="margin-bottom: 12px; color: #0F172A;">Audit Trail</h3>
+     <p style="color: #475569; font-size: 0.95rem;">Complete decision logging and evidence management</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- CTA Section -->
+ <section class="reveal" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: white; text-align: center;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Ready to Govern Your Employment AI?</h2>
+  <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 32px; color: rgba(255,255,255,0.85);">Start with the free Community tier or begin a 14-day trial of our full Governance Suite.</p>
+  <a href="#pricing" style="background: #CC0000; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.5px; display: inline-block; transition: all 0.3s;">View Pricing Plans</a>
+ </section>
+
+ <!-- Footer -->
+ <footer>
+  <div class="footer-content">
+   <div class="footer-section">
+    <h4>Product</h4>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/docs">Documentation</a>
+    <a href="/api">API Reference</a>
+   </div>
+   <div class="footer-section">
+    <h4>Company</h4>
+    <a href="/about">About CSGA</a>
+    <a href="/blog">Blog</a>
+    <a href="/careers">Careers</a>
+    <a href="/contact">Contact</a>
+   </div>
+   <div class="footer-section">
+    <h4>Resources</h4>
+    <a href="/guides">Implementation Guides</a>
+    <a href="/webinars">Webinars</a>
+    <a href="/research">Research Papers</a>
+    <a href="/community">Community</a>
+   </div>
+   <div class="footer-section">
+    <h4>Legal</h4>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/security">Security</a>
+    <a href="/compliance">Compliance</a>
+   </div>
+  </div>
+  <div class="footer-bottom">
+   <p>&copy; 2026 CSGA Global. All rights reserved. | Employment AI Governance MCP by CSGA AI Research Institute</p>
+  </div>
+ </footer>
+
+ <script>
+  // Scroll reveal animations
+  const observerOptions = {
+   threshold: 0.1,
+   rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+   entries.forEach(entry => {
+    if (entry.isIntersecting) {
+     entry.target.classList.add('visible');
+    }
+   });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children').forEach(el => {
+   observer.observe(el);
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(question => {
+   question.addEventListener('click', function() {
+    const answer = this.nextElementSibling;
+    const icon = this.querySelector('.faq-icon');
+
+    // Close all other FAQs
+    document.querySelectorAll('.faq-answer.visible').forEach(otherAnswer => {
+     if (otherAnswer !== answer) {
+      otherAnswer.classList.remove('visible');
+      otherAnswer.previousElementSibling.querySelector('.faq-icon').classList.remove('open');
+     }
+    });
+
+    // Toggle current FAQ
+    answer.classList.toggle('visible');
+    icon.classList.toggle('open');
+   });
+  });
+
+  // Sticky bar intersection observer
+  const header = document.querySelector('.header-bar');
+  const stickyObserver = new IntersectionObserver(([e]) => {
+   e.target.classList.toggle('sticky', e.intersectionRatio < 1);
+  }, { threshold: [1] });
+  stickyObserver.observe(header);
+ </script>
+</body>
+</html>

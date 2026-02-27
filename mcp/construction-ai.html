@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Construction AI Governance — AI-Powered MCP | CSGA Global</title>
+ <meta name="description" content="Govern AI systems in construction safety, BIM optimization, equipment automation, and project management — ensuring worker safety and code compliance.">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+  :root {
+    --gold: #CC0000;
+    --gold-light: #E63946;
+    --gold-dark: #A30000;
+    --gold-glow: rgba(204, 0, 0, 0.3);
+  }
+
+/* ============================================================================
+ SCROLL REVEAL ANIMATIONS
+ ============================================================================ */
+.reveal {
+ opacity: 0;
+ transform: translateY(40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+}
+.reveal-left {
+ opacity: 0;
+ transform: translateX(-40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible {
+ opacity: 1;
+ transform: translateX(0);
+}
+.reveal-right {
+ opacity: 0;
+ transform: translateX(40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible {
+ opacity: 1;
+ transform: translateX(0);
+}
+.reveal-scale {
+ opacity: 0;
+ transform: scale(0.92);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible {
+ opacity: 1;
+ transform: scale(1);
+}
+/* Stagger children */
+.stagger-children > * {
+ opacity: 0;
+ transform: translateY(30px);
+ transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+/* Section title styling consistent */
+.section-title {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #0F172A;
+ line-height: 1.15;
+ margin-bottom: 16px;
+}
+.section-subtitle {
+ font-size: 1.1rem;
+ color: #475569;
+ max-width: 640px;
+ margin: 0 auto 48px;
+ line-height: 1.65;
+}
+.section-tag {
+ display: inline-block;
+ color: #0058A4;
+ font-size: 0.82rem;
+ font-weight: 700;
+ letter-spacing: 2.5px;
+ text-transform: uppercase;
+ margin-bottom: 12px;
+}
+/* Consistent section padding */
+section, .section {
+ padding: 72px 32px;
+}
+/* Better responsive */
+@media (max-width: 1024px) {
+ .home-showcase-grid,
+ .home-pricing-grid,
+ .home-blog-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-mcps-grid { grid-template-columns: repeat(3, 1fr); }
+ .home-sectors-grid { grid-template-columns: repeat(3, 1fr); }
+ .home-trust-content { grid-template-columns: 1fr; }
+ .home-stats-bar { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+ .home-hero h1 { font-size: 2.5rem; }
+ .home-showcase-grid,
+ .home-pricing-grid,
+ .home-blog-grid { grid-template-columns: 1fr; }
+ .home-mcps-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-sectors-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-stats-bar { grid-template-columns: 1fr; }
+ .nav-bar { display: none; }
+ section, .section { padding: 48px 20px; }
+ .section-title { font-size: 1.8rem; }
+}
+:root {
+ --color-navy-primary: #0058A4;
+ --color-gold-accent: #0058A4;
+ --color-blue-accent: #CC0000;
+ --color-red-cta: #CC0000;
+ --color-white: #FFFFFF;
+ --color-light-gray: #F8FAFC;
+ --color-medium-gray: #475569;
+ --color-dark-gray: #0F172A;
+ --color-gold-light: #DBEAFE;
+ --color-navy-light: #1E40AF;
+ --color-navy-dark: #1E3A5F;
+ --font-primary: Inter, system-ui, -apple-system, sans-serif;
+ --font-secondary: 'Space Grotesk', monospace;
+ --spacing-xs: 0.25rem;
+ --spacing-sm: 0.5rem;
+ --spacing-md: 1rem;
+ --spacing-lg: 1.5rem;
+ --spacing-xl: 2rem;
+ --spacing-2xl: 3rem;
+ --spacing-3xl: 4rem;
+ --spacing-4xl: 6rem;
+ --radius-sm: 0.25rem;
+ --radius-md: 0.5rem;
+ --radius-lg: 1rem;
+ --radius-xl: 1.5rem;
+ --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+ --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+ --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+ --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+ --transition-fast: 150ms ease-in-out;
+ --transition-base: 300ms ease-in-out;
+ --transition-slow: 500ms ease-in-out;
+ --z-dropdown: 10;
+ --z-modal: 100;
+ --z-tooltip: 50;
+ --gradient-gold: linear-gradient(135deg, #CC0000 0%, #E63946 50%, #CC0000 100%);
+ --gradient-navy: linear-gradient(135deg, #0058A4 0%, #1E40AF 100%);
+ --gradient-hero: linear-gradient(135deg, #1E3A5F 0%, #0058A4 40%, #1E40AF 100%);
+ --gradient-blue: linear-gradient(135deg, #3586D7 0%, #0077cc 100%);
+ --gradient-red: linear-gradient(135deg, #CC0000 0%, #ff3333 100%);
+ --glass-bg: rgba(255, 255, 255, 0.05);
+ --glass-border: rgba(255, 255, 255, 0.1);
+ --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+html {
+ scroll-behavior: smooth;
+}
+body {
+ font-family: Inter, system-ui, -apple-system, sans-serif;
+ color: #475569;
+ background-color: #ffffff;
+ line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Space Grotesk', monospace;
+ font-weight: 700;
+ line-height: 1.2;
+ color: #0A1628;
+ margin-bottom: 24px;
+}
+h1 {
+ font-size: 3.5rem;
+ margin-bottom: 36px;
+}
+h2 {
+ font-size: 2.75rem;
+ margin-bottom: 28px;
+}
+h3 {
+ font-size: 2rem;
+ margin-bottom: 24px;
+}
+h4 {
+ font-size: 1.5rem;
+ margin-bottom: 16px;
+}
+p {
+ margin-bottom: 16px;
+ font-size: 1rem;
+}
+a {
+ color: #CC0000;
+ text-decoration: none;
+ transition: color 0.15s ease;
+}
+a:hover {
+ color: #93C5FD;
+}
+.btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ padding: 16px 28px;
+ font-size: 1rem;
+ font-weight: 600;
+ border: 2px solid transparent;
+ border-radius: 12px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ text-decoration: none;
+ gap: 8px;
+}
+.btn-primary {
+ background-color: #CC0000;
+ color: #ffffff;
+}
+.btn-primary:hover {
+ background-color: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.btn-secondary {
+ background-color: #CC0000;
+ color: #ffffff;
+}
+.btn-secondary:hover {
+ background-color: #004080;
+ transform: translateY(-2px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.btn-outline {
+ background-color: transparent;
+ color: #0A1628;
+ border-color: #0A1628;
+}
+.btn-outline:hover {
+ background-color: #F8FAFC;
+}
+.container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 24px;
+}
+.grid {
+ display: grid;
+ gap: 24px;
+}
+.grid-2 {
+ grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+ grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+ grid-template-columns: repeat(4, 1fr);
+}
+.grid-6 {
+ grid-template-columns: repeat(6, 1fr);
+}
+.flex {
+ display: flex;
+}
+.flex-center {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.flex-between {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.flex-col {
+ flex-direction: column;
+}
+.gap-md {
+ gap: 16px;
+}
+.gap-lg {
+ gap: 24px;
+}
+/* Breadcrumb */
+.sf-bread {
+ font-size: 0.9rem;
+ color: #64748B;
+ padding: 16px 32px;
+ border-bottom: 1px solid #E2E8F0;
+ max-width: 1400px;
+ margin: 0 auto;
+}
+.sf-bread a {
+ color: #0058A4;
+}
+.sf-bread a:hover {
+ text-decoration: underline;
+}
+/* Hero Section */
+.sf-hero {
+ background: linear-gradient(135deg, #001A3D 0%, #0058A4 50%, #003D75 100%);
+ color: #fff;
+ padding: 80px 32px;
+ position: relative;
+ overflow: hidden;
+}
+.sf-hero::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+ opacity: 0.6;
+}
+.sf-hero * { position: relative; z-index: 1; }
+.sf-hero-inner {
+ max-width: 1000px;
+ margin: 0 auto;
+ text-align: center;
+}
+.sf-hero-icon {
+ font-size: 3.5rem;
+ display: block;
+ margin-bottom: 24px;
+}
+.sf-hero h1 {
+ color: #fff;
+ font-size: clamp(2.5rem, 6vw, 3.5rem);
+ font-weight: 800;
+ margin-bottom: 20px;
+ font-family: 'Space Grotesk', monospace;
+ text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.sf-hero-sub {
+ color: rgba(255,255,255,0.9);
+ font-size: 1.2rem;
+ max-width: 700px;
+ margin: 0 auto 32px;
+ line-height: 1.7;
+}
+.sf-hero-badges {
+ display: flex;
+ gap: 12px;
+ justify-content: center;
+ margin-bottom: 32px;
+ flex-wrap: wrap;
+}
+.sf-badge {
+ display: inline-block;
+ padding: 6px 14px;
+ background: rgba(255,255,255,0.15);
+ border: 1px solid rgba(255,255,255,0.25);
+ border-radius: 20px;
+ font-size: 0.78rem;
+ color: rgba(255,255,255,0.9);
+ font-weight: 600;
+}
+.sf-badge-tier {
+ background: rgba(147, 197, 253, 0.2);
+ border: 1px solid rgba(147, 197, 253, 0.4);
+ color: #93C5FD;
+}
+.sf-badge-cat {
+ background: rgba(204, 0, 0, 0.2);
+ border: 1px solid rgba(204, 0, 0, 0.4);
+ color: #FF6B6B;
+}
+.sf-badge-price {
+ background: rgba(16, 185, 129, 0.2);
+ border: 1px solid rgba(16, 185, 129, 0.4);
+ color: #10B981;
+}
+.sf-hero-ctas {
+ display: flex;
+ gap: 16px;
+ justify-content: center;
+ margin-bottom: 24px;
+ flex-wrap: wrap;
+}
+.sf-btn {
+ display: inline-block;
+ padding: 16px 32px;
+ font-weight: 700;
+ font-size: 1rem;
+ border-radius: 8px;
+ text-decoration: none;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ transition: all 0.3s ease;
+}
+.sf-btn-primary {
+ background: #CC0000;
+ color: #fff;
+ box-shadow: 0 4px 16px rgba(204,0,0,0.3);
+}
+.sf-btn-primary:hover {
+ background: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 8px 24px rgba(204,0,0,0.4);
+}
+.sf-btn-ghost {
+ background: transparent;
+ color: #fff;
+ border: 2px solid rgba(255,255,255,0.4);
+}
+.sf-btn-ghost:hover {
+ background: rgba(255,255,255,0.1);
+ border-color: #fff;
+}
+.sf-hero-note {
+ color: rgba(255,255,255,0.7);
+ font-size: 0.9rem;
+ margin: 0;
+}
+.sf-cert-warn {
+ display: inline-block;
+ margin: 20px 0;
+ padding: 8px 16px;
+ background: rgba(244, 165, 130, 0.15);
+ border: 1px solid rgba(244, 165, 130, 0.4);
+ border-radius: 6px;
+ color: #FFB380;
+ font-size: 0.85rem;
+ font-weight: 600;
+}
+.sf-hero-stats {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+ gap: 24px;
+ max-width: 600px;
+ margin: 48px auto 0;
+}
+.sf-hero-stat {
+ text-align: center;
+ padding: 16px;
+ background: rgba(255,255,255,0.08);
+ border-radius: 8px;
+ border: 1px solid rgba(255,255,255,0.1);
+}
+.sf-hero-stat strong {
+ display: block;
+ font-size: 2.2rem;
+ color: #93C5FD;
+ font-family: 'Space Grotesk', monospace;
+}
+.sf-hero-stat span {
+ display: block;
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.7);
+ margin-top: 4px;
+}
+/* Social Proof */
+.social-proof-mini {
+ text-align: center;
+ padding: 12px 20px;
+ background: rgba(0,88,164,.04);
+ border-bottom: 1px solid rgba(0,88,164,.08);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 20px;
+ flex-wrap: wrap;
+ font-size: .82rem;
+}
+/* Trust bar */
+.sf-trust {
+ background: #f8f9fb;
+ padding: 40px 32px;
+ border-bottom: 1px solid #e2e8f0;
+}
+.sf-trust-inner {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+ gap: 32px;
+ max-width: 1200px;
+ margin: 0 auto;
+ text-align: center;
+}
+.sf-trust-item {
+ color: #0A1628;
+}
+.sf-trust-item strong {
+ display: block;
+ font-size: 1.4rem;
+ color: #0058A4;
+ font-family: 'Space Grotesk', monospace;
+ margin-bottom: 4px;
+}
+/* Problem/Solution sections */
+.sf-problem, .sf-solution {
+ padding: 80px 32px;
+}
+.sf-problem {
+ background: #fff;
+}
+.sf-solution {
+ background: #f8f9fb;
+}
+.sf-ps-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 60px;
+ align-items: center;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.sf-ps-text h3 {
+ margin-bottom: 16px;
+}
+.sf-ps-text p {
+ margin-bottom: 24px;
+ color: #64748B;
+ line-height: 1.8;
+}
+.sf-ps-list {
+ list-style: none;
+ padding: 0;
+}
+.sf-ps-list li {
+ padding: 12px 0;
+ padding-left: 30px;
+ position: relative;
+ color: #475569;
+ line-height: 1.7;
+}
+.sf-ps-list li:before {
+ content: '✓';
+ position: absolute;
+ left: 0;
+ color: #28a745;
+ font-weight: 700;
+ font-size: 1.1rem;
+}
+.sf-ps-list.sol li:before {
+ content: '→';
+ color: #CC0000;
+}
+.sf-ps-visual {
+ text-align: center;
+ font-size: 5rem;
+}
+.sf-ps-visual.problem { font-size: 4rem; }
+.sf-ps-visual.solution { font-size: 4rem; }
+@media (max-width: 768px) {
+ .sf-ps-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+/* Features section */
+.sf-section {
+ padding: 80px 32px;
+ text-align: center;
+}
+.sf-section-title {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #0A1628;
+ margin-bottom: 16px;
+}
+.sf-section-sub {
+ font-size: 1.1rem;
+ color: #64748B;
+ max-width: 700px;
+ margin: 0 auto 48px;
+ line-height: 1.7;
+}
+.sf-features {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 32px;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.sf-feature-card {
+ padding: 32px;
+ background: #f8f9fb;
+ border-radius: 12px;
+ border: 1px solid #e2e8f0;
+ transition: all 0.3s ease;
+ text-align: left;
+}
+.sf-feature-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+ border-color: #CC0000;
+}
+.sf-feature-icon {
+ font-size: 2rem;
+ display: block;
+ margin-bottom: 16px;
+}
+.sf-feature-card h4 {
+ color: #0A1628;
+ margin-bottom: 12px;
+}
+.sf-feature-card p {
+ color: #64748B;
+ font-size: 0.95rem;
+ line-height: 1.6;
+}
+/* Metrics section */
+.sf-metrics {
+ background: linear-gradient(135deg, #001A3D 0%, #0058A4 50%, #003D75 100%);
+ color: #fff;
+ padding: 80px 32px;
+}
+.sf-metrics-inner {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 40px;
+ max-width: 1200px;
+ margin: 0 auto;
+ text-align: center;
+}
+.sf-metric {
+ padding: 24px;
+}
+.sf-metric-num {
+ display: block;
+ font-size: 3rem;
+ font-weight: 800;
+ color: #93C5FD;
+ font-family: 'Space Grotesk', monospace;
+ margin-bottom: 8px;
+}
+.sf-metric-label {
+ display: block;
+ font-size: 1rem;
+ color: rgba(255,255,255,0.85);
+}
+/* Use cases */
+.sf-usecases-wrap {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 24px;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.sf-usecase {
+ padding: 32px;
+ background: #fff;
+ border-radius: 12px;
+ border: 1px solid #e2e8f0;
+ display: flex;
+ gap: 20px;
+}
+.sf-usecase-num {
+ flex-shrink: 0;
+ width: 48px;
+ height: 48px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: #CC0000;
+ color: #fff;
+ border-radius: 8px;
+ font-weight: 700;
+ font-size: 1.2rem;
+ font-family: 'Space Grotesk', monospace;
+}
+.sf-usecase-body h4 {
+ color: #0A1628;
+ margin-bottom: 8px;
+}
+.sf-usecase-body p {
+ color: #64748B;
+ font-size: 0.95rem;
+ line-height: 1.6;
+ margin: 0;
+}
+/* Tools section */
+.sf-tools {
+ padding: 80px 32px;
+ background: #f8f9fb;
+}
+.sf-tools-wrap {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ gap: 32px;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.sf-tool-card {
+ padding: 40px;
+ background: #fff;
+ border-radius: 12px;
+ border: 1px solid #e2e8f0;
+ transition: all 0.3s ease;
+}
+.sf-tool-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+ border-color: #0058A4;
+}
+.sf-tool-icon {
+ font-size: 2.5rem;
+ display: block;
+ margin-bottom: 20px;
+}
+.sf-tool-card h3 {
+ font-size: 1.3rem;
+ color: #0A1628;
+ margin-bottom: 12px;
+}
+.sf-tool-desc {
+ color: #64748B;
+ font-size: 0.95rem;
+ line-height: 1.7;
+ margin: 0;
+}
+/* Pricing wall */
+.mcp-pw {
+ padding: 80px 32px;
+ background: #fff;
+}
+.pw-title {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 16px;
+}
+.pw-sub {
+ text-align: center;
+ color: #64748B;
+ font-size: 1.1rem;
+ margin-bottom: 48px;
+}
+.pw-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 32px;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.pw-tier {
+ padding: 48px 32px;
+ border: 1px solid #e2e8f0;
+ border-radius: 12px;
+ transition: all 0.3s ease;
+ background: #fff;
+}
+.pw-tier:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.pw-tier.featured {
+ border: 2px solid #CC0000;
+ transform: scale(1.05);
+}
+.pw-tier.featured:hover {
+ transform: scale(1.05) translateY(-4px);
+}
+.pw-badge {
+ display: inline-block;
+ background: rgba(204, 0, 0, 0.1);
+ color: #CC0000;
+ padding: 4px 12px;
+ border-radius: 20px;
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ margin-bottom: 16px;
+}
+.pw-name {
+ font-size: 1.3rem;
+ font-weight: 700;
+ color: #0A1628;
+ margin-bottom: 8px;
+}
+.pw-price {
+ font-size: 2.5rem;
+ font-weight: 800;
+ color: #CC0000;
+ font-family: 'Space Grotesk', monospace;
+ margin-bottom: 8px;
+}
+.pw-price-period {
+ color: #64748B;
+ font-size: 0.9rem;
+ margin-bottom: 24px;
+}
+.pw-features {
+ list-style: none;
+ padding: 24px 0;
+ margin: 24px 0;
+ border-top: 1px solid #e2e8f0;
+ border-bottom: 1px solid #e2e8f0;
+}
+.pw-features li {
+ padding: 12px 0;
+ color: #475569;
+ font-size: 0.95rem;
+ position: relative;
+ padding-left: 24px;
+}
+.pw-features li:before {
+ content: '✓';
+ position: absolute;
+ left: 0;
+ color: #28a745;
+ font-weight: 700;
+}
+.pw-btn {
+ display: block;
+ width: 100%;
+ padding: 14px 24px;
+ background: #CC0000;
+ color: #fff;
+ text-align: center;
+ border-radius: 8px;
+ text-decoration: none;
+ font-weight: 700;
+ font-size: 0.95rem;
+ cursor: pointer;
+ border: none;
+ transition: all 0.3s ease;
+}
+.pw-btn:hover {
+ background: #AA0000;
+ transform: translateY(-2px);
+}
+/* FAQ section */
+.faq-wrap {
+ padding: 80px 32px;
+ background: #f8f9fb;
+}
+.faq-title {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 48px;
+}
+.faq-list {
+ max-width: 900px;
+ margin: 0 auto;
+}
+.faq-item {
+ background: #fff;
+ border: 1px solid #e2e8f0;
+ border-radius: 8px;
+ margin-bottom: 16px;
+ overflow: hidden;
+}
+.faq-question {
+ padding: 24px;
+ background: #fff;
+ cursor: pointer;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ user-select: none;
+ transition: all 0.2s ease;
+}
+.faq-question:hover {
+ background: #f8f9fb;
+}
+.faq-question h4 {
+ margin: 0;
+ font-size: 1.1rem;
+ color: #0A1628;
+}
+.faq-toggle {
+ font-size: 1.3rem;
+ color: #CC0000;
+ transition: transform 0.3s ease;
+}
+.faq-item.active .faq-toggle {
+ transform: rotate(180deg);
+}
+.faq-answer {
+ max-height: 0;
+ overflow: hidden;
+ transition: max-height 0.3s ease;
+ background: #f8f9fb;
+}
+.faq-item.active .faq-answer {
+ max-height: 500px;
+}
+.faq-answer p {
+ padding: 24px;
+ color: #64748B;
+ line-height: 1.8;
+ margin: 0;
+}
+/* Related MCPs section */
+.sf-related {
+ padding: 80px 32px;
+ background: #fff;
+}
+.related-title {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 48px;
+}
+.related-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 24px;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.related-item {
+ padding: 24px;
+ background: #f8f9fb;
+ border: 1px solid #e2e8f0;
+ border-radius: 8px;
+ text-decoration: none;
+ transition: all 0.3s ease;
+ display: flex;
+ align-items: center;
+ gap: 16px;
+}
+.related-item:hover {
+ transform: translateY(-2px);
+ border-color: #CC0000;
+ box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.related-item h4 {
+ margin: 0;
+ color: #0A1628;
+ font-size: 1.1rem;
+}
+.related-arrow {
+ margin-left: auto;
+ color: #CC0000;
+ font-size: 1.2rem;
+ font-weight: 700;
+}
+/* Final CTA section */
+.sf-final-cta {
+ padding: 80px 32px;
+ background: linear-gradient(135deg, #001A3D 0%, #0058A4 50%, #003D75 100%);
+ color: #fff;
+ text-align: center;
+ position: relative;
+ overflow: hidden;
+}
+.sf-final-cta::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+ opacity: 0.6;
+}
+.sf-final-cta * { position: relative; z-index: 1; }
+.sf-final-cta h2 {
+ color: #fff;
+ font-size: clamp(1.8rem, 4vw, 2.8rem);
+ font-weight: 800;
+ margin-bottom: 16px;
+ font-family: 'Space Grotesk', monospace;
+ text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.sf-final-cta p {
+ color: rgba(255,255,255,0.9);
+ font-size: 1.15rem;
+ max-width: 640px;
+ margin: 0 auto 32px;
+ line-height: 1.7;
+}
+.sf-cta-btns {
+ display: flex;
+ gap: 16px;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+.cta-btn {
+ display: inline-block;
+ padding: 16px 40px;
+ background: #CC0000;
+ color: #fff;
+ font-weight: 700;
+ font-size: 1rem;
+ border-radius: 8px;
+ text-decoration: none;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ transition: all 0.3s ease;
+ box-shadow: 0 4px 16px rgba(204,0,0,0.3);
+}
+.cta-btn:hover {
+ background: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 8px 24px rgba(204,0,0,0.4);
+}
+.cta-btn-outline {
+ display: inline-block;
+ padding: 14px 36px;
+ background: transparent;
+ color: #fff;
+ font-weight: 600;
+ font-size: 0.95rem;
+ border-radius: 8px;
+ text-decoration: none;
+ border: 2px solid rgba(255,255,255,0.4);
+ transition: all 0.3s ease;
+}
+.cta-btn-outline:hover {
+ background: rgba(255,255,255,0.1);
+ border-color: #fff;
+}
+/* Footer */
+footer {
+ background: #0A1628;
+ color: #fff;
+ padding: 56px 32px 28px;
+}
+.footer-container {
+ max-width: 1400px;
+ margin: 0 auto;
+}
+.ecosystem-bar {
+ background: rgba(255,255,255,0.05);
+ border: 1px solid rgba(255,255,255,0.1);
+ padding: 24px;
+ border-radius: 8px;
+ margin-bottom: 48px;
+}
+.ecosystem-title {
+ font-size: 0.75rem;
+ color: #93C5FD;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1.2px;
+ margin-bottom: 16px;
+}
+.ecosystem-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+ gap: 16px;
+}
+.ecosystem-item {
+ padding: 12px;
+ background: rgba(255,255,255,0.08);
+ border-radius: 6px;
+ text-decoration: none;
+ color: #fff;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 8px;
+ transition: all 0.2s ease;
+ text-align: center;
+}
+.ecosystem-item:hover {
+ background: rgba(255,255,255,0.15);
+}
+.ecosystem-icon {
+ font-size: 1.3rem;
+}
+.ecosystem-name {
+ font-size: 0.8rem;
+ font-weight: 600;
+}
+.footer-grid {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 32px;
+ margin-bottom: 32px;
+}
+.footer-column {
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+}
+.footer-column h4 {
+ color: #93C5FD;
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin: 0 0 12px;
+}
+.footer-link {
+ color: rgba(255,255,255,0.7);
+ text-decoration: none;
+ font-size: 0.9rem;
+ transition: color 0.2s ease;
+}
+.footer-link:hover {
+ color: #fff;
+}
+.footer-partners {
+ padding-top: 32px;
+ border-top: 1px solid rgba(255,255,255,0.1);
+ margin-bottom: 32px;
+}
+.footer-partners-title {
+ font-size: 0.75rem;
+ color: #93C5FD;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1.2px;
+ margin-bottom: 16px;
+}
+.footer-partners-row {
+ display: flex;
+ gap: 24px;
+ align-items: center;
+ flex-wrap: wrap;
+ margin-bottom: 24px;
+}
+.footer-partner-logo {
+ height: 32px;
+ width: auto;
+ opacity: 0.7;
+ transition: opacity 0.2s ease;
+}
+.footer-partner-logo:hover {
+ opacity: 1;
+}
+.footer-accreditations {
+ display: flex;
+ gap: 16px;
+ flex-wrap: wrap;
+}
+.footer-accred-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 6px 14px;
+ background: rgba(204, 0, 0, 0.1);
+ border: 1px solid rgba(204, 0, 0, 0.25);
+ border-radius: 8px;
+ font-size: 0.78rem;
+ color: #CC0000;
+ font-weight: 600;
+}
+.footer-accred-badge img {
+ height: 22px;
+ width: auto;
+ border-radius: 3px;
+}
+.footer-bottom {
+ border-top: 1px solid rgba(255,255,255,0.1);
+ padding-top: 24px;
+ text-align: center;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.footer-bottom p {
+ margin: 0;
+ color: rgba(255,255,255,0.6);
+ font-size: 0.85rem;
+}
+.footer-bottom-sub {
+ color: rgba(255,255,255,0.5);
+ font-size: 0.8rem;
+}
+@media (max-width: 768px) {
+ .footer-grid {
+ grid-template-columns: repeat(2, 1fr);
+ gap: 24px;
+ }
+ .footer-bottom {
+ flex-direction: column;
+ text-align: center;
+ gap: 12px;
+ }
+ footer {
+ padding: 36px 16px 24px;
+ }
+}
+</style>
+
+<!-- 2-BAR HEADER -->
+<div class="header-bar">
+ <div class="header-inner">
+ <a href="/" class="logo">
+ <div class="logo-mark"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0D9488" stroke-width="0.8"/><path d="M24 8l10 4v12c0 6-10 12-10 12S14 30 14 24V12Z" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1"/><line x1="24" y1="13" x2="24" y2="25" stroke="#C5A572" stroke-width="1.2"/><line x1="18" y1="19" x2="30" y2="19" stroke="#C5A572" stroke-width="1.2"/><polygon points="24,12 23,14 25,14" fill="#C5A572"/><path d="M16 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><path d="M28 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><ellipse cx="24" cy="29" rx="4" ry="2.5" fill="#fff" stroke="#fff" stroke-width="0.8"/><circle cx="24" cy="29" r="1.5" fill="#0D9488"/></svg></div>
+ <div>
+ <span class="logo-text">CSGA Global</span>
+ <span class="logo-sub">Cyber Security Global Alliance</span>
+ </div>
+ </a>
+ <div class="header-right">
+ <a href="/dashboard.html" class="header-btn btn-login">Log in</a>
+ <a href="/members.html" class="header-btn btn-join">Join CSGA</a>
+ </div>
+ </div>
+</div>
+
+<nav class="nav-bar" id="navBar">
+ <div class="nav-inner">
+ <a href="/" class="nav-link active">Home</a>
+ <div class="nav-dropdown">
+ <span class="nav-link">Platform</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>MCP Hub</h5>
+ <a href="/catalog.html" class="mega-item">
+ <span class="mega-item-title">MCP Catalog</span>
+ <span class="mega-item-sub">36 model context protocols</span>
+ </a>
+ <a href="/pricing.html" class="mega-item">
+ <span class="mega-item-title">Pricing</span>
+ <span class="mega-item-sub">Free, Pro & Enterprise</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Access</h5>
+ <a href="/dashboard.html" class="mega-item">
+ <span class="mega-item-title">Dashboard</span>
+ <span class="mega-item-sub">Manage your MCPs</span>
+ </a>
+ <a href="/blog/" class="mega-item">
+ <span class="mega-item-title">Blog</span>
+ <span class="mega-item-sub">Latest updates & guides</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Integration</h5>
+ <a href="/cybersecurity.html" class="mega-item">
+ <span class="mega-item-title">Cybersecurity MCPs</span>
+ <span class="mega-item-sub">Threat detection & response</span>
+ </a>
+ <a href="/ai-governance.html" class="mega-item">
+ <span class="mega-item-title">Governance MCPs</span>
+ <span class="mega-item-sub">ISO 42001 compliance</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="nav-dropdown">
+ <span class="nav-link">Solutions</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>Security</h5>
+ <a href="/cybersecurity.html" class="mega-item">
+ <span class="mega-item-title">Cybersecurity</span>
+ <span class="mega-item-sub">Threat prevention & detection</span>
+ </a>
+ <a href="/cyber-defence.html" class="mega-item">
+ <span class="mega-item-title">Cyber Defence</span>
+ <span class="mega-item-sub">Defensive operations</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Governance</h5>
+ <a href="/ai-governance.html" class="mega-item">
+ <span class="mega-item-title">AI Governance</span>
+ <span class="mega-item-sub">ISO 42001 compliance</span>
+ </a>
+ <a href="/csoai-standards.html" class="mega-item">
+ <span class="mega-item-title">CSOAI Standards</span>
+ <span class="mega-item-sub">Industry specifications</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Sectors</h5>
+ <a href="/casa-sectors.html" class="mega-item">
+ <span class="mega-item-title">CASA Sectors</span>
+ <span class="mega-item-sub">Industry-specific solutions</span>
+ </a>
+ <a href="/tso-csrt.html" class="mega-item">
+ <span class="mega-item-title">TSO-CSRT</span>
+ <span class="mega-item-sub">Threat simulation & ops</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="nav-dropdown">
+ <span class="nav-link">Learn</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>Courses</h5>
+ <a href="/training.html" class="mega-item">
+ <span class="mega-item-title">Training & MOOCs</span>
+ <span class="mega-item-sub">36 free courses</span>
+ </a>
+ <a href="/certification.html" class="mega-item">
+ <span class="mega-item-title">Certifications</span>
+ <span class="mega-item-sub">6 professional tracks</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Programs</h5>
+ <a href="/education.html" class="mega-item">
+ <span class="mega-item-title">Education</span>
+ <span class="mega-item-sub">Academic programs</span>
+ </a>
+ <a href="/programs.html" class="mega-item">
+ <span class="mega-item-title">Programs</span>
+ <span class="mega-item-sub">Specialized tracks</span>
+ </a>
+ <a href="/veterans.html" class="mega-item">
+ <span class="mega-item-title">Veterans Cyber Careers</span>
+ <span class="mega-item-sub">Free training for veterans</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Community</h5>
+ <a href="/research.html" class="mega-item">
+ <span class="mega-item-title">Research</span>
+ <span class="mega-item-sub">Latest publications</span>
+ </a>
+ <a href="/events.html" class="mega-item">
+ <span class="mega-item-title">Events</span>
+ <span class="mega-item-sub">Conferences & meetups</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <a href="/contact.html" class="nav-link" style="margin-left:auto;">Contact</a>
+</nav>
+
+<div class="sf-bread">
+ <a href="../">Home</a> › <a href="../catalog.html">MCP Catalog</a> › Construction AI Governance
+</div>
+
+<section class="sf-hero">
+ <div class="sf-hero-inner">
+ <span class="sf-hero-icon">🏗️</span>
+ <h1>Construction AI Governance</h1>
+ <p class="sf-hero-sub">Govern AI systems in construction safety, BIM optimization, equipment automation, and project management — ensuring worker safety and code compliance.</p>
+ <div class="sf-hero-badges">
+ <span class="sf-badge sf-badge-tier">Professional Tier</span>
+ <span class="sf-badge sf-badge-cat">Construction</span>
+ <span class="sf-badge sf-badge-price">Pro · $199/mo</span>
+ </div>
+ <div class="sf-hero-ctas">
+ <a href="#pricing" class="sf-btn sf-btn-primary">Start Free Trial — $199/mo</a>
+ <a href="#features" class="sf-btn sf-btn-ghost">See Features ↓</a>
+ </div>
+ <p class="sf-hero-note">14-day free trial · Professional — $199/mo · Cancel anytime</p>
+ <div class="sf-hero-stats">
+ <div class="sf-hero-stat"><strong>3</strong><span>AI Tools</span></div>
+ <div class="sf-hero-stat"><strong>7</strong><span>Use Cases</span></div>
+ <div class="sf-hero-stat"><strong>10K</strong><span>Calls/mo</span></div>
+ </div>
+ </div>
+</section>
+
+<div class="social-proof-mini">
+ <span style="color:#10B981;font-weight:600;">✓ 14-day free trial</span>
+ <span style="color:#94a3b8;">|</span>
+ <span style="color:#64748B;">Used by <strong style="color:#0058A4;">1,200+</strong> construction firms</span>
+ <span style="color:#94a3b8;">|</span>
+ <span style="color:#10B981;font-weight:600;">30-day money-back guarantee</span>
+</div>
+
+<div class="sf-trust">
+ <div class="sf-trust-inner">
+ <div class="sf-trust-item"><strong>3</strong>Core Tools</div>
+ <div class="sf-trust-item"><strong>36+</strong>MCP Servers</div>
+ <div class="sf-trust-item"><strong>5,000+</strong>Building Codes Covered</div>
+ <div class="sf-trust-item"><strong>78%</strong>Mega-Projects Using AI</div>
+ <div class="sf-trust-item"><strong>99.9%</strong>Uptime SLA</div>
+ </div>
+</div>
+
+<section class="sf-problem">
+ <div class="sf-ps-grid">
+ <div class="sf-ps-text">
+ <h3 style="color:#CC0000">Without Construction AI Governance</h3>
+ <p>Construction firms struggle with uncontrolled AI deployment without proper governance:</p>
+ <ul class="sf-ps-list">
+ <li>Safety AI systems lack auditing and may miss critical hazards</li>
+ <li>BIM optimization ignores building codes and compliance requirements</li>
+ <li>Autonomous equipment AI operates without proper validation and control</li>
+ <li>Project delays due to manual safety reviews and compliance documentation</li>
+ </ul>
+ </div>
+ <div class="sf-ps-visual problem">😰</div>
+ </div>
+</section>
+
+<section class="sf-solution">
+ <div class="sf-ps-grid">
+ <div class="sf-ps-visual solution">🚀</div>
+ <div class="sf-ps-text">
+ <h3 style="color:#28a745">With Construction AI Governance</h3>
+ <p>Deploy AI governance that keeps construction projects safe, compliant, and efficient:</p>
+ <ul class="sf-ps-list sol">
+ <li>60% reduction in site accidents with continuously audited safety AI</li>
+ <li>Automated compliance checks against 5,000+ building codes</li>
+ <li>Real-time validation of autonomous equipment AI behaviors</li>
+ <li>Project acceleration with streamlined approval workflows</li>
+ </ul>
+ </div>
+ </div>
+</section>
+
+<section class="sf-section" id="features">
+ <h2 class="sf-section-title">Powerful Construction AI Governance Tools</h2>
+ <p class="sf-section-sub">Complete toolkit for governing AI systems across safety, BIM, and equipment automation.</p>
+ <div class="sf-features">
+ <div class="sf-feature-card">
+ <div class="sf-feature-icon">🎯</div>
+ <h4>Safety AI Auditing</h4>
+ <p>Continuous auditing of AI-driven safety monitoring systems with real-time hazard validation and incident tracking.</p>
+ </div>
+ <div class="sf-feature-card">
+ <div class="sf-feature-icon">📐</div>
+ <h4>BIM Code Validation</h4>
+ <p>Automated validation of AI-optimized building information models against regulatory codes and safety standards.</p>
+ </div>
+ <div class="sf-feature-card">
+ <div class="sf-feature-icon">🤖</div>
+ <h4>Equipment AI Validation</h4>
+ <p>Real-time governance and validation of autonomous and semi-autonomous construction equipment AI systems.</p>
+ </div>
+ <div class="sf-feature-card">
+ <div class="sf-feature-icon">📋</div>
+ <h4>Compliance Reporting</h4>
+ <p>Automated generation of compliance reports, audit trails, and documentation for regulatory and insurance requirements.</p>
+ </div>
+ <div class="sf-feature-card">
+ <div class="sf-feature-icon">⚡</div>
+ <h4>Project Integration</h4>
+ <p>Seamless integration with existing project management systems and AI workflows across construction operations.</p>
+ </div>
+ <div class="sf-feature-card">
+ <div class="sf-feature-icon">🔒</div>
+ <h4>Risk Management</h4>
+ <p>Comprehensive AI risk assessment and mitigation for construction environments with real-time alerting.</p>
+ </div>
+ </div>
+</section>
+
+<section class="sf-tools">
+ <h2 style="text-align:center;font-size:2.5rem;margin-bottom:48px;">Three Essential Tools</h2>
+ <div class="sf-tools-wrap">
+ <div class="sf-tool-card">
+ <div class="sf-tool-icon">🔍</div>
+ <h3>construction_safety_ai_auditor</h3>
+ <p class="sf-tool-desc">Continuously audit AI-driven safety monitoring systems on construction sites. Validate hazard detection accuracy, track safety incidents, and ensure worker protection through real-time AI governance and compliance reporting.</p>
+ </div>
+ <div class="sf-tool-card">
+ <div class="sf-tool-icon">🏛️</div>
+ <h3>bim_ai_governor</h3>
+ <p class="sf-tool-desc">Govern AI-optimized building information models for regulatory compliance. Automatically validate designs against 5,000+ building codes, safety standards, and project requirements while maintaining design optimization benefits.</p>
+ </div>
+ <div class="sf-tool-card">
+ <div class="sf-tool-icon">⚙️</div>
+ <h3>equipment_autonomy_validator</h3>
+ <p class="sf-tool-desc">Validate autonomous and semi-autonomous construction equipment AI systems. Monitor equipment behavior, verify safety compliance, prevent unauthorized autonomous operations, and maintain operational control with real-time governance.</p>
+ </div>
+ </div>
+</section>
+
+<section class="sf-metrics">
+ <div class="sf-metrics-inner">
+ <div class="sf-metric"><div class="sf-metric-num">60%</div><div class="sf-metric-label">Accident Reduction</div></div>
+ <div class="sf-metric"><div class="sf-metric-num">$15.2B</div><div class="sf-metric-label">Construction AI Market by 2028</div></div>
+ <div class="sf-metric"><div class="sf-metric-num">5,000+</div><div class="sf-metric-label">Building Codes AI Navigates</div></div>
+ <div class="sf-metric"><div class="sf-metric-num">78%</div><div class="sf-metric-label">Mega-Projects Using AI by 2027</div></div>
+ </div>
+</section>
+
+<section style="background:#f8f9fb;padding:80px 32px">
+ <div style="max-width:1200px;margin:0 auto">
+ <h2 class="sf-section-title">Real-World Use Cases</h2>
+ <p class="sf-section-sub">See how construction firms are using AI governance to transform safety and compliance.</p>
+ <div class="sf-usecases-wrap">
+ <div class="sf-usecase">
+ <div class="sf-usecase-num">1</div>
+ <div class="sf-usecase-body">
+ <h4>General Contractors</h4>
+ <p>Deploy AI safety monitoring across multiple job sites while maintaining compliance and real-time incident response with audited governance.</p>
+ </div>
+ </div>
+ <div class="sf-usecase">
+ <div class="sf-usecase-num">2</div>
+ <div class="sf-usecase-body">
+ <h4>Architecture & Engineering Firms</h4>
+ <p>Leverage AI-optimized BIM systems while automatically validating compliance with building codes, standards, and project requirements.</p>
+ </div>
+ </div>
+ <div class="sf-usecase">
+ <div class="sf-usecase-num">3</div>
+ <div class="sf-usecase-body">
+ <h4>Heavy Equipment Operators</h4>
+ <p>Deploy autonomous and semi-autonomous equipment with confidence through continuous real-time AI validation and governance controls.</p>
+ </div>
+ </div>
+ <div class="sf-usecase">
+ <div class="sf-usecase-num">4</div>
+ <div class="sf-usecase-body">
+ <h4>Government Infrastructure</h4>
+ <p>Govern AI across critical infrastructure projects while meeting federal compliance, safety regulations, and audit trail requirements.</p>
+ </div>
+ </div>
+ <div class="sf-usecase">
+ <div class="sf-usecase-num">5</div>
+ <div class="sf-usecase-body">
+ <h4>Construction Insurance</h4>
+ <p>Reduce claim frequency with AI governance systems that prove compliance, validate safety practices, and provide comprehensive incident documentation.</p>
+ </div>
+ </div>
+ <div class="sf-usecase">
+ <div class="sf-usecase-num">6</div>
+ <div class="sf-usecase-body">
+ <h4>Project Managers</h4>
+ <p>Streamline project timelines by automating compliance reviews, safety validations, and regulatory approvals through integrated AI governance.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="mcp-pw" id="pricing">
+ <h2 class="pw-title">Simple, Transparent Pricing</h2>
+ <p class="pw-sub">Choose the plan that fits your construction operations</p>
+ <div class="pw-grid">
+ <div class="pw-tier">
+ <div class="pw-badge">FREE</div>
+ <div class="pw-name">Community</div>
+ <div class="pw-price">$0</div>
+ <div class="pw-price-period">Forever free</div>
+ <ul class="pw-features">
+ <li>100 API calls/day</li>
+ <li>Basic safety auditing</li>
+ <li>Community support</li>
+ <li>Limited code validation</li>
+ </ul>
+ <button class="pw-btn">Get Started Free</button>
+ </div>
+ <div class="pw-tier featured">
+ <div class="pw-badge" style="background: rgba(204, 0, 0, 0.15); color: #CC0000;">POPULAR</div>
+ <div class="pw-name">Professional</div>
+ <div class="pw-price">$199</div>
+ <div class="pw-price-period">per month, billed annually</div>
+ <ul class="pw-features">
+ <li>10,000 API calls/month</li>
+ <li>Full safety auditing & reporting</li>
+ <li>Complete BIM code validation</li>
+ <li>Equipment AI validation</li>
+ <li>Email support & SLA</li>
+ </ul>
+ <button class="pw-btn">Start Free Trial</button>
+ </div>
+ <div class="pw-tier">
+ <div class="pw-badge">ENTERPRISE</div>
+ <div class="pw-name">Enterprise</div>
+ <div class="pw-price">$499+</div>
+ <div class="pw-price-period">per month, custom terms</div>
+ <ul class="pw-features">
+ <li>Unlimited API calls</li>
+ <li>All Professional features</li>
+ <li>Custom code databases</li>
+ <li>Dedicated support & SLA</li>
+ <li>White-label options</li>
+ </ul>
+ <button class="pw-btn">Contact Sales</button>
+ </div>
+ </div>
+</section>
+
+<section class="faq-wrap">
+ <h2 class="faq-title">Frequently Asked Questions</h2>
+ <div class="faq-list">
+ <div class="faq-item">
+ <div class="faq-question">
+ <h4>How does Construction AI Governance reduce site accidents?</h4>
+ <div class="faq-toggle">+</div>
+ </div>
+ <div class="faq-answer">
+ <p>Our safety auditor continuously monitors AI-driven safety systems on construction sites, validating hazard detection accuracy and ensuring worker protection protocols are followed. This creates a closed-loop system where AI safety improvements are automatically verified, leading to 60% accident reduction on average across deployed sites.</p>
+ </div>
+ </div>
+ <div class="faq-item">
+ <div class="faq-question">
+ <h4>Which building codes and standards are covered?</h4>
+ <div class="faq-toggle">+</div>
+ </div>
+ <div class="faq-answer">
+ <p>Our BIM AI Governor covers 5,000+ building codes and safety standards including OSHA regulations, IBC (International Building Code), local and national construction standards, ADA compliance, structural safety codes, and fire codes. The database is continuously updated as new regulations emerge, and custom code sets can be added for specialized projects.</p>
+ </div>
+ </div>
+ <div class="faq-item">
+ <div class="faq-question">
+ <h4>Can it validate autonomous equipment from different manufacturers?</h4>
+ <div class="faq-toggle">+</div>
+ </div>
+ <div class="faq-answer">
+ <p>Yes. The Equipment Autonomy Validator uses standardized protocol interfaces to validate AI systems from any equipment manufacturer. It works with excavators, cranes, dozers, autonomous haul trucks, and other equipment with AI-driven operations, regardless of brand or model.</p>
+ </div>
+ </div>
+ <div class="faq-item">
+ <div class="faq-question">
+ <h4>How much does implementation take?</h4>
+ <div class="faq-toggle">+</div>
+ </div>
+ <div class="faq-answer">
+ <p>Most construction firms implement Construction AI Governance within 15 minutes to 2 weeks depending on size and complexity. Small projects can integrate same-day. The system works with existing project management tools, BIM software, and safety platforms through standard APIs.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="sf-related">
+ <h2 class="related-title">Related AI Governance MCPs</h2>
+ <div class="related-grid">
+ <a href="autonomous-vehicles-ai.html" class="related-item">
+ <div>
+ <h4>Autonomous Vehicles AI</h4>
+ </div>
+ <div class="related-arrow">→</div>
+ </a>
+ <a href="energy-ai.html" class="related-item">
+ <div>
+ <h4>Energy AI Governance</h4>
+ </div>
+ <div class="related-arrow">→</div>
+ </a>
+ <a href="insurance-ai.html" class="related-item">
+ <div>
+ <h4>Insurance AI Governance</h4>
+ </div>
+ <div class="related-arrow">→</div>
+ </a>
+ </div>
+</section>
+
+<section class="sf-final-cta">
+ <h2>Ready to Govern Construction AI?</h2>
+ <p>Join 1,200+ construction firms securing AI safety and compliance.</p>
+ <div class="sf-cta-btns">
+ <a href="#pricing" class="cta-btn">Start Free Trial</a>
+ <a href="/contact.html" class="cta-btn-outline">Talk to Sales</a>
+ </div>
+</section>
+
+<!-- Footer -->
+<footer>
+ <div class="footer-container">
+ <div class="ecosystem-bar">
+ <div class="ecosystem-title">CSOAI Ecosystem - 14 Global Sites</div>
+ <div class="ecosystem-grid">
+ <a href="https://www.csga.global" class="ecosystem-item">
+ <span class="ecosystem-icon">🌐</span>
+ <span class="ecosystem-name">CSGA Global</span>
+ </a>
+ <a href="https://www.csoai.org" class="ecosystem-item">
+ <span class="ecosystem-icon">⚡</span>
+ <span class="ecosystem-name">CSOAI</span>
+ </a>
+ <a href="https://oneos-zeta.vercel.app" class="ecosystem-item">
+ <span class="ecosystem-icon">💻</span>
+ <span class="ecosystem-name">OneOS</span>
+ </a>
+ <a href="https://www.casa.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">🏛️</span>
+ <span class="ecosystem-name">CASA</span>
+ </a>
+ <a href="https://www.bmcc-cyber.com" class="ecosystem-item">
+ <span class="ecosystem-icon">🛡️</span>
+ <span class="ecosystem-name">BMCC Cyber</span>
+ </a>
+ <a href="https://www.terranova.ai" class="ecosystem-item">
+ <span class="ecosystem-icon">🔮</span>
+ <span class="ecosystem-name">Terranova</span>
+ </a>
+ <a href="https://www.aiguard.io" class="ecosystem-item">
+ <span class="ecosystem-icon">🤖</span>
+ <span class="ecosystem-name">AIGuard</span>
+ </a>
+ <a href="https://www.csoai-research.org" class="ecosystem-item">
+ <span class="ecosystem-icon">🔬</span>
+ <span class="ecosystem-name">Research</span>
+ </a>
+ </div>
+ </div>
+ <div class="footer-grid">
+ <div class="footer-column">
+ <h4>Platform</h4>
+ <a href="/catalog.html" class="footer-link">MCP Catalog</a>
+ <a href="/pricing.html" class="footer-link">Pricing</a>
+ <a href="/dashboard.html" class="footer-link">Dashboard</a>
+ <a href="/documentation.html" class="footer-link">Documentation</a>
+ </div>
+ <div class="footer-column">
+ <h4>Solutions</h4>
+ <a href="/cybersecurity.html" class="footer-link">Cybersecurity</a>
+ <a href="/cyber-defence.html" class="footer-link">Cyber Defence</a>
+ <a href="/construction-ai.html" class="footer-link">Construction AI</a>
+ <a href="/csoai-standards.html" class="footer-link">CSOAI Standards</a>
+ </div>
+ <div class="footer-column">
+ <h4>Resources</h4>
+ <a href="/research.html" class="footer-link">Research</a>
+ <a href="/events.html" class="footer-link">Events</a>
+ <a href="/education.html" class="footer-link">Education</a>
+ <a href="/blog/" class="footer-link">Blog</a>
+ </div>
+ <div class="footer-column">
+ <h4>Organisation</h4>
+ <a href="/about.html" class="footer-link">About CSGA</a>
+ <a href="/global-council.html" class="footer-link">Global Council</a>
+ <a href="/members.html" class="footer-link">Members</a>
+ <a href="/contact.html" class="footer-link">Contact</a>
+ </div>
+ <div class="footer-column">
+ <h4>Legal</h4>
+ <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+ <a href="/terms.html" class="footer-link">Terms of Service</a>
+ <a href="/cookies.html" class="footer-link">Cookie Policy</a>
+ <a href="/cybersecurity.html" class="footer-link">Cybersecurity</a>
+ </div>
+ <div class="footer-column footer-column-brand">
+ <h4>CSGA Global</h4>
+ <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;line-height:1.6;margin:0;">Leading the global cyber security alliance with AI-powered governance and research innovation.</p>
+ </div>
+ </div>
+ <div class="footer-partners">
+ <div class="footer-partners-title">Trusted Partners & Affiliations</div>
+ <div class="footer-partners-row">
+ <img src="assets/logos/bmcc-cyber.jpg" alt="BMCC Cyber" class="footer-partner-logo">
+ <img src="assets/logos/dhl.jpg" alt="DHL" class="footer-partner-logo">
+ <img src="assets/logos/terranova.png" alt="Terranova Security" class="footer-partner-logo">
+ <img src="assets/logos/csa-group.jpg" alt="CSA Group" class="footer-partner-logo">
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2026 CSGA Global &mdash; Cyber Security Global Alliance. All rights reserved.</p>
+ <p class="footer-bottom-sub">A division of the CSOAI Group &bull; Advancing human-AI collaboration worldwide</p>
+ </div>
+ </div>
+</footer>
+
+<script>
+// FAQ toggle functionality
+document.querySelectorAll('.faq-question').forEach(question => {
+ question.addEventListener('click', function() {
+ const item = this.parentElement;
+ item.classList.toggle('active');
+ });
+});
+
+// Scroll reveal animations
+function revealElements() {
+ document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+ if (el.getBoundingClientRect().top < window.innerHeight * 0.75) {
+ el.classList.add('visible');
+ }
+ });
+}
+
+window.addEventListener('scroll', revealElements);
+window.addEventListener('load', revealElements);
+</script>
+
+</body>
+</html>

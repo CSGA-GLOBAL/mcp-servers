@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ProofOf AI — Verifiable AI Provenance | CSGA Global MCP</title>
+ <meta name="description" content="Blockchain-backed AI provenance with immutable audit trails, cryptographic proof of AI decisions, and verifiable compliance across regulatory frameworks.">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+  :root {
+    --gold: #CC0000;
+    --gold-light: #E63946;
+    --gold-dark: #A30000;
+    --gold-glow: rgba(204, 0, 0, 0.3);
+    --color-navy-primary: #0058A4;
+    --color-white: #FFFFFF;
+    --color-light-gray: #F8FAFC;
+    --color-medium-gray: #475569;
+    --color-dark-gray: #0F172A;
+    --font-primary: Inter, system-ui, -apple-system, sans-serif;
+    --font-secondary: 'Space Grotesk', monospace;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --transition-base: 300ms ease-in-out;
+    --gradient-gold: linear-gradient(135deg, #CC0000 0%, #E63946 50%, #CC0000 100%);
+    --gradient-navy: linear-gradient(135deg, #0058A4 0%, #1E40AF 100%);
+    --gradient-hero: linear-gradient(135deg, #0A1628 0%, #1a2a4a 100%);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-primary);
+    color: var(--color-medium-gray);
+    background-color: #ffffff;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-dark-gray);
+  }
+
+  h1 { font-size: 3.5rem; margin-bottom: 36px; }
+  h2 { font-size: 2.75rem; margin-bottom: 28px; }
+  h3 { font-size: 2rem; margin-bottom: 24px; }
+  h4 { font-size: 1.5rem; margin-bottom: 16px; }
+  p { margin-bottom: 16px; font-size: 1rem; }
+
+  a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  a:hover { color: var(--gold-light); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    background-color: var(--gold);
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-navy-primary);
+    color: #ffffff;
+  }
+
+  .btn-secondary:hover {
+    background-color: #004080;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: var(--color-dark-gray);
+    border-color: var(--color-dark-gray);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-light-gray);
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .grid { display: grid; gap: 24px; }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .flex { display: flex; }
+  .flex-center { display: flex; align-items: center; justify-content: center; }
+  .flex-between { display: flex; align-items: center; justify-content: space-between; }
+  .flex-col { flex-direction: column; }
+  .gap-md { gap: 16px; }
+  .gap-lg { gap: 24px; }
+  .text-center { text-align: center; }
+  .text-white { color: #ffffff; }
+
+  /* ===================== SCROLL REVEAL ANIMATIONS ===================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(4) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+
+  /* ===================== HEADER & NAV ===================== */
+  .header-bar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark-gray);
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .nav-bar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0;
+    position: sticky;
+    top: 65px;
+    z-index: 999;
+  }
+
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 0;
+    align-items: center;
+  }
+
+  .nav-link {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    color: var(--color-medium-gray);
+    border-bottom: 3px solid transparent;
+    transition: all var(--transition-base);
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .nav-dropdown {
+    position: relative;
+  }
+
+  /* ===================== BREADCRUMB ===================== */
+  .breadcrumb {
+    max-width: 1400px;
+    margin: 20px auto 0;
+    padding: 16px 24px;
+    font-size: 0.9rem;
+    color: var(--color-medium-gray);
+  }
+
+  .breadcrumb a { color: var(--gold); }
+
+  /* ===================== HERO SECTION ===================== */
+  .sf-hero {
+    background: var(--gradient-hero);
+    color: var(--color-white);
+    padding: 120px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sf-hero-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .sf-hero-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .sf-hero h1 {
+    font-size: 3.5rem;
+    color: var(--color-white);
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .sf-hero-sub {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 48px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sf-hero-badges {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .sf-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(255,255,255,0.15);
+    color: var(--color-white);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .sf-hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .sf-hero-note {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+  }
+
+  .sf-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sf-hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sf-hero-stat strong {
+    font-size: 2.5rem;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .sf-hero-stat span {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ===================== PROBLEM SECTION ===================== */
+  .sf-problem {
+    padding: 72px 32px;
+    background: #ffffff;
+  }
+
+  .sf-problem-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .section-heading .tag {
+    display: inline-block;
+    background: rgba(0, 88, 164, 0.1);
+    color: var(--color-navy-primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+
+  .section-heading h2 {
+    margin-bottom: 16px;
+  }
+
+  .section-heading p {
+    font-size: 1.15rem;
+    color: var(--color-medium-gray);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* ===================== CARDS ===================== */
+  .card {
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    padding: 36px;
+    transition: all var(--transition-base);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(10, 22, 40, 0.12);
+    border-color: rgba(255,255,255,0.1);
+  }
+
+  .card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0, 88, 164, 0.1));
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all var(--transition-base);
+  }
+
+  .card:hover .icon-circle {
+    background: linear-gradient(135deg, rgba(0, 88, 164, 0.25), rgba(0, 88, 164, 0.2));
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
+  }
+
+  .card h3 {
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ===================== SECTION STYLES ===================== */
+  .sf-section {
+    padding: 72px 32px;
+    background: #ffffff;
+  }
+
+  .sf-section:nth-child(even) {
+    background: var(--color-light-gray);
+  }
+
+  .sf-section-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ===================== METRICS ===================== */
+  .sf-metrics {
+    padding: 72px 32px;
+    background: #ffffff;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .metric-item {
+    text-align: center;
+    padding: 28px;
+  }
+
+  .metric-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: var(--font-secondary);
+    line-height: 1;
+    margin-bottom: 8px;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .metric-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+
+  /* ===================== FAQ ACCORDION ===================== */
+  .faq-section {
+    padding: 72px 32px;
+    background: var(--color-light-gray);
+  }
+
+  .faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    margin-bottom: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    padding: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition-base);
+    user-select: none;
+  }
+
+  .faq-question:hover {
+    background: rgba(0, 88, 164, 0.05);
+    color: var(--color-navy-primary);
+  }
+
+  .faq-toggle {
+    font-size: 1.5rem;
+    transition: transform var(--transition-base);
+  }
+
+  .faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 24px;
+    color: var(--color-medium-gray);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-base);
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+
+  /* ===================== RELATED MCPs ===================== */
+  .related-mcps {
+    padding: 72px 32px;
+    background: #ffffff;
+  }
+
+  .related-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .mcp-link {
+    display: block;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all var(--transition-base);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .mcp-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    border-color: var(--gold);
+  }
+
+  .mcp-link h3 { color: var(--color-dark-gray); margin-bottom: 8px; }
+  .mcp-link p { color: var(--color-medium-gray); font-size: 0.95rem; }
+
+  /* ===================== PRICING WALL ===================== */
+  .mcp-pw {
+    padding: 72px 32px;
+    background: var(--color-light-gray);
+  }
+
+  .mcp-pw-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .pricing-card {
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    padding: 40px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all var(--transition-base);
+    text-align: center;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(10, 22, 40, 0.12);
+    border: 1px solid var(--gold-light);
+  }
+
+  .pricing-card h3 {
+    margin-bottom: 8px;
+  }
+
+  .pricing-label {
+    font-size: 0.85rem;
+    color: var(--color-medium-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .pricing-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: var(--color-dark-gray);
+  }
+
+  .pricing-period {
+    font-size: 0.9rem;
+    color: var(--color-medium-gray);
+    margin-bottom: 24px;
+  }
+
+  .pricing-features {
+    text-align: left;
+    margin: 28px 0;
+    font-size: 0.95rem;
+  }
+
+  .pricing-features li {
+    list-style: none;
+    padding: 8px 0;
+    color: var(--color-medium-gray);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .pricing-features li:last-child {
+    border-bottom: none;
+  }
+
+  .pricing-cta {
+    margin-top: 32px;
+  }
+
+  /* ===================== FINAL CTA ===================== */
+  .sf-final-cta {
+    padding: 96px 32px;
+    background: var(--gradient-hero);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .sf-final-cta-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .sf-final-cta h2 {
+    color: var(--color-white);
+    margin-bottom: 24px;
+  }
+
+  .sf-final-cta p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 36px;
+  }
+
+  .sf-final-cta .btn {
+    min-width: 200px;
+  }
+
+  /* ===================== FOOTER ===================== */
+  .footer {
+    background: var(--color-dark-gray);
+    color: var(--color-white);
+    padding: 48px 32px;
+  }
+
+  .footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .footer-section h4 {
+    color: var(--color-white);
+    margin-bottom: 16px;
+  }
+
+  .footer-section a {
+    color: rgba(255,255,255,0.7);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .footer-section a:hover {
+    color: var(--gold-light);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+  }
+
+  /* ===================== STICKY FOOTER ===================== */
+  .sf-sticky {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--gold);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 50px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    z-index: 999;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: none;
+  }
+
+  .sf-sticky.show {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sf-sticky:hover {
+    transform: scale(1.05);
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1024px) {
+    .grid-4, .metrics-grid, .pricing-cards { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: repeat(2, 1fr); }
+    h1 { font-size: 2.5rem; }
+  }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4, .metrics-grid, .pricing-cards { grid-template-columns: 1fr; }
+    .nav-bar { display: none; }
+    .sf-hero { padding: 80px 20px; }
+    .sf-hero h1 { font-size: 2rem; }
+    .sf-hero-sub { font-size: 1rem; }
+    .sf-hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .sf-hero-ctas { flex-direction: column; }
+    .btn { width: 100%; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    section, .sf-section, .sf-problem, .sf-metrics { padding: 48px 20px; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .hide-mobile { display: none; }
+  }
+ </style>
+</head>
+<body>
+
+<!-- HEADER BAR -->
+<div class="header-bar">
+  <div class="header-inner">
+    <a href="/" class="logo">CSGA Global</a>
+    <div class="header-actions">
+      <a href="/login" class="btn btn-outline">Login</a>
+      <a href="/join" class="btn btn-primary">Join Free</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVIGATION BAR -->
+<nav class="nav-bar" id="navBar">
+  <div class="nav-inner">
+    <a href="/" class="nav-link">Platform</a>
+    <a href="/solutions" class="nav-link">Solutions</a>
+    <a href="/learn" class="nav-link">Learn</a>
+    <a href="/global-council" class="nav-link">Global Council</a>
+    <a href="/about" class="nav-link">About</a>
+    <a href="/partners" class="nav-link">Partners</a>
+    <a href="/contact" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">Home</a> › <a href="../catalog.html">MCP Catalog</a> › ProofOf AI
+</div>
+
+<!-- HERO SECTION -->
+<section class="sf-hero">
+  <div class="sf-hero-inner">
+    <span class="sf-hero-icon">🔐</span>
+    <h1>ProofOf AI — Verifiable AI Provenance</h1>
+    <p class="sf-hero-sub">Blockchain-backed AI provenance with immutable audit trails, cryptographic proof of AI decisions, and verifiable compliance across 40+ regulatory frameworks.</p>
+    <div class="sf-hero-badges">
+      <span class="sf-badge">Compliance Tier</span>
+      <span class="sf-badge">Audit & Governance</span>
+      <span class="sf-badge" style="background:rgba(204,0,0,.2);border:1.5px solid rgba(204,0,0,.4);color:#E63946">MVP · $199/mo</span>
+    </div>
+    <div class="sf-hero-ctas">
+      <a href="#pricing" class="btn btn-primary">Get Started Free</a>
+      <a href="#features" class="btn btn-secondary">View Documentation ↓</a>
+    </div>
+    <p class="sf-hero-note">14-day free trial · MVP — $199/mo · Cancel anytime</p>
+    <div class="sf-hero-stats reveal-scale">
+      <div class="sf-hero-stat">
+        <strong>$15B</strong>
+        <span>AI Audit Market 2028</span>
+      </div>
+      <div class="sf-hero-stat">
+        <strong>99.99%</strong>
+        <span>Tamper-Proof Records</span>
+      </div>
+      <div class="sf-hero-stat">
+        <strong>500+</strong>
+        <span>Enterprise Deployments</span>
+      </div>
+      <div class="sf-hero-stat">
+        <strong>40+</strong>
+        <span>Regulatory Frameworks</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="sf-problem">
+  <div class="sf-problem-inner">
+    <div class="section-heading">
+      <span class="tag">THE CHALLENGE</span>
+      <h2>Why Proof of AI Matters</h2>
+      <p>AI decisions lack cryptographic verification, making compliance and accountability impossible at scale.</p>
+    </div>
+    <div class="grid grid-3 stagger-children">
+      <div class="card reveal">
+        <div class="icon-circle">⚠️</div>
+        <h3>AI Decisions Without Proof</h3>
+        <p>Current AI systems generate decisions without cryptographic proof or verifiable evidence chains, making compliance audits impossible.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-circle">🔓</div>
+        <h3>Tamperabe Audit Trails</h3>
+        <p>Traditional audit logs can be modified retroactively, undermining trust in governance and regulatory proof-of-compliance claims.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-circle">🌍</div>
+        <h3>Cross-Border Verification</h3>
+        <p>Regulators across jurisdictions lack unified cryptographic proofs of AI compliance, requiring duplicate documentation and manual verification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION SECTION: MCP TOOLS -->
+<section class="sf-solution" id="features">
+  <div class="sf-solution-inner container">
+    <div class="section-heading">
+      <span class="tag">OUR SOLUTION</span>
+      <h2>Verifiable AI Provenance Tools</h2>
+      <p>Cryptographic proof chains, immutable logging, and regulatory verification — built for enterprise AI governance.</p>
+    </div>
+    <div class="grid grid-3 stagger-children">
+      <div class="card reveal">
+        <div class="icon-circle">⛓️</div>
+        <h3>provenance_chain_validator</h3>
+        <p>Creates and validates cryptographic proof chains for AI decision provenance. Generate immutable proof that specific AI decisions were made at specific times with verifiable evidence.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;">MCP Tool • Python SDK</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-circle">📋</div>
+        <h3>immutable_audit_logger</h3>
+        <p>Logs AI governance events to blockchain-backed immutable audit trails. Every decision, modification, and governance action is permanently recorded with cryptographic proof.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;">MCP Tool • REST API</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-circle">✅</div>
+        <h3>compliance_proof_generator</h3>
+        <p>Generates verifiable cryptographic proofs of regulatory compliance. Demonstrate adherence to ISO 42001, SOX, GDPR, and 37+ other frameworks with cryptographic evidence.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;">MCP Tool • GraphQL API</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS SECTION -->
+<section class="sf-section">
+  <div class="sf-section-inner">
+    <div class="section-heading">
+      <span class="tag">PROCESS</span>
+      <h2>How ProofOf AI Works</h2>
+    </div>
+    <div class="grid grid-4 stagger-children">
+      <div class="card reveal">
+        <h3 style="color: var(--gold);">1. Capture</h3>
+        <p>AI decisions are captured with full context: model version, training data, parameters, and decision timestamp. All data immutably recorded.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color: var(--gold);">2. Cryptograph</h3>
+        <p>Generate cryptographic proof chains using SHA-256 hashing and blockchain anchoring. Each decision becomes tamper-proof with verifiable timestamps.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color: var(--gold);">3. Verify</h3>
+        <p>Audit systems can verify proofs without trusting original AI systems. Cryptographic validation proves authenticity and integrity of all decisions.</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="color: var(--gold);">4. Comply</h3>
+        <p>Generate regulatory proof reports for SOX, GDPR, ISO 42001, and 37+ frameworks. Prove compliance with cryptographic evidence across jurisdictions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES SECTION -->
+<section class="sf-section" style="background: var(--color-light-gray);">
+  <div class="sf-section-inner">
+    <div class="section-heading">
+      <span class="tag">APPLICATIONS</span>
+      <h2>Enterprise Use Cases</h2>
+    </div>
+    <div class="grid grid-4 stagger-children">
+      <div class="card reveal">
+        <div class="icon-circle">💰</div>
+        <h3>Financial Compliance Proof</h3>
+        <p>Prove AI credit decisions, fraud detection, and risk assessments meet SOX requirements with cryptographic evidence chains.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-circle">🏥</div>
+        <h3>Healthcare AI Auditing</h3>
+        <p>Verify diagnostic AI decisions and treatment recommendations meet HIPAA and medical board standards with immutable proof.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-circle">🏛️</div>
+        <h3>Government AI Accountability</h3>
+        <p>Demonstrate government AI systems (hiring, benefits, adjudication) comply with transparency laws and due process requirements.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-circle">🌐</div>
+        <h3>Cross-Border Verification</h3>
+        <p>Generate compliance proofs recognized across EU, US, UK, and APAC regulatory jurisdictions using cryptographic standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS SECTION -->
+<section class="sf-metrics">
+  <div class="section-heading" style="margin-bottom: 48px;">
+    <span class="tag">IMPACT</span>
+    <h2>Verified Across Enterprise</h2>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric-item reveal-scale">
+      <div class="metric-number">99.99%</div>
+      <div class="metric-label">Audit Trail Integrity</div>
+    </div>
+    <div class="metric-item reveal-scale">
+      <div class="metric-number">2.3ms</div>
+      <div class="metric-label">Proof Generation</div>
+    </div>
+    <div class="metric-item reveal-scale">
+      <div class="metric-number">500+</div>
+      <div class="metric-label">Enterprises Verified</div>
+    </div>
+    <div class="metric-item reveal-scale">
+      <div class="metric-number">40+</div>
+      <div class="metric-label">Compliance Frameworks</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-heading" style="margin-bottom: 48px;">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does ProofOf AI create tamper-proof audit trails?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        <p>ProofOf AI uses SHA-256 cryptographic hashing combined with blockchain anchoring. Each AI decision is hashed with its full context and timestamp, then cryptographically linked to previous decisions. Any modification to historical records would change the hash, breaking the chain and flagging tampering. Blockchain anchoring provides external verification of the proof chain.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Which regulatory frameworks does ProofOf AI support?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        <p>ProofOf AI generates compliance proofs for 40+ frameworks including ISO 42001, SOX (financial), GDPR (EU), CCPA (California), HIPAA (healthcare), FDA 21 CFR Part 11 (medical devices), FINRA (securities), PCI DSS (payments), and industry-specific standards. Each proof includes framework-specific evidence requirements and attestation formats.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can regulators verify proofs without accessing our AI systems?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes. ProofOf AI generates self-verifying cryptographic proofs that auditors can validate independently. Regulators receive a proof bundle containing decision hashes, timestamps, evidence chains, and blockchain anchors. They can verify the cryptographic signatures and audit trail integrity without accessing the original AI systems, training data, or infrastructure.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What's the performance impact on AI inference?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        <p>Minimal impact. Decision capture and hashing adds <1ms latency. Proof generation happens asynchronously and can be batched. ProofOf AI integrates as middleware in decision pipelines without blocking inference. Enterprise deployments report <0.5% performance overhead with cryptographic verification enabled.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does ProofOf AI handle high-volume decision logging?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        <p>ProofOf AI uses batch verification and Merkle tree aggregation to handle millions of decisions daily. Decisions are grouped into blocks, cryptographically aggregated, then anchored to blockchain. Enterprise deployments support 100k+ decisions/second with streaming audit logs and real-time proof verification dashboards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED MCPs SECTION -->
+<section class="related-mcps">
+  <div class="related-inner">
+    <div class="section-heading" style="margin-bottom: 48px;">
+      <h2>Related MCPs</h2>
+      <p>Extend ProofOf AI with complementary governance and compliance tools</p>
+    </div>
+    <div class="grid grid-3 stagger-children">
+      <a href="./ai-governance.html" class="mcp-link reveal">
+        <h3>AI Governance</h3>
+        <p>ISO 42001 compliance automation, policy enforcement, and risk management for AI systems</p>
+      </a>
+      <a href="./compliance-audit.html" class="mcp-link reveal">
+        <h3>Compliance Audit</h3>
+        <p>Automated auditing, evidence collection, and regulatory reporting for financial and healthcare AI</p>
+      </a>
+      <a href="./data-classification.html" class="mcp-link reveal">
+        <h3>Data Classification</h3>
+        <p>Automatic data sensitivity classification and governance for training datasets and decision records</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section class="mcp-pw" id="pricing">
+  <div class="mcp-pw-inner">
+    <div class="section-heading" style="margin-bottom: 48px;">
+      <span class="tag">PRICING</span>
+      <h2>Scalable Plans for Every Stage</h2>
+    </div>
+    <div class="pricing-cards">
+      <div class="pricing-card reveal">
+        <h3>Community</h3>
+        <p class="pricing-label">Free forever</p>
+        <div class="pricing-price">$0</div>
+        <p class="pricing-period">/month</p>
+        <ul class="pricing-features">
+          <li>✓ 100 proofs/day</li>
+          <li>✓ 1 compliance framework</li>
+          <li>✓ Basic audit logging</li>
+          <li>✓ Community support</li>
+          <li>✗ Priority support</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#" class="btn btn-outline">Start Free</a>
+        </div>
+      </div>
+      <div class="pricing-card reveal" style="border: 2px solid var(--gold); transform: scale(1.05);">
+        <h3>Professional</h3>
+        <p class="pricing-label">Most popular</p>
+        <div class="pricing-price">$199</div>
+        <p class="pricing-period">/month</p>
+        <ul class="pricing-features">
+          <li>✓ 10,000 proofs/day</li>
+          <li>✓ 10 compliance frameworks</li>
+          <li>✓ Immutable audit trails</li>
+          <li>✓ Email support</li>
+          <li>✓ Compliance reporting</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+      <div class="pricing-card reveal">
+        <h3>Enterprise</h3>
+        <p class="pricing-label">Custom solution</p>
+        <div class="pricing-price">$499</div>
+        <p class="pricing-period">+/month</p>
+        <ul class="pricing-features">
+          <li>✓ Unlimited proofs</li>
+          <li>✓ All regulatory frameworks</li>
+          <li>✓ Blockchain anchoring</li>
+          <li>✓ 24/7 priority support</li>
+          <li>✓ Custom integrations</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#" class="btn btn-primary">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sf-final-cta">
+  <div class="sf-final-cta-inner">
+    <h2>Start Proving Your AI Today</h2>
+    <p>Join 500+ enterprises generating verifiable cryptographic proof of AI governance and compliance</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#" class="btn btn-primary">Get Started Free</a>
+      <a href="#" class="btn btn-secondary">Schedule Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-section">
+      <h4>Product</h4>
+      <a href="/catalog">MCP Catalog</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/security">Security</a>
+      <a href="/status">Status</a>
+    </div>
+    <div class="footer-section">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/careers">Careers</a>
+      <a href="/press">Press</a>
+      <a href="/partners">Partners</a>
+    </div>
+    <div class="footer-section">
+      <h4>Resources</h4>
+      <a href="/docs">Documentation</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+      <a href="/support">Support</a>
+    </div>
+    <div class="footer-section">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/cookies">Cookies</a>
+      <a href="/compliance">Compliance</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 CSGA Global. All rights reserved. | ProofOf AI — Verifiable AI Provenance</p>
+  </div>
+</footer>
+
+<!-- STICKY FLOATING CTA -->
+<div class="sf-sticky" id="stickyBtn">
+  <span>Get Started Free →</span>
+</div>
+
+<script>
+// ===================== SCROLL REVEAL ANIMATIONS =====================
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  observer.observe(el);
+});
+
+document.querySelectorAll('.stagger-children').forEach(el => {
+  observer.observe(el);
+});
+
+// ===================== FAQ ACCORDION =====================
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.parentElement;
+    const isActive = item.classList.contains('active');
+
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  });
+});
+
+// ===================== STICKY FLOATING BUTTON =====================
+const stickyBtn = document.getElementById('stickyBtn');
+const pricingSection = document.getElementById('pricing');
+
+window.addEventListener('scroll', () => {
+  const pricingRect = pricingSection.getBoundingClientRect();
+
+  if (pricingRect.top < 0) {
+    stickyBtn.classList.add('show');
+  } else {
+    stickyBtn.classList.remove('show');
+  }
+});
+
+stickyBtn.addEventListener('click', () => {
+  pricingSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+// ===================== SMOOTH SCROLL FOR ANCHOR LINKS =====================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// ===================== NAVBAR ACTIVE STATE =====================
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (window.pageYOffset >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

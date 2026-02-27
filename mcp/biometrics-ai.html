@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biometrics AI Governance — MCP | CSGA Global</title>
+  <meta name="description" content="Ethical biometric AI governance and compliance — facial recognition oversight, voice biometrics compliance, BIPA/GDPR biometric data compliance, and bias detection in biometric AI systems.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #CC0000;
+      --gold-light: #E63946;
+      --gold-dark: #A30000;
+      --gold-glow: rgba(204, 0, 0, 0.3);
+    }
+
+    /* ============================================================================
+       SCROLL REVEAL ANIMATIONS
+       ============================================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ============================================================================
+       GLOBAL STYLES
+       ============================================================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
+      color: #e0e0e0;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(204, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(230, 57, 70, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* ============================================================================
+       HEADER & NAVIGATION
+       ============================================================================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+      background: rgba(10, 14, 39, 0.8);
+      border-bottom: 1px solid rgba(204, 0, 0, 0.1);
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #b0b0b0;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      box-shadow: 0 0 20px var(--gold-glow);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================================
+       BREADCRUMB
+       ============================================================================ */
+    .breadcrumb {
+      padding: 20px 40px;
+      font-size: 13px;
+      color: #888;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb a {
+      color: var(--gold);
+      transition: color 0.3s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ============================================================================
+       HERO SECTION
+       ============================================================================ */
+    .hero {
+      padding: 80px 40px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff 0%, #b0b0b0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #b0b0b0;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 40px var(--gold-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px var(--gold-glow);
+    }
+
+    .btn-secondary {
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(204, 0, 0, 0.1);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: rgba(204, 0, 0, 0.1);
+      border: 1px solid var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 30px;
+    }
+
+    /* ============================================================================
+       PROBLEM SECTION
+       ============================================================================ */
+    .problem {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: #b0b0b0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .problem-content ul {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .problem-content li {
+      margin-bottom: 20px;
+      padding-left: 30px;
+      position: relative;
+      font-size: 16px;
+      color: #d0d0d0;
+    }
+
+    .problem-content li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .problem-visual {
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 60px 40px;
+      text-align: center;
+      color: #888;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* ============================================================================
+       SOLUTION SECTION
+       ============================================================================ */
+    .solution {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.05) 0%, transparent 100%);
+      border-radius: 12px;
+      margin-bottom: 80px;
+    }
+
+    .solution .section-header {
+      margin-bottom: 60px;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .solution-visual {
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 60px 40px;
+      text-align: center;
+      color: #888;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .solution-content ul {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .solution-content li {
+      margin-bottom: 20px;
+      padding-left: 30px;
+      position: relative;
+      font-size: 16px;
+      color: #d0d0d0;
+    }
+
+    .solution-content li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    /* ============================================================================
+       FEATURES/TOOLS SECTION
+       ============================================================================ */
+    .features {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features .section-header {
+      margin-bottom: 60px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .tool-card {
+      background: linear-gradient(135deg, rgba(20, 25, 50, 0.5) 0%, rgba(30, 35, 60, 0.5) 100%);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 40px;
+      transition: all 0.3s ease;
+    }
+
+    .tool-card:hover {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+      box-shadow: 0 20px 60px var(--gold-glow);
+      transform: translateY(-8px);
+    }
+
+    .tool-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(204, 0, 0, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .tool-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .tool-card p {
+      font-size: 15px;
+      color: #b0b0b0;
+      line-height: 1.6;
+    }
+
+    /* ============================================================================
+       METRICS SECTION
+       ============================================================================ */
+    .metrics {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .metric {
+      background: linear-gradient(135deg, rgba(20, 25, 50, 0.5) 0%, rgba(30, 35, 60, 0.5) 100%);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 40px;
+      transition: all 0.3s ease;
+    }
+
+    .metric:hover {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+    }
+
+    .metric h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .metric p {
+      font-size: 14px;
+      color: #888;
+    }
+
+    /* ============================================================================
+       USE CASES SECTION
+       ============================================================================ */
+    .use-cases {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .use-cases .section-header {
+      margin-bottom: 60px;
+    }
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .use-case-card {
+      background: linear-gradient(135deg, rgba(20, 25, 50, 0.5) 0%, rgba(30, 35, 60, 0.5) 100%);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 40px;
+      transition: all 0.3s ease;
+    }
+
+    .use-case-card:hover {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+      box-shadow: 0 20px 60px var(--gold-glow);
+    }
+
+    .use-case-card h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .use-case-card p {
+      font-size: 15px;
+      color: #b0b0b0;
+      line-height: 1.6;
+    }
+
+    /* ============================================================================
+       QUICK START SECTION
+       ============================================================================ */
+    .quick-start {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .quick-start .section-header {
+      margin-bottom: 60px;
+    }
+
+    .code-block {
+      background: rgba(10, 14, 39, 0.8);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 30px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      color: #4ade80;
+      line-height: 1.6;
+    }
+
+    /* ============================================================================
+       FAQ SECTION
+       ============================================================================ */
+    .faq {
+      padding: 100px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq .section-header {
+      margin-bottom: 60px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, rgba(20, 25, 50, 0.5) 0%, rgba(30, 35, 60, 0.5) 100%);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+    }
+
+    .faq-question {
+      padding: 25px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #fff;
+      font-size: 16px;
+      user-select: none;
+    }
+
+    .faq-toggle {
+      color: var(--gold);
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 25px;
+      color: #b0b0b0;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 25px 25px 25px;
+    }
+
+    /* ============================================================================
+       RELATED MCPS SECTION
+       ============================================================================ */
+    .related-mcps {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .related-mcps .section-header {
+      margin-bottom: 60px;
+    }
+
+    .related-mcps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .related-mcp-card {
+      background: linear-gradient(135deg, rgba(20, 25, 50, 0.5) 0%, rgba(30, 35, 60, 0.5) 100%);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .related-mcp-card:hover {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+      transform: translateY(-8px);
+    }
+
+    .related-mcp-card h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .related-mcp-card p {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .related-mcp-card a {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .related-mcp-card a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ============================================================================
+       PRICING SECTION
+       ============================================================================ */
+    .pricing {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pricing .section-header {
+      margin-bottom: 60px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .pricing-card {
+      background: linear-gradient(135deg, rgba(20, 25, 50, 0.5) 0%, rgba(30, 35, 60, 0.5) 100%);
+      border: 1px solid rgba(204, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 40px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+      box-shadow: 0 20px 60px var(--gold-glow);
+      transform: translateY(-8px);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.15) 0%, rgba(230, 57, 70, 0.08) 100%);
+      box-shadow: 0 20px 60px var(--gold-glow);
+      transform: translateY(-12px);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      padding: 6px 16px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #fff;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: none;
+    }
+
+    .pricing-card.featured .pricing-badge {
+      display: block;
+    }
+
+    .pricing-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .pricing-price {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .pricing-period {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 30px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .pricing-features li {
+      padding: 12px 0;
+      padding-left: 25px;
+      position: relative;
+      font-size: 14px;
+      color: #b0b0b0;
+      border-bottom: 1px solid rgba(204, 0, 0, 0.1);
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .pricing-cta {
+      width: 100%;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      margin-top: 10px;
+    }
+
+    .pricing-card.featured .pricing-cta {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #fff;
+      border: none;
+    }
+
+    .pricing-cta:hover {
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    /* ============================================================================
+       CTA SECTION
+       ============================================================================ */
+    .final-cta {
+      padding: 100px 40px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .final-cta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .final-cta p {
+      font-size: 18px;
+      color: #b0b0b0;
+      margin-bottom: 40px;
+    }
+
+    /* ============================================================================
+       STICKY CTA BAR
+       ============================================================================ */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 40px;
+      background: rgba(10, 14, 39, 0.95);
+      border-top: 1px solid rgba(204, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(20px);
+      z-index: 999;
+    }
+
+    .sticky-bar-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .sticky-bar-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .sticky-btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #fff;
+    }
+
+    .sticky-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px var(--gold-glow);
+    }
+
+    /* ============================================================================
+       FOOTER
+       ============================================================================ */
+    footer {
+      padding: 80px 40px 40px 40px;
+      border-top: 1px solid rgba(204, 0, 0, 0.1);
+      margin-top: 100px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-section h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 12px;
+    }
+
+    .footer-section a {
+      font-size: 14px;
+      color: #888;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(204, 0, 0, 0.1);
+      padding-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* ============================================================================
+       RESPONSIVE DESIGN
+       ============================================================================ */
+    @media (max-width: 1024px) {
+      .tools-grid,
+      .related-mcps-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .problem-grid,
+      .solution-grid,
+      .use-case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .section-header h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .header-content {
+        padding: 0 20px;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .section-header h2 {
+        font-size: 24px;
+      }
+
+      .tools-grid,
+      .related-mcps-grid,
+      .pricing-grid,
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .sticky-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+      }
+
+      .sticky-bar-buttons {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .sticky-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-content">
+      <div class="logo">CSGA</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/mcp">MCP Servers</a>
+        <a href="/docs">Docs</a>
+        <a href="/pricing">Pricing</a>
+        <button class="nav-btn">Get Started</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="/">Home</a> > <a href="/mcp">MCP Servers</a> > Biometrics AI Governance
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero reveal">
+    <div class="hero-badge">MCP SERVER</div>
+    <h1>Biometrics AI Governance</h1>
+    <p>Ethical biometric AI governance and compliance — facial recognition oversight, voice biometrics compliance, fingerprint AI governance, and BIPA/GDPR biometric data compliance.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary">Deploy Now</button>
+      <button class="btn-secondary">View Documentation</button>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="problem reveal">
+    <div class="section-header">
+      <h2>The Biometric AI Challenge</h2>
+      <p>Biometric systems face critical governance gaps</p>
+    </div>
+    <div class="problem-grid">
+      <div class="reveal-left">
+        <ul>
+          <li>Demographic bias in facial recognition systems affecting accuracy</li>
+          <li>Consent and privacy violations in biometric data collection</li>
+          <li>BIPA and GDPR Article 9 compliance uncertainty</li>
+          <li>Voice biometrics security and authenticity concerns</li>
+          <li>Fingerprint data retention and destruction tracking</li>
+          <li>EU AI Act high-risk biometric classification gaps</li>
+        </ul>
+      </div>
+      <div class="problem-visual reveal-right">
+        Biometric System Risk Dashboard
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="solution reveal">
+    <div class="section-header">
+      <h2>Comprehensive Biometric Governance</h2>
+      <p>Automated compliance and bias detection for biometric AI systems</p>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-visual reveal-left">
+        Compliance Automation Engine
+      </div>
+      <div class="solution-content reveal-right">
+        <ul>
+          <li>Validate biometric systems against BIPA, GDPR, and EU AI Act</li>
+          <li>Audit facial recognition for demographic bias and accuracy disparities</li>
+          <li>Classify biometric data flows and consent status</li>
+          <li>Real-time monitoring of retention policies</li>
+          <li>Automated compliance reporting and audit trails</li>
+          <li>Risk scoring and remediation recommendations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features/Tools Section -->
+  <section class="features reveal">
+    <div class="section-header">
+      <h2>Core Tools</h2>
+      <p>Three essential tools for biometric AI governance</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card reveal-scale">
+        <div class="tool-icon">⚖️</div>
+        <h3>Biometric Compliance Checker</h3>
+        <p>Validate biometric AI systems against BIPA, GDPR Article 9, and EU AI Act high-risk requirements. Automated policy enforcement and compliance scoring.</p>
+      </div>
+      <div class="tool-card reveal-scale">
+        <div class="tool-icon">👁️</div>
+        <h3>Facial Recognition Auditor</h3>
+        <p>Audit facial recognition systems for demographic bias, accuracy disparities across populations, and consent compliance. Detailed disparity reports and remediation paths.</p>
+      </div>
+      <div class="tool-card reveal-scale">
+        <div class="tool-icon">🔐</div>
+        <h3>Biometric Data Classifier</h3>
+        <p>Classify biometric data flows, map consent status, and verify retention policy compliance. Track fingerprint, facial, and voice data through entire lifecycle.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics Section -->
+  <section class="metrics reveal">
+    <div class="metric">
+      <h4>99.2%</h4>
+      <p>Compliance Detection Rate</p>
+    </div>
+    <div class="metric">
+      <h4>47ms</h4>
+      <p>Average Audit Time</p>
+    </div>
+    <div class="metric">
+      <h4>15+</h4>
+      <p>Regulatory Frameworks</p>
+    </div>
+    <div class="metric">
+      <h4>8.2x</h4>
+      <p>Faster Governance</p>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section class="use-cases reveal">
+    <div class="section-header">
+      <h2>Use Cases</h2>
+      <p>Industry applications for biometric governance</p>
+    </div>
+    <div class="use-case-grid">
+      <div class="use-case-card reveal-left">
+        <h4>Airport Security & Border Control</h4>
+        <p>Audit facial recognition systems for bias and GDPR compliance. Ensure non-discriminatory biometric screening and consent documentation at checkpoints.</p>
+      </div>
+      <div class="use-case-card reveal-right">
+        <h4>Law Enforcement & Criminal Justice</h4>
+        <p>Monitor facial recognition databases for accuracy disparities. Ensure proper retention policies and bias detection in mugshot matching systems.</p>
+      </div>
+      <div class="use-case-card reveal-left">
+        <h4>Banking & KYC Compliance</h4>
+        <p>Validate biometric authentication systems against BIPA and GDPR. Ensure voice and facial biometrics meet financial regulatory requirements.</p>
+      </div>
+      <div class="use-case-card reveal-right">
+        <h4>Access Control & Physical Security</h4>
+        <p>Monitor fingerprint and facial recognition systems for demographic bias. Track biometric data retention and ensure deletion compliance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start Section -->
+  <section class="quick-start reveal">
+    <div class="section-header">
+      <h2>Quick Start</h2>
+      <p>Integrate biometrics-ai governance in minutes</p>
+    </div>
+    <div class="code-block">
+{
+  "name": "@csoai/biometrics-ai",
+  "version": "1.0.0",
+  "type": "mcp",
+  "description": "Ethical biometric AI governance and compliance",
+  "tools": [
+    {
+      "name": "biometric_compliance_checker",
+      "description": "Validate against BIPA, GDPR, EU AI Act requirements"
+    },
+    {
+      "name": "facial_recognition_auditor",
+      "description": "Audit for demographic bias and consent compliance"
+    },
+    {
+      "name": "biometric_data_classifier",
+      "description": "Classify data flows and retention compliance"
+    }
+  ]
+}
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq reveal">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about biometric governance</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is biometric AI governance?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Biometric AI governance is the systematic oversight and compliance management of artificial intelligence systems that process biometric data (facial recognition, fingerprints, voice, iris scans). It ensures these systems comply with regulations like BIPA, GDPR, and the EU AI Act while preventing bias, protecting privacy, and maintaining ethical standards.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does the facial recognition auditor detect bias?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        The facial recognition auditor analyzes system performance across demographic groups to identify accuracy disparities. It measures false positive/negative rates by age, gender, and ethnicity, then compares results to industry standards and NIST FRVT benchmarks to detect discrimination patterns.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What regulations does the compliance checker cover?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        The biometric compliance checker validates against BIPA (Biometric Information Privacy Act), GDPR Article 9 (biometric data processing), EU AI Act high-risk classifications, CCPA/CPRA biometric provisions, LGPD Article 5 (sensitive personal data), and emerging state-level biometric laws.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I track biometric data retention and deletion?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes. The biometric data classifier tracks the complete lifecycle of biometric information, including collection, storage, processing, and deletion. It monitors retention policies, alerts when retention periods expire, and verifies destruction compliance with regulatory requirements.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Does this cover voice and fingerprint biometrics?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes. The biometrics-ai MCP covers all biometric modalities including facial recognition, voice biometrics, fingerprints, iris/retina scans, and behavioral biometrics. Each has specific compliance and bias detection requirements that are addressed comprehensively.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How often should I run compliance audits?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        We recommend running compliance audits at least quarterly, or whenever you update your biometric systems, change data retention policies, or expand to new demographics. High-risk applications (law enforcement, border control) should audit monthly or continuously.
+      </div>
+    </div>
+  </section>
+
+  <!-- Related MCPs Section -->
+  <section class="related-mcps reveal">
+    <div class="section-header">
+      <h2>Related MCP Servers</h2>
+      <p>Complementary governance and compliance tools</p>
+    </div>
+    <div class="related-mcps-grid">
+      <div class="related-mcp-card reveal-scale">
+        <h4>AI Governance</h4>
+        <p>ISO 42001 compliance and AI policy enforcement</p>
+        <a href="/mcp/ai-governance.html">Explore →</a>
+      </div>
+      <div class="related-mcp-card reveal-scale">
+        <h4>Data Governance</h4>
+        <p>Data lineage, classification, and privacy compliance</p>
+        <a href="/mcp/data-governance.html">Explore →</a>
+      </div>
+      <div class="related-mcp-card reveal-scale">
+        <h4>AI Auditing</h4>
+        <p>Model audit trails, fairness testing, and explainability</p>
+        <a href="/mcp/ai-auditing.html">Explore →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing reveal">
+    <div class="section-header">
+      <h2>Pricing Plans</h2>
+      <p>Choose the plan that fits your biometric governance needs</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Community</h3>
+        <div class="pricing-price">Free</div>
+        <div class="pricing-period">Perfect for evaluation</div>
+        <ul class="pricing-features">
+          <li>100 compliance checks/day</li>
+          <li>1 AI system</li>
+          <li>Basic bias detection</li>
+          <li>Email support</li>
+        </ul>
+        <button class="pricing-cta">Get Started</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">POPULAR</div>
+        <h3>Professional</h3>
+        <div class="pricing-price">$199</div>
+        <div class="pricing-period">per month</div>
+        <ul class="pricing-features">
+          <li>10K compliance checks/day</li>
+          <li>Unlimited AI systems</li>
+          <li>Advanced bias detection</li>
+          <li>Demographic tracking</li>
+          <li>Custom reports</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="pricing-cta">Start Free Trial</button>
+      </div>
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <div class="pricing-price">$499+</div>
+        <div class="pricing-period">per month</div>
+        <ul class="pricing-features">
+          <li>Unlimited checks</li>
+          <li>Unlimited systems</li>
+          <li>Custom compliance policies</li>
+          <li>Real-time monitoring</li>
+          <li>Dedicated support</li>
+          <li>SLA guarantees</li>
+        </ul>
+        <button class="pricing-cta">Contact Sales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="final-cta reveal">
+    <h2>Ready to Govern Biometric AI?</h2>
+    <p>Deploy biometrics-ai today and ensure your biometric systems meet the highest ethical and compliance standards.</p>
+    <button class="btn-primary">Get Started Free</button>
+  </section>
+
+  <!-- Sticky CTA Bar -->
+  <div class="sticky-bar">
+    <div class="sticky-bar-text">Start governing biometric AI systems today</div>
+    <div class="sticky-bar-buttons">
+      <button class="sticky-btn">Get Started</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/mcp">MCP Servers</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/updates">Updates</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About CSGA</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/compliance">Compliance</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/api-docs">API Docs</a></li>
+            <li><a href="/community">Community</a></li>
+            <li><a href="/support">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 CSGA Global. All rights reserved.</div>
+        <div>Made with governance and ethics at heart</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+    const revealOnScroll = () => {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100;
+
+        if (isVisible && !el.classList.contains('visible')) {
+          el.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+    revealOnScroll();
+
+    // FAQ Toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // Smooth Scroll Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Sticky Bar Dismiss (optional)
+    const stickyBar = document.querySelector('.sticky-bar');
+    if (stickyBar) {
+      // Auto-hide when scrolling to bottom
+      window.addEventListener('scroll', () => {
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (window.scrollY >= scrollHeight - 200) {
+          stickyBar.style.opacity = '0.5';
+        } else {
+          stickyBar.style.opacity = '1';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
