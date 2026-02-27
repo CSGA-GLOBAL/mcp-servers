@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/brave-search",
+  "version": "1.0.0",
+  "description": "Privacy-focused web search with Brave Search API integration for real-time information retrieval and analysis.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "brave-search-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/brave-search"
+  },
+  "keywords": [
+    "mcp",
+    "search",
+    "brave",
+    "web-search",
+    "privacy"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/sentry-monitoring",
+  "version": "1.0.0",
+  "description": "Sentry error monitoring integration for issue tracking, performance monitoring, and release management.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "sentry-monitoring-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/sentry-monitoring"
+  },
+  "keywords": [
+    "mcp",
+    "sentry",
+    "monitoring",
+    "errors",
+    "performance"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

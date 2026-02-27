@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/github-api",
+  "version": "1.0.0",
+  "description": "GitHub API integration for repository management, issue tracking, PR workflows, and CI/CD pipeline monitoring.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "github-api-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/github-api"
+  },
+  "keywords": [
+    "mcp",
+    "github",
+    "api",
+    "repository",
+    "ci-cd"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

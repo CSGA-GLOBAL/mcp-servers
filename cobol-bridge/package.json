@@ -1,0 +1,43 @@
+{
+  "name": "@csga-global/cobol-bridge",
+  "version": "1.0.0",
+  "description": "COBOL-to-AI Bridge MCP Server — Legacy enterprise integration for CICS/IMS mainframes, COBOL copybook parsing, JCL scanning, and VSAM mapping to AI governance APIs",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "cobol-bridge-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@types/node": "^22.12.0"
+  },
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers.git",
+    "directory": "packages/cobol-bridge"
+  },
+  "author": "CSGA Global — Cyber Security Global Alliance",
+  "keywords": [
+    "mcp",
+    "cobol",
+    "mainframe",
+    "cics",
+    "ims",
+    "legacy-integration",
+    "ai-governance"
+  ]
+}

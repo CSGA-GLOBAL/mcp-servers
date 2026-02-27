@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/cloud-security",
+  "version": "1.0.0",
+  "description": "Multi-cloud security posture management with vulnerability scanning, compliance checking, and threat detection.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "cloud-security-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/cloud-security"
+  },
+  "keywords": [
+    "mcp",
+    "security",
+    "cloud-security",
+    "compliance",
+    "vulnerability"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

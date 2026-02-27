@@ -1,0 +1,57 @@
+{
+  "name": "@csga-global/csga-standards",
+  "version": "1.0.0",
+  "description": "CSGA Cyber Security Standards MCP Server - Provides cybersecurity standards, training pathways, and incident response capabilities",
+  "author": "CSGA Global — Cyber Security Global Alliance",
+  "license": "CC0-1.0",
+  "homepage": "https://csga-global.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-standards-server"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "csga-standards-mcp": "dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [
+    "mcp",
+    "cybersecurity",
+    "standards",
+    "csga",
+    "nist",
+    "iso-27001",
+    "cis-controls",
+    "incident-response",
+    "training",
+    "certification"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.7.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

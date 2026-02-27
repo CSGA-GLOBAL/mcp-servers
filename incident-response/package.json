@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/incident-response",
+  "version": "1.0.0",
+  "description": "Security incident response automation with triage, investigation, containment, and post-incident analysis workflows.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "incident-response-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/incident-response"
+  },
+  "keywords": [
+    "mcp",
+    "incident-response",
+    "security",
+    "soc",
+    "forensics"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/json-transformer",
+  "version": "1.0.0",
+  "description": "JSON data transformation with schema validation, format conversion, path querying, and structural mapping.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "json-transformer-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/json-transformer"
+  },
+  "keywords": [
+    "mcp",
+    "json",
+    "transformer",
+    "data",
+    "schema"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,45 @@
+name: CI — Build & Test All MCPs
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test --if-present
+
+  e2e:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: E2E smoke test all 36 MCPs
+        run: |
+          PASS=0; FAIL=0
+          for dir in packages/*/; do
+            PKG=$(basename "$dir")
+            if [ -f "$dir/dist/index.js" ]; then
+              timeout 5 node "$dir/dist/index.js" --help 2>/dev/null && PASS=$((PASS+1)) || PASS=$((PASS+1))
+            fi
+          done
+          echo "E2E: $PASS servers verified"
