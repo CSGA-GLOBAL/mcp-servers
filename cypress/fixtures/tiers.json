@@ -1,0 +1,68 @@
+{
+  "tiers": [
+    {
+      "key": "community",
+      "name": "Community",
+      "monthlyPrice": 0,
+      "annualPrice": 0,
+      "credits": 100,
+      "mcpCount": 3,
+      "email": "free@example.com"
+    },
+    {
+      "key": "starter",
+      "name": "Starter",
+      "monthlyPrice": 79,
+      "annualPrice": 758,
+      "credits": 2500,
+      "mcpCount": 10,
+      "email": "starter@csga.org"
+    },
+    {
+      "key": "professional",
+      "name": "Professional",
+      "monthlyPrice": 199,
+      "annualPrice": 1910,
+      "credits": 10000,
+      "mcpCount": 25,
+      "email": "pro@csga.org"
+    },
+    {
+      "key": "enterprise_sector",
+      "name": "Enterprise Sector",
+      "monthlyPrice": 499,
+      "annualPrice": 4790,
+      "credits": 50000,
+      "mcpCount": 35,
+      "email": "enterprise@csga.org"
+    },
+    {
+      "key": "enterprise_full",
+      "name": "Enterprise Full",
+      "monthlyPrice": 1499,
+      "annualPrice": 14390,
+      "credits": 250000,
+      "mcpCount": 47,
+      "email": "enterprise@csga.org"
+    },
+    {
+      "key": "enterprise_custom",
+      "name": "Enterprise Custom",
+      "monthlyPrice": 2499,
+      "annualPrice": 23990,
+      "credits": -1,
+      "mcpCount": 47,
+      "email": "enterprise@csga.org"
+    }
+  ],
+  "mcpClassification": {
+    "lvp": { "label": "LVP", "monthlyPrice": 9, "annualPrice": 87 },
+    "mvp": { "label": "MVP", "monthlyPrice": 29, "annualPrice": 279 },
+    "hvp": { "label": "HVP", "monthlyPrice": 79, "annualPrice": 759 }
+  },
+  "creditPacks": {
+    "starter": { "credits": 1000, "price": 9 },
+    "professional": { "credits": 5000, "price": 29 },
+    "enterprise": { "credits": 25000, "price": 99 }
+  }
+}

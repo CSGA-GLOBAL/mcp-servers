@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<rect width="1200" height="630" fill="#003366"/>
+<rect x="0" y="0" width="1200" height="6" fill="#0D9488"/>
+<rect x="0" y="624" width="1200" height="6" fill="#CC0000"/>
+<text x="600" y="250" text-anchor="middle" font-family="Arial,sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF">CSGA Global</text>
+<text x="600" y="320" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" fill="#0D9488">Cyber Security Global Alliance</text>
+<text x="600" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="rgba(255,255,255,0.7)">AI Governance · Cybersecurity Standards · MCP Platform</text>
+<path d="M560 470l40 16v24c0 10-40 18-40 18s-40-8-40-18v-24Z" fill="rgba(255,255,255,0.1)" stroke="#C5A572" stroke-width="1.5"/>
+<ellipse cx="560" cy="515" rx="8" ry="5" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+<circle cx="560" cy="515" r="3" fill="#0D9488"/>
+</svg>

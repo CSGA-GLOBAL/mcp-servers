@@ -1,0 +1,2710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>About CSGA Global - Leadership, Mission & Heritage</title>
+ <meta name="description" content="CSGA Global is the commercial arm of the CSOAI Group — developing AI governance standards, cybersecurity solutions, and defence systems across 36 sectors with a 52-article constitutional framework.">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+  :root {
+    --gold: #CC0000;
+    --gold-light: #E63946;
+    --gold-dark: #A30000;
+    --gold-glow: rgba(204, 0, 0, 0.3);
+  }
+
+/* ============================================================================
+ SCROLL REVEAL ANIMATIONS
+ ============================================================================ */
+.reveal {
+ opacity: 0;
+ transform: translateY(40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+}
+.reveal-left {
+ opacity: 0;
+ transform: translateX(-40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible {
+ opacity: 1;
+ transform: translateX(0);
+}
+.reveal-right {
+ opacity: 0;
+ transform: translateX(40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible {
+ opacity: 1;
+ transform: translateX(0);
+}
+.reveal-scale {
+ opacity: 0;
+ transform: scale(0.92);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible {
+ opacity: 1;
+ transform: scale(1);
+}
+/* Stagger children */
+.stagger-children > * {
+ opacity: 0;
+ transform: translateY(30px);
+ transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+/* Section title styling consistent */
+.section-title {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #0F172A;
+ line-height: 1.15;
+ margin-bottom: 16px;
+}
+.section-subtitle {
+ font-size: 1.1rem;
+ color: #475569;
+ max-width: 640px;
+ margin: 0 auto 48px;
+ line-height: 1.65;
+}
+.section-tag {
+ display: inline-block;
+ color: #0058A4;
+ font-size: 0.82rem;
+ font-weight: 700;
+ letter-spacing: 2.5px;
+ text-transform: uppercase;
+ margin-bottom: 12px;
+}
+/* Consistent section padding */
+section, .section {
+ padding: 72px 32px;
+}
+/* Better responsive */
+@media (max-width: 1024px) {
+ .home-showcase-grid,
+ .home-pricing-grid,
+ .home-blog-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-mcps-grid { grid-template-columns: repeat(3, 1fr); }
+ .home-sectors-grid { grid-template-columns: repeat(3, 1fr); }
+ .home-trust-content { grid-template-columns: 1fr; }
+ .home-stats-bar { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+ .home-hero h1 { font-size: 2.5rem; }
+ .home-showcase-grid,
+ .home-pricing-grid,
+ .home-blog-grid { grid-template-columns: 1fr; }
+ .home-mcps-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-sectors-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-stats-bar { grid-template-columns: 1fr; }
+ .nav-bar { display: none; }
+ section, .section { padding: 48px 20px; }
+ .section-title { font-size: 1.8rem; }
+}
+:root {
+ --color-navy-primary: #0058A4;
+ --color-gold-accent: #0058A4;
+ --color-blue-accent: #CC0000;
+ --color-red-cta: #CC0000;
+ --color-white: #FFFFFF;
+ --color-light-gray: #F8FAFC;
+ --color-medium-gray: #475569;
+ --color-dark-gray: #0F172A;
+ --color-gold-light: #DBEAFE;
+ --color-navy-light: #1E40AF;
+ --color-navy-dark: #1E3A5F;
+ --font-primary: Inter, system-ui, -apple-system, sans-serif;
+ --font-secondary: 'Space Grotesk', monospace;
+ --spacing-xs: 0.25rem;
+ --spacing-sm: 0.5rem;
+ --spacing-md: 1rem;
+ --spacing-lg: 1.5rem;
+ --spacing-xl: 2rem;
+ --spacing-2xl: 3rem;
+ --spacing-3xl: 4rem;
+ --spacing-4xl: 6rem;
+ --radius-sm: 0.25rem;
+ --radius-md: 0.5rem;
+ --radius-lg: 1rem;
+ --radius-xl: 1.5rem;
+ --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+ --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+ --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+ --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+ --transition-fast: 150ms ease-in-out;
+ --transition-base: 300ms ease-in-out;
+ --transition-slow: 500ms ease-in-out;
+ --z-dropdown: 10;
+ --z-modal: 100;
+ --z-tooltip: 50;
+ --gradient-gold: linear-gradient(135deg, #CC0000 0%, #E63946 50%, #CC0000 100%);
+ --gradient-navy: linear-gradient(135deg, #0058A4 0%, #1E40AF 100%);
+ --gradient-hero: linear-gradient(135deg, #1E3A5F 0%, #0058A4 40%, #1E40AF 100%);
+ --gradient-blue: linear-gradient(135deg, #3586D7 0%, #0077cc 100%);
+ --gradient-red: linear-gradient(135deg, #CC0000 0%, #ff3333 100%);
+ --glass-bg: rgba(255, 255, 255, 0.05);
+ --glass-border: rgba(255, 255, 255, 0.1);
+ --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+html {
+ scroll-behavior: smooth;
+}
+body {
+ font-family: Inter, system-ui, -apple-system, sans-serif;
+ color: #475569;
+ background-color: #ffffff;
+ line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Space Grotesk', monospace;
+ font-weight: 700;
+ line-height: 1.2;
+ color: #0A1628;
+ margin-bottom: 24px;
+}
+h1 {
+ font-size: 3.5rem;
+ margin-bottom: 36px;
+}
+h2 {
+ font-size: 2.75rem;
+ margin-bottom: 28px;
+}
+h3 {
+ font-size: 2rem;
+ margin-bottom: 24px;
+}
+h4 {
+ font-size: 1.5rem;
+ margin-bottom: 16px;
+}
+p {
+ margin-bottom: 16px;
+ font-size: 1rem;
+}
+a {
+ color: #CC0000;
+ text-decoration: none;
+ transition: color 0.15s ease;
+}
+a:hover {
+ color: #93C5FD;
+}
+.btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ padding: 16px 28px;
+ font-size: 1rem;
+ font-weight: 600;
+ border: 2px solid transparent;
+ border-radius: 12px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ text-decoration: none;
+ gap: 8px;
+}
+.btn-primary {
+ background-color: #CC0000;
+ color: #ffffff;
+}
+.btn-primary:hover {
+ background-color: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.btn-secondary {
+ background-color: #CC0000;
+ color: #ffffff;
+}
+.btn-secondary:hover {
+ background-color: #004080;
+ transform: translateY(-2px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.btn-outline {
+ background-color: transparent;
+ color: #0A1628;
+ border-color: #0A1628;
+}
+.btn-outline:hover {
+ background-color: #F8FAFC;
+}
+.container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 24px;
+}
+.grid {
+ display: grid;
+ gap: 24px;
+}
+.grid-2 {
+ grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+ grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+ grid-template-columns: repeat(4, 1fr);
+}
+.grid-6 {
+ grid-template-columns: repeat(6, 1fr);
+}
+.flex {
+ display: flex;
+}
+.flex-center {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.flex-between {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.flex-col {
+ flex-direction: column;
+}
+.gap-md {
+ gap: 16px;
+}
+.gap-lg {
+ gap: 24px;
+}
+@media (max-width: 1024px) {
+ .grid-4 {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ .grid-6 {
+ grid-template-columns: repeat(3, 1fr);
+ }
+ h1 {
+ font-size: 2.5rem;
+ }
+ h2 {
+ font-size: 2rem;
+ }
+}
+@media (max-width: 768px) {
+ .grid-2, .grid-3, .grid-4, .grid-6 {
+ grid-template-columns: 1fr;
+ }
+ h1 {
+ font-size: 2rem;
+ }
+ h2 {
+ font-size: 1.5rem;
+ }
+ .hide-mobile {
+ display: none;
+ }
+}
+.text-center {
+ text-align: center;
+}
+.text-white {
+ color: #ffffff;
+}
+.text-gold {
+ color: #93C5FD;
+}
+.text-blue {
+ color: #CC0000;
+}
+.bg-navy {
+ background-color: #0A1628;
+}
+.bg-gold {
+ background-color: #93C5FD;
+}
+.bg-light {
+ background-color: #F8FAFC;
+}
+.p-md {
+ padding: 24px;
+}
+.m-auto {
+ margin: auto;
+}
+.no-scroll {
+ overflow: hidden;
+}
+/* ===================== ENHANCED AESTHETICS ===================== */
+/* Smooth scroll reveal animations */
+@keyframes fadeInUp {
+ from { opacity: 0; transform: translateY(30px); }
+ to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+ from { opacity: 0; transform: translateX(-30px); }
+ to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+ from { opacity: 0; transform: translateX(30px); }
+ to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+ from { opacity: 0; transform: scale(0.95); }
+ to { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+ 0% { background-position: -200% 0; }
+ 100% { background-position: 200% 0; }
+}
+@keyframes pulse-glow {
+ 0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.1); }
+ 50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); }
+}
+@keyframes float {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(-8px); }
+}
+.fade-in-up {
+ animation: fadeInUp 0.6s ease-out forwards;
+}
+.fade-in-left {
+ animation: fadeInLeft 0.6s ease-out forwards;
+}
+.fade-in-right {
+ animation: fadeInRight 0.6s ease-out forwards;
+}
+.scale-in {
+ animation: scaleIn 0.5s ease-out forwards;
+}
+/* Staggered animation delays */
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+.delay-4 { animation-delay: 0.4s; opacity: 0; }
+.delay-5 { animation-delay: 0.5s; opacity: 0; }
+/* Glassmorphism card */
+.glass-card {
+ background: rgba(255, 255, 255, 0.06);
+ backdrop-filter: blur(20px);
+ -webkit-backdrop-filter: blur(20px);
+ border: 1px solid rgba(255, 255, 255, 0.1);
+ border-radius: 16px;
+ padding: 36px;
+ transition: all 0.3s ease;
+}
+.glass-card:hover {
+ background: rgba(255, 255, 255, 0.1);
+ border-color: rgba(59, 130, 246, 0.2);
+ transform: translateY(-4px);
+ box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+/* Enhanced card styles */
+.card {
+ background: #ffffff;
+ border-radius: 16px;
+ padding: 36px;
+ transition: all 0.3s ease;
+ border: 1px solid rgba(0, 0, 0, 0.06);
+ position: relative;
+ overflow: hidden;
+}
+.card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 3px;
+ background: var(--gradient-gold);
+ transform: scaleX(0);
+ transform-origin: left;
+ transition: transform 0.3s ease;
+}
+.card:hover {
+ transform: translateY(-6px);
+ box-shadow: 0 24px 48px rgba(10, 22, 40, 0.12);
+ border-color: rgba(255,255,255,0.1);
+}
+.card:hover::before {
+ transform: scaleX(1);
+}
+/* Gradient text effect */
+.gradient-text {
+ background: linear-gradient(135deg, #CC0000 0%, #E63946 50%, #CC0000 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+}
+.gradient-text-blue {
+ background: linear-gradient(135deg, #3586D7 0%, #0077cc 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+}
+/* Section divider with decorative element */
+.section-divider {
+ width: 80px;
+ height: 3px;
+ background: var(--gradient-gold);
+ margin: 24px auto 36px;
+ border-radius: 2px;
+}
+.section-divider-left {
+ margin-left: 0;
+ margin-right: auto;
+}
+/* Enhanced section headings */
+.section-heading {
+ text-align: center;
+ margin-bottom: 48px;
+}
+.section-heading h2 {
+ font-size: 2.75rem;
+ margin-bottom: 8px;
+ position: relative;
+}
+.section-heading p {
+ font-size: 1.15rem;
+ color: rgba(58, 58, 58, 0.8);
+ max-width: 640px;
+ margin: 0 auto 24px;
+}
+.section-heading .tag {
+ display: inline-block;
+ background: rgba(0, 88, 164, 0.1);
+ color: #0058A4;
+ padding: 6px 16px;
+ border-radius: 20px;
+ font-size: 0.8rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1.5px;
+ margin-bottom: 24px;
+}
+/* Icon containers */
+.icon-circle {
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 1.5rem;
+ margin-bottom: 24px;
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0, 88, 164, 0.1));
+ border: 1px solid rgba(255,255,255,0.1);
+ transition: all 0.3s ease;
+}
+.icon-circle-lg {
+ width: 80px;
+ height: 80px;
+ font-size: 2rem;
+}
+.card:hover .icon-circle {
+ background: linear-gradient(135deg, rgba(0, 88, 164, 0.25), rgba(0, 88, 164, 0.2));
+ transform: scale(1.1);
+ box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
+}
+/* Stat counters */
+.stat-item {
+ text-align: center;
+ padding: 28px;
+}
+.stat-number {
+ font-size: 3rem;
+ font-weight: 800;
+ font-family: 'Space Grotesk', monospace;
+ line-height: 1;
+ margin-bottom: 8px;
+ background: var(--gradient-gold);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+}
+.stat-label {
+ font-size: 0.9rem;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ opacity: 0.8;
+}
+/* Improved buttons */
+.btn {
+ position: relative;
+ overflow: hidden;
+}
+.btn::after {
+ content: '';
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ width: 0;
+ height: 0;
+ background: rgba(255, 255, 255, 0.15);
+ border-radius: 50%;
+ transform: translate(-50%, -50%);
+ transition: width 0.6s ease, height 0.6s ease;
+}
+.btn:active::after {
+ width: 300px;
+ height: 300px;
+}
+.btn-primary {
+ background: var(--gradient-red);
+ box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+}
+.btn-primary:hover {
+ box-shadow: 0 8px 25px rgba(204, 0, 0, 0.4);
+}
+.btn-secondary {
+ background: var(--gradient-blue);
+ box-shadow: 0 4px 15px rgba(0, 88, 164, 0.3);
+}
+.btn-secondary:hover {
+ box-shadow: 0 8px 25px rgba(0, 88, 164, 0.4);
+}
+.btn-gold {
+ background: var(--gradient-gold);
+ color: #0A1628;
+ font-weight: 700;
+ box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+.btn-gold:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+ color: #0A1628;
+}
+/* Decorative elements */
+.deco-dots {
+ position: absolute;
+ width: 120px;
+ height: 120px;
+ background-image: radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+ background-size: 12px 12px;
+ pointer-events: none;
+ z-index: 0;
+}
+.deco-line {
+ position: absolute;
+ width: 200px;
+ height: 2px;
+ background: var(--gradient-gold);
+ opacity: 0.2;
+ pointer-events: none;
+}
+/* Feature list styling */
+.feature-list {
+ list-style: none;
+ padding: 0;
+}
+.feature-list li {
+ padding: 8px 0;
+ padding-left: 28px;
+ position: relative;
+ font-size: 0.95rem;
+ color: #475569;
+}
+.feature-list li::before {
+ content: '✓';
+ position: absolute;
+ left: 0;
+ color: #0058A4;
+ font-weight: 700;
+ font-size: 0.9rem;
+}
+/* Badge/tag styling */
+.badge {
+ display: inline-block;
+ padding: 4px 12px;
+ border-radius: 20px;
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+}
+.badge-free {
+ background: rgba(0, 88, 164, 0.1);
+ color: #CC0000;
+}
+.badge-pro {
+ background: rgba(59, 130, 246, 0.1);
+ color: #0058A4;
+}
+.badge-enterprise {
+ background: rgba(204, 0, 0, 0.1);
+ color: #CC0000;
+}
+/* Improved section backgrounds */
+.section-navy {
+ background: var(--gradient-navy);
+ color: #ffffff;
+ position: relative;
+ overflow: hidden;
+}
+.section-navy::before {
+ content: '';
+ position: absolute;
+ top: -50%;
+ right: -20%;
+ width: 600px;
+ height: 600px;
+ background: radial-gradient(circle, rgba(0, 88, 164, 0.06) 0%, transparent 70%);
+ pointer-events: none;
+}
+.section-navy::after {
+ content: '';
+ position: absolute;
+ bottom: -30%;
+ left: -10%;
+ width: 400px;
+ height: 400px;
+ background: radial-gradient(circle, rgba(0, 88, 164, 0.08) 0%, transparent 70%);
+ pointer-events: none;
+}
+.section-light {
+ background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+}
+.section-gradient {
+ background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 50%, #FFFFFF 100%);
+}
+/* Separator line between sections */
+.section-separator {
+ height: 1px;
+ background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+ margin: 0;
+ border: none;
+}
+/* Image enhancements */
+.img-glow {
+ border-radius: 16px;
+ box-shadow: 0 20px 60px rgba(10, 22, 40, 0.2);
+ transition: all 0.3s ease;
+}
+.img-glow:hover {
+ box-shadow: 0 25px 70px rgba(10, 22, 40, 0.3);
+ transform: translateY(-4px);
+}
+/* Responsive text utilities */
+.text-lg { font-size: 1.15rem; line-height: 1.7; }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.text-muted { opacity: 0.7; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+/* Scroll-triggered animation observer */
+.reveal {
+ opacity: 0;
+ transform: translateY(20px);
+ transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+}
+/* V9 Typography & Readability Enhancements */
+body {
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Space Grotesk', monospace;
+ line-height: 1.2;
+ letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; }
+h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); font-weight: 700; }
+p, li, td {
+ font-size: 1.05rem;
+ line-height: 1.75;
+ color: #334155;
+}
+section {
+ padding: clamp(48px, 8vw, 96px) clamp(16px, 4vw, 48px);
+}
+/* Enhanced Card Styles */
+.v9-card {
+ background: #fff;
+ border-radius: 16px;
+ padding: 36px;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+ border: 1px solid rgba(0,88,164,0.08);
+ transition: all 0.3s ease;
+}
+.v9-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 12px 40px rgba(0,88,164,0.12);
+ border-color: rgba(0,88,164,0.15);
+}
+/* Section Title Pattern */
+.section-label {
+ display: inline-block;
+ font-size: 0.78rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ color: #0058A4;
+ margin-bottom: 12px;
+ background: #DBEAFE;
+ padding: 6px 16px;
+ border-radius: 20px;
+}
+.section-title {
+ font-size: clamp(1.8rem, 4vw, 2.6rem);
+ font-weight: 800;
+ color: #0F172A;
+ margin-bottom: 16px;
+ font-family: 'Space Grotesk', monospace;
+}
+.section-subtitle {
+ font-size: 1.15rem;
+ color: #475569;
+ max-width: 680px;
+ margin: 0 auto;
+ line-height: 1.7;
+}
+/* CTA Banner Pattern (BMCC Cyber style) */
+.cta-banner {
+ background: linear-gradient(135deg, #001A3D 0%, #003366 40%, #004080 70%, #002B5C 100%);
+ padding: clamp(48px, 8vw, 80px) clamp(24px, 4vw, 48px);
+ text-align: center;
+ position: relative;
+ overflow: hidden;
+ margin: 0;
+}
+.cta-banner::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+ opacity: 0.6;
+}
+.cta-banner * { position: relative; z-index: 1; }
+.cta-banner h2 {
+ color: #fff;
+ font-size: clamp(1.8rem, 4vw, 2.8rem);
+ font-weight: 800;
+ margin-bottom: 16px;
+ font-family: 'Space Grotesk', monospace;
+ text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.cta-banner p {
+ color: rgba(255,255,255,0.9);
+ font-size: 1.15rem;
+ max-width: 640px;
+ margin: 0 auto 32px;
+ line-height: 1.7;
+}
+.cta-btn {
+ display: inline-block;
+ padding: 16px 40px;
+ background: #CC0000;
+ color: #fff;
+ font-weight: 700;
+ font-size: 1rem;
+ border-radius: 8px;
+ text-decoration: none;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ transition: all 0.3s ease;
+ box-shadow: 0 4px 16px rgba(204,0,0,0.3);
+}
+.cta-btn:hover {
+ background: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 8px 24px rgba(204,0,0,0.4);
+}
+.cta-btn-outline {
+ display: inline-block;
+ padding: 14px 36px;
+ background: transparent;
+ color: #fff;
+ font-weight: 600;
+ font-size: 0.95rem;
+ border-radius: 8px;
+ text-decoration: none;
+ border: 2px solid rgba(255,255,255,0.4);
+ transition: all 0.3s ease;
+ margin-left: 12px;
+}
+.cta-btn-outline:hover {
+ background: rgba(255,255,255,0.1);
+ border-color: #fff;
+}
+/* Stats Row */
+.stats-row {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+ gap: 24px;
+ max-width: 900px;
+ margin: 48px auto 0;
+}
+.stat-item {
+ text-align: center;
+ padding: 20px;
+ background: rgba(255,255,255,0.08);
+ border-radius: 12px;
+ border: 1px solid rgba(255,255,255,0.1);
+}
+.stat-num {
+ font-size: 2.2rem;
+ font-weight: 800;
+ color: #93C5FD;
+ font-family: 'Space Grotesk', monospace;
+ display: block;
+}
+.stat-label {
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.7);
+ margin-top: 4px;
+ display: block;
+}
+/* Form Styles */
+.signup-form {
+ display: flex;
+ gap: 12px;
+ max-width: 500px;
+ margin: 0 auto;
+}
+.signup-form input {
+ flex: 1;
+ padding: 14px 20px;
+ border: 2px solid rgba(255,255,255,0.2);
+ border-radius: 8px;
+ background: rgba(255,255,255,0.1);
+ color: #fff;
+ font-size: 1rem;
+ outline: none;
+}
+.signup-form input::placeholder { color: rgba(255,255,255,0.5); }
+.signup-form input:focus { border-color: #93C5FD; background: rgba(255,255,255,0.15); }
+.signup-form button {
+ padding: 14px 28px;
+ background: #CC0000;
+ color: #fff;
+ font-weight: 700;
+ border: none;
+ border-radius: 8px;
+ cursor: pointer;
+ white-space: nowrap;
+ transition: all 0.2s;
+}
+.signup-form button:hover { background: #AA0000; }
+/* Image CTA Section */
+.img-cta {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ min-height: 400px;
+ overflow: hidden;
+}
+.img-cta-visual {
+ background-size: cover;
+ background-position: center;
+ min-height: 400px;
+}
+.img-cta-content {
+ padding: clamp(32px, 5vw, 64px);
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ background: linear-gradient(135deg, #001A3D, #003366);
+}
+.img-cta-content h2 {
+ color: #fff;
+ font-size: clamp(1.5rem, 3vw, 2.2rem);
+ font-weight: 800;
+ margin-bottom: 16px;
+ font-family: 'Space Grotesk', monospace;
+}
+.img-cta-content p {
+ color: rgba(255,255,255,0.85);
+ font-size: 1.05rem;
+ line-height: 1.7;
+ margin-bottom: 28px;
+}
+@media (max-width: 768px) {
+ .img-cta { grid-template-columns: 1fr; }
+ .img-cta-visual { min-height: 250px; }
+}
+</style>
+ <style>
+ .hero-about {
+ background: linear-gradient(135deg, rgba(10, 22, 40, 0.88), rgba(0, 88, 164, 0.82)),
+ url('assets/media/thought-leader.jpg');
+ background-size: cover;
+ background-position: center top;
+ padding: 100px 20px 80px;
+ text-align: center;
+ color: white;
+ min-height: 480px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ .hero-about-inner { max-width: 800px; margin: 0 auto; }
+ .hero-about h1 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 3.2rem;
+ font-weight: 700;
+ margin-bottom: 18px;
+ text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ }
+ .hero-about .subtitle {
+ font-size: 1.15rem;
+ font-weight: 300;
+ max-width: 650px;
+ margin: 0 auto 30px;
+ color: rgba(255, 255, 255, 0.95);
+ line-height: 1.7;
+ }
+ .hero-stats {
+ display: flex;
+ justify-content: center;
+ gap: 40px;
+ flex-wrap: wrap;
+ margin-top: 10px;
+ }
+ .hero-stat { text-align: center; }
+ .hero-stat .num {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2.2rem;
+ font-weight: 700;
+ color: #CC0000;
+ display: block;
+ }
+ .hero-stat .label {
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.8);
+ margin-top: 4px;
+ }
+ /* Heritage Section */
+ .heritage-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .heritage-inner {
+ max-width: 1100px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: 1fr 380px;
+ gap: 60px;
+ align-items: start;
+ }
+ .heritage-text h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ margin-bottom: 20px;
+ }
+ .heritage-text p {
+ font-size: 1rem;
+ line-height: 1.85;
+ color: #333;
+ margin-bottom: 16px;
+ }
+ .heritage-sidebar {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ border-radius: 16px;
+ padding: 35px 30px;
+ color: white;
+ }
+ .heritage-sidebar h3 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 1.2rem;
+ margin-bottom: 24px;
+ color: #CC0000;
+ }
+ .heritage-sidebar .fact {
+ margin-bottom: 20px;
+ padding-bottom: 20px;
+ border-bottom: 1px solid rgba(255,255,255,0.1);
+ }
+ .heritage-sidebar .fact:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+ .heritage-sidebar .fact-num {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 1.6rem;
+ font-weight: 700;
+ color: #CC0000;
+ }
+ .heritage-sidebar .fact-label {
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.8);
+ margin-top: 2px;
+ }
+ /* Mission & Vision */
+ .mission-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .mission-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ .mission-card {
+ background: white;
+ padding: 40px 35px;
+ border-radius: 16px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+ border-top: 4px solid #0058A4;
+ }
+ .mission-card.vision { border-top-color: #CC0000; }
+ .mission-card h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 1.6rem;
+ color: #0058A4;
+ margin-bottom: 18px;
+ }
+ .mission-card.vision h2 { color: #b8922e; }
+ .mission-card p {
+ font-size: 0.95rem;
+ line-height: 1.8;
+ color: #444;
+ margin-bottom: 14px;
+ }
+ /* Values Section */
+ .values-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .values-header {
+ text-align: center;
+ max-width: 700px;
+ margin: 0 auto 50px;
+ }
+ .values-header h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ margin-bottom: 12px;
+ }
+ .values-header p { color: #666; font-size: 1rem; line-height: 1.6; }
+ .values-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 24px;
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ .value-card {
+ background: #f8f9fa;
+ padding: 28px 24px;
+ border-radius: 14px;
+ border-left: 4px solid #0058A4;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+ .value-card:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+ }
+ .value-card .val-icon {
+ width: 44px;
+ height: 44px;
+ background: linear-gradient(135deg, #A30000, #CC0000);
+ border-radius: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 14px;
+ color: white;
+ font-size: 1.2rem;
+ }
+ .value-card h4 {
+ font-family: 'Space Grotesk', sans-serif;
+ color: #0A1628;
+ font-size: 1.05rem;
+ margin-bottom: 8px;
+ }
+ .value-card p { font-size: 0.88rem; color: #555; line-height: 1.6; }
+ /* Ecosystem Section */
+ .ecosystem-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .ecosystem-content { max-width: 1200px; margin: 0 auto; }
+ .ecosystem-content > h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 12px;
+ }
+ .ecosystem-subtitle {
+ text-align: center;
+ color: #666;
+ font-size: 1rem;
+ max-width: 650px;
+ margin: 0 auto 50px;
+ line-height: 1.6;
+ }
+ .ecosystem-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 24px;
+ }
+ .eco-entity {
+ background: white;
+ padding: 28px 24px;
+ border-radius: 16px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+ border-top: 3px solid #CC0000;
+ transition: transform 0.2s ease;
+ }
+ .eco-entity:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+ .eco-entity .eco-icon {
+ width: 48px;
+ height: 48px;
+ background: linear-gradient(135deg, #A30000, #CC0000);
+ border-radius: 12px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 16px;
+ color: white;
+ font-size: 1.3rem;
+ }
+ .eco-entity h4 {
+ color: #0058A4;
+ margin-bottom: 8px;
+ font-size: 1rem;
+ font-weight: 700;
+ font-family: 'Space Grotesk', sans-serif;
+ }
+ .eco-entity p {
+ font-size: 0.88rem;
+ color: #555;
+ line-height: 1.6;
+ margin-bottom: 12px;
+ }
+ .eco-entity a {
+ color: #0058A4;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 0.85rem;
+ }
+ .eco-entity a:hover { text-decoration: underline; }
+ /* Leadership Section */
+ .team-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .team-content { max-width: 1100px; margin: 0 auto; }
+ .team-content > h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 12px;
+ }
+ .team-subtitle {
+ text-align: center;
+ color: #666;
+ font-size: 1rem;
+ max-width: 600px;
+ margin: 0 auto 50px;
+ }
+ .leadership-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ margin-bottom: 40px;
+ }
+ .advisory-grid {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 24px;
+ margin-bottom: 40px;
+ }
+ .leader-card {
+ background: #f8f9fa;
+ border-radius: 16px;
+ padding: 35px 30px;
+ text-align: center;
+ border-top: 4px solid #0058A4;
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
+ .leader-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+ }
+ .leader-card.secondary { border-top-color: #CC0000; }
+ .leader-card.gold { border-top-color: #CC0000; }
+ .leader-avatar {
+ width: 140px;
+ height: 140px;
+ border-radius: 50%;
+ margin: 0 auto 20px;
+ overflow: hidden;
+ border: 4px solid #0058A4;
+ box-shadow: 0 4px 15px rgba(0,88,164,0.2);
+ }
+ .leader-card.secondary .leader-avatar,
+ .leader-card.gold .leader-avatar { border-color: #CC0000; box-shadow: 0 4px 15px rgba(204,0,0,0.2); }
+ .leader-avatar img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ }
+ .leader-card h3 {
+ color: #0A1628;
+ font-size: 1.3rem;
+ font-family: 'Space Grotesk', sans-serif;
+ margin-bottom: 4px;
+ }
+ .leader-card .role {
+ color: #0058A4;
+ font-weight: 600;
+ font-size: 0.9rem;
+ margin-bottom: 14px;
+ }
+ .leader-card.secondary .role,
+ .leader-card.gold .role { color: #b8922e; }
+ .leader-card .bio {
+ font-size: 0.9rem;
+ color: #555;
+ line-height: 1.7;
+ text-align: left;
+ margin-bottom: 14px;
+ }
+ .leader-card .leader-link {
+ color: #0058A4;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 0.85rem;
+ display: inline-flex;
+ align-items: center;
+ gap: 4px;
+ }
+ .leader-card .leader-link:hover { text-decoration: underline; }
+ .advisory-card {
+ background: #f8f9fa;
+ border-radius: 12px;
+ padding: 24px 18px;
+ text-align: center;
+ border-top: 3px solid #CC0000;
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
+ .advisory-card:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+ }
+ .advisory-avatar {
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ margin: 0 auto 14px;
+ overflow: hidden;
+ border: 3px solid #CC0000;
+ }
+ .advisory-avatar img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ }
+ .advisory-card h4 {
+ color: #0A1628;
+ font-size: 1rem;
+ font-family: 'Space Grotesk', sans-serif;
+ margin-bottom: 4px;
+ }
+ .advisory-card .adv-role {
+ color: #b8922e;
+ font-weight: 600;
+ font-size: 0.8rem;
+ margin-bottom: 8px;
+ }
+ .advisory-card .adv-bio {
+ font-size: 0.8rem;
+ color: #666;
+ line-height: 1.6;
+ }
+ @media (max-width: 768px) {
+ .advisory-grid { grid-template-columns: 1fr 1fr; }
+ .leadership-grid { grid-template-columns: 1fr; }
+ }
+ @media (max-width: 500px) {
+ .advisory-grid { grid-template-columns: 1fr; }
+ }
+ /* Advisory / Council Banner */
+ .council-banner {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ border-radius: 16px;
+ padding: 35px 40px;
+ display: grid;
+ grid-template-columns: 1fr auto;
+ gap: 30px;
+ align-items: center;
+ color: white;
+ }
+ .council-banner h3 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 1.3rem;
+ margin-bottom: 8px;
+ color: #CC0000;
+ }
+ .council-banner p {
+ font-size: 0.92rem;
+ color: rgba(255,255,255,0.85);
+ line-height: 1.6;
+ }
+ .council-banner a {
+ background: #CC0000;
+ color: #0A1628;
+ padding: 12px 28px;
+ border-radius: 10px;
+ text-decoration: none;
+ font-weight: 700;
+ font-size: 0.95rem;
+ white-space: nowrap;
+ transition: all 0.2s ease;
+ }
+ .council-banner a:hover {
+ background: #e8bc6a;
+ transform: translateY(-2px);
+ }
+ /* Timeline */
+ .timeline-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .timeline-content { max-width: 900px; margin: 0 auto; }
+ .timeline-content > h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .timeline { position: relative; padding: 20px 0; }
+ .timeline::before {
+ content: '';
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 3px;
+ height: 100%;
+ background: linear-gradient(to bottom, #0058A4, #CC0000);
+ }
+ .timeline-item {
+ margin-bottom: 50px;
+ width: 48%;
+ position: relative;
+ }
+ .timeline-item:nth-child(odd) {
+ margin-left: 0;
+ text-align: right;
+ padding-right: 4%;
+ }
+ .timeline-item:nth-child(even) {
+ margin-left: 52%;
+ text-align: left;
+ padding-left: 4%;
+ }
+ .timeline-marker {
+ position: absolute;
+ width: 20px;
+ height: 20px;
+ background: #0058A4;
+ border: 3px solid white;
+ border-radius: 50%;
+ left: 50%;
+ transform: translateX(-50%);
+ top: 0;
+ box-shadow: 0 2px 8px rgba(0,88,164,0.3);
+ }
+ .timeline-item:nth-child(odd) .timeline-marker {
+ left: 100%;
+ margin-left: 10px;
+ }
+ .timeline-item:nth-child(even) .timeline-marker {
+ left: 0;
+ margin-left: -10px;
+ }
+ .timeline-content-box {
+ background: white;
+ padding: 25px;
+ border-radius: 16px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ border-left: 3px solid #CC0000;
+ }
+ .timeline-year {
+ font-weight: 700;
+ color: #0058A4;
+ font-size: 1.1rem;
+ margin-bottom: 5px;
+ font-family: 'Space Grotesk', sans-serif;
+ }
+ .timeline-content-box h4 {
+ color: #0A1628;
+ font-size: 0.95rem;
+ margin-bottom: 6px;
+ }
+ .timeline-content-box p {
+ color: #555;
+ font-size: 0.9rem;
+ line-height: 1.6;
+ }
+ /* Governance Section */
+ .governance-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .governance-inner {
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ .governance-inner > h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 12px;
+ }
+ .governance-subtitle {
+ text-align: center;
+ color: #666;
+ font-size: 1rem;
+ max-width: 650px;
+ margin: 0 auto 50px;
+ line-height: 1.6;
+ }
+ .governance-grid {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 24px;
+ }
+ .gov-card {
+ background: #f8f9fa;
+ padding: 30px 28px;
+ border-radius: 14px;
+ border-left: 4px solid #0058A4;
+ }
+ .gov-card h4 {
+ font-family: 'Space Grotesk', sans-serif;
+ color: #0A1628;
+ font-size: 1.05rem;
+ margin-bottom: 10px;
+ }
+ .gov-card p { font-size: 0.9rem; color: #555; line-height: 1.7; }
+ /* CTA */
+ .cta-about-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ text-align: center;
+ color: white;
+ }
+ .cta-about-section h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2.2rem;
+ margin-bottom: 16px;
+ }
+ .cta-about-section > p {
+ font-size: 1.05rem;
+ margin-bottom: 30px;
+ max-width: 550px;
+ margin-left: auto;
+ margin-right: auto;
+ color: rgba(255,255,255,0.9);
+ }
+ .cta-button {
+ background: #CC0000;
+ color: white;
+ padding: 15px 40px;
+ border: none;
+ border-radius: 12px;
+ font-size: 1.05rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ text-decoration: none;
+ display: inline-block;
+ }
+ .cta-button:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ box-shadow: 0 10px 25px rgba(204, 0, 0, 0.3);
+ }
+ @media (max-width: 768px) {
+ .hero-about h1 { font-size: 2.2rem; }
+ .hero-stats { gap: 24px; }
+ .hero-stat .num { font-size: 1.6rem; }
+ .heritage-inner { grid-template-columns: 1fr; }
+ .mission-grid { grid-template-columns: 1fr; }
+ .values-grid { grid-template-columns: 1fr; }
+ .ecosystem-grid { grid-template-columns: 1fr; }
+ .leadership-grid { grid-template-columns: 1fr; }
+ .governance-grid { grid-template-columns: 1fr; }
+ .council-banner { grid-template-columns: 1fr; text-align: center; }
+ .council-banner a { justify-self: center; }
+ .timeline::before { left: 20px; }
+ .timeline-item {
+ width: 100%;
+ margin-left: 0 !important;
+ padding-left: 60px !important;
+ text-align: left !important;
+ padding-right: 0 !important;
+ }
+ .timeline-item:nth-child(odd) .timeline-marker,
+ .timeline-item:nth-child(even) .timeline-marker {
+ left: 20px;
+ margin-left: 0;
+ }
+ .cta-about-section h2 { font-size: 1.8rem; }
+ }
+ </style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/about">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="About CSGA Global - Leadership, Mission & Heritage">
+ <meta property="og:description" content="CSGA Global is the commercial arm of the CSOAI Group — developing AI governance standards, cybersecurity solutions, and defence systems across 36 sectors with a 52-article constitutional framework.">
+ <meta property="og:url" content="https://csga-global.vercel.app/about">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="About CSGA Global - Leadership, Mission & Heritage">
+ <meta name="twitter:description" content="CSGA Global is the commercial arm of the CSOAI Group — developing AI governance standards, cybersecurity solutions, and defence systems across 36 sectors with a 52-article constitutional framework.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"About CSGA Global - Leadership, Mission & Heritage","description":"CSGA Global is the commercial arm of the CSOAI Group \u2014 developing AI governance standards, cybersecurity solutions, and defence systems across 36 sectors with a 52-article constitutional framework.","url":"https://csga-global.vercel.app/about","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+</head>
+<body>
+<style>
+/* ============================================================================
+ 2-BAR HEADER (BMCC Cyber Style)
+ ============================================================================ */
+.header-bar {
+ background: #0058A4;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.header-inner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 14px 32px;
+ max-width: 1440px;
+ margin: 0 auto;
+}
+.logo {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ text-decoration: none;
+ color: #fff;
+}
+.logo-mark {
+ width: 44px;
+ height: 44px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-shrink: 0;
+}
+.logo-mark svg {
+ width: 44px;
+ height: 44px;
+}
+.logo-text {
+ font-size: 1.45rem;
+ font-weight: 700;
+ letter-spacing: -0.3px;
+}
+.logo-sub {
+ font-size: 0.7rem;
+ opacity: 0.85;
+ font-weight: 400;
+ letter-spacing: 0.5px;
+ display: block;
+ margin-top: -2px;
+}
+.header-right {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+}
+.header-btn {
+ padding: 10px 24px;
+ border-radius: 6px;
+ font-weight: 600;
+ font-size: 0.9rem;
+ text-decoration: none;
+ transition: all 0.2s ease;
+ cursor: pointer;
+ border: none;
+}
+.btn-join {
+ background: #CC0000;
+ color: #fff;
+ font-size: 0.88rem;
+ padding: 11px 28px;
+ font-weight: 700;
+ letter-spacing: 0.3px;
+ text-transform: uppercase;
+}
+.btn-join:hover {
+ background: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 6px 20px rgba(204,0,0,0.35);
+}
+.btn-login {
+ background: rgba(255,255,255,0.15);
+ color: #fff;
+ border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-login:hover {
+ background: rgba(255,255,255,0.25);
+}
+/* Nav Bar (2nd bar) */
+.nav-bar {
+ background: #004A8C;
+ border-bottom: 3px solid #CC0000;
+ position: sticky;
+ top: 66px;
+ z-index: 999;
+}
+.nav-inner {
+ display: flex;
+ align-items: center;
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 24px;
+}
+.nav-link {
+ color: #fff;
+ text-decoration: none;
+ padding: 15px 20px;
+ font-weight: 600;
+ font-size: 0.88rem;
+ letter-spacing: 0.2px;
+ transition: all 0.2s ease;
+ position: relative;
+ white-space: nowrap;
+}
+.nav-link:hover {
+ background: rgba(255,255,255,0.12);
+}
+.nav-link.active {
+ background: rgba(255,255,255,0.15);
+}
+/* Dropdown triggers */
+.nav-dropdown {
+ position: relative;
+}
+.nav-dropdown > .nav-link::after {
+ content: '';
+}
+/* Mega Menu Panel */
+.mega-panel {
+ position: absolute;
+ top: 100%;
+ left: 0;
+ min-width: 640px;
+ background: #fff;
+ border-radius: 0 0 12px 12px;
+ box-shadow: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+ padding: 32px 36px;
+ border-top: 3px solid #CC0000;
+ opacity: 0;
+ visibility: hidden;
+ transform: translateY(-4px);
+ transition: all 0.25s ease;
+ z-index: 1000;
+}
+.nav-dropdown:hover .mega-panel {
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0);
+}
+.mega-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 24px;
+}
+.mega-col h5 {
+ color: #0058A4;
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1.2px;
+ margin-bottom: 12px;
+ padding-bottom: 8px;
+ border-bottom: 2px solid #DBEAFE;
+}
+.mega-item {
+ display: block;
+ padding: 8px 0;
+ text-decoration: none;
+ color: #1E293B;
+ transition: all 0.15s ease;
+}
+.mega-item:hover {
+ color: #0058A4;
+ padding-left: 6px;
+}
+.mega-item-title {
+ font-weight: 600;
+ font-size: 0.9rem;
+ display: block;
+}
+.mega-item-sub {
+ font-size: 0.78rem;
+ color: #64748B;
+ display: block;
+ margin-top: 2px;
+}
+/* Hamburger (mobile) */
+.menu-toggle {
+ display: none;
+ background: none;
+ border: none;
+ color: #fff;
+ font-size: 1.5rem;
+ cursor: pointer;
+ padding: 8px;
+}
+@media (max-width: 900px) {
+ .nav-bar {
+ display: none;
+ position: fixed;
+ top: 66px;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: #004A8C;
+ flex-direction: column;
+ overflow-y: auto;
+ padding: 16px;
+ }
+ .nav-bar.active {
+ display: flex;
+ }
+ .nav-inner {
+ flex-direction: column;
+ align-items: stretch;
+ }
+ .mega-panel {
+ position: static;
+ opacity: 1;
+ visibility: visible;
+ transform: none;
+ min-width: auto;
+ background: #003D75;
+ border-radius: 8px;
+ margin-top: 4px;
+ }
+ .mega-grid {
+ grid-template-columns: 1fr;
+ }
+ .mega-col h5 {
+ color: #93C5FD;
+ border-bottom-color: rgba(255,255,255,0.15);
+ }
+ .mega-item { color: #fff; }
+ .mega-item-sub { color: rgba(255,255,255,0.6); }
+ .menu-toggle { display: block; }
+ .header-right .btn-login { display: none; }
+}
+</style>
+
+<div class="header-bar">
+ <div class="header-inner">
+ <a href="/" class="logo">
+ <div class="logo-mark"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0D9488" stroke-width="0.8"/><path d="M24 8l10 4v12c0 6-10 12-10 12S14 30 14 24V12Z" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1"/><line x1="24" y1="13" x2="24" y2="25" stroke="#C5A572" stroke-width="1.2"/><line x1="18" y1="19" x2="30" y2="19" stroke="#C5A572" stroke-width="1.2"/><polygon points="24,12 23,14 25,14" fill="#C5A572"/><path d="M16 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><path d="M28 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><ellipse cx="24" cy="29" rx="4" ry="2.5" fill="#fff" stroke="#fff" stroke-width="0.8"/><circle cx="24" cy="29" r="1.5" fill="#0D9488"/></svg></div>
+ <div>
+ <span class="logo-text">CSGA Global</span>
+ <span class="logo-sub">Cyber Security Global Alliance</span>
+ </div>
+ </a>
+ <div class="header-right">
+ <a href="/dashboard.html" class="header-btn btn-login">Log in</a>
+ <a href="/members.html" class="header-btn btn-join">Join CSGA</a>
+ <button class="menu-toggle" id="menuToggle">&#9776;</button>
+ </div>
+ </div>
+</div>
+
+<nav class="nav-bar" id="navBar">
+ <div class="nav-inner">
+ <a href="/" class="nav-link active">Home</a>
+ <div class="nav-dropdown">
+ <span class="nav-link">Platform</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>MCP Hub</h5>
+ <a href="/catalog.html" class="mega-item">
+ <span class="mega-item-title">MCP Catalog</span>
+ <span class="mega-item-sub">36 model context protocols</span>
+ </a>
+ <a href="/pricing.html" class="mega-item">
+ <span class="mega-item-title">Pricing</span>
+ <span class="mega-item-sub">Free, Pro &amp; Enterprise</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Access</h5>
+ <a href="/dashboard.html" class="mega-item">
+ <span class="mega-item-title">Dashboard</span>
+ <span class="mega-item-sub">Manage your MCPs</span>
+ </a>
+ <a href="/blog/" class="mega-item">
+ <span class="mega-item-title">Blog</span>
+ <span class="mega-item-sub">Latest updates &amp; guides</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Integration</h5>
+ <a href="/cybersecurity.html" class="mega-item">
+ <span class="mega-item-title">Cybersecurity MCPs</span>
+ <span class="mega-item-sub">Threat detection &amp; response</span>
+ </a>
+ <a href="/ai-governance.html" class="mega-item">
+ <span class="mega-item-title">Governance MCPs</span>
+ <span class="mega-item-sub">ISO 42001 compliance</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="nav-dropdown">
+ <span class="nav-link">Solutions</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>Security</h5>
+ <a href="/cybersecurity.html" class="mega-item">
+ <span class="mega-item-title">Cybersecurity</span>
+ <span class="mega-item-sub">Threat prevention &amp; detection</span>
+ </a>
+ <a href="/cyber-defence.html" class="mega-item">
+ <span class="mega-item-title">Cyber Defence</span>
+ <span class="mega-item-sub">Defensive operations</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Governance</h5>
+ <a href="/ai-governance.html" class="mega-item">
+ <span class="mega-item-title">AI Governance</span>
+ <span class="mega-item-sub">ISO 42001 compliance</span>
+ </a>
+ <a href="/csoai-standards.html" class="mega-item">
+ <span class="mega-item-title">CSOAI Standards</span>
+ <span class="mega-item-sub">Industry specifications</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Sectors</h5>
+ <a href="/casa-sectors.html" class="mega-item">
+ <span class="mega-item-title">CASA Sectors</span>
+ <span class="mega-item-sub">Industry-specific solutions</span>
+ </a>
+ <a href="/tso-csrt.html" class="mega-item">
+ <span class="mega-item-title">TSO-CSRT</span>
+ <span class="mega-item-sub">Threat simulation &amp; ops</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="nav-dropdown">
+ <span class="nav-link">Learn</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>Courses</h5>
+ <a href="/training.html" class="mega-item">
+ <span class="mega-item-title">Training &amp; MOOCs</span>
+ <span class="mega-item-sub">36 free courses</span>
+ </a>
+ <a href="/certification.html" class="mega-item">
+ <span class="mega-item-title">Certifications</span>
+ <span class="mega-item-sub">6 professional tracks</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Programs</h5>
+ <a href="/education.html" class="mega-item">
+ <span class="mega-item-title">Education</span>
+ <span class="mega-item-sub">Academic programs</span>
+ </a>
+ <a href="/programs.html" class="mega-item">
+ <span class="mega-item-title">Programs</span>
+ <span class="mega-item-sub">Specialized tracks</span>
+ </a>
+ <a href="/veterans.html" class="mega-item">
+ <span class="mega-item-title">Veterans Cyber Careers</span>
+ <span class="mega-item-sub">Free training for veterans</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Community</h5>
+ <a href="/events.html" class="mega-item">
+ <span class="mega-item-title">Events</span>
+ <span class="mega-item-sub">Conferences &amp; workshops</span>
+ </a>
+ <a href="/research.html" class="mega-item">
+ <span class="mega-item-title">Research</span>
+ <span class="mega-item-sub">CSGA AI Research Institute</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <a href="/global-council.html" class="nav-link" style="color:#CC0000;font-weight:700;">Global Council</a>
+ <a href="/about.html" class="nav-link">About</a>
+ <a href="/partners.html" class="nav-link">Partners</a>
+ <a href="/contact.html" class="nav-link">Contact</a>
+ </div>
+</nav>
+<script>
+document.getElementById('menuToggle').addEventListener('click', function() {
+ document.getElementById('navBar').classList.toggle('active');
+});
+</script>
+
+<section class="hero-about">
+ <div class="hero-about-inner">
+ <h1>About CSGA Global</h1>
+ <p class="subtitle">The commercial arm of the CSOAI Group &mdash; delivering AI governance standards, cybersecurity solutions, and defence-grade compliance across 36 industry sectors worldwide.</p>
+ <div class="hero-stats">
+ <div class="hero-stat"><span class="num">52</span><span class="label">Constitutional Articles</span></div>
+ <div class="hero-stat"><span class="num">17</span><span class="label">Global Crosswalks</span></div>
+ <div class="hero-stat"><span class="num">36</span><span class="label">Industry Sectors</span></div>
+ <div class="hero-stat"><span class="num">13</span><span class="label">MCP Servers</span></div>
+ <div class="hero-stat"><span class="num">8</span><span class="label">Production Sites</span></div>
+ </div>
+ </div>
+</section>
+
+<section class="heritage-section">
+ <div class="heritage-inner">
+ <div class="heritage-text">
+ <h2>Our Heritage &amp; Origins</h2>
+ <p>CSGA Global was founded on a simple but urgent premise: as AI systems become deeply embedded in critical infrastructure, governance cannot be an afterthought. It must be constitutional &mdash; principled, enforceable, and internationally portable.</p>
+ <p>Born from the convergence of cybersecurity expertise and AI ethics research, the CSOAI Group set out to build not just another compliance checklist, but a living constitutional framework that bridges the gap between technical implementation and regulatory obligation across jurisdictions.</p>
+ <p>Today, our 52-article constitutional framework &mdash; mapped to 17 international standards including ISO 42001, NIST AI RMF, the EU AI Act, and NATO STANAG protocols &mdash; serves as the foundation for organisations seeking responsible AI adoption at scale.</p>
+ <p>From healthcare and financial services to defence and critical national infrastructure, CSGA Global provides the standards, platforms, certifications, and human expertise that make trustworthy AI a reality rather than an aspiration.</p>
+ </div>
+ <div class="heritage-sidebar">
+ <h3>Key Facts</h3>
+ <div class="fact"><div class="fact-num">12,847+</div><div class="fact-label">Professionals on Platform</div></div>
+ <div class="fact"><div class="fact-num">500+</div><div class="fact-label">Hours of MOOC Content</div></div>
+ <div class="fact"><div class="fact-num">5</div><div class="fact-label">Five Eyes Nations Served</div></div>
+ <div class="fact"><div class="fact-num">4-Tier</div><div class="fact-label">CASA Certification Levels</div></div>
+ <div class="fact"><div class="fact-num">36</div><div class="fact-label">MOOC Programmes</div></div>
+ </div>
+ </div>
+</section>
+
+<section class="mission-section">
+ <div class="mission-grid">
+ <div class="mission-card">
+ <h2>Our Mission</h2>
+ <p>To establish the CSOAI constitutional framework as the definitive standard for ethical, effective AI governance &mdash; enabling organisations across 36 industry sectors to deploy AI systems with confidence, accountability, and full regulatory alignment.</p>
+ <p>We achieve this through a comprehensive ecosystem of standards, platforms, education, and professional services that translate constitutional principles into practical, auditable implementation.</p>
+ </div>
+ <div class="mission-card vision">
+ <h2>Our Vision</h2>
+ <p>A future where AI systems operate in genuine cognitive symbiosis with human decision-makers &mdash; where cybersecurity is proactive rather than reactive, and technological advancement is guided by constitutional principles of safety, accountability, and transparency.</p>
+ <p>Through our MCP servers, CASA certification programme, and defence-grade compliance tools, CSGA Global is already delivering this vision to organisations across the Five Eyes alliance and beyond.</p>
+ </div>
+ </div>
+</section>
+
+<section class="values-section">
+ <div class="values-header">
+ <h2>Core Values</h2>
+ <p>The principles that guide every standard we write, every platform we build, and every certification we issue.</p>
+ </div>
+ <div class="values-grid">
+ <div class="value-card">
+ <div class="val-icon">&#9878;</div>
+ <h4>Constitutional Integrity</h4>
+ <p>Every governance decision rooted in principled, auditable frameworks that withstand regulatory scrutiny across jurisdictions.</p>
+ </div>
+ <div class="value-card">
+ <div class="val-icon">&#9733;</div>
+ <h4>Technical Excellence</h4>
+ <p>Rigorous standards and deep domain expertise ensuring our platforms and certifications meet the highest technical benchmarks.</p>
+ </div>
+ <div class="value-card">
+ <div class="val-icon">&#9851;</div>
+ <h4>Responsible Innovation</h4>
+ <p>Advancing AI capabilities while maintaining unwavering commitment to safety, ethics, and societal benefit.</p>
+ </div>
+ <div class="value-card">
+ <div class="val-icon">&#9741;</div>
+ <h4>Allied Collaboration</h4>
+ <p>Working across Five Eyes nations, NATO partners, and international bodies to build interoperable governance standards.</p>
+ </div>
+ <div class="value-card">
+ <div class="val-icon">&#9881;</div>
+ <h4>Operational Transparency</h4>
+ <p>Clear, honest communication about capabilities, limitations, and the real-world impact of our AI governance solutions.</p>
+ </div>
+ <div class="value-card">
+ <div class="val-icon">&#9889;</div>
+ <h4>Defence-Grade Security</h4>
+ <p>Treating every deployment with the rigour and threat awareness demanded by national security and critical infrastructure protection.</p>
+ </div>
+ </div>
+</section>
+
+<section class="ecosystem-section">
+ <div class="ecosystem-content">
+ <h2>The CSOAI Group Ecosystem</h2>
+ <p class="ecosystem-subtitle">A comprehensive, integrated ecosystem of standards, platforms, and services delivering constitutional AI governance at scale.</p>
+ <div class="ecosystem-grid">
+ <div class="eco-entity">
+ <div class="eco-icon">&#9733;</div>
+ <h4>CSGA Global</h4>
+ <p>The commercial arm delivering AI governance solutions, cybersecurity services, and compliance tooling to organisations across 36 industry sectors.</p>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#9878;</div>
+ <h4>CSOAI Standards</h4>
+ <p>The 52-article constitutional framework with 17 global regulatory crosswalks including ISO 42001, NIST AI RMF, EU AI Act, and NATO protocols.</p>
+ <a href="csoai-standards">View Standards &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#128218;</div>
+ <h4>CSGA AI Research Institute</h4>
+ <p>Advanced research in AI safety, cognitive symbiosis, and the intersection of machine learning with constitutional governance principles.</p>
+ <a href="research">View Research &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#9881;</div>
+ <h4>OneOS Platform</h4>
+ <p>The integrated learning and operations platform serving 12,847+ professionals with 36 MOOC programmes, certification tracking, and compliance dashboards.</p>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#127942;</div>
+ <h4>CASA Certification</h4>
+ <p>4-tier Certified AI Safety Analyst programme accrediting professionals from Foundation through to Lead Auditor level across all 36 sectors.</p>
+ <a href="certification">View Certification &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#128268;</div>
+ <h4>MCP Marketplace</h4>
+ <p>13 machine-readable compliance protocol servers enabling automated AI governance assessment, policy enforcement, and real-time compliance monitoring.</p>
+ <a href="pricing">View MCP Servers &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#128737;</div>
+ <h4>TSO-CSRT</h4>
+ <p>Threat and Security Operations &mdash; Cyber Security Response Team providing 24/7 threat intelligence, incident response, and security operations for CSOAI-certified organisations.</p>
+ <a href="tso-csrt">View TSO-CSRT &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#127963;</div>
+ <h4>Defence Systems</h4>
+ <p>DefenceOS and military AI governance solutions supporting NATO-aligned defence forces with classified-environment compliance and operational safety assurance.</p>
+ <a href="cyber-defence">View Defence &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#127891;</div>
+ <h4>BMCC Cyber</h4>
+ <p>Cybersecurity education and training provider delivering accredited programmes, workforce development, and professional upskilling pathways.</p>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#128506;</div>
+ <h4>17 Framework Crosswalks</h4>
+ <p>Comprehensive regulatory mapping to ISO 42001, NIST AI RMF, EU AI Act, NATO STANAG, GDPR, SOC 2, HIPAA, and 10 additional international frameworks.</p>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#127758;</div>
+ <h4>36 Sector Implementations</h4>
+ <p>Sector-specific AI governance implementations spanning healthcare, finance, defence, energy, transport, government, education, and critical national infrastructure.</p>
+ <a href="casa-sectors">View Sectors &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#128187;</div>
+ <h4>8 Production Sites</h4>
+ <p>The live CSOAI Group digital ecosystem including CSGA Global, OneOS, BMCC Cyber, and sector-specific portals serving the global community.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="team-section">
+ <div class="team-content">
+ <h2>Leadership</h2>
+ <p class="team-subtitle">The founding team bringing together AI governance, cybersecurity, and constitutional framework expertise.</p>
+ <div class="leadership-grid">
+ <div class="leader-card">
+ <div class="leader-avatar">
+ <img src="assets/team/csga-president.jpg" alt="Nick Templeman" loading="lazy">
+ </div>
+ <h3>Nick Templeman</h3>
+ <div class="role">Founder &amp; Chief Executive Officer</div>
+ <div class="bio">Nick is the architect of the CSOAI constitutional framework and the driving force behind CSGA Global&rsquo;s mission to make AI governance practical, enforceable, and internationally portable. With a background spanning AI research, cognitive symbiosis, and organisational transformation, he leads the strategic vision for the CSOAI Group ecosystem &mdash; from the 52-article framework and 17 global crosswalks to the MCP Marketplace and CASA certification programme.</div>
+ </div>
+ <div class="leader-card secondary">
+ <div class="leader-avatar">
+ <img src="assets/team/james-castle-headshot.jpg" alt="James Castle" loading="lazy">
+ </div>
+ <h3>James Castle</h3>
+ <div class="role">Co-Founder &amp; Chief Security Architect</div>
+ <div class="bio">James brings deep cybersecurity and defence expertise to CSGA Global, overseeing security architecture, threat intelligence, and the technical integrity of all CSOAI-certified systems and MCP deployments. His work ensures that every standard, platform, and certification meets defence-grade security requirements across Five Eyes jurisdictions.</div>
+ <a href="https://jamescastle.ca" target="_blank" rel="noopener" class="leader-link">jamescastle.ca &rarr;</a>
+ </div>
+ </div>
+ <h3 style="text-align:center; font-family: 'Space Grotesk', sans-serif; color: #0A1628; font-size: 1.6rem; margin-bottom: 8px;">Advisory Board &amp; Senior Associates</h3>
+ <p style="text-align:center; color: #666; max-width: 600px; margin: 0 auto 30px; font-size: 0.95rem;">Subject-matter experts guiding CSGA Global&rsquo;s strategic direction across cybersecurity, AI governance, and international defence.</p>
+ <div class="advisory-grid">
+ <div class="advisory-card">
+ <div class="advisory-avatar">
+ <img src="assets/team/dr-chris-golden.jpg" alt="Dr. Chris Golden" loading="lazy">
+ </div>
+ <h4>Dr. Chris Golden</h4>
+ <div class="adv-role">Chief Science Officer</div>
+ <div class="adv-bio">AI research &amp; cognitive symbiosis lead, driving the scientific foundations of the CSOAI framework.</div>
+ </div>
+ <div class="advisory-card">
+ <div class="advisory-avatar">
+ <img src="assets/team/samir-azizi.jpg" alt="Samir Azizi" loading="lazy">
+ </div>
+ <h4>Samir Azizi</h4>
+ <div class="adv-role">Director of Operations</div>
+ <div class="adv-bio">Operational strategy &amp; global partnership development across Five Eyes and emerging markets.</div>
+ </div>
+ <div class="advisory-card">
+ <div class="advisory-avatar">
+ <img src="assets/team/terry-temple.jpg" alt="Terry Temple" loading="lazy">
+ </div>
+ <h4>Terry Temple</h4>
+ <div class="adv-role">Senior Defence Advisor</div>
+ <div class="adv-bio">Defence intelligence &amp; NATO standards alignment for CSOAI compliance architecture.</div>
+ </div>
+ <div class="advisory-card">
+ <div class="advisory-avatar">
+ <img src="assets/team/dr-eyal-pinko.jpg" alt="Dr. Eyal Pinko" loading="lazy">
+ </div>
+ <h4>Dr. Eyal Pinko</h4>
+ <div class="adv-role">Cyber Intelligence Advisor</div>
+ <div class="adv-bio">Former Israeli Navy intelligence officer specialising in cyber threat analysis &amp; national security AI governance.</div>
+ </div>
+ </div>
+ <div class="council-banner">
+ <div>
+ <h3>CSGA Global Council</h3>
+ <p>Our advisory council brings together senior leaders from cybersecurity, AI governance, defence, and international standards bodies to guide strategic direction and ensure the CSOAI framework remains at the forefront of responsible AI development.</p>
+ </div>
+ <a href="global-council">View Council &rarr;</a>
+ </div>
+ </div>
+</section>
+
+<section class="timeline-section">
+ <div class="timeline-content">
+ <h2>Our Journey</h2>
+ <div class="timeline">
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2022 &mdash; Foundation</div>
+ <h4>CSOAI Group Established</h4>
+ <p>Founded to bridge the critical gap between AI governance and cybersecurity standards, recognising that constitutional principles must underpin all AI deployment.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2023 &mdash; Framework</div>
+ <h4>Constitutional Framework Authored</h4>
+ <p>52-article CSOAI constitutional framework completed with 17 global regulatory crosswalks mapping to ISO 42001, NIST AI RMF, EU AI Act, and NATO STANAG protocols.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2024 &mdash; Platform Launch</div>
+ <h4>OneOS &amp; CASA Certification</h4>
+ <p>OneOS learning platform launched with 36 MOOC programmes. CASA certification programme rolled out across all 36 industry sectors with 4-tier accreditation pathway.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2024 &mdash; Scale</div>
+ <h4>MCP Marketplace &amp; Ecosystem Growth</h4>
+ <p>13 MCP servers deployed for automated compliance. 8 production sites launched. Platform surpasses 12,847 active professionals across multiple global markets.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2025 &mdash; Defence &amp; Research</div>
+ <h4>DefenceOS &amp; AI Research Institute</h4>
+ <p>Expansion into defence with DefenceOS for NATO-aligned forces. CSGA AI Research Institute established for advanced AI safety research. Partner certification programmes launched across Five Eyes nations.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker" style="background: #CC0000;"></div>
+ <div class="timeline-content-box" style="border-left-color: #CC0000;">
+ <div class="timeline-year" style="color: #CC0000;">2026 &mdash; Future</div>
+ <h4>Global Expansion &amp; Next-Gen Standards</h4>
+ <p>Scaling to additional allied nations, next-generation AI safety standards, expanded veterans transition programme, and deepening academic &amp; defence partnerships.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="governance-section">
+ <div class="governance-inner">
+ <h2>Governance &amp; Transparency</h2>
+ <p class="governance-subtitle">How we hold ourselves accountable to the same constitutional principles we advocate for our clients.</p>
+ <div class="governance-grid">
+ <div class="gov-card">
+ <h4>Constitutional Compliance</h4>
+ <p>All CSGA Global operations are governed by our own 52-article framework. We undergo the same compliance assessments we deliver to clients, ensuring our standards are battle-tested and practical.</p>
+ </div>
+ <div class="gov-card">
+ <h4>Independent Oversight</h4>
+ <p>The CSGA Global Council provides independent strategic oversight, reviewing framework updates, certification standards, and organisational governance on a quarterly basis.</p>
+ </div>
+ <div class="gov-card">
+ <h4>Regulatory Alignment</h4>
+ <p>Continuous monitoring and mapping to 17 international regulatory frameworks ensures our standards evolve with the global regulatory landscape, from the EU AI Act to NATO defence protocols.</p>
+ </div>
+ <div class="gov-card">
+ <h4>Open Research</h4>
+ <p>The CSGA AI Research Institute publishes its findings openly, contributing to the global body of knowledge on AI safety, cognitive symbiosis, and constitutional governance principles.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="cta-about-section">
+ <h2>Join the Constitutional AI Movement</h2>
+ <p style="font-size: 1.05rem; margin-bottom: 30px; max-width: 580px; margin-left: auto; margin-right: auto; color: rgba(255,255,255,0.9);">12,847+ professionals across 36 sectors already trust CSGA Global for AI governance standards, cybersecurity solutions, and professional certification.</p>
+ <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+ <a href="members" class="cta-button" style="text-decoration: none;">Become a Member</a>
+ <a href="education" style="background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: white; padding: 15px 36px; border-radius: 12px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.2s ease;">Explore Education</a>
+ <a href="contact" style="border: 2px solid white; color: white; padding: 15px 36px; border-radius: 12px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.2s ease;">Contact Us</a>
+ </div>
+</section>
+<style>
+footer {
+ background-color: #0A1628;
+ color: #ffffff;
+ padding: 72px 24px 36px;
+ margin-top: 72px;
+}
+.footer-container {
+ max-width: 1400px;
+ margin: 0 auto;
+}
+.footer-grid {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 36px;
+ margin-bottom: 48px;
+}
+.footer-column h4 {
+ color: #93C5FD;
+ font-size: 0.9rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin-bottom: 24px;
+}
+.footer-column-brand {
+ grid-column: span 1;
+}
+.footer-logo {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ margin-bottom: 24px;
+}
+.footer-logo-icon {
+ width: 40px;
+ height: 40px;
+ background: linear-gradient(135deg, #fff, #DBEAFE);
+ border-radius: 12px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 900;
+ font-size: 1.2rem;
+}
+.footer-logo-text {
+ font-size: 1.2rem;
+ font-weight: 700;
+}
+.footer-desc {
+ font-size: 0.9rem;
+ color: rgba(255, 255, 255, 0.8);
+ margin-bottom: 24px;
+ line-height: 1.6;
+}
+.footer-social {
+ display: flex;
+ gap: 16px;
+ margin-bottom: 24px;
+}
+.social-icon {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ width: 36px;
+ height: 36px;
+ background-color: rgba(255,255,255,0.1);
+ border-radius: 12px;
+ color: #93C5FD;
+ text-decoration: none;
+ transition: all 0.15s ease;
+}
+.social-icon:hover {
+ background-color: #93C5FD;
+ color: #0A1628;
+ transform: translateY(-2px);
+}
+.footer-link {
+ display: block;
+ color: rgba(255, 255, 255, 0.8);
+ text-decoration: none;
+ margin-bottom: 16px;
+ transition: all 0.15s ease;
+ font-size: 0.95rem;
+}
+.footer-link:hover {
+ color: #93C5FD;
+ padding-left: 8px;
+}
+.ecosystem-bar {
+ border-top: 1px solid rgba(59, 130, 246, 0.2);
+ border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+ padding: 36px 0;
+ margin-bottom: 36px;
+}
+.ecosystem-title {
+ color: #93C5FD;
+ font-size: 0.85rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin-bottom: 24px;
+}
+.ecosystem-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ gap: 24px;
+}
+.ecosystem-item {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ padding: 16px;
+ background-color: rgba(0, 88, 164, 0.1);
+ border-radius: 12px;
+ text-decoration: none;
+ color: #ffffff;
+ transition: all 0.15s ease;
+ border-left: 3px solid transparent;
+}
+.ecosystem-item:hover {
+ background-color: rgba(255,255,255,0.1);
+ border-left-color: #93C5FD;
+ transform: translateX(4px);
+}
+.ecosystem-name {
+ font-size: 0.9rem;
+ font-weight: 600;
+}
+.ecosystem-icon {
+ font-size: 1.2rem;
+}
+.footer-bottom {
+ border-top: 1px solid rgba(59, 130, 246, 0.2);
+ padding-top: 36px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ gap: 24px;
+}
+.footer-partners {
+ border-top: 1px solid rgba(59, 130, 246, 0.2);
+ padding: 30px 0;
+ margin-bottom: 30px;
+}
+.footer-partners-title {
+ color: #93C5FD;
+ font-size: 0.8rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin-bottom: 20px;
+ text-align: center;
+}
+.footer-partners-row {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 32px;
+ flex-wrap: wrap;
+}
+.footer-partner-logo {
+ height: 36px;
+ width: auto;
+ opacity: 0.65;
+ filter: brightness(0) invert(1);
+ transition: opacity 0.3s;
+}
+.footer-partner-logo:hover {
+ opacity: 1;
+}
+.footer-accreditations {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 24px;
+ flex-wrap: wrap;
+ padding: 20px 0 0;
+}
+.footer-accred-badge {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ padding: 6px 14px;
+ background: rgba(204, 0, 0, 0.1);
+ border: 1px solid rgba(204, 0, 0, 0.25);
+ border-radius: 8px;
+ font-size: 0.78rem;
+ color: #CC0000;
+ font-weight: 600;
+}
+.footer-accred-badge img {
+ height: 22px;
+ width: auto;
+ border-radius: 3px;
+}
+.footer-bottom-text {
+ font-size: 0.9rem;
+ color: rgba(255, 255, 255, 0.7);
+}
+.footer-brand-tag {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ font-size: 0.85rem;
+ color: #93C5FD;
+ font-weight: 600;
+}
+@media (max-width: 1024px) {
+ .footer-grid {
+ grid-template-columns: repeat(3, 1fr);
+ gap: 28px;
+ }
+ .footer-column-brand {
+ grid-column: span 1;
+ }
+}
+@media (max-width: 768px) {
+ .footer-grid {
+ grid-template-columns: repeat(2, 1fr);
+ gap: 24px;
+ }
+ .ecosystem-grid {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ .footer-bottom {
+ flex-direction: column;
+ text-align: center;
+ }
+ footer {
+ padding: 36px 16px 24px;
+ }
+}
+</style>
+<footer>
+ <div class="footer-container">
+ <div class="ecosystem-bar">
+ <div class="ecosystem-title">CSOAI Ecosystem - 14 Global Sites</div>
+ <div class="ecosystem-grid">
+ <a href="https://www.csga.global" class="ecosystem-item">
+ <span class="ecosystem-icon">🌐</span>
+ <span class="ecosystem-name">CSGA Global</span>
+ </a>
+ <a href="https://www.csoai.org" class="ecosystem-item">
+ <span class="ecosystem-icon">⚡</span>
+ <span class="ecosystem-name">CSOAI</span>
+ </a>
+ <a href="https://oneos-zeta.vercel.app" class="ecosystem-item">
+ <span class="ecosystem-icon">💻</span>
+ <span class="ecosystem-name">OneOS</span>
+ </a>
+ <a href="https://www.casa.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">🏛️</span>
+ <span class="ecosystem-name">CASA</span>
+ </a>
+ <a href="https://www.bmcc-cyber.com" class="ecosystem-item">
+ <span class="ecosystem-icon">🛡️</span>
+ <span class="ecosystem-name">BMCC Cyber</span>
+ </a>
+ <a href="https://www.terranova.ai" class="ecosystem-item">
+ <span class="ecosystem-icon">🔮</span>
+ <span class="ecosystem-name">Terranova</span>
+ </a>
+ <a href="https://www.aiguard.io" class="ecosystem-item">
+ <span class="ecosystem-icon">🤖</span>
+ <span class="ecosystem-name">AIGuard</span>
+ </a>
+ <a href="https://www.csoai-research.org" class="ecosystem-item">
+ <span class="ecosystem-icon">🔬</span>
+ <span class="ecosystem-name">Research</span>
+ </a>
+ <a href="https://www.defenceos.io" class="ecosystem-item">
+ <span class="ecosystem-icon">CG</span>
+ <span class="ecosystem-name">DefenceOS</span>
+ </a>
+ <a href="https://www.ca30.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">📋</span>
+ <span class="ecosystem-name">CA-30</span>
+ </a>
+ <a href="https://www.dsrb.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">🔐</span>
+ <span class="ecosystem-name">DSRB</span>
+ </a>
+ <a href="https://www.cobol-bridge.io" class="ecosystem-item">
+ <span class="ecosystem-icon">🌉</span>
+ <span class="ecosystem-name">COBOL Bridge</span>
+ </a>
+ <a href="https://www.tso-csrt.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">🎯</span>
+ <span class="ecosystem-name">TSO-CSRT</span>
+ </a>
+ <a href="https://www.csoai-standards.org" class="ecosystem-item">
+ <span class="ecosystem-icon">✅</span>
+ <span class="ecosystem-name">Standards</span>
+ </a>
+ </div>
+ </div>
+ <div class="footer-grid">
+ <div class="footer-column footer-column-brand">
+ <div class="footer-logo">
+ <div class="footer-logo-icon"><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="none" stroke="#0D9488" stroke-width="1.5"/><circle cx="20" cy="20" r="16" fill="none" stroke="#C5A572" stroke-width="0.6"/><path d="M20 6l8 3.5v10c0 5-8 10-8 10s-8-5-8-10v-10Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="0.8"/><line x1="20" y1="10" x2="20" y2="21" stroke="#C5A572" stroke-width="1"/><line x1="15" y1="15" x2="25" y2="15" stroke="#C5A572" stroke-width="1"/><polygon points="20,9.5 19,11 21,11" fill="#C5A572"/><path d="M13 18q2 1.5 4 0" stroke="#C5A572" stroke-width="0.7" fill="none"/><path d="M23 18q2 1.5 4 0" stroke="#C5A572" stroke-width="0.7" fill="none"/><ellipse cx="20" cy="24" rx="3.5" ry="2" fill="#fff" stroke="#1F2937" stroke-width="0.6"/><circle cx="20" cy="24" r="1.2" fill="#0D9488"/></svg></div>
+ <span class="footer-logo-text">CSGA Global</span>
+ </div>
+ <p class="footer-desc">Cyber Security Global Alliance — Advancing AI governance, cybersecurity, and secure human-AI systems.</p>
+ <div class="footer-social">
+ <a href="#" class="social-icon" title="LinkedIn">in</a>
+ <a href="#" class="social-icon" title="Twitter">𝕏</a>
+ <a href="#" class="social-icon" title="GitHub">◆</a>
+ <a href="#" class="social-icon" title="YouTube">▶</a>
+ </div>
+ </div>
+ <div class="footer-column">
+ <h4>Platform</h4>
+ <a href="/catalog.html" class="footer-link">MCP Catalog</a>
+ <a href="/pricing.html" class="footer-link">Pricing</a>
+ <a href="/dashboard.html" class="footer-link">Dashboard</a>
+ <a href="/blog/" class="footer-link">Blog</a>
+ <a href="/catalog.html" class="footer-link">MCP Catalog</a>
+ <a href="/contact.html" class="footer-link">Contact</a>
+ </div>
+ <div class="footer-column">
+ <h4>Solutions</h4>
+ <a href="/cybersecurity.html" class="footer-link">Cybersecurity</a>
+ <a href="/cyber-defence.html" class="footer-link">Cyber Defence</a>
+ <a href="/ai-governance.html" class="footer-link">AI Governance</a>
+ <a href="/cyber-defence.html" class="footer-link">Defence</a>
+ <a href="/tso-csrt.html" class="footer-link">TSO-CSRT</a>
+ </div>
+ <div class="footer-column">
+ <h4>Resources</h4>
+ <a href="/research.html" class="footer-link">Research</a>
+ <a href="/events.html" class="footer-link">Events</a>
+ <a href="/education.html" class="footer-link">Education</a>
+ <a href="/veterans.html" class="footer-link">Veterans Careers</a>
+ <a href="/csoai-standards.html" class="footer-link">Standards</a>
+ <a href="/partners.html" class="footer-link">Partners</a>
+ </div>
+ <div class="footer-column">
+ <h4>Organisation</h4>
+ <a href="/about.html" class="footer-link">About CSGA</a>
+ <a href="/global-council.html" class="footer-link">Global Council</a>
+ <a href="/members.html" class="footer-link">Members</a>
+ <a href="/casa-sectors.html" class="footer-link">CASA Sectors</a>
+ <a href="/contact.html" class="footer-link">Contact</a>
+ <a href="/faq.html" class="footer-link">FAQ</a>
+ </div>
+ <div class="footer-column">
+ <h4>Legal</h4>
+ <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+ <a href="/terms.html" class="footer-link">Terms of Service</a>
+ <a href="/privacy.html" class="footer-link">Cookie Policy</a>
+ <a href="/cybersecurity.html" class="footer-link">Cybersecurity</a>
+ </div>
+ </div>
+ <div class="footer-partners">
+ <div class="footer-partners-title">Trusted Partners &amp; Affiliations</div>
+ <div class="footer-partners-row">
+ <img src="assets/logos/bmcc-cyber.jpg" alt="BMCC Cyber" class="footer-partner-logo">
+ <img src="assets/logos/dhl.jpg" alt="DHL" class="footer-partner-logo">
+ <img src="assets/logos/terranova.png" alt="Terranova Security" class="footer-partner-logo">
+ <img src="assets/logos/csa-group.jpg" alt="CSA Group" class="footer-partner-logo">
+ <img src="assets/logos/bbs.png" alt="BBS" class="footer-partner-logo">
+ <img src="assets/logos/enterprise-finance.png" alt="Enterprise Finance" class="footer-partner-logo">
+ <img src="assets/logos/toronto-dao.png" alt="Toronto DAO" class="footer-partner-logo">
+ <img src="assets/logos/aidome.png" alt="AIDome" class="footer-partner-logo">
+ </div>
+ <div class="footer-accreditations">
+ <div class="footer-accred-badge">
+ <img src="assets/badges/us-dept-commerce.jpg" alt="US Dept of Commerce">
+ <span>SelectUSA Participant</span>
+ </div>
+ <div class="footer-accred-badge">
+ <img src="assets/badges/bmcc-cuny.jpg" alt="BMCC CUNY">
+ <span>BMCC / CUNY Partner</span>
+ </div>
+ <div class="footer-accred-badge">
+ <img src="assets/badges/cyber-security-assoc.png" alt="Cyber Security Association">
+ <span>CSA Member</span>
+ </div>
+ <div class="footer-accred-badge">
+ <img src="assets/badges/trustworthy-ai.png" alt="Trustworthy AI">
+ <span>Trustworthy AI</span>
+ </div>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2026 CSGA Global &mdash; Cyber Security Global Alliance. All rights reserved.</p>
+ <p class="footer-bottom-sub">A division of the CSOAI Group &bull; Advancing human-AI collaboration worldwide</p>
+ </div>
+ </div>
+</footer>
+</body>
+</html>

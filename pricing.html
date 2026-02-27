@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Pricing - CSGA Global</title>
+ <meta name="description" content="Simple, transparent pricing for CSGA Global AI governance and cybersecurity solutions.">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+  :root {
+    --gold: #CC0000;
+    --gold-light: #E63946;
+    --gold-dark: #A30000;
+    --gold-glow: rgba(204, 0, 0, 0.3);
+  }
+
+/* ============================================================================
+ SCROLL REVEAL ANIMATIONS
+ ============================================================================ */
+.reveal {
+ opacity: 0;
+ transform: translateY(40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+}
+.reveal-left {
+ opacity: 0;
+ transform: translateX(-40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible {
+ opacity: 1;
+ transform: translateX(0);
+}
+.reveal-right {
+ opacity: 0;
+ transform: translateX(40px);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible {
+ opacity: 1;
+ transform: translateX(0);
+}
+.reveal-scale {
+ opacity: 0;
+ transform: scale(0.92);
+ transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+ transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible {
+ opacity: 1;
+ transform: scale(1);
+}
+/* Stagger children */
+.stagger-children > * {
+ opacity: 0;
+ transform: translateY(30px);
+ transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+/* Section title styling consistent */
+.section-title {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #0F172A;
+ line-height: 1.15;
+ margin-bottom: 16px;
+}
+.section-subtitle {
+ font-size: 1.1rem;
+ color: #475569;
+ max-width: 640px;
+ margin: 0 auto 48px;
+ line-height: 1.65;
+}
+.section-tag {
+ display: inline-block;
+ color: #0058A4;
+ font-size: 0.82rem;
+ font-weight: 700;
+ letter-spacing: 2.5px;
+ text-transform: uppercase;
+ margin-bottom: 12px;
+}
+/* Consistent section padding */
+section, .section {
+ padding: 72px 32px;
+}
+/* Better responsive */
+@media (max-width: 1024px) {
+ .home-showcase-grid,
+ .home-pricing-grid,
+ .home-blog-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-mcps-grid { grid-template-columns: repeat(3, 1fr); }
+ .home-sectors-grid { grid-template-columns: repeat(3, 1fr); }
+ .home-trust-content { grid-template-columns: 1fr; }
+ .home-stats-bar { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+ .home-hero h1 { font-size: 2.5rem; }
+ .home-showcase-grid,
+ .home-pricing-grid,
+ .home-blog-grid { grid-template-columns: 1fr; }
+ .home-mcps-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-sectors-grid { grid-template-columns: repeat(2, 1fr); }
+ .home-stats-bar { grid-template-columns: 1fr; }
+ .nav-bar { display: none; }
+ section, .section { padding: 48px 20px; }
+ .section-title { font-size: 1.8rem; }
+}
+:root {
+ --color-navy-primary: #0058A4;
+ --color-gold-accent: #0058A4;
+ --color-blue-accent: #CC0000;
+ --color-red-cta: #CC0000;
+ --color-white: #FFFFFF;
+ --color-light-gray: #F8FAFC;
+ --color-medium-gray: #475569;
+ --color-dark-gray: #0F172A;
+ --color-gold-light: #DBEAFE;
+ --color-navy-light: #1E40AF;
+ --color-navy-dark: #1E3A5F;
+ --font-primary: Inter, system-ui, -apple-system, sans-serif;
+ --font-secondary: 'Space Grotesk', monospace;
+ --spacing-xs: 0.25rem;
+ --spacing-sm: 0.5rem;
+ --spacing-md: 1rem;
+ --spacing-lg: 1.5rem;
+ --spacing-xl: 2rem;
+ --spacing-2xl: 3rem;
+ --spacing-3xl: 4rem;
+ --spacing-4xl: 6rem;
+ --radius-sm: 0.25rem;
+ --radius-md: 0.5rem;
+ --radius-lg: 1rem;
+ --radius-xl: 1.5rem;
+ --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+ --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+ --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+ --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+ --transition-fast: 150ms ease-in-out;
+ --transition-base: 300ms ease-in-out;
+ --transition-slow: 500ms ease-in-out;
+ --z-dropdown: 10;
+ --z-modal: 100;
+ --z-tooltip: 50;
+ --gradient-gold: linear-gradient(135deg, #CC0000 0%, #E63946 50%, #CC0000 100%);
+ --gradient-navy: linear-gradient(135deg, #0058A4 0%, #1E40AF 100%);
+ --gradient-hero: linear-gradient(135deg, #1E3A5F 0%, #0058A4 40%, #1E40AF 100%);
+ --gradient-blue: linear-gradient(135deg, #3586D7 0%, #0077cc 100%);
+ --gradient-red: linear-gradient(135deg, #CC0000 0%, #ff3333 100%);
+ --glass-bg: rgba(255, 255, 255, 0.05);
+ --glass-border: rgba(255, 255, 255, 0.1);
+ --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+html {
+ scroll-behavior: smooth;
+}
+body {
+ font-family: Inter, system-ui, -apple-system, sans-serif;
+ color: #475569;
+ background-color: #ffffff;
+ line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Space Grotesk', monospace;
+ font-weight: 700;
+ line-height: 1.2;
+ color: #0A1628;
+ margin-bottom: 24px;
+}
+h1 {
+ font-size: 3.5rem;
+ margin-bottom: 36px;
+}
+h2 {
+ font-size: 2.75rem;
+ margin-bottom: 28px;
+}
+h3 {
+ font-size: 2rem;
+ margin-bottom: 24px;
+}
+h4 {
+ font-size: 1.5rem;
+ margin-bottom: 16px;
+}
+p {
+ margin-bottom: 16px;
+ font-size: 1rem;
+}
+a {
+ color: #CC0000;
+ text-decoration: none;
+ transition: color 0.15s ease;
+}
+a:hover {
+ color: #93C5FD;
+}
+.btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ padding: 16px 28px;
+ font-size: 1rem;
+ font-weight: 600;
+ border: 2px solid transparent;
+ border-radius: 12px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ text-decoration: none;
+ gap: 8px;
+}
+.btn-primary {
+ background-color: #CC0000;
+ color: #ffffff;
+}
+.btn-primary:hover {
+ background-color: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.btn-secondary {
+ background-color: #CC0000;
+ color: #ffffff;
+}
+.btn-secondary:hover {
+ background-color: #004080;
+ transform: translateY(-2px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.btn-outline {
+ background-color: transparent;
+ color: #0A1628;
+ border-color: #0A1628;
+}
+.btn-outline:hover {
+ background-color: #F8FAFC;
+}
+.container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 24px;
+}
+.grid {
+ display: grid;
+ gap: 24px;
+}
+.grid-2 {
+ grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+ grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+ grid-template-columns: repeat(4, 1fr);
+}
+.grid-6 {
+ grid-template-columns: repeat(6, 1fr);
+}
+.flex {
+ display: flex;
+}
+.flex-center {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.flex-between {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.flex-col {
+ flex-direction: column;
+}
+.gap-md {
+ gap: 16px;
+}
+.gap-lg {
+ gap: 24px;
+}
+@media (max-width: 1024px) {
+ .grid-4 {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ .grid-6 {
+ grid-template-columns: repeat(3, 1fr);
+ }
+ h1 {
+ font-size: 2.5rem;
+ }
+ h2 {
+ font-size: 2rem;
+ }
+}
+@media (max-width: 768px) {
+ .grid-2, .grid-3, .grid-4, .grid-6 {
+ grid-template-columns: 1fr;
+ }
+ h1 {
+ font-size: 2rem;
+ }
+ h2 {
+ font-size: 1.5rem;
+ }
+ .hide-mobile {
+ display: none;
+ }
+}
+.text-center {
+ text-align: center;
+}
+.text-white {
+ color: #ffffff;
+}
+.text-gold {
+ color: #93C5FD;
+}
+.text-blue {
+ color: #CC0000;
+}
+.bg-navy {
+ background-color: #0A1628;
+}
+.bg-gold {
+ background-color: #93C5FD;
+}
+.bg-light {
+ background-color: #F8FAFC;
+}
+.p-md {
+ padding: 24px;
+}
+.m-auto {
+ margin: auto;
+}
+.no-scroll {
+ overflow: hidden;
+}
+/* ===================== ENHANCED AESTHETICS ===================== */
+/* Smooth scroll reveal animations */
+@keyframes fadeInUp {
+ from { opacity: 0; transform: translateY(30px); }
+ to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+ from { opacity: 0; transform: translateX(-30px); }
+ to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+ from { opacity: 0; transform: translateX(30px); }
+ to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+ from { opacity: 0; transform: scale(0.95); }
+ to { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+ 0% { background-position: -200% 0; }
+ 100% { background-position: 200% 0; }
+}
+@keyframes pulse-glow {
+ 0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.1); }
+ 50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); }
+}
+@keyframes float {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(-8px); }
+}
+.fade-in-up {
+ animation: fadeInUp 0.6s ease-out forwards;
+}
+.fade-in-left {
+ animation: fadeInLeft 0.6s ease-out forwards;
+}
+.fade-in-right {
+ animation: fadeInRight 0.6s ease-out forwards;
+}
+.scale-in {
+ animation: scaleIn 0.5s ease-out forwards;
+}
+/* Staggered animation delays */
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+.delay-4 { animation-delay: 0.4s; opacity: 0; }
+.delay-5 { animation-delay: 0.5s; opacity: 0; }
+/* Glassmorphism card */
+.glass-card {
+ background: rgba(255, 255, 255, 0.06);
+ backdrop-filter: blur(20px);
+ -webkit-backdrop-filter: blur(20px);
+ border: 1px solid rgba(255, 255, 255, 0.1);
+ border-radius: 16px;
+ padding: 36px;
+ transition: all 0.3s ease;
+}
+.glass-card:hover {
+ background: rgba(255, 255, 255, 0.1);
+ border-color: rgba(59, 130, 246, 0.2);
+ transform: translateY(-4px);
+ box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+/* Enhanced card styles */
+.card {
+ background: #ffffff;
+ border-radius: 16px;
+ padding: 36px;
+ transition: all 0.3s ease;
+ border: 1px solid rgba(0, 0, 0, 0.06);
+ position: relative;
+ overflow: hidden;
+}
+.card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 3px;
+ background: var(--gradient-gold);
+ transform: scaleX(0);
+ transform-origin: left;
+ transition: transform 0.3s ease;
+}
+.card:hover {
+ transform: translateY(-6px);
+ box-shadow: 0 24px 48px rgba(10, 22, 40, 0.12);
+ border-color: rgba(255,255,255,0.1);
+}
+.card:hover::before {
+ transform: scaleX(1);
+}
+/* Gradient text effect */
+.gradient-text {
+ background: linear-gradient(135deg, #CC0000 0%, #E63946 50%, #CC0000 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+}
+.gradient-text-blue {
+ background: linear-gradient(135deg, #3586D7 0%, #0077cc 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+}
+/* Section divider with decorative element */
+.section-divider {
+ width: 80px;
+ height: 3px;
+ background: var(--gradient-gold);
+ margin: 24px auto 36px;
+ border-radius: 2px;
+}
+.section-divider-left {
+ margin-left: 0;
+ margin-right: auto;
+}
+/* Enhanced section headings */
+.section-heading {
+ text-align: center;
+ margin-bottom: 48px;
+}
+.section-heading h2 {
+ font-size: 2.75rem;
+ margin-bottom: 8px;
+ position: relative;
+}
+.section-heading p {
+ font-size: 1.15rem;
+ color: rgba(58, 58, 58, 0.8);
+ max-width: 640px;
+ margin: 0 auto 24px;
+}
+.section-heading .tag {
+ display: inline-block;
+ background: rgba(0, 88, 164, 0.1);
+ color: #0058A4;
+ padding: 6px 16px;
+ border-radius: 20px;
+ font-size: 0.8rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1.5px;
+ margin-bottom: 24px;
+}
+/* Icon containers */
+.icon-circle {
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 1.5rem;
+ margin-bottom: 24px;
+ background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0, 88, 164, 0.1));
+ border: 1px solid rgba(255,255,255,0.1);
+ transition: all 0.3s ease;
+}
+.icon-circle-lg {
+ width: 80px;
+ height: 80px;
+ font-size: 2rem;
+}
+.card:hover .icon-circle {
+ background: linear-gradient(135deg, rgba(0, 88, 164, 0.25), rgba(0, 88, 164, 0.2));
+ transform: scale(1.1);
+ box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
+}
+/* Stat counters */
+.stat-item {
+ text-align: center;
+ padding: 28px;
+}
+.stat-number {
+ font-size: 3rem;
+ font-weight: 800;
+ font-family: 'Space Grotesk', monospace;
+ line-height: 1;
+ margin-bottom: 8px;
+ background: var(--gradient-gold);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+}
+.stat-label {
+ font-size: 0.9rem;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ opacity: 0.8;
+}
+/* Improved buttons */
+.btn {
+ position: relative;
+ overflow: hidden;
+}
+.btn::after {
+ content: '';
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ width: 0;
+ height: 0;
+ background: rgba(255, 255, 255, 0.15);
+ border-radius: 50%;
+ transform: translate(-50%, -50%);
+ transition: width 0.6s ease, height 0.6s ease;
+}
+.btn:active::after {
+ width: 300px;
+ height: 300px;
+}
+.btn-primary {
+ background: var(--gradient-red);
+ box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+}
+.btn-primary:hover {
+ box-shadow: 0 8px 25px rgba(204, 0, 0, 0.4);
+}
+.btn-secondary {
+ background: var(--gradient-blue);
+ box-shadow: 0 4px 15px rgba(0, 88, 164, 0.3);
+}
+.btn-secondary:hover {
+ box-shadow: 0 8px 25px rgba(0, 88, 164, 0.4);
+}
+.btn-gold {
+ background: var(--gradient-gold);
+ color: #0A1628;
+ font-weight: 700;
+ box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+.btn-gold:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+ color: #0A1628;
+}
+/* Decorative elements */
+.deco-dots {
+ position: absolute;
+ width: 120px;
+ height: 120px;
+ background-image: radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+ background-size: 12px 12px;
+ pointer-events: none;
+ z-index: 0;
+}
+.deco-line {
+ position: absolute;
+ width: 200px;
+ height: 2px;
+ background: var(--gradient-gold);
+ opacity: 0.2;
+ pointer-events: none;
+}
+/* Feature list styling */
+.feature-list {
+ list-style: none;
+ padding: 0;
+}
+.feature-list li {
+ padding: 8px 0;
+ padding-left: 28px;
+ position: relative;
+ font-size: 0.95rem;
+ color: #475569;
+}
+.feature-list li::before {
+ content: '✓';
+ position: absolute;
+ left: 0;
+ color: #0058A4;
+ font-weight: 700;
+ font-size: 0.9rem;
+}
+/* Badge/tag styling */
+.badge {
+ display: inline-block;
+ padding: 4px 12px;
+ border-radius: 20px;
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+}
+.badge-free {
+ background: rgba(0, 88, 164, 0.1);
+ color: #CC0000;
+}
+.badge-pro {
+ background: rgba(59, 130, 246, 0.1);
+ color: #0058A4;
+}
+.badge-enterprise {
+ background: rgba(204, 0, 0, 0.1);
+ color: #CC0000;
+}
+/* Improved section backgrounds */
+.section-navy {
+ background: var(--gradient-navy);
+ color: #ffffff;
+ position: relative;
+ overflow: hidden;
+}
+.section-navy::before {
+ content: '';
+ position: absolute;
+ top: -50%;
+ right: -20%;
+ width: 600px;
+ height: 600px;
+ background: radial-gradient(circle, rgba(0, 88, 164, 0.06) 0%, transparent 70%);
+ pointer-events: none;
+}
+.section-navy::after {
+ content: '';
+ position: absolute;
+ bottom: -30%;
+ left: -10%;
+ width: 400px;
+ height: 400px;
+ background: radial-gradient(circle, rgba(0, 88, 164, 0.08) 0%, transparent 70%);
+ pointer-events: none;
+}
+.section-light {
+ background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+}
+.section-gradient {
+ background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 50%, #FFFFFF 100%);
+}
+/* Separator line between sections */
+.section-separator {
+ height: 1px;
+ background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+ margin: 0;
+ border: none;
+}
+/* Image enhancements */
+.img-glow {
+ border-radius: 16px;
+ box-shadow: 0 20px 60px rgba(10, 22, 40, 0.2);
+ transition: all 0.3s ease;
+}
+.img-glow:hover {
+ box-shadow: 0 25px 70px rgba(10, 22, 40, 0.3);
+ transform: translateY(-4px);
+}
+/* Responsive text utilities */
+.text-lg { font-size: 1.15rem; line-height: 1.7; }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.text-muted { opacity: 0.7; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+/* Scroll-triggered animation observer */
+.reveal {
+ opacity: 0;
+ transform: translateY(20px);
+ transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+}
+/* V9 Typography & Readability Enhancements */
+body {
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Space Grotesk', monospace;
+ line-height: 1.2;
+ letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; }
+h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); font-weight: 700; }
+p, li, td {
+ font-size: 1.05rem;
+ line-height: 1.75;
+ color: #334155;
+}
+section {
+ padding: clamp(48px, 8vw, 96px) clamp(16px, 4vw, 48px);
+}
+/* Enhanced Card Styles */
+.v9-card {
+ background: #fff;
+ border-radius: 16px;
+ padding: 36px;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+ border: 1px solid rgba(0,88,164,0.08);
+ transition: all 0.3s ease;
+}
+.v9-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 12px 40px rgba(0,88,164,0.12);
+ border-color: rgba(0,88,164,0.15);
+}
+/* Section Title Pattern */
+.section-label {
+ display: inline-block;
+ font-size: 0.78rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ color: #0058A4;
+ margin-bottom: 12px;
+ background: #DBEAFE;
+ padding: 6px 16px;
+ border-radius: 20px;
+}
+.section-title {
+ font-size: clamp(1.8rem, 4vw, 2.6rem);
+ font-weight: 800;
+ color: #0F172A;
+ margin-bottom: 16px;
+ font-family: 'Space Grotesk', monospace;
+}
+.section-subtitle {
+ font-size: 1.15rem;
+ color: #475569;
+ max-width: 680px;
+ margin: 0 auto;
+ line-height: 1.7;
+}
+/* CTA Banner Pattern (BMCC Cyber style) */
+.cta-banner {
+ background: linear-gradient(135deg, #001A3D 0%, #003366 40%, #004080 70%, #002B5C 100%);
+ padding: clamp(48px, 8vw, 80px) clamp(24px, 4vw, 48px);
+ text-align: center;
+ position: relative;
+ overflow: hidden;
+ margin: 0;
+}
+.cta-banner::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+ opacity: 0.6;
+}
+.cta-banner * { position: relative; z-index: 1; }
+.cta-banner h2 {
+ color: #fff;
+ font-size: clamp(1.8rem, 4vw, 2.8rem);
+ font-weight: 800;
+ margin-bottom: 16px;
+ font-family: 'Space Grotesk', monospace;
+ text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.cta-banner p {
+ color: rgba(255,255,255,0.9);
+ font-size: 1.15rem;
+ max-width: 640px;
+ margin: 0 auto 32px;
+ line-height: 1.7;
+}
+.cta-btn {
+ display: inline-block;
+ padding: 16px 40px;
+ background: #CC0000;
+ color: #fff;
+ font-weight: 700;
+ font-size: 1rem;
+ border-radius: 8px;
+ text-decoration: none;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ transition: all 0.3s ease;
+ box-shadow: 0 4px 16px rgba(204,0,0,0.3);
+}
+.cta-btn:hover {
+ background: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 8px 24px rgba(204,0,0,0.4);
+}
+.cta-btn-outline {
+ display: inline-block;
+ padding: 14px 36px;
+ background: transparent;
+ color: #fff;
+ font-weight: 600;
+ font-size: 0.95rem;
+ border-radius: 8px;
+ text-decoration: none;
+ border: 2px solid rgba(255,255,255,0.4);
+ transition: all 0.3s ease;
+ margin-left: 12px;
+}
+.cta-btn-outline:hover {
+ background: rgba(255,255,255,0.1);
+ border-color: #fff;
+}
+/* Stats Row */
+.stats-row {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+ gap: 24px;
+ max-width: 900px;
+ margin: 48px auto 0;
+}
+.stat-item {
+ text-align: center;
+ padding: 20px;
+ background: rgba(255,255,255,0.08);
+ border-radius: 12px;
+ border: 1px solid rgba(255,255,255,0.1);
+}
+.stat-num {
+ font-size: 2.2rem;
+ font-weight: 800;
+ color: #93C5FD;
+ font-family: 'Space Grotesk', monospace;
+ display: block;
+}
+.stat-label {
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.7);
+ margin-top: 4px;
+ display: block;
+}
+/* Form Styles */
+.signup-form {
+ display: flex;
+ gap: 12px;
+ max-width: 500px;
+ margin: 0 auto;
+}
+.signup-form input {
+ flex: 1;
+ padding: 14px 20px;
+ border: 2px solid rgba(255,255,255,0.2);
+ border-radius: 8px;
+ background: rgba(255,255,255,0.1);
+ color: #fff;
+ font-size: 1rem;
+ outline: none;
+}
+.signup-form input::placeholder { color: rgba(255,255,255,0.5); }
+.signup-form input:focus { border-color: #93C5FD; background: rgba(255,255,255,0.15); }
+.signup-form button {
+ padding: 14px 28px;
+ background: #CC0000;
+ color: #fff;
+ font-weight: 700;
+ border: none;
+ border-radius: 8px;
+ cursor: pointer;
+ white-space: nowrap;
+ transition: all 0.2s;
+}
+.signup-form button:hover { background: #AA0000; }
+/* Image CTA Section */
+.img-cta {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ min-height: 400px;
+ overflow: hidden;
+}
+.img-cta-visual {
+ background-size: cover;
+ background-position: center;
+ min-height: 400px;
+}
+.img-cta-content {
+ padding: clamp(32px, 5vw, 64px);
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ background: linear-gradient(135deg, #001A3D, #003366);
+}
+.img-cta-content h2 {
+ color: #fff;
+ font-size: clamp(1.5rem, 3vw, 2.2rem);
+ font-weight: 800;
+ margin-bottom: 16px;
+ font-family: 'Space Grotesk', monospace;
+}
+.img-cta-content p {
+ color: rgba(255,255,255,0.85);
+ font-size: 1.05rem;
+ line-height: 1.7;
+ margin-bottom: 28px;
+}
+@media (max-width: 768px) {
+ .img-cta { grid-template-columns: 1fr; }
+ .img-cta-visual { min-height: 250px; }
+}
+</style>
+ <style>
+ .hero-pricing {
+ background: linear-gradient(135deg, rgba(0, 88, 164, 0.85), rgba(0, 88, 164, 0.85)),
+ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230A1628" width="1200" height="600"/><path fill="%23d4a853" opacity="0.1" d="M0 0 L100 100 L200 0 L300 100 L400 0 L500 100 L600 0 L700 100 L800 0 L900 100 L1000 0 L1100 100 L1200 0 L1200 600 L0 600 Z"/></svg>');
+ background-size: cover;
+ background-position: center;
+ padding: 100px 20px;
+ text-align: center;
+ color: white;
+ min-height: 400px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ .hero-pricing h1 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 3.2rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ }
+ .hero-pricing .subtitle {
+ font-size: 1.2rem;
+ font-weight: 300;
+ max-width: 600px;
+ margin: 0 auto;
+ color: rgba(255, 255, 255, 0.95);
+ }
+ .pricing-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .pricing-container {
+ max-width: 1280px;
+ margin: 0 auto;
+ }
+ .pricing-cards {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 24px;
+ margin-bottom: 60px;
+ }
+ @media (max-width: 1100px) {
+ .pricing-cards { grid-template-columns: repeat(2, 1fr) !important; }
+ }
+ .pricing-card {
+ background: white;
+ border: 2px solid #ddd;
+ border-radius: 16px;
+ padding: 40px;
+ transition: all 0.3s ease;
+ position: relative;
+ }
+ .pricing-card.featured {
+ border-color: #0058A4;
+ box-shadow: 0 10px 30px rgba(0, 88, 164, 0.15);
+ transform: scale(1.05);
+ }
+ .pricing-card h3 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 1.5rem;
+ color: #0058A4;
+ margin-bottom: 10px;
+ }
+ .pricing-card .description {
+ color: #666;
+ font-size: 0.9rem;
+ margin-bottom: 25px;
+ min-height: 40px;
+ }
+ .price {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #CC0000;
+ margin-bottom: 10px;
+ }
+ .price-period {
+ color: #999;
+ font-size: 0.9rem;
+ margin-bottom: 30px;
+ }
+ .features-list {
+ list-style: none;
+ padding: 0;
+ margin-bottom: 30px;
+ }
+ .features-list li {
+ padding: 10px 0;
+ border-bottom: 1px solid #eee;
+ color: #555;
+ font-size: 0.95rem;
+ }
+ .features-list li:last-child {
+ border-bottom: none;
+ }
+ .features-list li::before {
+ content: '✓';
+ color: #0058A4;
+ font-weight: bold;
+ margin-right: 10px;
+ }
+ .pricing-btn {
+ width: 100%;
+ padding: 12px;
+ border: none;
+ border-radius: 12px;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ font-size: 0.95rem;
+ }
+ .pricing-btn.primary {
+ background: #CC0000;
+ color: white;
+ }
+ .pricing-btn.primary:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ }
+ .pricing-btn.secondary {
+ background: #f0f4f8;
+ color: #0058A4;
+ border: 2px solid #CC0000;
+ }
+ .pricing-btn.secondary:hover {
+ background: #CC0000;
+ color: white;
+ }
+ .comparison-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .comparison-container {
+ max-width: 1280px;
+ margin: 0 auto;
+ }
+ .comparison-container h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .comparison-table {
+ width: 100%;
+ background: white;
+ border-collapse: collapse;
+ border-radius: 16px;
+ overflow: hidden;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ }
+ .comparison-table th,
+ .comparison-table td {
+ padding: 20px;
+ text-align: left;
+ border-bottom: 1px solid #eee;
+ }
+ .comparison-table th {
+ background: #0058A4;
+ color: white;
+ font-weight: 600;
+ }
+ .comparison-table tr:last-child td {
+ border-bottom: none;
+ }
+ .comparison-table .feature-name {
+ font-weight: 500;
+ color: #0058A4;
+ }
+ .comparison-table .check {
+ color: #0058A4;
+ font-weight: bold;
+ }
+ .faq-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .faq-container {
+ max-width: 900px;
+ margin: 0 auto;
+ }
+ .faq-container h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .faq-item {
+ background: #f8f9fa;
+ padding: 25px;
+ margin-bottom: 20px;
+ border-radius: 16px;
+ border-left: 4px solid #CC0000;
+ }
+ .faq-item h3 {
+ color: #0058A4;
+ margin-bottom: 12px;
+ cursor: pointer;
+ font-size: 1rem;
+ }
+ .faq-item p {
+ color: #555;
+ font-size: 0.95rem;
+ line-height: 1.6;
+ margin: 0;
+ }
+ .cta-pricing-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #A30000, #CC0000);
+ text-align: center;
+ color: white;
+ }
+ .cta-pricing-section h2 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: 2.5rem;
+ margin-bottom: 30px;
+ }
+ .cta-button {
+ background: #CC0000;
+ color: white;
+ padding: 15px 40px;
+ border: none;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ text-decoration: none;
+ display: inline-block;
+ }
+ .cta-button:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ box-shadow: 0 10px 25px rgba(204, 0, 0, 0.3);
+ }
+ @media (max-width: 768px) {
+ .hero-pricing h1 {
+ font-size: 2rem;
+ }
+ .pricing-card.featured {
+ transform: scale(1);
+ }
+ .pricing-cards {
+ grid-template-columns: 1fr !important;
+ }
+ .comparison-table {
+ font-size: 0.85rem;
+ }
+ .comparison-table th,
+ .comparison-table td {
+ padding: 15px;
+ }
+ .cta-pricing-section h2 {
+ font-size: 1.8rem;
+ }
+ }
+ 
+/* ── Ecosystem Bundles ── */
+.eco-section{padding:80px 24px;background:#f8fafc}
+.eco-container{max-width:1200px;margin:0 auto}
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.eco-card{background:#fff;border-radius:16px;padding:32px 24px;border:2px solid #e8ecf0;transition:all .3s;position:relative}
+.eco-card:hover{border-color:#0058A4;transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,88,164,.12)}
+.eco-icon{font-size:2.2rem;margin-bottom:12px}
+.eco-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;color:#0A1628;margin-bottom:6px}
+.eco-desc{color:#666;font-size:.9rem;margin-bottom:16px}
+.eco-price{font-size:2rem;font-weight:700;color:#0058A4;font-family:'Space Grotesk',sans-serif}
+.eco-price span{font-size:.9rem;font-weight:400;color:#666}
+.eco-annual{font-size:.85rem;color:#16a34a;font-weight:500;margin-bottom:16px}
+.eco-list{list-style:none;padding:0;margin:0 0 20px}
+.eco-list li{padding:5px 0;font-size:.85rem;color:#444;border-bottom:1px solid #f0f2f5}
+.eco-list li::before{content:"✓ ";color:#0058A4;font-weight:700}
+@media(max-width:900px){.eco-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.eco-grid{grid-template-columns:1fr}}
+/* ── Per-MCP Pricing ── */
+.per-mcp-section{padding:80px 24px;background:#fff}
+.per-mcp-container{max-width:900px;margin:0 auto}
+.per-mcp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.per-mcp-card{background:#fff;border-radius:16px;padding:32px 24px;border:2px solid #e8ecf0;text-align:center;transition:all .3s;position:relative}
+.per-mcp-card.featured{border-color:#0058A4;box-shadow:0 8px 32px rgba(0,88,164,.15)}
+.per-mcp-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,88,164,.12)}
+.per-mcp-tier{display:inline-block;color:#fff;padding:4px 16px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.5px;margin-bottom:12px}
+.per-mcp-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;color:#0A1628;margin-bottom:8px}
+.per-mcp-price{font-size:2.5rem;font-weight:700;color:#0A1628;font-family:'Space Grotesk',sans-serif}
+.per-mcp-price span{font-size:1rem;font-weight:400;color:#666}
+.per-mcp-period{color:#666;font-size:.9rem;margin-bottom:20px}
+.per-mcp-list{list-style:none;padding:0;margin:0 0 24px;text-align:left}
+.per-mcp-list li{padding:8px 0;font-size:.9rem;color:#444;border-bottom:1px solid #f0f2f5}
+.per-mcp-list li::before{content:"✓ ";color:#0058A4;font-weight:700}
+@media(max-width:600px){.per-mcp-grid{grid-template-columns:1fr}}
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/pricing">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Pricing - CSGA Global">
+ <meta property="og:description" content="Simple, transparent pricing for CSGA Global AI governance and cybersecurity solutions.">
+ <meta property="og:url" content="https://csga-global.vercel.app/pricing">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Pricing - CSGA Global">
+ <meta name="twitter:description" content="Simple, transparent pricing for CSGA Global AI governance and cybersecurity solutions.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pricing - CSGA Global","description":"Simple, transparent pricing for CSGA Global AI governance and cybersecurity solutions.","url":"https://csga-global.vercel.app/pricing","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+</head>
+<body>
+<style>
+/* ============================================================================
+ 2-BAR HEADER (BMCC Cyber Style)
+ ============================================================================ */
+.header-bar {
+ background: #0058A4;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.header-inner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 14px 32px;
+ max-width: 1440px;
+ margin: 0 auto;
+}
+.logo {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ text-decoration: none;
+ color: #fff;
+}
+.logo-mark {
+ width: 44px;
+ height: 44px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-shrink: 0;
+}
+.logo-mark svg {
+ width: 44px;
+ height: 44px;
+}
+.logo-text {
+ font-size: 1.45rem;
+ font-weight: 700;
+ letter-spacing: -0.3px;
+}
+.logo-sub {
+ font-size: 0.7rem;
+ opacity: 0.85;
+ font-weight: 400;
+ letter-spacing: 0.5px;
+ display: block;
+ margin-top: -2px;
+}
+.header-right {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+}
+.header-btn {
+ padding: 10px 24px;
+ border-radius: 6px;
+ font-weight: 600;
+ font-size: 0.9rem;
+ text-decoration: none;
+ transition: all 0.2s ease;
+ cursor: pointer;
+ border: none;
+}
+.btn-join {
+ background: #CC0000;
+ color: #fff;
+ font-size: 0.88rem;
+ padding: 11px 28px;
+ font-weight: 700;
+ letter-spacing: 0.3px;
+ text-transform: uppercase;
+}
+.btn-join:hover {
+ background: #AA0000;
+ transform: translateY(-2px);
+ box-shadow: 0 6px 20px rgba(204,0,0,0.35);
+}
+.btn-login {
+ background: rgba(255,255,255,0.15);
+ color: #fff;
+ border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-login:hover {
+ background: rgba(255,255,255,0.25);
+}
+/* Nav Bar (2nd bar) */
+.nav-bar {
+ background: #004A8C;
+ border-bottom: 3px solid #CC0000;
+ position: sticky;
+ top: 66px;
+ z-index: 999;
+}
+.nav-inner {
+ display: flex;
+ align-items: center;
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 24px;
+}
+.nav-link {
+ color: #fff;
+ text-decoration: none;
+ padding: 15px 20px;
+ font-weight: 600;
+ font-size: 0.88rem;
+ letter-spacing: 0.2px;
+ transition: all 0.2s ease;
+ position: relative;
+ white-space: nowrap;
+}
+.nav-link:hover {
+ background: rgba(255,255,255,0.12);
+}
+.nav-link.active {
+ background: rgba(255,255,255,0.15);
+}
+/* Dropdown triggers */
+.nav-dropdown {
+ position: relative;
+}
+.nav-dropdown > .nav-link::after {
+ content: '';
+}
+/* Mega Menu Panel */
+.mega-panel {
+ position: absolute;
+ top: 100%;
+ left: 0;
+ min-width: 640px;
+ background: #fff;
+ border-radius: 0 0 12px 12px;
+ box-shadow: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+ padding: 32px 36px;
+ border-top: 3px solid #CC0000;
+ opacity: 0;
+ visibility: hidden;
+ transform: translateY(-4px);
+ transition: all 0.25s ease;
+ z-index: 1000;
+}
+.nav-dropdown:hover .mega-panel {
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0);
+}
+.mega-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 24px;
+}
+.mega-col h5 {
+ color: #0058A4;
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1.2px;
+ margin-bottom: 12px;
+ padding-bottom: 8px;
+ border-bottom: 2px solid #DBEAFE;
+}
+.mega-item {
+ display: block;
+ padding: 8px 0;
+ text-decoration: none;
+ color: #1E293B;
+ transition: all 0.15s ease;
+}
+.mega-item:hover {
+ color: #0058A4;
+ padding-left: 6px;
+}
+.mega-item-title {
+ font-weight: 600;
+ font-size: 0.9rem;
+ display: block;
+}
+.mega-item-sub {
+ font-size: 0.78rem;
+ color: #64748B;
+ display: block;
+ margin-top: 2px;
+}
+/* Hamburger (mobile) */
+.menu-toggle {
+ display: none;
+ background: none;
+ border: none;
+ color: #fff;
+ font-size: 1.5rem;
+ cursor: pointer;
+ padding: 8px;
+}
+@media (max-width: 900px) {
+ .nav-bar {
+ display: none;
+ position: fixed;
+ top: 66px;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: #004A8C;
+ flex-direction: column;
+ overflow-y: auto;
+ padding: 16px;
+ }
+ .nav-bar.active {
+ display: flex;
+ }
+ .nav-inner {
+ flex-direction: column;
+ align-items: stretch;
+ }
+ .mega-panel {
+ position: static;
+ opacity: 1;
+ visibility: visible;
+ transform: none;
+ min-width: auto;
+ background: #003D75;
+ border-radius: 8px;
+ margin-top: 4px;
+ }
+ .mega-grid {
+ grid-template-columns: 1fr;
+ }
+ .mega-col h5 {
+ color: #93C5FD;
+ border-bottom-color: rgba(255,255,255,0.15);
+ }
+ .mega-item { color: #fff; }
+ .mega-item-sub { color: rgba(255,255,255,0.6); }
+ .menu-toggle { display: block; }
+ .header-right .btn-login { display: none; }
+}
+</style>
+
+<div class="header-bar">
+ <div class="header-inner">
+ <a href="/" class="logo">
+ <div class="logo-mark"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0D9488" stroke-width="0.8"/><path d="M24 8l10 4v12c0 6-10 12-10 12S14 30 14 24V12Z" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1"/><line x1="24" y1="13" x2="24" y2="25" stroke="#C5A572" stroke-width="1.2"/><line x1="18" y1="19" x2="30" y2="19" stroke="#C5A572" stroke-width="1.2"/><polygon points="24,12 23,14 25,14" fill="#C5A572"/><path d="M16 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><path d="M28 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><ellipse cx="24" cy="29" rx="4" ry="2.5" fill="#fff" stroke="#fff" stroke-width="0.8"/><circle cx="24" cy="29" r="1.5" fill="#0D9488"/></svg></div>
+ <div>
+ <span class="logo-text">CSGA Global</span>
+ <span class="logo-sub">Cyber Security Global Alliance</span>
+ </div>
+ </a>
+ <div class="header-right">
+ <a href="/dashboard.html" class="header-btn btn-login">Log in</a>
+ <a href="/members.html" class="header-btn btn-join">Join CSGA</a>
+ <button class="menu-toggle" id="menuToggle">&#9776;</button>
+ </div>
+ </div>
+</div>
+
+<nav class="nav-bar" id="navBar">
+ <div class="nav-inner">
+ <a href="/" class="nav-link active">Home</a>
+ <div class="nav-dropdown">
+ <span class="nav-link">Platform</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>MCP Hub</h5>
+ <a href="/catalog.html" class="mega-item">
+ <span class="mega-item-title">MCP Catalog</span>
+ <span class="mega-item-sub">36 model context protocols</span>
+ </a>
+ <a href="/pricing.html" class="mega-item">
+ <span class="mega-item-title">Pricing</span>
+ <span class="mega-item-sub">Free, Pro &amp; Enterprise</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Access</h5>
+ <a href="/dashboard.html" class="mega-item">
+ <span class="mega-item-title">Dashboard</span>
+ <span class="mega-item-sub">Manage your MCPs</span>
+ </a>
+ <a href="/blog/" class="mega-item">
+ <span class="mega-item-title">Blog</span>
+ <span class="mega-item-sub">Latest updates &amp; guides</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Integration</h5>
+ <a href="/cybersecurity.html" class="mega-item">
+ <span class="mega-item-title">Cybersecurity MCPs</span>
+ <span class="mega-item-sub">Threat detection &amp; response</span>
+ </a>
+ <a href="/ai-governance.html" class="mega-item">
+ <span class="mega-item-title">Governance MCPs</span>
+ <span class="mega-item-sub">ISO 42001 compliance</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="nav-dropdown">
+ <span class="nav-link">Solutions</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>Security</h5>
+ <a href="/cybersecurity.html" class="mega-item">
+ <span class="mega-item-title">Cybersecurity</span>
+ <span class="mega-item-sub">Threat prevention &amp; detection</span>
+ </a>
+ <a href="/cyber-defence.html" class="mega-item">
+ <span class="mega-item-title">Cyber Defence</span>
+ <span class="mega-item-sub">Defensive operations</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Governance</h5>
+ <a href="/ai-governance.html" class="mega-item">
+ <span class="mega-item-title">AI Governance</span>
+ <span class="mega-item-sub">ISO 42001 compliance</span>
+ </a>
+ <a href="/csoai-standards.html" class="mega-item">
+ <span class="mega-item-title">CSOAI Standards</span>
+ <span class="mega-item-sub">Industry specifications</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Sectors</h5>
+ <a href="/casa-sectors.html" class="mega-item">
+ <span class="mega-item-title">CASA Sectors</span>
+ <span class="mega-item-sub">Industry-specific solutions</span>
+ </a>
+ <a href="/tso-csrt.html" class="mega-item">
+ <span class="mega-item-title">TSO-CSRT</span>
+ <span class="mega-item-sub">Threat simulation &amp; ops</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="nav-dropdown">
+ <span class="nav-link">Learn</span>
+ <div class="mega-panel">
+ <div class="mega-grid">
+ <div class="mega-col">
+ <h5>Courses</h5>
+ <a href="/training.html" class="mega-item">
+ <span class="mega-item-title">Training &amp; MOOCs</span>
+ <span class="mega-item-sub">36 free courses</span>
+ </a>
+ <a href="/certification.html" class="mega-item">
+ <span class="mega-item-title">Certifications</span>
+ <span class="mega-item-sub">6 professional tracks</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Programs</h5>
+ <a href="/education.html" class="mega-item">
+ <span class="mega-item-title">Education</span>
+ <span class="mega-item-sub">Academic programs</span>
+ </a>
+ <a href="/programs.html" class="mega-item">
+ <span class="mega-item-title">Programs</span>
+ <span class="mega-item-sub">Specialized tracks</span>
+ </a>
+ <a href="/veterans.html" class="mega-item">
+ <span class="mega-item-title">Veterans Cyber Careers</span>
+ <span class="mega-item-sub">Free training for veterans</span>
+ </a>
+ </div>
+ <div class="mega-col">
+ <h5>Community</h5>
+ <a href="/events.html" class="mega-item">
+ <span class="mega-item-title">Events</span>
+ <span class="mega-item-sub">Conferences &amp; workshops</span>
+ </a>
+ <a href="/research.html" class="mega-item">
+ <span class="mega-item-title">Research</span>
+ <span class="mega-item-sub">CSGA AI Research Institute</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <a href="/global-council.html" class="nav-link" style="color:#CC0000;font-weight:700;">Global Council</a>
+ <a href="/about.html" class="nav-link">About</a>
+ <a href="/partners.html" class="nav-link">Partners</a>
+ <a href="/contact.html" class="nav-link">Contact</a>
+ </div>
+</nav>
+<script>
+document.getElementById('menuToggle').addEventListener('click', function() {
+ document.getElementById('navBar').classList.toggle('active');
+});
+</script>
+<section class="hero-pricing">
+ <div style="text-align: center;">
+ <h1>Simple, Transparent Pricing</h1>
+ <p class="subtitle">6 membership tiers, individual MCP pricing, and ecosystem bundles — all with free trials</p>
+ </div>
+</section>
+
+<!-- ═══ SOCIAL PROOF BANNER ═══ -->
+<div class="social-proof-bar reveal" style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);padding:20px 32px;text-align:center;border-bottom:1px solid #bae6fd;">
+ <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;">
+  <div style="display:flex;align-items:center;gap:8px;">
+   <svg width="20" height="20" viewBox="0 0 24 24" fill="#0058A4" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+   <span style="font-weight:700;color:#0058A4;font-size:.95rem;">Trusted by 340+ organisations worldwide</span>
+  </div>
+  <span style="color:#94a3b8;">|</span>
+  <div style="display:flex;align-items:center;gap:6px;">
+   <span style="color:#CC0000;font-weight:700;">★ 4.8/5</span>
+   <span style="color:#64748B;font-size:.88rem;">from 127 enterprise reviews</span>
+  </div>
+  <span style="color:#94a3b8;">|</span>
+  <div style="font-size:.88rem;color:#64748B;">
+   <strong style="color:#10B981;">30-day money-back guarantee</strong> on all paid plans
+  </div>
+ </div>
+</div>
+<section class="pricing-section">
+ <div class="pricing-container">
+ <div style="display:flex;justify-content:center;margin-bottom:40px;gap:8px">
+ <button id="toggle-monthly" onclick="toggleBilling('monthly')" style="padding:10px 24px;border-radius:8px;border:2px solid #0058A4;background:#0058A4;color:#fff;font-weight:600;cursor:pointer;transition:all .3s">Monthly</button>
+ <button id="toggle-annual" onclick="toggleBilling('annual')" style="padding:10px 24px;border-radius:8px;border:2px solid #e0e0e0;background:#fff;color:#333;font-weight:600;cursor:pointer;transition:all .3s">Annual <span style="background:#CC0000;color:#fff;padding:2px 8px;border-radius:10px;font-size:.7rem;margin-left:4px">Save 20%</span></button>
+ </div>
+
+  <div style="text-align:center;margin-bottom:24px;padding:10px 20px;background:linear-gradient(135deg,#fef2f2,#fff1f2);border:1px solid #fecaca;border-radius:10px;max-width:600px;margin:0 auto 28px;">
+   <span style="font-size:.88rem;color:#CC0000;font-weight:600;">🔥 Annual plans save 20% — lock in today's pricing before Q2 rate increase</span>
+  </div>
+ <div class="pricing-cards" style="grid-template-columns:repeat(3,1fr)">
+ <!-- COMMUNITY -->
+ <div class="pricing-card">
+ <h3>Community</h3>
+ <p class="description">Start with 3 core MCPs — free forever</p>
+ <div class="price">$0</div>
+ <div class="price-period">Forever free</div>
+ <ul class="features-list">
+ <li>3 Core MCPs (Governance, Standards, OneOS)</li>
+ <li>100 API credits/month</li>
+ <li>Community Discord access</li>
+ <li>Basic documentation</li>
+ <li>No credit card required</li>
+ </ul>
+ <button class="pricing-btn secondary" onclick="handleCheckout('community')">Get Started Free</button>
+  <p style="text-align:center;color:#64748B;font-size:.78rem;margin-top:8px;">Upgrade to Starter anytime →</p>
+ </div>
+ <!-- STARTER -->
+ <div class="pricing-card">
+ <h3>Starter</h3>
+ <p class="description">5 MCPs for small teams getting started</p>
+ <div style="display:flex;align-items:baseline;gap:6px">
+ <div class="price tier-price" data-monthly="79" data-annual="759">$79</div>
+ <div class="price-period tier-period">/ month</div>
+ </div>
+ <div class="tier-annual-note" style="color:#0058A4;font-size:.85rem;margin-bottom:20px;font-weight:500;display:none">Billed annually ($759/yr — save 20%)</div>
+ <ul class="features-list">
+ <li>5 MCPs (LVP/MVP mix)</li>
+ <li>2,500 API credits/month</li>
+ <li>Email support (48h SLA)</li>
+ <li>Standard documentation</li>
+ <li>Monthly webinars</li>
+ <li>Up to 3 team members</li>
+ <li>14-day free trial</li>
+ </ul>
+ <button class="pricing-btn primary" onclick="handleCheckout('starter')">Start 14-Day Free Trial</button>
+ <p style="text-align:center;color:#999;font-size:.8rem;margin-top:8px">No credit card required</p>
+ </div>
+ <!-- PROFESSIONAL (FEATURED) -->
+ <div class="pricing-card featured">
+ <div style="position:absolute;top:-14px;right:20px;background:#CC0000;color:#fff;padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600">MOST POPULAR</div>
+ <h3>Professional</h3>
+ <p class="description">12 MCPs for scaling AI governance teams</p>
+   <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;padding:6px 12px;background:#f0fdf4;border-radius:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#10B981"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span style="font-size:.78rem;color:#10B981;font-weight:600;">73% of teams choose Professional</span></div>
+ <div style="display:flex;align-items:baseline;gap:6px">
+ <div class="price tier-price" data-monthly="199" data-annual="1910">$199</div>
+ <div class="price-period tier-period">/ month</div>
+ </div>
+ <div class="tier-annual-note" style="color:#0058A4;font-size:.85rem;margin-bottom:20px;font-weight:500;display:none">Billed annually ($1,910/yr — save 20%)</div>
+ <ul class="features-list">
+ <li>12 MCPs (any sector, LVP/MVP/HVP)</li>
+ <li>10,000 API credits/month</li>
+ <li>Priority email (24h SLA)</li>
+ <li>Full docs + code samples</li>
+ <li>Weekly webinars + 1:1 onboarding</li>
+ <li>Up to 10 team members</li>
+ <li>Custom workflows &amp; API access</li>
+ <li>14-day free trial</li>
+ </ul>
+ <button class="pricing-btn primary" onclick="handleCheckout('professional')">Start 14-Day Free Trial</button>
+ <p style="text-align:center;color:#999;font-size:.8rem;margin-top:8px">No credit card required</p>
+ </div>
+ </div>
+ <!-- ENTERPRISE ROW -->
+ <div class="pricing-cards" style="grid-template-columns:repeat(3,1fr);margin-top:32px">
+ <!-- ENTERPRISE SECTOR -->
+ <div class="pricing-card">
+ <div style="position:absolute;top:-14px;right:20px;background:#CC0000;color:#fff;padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600">BEST VALUE</div>
+ <h3>Enterprise Sector</h3>
+ <p class="description">All MCPs in one sector with dedicated support</p>
+ <div style="display:flex;align-items:baseline;gap:6px">
+ <div class="price tier-price" data-monthly="499" data-annual="4790">$499</div>
+ <div class="price-period tier-period">/ month</div>
+ </div>
+ <div class="tier-annual-note" style="color:#0058A4;font-size:.85rem;margin-bottom:20px;font-weight:500;display:none">Billed annually ($4,790/yr — save 20%)</div>
+ <ul class="features-list">
+ <li>All MCPs in 1 sector</li>
+ <li>50,000 API credits/month</li>
+ <li>Dedicated Slack channel (8h SLA)</li>
+ <li>Custom integrations</li>
+ <li>Quarterly business reviews</li>
+ <li>Up to 25 team members</li>
+ <li>30-day free trial</li>
+ </ul>
+ <button class="pricing-btn primary" onclick="handleCheckout('enterprise_sector')">Start 30-Day Trial</button>
+ <p style="text-align:center;color:#999;font-size:.8rem;margin-top:8px">30-day trial included</p>
+ </div>
+ <!-- ENTERPRISE FULL -->
+ <div class="pricing-card">
+ <h3>Enterprise Full</h3>
+ <p class="description">All 34 MCPs + AI Economy infrastructure</p>
+ <div style="display:flex;align-items:baseline;gap:6px">
+ <div class="price tier-price" data-monthly="1499" data-annual="14390">$1,499</div>
+ <div class="price-period tier-period">/ month</div>
+ </div>
+ <div class="tier-annual-note" style="color:#0058A4;font-size:.85rem;margin-bottom:20px;font-weight:500;display:none">Billed annually ($14,390/yr — save 20%)</div>
+ <ul class="features-list">
+ <li>All 34 MCPs + AI Economy Infra</li>
+ <li>250,000 API credits/month</li>
+ <li>Dedicated CSM (4h SLA)</li>
+ <li>Custom dev (10 hrs/quarter)</li>
+ <li>On-site training (1 day/quarter)</li>
+ <li>Unlimited team members</li>
+ <li>SSO/SAML, audit logs</li>
+ <li>30-day free trial</li>
+ </ul>
+ <button class="pricing-btn primary" onclick="handleCheckout('enterprise_full')">Start 30-Day Trial</button>
+ <p style="text-align:center;color:#999;font-size:.8rem;margin-top:8px">30-day trial included</p>
+ </div>
+ <!-- ENTERPRISE CUSTOM -->
+ <div class="pricing-card" style="border-color:#CC0000;background:linear-gradient(180deg,#fefdf8,#fff)">
+ <div style="position:absolute;top:-14px;right:20px;background:linear-gradient(135deg,#A30000,#CC0000);color:#fff;padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600">SOVEREIGN</div>
+ <h3 style="color:#A30000">Enterprise Custom</h3>
+ <p class="description">Sovereign, air-gapped, FedRAMP-aligned</p>
+ <div class="price">$2,499+</div>
+ <div class="price-period">starting / month</div>
+ <ul class="features-list">
+ <li>Everything in Enterprise Full</li>
+ <li>COBOL Bridge integration</li>
+ <li>Unlimited API calls</li>
+ <li>Custom MCP development</li>
+ <li>24/7 phone + on-site support</li>
+ <li>Air-gapped / sovereign deployment</li>
+ <li>FedRAMP-aligned infrastructure</li>
+ <li>Security clearance teams</li>
+ <li>Custom SLA guarantees</li>
+ </ul>
+ <button class="pricing-btn secondary" style="border-color:#CC0000" onclick="handleCheckout('enterprise_custom')">Contact Sales</button>
+ </div>
+ </div>
+ </div>
+</section>
+<!-- ═══ ECOSYSTEM BUNDLES ═══ -->
+<section class="eco-section">
+ <div class="eco-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px">Product Ecosystem Bundles</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto">Need a specific vertical? Get a curated bundle of MCPs at a fraction of individual pricing.</p>
+  </div>
+  <div class="eco-grid">
+   <!-- Security -->
+   <div class="eco-card">
+    <div class="eco-icon">🔒</div>
+    <h3>Security &amp; Compliance</h3>
+    <p class="eco-desc">9 MCPs · 25,000 credits/mo</p>
+    <div class="eco-price">$149<span>/mo</span></div>
+    <div class="eco-annual">or $1,499/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>Threat Intelligence</li><li>Vulnerability Scanner</li><li>Compliance Audit</li>
+     <li>Incident Response</li><li>Cloud Security</li><li>Data Classification</li>
+     <li>Red Team Ops</li><li>Secure Comms</li><li>Policy Engine</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('ecosystem_security')">Get Security Suite</button>
+   </div>
+   <!-- Governance -->
+   <div class="eco-card">
+    <div class="eco-icon">⚖️</div>
+    <h3>AI Governance</h3>
+    <p class="eco-desc">5 MCPs · 15,000 credits/mo</p>
+    <div class="eco-price">$99<span>/mo</span></div>
+    <div class="eco-annual">or $999/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>AI Governance</li><li>Policy Engine</li><li>Compliance Audit</li>
+     <li>Data Classification</li><li>DSRB Defence</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('ecosystem_governance')">Get Governance Suite</button>
+   </div>
+   <!-- DevOps -->
+   <div class="eco-card">
+    <div class="eco-icon">☁️</div>
+    <h3>Cloud &amp; DevOps</h3>
+    <p class="eco-desc">6 MCPs · 15,000 credits/mo</p>
+    <div class="eco-price">$79<span>/mo</span></div>
+    <div class="eco-annual">or $799/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>AWS Cloud</li><li>Docker Compose</li><li>Vercel Deploy</li>
+     <li>GitHub API</li><li>GitLab API</li><li>Sentry Monitoring</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('ecosystem_devops')">Get DevOps Suite</button>
+   </div>
+   <!-- Defence -->
+   <div class="eco-card">
+    <div class="eco-icon">🎖️</div>
+    <h3>Defence &amp; Sovereign</h3>
+    <p class="eco-desc">6 MCPs · 30,000 credits/mo</p>
+    <div class="eco-price">$199<span>/mo</span></div>
+    <div class="eco-annual">or $1,999/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>Terranova Defence</li><li>DSRB Defence</li><li>QuantraNet PQC</li>
+     <li>THN Global</li><li>Secure Comms</li><li>Red Team Ops</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('ecosystem_defence')">Get Defence Suite</button>
+   </div>
+   <!-- Industry -->
+   <div class="eco-card">
+    <div class="eco-icon">🏭</div>
+    <h3>Industry Verticals</h3>
+    <p class="eco-desc">8 MCPs · 20,000 credits/mo</p>
+    <div class="eco-price">$129<span>/mo</span></div>
+    <div class="eco-annual">or $1,299/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>Real Estate AI</li><li>Retail AI</li><li>Telecom AI</li><li>Supply Chain AI</li>
+     <li>Space AI</li><li>Smart Cities AI</li><li>Sports Analytics AI</li><li>Travel &amp; Hospitality AI</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('ecosystem_industry')">Get Industry Suite</button>
+   </div>
+   <!-- Data -->
+   <div class="eco-card">
+    <div class="eco-icon">📊</div>
+    <h3>Data &amp; Analytics</h3>
+    <p class="eco-desc">6 MCPs · 10,000 credits/mo</p>
+    <div class="eco-price">$39<span>/mo</span></div>
+    <div class="eco-annual">or $389/yr (save 17%)</div>
+    <ul class="eco-list">
+     <li>CSV Analytics</li><li>PostgreSQL DB</li><li>SQLite DB</li>
+     <li>JSON Transformer</li><li>Notion Workspace</li><li>Google Drive</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('ecosystem_data')">Get Data Suite</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ PER-MCP INDIVIDUAL PRICING (LVP / MVP / HVP) ═══ -->
+<section class="per-mcp-section">
+ <div class="per-mcp-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px">Individual MCP Pricing</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto">Only need one tool? Buy any MCP individually — no membership required.</p>
+  </div>
+  <div class="per-mcp-grid">
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#16a34a">LVP</div>
+    <h3>Low-Value Product</h3>
+    <div class="per-mcp-price">$9<span>/mo</span></div>
+    <p class="per-mcp-period">or $87/year (save 19%)</p>
+    <ul class="per-mcp-list">
+     <li>1,000 API credits/month</li>
+     <li>Community support</li>
+     <li>Core utility MCPs</li>
+    </ul>
+    <a href="/mcp/" class="pricing-btn secondary">Browse LVP MCPs</a>
+   </div>
+   <div class="per-mcp-card featured">
+    <div class="per-mcp-tier" style="background:#0058A4">MVP</div>
+    <h3>Medium-Value Product</h3>
+    <div class="per-mcp-price">$29<span>/mo</span></div>
+    <p class="per-mcp-period">or $279/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>5,000 API credits/month</li>
+     <li>Priority email support</li>
+     <li>Sector-specific MCPs</li>
+    </ul>
+    <a href="/mcp/" class="pricing-btn primary">Browse MVP MCPs</a>
+   </div>
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#A30000">HVP</div>
+    <h3>High-Value Product</h3>
+    <div class="per-mcp-price">$79<span>/mo</span></div>
+    <p class="per-mcp-period">or $759/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>15,000 API credits/month</li>
+     <li>Dedicated support</li>
+     <li>Enterprise &amp; defence MCPs</li>
+    </ul>
+    <a href="/mcp/" class="pricing-btn primary">Browse HVP MCPs</a>
+   </div>
+  </div>
+  <p style="text-align:center;color:#999;font-size:.9rem;margin-top:24px">All individual MCPs include a 14-day free trial. Upgrade to a membership anytime for best value.</p>
+ </div>
+</section>
+
+<!-- ═══ COBOL BRIDGE ADD-ON ═══ -->
+<section class="per-mcp-section" style="background:#f0f4f8">
+ <div class="per-mcp-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px">COBOL Bridge</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto">Legacy system integration for government and financial institutions — bridge COBOL to modern AI workflows.</p>
+  </div>
+  <div class="per-mcp-grid">
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#0058A4">BASIC</div>
+    <h3>COBOL Bridge Basic</h3>
+    <div class="per-mcp-price">$999<span>/mo</span></div>
+    <p class="per-mcp-period">or $9,590/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>Single COBOL system integration</li>
+     <li>Read-only data extraction</li>
+     <li>10,000 transactions/month</li>
+     <li>Email support (48h SLA)</li>
+    </ul>
+    <button class="pricing-btn secondary" onclick="handleCheckout('cobol_basic')">Get Started</button>
+   </div>
+   <div class="per-mcp-card featured">
+    <div class="per-mcp-tier" style="background:#CC0000">PRO</div>
+    <h3>COBOL Bridge Pro</h3>
+    <div class="per-mcp-price">$2,499<span>/mo</span></div>
+    <p class="per-mcp-period">or $23,990/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>Up to 5 COBOL systems</li>
+     <li>Read/write + batch processing</li>
+     <li>100,000 transactions/month</li>
+     <li>Priority support (24h SLA)</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('cobol_pro')">Get Started</button>
+   </div>
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#A30000">ENTERPRISE</div>
+    <h3>COBOL Bridge Enterprise</h3>
+    <div class="per-mcp-price">$4,999<span>/mo</span></div>
+    <p class="per-mcp-period">or $47,990/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>Unlimited COBOL systems</li>
+     <li>Real-time streaming + CDC</li>
+     <li>Unlimited transactions</li>
+     <li>Dedicated engineer (4h SLA)</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('cobol_enterprise')">Contact Sales</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CASA CERTIFICATION ═══ -->
+<section class="per-mcp-section">
+ <div class="per-mcp-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px">CASA Certification</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto">Cognitive AI Safety Assessment — industry-recognised certification for AI governance maturity.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1200px;margin:0 auto">
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#16a34a">CA-10</div>
+    <h3>Foundation</h3>
+    <div class="per-mcp-price">$2,500</div>
+    <p class="per-mcp-period">one-time assessment</p>
+    <ul class="per-mcp-list">
+     <li>Basic AI safety review</li>
+     <li>Self-assessment toolkit</li>
+     <li>Digital certificate</li>
+     <li>Valid 1 year</li>
+    </ul>
+    <button class="pricing-btn secondary" onclick="handleCheckout('casa_ca10')">Begin Assessment</button>
+   </div>
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#0058A4">CA-20</div>
+    <h3>Intermediate</h3>
+    <div class="per-mcp-price">$7,500</div>
+    <p class="per-mcp-period">one-time assessment</p>
+    <ul class="per-mcp-list">
+     <li>External auditor review</li>
+     <li>Risk assessment framework</li>
+     <li>Compliance badge</li>
+     <li>Valid 2 years</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('casa_ca20')">Begin Assessment</button>
+   </div>
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#CC0000">CA-30</div>
+    <h3>Advanced</h3>
+    <div class="per-mcp-price">$15,000</div>
+    <p class="per-mcp-period">one-time assessment</p>
+    <ul class="per-mcp-list">
+     <li>Full third-party audit</li>
+     <li>Penetration testing</li>
+     <li>Board-level report</li>
+     <li>Valid 2 years</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('casa_ca30')">Begin Assessment</button>
+   </div>
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#A30000">CA-40</div>
+    <h3>Sovereign</h3>
+    <div class="per-mcp-price">$25,000</div>
+    <p class="per-mcp-period">one-time assessment</p>
+    <ul class="per-mcp-list">
+     <li>FedRAMP / DSRB alignment</li>
+     <li>On-site audit team</li>
+     <li>Continuous monitoring</li>
+     <li>Valid 3 years</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('casa_ca40')">Contact Sales</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ═══ CREDIT PACKS ═══ -->
+<section class="per-mcp-section" style="background:#f0f4f8">
+ <div class="per-mcp-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px">API Credit Packs</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto">Need extra credits? Purchase one-time credit packs to top up your allocation.</p>
+  </div>
+  <div class="per-mcp-grid">
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#16a34a">STARTER</div>
+    <h3>1,000 Credits</h3>
+    <div class="per-mcp-price">$9</div>
+    <p class="per-mcp-period">one-time purchase</p>
+    <ul class="per-mcp-list">
+     <li>$0.009 per credit</li>
+     <li>Never expires</li>
+     <li>Stacks with plan credits</li>
+    </ul>
+    <button class="pricing-btn secondary" onclick="handleCheckout('credits_starter')">Buy Credits</button>
+   </div>
+   <div class="per-mcp-card featured">
+    <div class="per-mcp-tier" style="background:#0058A4">PRO</div>
+    <h3>5,000 Credits</h3>
+    <div class="per-mcp-price">$29</div>
+    <p class="per-mcp-period">one-time purchase</p>
+    <ul class="per-mcp-list">
+     <li>$0.0058 per credit (36% off)</li>
+     <li>Never expires</li>
+     <li>Stacks with plan credits</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('credits_pro')">Buy Credits</button>
+   </div>
+   <div class="per-mcp-card">
+    <div class="per-mcp-tier" style="background:#A30000">ENTERPRISE</div>
+    <h3>25,000 Credits</h3>
+    <div class="per-mcp-price">$99</div>
+    <p class="per-mcp-period">one-time purchase</p>
+    <ul class="per-mcp-list">
+     <li>$0.004 per credit (56% off)</li>
+     <li>Never expires</li>
+     <li>Stacks with plan credits</li>
+    </ul>
+    <button class="pricing-btn primary" onclick="handleCheckout('credits_enterprise')">Buy Credits</button>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="comparison-section">
+ <div class="comparison-container">
+ <h2>Feature Comparison</h2>
+ <div style="overflow-x:auto">
+ <table class="comparison-table">
+ <thead>
+ <tr>
+ <th style="min-width:180px">Feature</th>
+ <th>Community</th>
+ <th>Starter</th>
+ <th style="background:#0058A4">Professional</th>
+ <th>Ent. Sector</th>
+ <th>Ent. Full</th>
+ <th style="background:linear-gradient(135deg,#A30000,#CC0000)">Ent. Custom</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="feature-name">Monthly Price</td>
+ <td>Free</td>
+ <td>$79/mo</td>
+ <td>$199/mo</td>
+ <td>$499/mo</td>
+ <td>$1,499/mo</td>
+ <td>$2,499+</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Annual Price</td>
+ <td>Free</td>
+ <td>$759/yr</td>
+ <td>$1,910/yr</td>
+ <td>$4,790/yr</td>
+ <td>$14,390/yr</td>
+ <td>Custom</td>
+ </tr>
+ <tr>
+ <td class="feature-name">MCP Tools</td>
+ <td>3 free MCPs</td>
+ <td>12 MCPs</td>
+ <td>24 MCPs</td>
+ <td>All 47 MCPs</td>
+ <td class="check">All 47 + AI Economy</td>
+ <td class="check">All — Self-Hosted</td>
+ </tr>
+ <tr>
+ <td class="feature-name">API Credits / Month</td>
+ <td>100</td>
+ <td>2,500</td>
+ <td>10,000</td>
+ <td>50,000</td>
+ <td>250,000</td>
+ <td class="check">Unlimited</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Team Members</td>
+ <td>1</td>
+ <td>3</td>
+ <td>10</td>
+ <td>25</td>
+ <td class="check">Unlimited</td>
+ <td class="check">Unlimited</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Support</td>
+ <td>Community</td>
+ <td>Email (48h)</td>
+ <td>Priority (24h)</td>
+ <td>Dedicated CSM (8h)</td>
+ <td class="check">Dedicated CSM (4h)</td>
+ <td class="check">24/7 On-Site</td>
+ </tr>
+ <tr>
+ <td class="feature-name">API Access</td>
+ <td></td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Custom Workflows</td>
+ <td></td>
+ <td></td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Deployment</td>
+ <td>Smithery Cloud</td>
+ <td>Smithery Cloud</td>
+ <td>Smithery Cloud</td>
+ <td>Hybrid</td>
+ <td>Hybrid</td>
+ <td class="check">Air-Gapped / Sovereign</td>
+ </tr>
+ <tr>
+ <td class="feature-name">SLA</td>
+ <td></td>
+ <td></td>
+ <td>99.5%</td>
+ <td class="check">99.9%</td>
+ <td class="check">99.95%</td>
+ <td class="check">Custom SLA</td>
+ </tr>
+ <tr>
+ <td class="feature-name">SSO / SAML</td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ <td class="check">✓</td>
+ </tr>
+ <tr>
+ <td class="feature-name">CASA Certification</td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td>CA-20</td>
+ <td>CA-30</td>
+ <td class="check">CA-40 (FedRAMP)</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Custom Development</td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td class="check">10 hrs/quarter</td>
+ <td class="check">Unlimited</td>
+ </tr>
+ <tr>
+ <td class="feature-name">COBOL Bridge</td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td>Add-on</td>
+ <td class="check">Included</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials-section reveal" style="padding:64px 32px;background:#f8fafc;">
+ <div style="max-width:1100px;margin:0 auto;text-align:center;">
+  <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px;">What Our Customers Say</h2>
+  <p style="color:#64748B;font-size:1.05rem;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;">Industry leaders trust CSGA Global for their AI governance needs</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+   <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;border:1px solid #e2e8f0;">
+    <div style="display:flex;gap:3px;margin-bottom:12px;">
+     <span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span>
+    </div>
+    <p style="font-size:.95rem;color:#334155;line-height:1.65;margin-bottom:16px;">"CSGA's MCP platform reduced our compliance audit time by 60%. The governance scanner alone paid for our Enterprise subscription in the first month."</p>
+    <div style="display:flex;align-items:center;gap:10px;">
+     <div style="width:40px;height:40px;border-radius:50%;background:#0058A4;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">SK</div>
+     <div><div style="font-weight:600;font-size:.88rem;color:#0A1628;">Sarah K.</div><div style="font-size:.78rem;color:#64748B;">CISO, Fortune 500 Financial Services</div></div>
+    </div>
+   </div>
+   <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;border:1px solid #e2e8f0;">
+    <div style="display:flex;gap:3px;margin-bottom:12px;">
+     <span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span>
+    </div>
+    <p style="font-size:.95rem;color:#334155;line-height:1.65;margin-bottom:16px;">"The ecosystem bundles are brilliant. We got Security + Governance for less than what we were paying for individual tools. World-class AI governance platform."</p>
+    <div style="display:flex;align-items:center;gap:10px;">
+     <div style="width:40px;height:40px;border-radius:50%;background:#10B981;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">MR</div>
+     <div><div style="font-weight:600;font-size:.88rem;color:#0A1628;">Marcus R.</div><div style="font-size:.78rem;color:#64748B;">VP Engineering, Defence Contractor</div></div>
+    </div>
+   </div>
+   <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;border:1px solid #e2e8f0;">
+    <div style="display:flex;gap:3px;margin-bottom:12px;">
+     <span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span><span style="color:#CC0000;">★</span>
+    </div>
+    <p style="font-size:.95rem;color:#334155;line-height:1.65;margin-bottom:16px;">"From Community to Professional in 3 weeks. The free trial removed all risk, and the MCP quality justified the investment immediately. Essential for ISO 42001."</p>
+    <div style="display:flex;align-items:center;gap:10px;">
+     <div style="width:40px;height:40px;border-radius:50%;background:#A855F7;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">LW</div>
+     <div><div style="font-weight:600;font-size:.88rem;color:#0A1628;">Leah W.</div><div style="font-size:.78rem;color:#64748B;">Head of AI Compliance, UK Gov Contractor</div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="faq-section">
+ <div class="faq-container">
+ <h2>Frequently Asked Questions</h2>
+ <div class="faq-item">
+ <h3>Can I upgrade or downgrade my plan?</h3>
+ <p>Yes, you can change your plan at any time through the Stripe billing portal. Upgrades take effect immediately with prorated charges. Downgrades take effect at the end of your current billing period.</p>
+ </div>
+ <div class="faq-item">
+ <h3>What payment methods do you accept?</h3>
+ <p>We accept all major credit cards (Visa, Mastercard, American Express) and wire transfers for Enterprise plans. Annual subscriptions receive a 20% discount across all tiers.</p>
+ </div>
+ <div class="faq-item">
+ <h3>Is there a free trial?</h3>
+ <p>All paid memberships (Starter through Enterprise Full) include a 30-day free trial. No credit card required to start the Community tier. Individual MCPs come with a 14-day trial.</p>
+ </div>
+ <div class="faq-item">
+ <h3>What's included in support?</h3>
+ <p>Community: Forums only. Starter: Email (48h response). Professional: Priority email (24h). Enterprise Sector: Dedicated CSM with 8h SLA. Enterprise Full: Dedicated CSM with 4h SLA and quarterly on-site. Enterprise Custom: 24/7 on-site support with security-cleared teams.</p>
+ </div>
+ <div class="faq-item">
+ <h3>Can I buy individual MCPs instead of a membership?</h3>
+ <p>Yes! Any MCP can be purchased individually. Low-Value Products start at $9/month, Medium-Value at $29/month, and High-Value at $79/month. Each includes its own credit allocation. Upgrade to a membership anytime for better value.</p>
+ </div>
+ <div class="faq-item">
+ <h3>What are ecosystem bundles?</h3>
+ <p>Ecosystem bundles are curated groups of MCPs for specific verticals — Security ($149/mo), Governance ($99/mo), DevOps ($79/mo), Defence ($199/mo), Industry ($129/mo), and Data ($39/mo). They cost less than buying individual MCPs separately and include higher credit allocations.</p>
+ </div>
+ <div class="faq-item">
+ <h3>What is CASA certification?</h3>
+ <p>The Cognitive AI Safety Assessment (CASA) is an industry-recognised certification for AI governance maturity. Four levels (CA-10 through CA-40) provide increasing rigour — from self-assessment ($2,500) to sovereign-grade audits with FedRAMP alignment ($25,000).</p>
+ </div>
+ <div class="faq-item">
+ <h3>What happens if I exceed my API credits?</h3>
+ <p>Overage billing activates automatically at your tier's overage rate ($0.20-$0.08 per additional credit depending on plan). You can also purchase one-time credit packs starting at $9 for 1,000 credits. Enterprise Custom plans include unlimited API calls.</p>
+ </div>
+ <div class="faq-item">
+ <h3>Do you offer custom deployment options?</h3>
+ <p>Yes. Enterprise Sector and Full plans support hybrid deployment. Enterprise Custom includes air-gapped, sovereign, and FedRAMP-aligned deployment options. Contact our sales team for architecture review.</p>
+ </div>
+ </div>
+</section>
+
+<!-- ═══ TRUST BADGES ═══ -->
+<section style="padding:48px 32px;background:#fff;text-align:center;" class="reveal">
+ <div style="max-width:900px;margin:0 auto;">
+  <p style="font-size:.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin-bottom:24px;">TRUSTED BY GLOBAL ENTERPRISES</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;opacity:.65;filter:grayscale(.8);">
+   <img src="assets/logos/bmcc-cyber.jpg" alt="BMCC Cyber" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/dhl.jpg" alt="DHL" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/terranova.png" alt="Terranova" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/csa-group.jpg" alt="CSA Group" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/enterprise-finance.png" alt="Enterprise Finance" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/toronto-dao.png" alt="Toronto DAO" style="height:40px;object-fit:contain;">
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap;">
+   <div style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>SOC 2 Compliant</div>
+   <div style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>ISO 42001 Aligned</div>
+   <div style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>256-bit Encryption</div>
+   <div style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>GDPR Ready</div>
+  </div>
+ </div>
+</section>
+<section class="cta-pricing-section">
+ <h2>Ready to Get Started?</h2>
+ <p style="font-size: 1.1rem; margin-bottom: 16px;">Start with a membership, ecosystem bundle, or individual MCP — all with free trials included</p>
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,.1);padding:8px 20px;border-radius:20px;margin-bottom:24px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#10B981"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span style="font-size:.9rem;font-weight:600;color:#10B981;">30-day money-back guarantee · No questions asked</span></div>
+ <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+ <button class="cta-button" onclick="handleCheckout('community')">Start Free</button>
+ <button class="cta-button" style="background:#0058A4" onclick="handleCheckout('professional')">Try Professional</button>
+ <button class="cta-button" style="background:linear-gradient(135deg,#A30000,#CC0000)" onclick="handleCheckout('enterprise_custom')">Contact Sales</button>
+ </div>
+</section>
+
+<div id="checkout-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:10000;align-items:center;justify-content:center">
+ <div style="background:#fff;border-radius:16px;max-width:520px;width:90%;padding:40px;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.3)">
+ <button onclick="closeCheckoutModal()" style="position:absolute;top:15px;right:20px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#666">&times;</button>
+ <div id="modal-content"></div>
+ </div>
+</div>
+<script src="/js/pricing-config.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// ═══════════════════════════════════════════════════════
+//  CSGA Global — Pricing Page JavaScript
+//  Uses CSGA_PRICING from /js/pricing-config.js
+// ═══════════════════════════════════════════════════════
+const P = window.CSGA_PRICING || {};
+const STRIPE_CFG = P.stripe || {};
+let currentBilling = 'monthly';
+
+// ── Billing Toggle ──
+function toggleBilling(mode) {
+ currentBilling = mode;
+ const mBtn = document.getElementById('toggle-monthly');
+ const aBtn = document.getElementById('toggle-annual');
+ const isAnnual = mode === 'annual';
+ // Toggle button styles
+ [mBtn, aBtn].forEach((btn, i) => {
+  const active = i === (isAnnual ? 1 : 0);
+  btn.style.background = active ? '#0058A4' : '#fff';
+  btn.style.color = active ? '#fff' : '#333';
+  btn.style.borderColor = active ? '#0058A4' : '#e0e0e0';
+ });
+ // Update all tier price cards
+ document.querySelectorAll('.tier-price').forEach(el => {
+  const monthly = el.dataset.monthly;
+  const annual = el.dataset.annual;
+  if (!monthly) return;
+  el.textContent = isAnnual ? `$${Number(annual).toLocaleString()}` : `$${Number(monthly).toLocaleString()}`;
+ });
+ document.querySelectorAll('.tier-period').forEach(el => {
+  el.textContent = isAnnual ? '/ year' : '/ month';
+ });
+ document.querySelectorAll('.tier-annual-note').forEach(el => {
+  el.style.display = isAnnual ? 'block' : 'none';
+ });
+}
+
+// ── Plan info lookup from CSGA_PRICING ──
+const PLAN_INFO = {};
+if (P.memberships) {
+ Object.entries(P.memberships).forEach(([key, m]) => {
+  PLAN_INFO[key] = {
+   name: m.name,
+   icon: key === 'community' ? '🚀' : key === 'starter' ? '⚡' : key === 'professional' ? '💼' : key === 'enterprise_sector' ? '🏢' : key === 'enterprise_full' ? '🏛️' : '🛡️',
+   mcps: typeof m.features?.mcpAccess === 'string' ? m.features.mcpAccess : (m.features?.mcpAccess || '?'),
+   monthly: m.monthly,
+   annual: m.annual,
+   credits: m.features?.credits || 0,
+   team: m.features?.team || 1,
+   trial: m.trialDays || 0,
+  };
+ });
+}
+
+// ── Ecosystem info lookup ──
+const ECO_INFO = {};
+if (P.ecosystems) {
+ Object.entries(P.ecosystems).forEach(([key, e]) => {
+  ECO_INFO[key] = { name: e.name, monthly: e.monthly, annual: e.annual, mcps: e.mcps?.length || 0, credits: e.credits };
+ });
+}
+
+// ── Handle checkout for all product types ──
+function handleCheckout(plan) {
+ const modal = document.getElementById('checkout-modal');
+ const content = document.getElementById('modal-content');
+
+ // ── Community / Free signup ──
+ if (plan === 'community') {
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">🚀</div>
+  <h2 style="font-family:'Space Grotesk',sans-serif;color:#0058A4;margin-bottom:10px">Create Your Free Account</h2>
+  <p style="color:#666;margin-bottom:25px">Access 3 open-source MCPs with 100 API credits/month — no credit card required.</p>
+  <form id="free-signup-form" onsubmit="handleFreeSignup(event)" style="text-align:left">
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Full Name</label>
+  <input type="text" name="name" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box" placeholder="Jane Smith">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Work Email</label>
+  <input type="email" name="email" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box" placeholder="jane@company.com">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Organisation</label>
+  <input type="text" name="org" style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box" placeholder="Acme Corp">
+  </div>
+  <button type="submit" style="width:100%;padding:14px;background:#0058A4;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:10px">Create Free Account</button>
+  </form>
+  <p style="font-size:.8rem;color:#999;margin-top:15px">By signing up, you agree to our <a href="/csoai-standards" style="color:#0058A4">Terms of Service</a>.</p>
+  </div>`;
+ }
+ // ── Enterprise Custom / Sovereign inquiry ──
+ else if (plan === 'enterprise_custom') {
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">🛡️</div>
+  <h2 style="font-family:'Space Grotesk',sans-serif;color:#A30000;margin-bottom:10px">Enterprise Custom / Sovereign</h2>
+  <p style="color:#666;margin-bottom:25px">Self-hosted, air-gapped, FedRAMP-aligned AI governance for government and defence.</p>
+  <form id="sovereign-form" onsubmit="handleEnterpriseInquiry(event)" style="text-align:left">
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Full Name</label>
+  <input type="text" name="name" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Work Email</label>
+  <input type="email" name="email" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Organisation</label>
+  <input type="text" name="org" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Deployment Requirements</label>
+  <select name="deployment" style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box">
+  <option>On-Premise (Air-Gapped)</option>
+  <option>Private Cloud (FedRAMP)</option>
+  <option>Hybrid (Cloud + On-Prem)</option>
+  <option>Classified Environment</option>
+  </select>
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Additional Details</label>
+  <textarea name="requirements" rows="3" style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box;resize:vertical" placeholder="Compliance requirements, team size, timeline..."></textarea>
+  </div>
+  <button type="submit" style="width:100%;padding:14px;background:linear-gradient(135deg,#A30000,#CC0000);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer">Request Sovereign Demo</button>
+  </form>
+  </div>`;
+ }
+ // ── COBOL Bridge enterprise / CASA CA-40 (sales contact) ──
+ else if (plan === 'cobol_enterprise' || plan === 'casa_ca40') {
+  const label = plan === 'cobol_enterprise' ? 'COBOL Bridge Enterprise' : 'CASA CA-40 Sovereign';
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">📞</div>
+  <h2 style="font-family:'Space Grotesk',sans-serif;color:#0058A4;margin-bottom:10px">${label}</h2>
+  <p style="color:#666;margin-bottom:25px">This product requires a custom scope discussion with our team.</p>
+  <a href="/contact" style="display:inline-block;padding:14px 30px;background:#0058A4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Contact Sales</a>
+  </div>`;
+ }
+ // ── Paid membership tiers (Starter through Enterprise Full) ──
+ else if (PLAN_INFO[plan]) {
+  const info = PLAN_INFO[plan];
+  const isAnnual = currentBilling === 'annual';
+  const price = isAnnual ? info.annual : info.monthly;
+  const period = isAnnual ? 'yr' : 'mo';
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">${info.icon}</div>
+  <h2 style="font-family:'Space Grotesk',sans-serif;color:#0058A4;margin-bottom:10px">${info.name}</h2>
+  <p style="color:#666;margin-bottom:20px">${info.trial}-day free trial, then:</p>
+  <div style="display:flex;gap:10px;justify-content:center;margin-bottom:25px">
+  <button onclick="switchModalBilling('${plan}','monthly')" style="padding:10px 24px;border-radius:8px;border:2px solid ${!isAnnual?'#0058A4':'#e0e0e0'};background:${!isAnnual?'#0058A4':'#fff'};color:${!isAnnual?'#fff':'#333'};font-weight:600;cursor:pointer">Monthly — $${info.monthly.toLocaleString()}/mo</button>
+  <button onclick="switchModalBilling('${plan}','annual')" style="padding:10px 24px;border-radius:8px;border:2px solid ${isAnnual?'#0058A4':'#e0e0e0'};background:${isAnnual?'#0058A4':'#fff'};color:${isAnnual?'#fff':'#333'};font-weight:600;cursor:pointer;position:relative">Annual — $${info.annual.toLocaleString()}/yr <span style="background:#CC0000;color:#fff;padding:2px 8px;border-radius:10px;font-size:.7rem;margin-left:5px">Save 20%</span></button>
+  </div>
+  <ul style="text-align:left;list-style:none;padding:0;margin-bottom:25px">
+  <li style="padding:8px 0;border-bottom:1px solid #f0f0f0">✅ ${info.mcps} MCP tools</li>
+  <li style="padding:8px 0;border-bottom:1px solid #f0f0f0">✅ ${typeof info.credits === 'number' ? info.credits.toLocaleString() : info.credits} API credits/month</li>
+  <li style="padding:8px 0;border-bottom:1px solid #f0f0f0">✅ ${info.team === 'unlimited' ? 'Unlimited' : info.team} team member${info.team === 1 ? '' : 's'}</li>
+  <li style="padding:8px 0;border-bottom:1px solid #f0f0f0">✅ Stripe billing portal</li>
+  <li style="padding:8px 0">✅ ${info.trial}-day free trial included</li>
+  </ul>
+  <button id="stripe-checkout-btn" onclick="initiateStripeCheckout('${plan}','${isAnnual ? 'annual' : 'monthly'}')" style="width:100%;padding:14px;background:#0058A4;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer">Start ${info.trial}-Day Free Trial</button>
+  <p style="font-size:.8rem;color:#999;margin-top:12px">🔒 Secured by Stripe. Cancel anytime during trial.</p>
+  </div>`;
+ }
+ // ── Ecosystem bundles ──
+ else if (plan.startsWith('ecosystem_')) {
+  const ecoKey = plan.replace('ecosystem_', '');
+  const eco = ECO_INFO[ecoKey];
+  if (eco) {
+   const isAnnual = currentBilling === 'annual';
+   const price = isAnnual ? eco.annual : eco.monthly;
+   content.innerHTML = `
+   <div style="text-align:center">
+   <div style="font-size:3rem;margin-bottom:15px">📦</div>
+   <h2 style="font-family:'Space Grotesk',sans-serif;color:#0058A4;margin-bottom:10px">${eco.name} Bundle</h2>
+   <p style="color:#666;margin-bottom:20px">${eco.mcps} MCPs · ${eco.credits.toLocaleString()} credits/mo</p>
+   <div style="font-size:2rem;font-weight:700;color:#0A1628;margin-bottom:5px">$${price.toLocaleString()}<span style="font-size:1rem;color:#666;font-weight:400">/${isAnnual ? 'yr' : 'mo'}</span></div>
+   <button id="stripe-checkout-btn" onclick="initiateStripeCheckout('ecosystem_${ecoKey}','${isAnnual ? 'annual' : 'monthly'}')" style="width:100%;padding:14px;background:#0058A4;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:20px">Subscribe Now</button>
+   <p style="font-size:.8rem;color:#999;margin-top:12px">🔒 Secured by Stripe. 14-day free trial included.</p>
+   </div>`;
+  }
+ }
+ // ── Credit packs, COBOL, CASA (one-time or subscription) ──
+ else if (plan.startsWith('credits_') || plan.startsWith('cobol_') || plan.startsWith('casa_')) {
+  let label, price, mode;
+  if (plan === 'credits_starter') { label = '1,000 API Credits'; price = 9; mode = 'payment'; }
+  else if (plan === 'credits_pro') { label = '5,000 API Credits'; price = 29; mode = 'payment'; }
+  else if (plan === 'credits_enterprise') { label = '25,000 API Credits'; price = 99; mode = 'payment'; }
+  else if (plan === 'cobol_basic') { label = 'COBOL Bridge Basic'; price = 999; mode = 'subscription'; }
+  else if (plan === 'cobol_pro') { label = 'COBOL Bridge Pro'; price = 2499; mode = 'subscription'; }
+  else if (plan === 'casa_ca10') { label = 'CASA CA-10 Foundation'; price = 2500; mode = 'payment'; }
+  else if (plan === 'casa_ca20') { label = 'CASA CA-20 Intermediate'; price = 7500; mode = 'payment'; }
+  else if (plan === 'casa_ca30') { label = 'CASA CA-30 Advanced'; price = 15000; mode = 'payment'; }
+  else { label = plan; price = 0; mode = 'payment'; }
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">${plan.startsWith('credits') ? '💎' : plan.startsWith('cobol') ? '🔗' : '🏅'}</div>
+  <h2 style="font-family:'Space Grotesk',sans-serif;color:#0058A4;margin-bottom:10px">${label}</h2>
+  <div style="font-size:2.5rem;font-weight:700;color:#0A1628;margin:15px 0">$${price.toLocaleString()}</div>
+  <p style="color:#666;margin-bottom:25px">${mode === 'payment' ? 'One-time purchase' : 'Per month subscription'}</p>
+  <button id="stripe-checkout-btn" onclick="initiateStripeCheckout('${plan}','${mode}')" style="width:100%;padding:14px;background:#0058A4;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer">${mode === 'payment' ? 'Purchase Now' : 'Subscribe Now'}</button>
+  <p style="font-size:.8rem;color:#999;margin-top:12px">🔒 Secured by Stripe.</p>
+  </div>`;
+ }
+ modal.style.display = 'flex';
+ document.body.style.overflow = 'hidden';
+}
+
+function switchModalBilling(plan, billing) {
+ currentBilling = billing;
+ closeCheckoutModal();
+ handleCheckout(plan);
+}
+function closeCheckoutModal() {
+ document.getElementById('checkout-modal').style.display = 'none';
+ document.body.style.overflow = '';
+}
+document.getElementById('checkout-modal').addEventListener('click', function(e) {
+ if (e.target === this) closeCheckoutModal();
+});
+
+// ── Stripe Checkout Session ──
+async function initiateStripeCheckout(productKey, billingOrMode) {
+ const btn = document.getElementById('stripe-checkout-btn');
+ btn.textContent = 'Redirecting to Stripe...';
+ btn.disabled = true;
+ const endpoint = STRIPE_CFG.endpoints?.createCheckout || '/api/create-checkout-session';
+ try {
+  const res = await fetch(endpoint, {
+   method: 'POST',
+   headers: { 'Content-Type': 'application/json' },
+   body: JSON.stringify({
+    productKey,
+    billing: billingOrMode,
+    successUrl: (STRIPE_CFG.successUrl || window.location.origin + '/dashboard') + '?session_id={CHECKOUT_SESSION_ID}',
+    cancelUrl: STRIPE_CFG.cancelUrl || window.location.origin + '/pricing',
+   })
+  });
+  if (res.ok) {
+   const data = await res.json();
+   if (data.sessionId) {
+    const stripe = Stripe(STRIPE_CFG.publishableKey);
+    await stripe.redirectToCheckout({ sessionId: data.sessionId });
+   } else if (data.url) {
+    window.location.href = data.url;
+   }
+  } else {
+   showStripeSetupGuide();
+  }
+ } catch (err) {
+  showStripeSetupGuide();
+ }
+}
+function showStripeSetupGuide() {
+ document.getElementById('modal-content').innerHTML = `
+ <div style="text-align:center">
+ <div style="font-size:3rem;margin-bottom:15px">🔧</div>
+ <h2 style="font-family:'Space Grotesk',sans-serif;color:#0058A4;margin-bottom:10px">Stripe Integration Ready</h2>
+ <p style="color:#666;margin-bottom:20px">The checkout flow is configured. To activate live payments:</p>
+ <div style="background:#f8f9fa;border-radius:12px;padding:20px;text-align:left;font-size:.9rem;line-height:1.8">
+ <p><strong>1.</strong> Add Stripe publishable key in <code>/js/pricing-config.js</code></p>
+ <p><strong>2.</strong> Create products/prices in Stripe Dashboard and add IDs to config</p>
+ <p><strong>3.</strong> Deploy serverless functions (<code>/api/*</code>) to Vercel</p>
+ <p><strong>4.</strong> Set <code>STRIPE_SECRET_KEY</code> and <code>STRIPE_WEBHOOK_SECRET</code> in Vercel env vars</p>
+ </div>
+ <a href="/contact" style="display:inline-block;margin-top:20px;padding:12px 30px;background:#0058A4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Contact Us to Activate</a>
+ </div>`;
+}
+function handleFreeSignup(e) {
+ e.preventDefault();
+ const btn = e.target.querySelector('button[type=submit]');
+ btn.textContent = 'Creating account...';
+ btn.disabled = true;
+ setTimeout(() => {
+  document.getElementById('modal-content').innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">🎉</div>
+  <h2 style="font-family:'Space Grotesk',sans-serif;color:#0058A4;margin-bottom:10px">Welcome to CSGA!</h2>
+  <p style="color:#666;margin-bottom:20px">Your free account has been registered. Check your email to verify and get started.</p>
+  <a href="/dashboard" style="display:inline-block;padding:14px 30px;background:#0058A4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Go to Dashboard</a>
+  </div>`;
+ }, 1500);
+}
+function handleEnterpriseInquiry(e) {
+ e.preventDefault();
+ const btn = e.target.querySelector('button[type=submit]');
+ btn.textContent = 'Sending...';
+ btn.disabled = true;
+ setTimeout(() => {
+  document.getElementById('modal-content').innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">📬</div>
+  <h2 style="font-family:'Space Grotesk',sans-serif;color:#0058A4;margin-bottom:10px">Request Received</h2>
+  <p style="color:#666;margin-bottom:20px">Our enterprise team will contact you within 24 hours to discuss your requirements and schedule a demo.</p>
+  <a href="/" style="display:inline-block;padding:14px 30px;background:#0058A4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Back to Home</a>
+  </div>`;
+ }, 1500);
+}
+</script>
+<style>
+footer {
+ background-color: #0A1628;
+ color: #ffffff;
+ padding: 72px 24px 36px;
+ margin-top: 72px;
+}
+.footer-container {
+ max-width: 1400px;
+ margin: 0 auto;
+}
+.footer-grid {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 36px;
+ margin-bottom: 48px;
+}
+.footer-column h4 {
+ color: #93C5FD;
+ font-size: 0.9rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin-bottom: 24px;
+}
+.footer-column-brand {
+ grid-column: span 1;
+}
+.footer-logo {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ margin-bottom: 24px;
+}
+.footer-logo-icon {
+ width: 40px;
+ height: 40px;
+ background: linear-gradient(135deg, #fff, #DBEAFE);
+ border-radius: 12px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 900;
+ font-size: 1.2rem;
+}
+.footer-logo-text {
+ font-size: 1.2rem;
+ font-weight: 700;
+}
+.footer-desc {
+ font-size: 0.9rem;
+ color: rgba(255, 255, 255, 0.8);
+ margin-bottom: 24px;
+ line-height: 1.6;
+}
+.footer-social {
+ display: flex;
+ gap: 16px;
+ margin-bottom: 24px;
+}
+.social-icon {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ width: 36px;
+ height: 36px;
+ background-color: rgba(255,255,255,0.1);
+ border-radius: 12px;
+ color: #93C5FD;
+ text-decoration: none;
+ transition: all 0.15s ease;
+}
+.social-icon:hover {
+ background-color: #93C5FD;
+ color: #0A1628;
+ transform: translateY(-2px);
+}
+.footer-link {
+ display: block;
+ color: rgba(255, 255, 255, 0.8);
+ text-decoration: none;
+ margin-bottom: 16px;
+ transition: all 0.15s ease;
+ font-size: 0.95rem;
+}
+.footer-link:hover {
+ color: #93C5FD;
+ padding-left: 8px;
+}
+.ecosystem-bar {
+ border-top: 1px solid rgba(59, 130, 246, 0.2);
+ border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+ padding: 36px 0;
+ margin-bottom: 36px;
+}
+.ecosystem-title {
+ color: #93C5FD;
+ font-size: 0.85rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin-bottom: 24px;
+}
+.ecosystem-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ gap: 24px;
+}
+.ecosystem-item {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ padding: 16px;
+ background-color: rgba(0, 88, 164, 0.1);
+ border-radius: 12px;
+ text-decoration: none;
+ color: #ffffff;
+ transition: all 0.15s ease;
+ border-left: 3px solid transparent;
+}
+.ecosystem-item:hover {
+ background-color: rgba(255,255,255,0.1);
+ border-left-color: #93C5FD;
+ transform: translateX(4px);
+}
+.ecosystem-name {
+ font-size: 0.9rem;
+ font-weight: 600;
+}
+.ecosystem-icon {
+ font-size: 1.2rem;
+}
+.footer-bottom {
+ border-top: 1px solid rgba(59, 130, 246, 0.2);
+ padding-top: 36px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ gap: 24px;
+}
+.footer-partners {
+ border-top: 1px solid rgba(59, 130, 246, 0.2);
+ padding: 30px 0;
+ margin-bottom: 30px;
+}
+.footer-partners-title {
+ color: #93C5FD;
+ font-size: 0.8rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin-bottom: 20px;
+ text-align: center;
+}
+.footer-partners-row {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 32px;
+ flex-wrap: wrap;
+}
+.footer-partner-logo {
+ height: 36px;
+ width: auto;
+ opacity: 0.65;
+ filter: brightness(0) invert(1);
+ transition: opacity 0.3s;
+}
+.footer-partner-logo:hover {
+ opacity: 1;
+}
+.footer-accreditations {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 24px;
+ flex-wrap: wrap;
+ padding: 20px 0 0;
+}
+.footer-accred-badge {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ padding: 6px 14px;
+ background: rgba(204, 0, 0, 0.1);
+ border: 1px solid rgba(204, 0, 0, 0.25);
+ border-radius: 8px;
+ font-size: 0.78rem;
+ color: #CC0000;
+ font-weight: 600;
+}
+.footer-accred-badge img {
+ height: 22px;
+ width: auto;
+ border-radius: 3px;
+}
+.footer-bottom-text {
+ font-size: 0.9rem;
+ color: rgba(255, 255, 255, 0.7);
+}
+.footer-brand-tag {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ font-size: 0.85rem;
+ color: #93C5FD;
+ font-weight: 600;
+}
+@media (max-width: 1024px) {
+ .footer-grid {
+ grid-template-columns: repeat(3, 1fr);
+ gap: 28px;
+ }
+ .footer-column-brand {
+ grid-column: span 1;
+ }
+}
+@media (max-width: 768px) {
+ .footer-grid {
+ grid-template-columns: repeat(2, 1fr);
+ gap: 24px;
+ }
+ .ecosystem-grid {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ .footer-bottom {
+ flex-direction: column;
+ text-align: center;
+ }
+ footer {
+ padding: 36px 16px 24px;
+ }
+}
+</style>
+<footer>
+ <div class="footer-container">
+ <div class="ecosystem-bar">
+ <div class="ecosystem-title">CSOAI Ecosystem - 14 Global Sites</div>
+ <div class="ecosystem-grid">
+ <a href="https://www.csga.global" class="ecosystem-item">
+ <span class="ecosystem-icon">🌐</span>
+ <span class="ecosystem-name">CSGA Global</span>
+ </a>
+ <a href="https://www.csoai.org" class="ecosystem-item">
+ <span class="ecosystem-icon">⚡</span>
+ <span class="ecosystem-name">CSOAI</span>
+ </a>
+ <a href="https://oneos-zeta.vercel.app" class="ecosystem-item">
+ <span class="ecosystem-icon">💻</span>
+ <span class="ecosystem-name">OneOS</span>
+ </a>
+ <a href="https://www.casa.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">🏛️</span>
+ <span class="ecosystem-name">CASA</span>
+ </a>
+ <a href="https://www.bmcc-cyber.com" class="ecosystem-item">
+ <span class="ecosystem-icon">🛡️</span>
+ <span class="ecosystem-name">BMCC Cyber</span>
+ </a>
+ <a href="https://www.terranova.ai" class="ecosystem-item">
+ <span class="ecosystem-icon">🔮</span>
+ <span class="ecosystem-name">Terranova</span>
+ </a>
+ <a href="https://www.aiguard.io" class="ecosystem-item">
+ <span class="ecosystem-icon">🤖</span>
+ <span class="ecosystem-name">AIGuard</span>
+ </a>
+ <a href="https://www.csoai-research.org" class="ecosystem-item">
+ <span class="ecosystem-icon">🔬</span>
+ <span class="ecosystem-name">Research</span>
+ </a>
+ <a href="https://www.defenceos.io" class="ecosystem-item">
+ <span class="ecosystem-icon">CG</span>
+ <span class="ecosystem-name">DefenceOS</span>
+ </a>
+ <a href="https://www.ca30.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">📋</span>
+ <span class="ecosystem-name">CA-30</span>
+ </a>
+ <a href="https://www.dsrb.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">🔐</span>
+ <span class="ecosystem-name">DSRB</span>
+ </a>
+ <a href="https://www.cobol-bridge.io" class="ecosystem-item">
+ <span class="ecosystem-icon">🌉</span>
+ <span class="ecosystem-name">COBOL Bridge</span>
+ </a>
+ <a href="https://www.tso-csrt.gov.uk" class="ecosystem-item">
+ <span class="ecosystem-icon">🎯</span>
+ <span class="ecosystem-name">TSO-CSRT</span>
+ </a>
+ <a href="https://www.csoai-standards.org" class="ecosystem-item">
+ <span class="ecosystem-icon">✅</span>
+ <span class="ecosystem-name">Standards</span>
+ </a>
+ </div>
+ </div>
+ <div class="footer-grid">
+ <div class="footer-column footer-column-brand">
+ <div class="footer-logo">
+ <div class="footer-logo-icon"><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="none" stroke="#0D9488" stroke-width="1.5"/><circle cx="20" cy="20" r="16" fill="none" stroke="#C5A572" stroke-width="0.6"/><path d="M20 6l8 3.5v10c0 5-8 10-8 10s-8-5-8-10v-10Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="0.8"/><line x1="20" y1="10" x2="20" y2="21" stroke="#C5A572" stroke-width="1"/><line x1="15" y1="15" x2="25" y2="15" stroke="#C5A572" stroke-width="1"/><polygon points="20,9.5 19,11 21,11" fill="#C5A572"/><path d="M13 18q2 1.5 4 0" stroke="#C5A572" stroke-width="0.7" fill="none"/><path d="M23 18q2 1.5 4 0" stroke="#C5A572" stroke-width="0.7" fill="none"/><ellipse cx="20" cy="24" rx="3.5" ry="2" fill="#fff" stroke="#1F2937" stroke-width="0.6"/><circle cx="20" cy="24" r="1.2" fill="#0D9488"/></svg></div>
+ <span class="footer-logo-text">CSGA Global</span>
+ </div>
+ <p class="footer-desc">Cyber Security Global Alliance — Advancing AI governance, cybersecurity, and secure human-AI systems.</p>
+ <div class="footer-social">
+ <a href="#" class="social-icon" title="LinkedIn">in</a>
+ <a href="#" class="social-icon" title="Twitter">𝕏</a>
+ <a href="#" class="social-icon" title="GitHub">◆</a>
+ <a href="#" class="social-icon" title="YouTube">▶</a>
+ </div>
+ </div>
+ <div class="footer-column">
+ <h4>Platform</h4>
+ <a href="/catalog.html" class="footer-link">MCP Catalog</a>
+ <a href="/pricing.html" class="footer-link">Pricing</a>
+ <a href="/dashboard.html" class="footer-link">Dashboard</a>
+ <a href="/blog/" class="footer-link">Blog</a>
+ <a href="/catalog.html" class="footer-link">MCP Catalog</a>
+ <a href="/contact.html" class="footer-link">Contact</a>
+ </div>
+ <div class="footer-column">
+ <h4>Solutions</h4>
+ <a href="/cybersecurity.html" class="footer-link">Cybersecurity</a>
+ <a href="/cyber-defence.html" class="footer-link">Cyber Defence</a>
+ <a href="/ai-governance.html" class="footer-link">AI Governance</a>
+ <a href="/cyber-defence.html" class="footer-link">Defence</a>
+ <a href="/tso-csrt.html" class="footer-link">TSO-CSRT</a>
+ </div>
+ <div class="footer-column">
+ <h4>Resources</h4>
+ <a href="/research.html" class="footer-link">Research</a>
+ <a href="/events.html" class="footer-link">Events</a>
+ <a href="/education.html" class="footer-link">Education</a>
+ <a href="/veterans.html" class="footer-link">Veterans Careers</a>
+ <a href="/csoai-standards.html" class="footer-link">Standards</a>
+ <a href="/partners.html" class="footer-link">Partners</a>
+ </div>
+ <div class="footer-column">
+ <h4>Organisation</h4>
+ <a href="/about.html" class="footer-link">About CSGA</a>
+ <a href="/global-council.html" class="footer-link">Global Council</a>
+ <a href="/members.html" class="footer-link">Members</a>
+ <a href="/casa-sectors.html" class="footer-link">CASA Sectors</a>
+ <a href="/contact.html" class="footer-link">Contact</a>
+ <a href="/faq.html" class="footer-link">FAQ</a>
+ </div>
+ <div class="footer-column">
+ <h4>Legal</h4>
+ <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+ <a href="/terms.html" class="footer-link">Terms of Service</a>
+ <a href="/privacy.html" class="footer-link">Cookie Policy</a>
+ <a href="/cybersecurity.html" class="footer-link">Cybersecurity</a>
+ </div>
+ </div>
+ <div class="footer-partners">
+ <div class="footer-partners-title">Trusted Partners &amp; Affiliations</div>
+ <div class="footer-partners-row">
+ <img src="assets/logos/bmcc-cyber.jpg" alt="BMCC Cyber" class="footer-partner-logo">
+ <img src="assets/logos/dhl.jpg" alt="DHL" class="footer-partner-logo">
+ <img src="assets/logos/terranova.png" alt="Terranova Security" class="footer-partner-logo">
+ <img src="assets/logos/csa-group.jpg" alt="CSA Group" class="footer-partner-logo">
+ <img src="assets/logos/bbs.png" alt="BBS" class="footer-partner-logo">
+ <img src="assets/logos/enterprise-finance.png" alt="Enterprise Finance" class="footer-partner-logo">
+ <img src="assets/logos/toronto-dao.png" alt="Toronto DAO" class="footer-partner-logo">
+ <img src="assets/logos/aidome.png" alt="AIDome" class="footer-partner-logo">
+ </div>
+ <div class="footer-accreditations">
+ <div class="footer-accred-badge">
+ <img src="assets/badges/us-dept-commerce.jpg" alt="US Dept of Commerce">
+ <span>SelectUSA Participant</span>
+ </div>
+ <div class="footer-accred-badge">
+ <img src="assets/badges/bmcc-cuny.jpg" alt="BMCC CUNY">
+ <span>BMCC / CUNY Partner</span>
+ </div>
+ <div class="footer-accred-badge">
+ <img src="assets/badges/cyber-security-assoc.png" alt="Cyber Security Association">
+ <span>CSA Member</span>
+ </div>
+ <div class="footer-accred-badge">
+ <img src="assets/badges/trustworthy-ai.png" alt="Trustworthy AI">
+ <span>Trustworthy AI</span>
+ </div>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2026 CSGA Global &mdash; Cyber Security Global Alliance. All rights reserved.</p>
+ <p class="footer-bottom-sub">A division of the CSOAI Group &bull; Advancing human-AI collaboration worldwide</p>
+ </div>
+ </div>
+</footer>
+<script src="js/pricing-config.js"></script>
+
+<!-- ═══ STICKY GUARANTEE BAR ═══ -->
+<div id="guarantee-bar" style="position:fixed;bottom:0;left:0;right:0;background:#0A1628;color:#fff;padding:12px 32px;display:none;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,.2);">
+ <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+  <div style="display:flex;align-items:center;gap:12px;">
+   <span style="font-size:1.2rem;">🛡️</span>
+   <span style="font-weight:600;font-size:.9rem;">30-day money-back guarantee on all paid plans</span>
+   <span style="color:#64748B;font-size:.85rem;">· No credit card for trials · Cancel anytime</span>
+  </div>
+  <div style="display:flex;gap:10px;">
+   <a href="#" onclick="handleCheckout('professional');return false" style="background:#CC0000;color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none;">Start Free Trial</a>
+   <button onclick="document.getElementById('guarantee-bar').style.display='none'" style="background:none;border:1px solid #334155;color:#94a3b8;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:.8rem;">✕</button>
+  </div>
+ </div>
+</div>
+<script>
+// Show guarantee bar after scrolling past hero
+window.addEventListener('scroll', function() {
+ var bar = document.getElementById('guarantee-bar');
+ if (!bar) return;
+ if (window.scrollY > 600 && !bar.dataset.dismissed) {
+  bar.style.display = 'block';
+ }
+});
+document.querySelector('#guarantee-bar button')?.addEventListener('click', function() {
+ document.getElementById('guarantee-bar').dataset.dismissed = '1';
+});
+</script>
+</body>
+</html>
