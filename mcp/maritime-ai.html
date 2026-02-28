@@ -416,216 +416,14 @@
  <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Maritime AI Governance — AI-Powered MCP | CSGA Global","description":"Govern AI systems in autonomous shipping, port automation, vessel navigation, and maritime safety — ensuring IMO compliance and environmental protection.","url":"https://csga-global.vercel.app/mcp/maritime-ai","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"}}</script>
 
- <style>
-  /* Header & Nav */
-  .header-bar {
-    background: #0058A4;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-  }
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 32px;
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: #fff;
-  }
-  .logo-mark {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .logo-mark svg {
-    width: 44px;
-    height: 44px;
-  }
-  .logo-text {
-    font-size: 1.45rem;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-  }
-  .logo-sub {
-    font-size: 0.7rem;
-    opacity: 0.85;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    display: block;
-    margin-top: -2px;
-  }
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .header-btn {
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    border: none;
-  }
-  .btn-join {
-    background: #CC0000;
-    color: #fff;
-    font-size: 0.88rem;
-    padding: 11px 28px;
-    font-weight: 700;
-  }
-  .btn-join:hover {
-    background: #AA0000;
-    transform: translateY(-2px);
-  }
-  .btn-login {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.3);
-  }
-  .btn-login:hover {
-    background: rgba(255,255,255,0.25);
-  }
+ 
 
-  .nav-bar {
-    background: #004A8C;
-    border-bottom: 3px solid #CC0000;
-    position: sticky;
-    top: 66px;
-    z-index: 999;
-  }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-    padding: 15px 20px;
-    font-weight: 600;
-    font-size: 0.88rem;
-    transition: all 0.2s ease;
-  }
-  .nav-link:hover {
-    background: rgba(255,255,255,0.12);
-  }
-  .mega-panel {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 640px;
-    background: #fff;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
-    padding: 32px 36px;
-    border-top: 3px solid #CC0000;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-4px);
-    transition: all 0.25s ease;
-    z-index: 1000;
-  }
-  .nav-dropdown:hover .mega-panel {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  .mega-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .mega-col h5 {
-    color: #0058A4;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .mega-item {
-    display: block;
-    padding: 8px 0;
-    text-decoration: none;
-    color: #1E293B;
-    font-size: 0.9rem;
-  }
-  .mega-item:hover {
-    color: #0058A4;
-  }
-  @media (max-width: 768px) {
-    .nav-bar { display: none; }
-  }
- </style>
+ <link rel="stylesheet" href="../components/shared.css">
 </head>
 
 <body>
 
-<div class="header-bar">
-  <div class="header-inner">
-    <a href="/" class="logo">
-      <div class="logo-mark"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0D9488" stroke-width="0.8"/><path d="M24 8l10 4v12c0 6-10 12-10 12S14 30 14 24V12Z" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1"/></svg></div>
-      <div>
-        <span class="logo-text">CSGA Global</span>
-        <span class="logo-sub">Cyber Security Global Alliance</span>
-      </div>
-    </a>
-    <div class="header-right">
-      <a href="/dashboard.html" class="header-btn btn-login">Log in</a>
-      <a href="/members.html" class="header-btn btn-join">Join CSGA</a>
-    </div>
-  </div>
-</div>
-
-<nav class="nav-bar">
-  <div class="nav-inner">
-    <a href="/" class="nav-link">Home</a>
-    <div class="nav-dropdown">
-      <span class="nav-link">Platform</span>
-      <div class="mega-panel">
-        <div class="mega-grid">
-          <div class="mega-col">
-            <h5>MCP Hub</h5>
-            <a href="/catalog.html" class="mega-item">MCP Catalog</a>
-            <a href="/pricing.html" class="mega-item">Pricing</a>
-          </div>
-          <div class="mega-col">
-            <h5>Access</h5>
-            <a href="/dashboard.html" class="mega-item">Dashboard</a>
-            <a href="/blog/" class="mega-item">Blog</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="nav-dropdown">
-      <span class="nav-link">Solutions</span>
-      <div class="mega-panel">
-        <div class="mega-grid">
-          <div class="mega-col">
-            <h5>Governance</h5>
-            <a href="/ai-governance.html" class="mega-item">AI Governance</a>
-            <a href="/maritime-ai.html" class="mega-item">Maritime AI</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+<div id="site-header"></div>
 
 <!-- Breadcrumb -->
 <div class="sf-bread">
@@ -934,57 +732,6 @@
 </div>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h5>Platform</h5>
-        <a href="/catalog.html">MCP Catalog</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/dashboard.html">Dashboard</a>
-      </div>
-      <div class="footer-col">
-        <h5>Solutions</h5>
-        <a href="/ai-governance.html">AI Governance</a>
-        <a href="/maritime-ai.html">Maritime AI</a>
-        <a href="/cybersecurity.html">Cybersecurity</a>
-      </div>
-      <div class="footer-col">
-        <h5>Learn</h5>
-        <a href="/training.html">Training</a>
-        <a href="/certification.html">Certifications</a>
-        <a href="/blog/">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h5>Legal &amp; Company</h5>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
-        <a href="/cookies.html">Cookie Policy</a>
-        <a href="/accessibility.html">Accessibility</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/careers.html">Careers</a>
-      </div>
-      <div class="footer-col">
-        <h5>Legal</h5>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/security.html">Security</a>
-      </div>
-      <div class="footer-col">
-        <h5>Follow</h5>
-        <a href="https://twitter.com/csgaglobal">Twitter</a>
-        <a href="https://linkedin.com/company/csga-global">LinkedIn</a>
-        <a href="https://github.com/csga-global">GitHub</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-logo">CSGA Global</div>
-      <div class="footer-copy">&copy; 2026 Cyber Security Global Alliance. All rights reserved.</div>
-    </div>
-  </div>
-</footer>
-
 <script>
 // Scroll reveal animations
 function setupScrollReveal() {
@@ -1034,5 +781,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<div id="site-footer"></div>
+<script src="../components/shared.js"></script>
 </body>
 </html>
