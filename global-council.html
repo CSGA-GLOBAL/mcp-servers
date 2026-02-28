@@ -17,9 +17,9 @@
  .gc-stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; color: #0058A4; display: block; }
  .gc-stat-label { font-size: 0.85rem; color: #5a6a7a; margin-top: 4px; }
  .gc-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1200px; margin: 60px auto; padding: 0 20px; }
- .gc-pillar { background: white; border-radius: 16px; padding: 36px 24px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-top: 4px solid #0058A4; transition: transform 0.3s; }
+ .gc-pillar { background: white; border-radius: 12px; padding: 36px 24px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-top: 4px solid #0058A4; transition: transform 0.25s; }
  .gc-pillar:hover { transform: translateY(-4px); }
- .gc-tier-card { background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); border: 2px solid #e8edf2; position: relative; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
+ .gc-tier-card { background: white; border-radius: 4px; padding: 40px 30px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); border: 2px solid #e8edf2; position: relative; display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s; }
  .gc-tier-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
  @media (max-width: 768px) { .gc-hero h1 { font-size: 2.2rem; } .gc-stats { gap: 24px; } .gc-stat-num { font-size: 1.8rem; } }
 </style>
@@ -45,7 +45,7 @@
 <section class="gc-hero">
  <h1>CSGA Global Council</h1>
  <p>Join the world's most influential cybersecurity governance community. Shape international policy, access elite intelligence, and advance your mission alongside 2,274+ members across 30+ countries.</p>
- <a href="#membership" style="display:inline-block;background:#CC0000;color:white;padding:14px 36px;border-radius:10px;font-weight:600;text-decoration:none;margin-top:10px">View Membership Plans ↓</a>
+ <a href="#membership" style="display:inline-block;background:#CC0000;color:white;padding:14px 36px;border-radius:8px;font-weight:600;text-decoration:none;margin-top:10px">View Membership Plans ↓</a>
 </section>
 <div class="gc-stats">
  <div class="gc-stat"><span class="gc-stat-num">2,274+</span><span class="gc-stat-label">Active Members</span></div>
@@ -72,13 +72,13 @@
  </div>
  <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin:40px auto">
  <span id="gc-ml" style="font-size:1rem;font-weight:700;color:#0058A4;cursor:pointer" onclick="gcToggle(false)">Monthly</span>
- <div id="gc-toggle" style="width:52px;height:28px;background:#ddd;border-radius:14px;position:relative;cursor:pointer" onclick="gcToggle()">
- <div id="gc-knob" style="width:22px;height:22px;background:white;border-radius:50%;position:absolute;top:3px;left:3px;transition:transform 0.3s;box-shadow:0 2px 4px rgba(0,0,0,0.2)"></div>
+ <div id="gc-toggle" style="width:52px;height:28px;background:#ddd;border-radius:12px;position:relative;cursor:pointer" onclick="gcToggle()">
+ <div id="gc-knob" style="width:22px;height:22px;background:white;border-radius:50%;position:absolute;top:3px;left:3px;transition:transform 0.25s;box-shadow:0 2px 4px rgba(0,0,0,0.2)"></div>
  </div>
  <span id="gc-yl" style="font-size:1rem;font-weight:500;color:#3a4a5a;cursor:pointer" onclick="gcToggle(true)">Yearly</span>
- <span style="background:#2D8A4E;color:white;font-size:0.75rem;font-weight:600;padding:3px 10px;border-radius:20px">Save up to 17%</span>
+ <span style="background:#2D8A4E;color:white;font-size:0.75rem;font-weight:600;padding:3px 10px;border-radius:4px">Save up to 17%</span>
  </div>
- <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;max-width:1300px;margin:0 auto"><div class="gc-tier-card" style="" data-monthly="35" data-yearly="350">
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;max-width:1200px;margin:0 auto"><div class="gc-tier-card" style="" data-monthly="35" data-yearly="350">
  <div style="font-size:2.5rem;margin-bottom:12px">👤</div>
  <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#0A1628;margin-bottom:8px">Personal</h3>
  <p style="font-size:0.9rem;color:#5a6a7a;line-height:1.6;margin-bottom:20px">Individual professionals seeking to advance their cybersecurity career and join a global community of experts.</p>
@@ -87,7 +87,7 @@
  <div class="gc-price-yearly" style="display:none"><span style="font-size:1.2rem;font-weight:600;color:#0A1628;vertical-align:top">$</span><span style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:#0A1628">29</span><span style="font-size:0.9rem;color:#8a9aaa">/month</span><div style="font-size:0.8rem;color:#2D8A4E;font-weight:600;margin-top:4px">Billed $350/year — Save 17%</div></div>
  </div>
  <ul style="list-style:none;padding:0;margin:0 0 24px;flex-grow:1"><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Member directory listing</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Monthly webinar access</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Community forum access</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Digital membership certificate</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Newsletter & intelligence briefs</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Discounted event tickets</li></ul>
- <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:10px;text-decoration:none;background:#0058A4">Join as Individual</a>
+ <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:8px;text-decoration:none;background:#0058A4">Join as Individual</a>
  </div><div class="gc-tier-card" style="" data-monthly="99" data-yearly="995">
  <div style="font-size:2.5rem;margin-bottom:12px">🤝</div>
  <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#0A1628;margin-bottom:8px">Nonprofit</h3>
@@ -97,7 +97,7 @@
  <div class="gc-price-yearly" style="display:none"><span style="font-size:1.2rem;font-weight:600;color:#0A1628;vertical-align:top">$</span><span style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:#0A1628">83</span><span style="font-size:0.9rem;color:#8a9aaa">/month</span><div style="font-size:0.8rem;color:#2D8A4E;font-weight:600;margin-top:4px">Billed $995/year — Save 16%</div></div>
  </div>
  <ul style="list-style:none;padding:0;margin:0 0 24px;flex-grow:1"><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ All Personal benefits</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Organisation profile page</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ 3 member seats included</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Grant opportunity alerts</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Partner programme access</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Co-branded campaigns</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Annual impact report inclusion</li></ul>
- <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:10px;text-decoration:none;background:#2D8A4E">Join as Nonprofit</a>
+ <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:8px;text-decoration:none;background:#2D8A4E">Join as Nonprofit</a>
  </div><div class="gc-tier-card" style="" data-monthly="199" data-yearly="1995">
  <div style="font-size:2.5rem;margin-bottom:12px">🎓</div>
  <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#0A1628;margin-bottom:8px">Educational</h3>
@@ -107,9 +107,9 @@
  <div class="gc-price-yearly" style="display:none"><span style="font-size:1.2rem;font-weight:600;color:#0A1628;vertical-align:top">$</span><span style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:#0A1628">166</span><span style="font-size:0.9rem;color:#8a9aaa">/month</span><div style="font-size:0.8rem;color:#2D8A4E;font-weight:600;margin-top:4px">Billed $1,995/year — Save 16%</div></div>
  </div>
  <ul style="list-style:none;padding:0;margin:0 0 24px;flex-grow:1"><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ All Nonprofit benefits</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ 10 member seats included</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Curriculum advisory board seat</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Student competition sponsorship</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Research collaboration network</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Faculty exchange programme</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Accreditation pathway support</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Joint publication opportunities</li></ul>
- <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:10px;text-decoration:none;background:#7B2D8A">Join as Educator</a>
+ <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:8px;text-decoration:none;background:#7B2D8A">Join as Educator</a>
  </div><div class="gc-tier-card" style="border-color:#CC0000;box-shadow:0 8px 32px rgba(204,0,0,0.2);" data-monthly="249" data-yearly="2500">
- <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#CC0000,#c49440);color:white;font-size:0.8rem;font-weight:600;padding:5px 20px;border-radius:20px;white-space:nowrap">Most Popular</span>
+ <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#CC0000,#c49440);color:white;font-size:0.8rem;font-weight:600;padding:5px 20px;border-radius:4px;white-space:nowrap">Most Popular</span>
  <div style="font-size:2.5rem;margin-bottom:12px">🏢</div>
  <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#0A1628;margin-bottom:8px">Small Business</h3>
  <p style="font-size:0.9rem;color:#5a6a7a;line-height:1.6;margin-bottom:20px">SMEs building resilient cybersecurity posture and trusted AI capabilities.</p>
@@ -118,7 +118,7 @@
  <div class="gc-price-yearly" style="display:none"><span style="font-size:1.2rem;font-weight:600;color:#0A1628;vertical-align:top">$</span><span style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:#0A1628">208</span><span style="font-size:0.9rem;color:#8a9aaa">/month</span><div style="font-size:0.8rem;color:#2D8A4E;font-weight:600;margin-top:4px">Billed $2,500/year — Save 16%</div></div>
  </div>
  <ul style="list-style:none;padding:0;margin:0 0 24px;flex-grow:1"><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ All Educational benefits</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ 5 member seats included</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Quarterly threat briefings</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Compliance toolkit access</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Vendor partnership matching</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ MCP Pro server discounts</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Incident response guidance</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Supply chain security resources</li></ul>
- <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:10px;text-decoration:none;background:#CC0000">Join as SME</a>
+ <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:8px;text-decoration:none;background:#CC0000">Join as SME</a>
  </div><div class="gc-tier-card" style="" data-monthly="499" data-yearly="5000">
  <div style="font-size:2.5rem;margin-bottom:12px">🏛️</div>
  <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#0A1628;margin-bottom:8px">Corporate</h3>
@@ -128,7 +128,7 @@
  <div class="gc-price-yearly" style="display:none"><span style="font-size:1.2rem;font-weight:600;color:#0A1628;vertical-align:top">$</span><span style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:#0A1628">417</span><span style="font-size:0.9rem;color:#8a9aaa">/month</span><div style="font-size:0.8rem;color:#2D8A4E;font-weight:600;margin-top:4px">Billed $5,000/year — Save 16%</div></div>
  </div>
  <ul style="list-style:none;padding:0;margin:0 0 24px;flex-grow:1"><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ All Small Business benefits</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ 25 member seats included</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Executive roundtable access</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Priority advisory services</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Board-level briefing packs</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Regulatory change alerts</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Dedicated account manager</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Custom training programmes</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Speaking opportunities</li></ul>
- <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:10px;text-decoration:none;background:#CC0000">Join as Corporate</a>
+ <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:8px;text-decoration:none;background:#CC0000">Join as Corporate</a>
  </div><div class="gc-tier-card" style="" data-monthly="999" data-yearly="10000">
  <div style="font-size:2.5rem;margin-bottom:12px">🌐</div>
  <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#0A1628;margin-bottom:8px">Enterprise</h3>
@@ -138,7 +138,7 @@
  <div class="gc-price-yearly" style="display:none"><span style="font-size:1.2rem;font-weight:600;color:#0A1628;vertical-align:top">$</span><span style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:#0A1628">833</span><span style="font-size:0.9rem;color:#8a9aaa">/month</span><div style="font-size:0.8rem;color:#2D8A4E;font-weight:600;margin-top:4px">Billed $10,000/year — Save 17%</div></div>
  </div>
  <ul style="list-style:none;padding:0;margin:0 0 24px;flex-grow:1"><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ All Corporate benefits</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Unlimited member seats</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Global Council board seat</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Policy drafting participation</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ White-label training platform</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Joint research initiatives</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Government liaison support</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Priority MCP Enterprise access</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Annual strategy workshop</li><li style="padding:6px 0;font-size:0.9rem;color:#3a4a5a;border-bottom:1px solid #f0f2f5">✓ Custom compliance frameworks</li></ul>
- <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:10px;text-decoration:none;background:#0A1628">Join as Enterprise</a>
+ <a href="/pricing" style="display:block;text-align:center;padding:14px 24px;color:white;font-weight:600;border-radius:8px;text-decoration:none;background:#0A1628">Join as Enterprise</a>
  </div></div>
 </section>
 <section style="background:#f8f9fb;padding:60px 20px;text-align:center">
