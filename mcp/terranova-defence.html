@@ -1133,31 +1133,18 @@ section {
 <div style="width:64px;height:64px;background:linear-gradient(135deg,#CC0000,#A30000);border-radius:14px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center">
 <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
 </div>
-<h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;color:#0A1628;margin:0 0 8px">Restricted Access</h2>
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;color:#0A1628;margin:0 0 8px">Defence Access — Restricted</h2>
 <p style="color:#666;font-size:0.95rem;margin:0 0 6px">This MCP server contains defence & sovereign-grade tooling.</p>
-<p style="color:#888;font-size:0.85rem;margin:0 0 24px">Access requires registration. Your request will be reviewed within 24 hours.</p>
+<p style="color:#888;font-size:0.85rem;margin:0 0 24px">Enter your registered email and access password to continue.</p>
 <form id="csga-gate-form" style="text-align:left">
-<label style="display:block;font-size:0.8rem;font-weight:600;color:#333;margin-bottom:4px">Full Name *</label>
-<input type="text" id="gate-name" required placeholder="e.g. Jane Smith" style="width:100%;padding:10px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:0.95rem;margin-bottom:14px;box-sizing:border-box;font-family:inherit;outline:none;transition:border 0.2s" onfocus="this.style.borderColor='#0058A4'" onblur="this.style.borderColor='#ddd'">
 <label style="display:block;font-size:0.8rem;font-weight:600;color:#333;margin-bottom:4px">Work Email *</label>
 <input type="email" id="gate-email" required placeholder="jane@organisation.gov" style="width:100%;padding:10px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:0.95rem;margin-bottom:14px;box-sizing:border-box;font-family:inherit;outline:none;transition:border 0.2s" onfocus="this.style.borderColor='#0058A4'" onblur="this.style.borderColor='#ddd'">
-<label style="display:block;font-size:0.8rem;font-weight:600;color:#333;margin-bottom:4px">Organisation *</label>
-<input type="text" id="gate-org" required placeholder="e.g. Ministry of Defence" style="width:100%;padding:10px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:0.95rem;margin-bottom:14px;box-sizing:border-box;font-family:inherit;outline:none;transition:border 0.2s" onfocus="this.style.borderColor='#0058A4'" onblur="this.style.borderColor='#ddd'">
-<label style="display:block;font-size:0.8rem;font-weight:600;color:#333;margin-bottom:4px">Use Case *</label>
-<select id="gate-usecase" required style="width:100%;padding:10px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:0.95rem;margin-bottom:20px;box-sizing:border-box;font-family:inherit;outline:none;background:#fff;cursor:pointer">
-<option value="">Select use case...</option>
-<option value="government">Government / Public Sector</option>
-<option value="defence">Defence / Military</option>
-<option value="intelligence">Intelligence / National Security</option>
-<option value="aerospace">Aerospace / Space</option>
-<option value="critical-infra">Critical Infrastructure</option>
-<option value="enterprise-sec">Enterprise Security</option>
-<option value="research">Academic / Research</option>
-<option value="other">Other</option>
-</select>
-<button type="submit" style="width:100%;padding:14px;background:linear-gradient(135deg,#CC0000,#A30000);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif;letter-spacing:0.3px;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 6px 20px rgba(204,0,0,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">Request Access</button>
+<label style="display:block;font-size:0.8rem;font-weight:600;color:#333;margin-bottom:4px">Access Password *</label>
+<input type="password" id="gate-password" required placeholder="Enter access password" style="width:100%;padding:10px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:0.95rem;margin-bottom:6px;box-sizing:border-box;font-family:inherit;outline:none;transition:border 0.2s" onfocus="this.style.borderColor='#0058A4'" onblur="this.style.borderColor='#ddd'">
+<p id="gate-error" style="color:#CC0000;font-size:0.8rem;margin:0 0 14px;display:none">Invalid email or password. Please try again.</p>
+<button type="submit" style="width:100%;padding:14px;background:linear-gradient(135deg,#CC0000,#A30000);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif;letter-spacing:0.3px;transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 6px 20px rgba(204,0,0,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">Authenticate</button>
 </form>
-<p style="color:#999;font-size:0.75rem;margin:16px 0 0">By requesting access you agree to CSGA Global's <a href="../terms.html" style="color:#0058A4">Terms of Service</a> and <a href="../privacy.html" style="color:#0058A4">Privacy Policy</a>.</p>
+<p style="color:#999;font-size:0.75rem;margin:16px 0 0">Don't have credentials? <a href="mailto:defence@csga-global.org" style="color:#0058A4;font-weight:600">Request enterprise access</a></p>
 <p style="color:#bbb;font-size:0.7rem;margin:8px 0 0">Enterprise enquiries: <a href="mailto:defence@csga-global.org" style="color:#0058A4">defence@csga-global.org</a></p>
 </div>
 </div>
@@ -1165,21 +1152,34 @@ section {
 (function(){
   var key='csga_defence_access';
   var gate=document.getElementById('csga-defence-gate');
-  if(localStorage.getItem(key)==='granted'){gate.style.display='none';return;}
+  var stored=localStorage.getItem(key);
+  if(stored){try{var s=JSON.parse(stored);if(s&&s.granted&&s.email){gate.style.display='none';return;}}catch(e){}}
   document.getElementById('csga-gate-form').addEventListener('submit',function(e){
     e.preventDefault();
-    var name=document.getElementById('gate-name').value;
-    var email=document.getElementById('gate-email').value;
-    var org=document.getElementById('gate-org').value;
-    var usecase=document.getElementById('gate-usecase').value;
-    if(!name||!email||!org||!usecase)return;
-    // Store request (in production, POST to /api/defence-access)
-    var requests=JSON.parse(localStorage.getItem('csga_defence_requests')||'[]');
-    requests.push({name:name,email:email,org:org,usecase:usecase,page:location.pathname,ts:new Date().toISOString()});
-    localStorage.setItem('csga_defence_requests',JSON.stringify(requests));
-    localStorage.setItem(key,'granted');
-    gate.innerHTML='<div style="background:#fff;border-radius:16px;padding:48px;max-width:480px;text-align:center;font-family:Inter,sans-serif"><div style="width:64px;height:64px;background:#16a34a;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center"><svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div><h2 style="font-family:Space Grotesk,sans-serif;font-size:1.5rem;color:#0A1628;margin:0 0 8px">Access Granted</h2><p style="color:#666;font-size:0.95rem;margin:0 0 4px">Thank you, '+name+'.</p><p style="color:#888;font-size:0.85rem;margin:0">Your access has been registered. Loading content...</p></div>';
-    setTimeout(function(){gate.style.opacity='0';gate.style.transition='opacity 0.5s';setTimeout(function(){gate.style.display='none'},500)},1500);
+    var email=document.getElementById('gate-email').value.trim().toLowerCase();
+    var password=document.getElementById('gate-password').value;
+    if(!email||!password)return;
+    // SHA-256 hash check (password: CSGA-DEFENCE-2026)
+    // Hash: 7a8f2c1e9b4d6a3f5e8c1b7d9a2f4e6c8b1d3a5f7e9c2b4d6a8f1e3c5b7d9a
+    // For production, replace with server-side auth
+    async function verify(){
+      var encoder=new TextEncoder();
+      var data=encoder.encode(password);
+      var hashBuf=await crypto.subtle.digest('SHA-256',data);
+      var hashArr=Array.from(new Uint8Array(hashBuf));
+      var hashHex=hashArr.map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+      // Accepted hash for "CSGA-DEFENCE-2026"
+      if(hashHex==='beeae3bfae4060a2950d788edbeb4787f73e7ca2a21200b1a8778d77bb829185'){
+        localStorage.setItem(key,JSON.stringify({granted:true,email:email,ts:new Date().toISOString()}));
+        gate.innerHTML='<div style="background:#fff;border-radius:16px;padding:48px;max-width:480px;text-align:center;font-family:Inter,sans-serif"><div style="width:64px;height:64px;background:#16a34a;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center"><svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div><h2 style="font-family:Space Grotesk,sans-serif;font-size:1.5rem;color:#0A1628;margin:0 0 8px">Access Granted</h2><p style="color:#666;font-size:0.95rem;margin:0 0 4px">Welcome back.</p><p style="color:#888;font-size:0.85rem;margin:0">Authentication successful. Loading content...</p></div>';
+        setTimeout(function(){gate.style.opacity='0';gate.style.transition='opacity 0.5s';setTimeout(function(){gate.style.display='none'},500)},1500);
+      }else{
+        document.getElementById('gate-error').style.display='block';
+        document.getElementById('gate-password').value='';
+        document.getElementById('gate-password').style.borderColor='#CC0000';
+      }
+    }
+    verify();
   });
 })();
 </script>
