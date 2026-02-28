@@ -550,12 +550,15 @@
    <div class="eco-card">
     <div class="eco-icon">🏭</div>
     <h3>Industry Verticals</h3>
-    <p class="eco-desc">8 MCPs · 20,000 credits/mo</p>
+    <p class="eco-desc">20 MCPs · 20,000 credits/mo</p>
     <div class="eco-price">$129<span>/mo</span></div>
     <div class="eco-annual">or $1,299/yr (save 16%)</div>
     <ul class="eco-list">
      <li>Real Estate AI</li><li>Retail AI</li><li>Telecom AI</li><li>Supply Chain AI</li>
      <li>Space AI</li><li>Smart Cities AI</li><li>Sports Analytics AI</li><li>Travel &amp; Hospitality AI</li>
+     <li>Healthcare AI</li><li>Financial AI</li><li>Insurance AI</li><li>Energy AI</li>
+     <li>Agriculture AI</li><li>Construction AI</li><li>Maritime AI</li><li>Mining AI</li>
+     <li>Gaming AI</li><li>Media &amp; Advertising AI</li><li>Legal Tech AI</li><li>Autonomous Vehicles AI</li>
     </ul>
     <button class="pricing-btn primary" onclick="handleCheckout('ecosystem_industry')">Get Industry Suite</button>
    </div>
@@ -1100,11 +1103,11 @@ if (P.memberships) {
   PLAN_INFO[key] = {
    name: m.name,
    icon: key === 'community' ? '🚀' : key === 'starter' ? '⚡' : key === 'professional' ? '💼' : key === 'enterprise_sector' ? '🏢' : key === 'enterprise_full' ? '🏛️' : '🛡️',
-   mcps: typeof m.features?.mcpAccess === 'string' ? m.features.mcpAccess : (m.features?.mcpAccess || '?'),
-   monthly: m.monthly,
-   annual: m.annual,
-   credits: m.features?.credits || 0,
-   team: m.features?.team || 1,
+   mcps: m.mcpCount || '?',
+   monthly: m.monthlyPrice,
+   annual: m.annualPrice,
+   credits: m.credits || 0,
+   team: m.teamMembers || 1,
    trial: m.trialDays || 0,
   };
  });
@@ -1114,7 +1117,7 @@ if (P.memberships) {
 const ECO_INFO = {};
 if (P.ecosystems) {
  Object.entries(P.ecosystems).forEach(([key, e]) => {
-  ECO_INFO[key] = { name: e.name, monthly: e.monthly, annual: e.annual, mcps: e.mcps?.length || 0, credits: e.credits };
+  ECO_INFO[key] = { name: e.name, monthly: e.monthlyPrice, annual: e.annualPrice, mcps: e.mcps?.length || 0, credits: e.credits };
  });
 }
 
@@ -1303,7 +1306,7 @@ async function initiateStripeCheckout(productKey, billingOrMode) {
  // Check ecosystem bundles (e.g. 'ecosystem_security', 'ecosystem_governance')
  if (!priceId && productKey.startsWith('ecosystem_')) {
   const ecoKey = productKey.replace('ecosystem_', '');
-  const eco = CSGA_PRICING.ecosystemBundles?.[ecoKey];
+  const eco = CSGA_PRICING.ecosystems?.[ecoKey];
   if (eco) {
    priceId = billingOrMode === 'annual' ? eco.stripePriceAnnual : eco.stripePriceMonthly;
    checkoutMode = 'subscription';
@@ -1314,7 +1317,7 @@ async function initiateStripeCheckout(productKey, billingOrMode) {
  // Check MCP class pricing (e.g. 'mcp_lvp', 'mcp_mvp', 'mcp_hvp')
  if (!priceId && productKey.startsWith('mcp_')) {
   const cls = productKey.replace('mcp_', '');
-  const mcpClass = CSGA_PRICING.mcpClasses?.[cls];
+  const mcpClass = CSGA_PRICING.mcpClassification?.[cls];
   if (mcpClass) {
    priceId = billingOrMode === 'annual' ? mcpClass.stripePriceAnnual : mcpClass.stripePriceMonthly;
    checkoutMode = 'subscription';
@@ -1335,8 +1338,8 @@ async function initiateStripeCheckout(productKey, billingOrMode) {
 
  // Check CASA certifications (one-time payments)
  if (!priceId && productKey.startsWith('casa_')) {
-  const level = productKey.replace('casa_', '').toUpperCase();
-  const casa = CSGA_PRICING.casaCertifications?.[level];
+  const level = productKey.replace('casa_', '');
+  const casa = CSGA_PRICING.casaCertification?.[level];
   if (casa) {
    priceId = casa.stripePrice;
    checkoutMode = 'payment';
@@ -1345,8 +1348,8 @@ async function initiateStripeCheckout(productKey, billingOrMode) {
  }
 
  // Check credit packs (one-time payments)
- if (!priceId && productKey.startsWith('credit_')) {
-  const pack = productKey.replace('credit_', '');
+ if (!priceId && productKey.startsWith('credits_')) {
+  const pack = productKey.replace('credits_', '');
   const credit = CSGA_PRICING.creditPacks?.[pack];
   if (credit) {
    priceId = credit.stripePrice;
@@ -1428,8 +1431,6 @@ function handleEnterpriseInquiry(e) {
  }, 1500);
 }
 </script>
-
-<script src="js/pricing-config.js"></script>
 
 <!-- ═══ STICKY GUARANTEE BAR ═══ -->
 <div id="guarantee-bar" style="position:fixed;bottom:0;left:0;right:0;background:#0A1628;color:#fff;padding:12px 32px;display:none;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,.2);">
