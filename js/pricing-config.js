@@ -242,7 +242,7 @@ const CSGA_PRICING = {
   },
 
   // ═══════════════════════════════════════════════════════════
-  //  COMPLETE MCP CATALOG (44 Governance/Sector + 25 DevTools = 69)
+  //  COMPLETE MCP CATALOG (44 Governance/Sector + 11 Security + 25 DevTools = 80)
   // ═══════════════════════════════════════════════════════════
   mcpCatalog: {
     // ── CORE TIER (All memberships) ──────────────────────
@@ -256,7 +256,7 @@ const CSGA_PRICING = {
     'bmcc-cyber':            { name: 'BMCC Cyber',             class: 'lvp', sector: 'core', stripeProd: 'prod_U3nJqS3WpM9Mzp' },
     'thn-global':            { name: 'THN Global Pharma',      class: 'hvp', sector: 'core', stripeProd: 'prod_U3nJhF9DenptM4' },
     'digital-human-library': { name: 'Digital Human Library',  class: 'lvp', sector: 'core', stripeProd: 'prod_U3nJWpAGlAachQ' },
-    'ai-economy-infra':      { name: 'AI Economy Infra',       class: 'hvp', sector: 'core', stripeProd: 'prod_U3nJXpfurZoSbN' },
+    'ai-economy-infrastructure': { name: 'AI Economy Infrastructure', class: 'hvp', sector: 'core', stripeProd: 'prod_U3nJXpfurZoSbN' },
 
     // ── T1 SECTOR (Professional+) ───────────────────────
     'healthcare-ai':         { name: 'Healthcare AI',          class: 'hvp', sector: 't1', stripeProd: 'prod_U3nJqkwfCMmTiS' },
@@ -267,7 +267,7 @@ const CSGA_PRICING = {
 
     // ── T2 SECTOR (Starter+) ────────────────────────────
     'gaming-ai':             { name: 'Gaming AI',              class: 'mvp', sector: 't2', stripeProd: 'prod_U3nJPKQNBj1wyz' },
-    'autonomous-vehicles':   { name: 'Autonomous Vehicles',    class: 'hvp', sector: 't2', stripeProd: 'prod_U3nJf79eeBg12T' },
+    'autonomous-vehicles-ai': { name: 'Autonomous Vehicles AI', class: 'hvp', sector: 't2', stripeProd: 'prod_U3nJf79eeBg12T' },
     'insurance-ai':          { name: 'Insurance AI',           class: 'mvp', sector: 't2', stripeProd: 'prod_U3nJmSwqVpD0Q3' },
     'telecom-ai':            { name: 'Telecom AI',             class: 'mvp', sector: 't2', stripeProd: 'prod_U3nJee7lVlkPTr' },
     'energy-ai':             { name: 'Energy AI',              class: 'mvp', sector: 't2', stripeProd: 'prod_U3nJD1Klja9Est' },
@@ -275,7 +275,7 @@ const CSGA_PRICING = {
     'retail-ai':             { name: 'Retail AI',              class: 'lvp', sector: 't2', stripeProd: 'prod_U3nJw6YDyBDFUh' },
 
     // ── T3 SECTOR (Individual purchase) ─────────────────
-    'media-ads-ai':          { name: 'Media & Ads AI',         class: 'lvp', sector: 't3', stripeProd: 'prod_U3nJsnZnRxUXpc' },
+    'media-advertising-ai':  { name: 'Media & Advertising AI', class: 'lvp', sector: 't3', stripeProd: 'prod_U3nJsnZnRxUXpc' },
     'agriculture-ai':        { name: 'Agriculture AI',         class: 'lvp', sector: 't3', stripeProd: 'prod_U3nJUHqnh1e0av' },
     'construction-ai':       { name: 'Construction AI',        class: 'lvp', sector: 't3', stripeProd: 'prod_U3nJeJYVmSsy51' },
     'supply-chain-ai':       { name: 'Supply Chain AI',        class: 'mvp', sector: 't3', stripeProd: 'prod_U3nJSKk8xnYl3f' },
@@ -288,6 +288,19 @@ const CSGA_PRICING = {
     'mining-ai':             { name: 'Mining AI',              class: 'mvp', sector: 't4', stripeProd: 'prod_U3nJ5gvT6ZiNR1' },
     'maritime-ai':           { name: 'Maritime AI',            class: 'mvp', sector: 't4', stripeProd: 'prod_U3nJBDVR7tXDQR' },
     'smart-cities-ai':       { name: 'Smart Cities AI',        class: 'mvp', sector: 't4', stripeProd: 'prod_U3nJAfSRx3KG0G' },
+
+    // ── SECURITY & DEFENCE (Enterprise only) ─────────────
+    'ai-governance':         { name: 'AI Governance',          class: 'hvp', sector: 'security', stripeProd: 'prod_security_ai_gov' },
+    'cloud-security':        { name: 'Cloud Security',         class: 'hvp', sector: 'security', stripeProd: 'prod_security_cloud' },
+    'compliance-audit':      { name: 'Compliance Audit',       class: 'hvp', sector: 'security', stripeProd: 'prod_security_compliance' },
+    'data-classification':   { name: 'Data Classification',    class: 'hvp', sector: 'security', stripeProd: 'prod_security_data_class' },
+    'dsrb-defence':          { name: 'DSRB Defence',           class: 'hvp', sector: 'security', stripeProd: 'prod_security_dsrb' },
+    'incident-response':     { name: 'Incident Response',      class: 'hvp', sector: 'security', stripeProd: 'prod_security_incident' },
+    'policy-engine':         { name: 'Policy Engine',          class: 'hvp', sector: 'security', stripeProd: 'prod_security_policy' },
+    'red-team-ops':          { name: 'Red Team Ops',           class: 'hvp', sector: 'security', stripeProd: 'prod_security_redteam' },
+    'secure-comms':          { name: 'Secure Comms',           class: 'hvp', sector: 'security', stripeProd: 'prod_security_comms' },
+    'threat-intelligence':   { name: 'Threat Intelligence',    class: 'hvp', sector: 'security', stripeProd: 'prod_security_threat' },
+    'vulnerability-scanner': { name: 'Vulnerability Scanner',  class: 'hvp', sector: 'security', stripeProd: 'prod_security_vuln' },
 
     // ── DEV TOOLS (Included based on membership tier) ───
     'context7-docs':         { name: 'Context7 Docs',          class: 'lvp', sector: 'devtools', stripeProd: null },
@@ -343,18 +356,18 @@ const CSGA_PRICING = {
     'vulnerability-scanner': 'enterprise', 'casa-certification': 'enterprise',
     'csga-standards': 'enterprise', 'proofof-ai': 'enterprise',
     'oneos-education': 'enterprise', 'digital-human-library': 'enterprise',
-    'ai-economy-infra': 'enterprise',
+    'ai-economy-infrastructure': 'enterprise',
     // Enterprise Tier — T1 Sector (Professional+)
     'healthcare-ai': 'enterprise', 'financial-ai': 'enterprise',
     'biometrics-ai': 'enterprise', 'employment-ai': 'enterprise',
     'law-enforcement-ai': 'enterprise',
     // Enterprise Tier — T2 Sector (Starter+)
-    'gaming-ai': 'enterprise', 'autonomous-vehicles': 'enterprise',
+    'gaming-ai': 'enterprise', 'autonomous-vehicles-ai': 'enterprise',
     'insurance-ai': 'enterprise', 'telecom-ai': 'enterprise',
     'energy-ai': 'enterprise', 'real-estate-ai': 'enterprise',
     'retail-ai': 'enterprise',
     // Enterprise Tier — T3 Sector (Individual purchase)
-    'media-ads-ai': 'enterprise', 'agriculture-ai': 'enterprise',
+    'media-advertising-ai': 'enterprise', 'agriculture-ai': 'enterprise',
     'construction-ai': 'enterprise', 'supply-chain-ai': 'enterprise',
     'legal-tech-ai': 'enterprise', 'sports-analytics-ai': 'enterprise',
     'travel-hospitality-ai': 'enterprise',
@@ -442,8 +455,8 @@ const CSGA_PRICING = {
         'space-ai', 'smart-cities-ai', 'sports-analytics-ai',
         'travel-hospitality-ai', 'healthcare-ai', 'financial-ai',
         'insurance-ai', 'energy-ai', 'agriculture-ai', 'construction-ai',
-        'maritime-ai', 'mining-ai', 'gaming-ai', 'media-ads-ai',
-        'legal-tech-ai', 'autonomous-vehicles',
+        'maritime-ai', 'mining-ai', 'gaming-ai', 'media-advertising-ai',
+        'legal-tech-ai', 'autonomous-vehicles-ai',
       ],
       description: '20 industry MCPs with 20,000 API credits/month',
     },
