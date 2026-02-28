@@ -1,0 +1,12 @@
+name: dsrb-defence
+description: >-
+  Defence Science Research Board analysis, intelligence briefings, and assessment tools
+version: 1.0.0
+repository: https://github.com/csga-global/mcp-servers
+license: CC0-1.0
+runtime: node
+command:
+  npx: '@csga-global/dsrb-defence'
+categories:
+  - Defence
+  - Intelligence

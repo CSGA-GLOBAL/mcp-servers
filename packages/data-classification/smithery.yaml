@@ -1,0 +1,12 @@
+name: data-classification
+description: >-
+  Automated data discovery, sensitivity labelling, and DLP policy enforcement
+version: 1.0.0
+repository: https://github.com/csga-global/mcp-servers
+license: CC0-1.0
+runtime: node
+command:
+  npx: '@csga-global/data-classification'
+categories:
+  - Data Security
+  - Cybersecurity

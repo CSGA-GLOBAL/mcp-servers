@@ -1,0 +1,12 @@
+name: incident-response
+description: >-
+  SOAR workflows, playbook execution, alert triage, and forensic analysis
+version: 1.0.0
+repository: https://github.com/csga-global/mcp-servers
+license: CC0-1.0
+runtime: node
+command:
+  npx: '@csga-global/incident-response'
+categories:
+  - Incident Response
+  - Cybersecurity

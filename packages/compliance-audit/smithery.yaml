@@ -1,0 +1,12 @@
+name: compliance-audit
+description: >-
+  ISO 27001, SOC 2, NIST, GDPR compliance auditing and evidence collection
+version: 1.0.0
+repository: https://github.com/csga-global/mcp-servers
+license: CC0-1.0
+runtime: node
+command:
+  npx: '@csga-global/compliance-audit'
+categories:
+  - Compliance
+  - Cybersecurity
