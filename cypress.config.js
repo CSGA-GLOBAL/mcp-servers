@@ -17,5 +17,13 @@ module.exports = defineConfig({
       STRIPE_ACCOUNT: process.env.STRIPE_ACCOUNT || '',
       API_BASE: '/api',
     },
+    setupNodeEvents(on, config) {
+      on('task', {
+        log(message) {
+          console.log(message)
+          return null
+        }
+      })
+    }
   },
 });

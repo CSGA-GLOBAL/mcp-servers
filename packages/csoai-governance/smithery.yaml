@@ -1,0 +1,9 @@
+name: "@csga-global/csoai-governance"
+version: "1.0.0"
+runtime: "node"
+startCommand:
+  type: "stdio"
+  configSchema:
+    type: "object"
+    properties: {}
+    required: []

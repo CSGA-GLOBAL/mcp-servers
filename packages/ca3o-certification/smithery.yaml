@@ -1,0 +1,9 @@
+name: "@csga-global/ca3o-certification"
+version: "1.0.0"
+runtime: "node"
+startCommand:
+  type: "stdio"
+  configSchema:
+    type: "object"
+    properties: {}
+    required: []
