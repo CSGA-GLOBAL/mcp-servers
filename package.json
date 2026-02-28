@@ -11,7 +11,7 @@
     "test": "npm run test:cypress && npm run test:playwright"
   },
   "dependencies": {
-    "stripe": "^14.25.0"
+    "stripe": "^20.4.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.41.0",
