@@ -209,7 +209,7 @@ describe('Navigation & Site Structure', () => {
       });
     });
 
-    it('pricing config has 47 MCPs in catalog', () => {
+    it('pricing config has 67 MCPs in catalog', () => {
       cy.visit('/pricing.html');
       cy.window().then((win) => {
         const mcps = Object.keys(win.CSGA_PRICING.mcpCatalog);

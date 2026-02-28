@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>The world's first enterprise-grade AI Governance & Cybersecurity MCP (Model Context Protocol) platform</strong><br/>
-  47 production-ready servers · Claude · ChatGPT · Cursor · Any MCP client
+  67 production-ready servers · Claude · ChatGPT · Cursor · Any MCP client
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
   <a href="https://smithery.ai"><img src="https://img.shields.io/badge/Smithery-Install-0058A4?style=flat-square" alt="Smithery" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT License" /></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square" alt="PRs Welcome" /></a>
-  <img src="https://img.shields.io/badge/MCP_Servers-47-CC0000?style=flat-square" alt="47 MCP Servers" />
+  <img src="https://img.shields.io/badge/MCP_Servers-67-CC0000?style=flat-square" alt="67 MCP Servers" />
   <img src="https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node 18+" />
 </p>
 
@@ -39,7 +39,7 @@ CSGA Global is the platform division of **CSGA's CSOAI (UK) Division** — a non
 
 ---
 
-## MCP Ecosystem — 47 Production-Ready Servers
+## MCP Ecosystem — 67 Production-Ready Servers
 
 Every server is available on [Smithery.ai](https://smithery.ai) for one-click installation with Claude Desktop, Cursor, Windsurf, and other MCP-compatible clients.
 
@@ -185,8 +185,8 @@ Add any CSGA MCP server to your `claude_desktop_config.json`:
 | **Community** | 12 open-source MCPs | Free | Free |
 | **Starter** | 24 MCPs | $79/mo | $759/yr |
 | **Professional** | 36 MCPs | $199/mo | $1,910/yr |
-| **Enterprise Sector** | All 47 MCPs | $499/mo | $4,790/yr |
-| **Enterprise Full** | All 47 + priority support | $1,499/mo | $14,390/yr |
+| **Enterprise Sector** | All 67 MCPs | $499/mo | $4,790/yr |
+| **Enterprise Full** | All 67 + priority support | $1,499/mo | $14,390/yr |
 | **Enterprise Custom** | Sovereign, air-gapped, FedRAMP | $2,499+/mo | Custom |
 
 Individual MCP pricing also available: LVP $9/mo · MVP $29/mo · HVP $79/mo

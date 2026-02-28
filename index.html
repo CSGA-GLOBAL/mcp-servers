@@ -18,253 +18,7 @@
  <meta name="twitter:title" content="CSGA Global">
  <meta name="twitter:description" content="Cyber Security Global Alliance — AI governance, cybersecurity standards, and MCP platform">
  <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* CSGA Brand Gold */
-:root {
-  --gold: #CC0000;
-  --gold-light: #E63946;
-  --gold-dark: #A30000;
-  --gold-glow: rgba(204, 0, 0, 0.3);
-}
-/* ============================================================================
- 2-BAR HEADER (BMCC Cyber Style)
- ============================================================================ */
-.header-bar {
- background: #0058A4;
- position: sticky;
- top: 0;
- z-index: 1000;
- box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
-.header-inner {
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 14px 32px;
- max-width: 1440px;
- margin: 0 auto;
-}
-.logo {
- display: flex;
- align-items: center;
- gap: 12px;
- text-decoration: none;
- color: #fff;
-}
-.logo-mark {
- width: 44px;
- height: 44px;
- display: flex;
- align-items: center;
- justify-content: center;
- flex-shrink: 0;
-}
-.logo-mark svg {
- width: 44px;
- height: 44px;
-}
-.logo-text {
- font-size: 1.45rem;
- font-weight: 700;
- letter-spacing: -0.3px;
-}
-.logo-sub {
- font-size: 0.7rem;
- opacity: 0.85;
- font-weight: 400;
- letter-spacing: 0.5px;
- display: block;
- margin-top: -2px;
-}
-.header-right {
- display: flex;
- align-items: center;
- gap: 12px;
-}
-.header-btn {
- padding: 10px 24px;
- border-radius: 6px;
- font-weight: 600;
- font-size: 0.9rem;
- text-decoration: none;
- transition: all 0.2s ease;
- cursor: pointer;
- border: none;
-}
-.btn-join {
- background: #CC0000;
- color: #fff;
- font-size: 0.88rem;
- padding: 11px 28px;
- font-weight: 700;
- letter-spacing: 0.3px;
- text-transform: uppercase;
-}
-.btn-join:hover {
- background: #AA0000;
- transform: translateY(-2px);
- box-shadow: 0 6px 20px rgba(204,0,0,0.35);
-}
-.btn-login {
- background: rgba(255,255,255,0.15);
- color: #fff;
- border: 1px solid rgba(255,255,255,0.3);
-}
-.btn-login:hover {
- background: rgba(255,255,255,0.25);
-}
-/* Nav Bar (2nd bar) */
-.nav-bar {
- background: #004A8C;
- border-bottom: 3px solid #CC0000;
- position: sticky;
- top: 66px;
- z-index: 999;
-}
-.nav-inner {
- display: flex;
- align-items: center;
- max-width: 1400px;
- margin: 0 auto;
- padding: 0 24px;
-}
-.nav-link {
- color: #fff;
- text-decoration: none;
- padding: 15px 20px;
- font-weight: 600;
- font-size: 0.88rem;
- letter-spacing: 0.2px;
- transition: all 0.2s ease;
- position: relative;
- white-space: nowrap;
-}
-.nav-link:hover {
- background: rgba(255,255,255,0.12);
-}
-.nav-link.active {
- background: rgba(255,255,255,0.15);
-}
-/* Dropdown triggers */
-.nav-dropdown {
- position: relative;
-}
-.nav-dropdown > .nav-link::after {
- content: '';
-}
-/* Mega Menu Panel */
-.mega-panel {
- position: absolute;
- top: 100%;
- left: 0;
- min-width: 640px;
- background: #fff;
- border-radius: 0 0 12px 12px;
- box-shadow: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
- padding: 32px 36px;
- border-top: 3px solid #CC0000;
- opacity: 0;
- visibility: hidden;
- transform: translateY(-4px);
- transition: all 0.25s ease;
- z-index: 1000;
-}
-.nav-dropdown:hover .mega-panel {
- opacity: 1;
- visibility: visible;
- transform: translateY(0);
-}
-.mega-grid {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 24px;
-}
-.mega-col h5 {
- color: #0058A4;
- font-size: 0.75rem;
- font-weight: 700;
- text-transform: uppercase;
- letter-spacing: 1.2px;
- margin-bottom: 12px;
- padding-bottom: 8px;
- border-bottom: 2px solid #DBEAFE;
-}
-.mega-item {
- display: block;
- padding: 8px 0;
- text-decoration: none;
- color: #1E293B;
- transition: all 0.15s ease;
-}
-.mega-item:hover {
- color: #0058A4;
- padding-left: 6px;
-}
-.mega-item-title {
- font-weight: 600;
- font-size: 0.9rem;
- display: block;
-}
-.mega-item-sub {
- font-size: 0.78rem;
- color: #64748B;
- display: block;
- margin-top: 2px;
-}
-/* Hamburger (mobile) */
-.menu-toggle {
- display: none;
- background: none;
- border: none;
- color: #fff;
- font-size: 1.5rem;
- cursor: pointer;
- padding: 8px;
-}
-@media (max-width: 900px) {
- .nav-bar {
- display: none;
- position: fixed;
- top: 66px;
- left: 0;
- right: 0;
- bottom: 0;
- background: #004A8C;
- flex-direction: column;
- overflow-y: auto;
- padding: 16px;
- }
- .nav-bar.active {
- display: flex;
- }
- .nav-inner {
- flex-direction: column;
- align-items: stretch;
- }
- .mega-panel {
- position: static;
- opacity: 1;
- visibility: visible;
- transform: none;
- min-width: auto;
- background: #003D75;
- border-radius: 8px;
- margin-top: 4px;
- }
- .mega-grid {
- grid-template-columns: 1fr;
- }
- .mega-col h5 {
- color: #93C5FD;
- border-bottom-color: rgba(255,255,255,0.15);
- }
- .mega-item { color: #fff; }
- .mega-item-sub { color: rgba(255,255,255,0.6); }
- .menu-toggle { display: block; }
- .header-right .btn-login { display: none; }
-}
-</style>
+ 
 
  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CSGA Global","description":"Cyber Security Global Alliance \u2014 AI governance, cybersecurity standards, and MCP platform","url":"https://csga-global.vercel.app","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
 <style>
@@ -272,163 +26,11 @@
 .hero-glow{position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(204,0,0,0.06) 0%,transparent 70%);pointer-events:none;z-index:0}
 .hero-glow-2{position:absolute;bottom:-20%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(0,88,164,0.06) 0%,transparent 70%);pointer-events:none;z-index:0}
 </style>
+<link rel="stylesheet" href="./components/shared.css">
 </head>
 <body>
-<div class="header-bar">
- <div class="header-inner">
- <a href="/" class="logo">
- <div class="logo-mark"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0D9488" stroke-width="0.8"/><path d="M24 8l10 4v12c0 6-10 12-10 12S14 30 14 24V12Z" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1"/><line x1="24" y1="13" x2="24" y2="25" stroke="#C5A572" stroke-width="1.2"/><line x1="18" y1="19" x2="30" y2="19" stroke="#C5A572" stroke-width="1.2"/><polygon points="24,12 23,14 25,14" fill="#C5A572"/><path d="M16 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><path d="M28 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><ellipse cx="24" cy="29" rx="4" ry="2.5" fill="#fff" stroke="#fff" stroke-width="0.8"/><circle cx="24" cy="29" r="1.5" fill="#0D9488"/></svg></div>
- <div>
- <span class="logo-text">CSGA Global</span>
- <span class="logo-sub">Cyber Security Global Alliance</span>
- </div>
- </a>
- <div class="header-right">
- <a href="/dashboard.html" class="header-btn btn-login">Log in</a>
- <a href="/members.html" class="header-btn btn-join">Join CSGA</a>
- <button class="menu-toggle" id="menuToggle">&#9776;</button>
- </div>
- </div>
-</div>
+<div id="site-header"></div>
 
-<nav class="nav-bar" id="navBar">
- <div class="nav-inner">
- <a href="/" class="nav-link active">Home</a>
- <div class="nav-dropdown">
- <span class="nav-link">Platform</span>
- <div class="mega-panel">
- <div class="mega-grid">
- <div class="mega-col">
- <h5>MCP Hub</h5>
- <a href="/catalog.html" class="mega-item">
- <span class="mega-item-title">MCP Catalog</span>
- <span class="mega-item-sub">47 model context protocols</span>
- </a>
- <a href="/pricing.html" class="mega-item">
- <span class="mega-item-title">Pricing</span>
- <span class="mega-item-sub">Free, Pro &amp; Enterprise</span>
- </a>
- </div>
- <div class="mega-col">
- <h5>Access</h5>
- <a href="/dashboard.html" class="mega-item">
- <span class="mega-item-title">Dashboard</span>
- <span class="mega-item-sub">Manage your MCPs</span>
- </a>
- <a href="/blog/" class="mega-item">
- <span class="mega-item-title">Blog</span>
- <span class="mega-item-sub">Latest updates &amp; guides</span>
- </a>
- </div>
- <div class="mega-col">
- <h5>Integration</h5>
- <a href="/cybersecurity.html" class="mega-item">
- <span class="mega-item-title">Cybersecurity MCPs</span>
- <span class="mega-item-sub">Threat detection &amp; response</span>
- </a>
- <a href="/ai-governance.html" class="mega-item">
- <span class="mega-item-title">Governance MCPs</span>
- <span class="mega-item-sub">ISO 42001 compliance</span>
- </a>
- </div>
- </div>
- </div>
- </div>
- <div class="nav-dropdown">
- <span class="nav-link">Solutions</span>
- <div class="mega-panel">
- <div class="mega-grid">
- <div class="mega-col">
- <h5>Security</h5>
- <a href="/cybersecurity.html" class="mega-item">
- <span class="mega-item-title">Cybersecurity</span>
- <span class="mega-item-sub">Threat prevention &amp; detection</span>
- </a>
- <a href="/cyber-defence.html" class="mega-item">
- <span class="mega-item-title">Cyber Defence</span>
- <span class="mega-item-sub">Defensive operations</span>
- </a>
- </div>
- <div class="mega-col">
- <h5>Governance</h5>
- <a href="/ai-governance.html" class="mega-item">
- <span class="mega-item-title">AI Governance</span>
- <span class="mega-item-sub">ISO 42001 compliance</span>
- </a>
- <a href="/csoai-standards.html" class="mega-item">
- <span class="mega-item-title">CSOAI Standards</span>
- <span class="mega-item-sub">Industry specifications</span>
- </a>
- </div>
- <div class="mega-col">
- <h5>Sectors</h5>
- <a href="/casa-sectors.html" class="mega-item">
- <span class="mega-item-title">CASA Sectors</span>
- <span class="mega-item-sub">Industry-specific solutions</span>
- </a>
- <a href="/tso-csrt.html" class="mega-item">
- <span class="mega-item-title">TSO-CSRT</span>
- <span class="mega-item-sub">Threat simulation &amp; ops</span>
- </a>
- </div>
- </div>
- </div>
- </div>
- <div class="nav-dropdown">
- <span class="nav-link">Learn</span>
- <div class="mega-panel">
- <div class="mega-grid">
- <div class="mega-col">
- <h5>Courses</h5>
- <a href="/training.html" class="mega-item">
- <span class="mega-item-title">Training &amp; MOOCs</span>
- <span class="mega-item-sub">36 free courses</span>
- </a>
- <a href="/certification.html" class="mega-item">
- <span class="mega-item-title">Certifications</span>
- <span class="mega-item-sub">6 professional tracks</span>
- </a>
- </div>
- <div class="mega-col">
- <h5>Programs</h5>
- <a href="/education.html" class="mega-item">
- <span class="mega-item-title">Education</span>
- <span class="mega-item-sub">Academic programs</span>
- </a>
- <a href="/programs.html" class="mega-item">
- <span class="mega-item-title">Programs</span>
- <span class="mega-item-sub">Specialized tracks</span>
- </a>
- <a href="/veterans.html" class="mega-item">
- <span class="mega-item-title">Veterans Cyber Careers</span>
- <span class="mega-item-sub">Free training for veterans</span>
- </a>
- </div>
- <div class="mega-col">
- <h5>Community</h5>
- <a href="/events.html" class="mega-item">
- <span class="mega-item-title">Events</span>
- <span class="mega-item-sub">Conferences &amp; workshops</span>
- </a>
- <a href="/research.html" class="mega-item">
- <span class="mega-item-title">Research</span>
- <span class="mega-item-sub">CSGA AI Research Institute</span>
- </a>
- </div>
- </div>
- </div>
- </div>
- <a href="/global-council.html" class="nav-link" style="color:#CC0000;font-weight:700;">Global Council</a>
- <a href="/about.html" class="nav-link">About</a>
- <a href="/partners.html" class="nav-link">Partners</a>
- <a href="/contact.html" class="nav-link">Contact</a>
- </div>
-</nav>
-<script>
-document.getElementById('menuToggle').addEventListener('click', function() {
- document.getElementById('navBar').classList.toggle('active');
-});
-</script>
 <style>
 /* ============================================================================
  HOMEPAGE SECTION STYLES
@@ -1499,7 +1101,7 @@ document.getElementById('menuToggle').addEventListener('click', function() {
  }
 }
 /* V8 Polish — Global Enhancements */
-html { scroll-behavior: smooth; }
+
 /* Smooth section transitions */
 section + section { position: relative; }
 /* Enhanced focus states for accessibility */
@@ -1596,14 +1198,14 @@ img[loading="lazy"] {
  <div class="hero-tag">CSGA Global Platform</div>
  <h1>The World's First <span class="highlight">AI Governance</span> & MCP Platform</h1>
  <p class="home-hero-subheading">
- Access 47 Model Context Protocols, CSOAI certified standards, and enterprise-grade security
+ Access 67 Model Context Protocols, CSOAI certified standards, and enterprise-grade security
  to lead your organization through the AI-driven economy.
  </p>
  <div class="home-hero-ctas">
  <button class="btn btn-hero-primary" onclick="location.href='/catalog'">
  Explore MCPs
  </button>
- <button class="btn btn-hero-secondary" onclick="location.href='/join'">
+ <button class="btn btn-hero-secondary" onclick="location.href='/members.html'">
  Join Free
  </button>
  </div>
@@ -2006,13 +1608,13 @@ img[loading="lazy"] {
   <div class="mcp-eco-header">
    <div class="mcp-eco-tag">MCP Ecosystem</div>
    <h2>The World's Largest <span class="eco-gold">AI Governance</span> MCP Platform</h2>
-   <p>47 enterprise-grade Model Context Protocols spanning cybersecurity, AI governance, defence, healthcare, finance, and critical infrastructure &mdash; all CSOAI certified and compliance-ready.</p>
+   <p>67 enterprise-grade Model Context Protocols spanning cybersecurity, AI governance, defence, healthcare, finance, and critical infrastructure &mdash; all CSOAI certified and compliance-ready.</p>
   </div>
 
   <!-- Animated Stats -->
   <div class="mcp-eco-stats">
    <div class="mcp-eco-stat reveal">
-    <span class="mcp-eco-stat-num" data-count="47">0</span>
+    <span class="mcp-eco-stat-num" data-count="67">0</span>
     <span class="mcp-eco-stat-label">MCP Servers</span>
    </div>
    <div class="mcp-eco-stat reveal">
@@ -2061,12 +1663,11 @@ img[loading="lazy"] {
    </a>
   </div>
 
-
   <!-- Social Proof Counter -->
   <div class="reveal" style="display:flex;align-items:center;justify-content:center;gap:32px;padding:20px 0;margin-bottom:24px;flex-wrap:wrap;">
    <div style="display:flex;align-items:center;gap:8px;">
     <div style="width:8px;height:8px;border-radius:50%;background:#10B981;animation:pulse 2s infinite;"></div>
-    <span style="font-size:.88rem;font-weight:600;color:#10B981;">47 live MCPs deployed</span>
+    <span style="font-size:.88rem;font-weight:600;color:#10B981;">67 live MCPs deployed</span>
    </div>
    <div style="display:flex;align-items:center;gap:6px;">
     <span style="font-size:.88rem;color:#64748B;">Trusted by <strong style="color:#0058A4;">340+</strong> organisations</span>
@@ -2076,7 +1677,9 @@ img[loading="lazy"] {
     <span style="font-size:.85rem;color:#64748B;">enterprise rating</span>
    </div>
   </div>
-  <style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}</style>
+  <style>
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+</style>
   <!-- CTAs -->
   <div class="mcp-eco-ctas">
    <a href="/catalog.html" class="mcp-eco-cta-primary">
@@ -2150,9 +1753,9 @@ img[loading="lazy"] {
  </div>
  <div class="home-showcase-card-content">
  <div class="home-showcase-card-icon icon-mcp"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
- <h3>47 Model Context Protocols</h3>
+ <h3>67 Model Context Protocols</h3>
  <p>AI-powered tools covering development, infrastructure, data, security, governance, and enterprise solutions.</p>
- <a href="/catalog" class="home-showcase-card-link">Explore MCP Catalog</a>
+ <a href="/catalog.html" class="home-showcase-card-link">Explore MCP Catalog</a>
  </div>
  </div>
  <div class="home-showcase-card reveal">
@@ -2200,7 +1803,7 @@ img[loading="lazy"] {
  <li>Basic API integration</li>
  <li>Community support</li>
  </ul>
- <button class="btn home-pricing-cta secondary" onclick="location.href='/join'">
+ <button class="btn home-pricing-cta secondary" onclick="location.href='/members.html'">
  Get Started
  </button>
  </div>
@@ -2219,7 +1822,7 @@ img[loading="lazy"] {
  <li>Priority email support</li>
  <li>Advanced analytics</li>
  </ul>
- <button class="btn home-pricing-cta primary" onclick="location.href='/join?plan=pro'">
+ <button class="btn home-pricing-cta primary" onclick="location.href='/members.html?plan=pro'">
  Start Pro Trial
  </button>
  </div>
@@ -2608,10 +2211,10 @@ img[loading="lazy"] {
  </div>
  </div>
  <style>
- @media(max-width:768px){
+@media(max-width:768px){
   section [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
  }
- </style>
+</style>
 </section>
 
 <section style="padding:80px 0;background:linear-gradient(135deg,#0A1628 0%,#0058A4 100%);position:relative;overflow:hidden">
@@ -2679,10 +2282,10 @@ img[loading="lazy"] {
  </div>
  </div>
  <style>
- @media(max-width:768px){
+@media(max-width:768px){
  section [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
  }
- </style>
+</style>
 </section>
 <section style="padding:80px 0;background:#f8fafc">
  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
@@ -2748,11 +2351,11 @@ img[loading="lazy"] {
  </div>
  </div>
  <style>
- @media(max-width:768px){
+@media(max-width:768px){
  section [style*="order:1"]{order:0 !important}
  section [style*="order:2"]{order:0 !important}
  }
- </style>
+</style>
 </section>
 <section class="home-blog">
  <div class="home-blog-container">
@@ -2796,10 +2399,10 @@ img[loading="lazy"] {
  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
  </div>
  <style>
- @keyframes kenburns1{0%{opacity:1;transform:scale(1)}30%{opacity:1;transform:scale(1.12)}33%{opacity:0;transform:scale(1.12)}96%{opacity:0}100%{opacity:1;transform:scale(1)}}
+@keyframes kenburns1{0%{opacity:1;transform:scale(1)}30%{opacity:1;transform:scale(1.12)}33%{opacity:0;transform:scale(1.12)}96%{opacity:0}100%{opacity:1;transform:scale(1)}}
  @keyframes kenburns2{0%{opacity:0;transform:scale(1.1)}30%{opacity:0}33%{opacity:1;transform:scale(1)}63%{opacity:1;transform:scale(1.1)}66%{opacity:0;transform:scale(1.1)}100%{opacity:0}}
  @keyframes kenburns3{0%{opacity:0;transform:scale(1.08)}63%{opacity:0}66%{opacity:1;transform:scale(1)}96%{opacity:1;transform:scale(1.15)}100%{opacity:0;transform:scale(1.15)}}
- </style>
+</style>
  <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
  <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:20px;padding:8px 18px;margin-bottom:24px">
  <svg width="16" height="16" viewBox="0 0 24 24" fill="#CC0000" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -2813,617 +2416,8 @@ img[loading="lazy"] {
  </div>
  </div>
 </section>
-<style>
-footer {
- background-color: #0A1628;
- color: #ffffff;
- padding: 72px 24px 36px;
- margin-top: 72px;
-}
-.footer-container {
- max-width: 1400px;
- margin: 0 auto;
-}
-.footer-grid {
- display: grid;
- grid-template-columns: repeat(6, 1fr);
- gap: 36px;
- margin-bottom: 48px;
-}
-.footer-column h4 {
- color: #93C5FD;
- font-size: 0.9rem;
- font-weight: 700;
- text-transform: uppercase;
- letter-spacing: 1px;
- margin-bottom: 24px;
-}
-.footer-column-brand {
- grid-column: span 1;
-}
-.footer-logo {
- display: flex;
- align-items: center;
- gap: 16px;
- margin-bottom: 24px;
-}
-.footer-logo-icon {
- width: 40px;
- height: 40px;
- background: linear-gradient(135deg, #fff, #DBEAFE);
- border-radius: 12px;
- display: flex;
- align-items: center;
- justify-content: center;
- font-weight: 900;
- font-size: 1.2rem;
-}
-.footer-logo-text {
- font-size: 1.2rem;
- font-weight: 700;
-}
-.footer-desc {
- font-size: 0.9rem;
- color: rgba(255, 255, 255, 0.8);
- margin-bottom: 24px;
- line-height: 1.6;
-}
-.footer-social {
- display: flex;
- gap: 16px;
- margin-bottom: 24px;
-}
-.social-icon {
- display: inline-flex;
- align-items: center;
- justify-content: center;
- width: 36px;
- height: 36px;
- background-color: rgba(255,255,255,0.1);
- border-radius: 12px;
- color: #93C5FD;
- text-decoration: none;
- transition: all 0.15s ease;
-}
-.social-icon:hover {
- background-color: #93C5FD;
- color: #0A1628;
- transform: translateY(-2px);
-}
-.footer-link {
- display: block;
- color: rgba(255, 255, 255, 0.8);
- text-decoration: none;
- margin-bottom: 16px;
- transition: all 0.15s ease;
- font-size: 0.95rem;
-}
-.footer-link:hover {
- color: #93C5FD;
- padding-left: 8px;
-}
-.ecosystem-bar {
- border-top: 1px solid rgba(59, 130, 246, 0.2);
- border-bottom: 1px solid rgba(59, 130, 246, 0.2);
- padding: 36px 0;
- margin-bottom: 36px;
-}
-.ecosystem-title {
- color: #93C5FD;
- font-size: 0.85rem;
- font-weight: 700;
- text-transform: uppercase;
- letter-spacing: 1px;
- margin-bottom: 24px;
-}
-.ecosystem-grid {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
- gap: 24px;
-}
-.ecosystem-item {
- display: flex;
- align-items: center;
- gap: 16px;
- padding: 16px;
- background-color: rgba(0, 88, 164, 0.1);
- border-radius: 12px;
- text-decoration: none;
- color: #ffffff;
- transition: all 0.15s ease;
- border-left: 3px solid transparent;
-}
-.ecosystem-item:hover {
- background-color: rgba(255,255,255,0.1);
- border-left-color: #93C5FD;
- transform: translateX(4px);
-}
-.ecosystem-name {
- font-size: 0.9rem;
- font-weight: 600;
-}
-.ecosystem-icon {
- font-size: 1.2rem;
-}
-.footer-bottom {
- border-top: 1px solid rgba(59, 130, 246, 0.2);
- padding-top: 36px;
- display: flex;
- align-items: center;
- justify-content: space-between;
- flex-wrap: wrap;
- gap: 24px;
-}
-.footer-partners {
- border-top: 1px solid rgba(59, 130, 246, 0.2);
- padding: 30px 0;
- margin-bottom: 30px;
-}
-.footer-partners-title {
- color: #93C5FD;
- font-size: 0.8rem;
- font-weight: 700;
- text-transform: uppercase;
- letter-spacing: 1px;
- margin-bottom: 20px;
- text-align: center;
-}
-.footer-partners-row {
- display: flex;
- justify-content: center;
- align-items: center;
- gap: 32px;
- flex-wrap: wrap;
-}
-.footer-partner-logo {
- height: 36px;
- width: auto;
- opacity: 0.65;
- filter: brightness(0) invert(1);
- transition: opacity 0.3s;
-}
-.footer-partner-logo:hover {
- opacity: 1;
-}
-.footer-accreditations {
- display: flex;
- justify-content: center;
- align-items: center;
- gap: 24px;
- flex-wrap: wrap;
- padding: 20px 0 0;
-}
-.footer-accred-badge {
- display: flex;
- align-items: center;
- gap: 8px;
- padding: 6px 14px;
- background: rgba(204, 0, 0, 0.1);
- border: 1px solid rgba(204, 0, 0, 0.25);
- border-radius: 8px;
- font-size: 0.78rem;
- color: #CC0000;
- font-weight: 600;
-}
-.footer-accred-badge img {
- height: 22px;
- width: auto;
- border-radius: 3px;
-}
-.footer-bottom-text {
- font-size: 0.9rem;
- color: rgba(255, 255, 255, 0.7);
-}
-.footer-brand-tag {
- display: inline-flex;
- align-items: center;
- gap: 8px;
- font-size: 0.85rem;
- color: #93C5FD;
- font-weight: 600;
-}
-@media (max-width: 1024px) {
- .footer-grid {
- grid-template-columns: repeat(3, 1fr);
- gap: 28px;
- }
- .footer-column-brand {
- grid-column: span 1;
- }
-}
-@media (max-width: 768px) {
- .footer-grid {
- grid-template-columns: repeat(2, 1fr);
- gap: 24px;
- }
- .ecosystem-grid {
- grid-template-columns: repeat(2, 1fr);
- }
- .footer-bottom {
- flex-direction: column;
- text-align: center;
- }
- footer {
- padding: 36px 16px 24px;
- }
-}
 
-
-/* ============================================================================
- ENHANCED HERO PREMIUM STYLES (Added for polish and visual depth)
- ============================================================================ */
-
-/* Premium mesh grid pattern overlay */
-.hero-mesh-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(0deg, rgba(0, 88, 164, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 88, 164, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index: 2;
-  pointer-events: none;
-  animation: meshShift 20s linear infinite;
-}
-
-@keyframes meshShift {
-  0% { background-position: 0 0; }
-  100% { background-position: 50px 50px; }
-}
-
-/* Enhanced gradient overlay with vignette effect */
-.home-hero::before {
-  background: 
-    radial-gradient(ellipse at center, rgba(10, 22, 40, 0) 0%, rgba(10, 22, 40, 0.4) 100%),
-    linear-gradient(180deg, rgba(10, 22, 40, 0.5) 0%, rgba(0, 40, 80, 0.3) 50%, rgba(10, 22, 40, 0.7) 100%);
-  filter: contrast(1.05) brightness(0.95);
-}
-
-/* Animated accent lines */
-.hero-accent-lines {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.accent-line {
-  position: absolute;
-  background: linear-gradient(90deg, transparent, rgba(204, 0, 0, 0.4), transparent);
-  pointer-events: none;
-}
-
-.line-1 {
-  width: 100%;
-  height: 2px;
-  top: 25%;
-  left: 0;
-  animation: slideInRight 3s ease-in-out infinite;
-}
-
-.line-2 {
-  width: 100%;
-  height: 1px;
-  top: 50%;
-  left: 0;
-  animation: slideInLeft 4s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.line-3 {
-  width: 100%;
-  height: 2px;
-  top: 75%;
-  left: 0;
-  animation: slideInRight 3.5s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-@keyframes slideInRight {
-  0% { opacity: 0; transform: translateX(-100%); }
-  50% { opacity: 1; }
-  100% { opacity: 0; transform: translateX(100%); }
-}
-
-@keyframes slideInLeft {
-  0% { opacity: 0; transform: translateX(100%); }
-  50% { opacity: 1; }
-  100% { opacity: 0; transform: translateX(-100%); }
-}
-
-/* Enhanced content scrim */
-.home-hero-content {
-  background: 
-    radial-gradient(circle at 50% 50%, rgba(0, 88, 164, 0.08), transparent 70%);
-  border-radius: 24px;
-  padding: 72px 24px;
-  backdrop-filter: blur(0.5px);
-  border: 1px solid rgba(204, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.home-hero-content:hover {
-  background: 
-    radial-gradient(circle at 50% 50%, rgba(0, 88, 164, 0.12), transparent 70%);
-  border-color: rgba(204, 0, 0, 0.2);
-}
-
-/* Floating orbs for depth */
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.4;
-  pointer-events: none;
-  animation: float 15s ease-in-out infinite;
-}
-
-.orb-1 {
-  width: 300px;
-  height: 300px;
-  background: rgba(204, 0, 0, 0.15);
-  top: 10%;
-  left: 5%;
-  animation-duration: 20s;
-}
-
-.orb-2 {
-  width: 250px;
-  height: 250px;
-  background: rgba(0, 88, 164, 0.15);
-  bottom: 20%;
-  right: 10%;
-  animation-duration: 18s;
-  animation-direction: reverse;
-}
-
-.orb-3 {
-  width: 200px;
-  height: 200px;
-  background: rgba(30, 64, 175, 0.1);
-  top: 50%;
-  left: 50%;
-  animation-duration: 22s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(20px, -20px) scale(1.05); }
-  50% { transform: translate(-10px, 30px) scale(0.95); }
-  75% { transform: translate(15px, 10px) scale(1.02); }
-}
-
-/* Premium focus glow on hero content */
-.home-hero-content .hero-tag,
-.home-hero-content h1,
-.home-hero-content p {
-  position: relative;
-  z-index: 2;
-}
-
-.home-hero-content h1 {
-  text-shadow: 
-    0 0 30px rgba(204, 0, 0, 0.3),
-    0 0 60px rgba(0, 88, 164, 0.2);
-  letter-spacing: -0.5px;
-}
-
-/* Enhanced interactive elements */
-.home-hero-cta {
-  position: relative;
-  z-index: 2;
-}
-
-.home-hero-cta button,
-.home-hero-cta a {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px rgba(204, 0, 0, 0.2);
-}
-
-.home-hero-cta button:hover,
-.home-hero-cta a:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(204, 0, 0, 0.4);
-}
-
-/* Media query for mobile */
-@media (max-width: 768px) {
-  .hero-mesh-overlay {
-    background-size: 30px 30px;
-  }
-  
-  .accent-line {
-    opacity: 0.5;
-  }
-  
-  .hero-orb {
-    filter: blur(60px);
-  }
-  
-  .home-hero-content {
-    padding: 48px 16px;
-    border-radius: 16px;
-  }
-  
-  .home-hero-content h1 {
-    text-shadow: 
-      0 0 20px rgba(204, 0, 0, 0.2),
-      0 0 40px rgba(0, 88, 164, 0.1);
-  }
-}
-</style>
-<footer>
- <div class="footer-container">
- <div class="ecosystem-bar">
- <div class="ecosystem-title">CSOAI Ecosystem - 14 Global Sites</div>
- <div class="ecosystem-grid">
- <a href="https://www.csga.global" class="ecosystem-item">
- <span class="ecosystem-icon">🌐</span>
- <span class="ecosystem-name">CSGA Global</span>
- </a>
- <a href="https://www.csoai.org" class="ecosystem-item">
- <span class="ecosystem-icon">⚡</span>
- <span class="ecosystem-name">CSOAI</span>
- </a>
- <a href="https://oneos-zeta.vercel.app" class="ecosystem-item">
- <span class="ecosystem-icon">💻</span>
- <span class="ecosystem-name">OneOS</span>
- </a>
- <a href="https://www.casa.gov.uk" class="ecosystem-item">
- <span class="ecosystem-icon">🏛️</span>
- <span class="ecosystem-name">CASA</span>
- </a>
- <a href="https://www.bmcc-cyber.com" class="ecosystem-item">
- <span class="ecosystem-icon">🛡️</span>
- <span class="ecosystem-name">BMCC Cyber</span>
- </a>
- <a href="https://www.terranova.ai" class="ecosystem-item">
- <span class="ecosystem-icon">🔮</span>
- <span class="ecosystem-name">Terranova</span>
- </a>
- <a href="https://www.aiguard.io" class="ecosystem-item">
- <span class="ecosystem-icon">🤖</span>
- <span class="ecosystem-name">AIGuard</span>
- </a>
- <a href="https://www.csoai-research.org" class="ecosystem-item">
- <span class="ecosystem-icon">🔬</span>
- <span class="ecosystem-name">Research</span>
- </a>
- <a href="https://www.defenceos.io" class="ecosystem-item">
- <span class="ecosystem-icon">CG</span>
- <span class="ecosystem-name">DefenceOS</span>
- </a>
- <a href="https://www.ca30.gov.uk" class="ecosystem-item">
- <span class="ecosystem-icon">📋</span>
- <span class="ecosystem-name">CA-30</span>
- </a>
- <a href="https://www.dsrb.gov.uk" class="ecosystem-item">
- <span class="ecosystem-icon">🔐</span>
- <span class="ecosystem-name">DSRB</span>
- </a>
- <a href="https://www.cobol-bridge.io" class="ecosystem-item">
- <span class="ecosystem-icon">🌉</span>
- <span class="ecosystem-name">COBOL Bridge</span>
- </a>
- <a href="https://www.tso-csrt.gov.uk" class="ecosystem-item">
- <span class="ecosystem-icon">🎯</span>
- <span class="ecosystem-name">TSO-CSRT</span>
- </a>
- <a href="https://www.csoai-standards.org" class="ecosystem-item">
- <span class="ecosystem-icon">✅</span>
- <span class="ecosystem-name">Standards</span>
- </a>
- </div>
- </div>
- <div class="footer-grid">
- <div class="footer-column footer-column-brand">
- <div class="footer-logo">
- <div class="footer-logo-icon"><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="none" stroke="#0D9488" stroke-width="1.5"/><circle cx="20" cy="20" r="16" fill="none" stroke="#C5A572" stroke-width="0.6"/><path d="M20 6l8 3.5v10c0 5-8 10-8 10s-8-5-8-10v-10Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="0.8"/><line x1="20" y1="10" x2="20" y2="21" stroke="#C5A572" stroke-width="1"/><line x1="15" y1="15" x2="25" y2="15" stroke="#C5A572" stroke-width="1"/><polygon points="20,9.5 19,11 21,11" fill="#C5A572"/><path d="M13 18q2 1.5 4 0" stroke="#C5A572" stroke-width="0.7" fill="none"/><path d="M23 18q2 1.5 4 0" stroke="#C5A572" stroke-width="0.7" fill="none"/><ellipse cx="20" cy="24" rx="3.5" ry="2" fill="#fff" stroke="#1F2937" stroke-width="0.6"/><circle cx="20" cy="24" r="1.2" fill="#0D9488"/></svg></div>
- <span class="footer-logo-text">CSGA Global</span>
- </div>
- <p class="footer-desc">Cyber Security Global Alliance — Advancing AI governance, cybersecurity, and secure human-AI systems.</p>
- <div class="footer-social">
- <a href="#" class="social-icon" title="LinkedIn">in</a>
- <a href="#" class="social-icon" title="Twitter">𝕏</a>
- <a href="#" class="social-icon" title="GitHub">◆</a>
- <a href="#" class="social-icon" title="YouTube">▶</a>
- </div>
- </div>
- <div class="footer-column">
- <h4>Platform</h4>
- <a href="/catalog.html" class="footer-link">MCP Catalog</a>
- <a href="/pricing.html" class="footer-link">Pricing</a>
- <a href="/dashboard.html" class="footer-link">Dashboard</a>
- <a href="/blog/" class="footer-link">Blog</a>
- <a href="/catalog.html" class="footer-link">MCP Catalog</a>
- <a href="/contact.html" class="footer-link">Contact</a>
- </div>
- <div class="footer-column">
- <h4>Solutions</h4>
- <a href="/cybersecurity.html" class="footer-link">Cybersecurity</a>
- <a href="/cyber-defence.html" class="footer-link">Cyber Defence</a>
- <a href="/ai-governance.html" class="footer-link">AI Governance</a>
- <a href="/cyber-defence.html" class="footer-link">Defence</a>
- <a href="/tso-csrt.html" class="footer-link">TSO-CSRT</a>
- </div>
- <div class="footer-column">
- <h4>Resources</h4>
- <a href="/research.html" class="footer-link">Research</a>
- <a href="/events.html" class="footer-link">Events</a>
- <a href="/education.html" class="footer-link">Education</a>
- <a href="/veterans.html" class="footer-link">Veterans Careers</a>
- <a href="/csoai-standards.html" class="footer-link">Standards</a>
- <a href="/partners.html" class="footer-link">Partners</a>
- </div>
- <div class="footer-column">
- <h4>Organisation</h4>
- <a href="/about.html" class="footer-link">About CSGA</a>
- <a href="/global-council.html" class="footer-link">Global Council</a>
- <a href="/members.html" class="footer-link">Members</a>
- <a href="/casa-sectors.html" class="footer-link">CASA Sectors</a>
- <a href="/contact.html" class="footer-link">Contact</a>
- <a href="/faq.html" class="footer-link">FAQ</a>
- </div>
- <div class="footer-column">
- <h4>Legal</h4>
- <a href="/privacy.html" class="footer-link">Privacy Policy</a>
- <a href="/terms.html" class="footer-link">Terms of Service</a>
- <a href="/privacy.html" class="footer-link">Cookie Policy</a>
- <a href="/cybersecurity.html" class="footer-link">Cybersecurity</a>
- </div>
- </div>
- <div class="footer-partners">
- <div class="footer-partners-title">Trusted Partners &amp; Affiliations</div>
- <div class="footer-partners-row">
- <img src="assets/logos/bmcc-cyber.jpg" alt="BMCC Cyber" class="footer-partner-logo">
- <img src="assets/logos/dhl.jpg" alt="DHL" class="footer-partner-logo">
- <img src="assets/logos/terranova.png" alt="Terranova Security" class="footer-partner-logo">
- <img src="assets/logos/csa-group.jpg" alt="CSA Group" class="footer-partner-logo">
- <img src="assets/logos/bbs.png" alt="BBS" class="footer-partner-logo">
- <img src="assets/logos/enterprise-finance.png" alt="Enterprise Finance" class="footer-partner-logo">
- <img src="assets/logos/toronto-dao.png" alt="Toronto DAO" class="footer-partner-logo">
- <img src="assets/logos/aidome.png" alt="AIDome" class="footer-partner-logo">
- </div>
- <div class="footer-accreditations">
- <div class="footer-accred-badge">
- <img src="assets/badges/us-dept-commerce.jpg" alt="US Dept of Commerce">
- <span>SelectUSA Participant</span>
- </div>
- <div class="footer-accred-badge">
- <img src="assets/badges/bmcc-cuny.jpg" alt="BMCC CUNY">
- <span>BMCC / CUNY Partner</span>
- </div>
- <div class="footer-accred-badge">
- <img src="assets/badges/cyber-security-assoc.png" alt="Cyber Security Association">
- <span>CSA Member</span>
- </div>
- <div class="footer-accred-badge">
- <img src="assets/badges/trustworthy-ai.png" alt="Trustworthy AI">
- <span>Trustworthy AI</span>
- </div>
- </div>
- </div>
- <div class="footer-bottom">
- <p>&copy; 2026 CSGA Global &mdash; Cyber Security Global Alliance. All rights reserved.</p>
- <p class="footer-bottom-sub">A division of the CSOAI Group &bull; Advancing human-AI collaboration worldwide</p>
- </div>
- </div>
-</footer>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-var reveals=document.querySelectorAll('.reveal');
-if('IntersectionObserver' in window){
-var obs=new IntersectionObserver(function(entries){
-entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-reveals.forEach(function(el){obs.observe(el);});
-}else{reveals.forEach(function(el){el.classList.add('visible');});}
-});
-</script>
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
 </body>
 </html>

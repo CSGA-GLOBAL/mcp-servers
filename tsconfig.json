@@ -112,15 +112,6 @@
     },
     {
       "path": "packages/telecom-ai"
-    },
-    {
-      "path": "packages/terranova-defence"
-    },
-    {
-      "path": "packages/thn-global"
-    },
-    {
-      "path": "packages/travel-hospitality-ai"
     }
   ],
   "files": []

@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CSGA MCP Hub - Discover 67 Model Context Protocol servers for AI governance, cybersecurity, enterprise integration, and industry-specific AI solutions.">
+  <meta name="keywords" content="MCP, Model Context Protocol, AI governance, cybersecurity, enterprise integration">
+  <meta property="og:title" content="CSGA MCP Hub - 67 AI-Powered MCP Servers">
+  <meta property="og:description" content="Discover AI-powered Model Context Protocols for governance, cybersecurity, and enterprise solutions.">
+  <meta property="og:url" content="https://csga.global/mcp/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://csga.global/mcp/">
+  <title>CSGA MCP Hub - 67 AI-Powered Model Context Protocols</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-blue-primary: #0058A4;
+      --color-blue-nav: #004A8C;
+      --color-red-accent: #CC0000;
+      --color-red-dark: #AA0000;
+      --color-dark-text: #0F172A;
+      --color-medium-text: #475569;
+      --color-light-bg: #F8FAFC;
+      --color-white: #FFFFFF;
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --font-primary: Inter, system-ui, -apple-system, sans-serif;
+      --font-secondary: 'Space Grotesk', monospace;
+      --transition-base: 300ms ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      color: var(--color-medium-text);
+      background-color: var(--color-white);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-dark-text);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 2.75rem;
+      margin-bottom: 28px;
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    a {
+      color: var(--color-red-accent);
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+
+    a:hover {
+      color: var(--color-red-dark);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    /* ============================================================================
+       2-BAR HEADER
+       ============================================================================ */
+    .header-bar {
+      background: var(--color-blue-primary);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .logo-text {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      opacity: 0.85;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-top: -2px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-btn {
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-join {
+      background: var(--color-red-accent);
+      color: #fff;
+      font-size: 0.88rem;
+      padding: 11px 28px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .btn-join:hover {
+      background: var(--color-red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(204,0,0,0.35);
+    }
+
+    .btn-login {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-login:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* Nav Bar (2nd bar) */
+    .nav-bar {
+      background: var(--color-blue-nav);
+      border-bottom: 3px solid var(--color-red-accent);
+      position: sticky;
+      top: 66px;
+      z-index: 999;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.2px;
+      transition: all 0.2s ease;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .nav-link.active {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .mega-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 640px;
+      background: #fff;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+      padding: 32px 36px;
+      border-top: 3px solid var(--color-red-accent);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4px);
+      transition: all 0.25s ease;
+      z-index: 1000;
+    }
+
+    .nav-dropdown:hover .mega-panel {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .mega-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .mega-col h5 {
+      color: var(--color-blue-primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #DBEAFE;
+    }
+
+    .mega-item {
+      display: block;
+      padding: 8px 0;
+      text-decoration: none;
+      color: #1E293B;
+      transition: all 0.15s ease;
+    }
+
+    .mega-item:hover {
+      color: var(--color-blue-primary);
+      padding-left: 6px;
+    }
+
+    .mega-item-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: block;
+    }
+
+    .mega-item-sub {
+      font-size: 0.78rem;
+      color: #64748B;
+      display: block;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-bar {
+        display: none;
+        position: fixed;
+        top: 66px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-blue-nav);
+        flex-direction: column;
+        overflow-y: auto;
+        padding: 16px;
+      }
+      .nav-bar.active {
+        display: flex;
+      }
+      .nav-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .mega-panel {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        min-width: auto;
+        background: #003D75;
+        border-radius: 8px;
+        margin-top: 4px;
+      }
+      .mega-grid {
+        grid-template-columns: 1fr;
+      }
+      .mega-col h5 {
+        color: #93C5FD;
+        border-bottom-color: rgba(255,255,255,0.15);
+      }
+      .mega-item { color: #fff; }
+      .mega-item-sub { color: rgba(255,255,255,0.6); }
+      .menu-toggle { display: block; }
+      .header-right .btn-login { display: none; }
+    }
+
+    /* ============================================================================
+       HERO SECTION
+       ============================================================================ */
+    .hero-section {
+      background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+      padding: 80px 32px;
+      border-bottom: 1px solid rgba(0, 88, 164, 0.1);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      color: var(--color-dark-text);
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #0058A4 0%, #CC0000 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      color: var(--color-medium-text);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .hero-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .search-bar {
+      width: 100%;
+      max-width: 500px;
+      padding: 14px 20px;
+      font-size: 1rem;
+      border: 2px solid var(--color-light-bg);
+      border-radius: 12px;
+      font-family: var(--font-primary);
+      transition: all var(--transition-base);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .search-bar:focus {
+      outline: none;
+      border-color: var(--color-red-accent);
+      box-shadow: 0 4px 16px rgba(204, 0, 0, 0.15);
+    }
+
+    .filter-controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      border: 2px solid #DBEAFE;
+      border-radius: 12px;
+      background: var(--color-white);
+      color: var(--color-blue-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--color-red-accent);
+      color: var(--color-red-accent);
+    }
+
+    .filter-btn.active {
+      background: var(--color-red-accent);
+      color: var(--color-white);
+      border-color: var(--color-red-accent);
+    }
+
+    /* ============================================================================
+       CATEGORY SECTIONS
+       ============================================================================ */
+    .section {
+      padding: 72px 32px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .section-icon {
+      font-size: 2.5rem;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 88, 164, 0.1);
+      border-radius: 12px;
+    }
+
+    .section-meta h2 {
+      color: var(--color-dark-text);
+      margin-bottom: 8px;
+    }
+
+    .section-meta p {
+      color: var(--color-medium-text);
+      font-size: 0.95rem;
+    }
+
+    .mcp-card {
+      background: var(--color-white);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+    }
+
+    .mcp-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(135deg, #CC0000 0%, #E63946 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-base);
+    }
+
+    .mcp-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      border-color: rgba(204, 0, 0, 0.2);
+    }
+
+    .mcp-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .mcp-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .mcp-icon {
+      font-size: 2.5rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0, 88, 164, 0.1), rgba(204, 0, 0, 0.05));
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .mcp-title {
+      font-family: var(--font-secondary);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-dark-text);
+      margin: 0;
+    }
+
+    .mcp-description {
+      color: var(--color-medium-text);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .mcp-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .mcp-tier {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tier-free {
+      background: rgba(0, 88, 164, 0.1);
+      color: var(--color-blue-primary);
+    }
+
+    .tier-pro {
+      background: rgba(204, 0, 0, 0.1);
+      color: var(--color-red-accent);
+    }
+
+    .tier-enterprise {
+      background: rgba(30, 58, 95, 0.1);
+      color: #1E3A5F;
+    }
+
+    .view-details-link {
+      color: var(--color-red-accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all var(--transition-base);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .view-details-link:hover {
+      gap: 10px;
+    }
+
+    /* ============================================================================
+       FOOTER
+       ============================================================================ */
+    .footer {
+      background: #0A1628;
+      color: #fff;
+      padding: 64px 32px 32px;
+      margin-top: 80px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      transition: all var(--transition-base);
+    }
+
+    .footer-col a:hover {
+      color: var(--color-red-accent);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    /* ============================================================================
+       NO RESULTS
+       ============================================================================ */
+    .no-results {
+      text-align: center;
+      padding: 60px 32px;
+      color: var(--color-medium-text);
+    }
+
+    .no-results h3 {
+      margin-bottom: 12px;
+    }
+
+    /* ============================================================================
+       RESPONSIVE
+       ============================================================================ */
+    @media (max-width: 1024px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .hero-section {
+        padding: 48px 20px;
+      }
+      .section {
+        padding: 48px 20px;
+      }
+      .search-bar {
+        font-size: 0.95rem;
+      }
+      .filter-controls {
+        gap: 8px;
+      }
+      .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      .section-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .section-icon {
+        margin: 0 auto;
+      }
+      .mcp-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 2-BAR HEADER -->
+<div class="header-bar">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-mark"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0D9488" stroke-width="0.8"/><path d="M24 8l10 4v12c0 6-10 12-10 12S14 30 14 24V12Z" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1"/><line x1="24" y1="13" x2="24" y2="25" stroke="#C5A572" stroke-width="1.2"/><line x1="18" y1="19" x2="30" y2="19" stroke="#C5A572" stroke-width="1.2"/><polygon points="24,12 23,14 25,14" fill="#C5A572"/><path d="M16 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><path d="M28 22q2 2 4 0" stroke="#C5A572" stroke-width="0.8" fill="none"/><ellipse cx="24" cy="29" rx="4" ry="2.5" fill="#fff" stroke="#fff" stroke-width="0.8"/><circle cx="24" cy="29" r="1.5" fill="#0D9488"/></svg></div>
+      <div>
+        <span class="logo-text">CSGA Global</span>
+        <span class="logo-sub">Cyber Security Global Alliance</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="/dashboard.html" class="header-btn btn-login">Log in</a>
+      <a href="/members.html" class="header-btn btn-join">Join CSGA</a>
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV BAR -->
+<nav class="nav-bar" id="navBar">
+  <div class="nav-inner">
+    <a href="/" class="nav-link">Home</a>
+    <div class="nav-dropdown">
+      <span class="nav-link">Platform</span>
+      <div class="mega-panel">
+        <div class="mega-grid">
+          <div class="mega-col">
+            <h5>MCP Hub</h5>
+            <a href="/mcp/index.html" class="mega-item">
+              <span class="mega-item-title">MCP Directory</span>
+              <span class="mega-item-sub">67 model context protocols</span>
+            </a>
+            <a href="/pricing.html" class="mega-item">
+              <span class="mega-item-title">Pricing</span>
+              <span class="mega-item-sub">Free, Pro &amp; Enterprise</span>
+            </a>
+          </div>
+          <div class="mega-col">
+            <h5>Access</h5>
+            <a href="/dashboard.html" class="mega-item">
+              <span class="mega-item-title">Dashboard</span>
+              <span class="mega-item-sub">Manage your MCPs</span>
+            </a>
+            <a href="/blog/" class="mega-item">
+              <span class="mega-item-title">Blog</span>
+              <span class="mega-item-sub">Latest updates &amp; guides</span>
+            </a>
+          </div>
+          <div class="mega-col">
+            <h5>Integration</h5>
+            <a href="/cybersecurity.html" class="mega-item">
+              <span class="mega-item-title">Security MCPs</span>
+              <span class="mega-item-sub">Threat detection &amp; response</span>
+            </a>
+            <a href="/ai-governance.html" class="mega-item">
+              <span class="mega-item-title">Governance MCPs</span>
+              <span class="mega-item-sub">ISO 42001 compliance</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="/about.html" class="nav-link">About</a>
+    <a href="/contact.html" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>CSGA MCP Hub</h1>
+    <p>67 Model Context Protocol servers for AI governance, cybersecurity, and enterprise integration</p>
+    <div class="hero-controls">
+      <input type="text" id="searchInput" class="search-bar" placeholder="Search MCPs by name or description...">
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All MCPs</button>
+        <button class="filter-btn" data-filter="free">Free</button>
+        <button class="filter-btn" data-filter="pro">Pro</button>
+        <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI GOVERNANCE & COMPLIANCE -->
+<section class="section" style="background: #F8FAFC;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon">🛡️</div>
+      <div class="section-meta">
+        <h2>AI Governance & Compliance</h2>
+        <p>Responsible AI management, regulatory compliance, and policy enforcement</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="mcp-card" data-category="AI Governance & Compliance" data-tier="pro" data-name="AI Governance Engine">
+        <div class="mcp-header">
+          <div class="mcp-icon">🏛️</div>
+          <h3 class="mcp-title">AI Governance Engine</h3>
+        </div>
+        <p class="mcp-description">Framework for responsible AI deployment with policy management, audit trails, and compliance monitoring for enterprise governance.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="ai-governance.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="AI Governance & Compliance" data-tier="free" data-name="Compliance Audit">
+        <div class="mcp-header">
+          <div class="mcp-icon">📋</div>
+          <h3 class="mcp-title">Compliance Audit</h3>
+        </div>
+        <p class="mcp-description">Automated compliance validation against industry standards, regulatory frameworks, and internal policies with detailed reporting.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="compliance-audit.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="AI Governance & Compliance" data-tier="pro" data-name="Data Classification">
+        <div class="mcp-header">
+          <div class="mcp-icon">🏷️</div>
+          <h3 class="mcp-title">Data Classification</h3>
+        </div>
+        <p class="mcp-description">Intelligent data labeling and categorization with sensitivity levels, handling requirements, and automated compliance mapping.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="data-classification.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="AI Governance & Compliance" data-tier="enterprise" data-name="Policy Engine">
+        <div class="mcp-header">
+          <div class="mcp-icon">⚖️</div>
+          <h3 class="mcp-title">Policy Engine</h3>
+        </div>
+        <p class="mcp-description">Dynamic policy management with rule evaluation, enforcement, and audit logging for comprehensive governance control.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="policy-engine.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="AI Governance & Compliance" data-tier="pro" data-name="ProofOfAI">
+        <div class="mcp-header">
+          <div class="mcp-icon">✓</div>
+          <h3 class="mcp-title">ProofOfAI</h3>
+        </div>
+        <p class="mcp-description">Cryptographic verification of AI outputs with provenance tracking and authenticity certification for responsible disclosure.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="proofof-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="AI Governance & Compliance" data-tier="enterprise" data-name="DSRB Defence">
+        <div class="mcp-header">
+          <div class="mcp-icon">🔐</div>
+          <h3 class="mcp-title">DSRB Defence</h3>
+        </div>
+        <p class="mcp-description">Defence and Security Review Board compliance with secure assessment, approval workflows, and regulatory documentation.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="dsrb-defence.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CYBERSECURITY & DEFENCE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <div class="section-meta">
+        <h2>Cybersecurity & Defence</h2>
+        <p>Threat detection, incident response, and advanced security operations</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="mcp-card" data-category="Cybersecurity & Defence" data-tier="pro" data-name="Cloud Security">
+        <div class="mcp-header">
+          <div class="mcp-icon">☁️</div>
+          <h3 class="mcp-title">Cloud Security</h3>
+        </div>
+        <p class="mcp-description">Multi-cloud security posture management with vulnerability scanning, compliance monitoring, and threat detection.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="cloud-security.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Cybersecurity & Defence" data-tier="pro" data-name="Incident Response">
+        <div class="mcp-header">
+          <div class="mcp-icon">🚨</div>
+          <h3 class="mcp-title">Incident Response</h3>
+        </div>
+        <p class="mcp-description">Automated incident detection, triage, and response orchestration with forensics and recovery procedures.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="incident-response.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Cybersecurity & Defence" data-tier="enterprise" data-name="Red Team Ops">
+        <div class="mcp-header">
+          <div class="mcp-icon">🎯</div>
+          <h3 class="mcp-title">Red Team Ops</h3>
+        </div>
+        <p class="mcp-description">Advanced penetration testing, adversarial simulation, and vulnerability assessment for comprehensive security validation.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="red-team-ops.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Cybersecurity & Defence" data-tier="pro" data-name="Secure Comms">
+        <div class="mcp-header">
+          <div class="mcp-icon">🔐</div>
+          <h3 class="mcp-title">Secure Comms</h3>
+        </div>
+        <p class="mcp-description">End-to-end encrypted communication infrastructure with key management and secure channel establishment.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="secure-comms.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Cybersecurity & Defence" data-tier="enterprise" data-name="TerraNoVa Defence">
+        <div class="mcp-header">
+          <div class="mcp-icon">🛡️</div>
+          <h3 class="mcp-title">TerraNoVa Defence</h3>
+        </div>
+        <p class="mcp-description">Advanced persistent threat detection with behavioural analytics, threat hunting, and evasion prevention.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="terranova-defence.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Cybersecurity & Defence" data-tier="pro" data-name="Threat Intelligence">
+        <div class="mcp-header">
+          <div class="mcp-icon">📡</div>
+          <h3 class="mcp-title">Threat Intelligence</h3>
+        </div>
+        <p class="mcp-description">Real-time threat data aggregation, analysis, and intelligence sharing with adversary tracking and IoC management.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="threat-intelligence.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Cybersecurity & Defence" data-tier="pro" data-name="Vulnerability Scanner">
+        <div class="mcp-header">
+          <div class="mcp-icon">🔍</div>
+          <h3 class="mcp-title">Vulnerability Scanner</h3>
+        </div>
+        <p class="mcp-description">Comprehensive vulnerability assessment across infrastructure, applications, and configurations with priority remediation.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="vulnerability-scanner.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Cybersecurity & Defence" data-tier="enterprise" data-name="QuantraNet PQC">
+        <div class="mcp-header">
+          <div class="mcp-icon">⚛️</div>
+          <h3 class="mcp-title">QuantraNet PQC</h3>
+        </div>
+        <p class="mcp-description">Post-quantum cryptography implementation with quantum-safe algorithms and migration planning for future security.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="quantranet-pqc.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRY AI SOLUTIONS -->
+<section class="section" style="background: #F8FAFC;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon">🏭</div>
+      <div class="section-meta">
+        <h2>Industry AI Solutions</h2>
+        <p>Vertical-specific AI applications for 24+ industries with domain expertise</p>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Agriculture AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🌾</div>
+          <h3 class="mcp-title">Agriculture AI</h3>
+        </div>
+        <p class="mcp-description">Crop optimization, yield prediction, and pest management with satellite data analysis and precision farming.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="agriculture-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Autonomous Vehicles AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🚗</div>
+          <h3 class="mcp-title">Autonomous Vehicles AI</h3>
+        </div>
+        <p class="mcp-description">Self-driving algorithms with perception, planning, and control systems for safe autonomous operation.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="autonomous-vehicles-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Construction AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🏗️</div>
+          <h3 class="mcp-title">Construction AI</h3>
+        </div>
+        <p class="mcp-description">Project planning, safety monitoring, and cost optimization with BIM integration and resource scheduling.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="construction-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Employment AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">👥</div>
+          <h3 class="mcp-title">Employment AI</h3>
+        </div>
+        <p class="mcp-description">Talent matching, workforce analytics, and bias-free hiring with fair evaluation and development planning.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="employment-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Energy AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">⚡</div>
+          <h3 class="mcp-title">Energy AI</h3>
+        </div>
+        <p class="mcp-description">Smart grid optimization, demand forecasting, and renewable energy management with efficiency maximization.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="energy-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Financial AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">💰</div>
+          <h3 class="mcp-title">Financial AI</h3>
+        </div>
+        <p class="mcp-description">Fraud detection, risk assessment, and algorithmic trading with regulatory compliance and market analysis.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="financial-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Gaming AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🎮</div>
+          <h3 class="mcp-title">Gaming AI</h3>
+        </div>
+        <p class="mcp-description">NPC behavior, game balancing, and player personalization with procedural generation and adaptive difficulty.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="gaming-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Healthcare AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🏥</div>
+          <h3 class="mcp-title">Healthcare AI</h3>
+        </div>
+        <p class="mcp-description">Diagnostic assistance, treatment planning, and patient monitoring with evidence-based clinical decision support.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="healthcare-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Insurance AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">📊</div>
+          <h3 class="mcp-title">Insurance AI</h3>
+        </div>
+        <p class="mcp-description">Claims processing, risk underwriting, and fraud prevention with actuarial analysis and loss prediction.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="insurance-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Law Enforcement AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">👮</div>
+          <h3 class="mcp-title">Law Enforcement AI</h3>
+        </div>
+        <p class="mcp-description">Crime prediction, suspect identification, and investigation assistance with fairness and accountability safeguards.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="law-enforcement-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Legal Tech AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">⚖️</div>
+          <h3 class="mcp-title">Legal Tech AI</h3>
+        </div>
+        <p class="mcp-description">Contract analysis, legal research, and case outcome prediction with compliance and discovery automation.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="legal-tech-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Maritime AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">⛵</div>
+          <h3 class="mcp-title">Maritime AI</h3>
+        </div>
+        <p class="mcp-description">Ship routing, port optimization, and marine safety with weather prediction and piracy detection.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="maritime-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Media & Advertising AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">📺</div>
+          <h3 class="mcp-title">Media & Advertising AI</h3>
+        </div>
+        <p class="mcp-description">Content recommendation, audience targeting, and creative optimization with performance analytics.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="media-advertising-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Mining AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">⛏️</div>
+          <h3 class="mcp-title">Mining AI</h3>
+        </div>
+        <p class="mcp-description">Resource exploration, extraction optimization, and safety monitoring with environmental impact assessment.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="mining-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Real Estate AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🏠</div>
+          <h3 class="mcp-title">Real Estate AI</h3>
+        </div>
+        <p class="mcp-description">Property valuation, market analysis, and tenant matching with investment prediction and portfolio management.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="real-estate-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Retail AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🛍️</div>
+          <h3 class="mcp-title">Retail AI</h3>
+        </div>
+        <p class="mcp-description">Inventory optimization, demand forecasting, and personalized shopping with checkout automation and fraud prevention.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="retail-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Smart Cities AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🌆</div>
+          <h3 class="mcp-title">Smart Cities AI</h3>
+        </div>
+        <p class="mcp-description">Traffic optimization, resource management, and urban planning with sustainability and citizen engagement.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="smart-cities-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Space AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🚀</div>
+          <h3 class="mcp-title">Space AI</h3>
+        </div>
+        <p class="mcp-description">Satellite imagery analysis, mission planning, and autonomous systems with orbital mechanics and space weather prediction.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="space-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Sports Analytics AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">⚽</div>
+          <h3 class="mcp-title">Sports Analytics AI</h3>
+        </div>
+        <p class="mcp-description">Player performance analysis, injury prediction, and game strategy optimization with real-time coaching insights.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="sports-analytics-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Supply Chain AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">🚚</div>
+          <h3 class="mcp-title">Supply Chain AI</h3>
+        </div>
+        <p class="mcp-description">Logistics optimization, demand sensing, and resilience planning with supplier risk assessment and route optimization.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="supply-chain-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Telecom AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">📱</div>
+          <h3 class="mcp-title">Telecom AI</h3>
+        </div>
+        <p class="mcp-description">Network optimization, customer churn prediction, and 5G management with quality of service monitoring.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="telecom-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="pro" data-name="Travel & Hospitality AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">✈️</div>
+          <h3 class="mcp-title">Travel & Hospitality AI</h3>
+        </div>
+        <p class="mcp-description">Personalized recommendations, dynamic pricing, and guest experience optimization with revenue management.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="travel-hospitality-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Industry AI Solutions" data-tier="enterprise" data-name="AI Economy Infrastructure">
+        <div class="mcp-header">
+          <div class="mcp-icon">💎</div>
+          <h3 class="mcp-title">AI Economy Infrastructure</h3>
+        </div>
+        <p class="mcp-description">Decentralized AI markets, token economics, and autonomous agent systems for AI-native business models.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="ai-economy-infrastructure.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPER TOOLS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon">🛠️</div>
+      <div class="section-meta">
+        <h2>Developer Tools</h2>
+        <p>Infrastructure, APIs, and automation for development workflows</p>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="AWS Cloud">
+        <div class="mcp-header">
+          <div class="mcp-icon">☁️</div>
+          <h3 class="mcp-title">AWS Cloud</h3>
+        </div>
+        <p class="mcp-description">Full AWS service integration with EC2, S3, Lambda, and managed databases for scalable cloud infrastructure.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="aws-cloud.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="Docker Compose">
+        <div class="mcp-header">
+          <div class="mcp-icon">🐳</div>
+          <h3 class="mcp-title">Docker Compose</h3>
+        </div>
+        <p class="mcp-description">Container orchestration and multi-container application management with automatic network setup and volumes.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="docker-compose.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="Fetch HTTP">
+        <div class="mcp-header">
+          <div class="mcp-icon">📡</div>
+          <h3 class="mcp-title">Fetch HTTP</h3>
+        </div>
+        <p class="mcp-description">HTTP client for API calls with request building, authentication, and response parsing capabilities.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="fetch-http.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="Filesystem Ops">
+        <div class="mcp-header">
+          <div class="mcp-icon">📁</div>
+          <h3 class="mcp-title">Filesystem Operations</h3>
+        </div>
+        <p class="mcp-description">File and directory management with read, write, search, and permission handling for secure file operations.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="filesystem-ops.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="Git Operations">
+        <div class="mcp-header">
+          <div class="mcp-icon">🌳</div>
+          <h3 class="mcp-title">Git Operations</h3>
+        </div>
+        <p class="mcp-description">Version control integration with commit, branch, merge, and repository management capabilities.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="git-operations.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="GitHub API">
+        <div class="mcp-header">
+          <div class="mcp-icon">🐙</div>
+          <h3 class="mcp-title">GitHub API</h3>
+        </div>
+        <p class="mcp-description">Full GitHub integration for repository management, issues, PRs, and workflow automation.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="github-api.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="pro" data-name="GitLab API">
+        <div class="mcp-header">
+          <div class="mcp-icon">🦊</div>
+          <h3 class="mcp-title">GitLab API</h3>
+        </div>
+        <p class="mcp-description">Complete GitLab platform integration with CI/CD, projects, and DevOps automation support.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="gitlab-api.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="JSON Transformer">
+        <div class="mcp-header">
+          <div class="mcp-icon">{}️</div>
+          <h3 class="mcp-title">JSON Transformer</h3>
+        </div>
+        <p class="mcp-description">Data transformation with schema validation, mapping, and conversion between formats.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="json-transformer.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="pro" data-name="Linear Issues">
+        <div class="mcp-header">
+          <div class="mcp-icon">📝</div>
+          <h3 class="mcp-title">Linear Issues</h3>
+        </div>
+        <p class="mcp-description">Project management integration with issue tracking, cycles, and team collaboration features.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="linear-issues.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="Playwright Browser">
+        <div class="mcp-header">
+          <div class="mcp-icon">🎭</div>
+          <h3 class="mcp-title">Playwright Browser</h3>
+        </div>
+        <p class="mcp-description">Browser automation for testing, scraping, and interaction with Chromium, Firefox, and WebKit.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="playwright-browser.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="pro" data-name="Puppeteer Headless">
+        <div class="mcp-header">
+          <div class="mcp-icon">🎪</div>
+          <h3 class="mcp-title">Puppeteer Headless</h3>
+        </div>
+        <p class="mcp-description">Headless Chrome/Chromium control for automation, testing, and performance analysis tasks.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="puppeteer-headless.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="pro" data-name="Sentry Monitoring">
+        <div class="mcp-header">
+          <div class="mcp-icon">📊</div>
+          <h3 class="mcp-title">Sentry Monitoring</h3>
+        </div>
+        <p class="mcp-description">Error tracking and performance monitoring with real-time alerts and debugging capabilities.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="sentry-monitoring.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="free" data-name="Sequential Thinking">
+        <div class="mcp-header">
+          <div class="mcp-icon">🧠</div>
+          <h3 class="mcp-title">Sequential Thinking</h3>
+        </div>
+        <p class="mcp-description">Step-by-step reasoning with planning, execution, and reflection for complex problem solving.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="sequential-thinking.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Developer Tools" data-tier="pro" data-name="Vercel Deploy">
+        <div class="mcp-header">
+          <div class="mcp-icon">▲</div>
+          <h3 class="mcp-title">Vercel Deploy</h3>
+        </div>
+        <p class="mcp-description">Serverless deployment and edge functions with automatic scaling and global distribution.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="vercel-deploy.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA & ANALYTICS -->
+<section class="section" style="background: #F8FAFC;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <div class="section-meta">
+        <h2>Data & Analytics</h2>
+        <p>Databases, analytics, and data processing capabilities</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="mcp-card" data-category="Data & Analytics" data-tier="free" data-name="CSV Analytics">
+        <div class="mcp-header">
+          <div class="mcp-icon">📈</div>
+          <h3 class="mcp-title">CSV Analytics</h3>
+        </div>
+        <p class="mcp-description">Data analysis and visualization for CSV files with statistical functions and export capabilities.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="csv-analytics.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Data & Analytics" data-tier="free" data-name="Memory Graph">
+        <div class="mcp-header">
+          <div class="mcp-icon">🧬</div>
+          <h3 class="mcp-title">Memory Graph</h3>
+        </div>
+        <p class="mcp-description">Graph-based memory with semantic search and conversation history for context retention.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="memory-graph.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Data & Analytics" data-tier="free" data-name="PostgreSQL DB">
+        <div class="mcp-header">
+          <div class="mcp-icon">🐘</div>
+          <h3 class="mcp-title">PostgreSQL Database</h3>
+        </div>
+        <p class="mcp-description">Full PostgreSQL integration with SQL queries, transactions, and complex data operations support.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="postgres-db.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Data & Analytics" data-tier="free" data-name="SQLite DB">
+        <div class="mcp-header">
+          <div class="mcp-icon">💾</div>
+          <h3 class="mcp-title">SQLite Database</h3>
+        </div>
+        <p class="mcp-description">Lightweight SQL database with file-based storage and instant query capabilities.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="sqlite-db.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Data & Analytics" data-tier="free" data-name="Brave Search">
+        <div class="mcp-header">
+          <div class="mcp-icon">🔍</div>
+          <h3 class="mcp-title">Brave Search</h3>
+        </div>
+        <p class="mcp-description">Privacy-focused web search with real-time results and semantic understanding capabilities.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="brave-search.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Data & Analytics" data-tier="free" data-name="Context7 Docs">
+        <div class="mcp-header">
+          <div class="mcp-icon">📚</div>
+          <h3 class="mcp-title">Context7 Docs</h3>
+        </div>
+        <p class="mcp-description">Live NPM package documentation with API references, examples, and code snippets.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="context7-docs.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Data & Analytics" data-tier="free" data-name="Time Zones">
+        <div class="mcp-header">
+          <div class="mcp-icon">🌍</div>
+          <h3 class="mcp-title">Time Zones</h3>
+        </div>
+        <p class="mcp-description">Global timezone conversion and scheduling with DST handling and location-based time queries.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="time-zones.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLABORATION & PRODUCTIVITY -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon">🤝</div>
+      <div class="section-meta">
+        <h2>Collaboration & Productivity</h2>
+        <p>Team communication and workspace management tools</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="mcp-card" data-category="Collaboration & Productivity" data-tier="free" data-name="Google Drive">
+        <div class="mcp-header">
+          <div class="mcp-icon">🔗</div>
+          <h3 class="mcp-title">Google Drive</h3>
+        </div>
+        <p class="mcp-description">File storage and sharing with collaborative document editing and team workspace integration.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="google-drive.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Collaboration & Productivity" data-tier="free" data-name="Notion Workspace">
+        <div class="mcp-header">
+          <div class="mcp-icon">🖇️</div>
+          <h3 class="mcp-title">Notion Workspace</h3>
+        </div>
+        <p class="mcp-description">Knowledge base and project management with databases, wikis, and collaboration features.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-free">Free</span>
+          <a href="notion-workspace.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Collaboration & Productivity" data-tier="pro" data-name="Slack Messaging">
+        <div class="mcp-header">
+          <div class="mcp-icon">💬</div>
+          <h3 class="mcp-title">Slack Messaging</h3>
+        </div>
+        <p class="mcp-description">Team communication with channels, notifications, and integration with development workflows.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="slack-messaging.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM & INFRASTRUCTURE -->
+<section class="section" style="background: #F8FAFC;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon">🏗️</div>
+      <div class="section-meta">
+        <h2>Platform & Infrastructure</h2>
+        <p>Enterprise platforms and specialized infrastructure services</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="mcp-card" data-category="Platform & Infrastructure" data-tier="enterprise" data-name="COBOL Bridge">
+        <div class="mcp-header">
+          <div class="mcp-icon">🌉</div>
+          <h3 class="mcp-title">COBOL Bridge</h3>
+        </div>
+        <p class="mcp-description">Legacy system integration with COBOL runtime and mainframe connectivity for enterprise modernization.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="cobol-bridge.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Platform & Infrastructure" data-tier="pro" data-name="Digital Human Library">
+        <div class="mcp-header">
+          <div class="mcp-icon">🤖</div>
+          <h3 class="mcp-title">Digital Human Library</h3>
+        </div>
+        <p class="mcp-description">Avatar generation and digital persona management for virtual presence and immersive experiences.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="digital-human-library.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Platform & Infrastructure" data-tier="pro" data-name="OneOS Education">
+        <div class="mcp-header">
+          <div class="mcp-icon">🎓</div>
+          <h3 class="mcp-title">OneOS Education</h3>
+        </div>
+        <p class="mcp-description">Learning platform with course management, assessments, and student progress tracking.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="oneos-education.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Platform & Infrastructure" data-tier="enterprise" data-name="PMCP Gateway">
+        <div class="mcp-header">
+          <div class="mcp-icon">🚪</div>
+          <h3 class="mcp-title">PMCP Gateway</h3>
+        </div>
+        <p class="mcp-description">Protocol gateway for enterprise MCP routing with load balancing and failover capabilities.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="pmcp-gateway.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Platform & Infrastructure" data-tier="enterprise" data-name="THN Global">
+        <div class="mcp-header">
+          <div class="mcp-icon">🌐</div>
+          <h3 class="mcp-title">THN Global</h3>
+        </div>
+        <p class="mcp-description">Global network infrastructure with distributed nodes and edge computing capabilities.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-enterprise">Enterprise</span>
+          <a href="thn-global.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="mcp-card" data-category="Platform & Infrastructure" data-tier="pro" data-name="Biometrics AI">
+        <div class="mcp-header">
+          <div class="mcp-icon">👁️</div>
+          <h3 class="mcp-title">Biometrics AI</h3>
+        </div>
+        <p class="mcp-description">Biometric authentication and identity verification with facial recognition and fingerprint scanning.</p>
+        <div class="mcp-footer">
+          <span class="mcp-tier tier-pro">Pro</span>
+          <a href="biometrics-ai.html" class="view-details-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="/mcp/index.html">MCP Hub</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/api.html">API Documentation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/docs/">Documentation</a>
+        <a href="/tutorials/">Tutorials</a>
+        <a href="/community/">Community</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About CSGA</a>
+        <a href="/careers.html">Careers</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/press.html">Press Kit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/cookies.html">Cookie Policy</a>
+        <a href="/compliance.html">Compliance</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cyber Security Global Alliance. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://twitter.com/csga_global">Twitter</a>
+        <a href="https://linkedin.com/company/csga">LinkedIn</a>
+        <a href="https://github.com/csga">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navBar = document.getElementById('navBar');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      navBar.classList.toggle('active');
+    });
+  }
+
+  // Search and filter functionality
+  const searchInput = document.getElementById('searchInput');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const mcpCards = document.querySelectorAll('.mcp-card');
+
+  let currentTierFilter = 'all';
+
+  // Search functionality
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    filterCards(query, currentTierFilter);
+  });
+
+  // Tier filter functionality
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentTierFilter = btn.getAttribute('data-filter');
+      const query = searchInput.value.toLowerCase();
+      filterCards(query, currentTierFilter);
+    });
+  });
+
+  function filterCards(searchQuery, tierFilter) {
+    let visibleCount = 0;
+
+    mcpCards.forEach(card => {
+      const name = card.getAttribute('data-name').toLowerCase();
+      const description = card.getAttribute('data-description').toLowerCase();
+      const tier = card.getAttribute('data-tier').toLowerCase();
+
+      const matchesSearch = !searchQuery || name.includes(searchQuery) || description.includes(searchQuery);
+      const matchesTier = tierFilter === 'all' || tier === tierFilter;
+
+      if (matchesSearch && matchesTier) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Show no results message if needed
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      const cards = section.querySelectorAll('.mcp-card');
+      const visibleCards = Array.from(cards).filter(card => card.style.display !== 'none');
+
+      let noResultsDiv = section.querySelector('.no-results');
+      if (visibleCards.length === 0 && cards.length > 0) {
+        if (!noResultsDiv) {
+          noResultsDiv = document.createElement('div');
+          noResultsDiv.className = 'no-results';
+          noResultsDiv.innerHTML = '<h3>No MCPs found</h3><p>Try adjusting your search or filter criteria.</p>';
+          section.querySelector('.grid-3, .grid-4').parentNode.appendChild(noResultsDiv);
+        }
+        noResultsDiv.style.display = 'block';
+      } else if (noResultsDiv) {
+        noResultsDiv.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

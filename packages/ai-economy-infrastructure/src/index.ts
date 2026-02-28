@@ -297,7 +297,7 @@ server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
 
 async function main(): Promise<void> {
   // Set up tools list handler
-  await server.setRequestHandler(ListToolsRequestSchema, async () => {
+  server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
       tools: TOOLS.map((tool) => ({
         name: tool.name,
@@ -308,7 +308,7 @@ async function main(): Promise<void> {
   });
 
   // Set up tool execution handler
-  await server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const { name, arguments: args } = request.params;
 
     try {

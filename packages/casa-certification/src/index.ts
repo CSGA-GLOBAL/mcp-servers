@@ -390,9 +390,9 @@ try {
         {
           type: "text",
           text: `Error: ${message}`,
-          isError: true,
         },
       ],
+      isError: true,
     };
   }
   });

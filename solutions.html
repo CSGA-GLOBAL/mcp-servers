@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Solutions — AI Governance, Cybersecurity & Defence | CSGA Global</title>
+    <meta name="description" content="CSGA Global delivers enterprise AI governance, cybersecurity operations, and defence systems across 36 sectors. ISO 42001 compliance, MCP integration, and 24/7 threat monitoring.">
+    
+    <!-- OG Tags -->
+    <meta property="og:title" content="Enterprise Solutions — AI Governance, Cybersecurity & Defence | CSGA Global">
+    <meta property="og:description" content="CSGA Global delivers enterprise AI governance, cybersecurity operations, and defence systems across 36 sectors. ISO 42001 compliance, MCP integration, and 24/7 threat monitoring.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://csga.global/solutions.html">
+    <meta property="og:image" content="https://csga.global/og-solutions.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Enterprise Solutions — AI Governance, Cybersecurity & Defence | CSGA Global">
+    <meta name="twitter:description" content="CSGA Global delivers enterprise AI governance, cybersecurity operations, and defence systems across 36 sectors. ISO 42001 compliance, MCP integration, and 24/7 threat monitoring.">
+    <meta name="twitter:image" content="https://csga.global/og-solutions.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://csga.global/solutions.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    
+    <style>
+
+        :root {
+            --gold: #CC0000;
+            --gold-light: #E63946;
+            --gold-dark: #A30000;
+            --blue: #0058A4;
+            --dark: #0F172A;
+            --light: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+        }
+
+        
+
+        
+
+        /* Header Styles */
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 40px;
+            height: 60px;
+            align-items: center;
+            background-color: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-item {
+            position: relative;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: var(--gold);
+        }
+
+        .nav-item.active {
+            color: var(--gold);
+        }
+
+        .nav-item:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0A1628 0%, #0F172A 100%);
+            color: var(--light);
+            padding: 120px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 88, 164, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(204, 0, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--light);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--light);
+            transform: translateY(-2px);
+        }
+
+        /* Solutions Cards Section */
+        .solutions-section {
+            padding: 100px 24px;
+            background-color: var(--gray-50);
+        }
+
+        .solutions-header {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .solutions-header .section-title {
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .solutions-header .section-subtitle {
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .solutions-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .solution-card {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 40px 32px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-light);
+            box-shadow: 0 20px 40px rgba(204, 0, 0, 0.1);
+        }
+
+        .solution-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .solution-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--blue), var(--gold));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+            flex-shrink: 0;
+        }
+
+        .solution-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .solution-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            flex-grow: 1;
+            line-height: 1.8;
+        }
+
+        .solution-features {
+            margin-bottom: 24px;
+        }
+
+        .solution-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--gray-700);
+            margin-bottom: 10px;
+        }
+
+        .solution-feature::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .solution-link {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .solution-link:hover {
+            color: var(--gold);
+            gap: 12px;
+        }
+
+        /* By Sector Section */
+        .sectors-section {
+            padding: 100px 24px;
+            background-color: var(--light);
+        }
+
+        .sectors-header {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .sectors-header .section-title {
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .sectors-header .section-subtitle {
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sectors-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .sector-card {
+            background: linear-gradient(135deg, rgba(0, 88, 164, 0.05) 0%, rgba(204, 0, 0, 0.05) 100%);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .sector-card:hover {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(0, 88, 164, 0.1) 0%, rgba(204, 0, 0, 0.1) 100%);
+            transform: translateY(-4px);
+        }
+
+        .sector-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .sector-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .sector-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Stats Bar Section */
+        .stats-section {
+            padding: 60px 24px;
+            background: linear-gradient(135deg, var(--dark) 0%, #1A2332 100%);
+            color: var(--light);
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.5px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 24px;
+            background-color: var(--gray-50);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-content .section-title {
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .cta-content .section-subtitle {
+            color: var(--gray-600);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 24px 20px;
+        }
+
+        .footer-ecosystem {
+            max-width: 1400px;
+            margin: 0 auto 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ecosystem-badge {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 13px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .ecosystem-badge:hover {
+            background-color: rgba(204, 0, 0, 0.1);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .footer-link {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--gold);
+        }
+
+        .partners-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+        }
+
+        .partner-badge {
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .partner-badge:hover {
+            background-color: rgba(204, 0, 0, 0.1);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--gold);
+        }
+
+        /* Reveal Animation */
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+
+            .solutions-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero {
+                padding: 80px 24px;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sectors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .hero {
+                padding: 60px 16px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-item h3 {
+                font-size: 24px;
+            }
+
+            .solution-card {
+                padding: 32px 24px;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+</style>
+<link rel="stylesheet" href="./components/shared.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content reveal">
+            <div class="section-tag">ENTERPRISE SOLUTIONS</div>
+            <h1 class="section-title">Enterprise-Grade Solutions for AI Governance & Cybersecurity</h1>
+            <p class="section-subtitle">Protect your organization across 36 sectors with ISO 42001-compliant AI governance, real-time cybersecurity operations, and military-grade defence systems. Integrated with 67 MCP servers and 24/7 threat monitoring.</p>
+            <div class="hero-buttons">
+                <a href="/contact.html" class="btn btn-primary">Request Demo</a>
+                <a href="/pricing.html" class="btn btn-secondary">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Cards Section -->
+    <section class="solutions-section">
+        <div class="solutions-header">
+            <h2 class="section-title reveal">Our Core Solutions</h2>
+            <p class="section-subtitle reveal">Comprehensive enterprise solutions designed to secure your AI systems, protect critical infrastructure, and ensure regulatory compliance across all operational domains.</p>
+        </div>
+
+        <div class="solutions-grid">
+            <!-- AI Governance & Compliance -->
+            <div class="solution-card reveal">
+                <div class="solution-icon">⚖️</div>
+                <h3>AI Governance & Compliance</h3>
+                <p>Establish enterprise-wide AI governance frameworks aligned with ISO 42001, EU AI Act, and NIST AI Risk Management Framework requirements.</p>
+                <div class="solution-features">
+                    <div class="solution-feature">ISO 42001 certification pathways</div>
+                    <div class="solution-feature">EU AI Act compliance mapping</div>
+                    <div class="solution-feature">NIST RMF implementation</div>
+                    <div class="solution-feature">Model governance dashboards</div>
+                    <div class="solution-feature">Automated audit trails</div>
+                </div>
+                <a href="/ai-governance.html" class="solution-link">Learn More →</a>
+            </div>
+
+            <!-- Cybersecurity Operations -->
+            <div class="solution-card reveal">
+                <div class="solution-icon">🛡️</div>
+                <h3>Cybersecurity Operations</h3>
+                <p>24/7 threat detection, vulnerability scanning, and incident response with automated remediation and forensic analysis capabilities.</p>
+                <div class="solution-features">
+                    <div class="solution-feature">Real-time threat detection</div>
+                    <div class="solution-feature">Vulnerability management</div>
+                    <div class="solution-feature">Automated incident response</div>
+                    <div class="solution-feature">Forensic investigation tools</div>
+                    <div class="solution-feature">SIEM integration</div>
+                </div>
+                <a href="/cybersecurity.html" class="solution-link">Learn More →</a>
+            </div>
+
+            <!-- Defence & Intelligence -->
+            <div class="solution-card reveal">
+                <div class="solution-icon">🎖️</div>
+                <h3>Defence & Intelligence</h3>
+                <p>Military-grade cyber defence systems with TSO-CSRT operations support, classified data protection, and strategic threat intelligence.</p>
+                <div class="solution-features">
+                    <div class="solution-feature">Military-grade encryption</div>
+                    <div class="solution-feature">TSO-CSRT integration</div>
+                    <div class="solution-feature">Classified data handling</div>
+                    <div class="solution-feature">Strategic intelligence ops</div>
+                    <div class="solution-feature">Critical infrastructure protection</div>
+                </div>
+                <a href="/cyber-defence.html" class="solution-link">Learn More →</a>
+            </div>
+
+            <!-- COBOL Bridge -->
+            <div class="solution-card reveal">
+                <div class="solution-icon">🌉</div>
+                <h3>COBOL Bridge</h3>
+                <p>Modernize legacy mainframe systems with seamless COBOL-to-cloud migration, preserving business logic while enabling modern integrations.</p>
+                <div class="solution-features">
+                    <div class="solution-feature">Automated COBOL analysis</div>
+                    <div class="solution-feature">Mainframe-to-cloud migration</div>
+                    <div class="solution-feature">Zero-downtime deployment</div>
+                    <div class="solution-feature">Legacy system integration</div>
+                    <div class="solution-feature">Business logic preservation</div>
+                </div>
+                <a href="/mcp/cobol-bridge.html" class="solution-link">Learn More →</a>
+            </div>
+
+            <!-- MCP Platform -->
+            <div class="solution-card reveal">
+                <div class="solution-icon">🔌</div>
+                <h3>MCP Platform Integration</h3>
+                <p>Access 67 Model Context Protocol servers enabling seamless AI integration across your enterprise stack with unified model management.</p>
+                <div class="solution-features">
+                    <div class="solution-feature">67 MCP server ecosystem</div>
+                    <div class="solution-feature">Multi-model orchestration</div>
+                    <div class="solution-feature">Unified context protocol</div>
+                    <div class="solution-feature">Enterprise model serving</div>
+                    <div class="solution-feature">Custom MCP development</div>
+                </div>
+                <a href="/catalog.html" class="solution-link">Learn More →</a>
+            </div>
+
+            <!-- Training & Certification -->
+            <div class="solution-card reveal">
+                <div class="solution-icon">🎓</div>
+                <h3>Training & Certification</h3>
+                <p>Build organizational expertise with 36 free training courses and 6 professional certifications in AI governance, cybersecurity, and compliance.</p>
+                <div class="solution-features">
+                    <div class="solution-feature">36 free training courses</div>
+                    <div class="solution-feature">6 professional certifications</div>
+                    <div class="solution-feature">Hands-on lab environments</div>
+                    <div class="solution-feature">Expert instructor support</div>
+                    <div class="solution-feature">Career advancement paths</div>
+                </div>
+                <a href="/training.html" class="solution-link">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- By Sector Section -->
+    <section class="sectors-section">
+        <div class="sectors-header">
+            <h2 class="section-title reveal">Trusted Across 36 Sectors</h2>
+            <p class="section-subtitle reveal">CSGA Global serves enterprises across diverse industries with tailored solutions for sector-specific regulatory and security requirements.</p>
+        </div>
+
+        <div class="sectors-grid">
+            <div class="sector-card reveal">
+                <div class="sector-icon">🏦</div>
+                <h4>Financial Services</h4>
+                <p>SEC, FINRA, and PCI-DSS compliance with advanced fraud detection and anti-money laundering systems integrated with AI governance.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">⚕️</div>
+                <h4>Healthcare</h4>
+                <p>HIPAA-compliant AI solutions with patient data protection, medical device security, and clinical trial data integrity assurance.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">🛡️</div>
+                <h4>Defence & Military</h4>
+                <p>Top-secret clearance support, TSO-CSRT operations, and military-grade encryption for classified intelligence and strategic operations.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">🏛️</div>
+                <h4>Government</h4>
+                <p>FedRAMP authorization, CISA cybersecurity guidelines, and government procurement compliance across federal, state, and local agencies.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">🎓</div>
+                <h4>Education</h4>
+                <p>FERPA compliance, student data protection, research integrity, and institutional cybersecurity for universities and educational institutions.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">⚡</div>
+                <h4>Energy & Utilities</h4>
+                <p>NERC CIP compliance, critical infrastructure protection, and industrial control system security for power generation and distribution.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">🚚</div>
+                <h4>Transportation</h4>
+                <p>FAA, TSA, and DOT compliance with supply chain security and autonomous vehicle data protection frameworks.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">📱</div>
+                <h4>Telecommunications</h4>
+                <p>GDPR and national data residency compliance with telecom-specific threat intelligence and network security operations.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">🏭</div>
+                <h4>Manufacturing</h4>
+                <p>ICS/SCADA security, supply chain integrity, and Industry 4.0 AI integration with real-time production system monitoring.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">🏗️</div>
+                <h4>Construction</h4>
+                <p>Project data security, contractor vetting, and site-specific cybersecurity for connected construction equipment and systems.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">🛒</div>
+                <h4>Retail & E-Commerce</h4>
+                <p>PCI-DSS and payment security, customer data protection, and anti-counterfeiting measures for physical and digital storefronts.</p>
+            </div>
+
+            <div class="sector-card reveal">
+                <div class="sector-icon">🏨</div>
+                <h4>Hospitality</h4>
+                <p>Guest privacy protection, payment card security, and operational resilience across hotel, restaurant, and travel services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container reveal">
+            <div class="stat-item">
+                <h3>140+</h3>
+                <p>Enterprise Customers</p>
+            </div>
+            <div class="stat-item">
+                <h3>36</h3>
+                <p>Industry Sectors Served</p>
+            </div>
+            <div class="stat-item">
+                <h3>67</h3>
+                <p>MCP Server Integrations</p>
+            </div>
+            <div class="stat-item">
+                <h3>99.97%</h3>
+                <p>Platform Uptime SLA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2 class="section-title">Ready to Secure Your AI Operations?</h2>
+            <p class="section-subtitle">Join 140+ enterprises leveraging CSGA Global's comprehensive security and governance solutions. Start your transformation today.</p>
+            <div class="cta-buttons">
+                <a href="/contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="/pricing.html" class="btn btn-secondary">Explore Pricing Plans</a>
+                <a href="/research.html" class="btn btn-secondary">Download Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Ecosystem Bar -->
+        <div class="footer-ecosystem">
+            <div class="ecosystem-title">CSGA Global Ecosystem</div>
+            <div class="ecosystem-grid">
+                <div class="ecosystem-badge">AI Governance</div>
+                <div class="ecosystem-badge">Cybersecurity</div>
+                <div class="ecosystem-badge">Defence Systems</div>
+                <div class="ecosystem-badge">MCP Platform</div>
+                <div class="ecosystem-badge">COBOL Bridge</div>
+                <div class="ecosystem-badge">Threat Intel</div>
+                <div class="ecosystem-badge">Compliance</div>
+                <div class="ecosystem-badge">Training</div>
+                <div class="ecosystem-badge">Certification</div>
+                <div class="ecosystem-badge">Enterprise API</div>
+            </div>
+        </div>
+
+        <!-- Main Footer Grid -->
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <a href="/ai-governance.html" class="footer-link">AI Governance</a>
+                <a href="/cybersecurity.html" class="footer-link">Cybersecurity Operations</a>
+                <a href="/cyber-defence.html" class="footer-link">Defence & Intelligence</a>
+                <a href="/mcp/cobol-bridge.html" class="footer-link">COBOL Bridge</a>
+                <a href="/catalog.html" class="footer-link">MCP Catalog</a>
+                <a href="/training.html" class="footer-link">Training</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Platform</h4>
+                <a href="/catalog.html" class="footer-link">Overview</a>
+                <a href="/catalog.html" class="footer-link">MCP Integration</a>
+                <a href="/cybersecurity.html" class="footer-link">Security</a>
+                <a href="/sdk.html" class="footer-link">API Docs</a>
+                <a href="/sdk.html" class="footer-link">SDK & Tools</a>
+                <a href="/dashboard.html" class="footer-link">System Status</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Learn</h4>
+                <a href="/blog/" class="footer-link">Blog</a>
+                <a href="/research.html" class="footer-link">Resources</a>
+                <a href="/certification.html" class="footer-link">Certifications</a>
+                <a href="/events.html" class="footer-link">Webinars</a>
+                <a href="/case-studies.html" class="footer-link">Case Studies</a>
+                <a href="/sdk.html" class="footer-link">Documentation</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="/about.html" class="footer-link">About CSGA</a>
+                <a href="/global-council.html" class="footer-link">Global Council</a>
+                <a href="/partners.html" class="footer-link">Partners</a>
+                <a href="/about.html" class="footer-link">Careers</a>
+                <a href="/about.html" class="footer-link">Press</a>
+                <a href="/contact.html" class="footer-link">Contact</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="/terms.html" class="footer-link">Terms of Service</a>
+                <a href="/cybersecurity.html" class="footer-link">Security</a>
+                <a href="/ai-governance.html" class="footer-link">Compliance</a>
+                <a href="/privacy.html" class="footer-link">DPA</a>
+                <a href="/cookies.html" class="footer-link">Cookies</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <a href="https://linkedin.com/company/csga-global" class="footer-link">LinkedIn</a>
+                <a href="https://twitter.com/csga_global" class="footer-link">Twitter/X</a>
+                <a href="https://github.com/csga-global" class="footer-link">GitHub</a>
+                <a href="https://slack.csga.global" class="footer-link">Community Slack</a>
+                <a href="mailto:hello@csga.global" class="footer-link">Email</a>
+                <a href="/contact.html" class="footer-link">Newsletter</a>
+            </div>
+        </div>
+
+        <!-- Partners Row -->
+        <div class="footer-partners">
+            <div class="partners-label">Strategic Partners & Integrations</div>
+            <div class="partners-grid">
+                <div class="partner-badge">OpenAI</div>
+                <div class="partner-badge">Microsoft Azure</div>
+                <div class="partner-badge">AWS</div>
+                <div class="partner-badge">Google Cloud</div>
+                <div class="partner-badge">Anthropic</div>
+                <div class="partner-badge">Splunk</div>
+                <div class="partner-badge">CrowdStrike</div>
+                <div class="partner-badge">Palo Alto Networks</div>
+                <div class="partner-badge">Fortinet</div>
+                <div class="partner-badge">Docker</div>
+                <div class="partner-badge">Kubernetes</div>
+                <div class="partner-badge">HashiCorp</div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div>&copy; 2026 CSGA Global. All rights reserved.</div>
+            <div class="footer-legal">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/cybersecurity.html">Security</a>
+                <a href="/accessibility.html">Accessibility</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+    </script>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDK & API Documentation — CSGA MCP Platform</title>
+  <meta name="description" content="Developer documentation for the CSGA MCP Platform. RESTful APIs, SDK quickstart, authentication, webhooks, and integration guides for 67 MCP servers.">
+  <meta property="og:title" content="SDK & API Documentation — CSGA MCP Platform">
+  <meta property="og:description" content="Developer documentation for the CSGA MCP Platform. RESTful APIs, SDK quickstart, authentication, webhooks, and integration guides for 67 MCP servers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.csga.global/sdk.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SDK & API Documentation — CSGA MCP Platform">
+  <meta name="twitter:description" content="Developer documentation for the CSGA MCP Platform. RESTful APIs, SDK quickstart, authentication, webhooks, and integration guides.">
+  <link rel="canonical" href="https://www.csga.global/sdk.html">
+  
+  
+<link rel="stylesheet" href="./components/shared.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- HERO SECTION -->
+<section style="background: linear-gradient(135deg, rgba(0, 88, 164, 0.85), rgba(0, 88, 164, 0.85)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><rect fill=%220A1628%22 width=%221200%22 height=%22600%22/><path fill=%22%23d4a853%22 opacity=%220.1%22 d=%22M0 0 L100 100 L200 0 L300 100 L400 0 L500 100 L600 0 L700 100 L800 0 L900 100 L1000 0 L1100 100 L1200 0 L1200 600 L0 600 Z%22/></svg>'); background-size: cover; background-position: center; padding: 100px 20px; text-align: center; color: white; min-height: 500px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <div class="container">
+    <h1 style="color: #fff; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">Build with the CSGA MCP Platform</h1>
+    <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.95); max-width: 700px; margin: 0 auto 36px; line-height: 1.6;">API-first architecture. 67 MCP servers. Enterprise-grade security and governance at every layer.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#quickstart" class="cta-btn">Get Started</a>
+      <a href="/catalog.html" class="cta-btn" style="background: transparent; border: 2px solid rgba(255,255,255,0.4); color: #fff;">Explore Catalog</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUICKSTART SECTION -->
+<section id="quickstart" style="background: #F8FAFC;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span class="section-label">Get Started</span>
+      <h2 class="section-title">Quickstart Guide</h2>
+      <p class="section-subtitle">Three simple steps to integrate the CSGA MCP Platform into your application.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon-circle" style="background: linear-gradient(135deg, rgba(204, 0, 0, 0.15), rgba(230, 57, 70, 0.15));">📦</div>
+        <h3>Installation</h3>
+        <p>Install the SDK via npm for your preferred runtime environment.</p>
+        <div class="code-block">npm install @csgaglobal/mcp-sdk</div>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle" style="background: linear-gradient(135deg, rgba(204, 0, 0, 0.15), rgba(230, 57, 70, 0.15));">⚙️</div>
+        <h3>Initialize</h3>
+        <p>Set up your connection to the CSGA platform with API credentials.</p>
+        <div class="code-block">const mcp = new MCPClient({
+  apiKey: process.env.CSGA_API_KEY,
+  endpoint: 'https://api.csga.global'
+});</div>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle" style="background: linear-gradient(135deg, rgba(204, 0, 0, 0.15), rgba(230, 57, 70, 0.15));">🔑</div>
+        <h3>Authenticate</h3>
+        <p>Use API keys or OAuth 2.0 for secure authentication.</p>
+        <div class="code-block">const token = await mcp.auth.login({
+  apiKey: YOUR_API_KEY
+});</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- API REFERENCE SECTION -->
+<section style="background: #ffffff;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span class="section-label">API Reference</span>
+      <h2 class="section-title">Available APIs</h2>
+      <p class="section-subtitle">Build powerful integrations with our comprehensive REST API endpoints.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="icon-circle">🖥️</div>
+        <h3>MCP Server API</h3>
+        <p>Deploy, manage, and orchestrate MCP servers. Full CRUD operations for your server ecosystem.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;">GET /api/v1/mcps</p>
+        <p style="font-size: 0.9rem; color: #666;">Retrieve all available MCP servers with metadata and capabilities.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle">🏛️</div>
+        <h3>Governance API</h3>
+        <p>Manage policies, compliance checks, and governance rules across your MCP infrastructure.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;">POST /api/v1/policies</p>
+        <p style="font-size: 0.9rem; color: #666;">Create and enforce governance policies for AI safety.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle">🛡️</div>
+        <h3>Security API</h3>
+        <p>Vulnerability scanning, threat intelligence feeds, and security posture management.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;">POST /api/v1/scan</p>
+        <p style="font-size: 0.9rem; color: #666;">Scan MCPs for vulnerabilities and security compliance.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle">🔔</div>
+        <h3>Webhook API</h3>
+        <p>Real-time event notifications for deployment, policy, and security events.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;">POST /api/v1/webhooks</p>
+        <p style="font-size: 0.9rem; color: #666;">Register webhook endpoints for event-driven architecture.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle">📊</div>
+        <h3>Analytics API</h3>
+        <p>Usage metrics, audit logs, and detailed analytics for your MCP infrastructure.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;">GET /api/v1/analytics</p>
+        <p style="font-size: 0.9rem; color: #666;">Monitor performance and usage patterns across MCPs.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle">💾</div>
+        <h3>Data API</h3>
+        <p>Query and manage data across your MCP ecosystem with enterprise-grade consistency.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;">GET /api/v1/data</p>
+        <p style="font-size: 0.9rem; color: #666;">Access unified data layer across all MCP servers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SDK FEATURES SECTION -->
+<section style="background: #F8FAFC;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span class="section-label">SDKs Available</span>
+      <h2 class="section-title">Multiple Language Support</h2>
+      <p class="section-subtitle">Build in your language of choice. Full feature parity across all SDKs.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon-circle">🟦</div>
+        <h3>TypeScript/JavaScript</h3>
+        <p>Full-featured SDK for Node.js and browser environments. Type-safe with TypeScript support.</p>
+        <div style="margin-top: 24px;">
+          <button class="btn btn-secondary" style="width: 100%;">View on npm</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle">🐍</div>
+        <h3>Python SDK</h3>
+        <p>Async-first SDK for Python 3.8+. Perfect for data science and ML workflows.</p>
+        <div style="margin-top: 24px; opacity: 0.6; pointer-events: none;">
+          <button class="btn btn-secondary" style="width: 100%;">Coming Soon</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon-circle">🔘</div>
+        <h3>Go SDK</h3>
+        <p>High-performance SDK for Go. Ideal for cloud-native and microservices architecture.</p>
+        <div style="margin-top: 24px; opacity: 0.6; pointer-events: none;">
+          <button class="btn btn-secondary" style="width: 100%;">Coming Soon</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 60px; background: #ffffff; border-radius: 16px; padding: 40px; border: 1px solid rgba(0, 0, 0, 0.06);">
+      <h3 style="text-align: center; margin-bottom: 40px;">Rate Limits & Quotas</h3>
+      <div class="grid grid-3">
+        <div style="text-align: center; padding: 24px; border-right: 1px solid rgba(0, 0, 0, 0.06);">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--blue); margin-bottom: 8px;">1,000</div>
+          <p style="margin: 0; font-weight: 600;">Requests/Min</p>
+          <p style="margin: 0; font-size: 0.9rem; color: #666;">Free Tier</p>
+        </div>
+        <div style="text-align: center; padding: 24px; border-right: 1px solid rgba(0, 0, 0, 0.06);">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--gold); margin-bottom: 8px;">10,000</div>
+          <p style="margin: 0; font-weight: 600;">Requests/Min</p>
+          <p style="margin: 0; font-size: 0.9rem; color: #666;">Pro Tier</p>
+        </div>
+        <div style="text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 8px;">∞</div>
+          <p style="margin: 0; font-weight: 600;">Unlimited</p>
+          <p style="margin: 0; font-size: 0.9rem; color: #666;">Enterprise</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHENTICATION SECTION -->
+<section style="background: #ffffff;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span class="section-label">Security</span>
+      <h2 class="section-title">Authentication & Authorization</h2>
+      <p class="section-subtitle">Enterprise-grade security for all API interactions and integrations.</p>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom: 48px;">
+      <div class="card">
+        <h3>API Keys</h3>
+        <p>Simple API keys for development and testing. Scoped to specific resources and actions.</p>
+        <div class="code-block">Authorization: Bearer YOUR_API_KEY</div>
+        <p style="margin-top: 16px; font-size: 0.9rem;">Best for: Development, server-to-server auth</p>
+      </div>
+
+      <div class="card">
+        <h3>OAuth 2.0</h3>
+        <p>Industry-standard OAuth 2.0 for user-facing applications and third-party integrations.</p>
+        <div class="code-block">grant_type=authorization_code
+&code=AUTH_CODE
+&client_id=YOUR_CLIENT_ID</div>
+        <p style="margin-top: 16px; font-size: 0.9rem;">Best for: User-facing apps, SaaS</p>
+      </div>
+
+      <div class="card">
+        <h3>JWT Tokens</h3>
+        <p>JSON Web Tokens for stateless authentication and fine-grained access control.</p>
+        <div class="code-block">Authorization: Bearer eyJhbGc...</div>
+        <p style="margin-top: 16px; font-size: 0.9rem;">Best for: Microservices, API gateways</p>
+      </div>
+
+      <div class="card">
+        <h3>mTLS Certificates</h3>
+        <p>Mutual TLS for ultra-secure server-to-server communication in regulated environments.</p>
+        <div class="code-block">client_cert.pem + client_key.pem</div>
+        <p style="margin-top: 16px; font-size: 0.9rem;">Best for: Classified, on-prem deployments</p>
+      </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, rgba(204, 0, 0, 0.05), rgba(230, 57, 70, 0.05)); border-left: 4px solid var(--gold); padding: 24px; border-radius: 12px;">
+      <h4 style="color: var(--dark); margin-bottom: 12px;">Security Best Practices</h4>
+      <ul style="list-style: none; padding: 0; color: #475569; line-height: 1.8;">
+        <li>✓ Rotate API keys every 90 days</li>
+        <li>✓ Use environment variables for credentials</li>
+        <li>✓ Enable rate limiting and DDoS protection</li>
+        <li>✓ Audit all API access logs regularly</li>
+        <li>✓ Implement request signing for sensitive operations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>Ready to Build?</h2>
+    <p>Join hundreds of organizations using the CSGA MCP Platform to accelerate AI governance and cybersecurity.</p>
+    <div>
+      <a href="/dashboard.html" class="cta-btn">Get Your API Key</a>
+      <a href="/catalog.html" class="cta-btn" style="background: transparent; border: 2px solid rgba(255,255,255,0.4); color: #fff;">View Full Docs</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+</body>
+</html>

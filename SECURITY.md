@@ -49,7 +49,7 @@ When using CSGA MCP servers:
 
 This security policy covers:
 
-- All 47 CSGA MCP servers
+- All 67 CSGA MCP servers
 - The CSGA Global platform (csga-global.vercel.app)
 - API endpoints and webhook integrations
 - Stripe payment integration
