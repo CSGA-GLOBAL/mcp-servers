@@ -5,7 +5,7 @@
 
   /* ── Path detection ── */
   var path = window.location.pathname;
-  var BASE = (path.indexOf('/blog/') !== -1) ? '..' : '.';
+  var BASE = (path.indexOf('/blog/') !== -1 || path.indexOf('/mcp/') !== -1) ? '..' : '.';
   var COMP = BASE + '/components';
 
   /* ── Helpers ── */
