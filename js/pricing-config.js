@@ -146,7 +146,7 @@ const CSGA_PRICING = {
       name: 'Enterprise Full',
       icon: '🛡️',
       tier: 'enterprise_full',
-      mcpCount: 67,
+      mcpCount: 70,
       monthlyPrice: 1499,
       annualPrice: 14390,
       credits: 250000,
@@ -158,7 +158,7 @@ const CSGA_PRICING = {
       stripePriceMonthly: 'price_1T5fZeR1MkVzHj7pDkgZU5UP',
       stripePriceAnnual: 'price_1T5fZeR1MkVzHj7pC34mtyY8',
       features: [
-        'All 67 MCPs (governance + sector + devtools)',
+        'All 70 MCPs (governance + sector + security + devtools)',
         '250,000 API credits/month',
         'Dedicated CSM',
         '4h SLA support',

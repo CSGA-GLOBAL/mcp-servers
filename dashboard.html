@@ -243,7 +243,7 @@ section, .section {
     </div>
     <div id="mcpGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;max-height:420px;overflow-y:auto;"></div>
     <div style="margin-top:16px;text-align:center;">
-     <a href="/catalog.html" style="color:#0058A4;font-weight:600;font-size:0.88rem;text-decoration:none;">View full catalog (67 MCPs) →</a>
+     <a href="/catalog.html" style="color:#0058A4;font-weight:600;font-size:0.88rem;text-decoration:none;">View full catalog (70 MCPs) →</a>
     </div>
    </div>
   </div>
@@ -270,7 +270,7 @@ section, .section {
      <span style="font-size:1.2rem;">💡</span>
      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;color:#0058A4;margin:0;" id="upsellTitle">Unlock More MCPs</h3>
     </div>
-    <p style="font-size:.85rem;color:#475569;line-height:1.55;margin-bottom:14px;" id="upsellDesc">You're using 3 of 67 available MCPs. Upgrade to Starter for 5 MCPs and 2,500 credits/month.</p>
+    <p style="font-size:.85rem;color:#475569;line-height:1.55;margin-bottom:14px;" id="upsellDesc">You're using 3 of 70 available MCPs. Upgrade to Starter for 5 MCPs and 2,500 credits/month.</p>
     <div style="background:#fff;border-radius:8px;padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;">
      <span style="font-size:.82rem;color:#64748B;">Current plan value</span>
      <div style="display:flex;align-items:center;gap:8px;">
@@ -369,7 +369,7 @@ section, .section {
     </div>
     <div style="display:flex;gap:12px;align-items:flex-start;">
      <div class="act-dot" style="background:#10B981;"></div>
-     <div><div style="font-size:0.88rem;color:#0A1628;font-weight:500;">67 MCP servers verified — all passing</div><div style="font-size:0.78rem;color:#94a3b8;">3 days ago</div></div>
+     <div><div style="font-size:0.88rem;color:#0A1628;font-weight:500;">70 MCP servers verified — all passing</div><div style="font-size:0.78rem;color:#94a3b8;">3 days ago</div></div>
     </div>
    </div>
   </div>
@@ -684,7 +684,7 @@ section, .section {
       : membership.monthlyPrice === null ? 'Custom Plan'
       : `$${membership.monthlyPrice}/month`;
 
-    const mcpCount = membership.mcpCount === -1 ? '67' : membership.mcpCount;
+    const mcpCount = membership.mcpCount === -1 ? '70' : membership.mcpCount;
     $('statMcpCount').textContent = mcpCount;
     $('statMcpSub').textContent = membership.mcpCount === -1 ? 'All servers' : 'Servers available';
 
