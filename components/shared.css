@@ -1931,3 +1931,93 @@ footer {
   .section-label { font-size: 11px; padding: 3px 10px; }
   .badge { font-size: 0.65rem; padding: 3px 8px; }
 }
+
+/* ============================================================================
+   CSGA Global - Hero CTA Button Enhancements
+   Consistent styling and animations for all hero engagement buttons
+   ============================================================================ */
+
+/* Primary CTA Button Styles */
+.cnt-cta-btn, .edu-cta-btn, .hero-cta-btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #CC0000 !important;
+  color: white !important;
+  padding: 14px 28px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 20px rgba(204, 0, 0, 0.3) !important;
+  border: none !important;
+}
+
+.cnt-cta-btn:hover, .edu-cta-btn:hover, .hero-cta-btn-primary:hover {
+  background: #AA0000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(204, 0, 0, 0.4) !important;
+  color: white !important;
+}
+
+/* Secondary CTA Button Styles */
+.cnt-cta-btn-outline, .edu-cta-btn-outline, .hero-cta-btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 12px 28px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  transition: all 0.25s ease !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.cnt-cta-btn-outline:hover, .edu-cta-btn-outline:hover, .hero-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  transform: translateY(-2px) !important;
+  color: white !important;
+}
+
+/* Hero CTA Container Styles */
+.cnt-hero-cta, .edu-hero-cta, .hero-cta-buttons {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  margin-top: 32px !important;
+  animation: fadeInUp 0.8s ease-out 0.4s both !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cnt-hero-cta, .edu-hero-cta, .hero-cta-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .cnt-cta-btn, .edu-cta-btn, .hero-cta-btn-primary,
+  .cnt-cta-btn-outline, .edu-cta-btn-outline, .hero-cta-btn-secondary {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+  }
+}

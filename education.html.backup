@@ -132,10 +132,6 @@
  <div class="hero-badge"><span>&#x1F310;</span> Five Eyes Nations</div>
  <div class="hero-badge"><span>&#x1F6E1;</span> Defence Accredited</div>
  </div>
- <div class="edu-hero-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
-  <a href="/catalog.html#education" class="edu-cta-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #CC0000; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.25s ease; box-shadow: 0 4px 20px rgba(204, 0, 0, 0.3);">🎓 Browse Free Courses</a>
-  <a href="/certification.html" class="edu-cta-btn-outline" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.25s ease; backdrop-filter: blur(10px);">🏆 Start CASA Certification</a>
- </div>
 </section>
 
 <section class="edu-stats">
