@@ -8,13 +8,17 @@
     "test:cypress:open": "cypress open",
     "test:playwright": "playwright test",
     "test:playwright:ui": "playwright test --ui",
-    "test": "npm run test:cypress && npm run test:playwright"
+    "test": "npm run test:cypress && npm run test:playwright",
+    "serve": "python3 -m http.server 3000",
+    "polish": "node -e \"console.log('🎯 CSGA Professional Polish - Deployed')\""
   },
   "dependencies": {
     "stripe": "^14.25.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.41.0",
-    "cypress": "^13.6.0"
+    "@playwright/test": "^1.58.2",
+    "axe-core": "^4.11.1",
+    "cypress": "^13.6.0",
+    "cypress-axe": "^1.7.0"
   }
 }

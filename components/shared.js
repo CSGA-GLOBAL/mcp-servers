@@ -217,3 +217,8 @@
     boot();
   }
 })();
+
+// CSGA Professional Polish Integration
+const polishScript = document.createElement('script');
+polishScript.src = './components/csga-comprehensive-polish.js';
+document.head.appendChild(polishScript);
