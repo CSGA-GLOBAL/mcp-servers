@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSGA Global | The FAA for AI - Constitutional AI Governance Leader</title>
+    <meta name="description" content="CSGA Global leads Constitutional AI governance with CASA certification, Byzantine Council architecture, and enterprise compliance solutions. The FAA for AI governance.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://csga-global.org/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CSGA Global | The FAA for AI - Constitutional AI Governance Leader">
+    <meta property="og:description" content="Leading Constitutional AI governance with CASA certification and enterprise compliance solutions">
+    <meta property="og:url" content="https://csga-global.org/">
+    <meta property="og:image" content="https://csga-global.org/images/csga-hero-2026.svg">
+    <meta property="og:site_name" content="CSGA Global">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSGA Global | The FAA for AI">
+    <meta name="twitter:description" content="Constitutional AI governance leader with CASA certification">
+    <meta name="twitter:image" content="https://csga-global.org/images/csga-hero-2026.svg">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "alternateName": "The FAA for AI",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo-2026.png",
+      "description": "Global leader in Constitutional AI governance, CASA certification, and enterprise AI compliance",
+      "foundingDate": "2025",
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "James Castle",
+          "jobTitle": "Global Chairperson"
+        },
+        {
+          "@type": "Person", 
+          "name": "Nicholas Templeman",
+          "jobTitle": "President & COO"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ],
+      "offers": {
+        "@type": "Service",
+        "name": "CASA Analyst Certification",
+        "description": "Constitutional AI Safety Analyst certification program"
+      }
+    }
+    </script>
+    
+    <!-- Modern 2026 Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- 2026 Modern Styles -->
+    <style>
+        :root {
+            /* CSGA 2026 Color Palette */
+            --csga-primary: #3182ce;
+            --csga-secondary: #1e40af;
+            --csga-dark: #0f172a;
+            --csga-darker: #020617;
+            --csga-accent: #06b6d4;
+            --csga-success: #10b981;
+            --csga-warning: #f59e0b;
+            --csga-danger: #ef4444;
+            --csga-light: #f8fafc;
+            --csga-gray: #64748b;
+            
+            /* 2026 Typography */
+            --font-primary: 'Space Grotesk', system-ui, sans-serif;
+            --font-secondary: 'Inter', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* 2026 Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            color: var(--csga-light);
+            background: var(--csga-darker);
+            overflow-x: hidden;
+        }
+        
+        /* 2026 Skip Link */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--csga-primary);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 10000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .skip-to-content:focus {
+            top: 6px;
+        }
+        
+        /* 2026 Modern Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(49, 130, 206, 0.2);
+            padding: var(--space-sm) 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--csga-light);
+            text-decoration: none;
+            font-family: var(--font-primary);
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            list-style: none;
+        }
+        
+        .nav-link {
+            color: var(--csga-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--csga-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--csga-primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(49, 130, 206, 0.4);
+        }
+        
+        /* 2026 Hero Section with Modern Effects */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--csga-darker) 0%, var(--csga-dark) 100%);
+            overflow: hidden;
+        }
+        
+        /* Advanced 2026 Background Effects */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(49, 130, 206, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(49, 130, 206, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(49, 130, 206, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+        
+        .hero-content {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: rgba(49, 130, 206, 0.1);
+            border: 1px solid rgba(49, 130, 206, 0.3);
+            color: var(--csga-primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-badge-icon {
+            width: 16px;
+            height: 16px;
+            background: var(--csga-primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .hero-title {
+            font-family: var(--font-primary);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, var(--csga-light), var(--csga-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--csga-gray);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(49, 130, 206, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(248, 250, 252, 0.05);
+            color: var(--csga-light);
+            padding: 16px 32px;
+            border: 2px solid rgba(248, 250, 252, 0.1);
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(248, 250, 252, 0.1);
+            border-color: var(--csga-primary);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: var(--space-lg);
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(248, 250, 252, 0.1);
+        }
+        
+        .hero-stat {
+            text-align: left;
+        }
+        
+        .hero-stat-number {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--csga-primary);
+            display: block;
+        }
+        
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: var(--csga-gray);
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+        
+        .hero-dashboard {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(49, 130, 206, 0.2);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-dashboard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--csga-primary), transparent);
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid rgba(248, 250, 252, 0.1);
+        }
+        
+        .dashboard-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .dashboard-title {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            color: var(--csga-light);
+            flex: 1;
+        }
+        
+        .dashboard-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--csga-success);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--csga-success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .dashboard-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+        
+        .metric-card {
+            background: rgba(248, 250, 252, 0.02);
+            border: 1px solid rgba(248, 250, 252, 0.05);
+            border-radius: 12px;
+            padding: var(--space-md);
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--csga-gray);
+            margin-bottom: 4px;
+        }
+        
+        .metric-value {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--csga-light);
+        }
+        
+        .metric-change {
+            font-size: 0.75rem;
+            color: var(--csga-success);
+            font-weight: 600;
+        }
+        
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+                text-align: center;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+                padding: var(--space-xl) 0;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .dashboard-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Modern 2026 Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-icon">CS</div>
+                CSGA Global
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#casa" class="nav-link">CASA</a></li>
+                <li><a href="#charter" class="nav-link">Charter</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="/pricing" class="nav-cta">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 2026 Hero Section -->
+    <section class="hero" id="main-content">
+        <div class="hero-grid"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <div class="hero-badge-icon"></div>
+                    Constitutional AI Integration Live
+                </div>
+                
+                <h1 class="hero-title">The FAA for AI Governance</h1>
+                
+                <p class="hero-subtitle">
+                    CSGA leads the world in Constitutional AI governance with CASA certification, 
+                    Byzantine Council architecture, and enterprise compliance solutions trusted by Fortune 500 companies.
+                </p>
+                
+                <div class="hero-cta-group">
+                    <a href="/casa" class="btn-primary">
+                        Start CASA Certification
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                    <a href="/demo" class="btn-secondary">
+                        View Live Demo
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">500+</span>
+                        <span class="hero-stat-label">Enterprise Clients</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">99.9%</span>
+                        <span class="hero-stat-label">Uptime SLA</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">24/7</span>
+                        <span class="hero-stat-label">AI Monitoring</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-dashboard">
+                    <div class="dashboard-header">
+                        <div class="dashboard-icon">AI</div>
+                        <h3 class="dashboard-title">Constitutional AI Dashboard</h3>
+                        <div class="dashboard-status">
+                            <div class="status-dot"></div>
+                            Active
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-metrics">
+                        <div class="metric-card">
+                            <div class="metric-label">Governance Score</div>
+                            <div class="metric-value">98.5%</div>
+                            <div class="metric-change">+2.3% this week</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">AI Systems Monitored</div>
+                            <div class="metric-value">1,247</div>
+                            <div class="metric-change">+47 new systems</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Compliance Violations</div>
+                            <div class="metric-value">0</div>
+                            <div class="metric-change">Maintained 30 days</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">CASA Analysts</div>
+                            <div class="metric-value">2,840</div>
+                            <div class="metric-change">+156 certified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Modern 2026 Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // 2026 Counter Animation
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.hero-stat-number');
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const numericTarget = parseInt(target.replace(/\D/g, ''));
+                if (numericTarget) {
+                    let current = 0;
+                    const increment = numericTarget / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= numericTarget) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current) + target.replace(/\d/g, '').replace(/\./g, '');
+                        }
+                    }, 50);
+                }
+            });
+        };
+        
+        // Trigger animations when page loads
+        window.addEventListener('load', animateCounters);
+    </script>
+</body>
+</html>

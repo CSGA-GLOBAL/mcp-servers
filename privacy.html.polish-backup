@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Privacy Policy - CSGA Global</title>
+ <meta name="description" content="CSGA Global Privacy Policy - How we collect, use, and protect your data.">
+ 
+ 
+ <style>
+.legal-hero {
+ background: linear-gradient(135deg, #A30000, #CC0000);
+ padding: 60px 20px;
+ text-align: center;
+ color: white;
+ }
+ .legal-hero h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.5rem;
+ margin-bottom: 15px;
+ }
+ .legal-content {
+ max-width: 900px;
+ margin: 60px auto;
+ padding: 0 20px;
+ line-height: 1.8;
+ }
+ .legal-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ color: #0058A4;
+ font-size: 1.5rem;
+ margin-top: 40px;
+ margin-bottom: 20px;
+ }
+ .legal-content h3 {
+ color: #0058A4;
+ font-size: 1.1rem;
+ margin-top: 20px;
+ margin-bottom: 10px;
+ }
+ .legal-content p {
+ color: #555;
+ margin-bottom: 15px;
+ }
+ .legal-content ul {
+ color: #555;
+ margin-bottom: 15px;
+ padding-left: 20px;
+ }
+ .legal-content li {
+ margin-bottom: 8px;
+ }
+ .last-updated {
+ color: #999;
+ font-size: 0.9rem;
+ font-style: italic;
+ margin-bottom: 30px;
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/privacy">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Privacy Policy - CSGA Global">
+ <meta property="og:description" content="CSGA Global Privacy Policy - How we collect, use, and protect your data.">
+ <meta property="og:url" content="https://csga-global.vercel.app/privacy">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Privacy Policy - CSGA Global">
+ <meta name="twitter:description" content="CSGA Global Privacy Policy - How we collect, use, and protect your data.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy - CSGA Global","description":"CSGA Global Privacy Policy - How we collect, use, and protect your data.","url":"https://csga-global.vercel.app/privacy","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="legal-hero">
+ <h1 class="professional-title"><h1 class="professional-title" class="professional-title">Privacy Policy</h1>
+</section>
+<section id="main-content" <section class="legal-content">>
+ <p class="last-updated" class="professional-body">Last updated: February 2026</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">1. Introduction</h2>
+ <p class="professional-body">CSGA Global ("we", "us", "our", or "Company") operates the CSGA Global website and services. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our services.</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">2. Information Collection and Use</h2>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">2.1 Types of Data Collected</h3>
+ <ul>
+ <li><strong>Personal Data:</strong> Name, email address, phone number, company information</li>
+ <li><strong>Usage Data:</strong> Browser type, IP address, pages visited, time spent on pages</li>
+ <li><strong>Cookies:</strong> We use cookies to enhance your experience</li>
+ </ul>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">2.2 Purpose of Collection</h3>
+ <p class="professional-body">We collect personal data to:</p>
+ <ul>
+ <li>Provide and maintain our services</li>
+ <li>Send administrative information</li>
+ <li>Respond to your inquiries</li>
+ <li>Analyze and improve our services</li>
+ <li>Comply with legal obligations</li>
+ </ul>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">3. Security of Data</h2>
+ <p class="professional-body">The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">4. Third-Party Links</h2>
+ <p class="professional-body">Our service may contain links to other sites that are not operated by us. This Privacy Policy does not apply to external websites, and we are not responsible for their privacy practices.</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">5. Children's Privacy</h2>
+ <p class="professional-body">Our services are not addressed to anyone under 13 years of age. We do not knowingly collect personally identifiable information from children under 13. If we become aware of such collection, we will delete such information promptly.</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">6. Changes to This Privacy Policy</h2>
+ <p class="professional-body">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">7. Lawful Basis for Processing</h2>
+ <p class="professional-body">Under GDPR and similar data protection laws, we process your personal data only on the following lawful bases:</p>
+ <ul>
+ <li><strong>Consent:</strong> Where you have explicitly provided consent for specific processing activities (e.g., marketing communications)</li>
+ <li><strong>Contract Performance:</strong> Processing necessary to perform our contract with you or to take steps at your request prior to entering a contract</li>
+ <li><strong>Legal Obligation:</strong> Processing required to comply with applicable laws and regulatory requirements</li>
+ <li><strong>Legitimate Interests:</strong> Processing necessary for our legitimate business interests, such as improving our services, maintaining security, and fraud prevention</li>
+ <li><strong>Vital Interests:</strong> Processing necessary to protect vital interests of you or another person</li>
+ </ul>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">8. Data Retention Schedules</h2>
+ <p class="professional-body">We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected:</p>
+ <ul>
+ <li><strong>Account Data:</strong> Retained for 3 years following account closure or termination of services</li>
+ <li><strong>Analytics Data:</strong> Retained for up to 26 months from the date of collection</li>
+ <li><strong>Marketing Consent Records:</strong> Retained until you withdraw your consent, then deleted within 30 days</li>
+ <li><strong>Transaction Records:</strong> Retained for 7 years to comply with financial and tax regulations</li>
+ <li><strong>Support Communications:</strong> Retained for 2 years after resolution of inquiry</li>
+ </ul>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">9. Your Data Protection Rights</h2>
+ <p class="professional-body">Under GDPR and equivalent legislation, you have the following rights regarding your personal data:</p>
+ <ul>
+ <li><strong>Right of Access:</strong> You have the right to obtain a copy of your personal data and information about how we process it</li>
+ <li><strong>Right to Rectification:</strong> You can request correction of inaccurate or incomplete personal data</li>
+ <li><strong>Right to Erasure (Right to be Forgotten):</strong> You can request deletion of your personal data, subject to legal retention obligations</li>
+ <li><strong>Right to Restrict Processing:</strong> You can request that we limit how we use your personal data</li>
+ <li><strong>Right to Data Portability:</strong> You can request a copy of your data in a structured, commonly used format for transfer to another service provider</li>
+ <li><strong>Right to Object:</strong> You can object to processing of your data for direct marketing and certain other purposes</li>
+ <li><strong>Right to Withdraw Consent:</strong> Where processing is based on your consent, you can withdraw that consent at any time</li>
+ <li><strong>Rights Related to Automated Decision-Making:</strong> You have the right not to be subject to decisions based solely on automated processing that have legal effects</li>
+ </ul>
+ <p class="professional-body">To exercise any of these rights, please contact our Data Protection Officer (see contact details below).</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">10. International Data Transfers</h2>
+ <p class="professional-body">If your personal data is transferred outside your country of residence (particularly outside the European Economic Area), we ensure appropriate safeguards are in place:</p>
+ <ul>
+ <li><strong>Standard Contractual Clauses (SCC):</strong> We use EU Standard Contractual Clauses as approved by the European Commission to govern international transfers of personal data</li>
+ <li><strong>Adequacy Decisions:</strong> Where available, we rely on Commission adequacy decisions for transfers to certain countries</li>
+ <li><strong>Supplementary Measures:</strong> We implement additional technical and organizational measures to protect data integrity during international transfers</li>
+ </ul>
+ <p class="professional-body">For details about specific transfer mechanisms applicable to your data, please contact our Data Protection Officer.</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">11. Data Protection Officer</h2>
+ <p class="professional-body">CSGA Global has appointed a Data Protection Officer (DPO) to oversee our data protection practices and serve as your point of contact for all data protection matters:</p>
+ <p class="professional-body"><strong>Data Protection Officer (DPO)</strong><br>
+ <strong>Email:</strong> dpo@csgaglobal.com<br>
+ <strong>Address:</strong> Level 10, 123 Technology Drive, Sydney, NSW 2000, Australia<br>
+ <strong>Response Time:</strong> We aim to respond to all data subject requests within 30 days</p>
+ <p class="professional-body">You have the right to lodge a complaint with your local data protection authority if you believe our processing of your data violates applicable privacy laws.</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">12. Cookie Policy and Tracking Technologies</h2>
+ <p class="professional-body">We use cookies and similar tracking technologies on our website. For detailed information about the types of cookies we use, their purposes, and your options, please refer to our <a href="/cookies">Cookie Policy</a>.</p>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">13. Contact Us</h2>
+ <p class="professional-body">If you have questions about this Privacy Policy, please contact us at:</p>
+ <p class="professional-body"><strong>Email:</strong> privacy@csgaglobal.com<br>
+ <strong>Address:</strong> Level 10, 123 Technology Drive, Sydney, NSW 2000, Australia</p>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

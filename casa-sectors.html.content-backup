@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>CASA Certification & Sectors - CSGA Global</title>
+ <meta name="description" content="CASA-CA30 4-level certification framework. Sector coverage: Cybersecurity, Defence, AI Governance, Healthcare, Finance, Infrastructure.">
+ 
+ 
+ <style>
+.casa-hero {
+ background: linear-gradient(135deg, rgba(10, 22, 40, 0.8) 0%, rgba(0, 88, 164, 0.8) 100%),
+ url('https://images.unsplash.com/photo-1551734170-bac81c15e5f1?w=1200&h=400&fit=crop') center/cover;
+ color: white;
+ padding: 80px 20px;
+ text-align: center;
+ }
+ .casa-hero h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.5rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ line-height: 1.2;
+ }
+ .casa-hero p {
+ font-size: 1.2rem;
+ font-weight: 300;
+ max-width: 700px;
+ margin: 0 auto;
+ }
+ .casa-ca30-section {
+ padding: 60px 20px;
+ background: white;
+ }
+ .casa-ca30-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .certification-tiers {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ max-width: 900px;
+ margin: 0 auto;
+ }
+ .tier {
+ display: flex;
+ align-items: center;
+ gap: 30px;
+ padding: 30px;
+ border-radius: 12px;
+ transition: transform 0.3s ease;
+ }
+ .tier:hover {
+ transform: translateX(10px);
+ }
+ .tier-level-1 {
+ background: linear-gradient(135deg, #0058A4, #0087D4);
+ color: white;
+ }
+ .tier-level-2 {
+ background: linear-gradient(135deg, #CC0000, #e5bd68);
+ color: #0A1628;
+ }
+ .tier-level-3 {
+ background: linear-gradient(135deg, #0A1628, #2a3f5f);
+ color: white;
+ }
+ .tier-level-4 {
+ background: linear-gradient(135deg, #CC0000, #990000);
+ color: white;
+ }
+ .tier-number {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.5rem;
+ font-weight: 700;
+ min-width: 80px;
+ text-align: center;
+ }
+ .tier-content h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.4rem;
+ margin: 0 0 10px 0;
+ }
+ .tier-content p {
+ margin: 0;
+ font-size: 1rem;
+ line-height: 1.5;
+ }
+ .sectors-section {
+ padding: 60px 20px;
+ background: #f9f9f9;
+ }
+ .sectors-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .sectors-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 30px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .sector-card {
+ background: white;
+ border-radius: 12px;
+ padding: 30px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+ border-left: 4px solid #0058A4;
+ transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+ }
+ .sector-card:hover {
+ transform: translateY(-8px);
+ box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+ }
+ .sector-icon {
+ font-size: 2.5rem;
+ margin-bottom: 15px;
+ }
+ .sector-card h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.3rem;
+ color: #0A1628;
+ margin: 0 0 12px 0;
+ }
+ .sector-card p {
+ color: #666;
+ line-height: 1.6;
+ margin: 0;
+ }
+ .matrix-section {
+ padding: 60px 20px;
+ background: white;
+ }
+ .matrix-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 40px;
+ }
+ .cross-sector-matrix {
+ max-width: 1200px;
+ margin: 0 auto;
+ overflow-x: auto;
+ }
+ .matrix-table {
+ width: 100%;
+ border-collapse: collapse;
+ background: white;
+ }
+ .matrix-table th {
+ background: #0A1628;
+ color: white;
+ padding: 15px;
+ text-align: left;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-weight: 600;
+ }
+ .matrix-table td {
+ padding: 15px;
+ border-bottom: 1px solid #e0e0e0;
+ }
+ .matrix-table tr:nth-child(even) {
+ background: #f9f9f9;
+ }
+ .check-mark {
+ color: #0058A4;
+ font-weight: bold;
+ font-size: 1.2rem;
+ }
+ .casa-cta {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ color: white;
+ padding: 60px 20px;
+ text-align: center;
+ }
+ .casa-cta h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ margin-bottom: 20px;
+ }
+ .casa-cta p {
+ font-size: 1.1rem;
+ margin-bottom: 30px;
+ max-width: 600px;
+ margin-left: auto;
+ margin-right: auto;
+ }
+ .cta-button {
+ display: inline-block;
+ background: #CC0000;
+ color: #0A1628;
+ padding: 14px 35px;
+ border-radius: 6px;
+ text-decoration: none;
+ font-weight: 600;
+ transition: background 0.3s ease;
+ }
+ .cta-button:hover {
+ background: #e5bd68;
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/casa-sectors">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="CASA Certification & Sectors - CSGA Global">
+ <meta property="og:description" content="CASA-CA30 4-level certification framework. Sector coverage: Cybersecurity, Defence, AI Governance, Healthcare, Finance, Infrastructure.">
+ <meta property="og:url" content="https://csga-global.vercel.app/casa-sectors">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="CASA Certification & Sectors - CSGA Global">
+ <meta name="twitter:description" content="CASA-CA30 4-level certification framework. Sector coverage: Cybersecurity, Defence, AI Governance, Healthcare, Finance, Infrastructure.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CASA Certification & Sectors - CSGA Global","description":"CASA-CA30 4-level certification framework. Sector coverage: Cybersecurity, Defence, AI Governance, Healthcare, Finance, Infrastructure.","url":"https://csga-global.vercel.app/casa-sectors","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+    <!-- 🏛️ Professional Badge System -->
+    <link rel="stylesheet" href="/csga-professional-badges.css">
+    <!-- 🏆 Professional Enhancement System -->
+    <link rel="stylesheet" href="/csga-professional-enhancement.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+    <!-- 🏛️ Professional Badge System -->
+    <link rel="stylesheet" href="/csga-professional-badges.css">
+    <!-- 🏆 Professional Enhancement System -->
+    <link rel="stylesheet" href="/csga-professional-enhancement.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="casa-hero">
+ <h1 class="professional-title"><h1 class="professional-title" class="professional-title">CASA Certification & Sector Coverage</h1>
+ <p class="professional-body">4-level certification framework covering cybersecurity, defence, AI governance, and critical infrastructure</p>
+</section>
+<section class="casa-ca30-section">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">CASA-CA30: 4-Level Certification Framework</h2>
+ <div class="certification-tiers">
+ <div class="tier tier-level-1">
+ <div class="tier-number">1</div>
+ <div class="tier-content">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Foundation</h3>
+ <p class="professional-body">Basic AI governance awareness and foundational knowledge of AI security principles and safe AI deployment practices</p>
+ </div>
+ </div>
+ <div class="tier tier-level-2">
+ <div class="tier-number">2</div>
+ <div class="tier-content">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Practitioner</h3>
+ <p class="professional-body">Hands-on MCP implementation, operational security controls, and practical application of governance frameworks in organizational settings</p>
+ </div>
+ </div>
+ <div class="tier tier-level-3">
+ <div class="tier-number">3</div>
+ <div class="tier-content">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Professional</h3>
+ <p class="professional-body">Advanced governance strategies, compliance architecture, and leadership in organizational AI security and CSOAI standard implementation</p>
+ </div>
+ </div>
+ <div class="tier tier-level-4">
+ <div class="tier-number">4</div>
+ <div class="tier-content">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Expert</h3>
+ <p class="professional-body">Defence-grade security, national security alignment, and full CSOAI certification for critical infrastructure and government applications</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="sectors-section">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Sector Coverage & Specializations</h2>
+ <div class="sectors-grid">
+ <div class="card-professional">
+ <div class="sector-icon"><span class="icon-security-badge">SEC</span></div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Cybersecurity</h3>
+ <p class="professional-body">Threat detection, incident response, vulnerability management, and compliance with NIST cybersecurity frameworks and ISO 27001 standards</p>
+ </div>
+ <div class="card-professional">
+ <div class="sector-icon"><div class="feature-icon-professional">SHD</div></div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Cyber Defence</h3>
+ <p class="professional-body">Military-grade protection, national security alignment, defence infrastructure hardening, and Five Eyes intelligence sharing protocols</p>
+ </div>
+ <div class="card-professional">
+ <div class="sector-icon"><span class="icon-governance-badge">GOV</span></div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">AI Governance</h3>
+ <p class="professional-body">Ethical AI frameworks, bias detection and mitigation, transparency requirements, and responsible AI leadership and decision-making</p>
+ </div>
+ <div class="card-professional">
+ <div class="sector-icon"><div class="feature-icon-professional">PWR</div></div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Critical Infrastructure</h3>
+ <p class="professional-body">Energy, transport, and utilities protection. Resilience planning, disaster recovery, and continuity of operations for essential services</p>
+ </div>
+ <div class="card-professional">
+ <div class="sector-icon"><span class="icon-healthcare-badge">MED</span></div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Healthcare</h3>
+ <p class="professional-body">Patient data security, HIPAA and GDPR compliance, medical device security, and healthcare AI governance for clinical decision support</p>
+ </div>
+ <div class="card-professional">
+ <div class="sector-icon"><div class="feature-icon-professional">FIN</div></div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Financial Services</h3>
+ <p class="professional-body">Fraud detection and prevention, regulatory compliance, financial crime prevention, and AI governance in trading and risk management</p>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="matrix-section">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Cross-Sector Standards Matrix</h2>
+ <div class="cross-sector-matrix">
+ <table class="matrix-table">
+ <thead>
+ <tr>
+ <th>CSOAI Framework</th>
+ <th>Cybersecurity</th>
+ <th>Cyber Defence</th>
+ <th>AI Governance</th>
+ <th>Infrastructure</th>
+ <th>Healthcare</th>
+ <th>Finance</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>CSOAI-100: AI Governance</strong></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ </tr>
+ <tr>
+ <td><strong>CSOAI-200: Cybersecurity</strong></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ </tr>
+ <tr>
+ <td><strong>CSOAI-300: Defence Security</strong></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td></td>
+ <td></td>
+ </tr>
+ <tr>
+ <td><strong>CSOAI-400: MCP Implementation</strong></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ </tr>
+ <tr>
+ <td><strong>CSOAI-500: Ethical AI Assessment</strong></td>
+ <td></td>
+ <td></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ <td class="check-mark"><span class="checkmark-professional">✓</span></td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</section>
+<section class="casa-cta">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Get CASA Certified</h2>
+ <p class="professional-body">Join organizations leading the way in secure AI governance and AI security certification</p>
+ <a href="#certification" class="btn-professional">Start Certification Path</a>
+</section>
+<!-- ═══════ CTA Section ═══════ -->
+<section style="position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+ <div style="position:absolute;inset:0;z-index:0">
+ <div style="position:absolute;inset:-40px;background:linear-gradient(135deg,#0A1628,#0D2847,#0058A4);z-index:0"></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
+ </div>
+ <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:20px;padding:8px 18px;margin-bottom:24px">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#CC0000" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/ class="professional-body"></svg>
+ <span style="color:#CC0000;font-size:0.85rem;font-weight:600">Free Access &mdash; No Credit Card Required</span>
+ </div>
+ <h2 style="color:#fff;font-size:2.6rem;line-height:1.2;margin-bottom:20px;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+ <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;line-height:1.7;margin-bottom:36px" class="professional-body">Sector-specific AI security assessment tailored for healthcare, finance, defence, energy, and critical infrastructure.</p>
+ <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+ <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:#CC0000;color:#0A1628;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 15px rgba(204,0,0,0.3)" onmouseover="this.style.background='#A30000';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#CC0000';this.style.transform='none'">View Plans &amp; Pricing</a>
+ <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:transparent;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;border:2px solid rgba(255,255,255,0.3);transition:all .3s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">Request a Demo</a>
+ </div>
+ </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

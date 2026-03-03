@@ -1,0 +1,47 @@
+# Professional Icon Replacement Mappings
+# Format: emoji|professional_replacement
+
+🎭|<span class="professional-icon-text">ENT</span>
+😰|<span class="professional-icon-text">ALERT</span>
+🚀|<span class="professional-icon-text">LAUNCH</span>
+🎯|<span class="professional-icon-text">TARGET</span>
+📊|<span class="professional-icon-text">DATA</span>
+💡|<span class="professional-icon-text">IDEA</span>
+⚡|<span class="professional-icon-text">POWER</span>
+🔒|<span class="professional-icon-text">SECURE</span>
+🛡️|<span class="professional-icon-text">SHIELD</span>
+🌟|<span class="professional-icon-text">STAR</span>
+✨|<span class="professional-icon-text">SPARK</span>
+🎉|<span class="professional-icon-text">SUCCESS</span>
+🔥|<span class="professional-icon-text">HOT</span>
+💯|<span class="professional-icon-text">100%</span>
+📈|<span class="professional-icon-text">GROWTH</span>
+🚁|<span class="professional-icon-text">FLIGHT</span>
+🏦|<span class="professional-icon-text">BANK</span>
+🌐|<span class="professional-icon-text">GLOBAL</span>
+💬|<span class="professional-icon-text">CHAT</span>
+📚|<span class="professional-icon-text">LEARN</span>
+⚙️|<span class="professional-icon-text">CONFIG</span>
+🔍|<span class="professional-icon-text">SEARCH</span>
+🔐|<span class="professional-icon-text">LOCK</span>
+⚖️|<span class="professional-icon-text">LAW</span>
+🏥|<span class="professional-icon-text">HEALTH</span>
+🧠|<span class="professional-icon-text">AI</span>
+💰|<span class="professional-icon-text">MONEY</span>
+📞|<span class="professional-icon-text">CALL</span>
+🎓|<span class="professional-icon-text">EDU</span>
+🏗️|<span class="professional-icon-text">BUILD</span>
+📋|<span class="professional-icon-text">LIST</span>
+📝|<span class="professional-icon-text">DOCS</span>
+🔧|<span class="professional-icon-text">TOOLS</span>
+💻|<span class="professional-icon-text">TECH</span>
+📱|<span class="professional-icon-text">MOBILE</span>
+🖥️|<span class="professional-icon-text">DESKTOP</span>
+⌚|<span class="professional-icon-text">TIME</span>
+📡|<span class="professional-icon-text">SIGNAL</span>
+🔗|<span class="professional-icon-text">LINK</span>
+📤|<span class="professional-icon-text">SEND</span>
+📥|<span class="professional-icon-text">RECEIVE</span>
+💾|<span class="professional-icon-text">SAVE</span>
+☁️|<span class="professional-icon-text">CLOUD</span>
+🖲️|<span class="professional-icon-text">CLICK</span>

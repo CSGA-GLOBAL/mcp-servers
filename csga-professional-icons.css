@@ -1,0 +1,224 @@
+/* 🏛️ CSGA Professional Icon System */
+/* Institutional-grade branded graphics replacing tacky emojis */
+
+/* Base Icon Styling */
+.professional-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.professional-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Size Variants */
+.professional-icon-sm {
+    width: 16px;
+    height: 16px;
+}
+
+.professional-icon-md {
+    width: 24px;
+    height: 24px;
+}
+
+.professional-icon-lg {
+    width: 32px;
+    height: 32px;
+}
+
+.professional-icon-xl {
+    width: 48px;
+    height: 48px;
+}
+
+/* Specific Icon Styles */
+.icon-security {
+    background: url('/assets/icons/professional/security.svg') center/contain no-repeat;
+}
+
+.icon-governance {
+    background: url('/assets/icons/professional/governance.svg') center/contain no-repeat;
+}
+
+.icon-healthcare {
+    background: url('/assets/icons/professional/healthcare.svg') center/contain no-repeat;
+}
+
+.icon-consultation {
+    background: url('/assets/icons/professional/consultation.svg') center/contain no-repeat;
+}
+
+.icon-checkmark {
+    background: url('/assets/icons/professional/checkmark.svg') center/contain no-repeat;
+}
+
+.icon-ai-intelligence {
+    background: url('/assets/icons/professional/ai-intelligence.svg') center/contain no-repeat;
+}
+
+.icon-analytics {
+    background: url('/assets/icons/professional/analytics.svg') center/contain no-repeat;
+}
+
+.icon-performance {
+    background: url('/assets/icons/professional/performance.svg') center/contain no-repeat;
+}
+
+.icon-global {
+    background: url('/assets/icons/professional/global.svg') center/contain no-repeat;
+}
+
+/* Container Styling */
+.icon-text-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.icon-text-container .professional-icon {
+    flex-shrink: 0;
+}
+
+/* Pillar Icons for Features */
+.pillar-icon {
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0 auto 16px auto !important;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.pillar-icon:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Sector Icons */
+.sector-icon {
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0 auto 12px auto !important;
+    border-radius: 8px;
+    background-color: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.sector-icon:hover {
+    background-color: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: scale(1.05);
+}
+
+/* Professional Checkmarks for Tables */
+.check-mark {
+    text-align: center !important;
+    font-size: 0 !important; /* Hide text */
+    position: relative;
+}
+
+.check-mark::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: url('/assets/icons/professional/checkmark.svg') center/contain no-repeat;
+}
+
+/* Button Icon Integration */
+.btn-professional {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    padding: 12px 28px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.btn-professional:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-professional .professional-icon {
+    margin: 0 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .professional-icon-xl {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .pillar-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .sector-icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
+/* Print Optimization */
+@media print {
+    .professional-icon {
+        filter: none !important;
+        transform: none !important;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .professional-icon,
+    .pillar-icon,
+    .sector-icon,
+    .btn-professional {
+        transition: none !important;
+        transform: none !important;
+    }
+    
+    .professional-icon:hover,
+    .pillar-icon:hover,
+    .sector-icon:hover {
+        transform: none !important;
+    }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+    .professional-icon {
+        filter: contrast(1.2) brightness(1.1);
+    }
+}

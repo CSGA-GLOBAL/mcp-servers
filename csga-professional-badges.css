@@ -1,0 +1,220 @@
+/* 🏛️ CSGA Professional Badge System */
+/* Clean, institutional text badges replacing emojis */
+
+/* Base Professional Badge Styling */
+.icon-security-badge,
+.icon-governance-badge,
+.icon-healthcare-badge,
+.icon-professional-badge,
+.icon-consultation-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+    min-width: 32px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Security Badge */
+.icon-security-badge {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: #ffffff;
+}
+
+.icon-security-badge:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Governance Badge */
+.icon-governance-badge {
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    color: #ffffff;
+}
+
+.icon-governance-badge:hover {
+    background: linear-gradient(135deg, #1d4ed8, #4338ca);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
+}
+
+/* Healthcare Badge */
+.icon-healthcare-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+}
+
+.icon-healthcare-badge:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Professional AI Badge */
+.icon-professional-badge {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    color: #ffffff;
+}
+
+.icon-professional-badge:hover {
+    background: linear-gradient(135deg, #0891b2, #0e7490);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(6, 182, 212, 0.3);
+}
+
+/* Consultation Badge */
+.icon-consultation-badge {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: #ffffff;
+}
+
+.icon-consultation-badge:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
+}
+
+/* Professional Checkmark */
+.checkmark-professional {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s ease;
+}
+
+.checkmark-professional:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
+}
+
+/* Enhanced Sector Icons Container */
+.sector-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 auto 16px auto !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.sector-icon:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Enhanced Pillar Icons Container */
+.pillar-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto 20px auto !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 2px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.pillar-icon:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Table Checkmark Cells */
+.check-mark {
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 8px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .icon-security-badge,
+    .icon-governance-badge,
+    .icon-healthcare-badge,
+    .icon-professional-badge,
+    .icon-consultation-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+        min-width: 28px;
+    }
+    
+    .sector-icon {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .pillar-icon {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .icon-security-badge,
+    .icon-governance-badge,
+    .icon-healthcare-badge,
+    .icon-professional-badge,
+    .icon-consultation-badge {
+        background: #333 !important;
+        color: white !important;
+        box-shadow: none !important;
+    }
+    
+    .checkmark-professional {
+        background: #333 !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .icon-security-badge,
+    .icon-governance-badge,
+    .icon-healthcare-badge,
+    .icon-professional-badge,
+    .icon-consultation-badge,
+    .checkmark-professional,
+    .sector-icon,
+    .pillar-icon {
+        transition: none !important;
+        transform: none !important;
+    }
+    
+    .icon-security-badge:hover,
+    .icon-governance-badge:hover,
+    .icon-healthcare-badge:hover,
+    .icon-professional-badge:hover,
+    .icon-consultation-badge:hover,
+    .checkmark-professional:hover,
+    .sector-icon:hover,
+    .pillar-icon:hover {
+        transform: none !important;
+    }
+}

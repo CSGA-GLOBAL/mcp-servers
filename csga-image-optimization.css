@@ -1,0 +1,173 @@
+/* 🚀 CSGA 2026 Image Optimization */
+/* Modern image loading and performance optimization */
+
+/* Lazy Loading & Performance */
+img {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    will-change: transform;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+    animation: fadeInImage 0.5s ease forwards;
+}
+
+@keyframes fadeInImage {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modern Image Containers */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.image-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Photo Styling */
+.team-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--csga-primary);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-photo:hover {
+    transform: scale(1.05);
+    border-color: var(--csga-accent);
+    box-shadow: 0 20px 25px -5px rgba(49, 130, 206, 0.2);
+}
+
+/* Logo Styling */
+.logo-image {
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    max-height: 40px;
+    width: auto;
+}
+
+.logo-image:hover {
+    opacity: 1;
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
+}
+
+/* Event Images */
+.event-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.event-image:hover {
+    transform: scale(1.02);
+}
+
+/* Hero Background Images */
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.1;
+}
+
+/* Mobile Image Optimization */
+@media (max-width: 768px) {
+    .team-photo {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .event-image {
+        height: 200px;
+    }
+    
+    .logo-image {
+        max-height: 30px;
+    }
+}
+
+/* High-DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-bg-image {
+        opacity: 0.15;
+    }
+}
+
+/* Print Optimization */
+@media print {
+    img {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .hero-bg-image {
+        display: none;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    img {
+        transition: none;
+        animation: none;
+        will-change: auto;
+    }
+    
+    .image-container:hover,
+    .team-photo:hover,
+    .event-image:hover {
+        transform: none;
+    }
+}
+
+/* Image Error Handling */
+img::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--csga-darker), var(--csga-dark));
+    border-radius: inherit;
+}
+
+img::after {
+    content: 'Image Loading...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--csga-gray-400);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+img[src] {
+    background: none;
+}
+
+img[src]::after {
+    display: none;
+}

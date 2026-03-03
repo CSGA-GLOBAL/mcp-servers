@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Cybersecurity Solutions - CSGA Global</title>
+ <meta name="description" content="Enterprise cybersecurity solutions powered by CSGA's MCPs and CSOAI standards. Threat detection, incident response, compliance monitoring, and more.">
+ 
+ 
+ <style>
+.hero-cybersecurity {
+ background: linear-gradient(135deg, rgba(0, 88, 164, 0.85), rgba(0, 88, 164, 0.85)),
+ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230A1628" width="1200" height="600"/><path fill="%23004080" opacity="0.1" d="M0 300 Q300 200 600 300 T1200 300 L1200 600 L0 600 Z"/ class="professional-body"></svg>');
+ background-size: cover;
+ background-position: center;
+ padding: 120px 20px;
+ text-align: center;
+ color: white;
+ min-height: 500px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ .hero-cybersecurity h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.5rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ }
+ .hero-cybersecurity .subtitle {
+ font-size: 1.3rem;
+ font-weight: 300;
+ max-width: 600px;
+ margin: 0 auto;
+ color: rgba(255, 255, 255, 0.95);
+ }
+ .shield-icon {
+ font-size: 4rem;
+ margin-bottom: 20px;
+ }
+ .overview-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .overview-content {
+ max-width: 900px;
+ margin: 0 auto;
+ text-align: center;
+ }
+ .overview-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ margin-bottom: 20px;
+ }
+ .overview-content p {
+ font-size: 1.1rem;
+ line-height: 1.7;
+ color: #333;
+ margin-bottom: 15px;
+ }
+ .services-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 30px;
+ padding: 80px 20px;
+ max-width: 1200px;
+ margin: 0 auto;
+ background: #f8f9fa;
+ }
+ .service-card {
+ background: white;
+ border-radius: 12px;
+ padding: 40px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ transition: all 0.25s ease;
+ border-left: 4px solid #0058A4;
+ }
+ .service-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+ }
+ .service-card h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.3rem;
+ color: #0058A4;
+ margin-bottom: 15px;
+ }
+ .service-card p {
+ color: #555;
+ line-height: 1.6;
+ font-size: 0.95rem;
+ }
+ .service-icon {
+ font-size: 2.5rem;
+ margin-bottom: 15px;
+ }
+ .mcps-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .mcps-content {
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ .mcps-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .mcp-list {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 20px;
+ }
+ .mcp-badge {
+ background: #3182ce;
+ color: white;
+ padding: 12px 20px;
+ border-radius: 12px;
+ font-weight: 500;
+ text-align: center;
+ }
+ .framework-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+ }
+ .framework-content {
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ .framework-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 40px;
+ }
+ .framework-box {
+ background: white;
+ padding: 40px;
+ border-radius: 12px;
+ border-left: 5px solid #0058A4;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ }
+ .framework-box h3 {
+ color: #0058A4;
+ margin-bottom: 15px;
+ font-size: 1.3rem;
+ }
+ .case-study-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .case-study-content {
+ max-width: 900px;
+ margin: 0 auto;
+ text-align: center;
+ }
+ .case-study-placeholder {
+ background: #f0f4f8;
+ padding: 60px 30px;
+ border-radius: 12px;
+ margin-top: 30px;
+ }
+ .case-study-placeholder p {
+ color: #777;
+ font-size: 1rem;
+ font-style: italic;
+ }
+ .cta-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #A30000, #3182ce);
+ text-align: center;
+ color: white;
+ }
+ .cta-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.5rem;
+ margin-bottom: 30px;
+ }
+ .cta-button {
+ background: #3182ce;
+ color: white;
+ padding: 15px 40px;
+ border: none;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.25s ease;
+ text-decoration: none;
+ display: inline-block;
+ }
+ .cta-button:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ box-shadow: 0 10px 25px rgba(204, 0, 0, 0.3);
+ }
+ @media (max-width: 768px) {
+ .hero-cybersecurity h1 {
+ font-size: 2.2rem;
+ }
+ .services-grid {
+ grid-template-columns: 1fr;
+ padding: 40px 20px;
+ }
+ .overview-content h2, .mcps-content h2 {
+ font-size: 1.8rem;
+ }
+ .cta-section h2 {
+ font-size: 1.8rem;
+ }
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/cybersecurity">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Cybersecurity Solutions - CSGA Global">
+ <meta property="og:description" content="Enterprise cybersecurity solutions powered by CSGA's MCPs and CSOAI standards. Threat detection, incident response, compliance monitoring, and more.">
+ <meta property="og:url" content="https://csga-global.vercel.app/cybersecurity">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Cybersecurity Solutions - CSGA Global">
+ <meta name="twitter:description" content="Enterprise cybersecurity solutions powered by CSGA's MCPs and CSOAI standards. Threat detection, incident response, compliance monitoring, and more.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Cybersecurity Solutions - CSGA Global","description":"Enterprise cybersecurity solutions powered by CSGA's MCPs and CSOAI standards. Threat detection, incident response, compliance monitoring, and more.","url":"https://csga-global.vercel.app/cybersecurity","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- ðŸ›ï¸ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- ðŸ›ï¸ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="hero-cybersecurity">
+ <div style="text-align: center;">
+ <div class="shield-icon"></div>
+ <h1 class="professional-title professional-title" class="professional-title">Cybersecurity Solutions</h1>
+ <p class="subtitle" class="professional-body">Protect your organization with AI-powered threat detection and CSOAI-certified security practices</p>
+ </div>
+</section>
+<section class="overview-section">
+ <div class="overview-content">
+ <h2 class="professional-title professional-title" class="professional-title">Our Cybersecurity Approach</h2>
+ <p class="professional-body">CSGA Global delivers enterprise-grade cybersecurity solutions built on CSOAI standards and advanced Machine-Readable Protocols (MCPs). We combine AI intelligence with human expertise to create a comprehensive defense strategy tailored to your organization's unique risk profile.</p>
+ <p class="professional-body">Our solutions integrate seamlessly with your existing infrastructure, providing real-time threat intelligence, automated response capabilities, and continuous compliance monitoring.</p>
+ </div>
+</section>
+<section class="services-grid">
+ <div class="card-professional">
+ <div class="service-icon"></div>
+ <h3 class="professional-title professional-title" class="professional-title">Threat Detection</h3>
+ <p class="professional-body">AI-powered monitoring systems that identify suspicious activities and emerging threats in real-time across your entire network infrastructure.</p>
+ </div>
+ <div class="card-professional">
+ <div class="service-icon"></div>
+ <h3 class="professional-title professional-title" class="professional-title">Vulnerability Assessment</h3>
+ <p class="professional-body">Comprehensive security audits that identify weaknesses in your systems, applications, and infrastructure before they can be exploited.</p>
+ </div>
+ <div class="card-professional">
+ <div class="service-icon"></div>
+ <h3 class="professional-title professional-title" class="professional-title">Incident Response</h3>
+ <p class="professional-body">24/7 rapid response team ready to contain, investigate, and remediate security incidents with minimal business impact.</p>
+ </div>
+ <div class="card-professional">
+ <div class="service-icon">œ</div>
+ <h3 class="professional-title professional-title" class="professional-title">Compliance Monitoring</h3>
+ <p class="professional-body">Continuous monitoring and reporting against GDPR, HIPAA, PCI-DSS, ISO 27001, and other regulatory frameworks.</p>
+ </div>
+ <div class="card-professional">
+ <div class="service-icon"></div>
+ <h3 class="professional-title professional-title" class="professional-title">Penetration Testing</h3>
+ <p class="professional-body">Authorized security testing that simulates real-world attacks to evaluate your defenses and strengthen security posture.</p>
+ </div>
+ <div class="card-professional">
+ <div class="service-icon"></div>
+ <h3 class="professional-title professional-title" class="professional-title">Security Architecture</h3>
+ <p class="professional-body">Strategic design and implementation of secure systems that balance protection with performance and usability.</p>
+ </div>
+</section>
+<section class="mcps-section">
+ <div class="mcps-content">
+ <h2 class="professional-title professional-title" class="professional-title">Related Security MCPs</h2>
+ <div class="mcp-list">
+ <div class="mcp-badge">Threat Intelligence MCP</div>
+ <div class="mcp-badge">Vulnerability Scanner MCP</div>
+ <div class="mcp-badge">Incident Response Automation</div>
+ <div class="mcp-badge">Compliance Checker MCP</div>
+ <div class="mcp-badge">Network Monitor MCP</div>
+ <div class="mcp-badge">Security Analytics MCP</div>
+ </div>
+ </div>
+</section>
+<section class="framework-section">
+ <div class="framework-content">
+ <h2 class="professional-title professional-title" class="professional-title">CSOAI-200 Framework</h2>
+ <div class="framework-box">
+ <h3 class="professional-title professional-title" class="professional-title">Cyber Security for Organizational AI</h3>
+ <p class="professional-body">The CSOAI-200 standard provides a comprehensive framework for integrating AI security solutions with human decision-making. Our cybersecurity services are built on CSOAI principles, ensuring that every automated response is aligned with human oversight and organizational values.</p>
+ <p class="professional-body"><strong>Key Framework Components:</strong> Threat Context Awareness, Adaptive Response Protocols, Continuous Learning Systems, Human-in-the-Loop Validation</p>
+ </div>
+ </div>
+</section>
+<section class="case-study-section">
+ <div class="case-study-content">
+ <h2 class="professional-title professional-title" class="professional-title">Success Stories</h2>
+ <div class="case-study-placeholder">
+ <p class="professional-body">Case studies and client testimonials coming soon</p>
+ <p class="professional-body">Learn how organizations have strengthened their security posture with CSGA solutions</p>
+ </div>
+ </div>
+</section>
+<section class="cta-section">
+ <h2 class="professional-title professional-title" class="professional-title">Protect Your Organization</h2>
+ <p style="font-size: 1.1rem; margin-bottom: 30px;" class="professional-body">Get started with enterprise cybersecurity that evolves with your threats</p>
+ <button class="btn-professional">Request a Security Assessment</button>
+</section>
+<!-- ••••••• CTA Section ••••••• -->
+<section style="position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+ <div style="position:absolute;inset:0;z-index:0">
+ <div style="position:absolute;inset:-40px;background:linear-gradient(135deg,#0A1628,#0D2847,#0058A4);z-index:0"></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
+ </div>
+ <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:20px;padding:8px 18px;margin-bottom:24px">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#3182ce" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/ class="professional-body"></svg>
+ <span style="color:#3182ce;font-size:0.85rem;font-weight:600">Free Access &mdash; No Credit Card Required</span>
+ </div>
+ <h2 style="color:#fff;font-size:2.6rem;line-height:1.2;margin-bottom:20px;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+ <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;line-height:1.7;margin-bottom:36px" class="professional-body">From threat intelligence to compliance automation  access the MCP servers and frameworks trusted by defence agencies and Fortune 500 companies.</p>
+ <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+ <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:#3182ce;color:#0A1628;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 15px rgba(204,0,0,0.3)" onmouseover="this.style.background='#A30000';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#3182ce';this.style.transform='none'">View Plans &amp; Pricing</a>
+ <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:transparent;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;border:2px solid rgba(255,255,255,0.3);transition:all .3s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">Request a Demo</a>
+ </div>
+ </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

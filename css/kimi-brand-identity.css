@@ -1,0 +1,278 @@
+/* Kimi Agent Brand Identity CSS - CSGA Global */
+
+/* CSS Custom Properties - Brand Colors */
+:root {
+  /* Primary Brand Colors */
+  --csga-navy: #0A1628;
+  --cyber-blue: #1E5AF5;
+  --security-teal: #00D4AA;
+  --alliance-white: #FFFFFF;
+  
+  /* Secondary Colors */
+  --warning-amber: #F59E0B;
+  --alert-red: #EF4444;
+  --neural-purple: #8B5CF6;
+  --infrastructure-grey: #64748B;
+  
+  /* Surface Colors */
+  --surface-1: #0F1D32;
+  --surface-2: #152238;
+  --surface-3: #1B2A42;
+  
+  /* Text Hierarchy */
+  --text-primary: rgba(255, 255, 255, 1.0);
+  --text-secondary: rgba(148, 163, 184, 1.0);
+  --text-tertiary: rgba(100, 116, 139, 1.0);
+  --text-disabled: rgba(71, 85, 105, 1.0);
+  
+  /* Brand Gradients */
+  --gradient-primary: linear-gradient(135deg, #1E5AF5 0%, #00D4AA 100%);
+  --gradient-cyber-defence: linear-gradient(135deg, #0A1628 0%, #1E5AF5 50%, #0A1628 100%);
+  --gradient-ai-governance: linear-gradient(135deg, #8B5CF6 0%, #1E5AF5 100%);
+  --gradient-success: linear-gradient(135deg, #00D4AA 0%, #10B981 100%);
+  --gradient-subtle: linear-gradient(180deg, #0A1628 0%, #0F1D32 100%);
+  
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 80px;
+  --space-9: 120px;
+}
+
+/* Typography System */
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--csga-navy);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Heading Hierarchy */
+.display-text, .hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1, .h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.2; color: var(--alliance-white); }
+h2, .h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 700; line-height: 1.25; color: var(--alliance-white); }
+h3, .h3 { font-size: clamp(1.375rem, 3vw, 1.75rem); font-weight: 600; line-height: 1.3; color: var(--alliance-white); }
+h4, .h4 { font-size: 1.25rem; font-weight: 600; line-height: 1.4; color: var(--alliance-white); }
+h5, .h5 { font-size: 1rem; font-weight: 600; line-height: 1.5; color: var(--text-secondary); }
+h6, .h6, .eyebrow-text { 
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  letter-spacing: 0.05em; 
+  text-transform: uppercase; 
+  color: var(--cyber-blue); 
+}
+
+/* Body Typography */
+p, .body-regular { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); }
+.body-large { font-size: 1.125rem; line-height: 1.6; color: var(--text-secondary); }
+.body-small { font-size: 0.875rem; line-height: 1.5; color: var(--text-tertiary); }
+
+/* Technical Typography */
+.mono, code, .stat-number, .data-point {
+  font-family: 'JetBrains Mono', 'SF Mono', Monaco, Inconsolata, monospace;
+  font-weight: 700;
+}
+
+.stat-number {
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button Components */
+.btn-kimi-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--gradient-primary);
+  color: var(--alliance-white);
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-kimi-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 90, 245, 0.4);
+}
+
+.btn-kimi-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--alliance-white);
+  font-weight: 600;
+  border: 1px solid var(--surface-2);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-kimi-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--surface-3);
+}
+
+/* Card Components */
+.card-kimi {
+  background: var(--surface-1);
+  border: 1px solid var(--surface-2);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-kimi:hover {
+  border-color: var(--cyber-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 90, 245, 0.15);
+}
+
+/* Badge Components */
+.badge-kimi-success {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(0, 212, 170, 0.1);
+  color: var(--security-teal);
+  border: 1px solid var(--security-teal);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-kimi-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(30, 90, 245, 0.1);
+  color: var(--cyber-blue);
+  border: 1px solid var(--cyber-blue);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Section Enhancements */
+.section-kimi {
+  padding: var(--space-8) 0;
+  background: var(--gradient-subtle);
+  position: relative;
+}
+
+.section-kimi::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(30, 90, 245, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Industry Card Enhancements */
+.industry-card-kimi {
+  position: relative;
+  border: 1px solid rgba(30, 90, 245, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: var(--surface-1);
+}
+
+.industry-card-kimi:hover {
+  border-color: rgba(30, 90, 245, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(30, 90, 245, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-kimi { padding: var(--space-7) 0; }
+  .card-kimi { padding: var(--space-4); }
+  
+  .btn-kimi-primary,
+  .btn-kimi-secondary {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 14px 20px;
+  }
+}
+
+/* Animation Classes */
+.animate-kimi-glow {
+  animation: kimiPulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes kimiPulseGlow {
+  from { box-shadow: 0 0 20px rgba(30, 90, 245, 0.3); }
+  to { box-shadow: 0 0 30px rgba(30, 90, 245, 0.6); }
+}
+
+.animate-kimi-gradient {
+  background-size: 400% 400%;
+  animation: kimiGradientAnimation 15s ease infinite;
+}
+
+@keyframes kimiGradientAnimation {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Background Pattern Classes */
+.bg-kimi-pattern-grid {
+  background-image: url('./visual_assets/tech_grid_pattern.jpg');
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  opacity: 0.03;
+}
+
+.bg-kimi-pattern-nodes {
+  background-image: url('./visual_assets/network_nodes_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+}
+
+.bg-kimi-pattern-hexagon {
+  background-image: url('./visual_assets/hexagon_pattern.jpg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  opacity: 0.04;
+}

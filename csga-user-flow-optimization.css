@@ -1,0 +1,271 @@
+/* 🔄 CSGA User Flow Optimization */
+/* Perfect user journeys and interaction flows */
+
+/* Smooth Page Transitions */
+* {
+    scroll-behavior: smooth;
+}
+
+/* Perfect Focus Flow */
+body {
+    scroll-padding-top: 80px; /* Account for sticky nav */
+}
+
+/* CTA Optimization */
+.cta-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+    z-index: 1;
+}
+
+.cta-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-primary > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Perfect Loading States */
+.page-loading {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced Error States */
+.error-message {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    border-left: 4px solid #b91c1c;
+    margin: 16px 0;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.2);
+}
+
+.success-message {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    border-left: 4px solid #047857;
+    margin: 16px 0;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+}
+
+/* Perfect Breadcrumb Navigation */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: '/';
+    margin-left: 8px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #3b82f6;
+}
+
+.breadcrumb-item:last-child {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Enhanced Progress Indicators */
+.progress-indicator {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 16px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Perfect Modal/Popup Flows */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: var(--csga-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-overlay.active .modal {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Enhanced Tooltip System */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--csga-dark);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-8px);
+}
+
+/* Perfect Skip Links */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--csga-primary);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Enhanced Print Styles */
+@media print {
+    .nav,
+    .navbar,
+    .footer,
+    .modal-overlay,
+    .tooltip {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    
+    .page-break {
+        page-break-before: always;
+    }
+}
+
+/* Perfect Animation Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Enhanced High Contrast Mode */
+@media (prefers-contrast: high) {
+    .card,
+    .modal,
+    input,
+    textarea,
+    select {
+        border-width: 2px;
+        border-color: currentColor;
+    }
+    
+    .btn,
+    .btn-primary {
+        border: 2px solid currentColor;
+    }
+}

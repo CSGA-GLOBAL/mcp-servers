@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>MCP Server Catalog - CSGA Global</title>
+ <meta name="description" content="Browse 70 AI-Powered Model Context Protocols. Free, Pro, and Enterprise tiers available.">
+ 
+ 
+ <style>
+/* Catalog Page Specific Styles */
+ .catalog-hero {
+ background: linear-gradient(135deg, #0A1628 0%, #0d2847 50%, #0058A4 100%);
+ padding: 100px 20px 80px;
+ text-align: center;
+ color: white;
+ margin-bottom: 60px;
+ position: relative;
+ overflow: hidden;
+ }
+ .catalog-hero::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: radial-gradient(ellipse at 20% 80%, rgba(204,0,0,0.06) 0%, transparent 50%),
+ radial-gradient(ellipse at 80% 20%, rgba(0,88,164,0.08) 0%, transparent 50%);
+ pointer-events: none;
+ }
+ .catalog-hero h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.8rem;
+ font-weight: 700;
+ margin-bottom: 15px;
+ line-height: 1.1;
+ position: relative;
+ z-index: 1;
+ animation: fadeInUp 0.6s ease-out;
+ }
+ .catalog-hero .subtitle {
+ font-size: 1.3rem;
+ opacity: 0.95;
+ max-width: 700px;
+ margin: 0 auto;
+ position: relative;
+ z-index: 1;
+ animation: fadeInUp 0.6s ease-out 0.1s both;
+ }
+ .catalog-controls {
+ max-width: 1200px;
+ margin: 0 auto 60px;
+ padding: 0 20px;
+ }
+ .search-filter-container {
+ background: white;
+ border-radius: 12px;
+ padding: 30px;
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+ margin-bottom: 40px;
+ border: 1px solid rgba(0,0,0,0.04);
+ }
+ .search-bar {
+ width: 100%;
+ padding: 14px 18px;
+ font-size: 1rem;
+ border: 2px solid #e0e0e0;
+ border-radius: 8px;
+ margin-bottom: 25px;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ transition: border-color 0.3s;
+ }
+ .search-bar:focus {
+ outline: none;
+ border-color: #3182ce;
+ box-shadow: 0 0 0 3px rgba(0, 88, 164, 0.1);
+ }
+ .filter-buttons {
+ display: flex;
+ gap: 12px;
+ margin-bottom: 20px;
+ flex-wrap: wrap;
+ }
+ .filter-btn {
+ padding: 10px 20px;
+ border: 2px solid #e0e0e0;
+ background: white;
+ border-radius: 8px;
+ cursor: pointer;
+ font-weight: 600;
+ font-size: 0.95rem;
+ transition: all 0.25s;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .filter-btn:hover {
+ border-color: #3182ce;
+ background: rgba(0, 88, 164, 0.05);
+ }
+ .filter-btn.active {
+ background: #3182ce;
+ color: white;
+ border-color: #3182ce;
+ }
+ .category-filter {
+ display: flex;
+ gap: 12px;
+ align-items: center;
+ flex-wrap: wrap;
+ }
+ .category-filter label {
+ font-weight: 600;
+ margin: 0;
+ }
+ .category-filter select {
+ padding: 10px 15px;
+ border: 2px solid #e0e0e0;
+ border-radius: 8px;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 0.95rem;
+ cursor: pointer;
+ background: white;
+ transition: border-color 0.3s;
+ }
+ .category-filter select:focus {
+ outline: none;
+ border-color: #3182ce;
+ }
+ .stats-bar {
+ background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+ padding: 30px;
+ border-radius: 12px;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 30px;
+ margin-bottom: 50px;
+ text-align: center;
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+ border: 1px solid rgba(0,0,0,0.04);
+ }
+ .stat-item {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ }
+ .stat-number {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #3182ce;
+ line-height: 1;
+ margin-bottom: 8px;
+ }
+ .stat-label {
+ font-size: 0.95rem;
+ color: #666;
+ font-weight: 500;
+ }
+ .mcp-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+ gap: 30px;
+ max-width: 1200px;
+ margin: 0 auto 80px;
+ padding: 0 20px;
+ }
+ @media (max-width: 768px) {
+ .mcp-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+ .mcp-card {
+ background: white;
+ border-radius: 12px;
+ padding: 30px;
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+ transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+ display: flex;
+ flex-direction: column;
+ height: 100%;
+ border: 1px solid rgba(0,0,0,0.06);
+ position: relative;
+ overflow: hidden;
+ }
+ .mcp-card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 4px;
+ background: linear-gradient(90deg, #A30000, #3182ce);
+ transform: scaleX(0);
+ transform-origin: left;
+ transition: transform 0.4s ease;
+ }
+ .mcp-card:hover::before { transform: scaleX(1); }
+ .mcp-card:hover {
+ box-shadow: 0 20px 60px rgba(10, 22, 40, 0.12);
+ transform: translateY(-8px);
+ border-color: transparent;
+ }
+ .mcp-badges {
+ display: flex;
+ gap: 10px;
+ margin-bottom: 20px;
+ flex-wrap: wrap;
+ }
+ .tier-badge {
+ display: inline-block;
+ padding: 6px 12px;
+ border-radius: 4px;
+ font-size: 0.85rem;
+ font-weight: 600;
+ white-space: nowrap;
+ }
+ .tier-badge.free {
+ background: #e8f5e9;
+ color: #2e7d32;
+ }
+ .tier-badge.pro {
+ background: #fff8e1;
+ color: #f57c00;
+ }
+ .tier-badge.enterprise {
+ background: #ffebee;
+ color: #c62828;
+ }
+ .category-badge {
+ display: inline-block;
+ padding: 6px 12px;
+ border-radius: 4px;
+ font-size: 0.85rem;
+ font-weight: 600;
+ background: #e3f2fd;
+ color: #3182ce;
+ }
+ .mcp-icon {
+ font-size: 3.5rem;
+ margin-bottom: 15px;
+ display: block;
+ }
+ .mcp-name {
+ font-size: 1.5rem;
+ font-weight: 700;
+ margin-bottom: 10px;
+ color: #0058A4;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .mcp-description {
+ font-size: 0.95rem;
+ color: #666;
+ margin-bottom: 20px;
+ line-height: 1.5;
+ flex-grow: 1;
+ }
+ .features-count {
+ display: inline-block;
+ padding: 6px 12px;
+ background: #f0f0f0;
+ border-radius: 6px;
+ font-size: 0.85rem;
+ font-weight: 600;
+ margin-bottom: 20px;
+ color: #0058A4;
+ }
+ .view-details-btn {
+ display: block;
+ width: 100%;
+ padding: 16px 20px;
+ border: none;
+ border-radius: 8px;
+ font-size: 1.05rem;
+ font-weight: 700;
+ cursor: pointer;
+ text-decoration: none;
+ text-align: center;
+ transition: all 0.25s;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ margin-top: auto;
+ }
+ .mcp-card.free .view-details-btn {
+ background: #2e7d32;
+ color: white;
+ }
+ .mcp-card.free .view-details-btn:hover {
+ background: #1b5e20;
+ transform: translateY(-2px);
+ box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+ }
+ .mcp-card.pro .view-details-btn {
+ background: #0058A4;
+ color: white;
+ }
+ .mcp-card.pro .view-details-btn:hover {
+ background: #b8860b;
+ transform: translateY(-2px);
+ box-shadow: 0 4px 12px rgba(0, 88, 164, 0.3);
+ }
+ .mcp-card.enterprise .view-details-btn {
+ background: #3182ce;
+ color: white;
+ }
+ .mcp-card.enterprise .view-details-btn:hover {
+ background: #990000;
+ transform: translateY(-2px);
+ box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
+ }
+ .add-to-plan-btn {
+ display: block;
+ width: 100%;
+ padding: 10px;
+ margin-top: 8px;
+ border: 2px solid #0058A4;
+ background: transparent;
+ color: #0058A4;
+ border-radius: 8px;
+ font-weight: 600;
+ font-size: .85rem;
+ cursor: pointer;
+ transition: all .2s;
+ }
+ .add-to-plan-btn:hover {
+ background: #0058A4;
+ color: #fff;
+ }
+ .add-to-plan-btn.enterprise-btn {
+ border-color: #3182ce;
+ color: #3182ce;
+ }
+ .add-to-plan-btn.enterprise-btn:hover {
+ background: #3182ce;
+ color: #fff;
+ }
+ .comparison-section {
+ max-width: 1200px;
+ margin: 80px auto;
+ padding: 0 20px;
+ }
+ .comparison-section h2 {
+ font-size: 2.2rem;
+ text-align: center;
+ margin-bottom: 50px;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ color: #0058A4;
+ }
+ .comparison-table {
+ width: 100%;
+ border-collapse: collapse;
+ background: white;
+ border-radius: 12px;
+ overflow: hidden;
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+ }
+ .comparison-table th {
+ background: #0058A4;
+ color: white;
+ padding: 20px;
+ text-align: left;
+ font-weight: 700;
+ }
+ .comparison-table td {
+ padding: 18px 20px;
+ border-bottom: 1px solid #f0f0f0;
+ }
+ .comparison-table tr:last-child td {
+ border-bottom: none;
+ }
+ .comparison-table tr:nth-child(odd) {
+ background: #fafafa;
+ }
+ .cta-section {
+ background: linear-gradient(135deg, #0058A4 0%, #0d2847 100%);
+ padding: 80px 20px;
+ text-align: center;
+ color: white;
+ border-radius: 12px;
+ max-width: 1200px;
+ margin: 80px auto;
+ }
+ .cta-section h2 {
+ font-size: 2.5rem;
+ margin-bottom: 20px;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .cta-section p {
+ font-size: 1.1rem;
+ margin-bottom: 35px;
+ opacity: 0.95;
+ }
+ .cta-button {
+ display: inline-block;
+ padding: 16px 40px;
+ background: #0058A4;
+ color: white;
+ border-radius: 8px;
+ text-decoration: none;
+ font-weight: 700;
+ font-size: 1.1rem;
+ transition: all 0.25s;
+ border: 2px solid #0058A4;
+ }
+ .cta-button:hover {
+ background: transparent;
+ color: #0058A4;
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://CSGA-global.vercel.app/catalog">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="MCP Server Catalog - CSGA Global">
+ <meta property="og:description" content="Browse 70 AI-Powered Model Context Protocols. Free, Pro, and Enterprise tiers available.">
+ <meta property="og:url" content="https://CSGA-global.vercel.app/catalog">
+ <meta property="og:image" content="https://CSGA-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="MCP Server Catalog - CSGA Global">
+ <meta name="twitter:description" content="Browse 70 AI-Powered Model Context Protocols. Free, Pro, and Enterprise tiers available.">
+ <meta name="twitter:image" content="https://CSGA-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"MCP Server Catalog - CSGA Global","description":"Browse 70 AI-Powered Model Context Protocols. Free, Pro, and Enterprise tiers available.","url":"https://CSGA-global.vercel.app/catalog","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://CSGA-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/CSGA-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://CSGA-global.org",
+      "logo": "https://CSGA-global.org/images/CSGA-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/CSGA-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/CSGA-perfect-professional-polish.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/CSGA-hero-readability-emergency-fix.css">
+    <!-- <span class="professional-icon-text">MOBILE</span> EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/CSGA-mobile-emergency-fix.css">
+    <!-- <span class="professional-icon-text" data-context="info">ART</span> EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/CSGA-contrast-emergency-fix.css">
+    <!-- <span class="professional-icon-text">DOCS</span> EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/CSGA-typography-emergency-fix.css">
+    <!-- <span class="professional-icon-text">LAUNCH</span> CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/CSGA-2026-global-styles.css">
+    <link rel="stylesheet" href="/CSGA-2026-components.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/CSGA-homepage-text-emergency-fix.css">
+    <!-- <span class="professional-icon-text">LAUNCH</span> Image Optimization -->
+    <link rel="stylesheet" href="/CSGA-image-optimization.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span><span class="professional-icon-text" data-context="info">ICON</span> Professional Icon System -->
+    <link rel="stylesheet" href="/CSGA-professional-icons.css">
+  <!-- CSGA Hero     <!-- <span class="professional-icon-text" data-context="info">GOV</span> Professional Icon Text System -->
+    <link rel="stylesheet" href="/professional-icon-text.css">
+
+        <style>
+        /* 🎨 CSGA Visual Perfection System */
+        
+        /* Typography Excellence */
+        body {
+            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+            font-optical-sizing: auto;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+        
+        /* Perfect Heading Hierarchy */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+        
+        /* Perfect Spacing System */
+        .page-header {
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+        }
+        
+        .page-title {
+            color: white !important;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        /* Breadcrumb Excellence */
+        .breadcrumb-nav {
+            padding: 1rem 0;
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: '→';
+            margin: 0 0.5rem;
+            color: #64748b;
+        }
+        
+        .breadcrumb-item a {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: #1e40af;
+        }
+        
+        .breadcrumb-item.active {
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        /* Skip Navigation */
+        .skip-navigation {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: #1e40af;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 0.5rem 0.5rem;
+            transition: top 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .skip-navigation:focus {
+            top: 0;
+        }
+        
+        /* Contextual CTA Excellence */
+        .contextual-cta {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .cta-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Perfect Button System */
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            text-decoration: none;
+            color: white;
+        }
+        
+        /* Content Excellence */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 2rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Mobile Excellence */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 2rem 0 1rem;
+            }
+            
+            .contextual-cta {
+                margin: 2rem 0;
+                padding: 2rem 1rem;
+            }
+            
+            .btn-primary {
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+                max-width: 300px;
+            }
+        }
+        
+        /* Accessibility Excellence */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus Management */
+        :focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            .contextual-cta, .breadcrumb-nav, .skip-navigation {
+                display: none;
+            }
+        }
+        </style>
+
+        <style>
+        /* 🏛️ CSGA Real Logo Implementation */
+        .CSGA-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .CSGA-logo {
+            height: 48px;
+            width: auto;
+            filter: brightness(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .CSGA-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .CSGA-tagline {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        /* Header Logo */
+        .header .CSGA-logo {
+            height: 40px;
+        }
+        
+        /* Footer Logo */
+        .footer .CSGA-logo {
+            height: 36px;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Logo */
+        @media (max-width: 768px) {
+            .CSGA-logo-container {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .CSGA-logo {
+                height: 36px;
+            }
+            
+            .CSGA-tagline {
+                font-size: 0.8rem;
+            }
+        }
+        </style>
+
+        <style>
+        /* 🎨 CSGA Brand Guidelines Implementation */
+        :root {
+            --csga-primary: #1e40af;
+            --csga-secondary: #3b82f6;
+            --csga-accent: #06b6d4;
+            --csga-success: #10b981;
+            --csga-warning: #f59e0b;
+            --csga-danger: #dc2626;
+            --csga-dark: #0f172a;
+            --csga-light: #f8fafc;
+        }
+        
+        /* Brand Color Application */
+        .bg-primary { background-color: var(--csga-primary); }
+        .bg-secondary { background-color: var(--csga-secondary); }
+        .text-primary { color: var(--csga-primary); }
+        .text-secondary { color: var(--csga-secondary); }
+        
+        /* Brand Typography */
+        .brand-heading {
+            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        /* CSGA Professional Elements */
+        .csga-card {
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.75rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .csga-card:hover {
+            border-color: var(--csga-secondary);
+            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Navigation Brand Styling */
+        .navbar {
+            background: var(--csga-light);
+            border-bottom: 2px solid var(--csga-primary);
+        }
+        
+        .nav-link {
+            color: var(--csga-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--csga-primary);
+        }
+        
+        /* Footer Brand Styling */
+        .footer {
+            background: var(--csga-dark);
+            color: white;
+            border-top: 3px solid var(--csga-primary);
+        }
+        </style>
+    <link rel="stylesheet" href="/css/mobile-advanced.css">
+</head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/CSGA-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://CSGA-global.org",
+      "logo": "https://CSGA-global.org/images/CSGA-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/CSGA-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/CSGA-perfect-professional-polish.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/CSGA-hero-readability-emergency-fix.css">
+    <!-- <span class="professional-icon-text">MOBILE</span> EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/CSGA-mobile-emergency-fix.css">
+    <!-- <span class="professional-icon-text" data-context="info">ART</span> EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/CSGA-contrast-emergency-fix.css">
+    <!-- <span class="professional-icon-text">DOCS</span> EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/CSGA-typography-emergency-fix.css">
+    <!-- <span class="professional-icon-text">LAUNCH</span> CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/CSGA-2026-global-styles.css">
+    <link rel="stylesheet" href="/CSGA-2026-components.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/CSGA-homepage-text-emergency-fix.css">
+    <!-- <span class="professional-icon-text">LAUNCH</span> Image Optimization -->
+    <link rel="stylesheet" href="/CSGA-image-optimization.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span><span class="professional-icon-text" data-context="info">ICON</span> Professional Icon System -->
+    <link rel="stylesheet" href="/CSGA-professional-icons.css">
+    <!-- <span class="professional-icon-text" data-context="info">GOV</span> Professional Icon Text System -->
+    <link rel="stylesheet" href="/professional-icon-text.css">
+
+        <style>
+        /* 🎨 CSGA Visual Perfection System */
+        
+        /* Typography Excellence */
+        body {
+            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+            font-optical-sizing: auto;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+        
+        /* Perfect Heading Hierarchy */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+        
+        /* Perfect Spacing System */
+        .page-header {
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+        }
+        
+        .page-title {
+            color: white !important;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        /* Breadcrumb Excellence */
+        .breadcrumb-nav {
+            padding: 1rem 0;
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: '→';
+            margin: 0 0.5rem;
+            color: #64748b;
+        }
+        
+        .breadcrumb-item a {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: #1e40af;
+        }
+        
+        .breadcrumb-item.active {
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        /* Skip Navigation */
+        .skip-navigation {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: #1e40af;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 0.5rem 0.5rem;
+            transition: top 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .skip-navigation:focus {
+            top: 0;
+        }
+        
+        /* Contextual CTA Excellence */
+        .contextual-cta {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .cta-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Perfect Button System */
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            text-decoration: none;
+            color: white;
+        }
+        
+        /* Content Excellence */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 2rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Mobile Excellence */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 2rem 0 1rem;
+            }
+            
+            .contextual-cta {
+                margin: 2rem 0;
+                padding: 2rem 1rem;
+            }
+            
+            .btn-primary {
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+                max-width: 300px;
+            }
+        }
+        
+        /* Accessibility Excellence */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus Management */
+        :focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            .contextual-cta, .breadcrumb-nav, .skip-navigation {
+                display: none;
+            }
+        }
+        </style>
+
+        <style>
+        /* 🏛️ CSGA Real Logo Implementation */
+        .CSGA-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .CSGA-logo {
+            height: 48px;
+            width: auto;
+            filter: brightness(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .CSGA-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .CSGA-tagline {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        /* Header Logo */
+        .header .CSGA-logo {
+            height: 40px;
+        }
+        
+        /* Footer Logo */
+        .footer .CSGA-logo {
+            height: 36px;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Logo */
+        @media (max-width: 768px) {
+            .CSGA-logo-container {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .CSGA-logo {
+                height: 36px;
+            }
+            
+            .CSGA-tagline {
+                font-size: 0.8rem;
+            }
+        }
+        </style>
+
+        <style>
+        /* 🎨 CSGA Brand Guidelines Implementation */
+        :root {
+            --csga-primary: #1e40af;
+            --csga-secondary: #3b82f6;
+            --csga-accent: #06b6d4;
+            --csga-success: #10b981;
+            --csga-warning: #f59e0b;
+            --csga-danger: #dc2626;
+            --csga-dark: #0f172a;
+            --csga-light: #f8fafc;
+        }
+        
+        /* Brand Color Application */
+        .bg-primary { background-color: var(--csga-primary); }
+        .bg-secondary { background-color: var(--csga-secondary); }
+        .text-primary { color: var(--csga-primary); }
+        .text-secondary { color: var(--csga-secondary); }
+        
+        /* Brand Typography */
+        .brand-heading {
+            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        /* CSGA Professional Elements */
+        .csga-card {
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.75rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .csga-card:hover {
+            border-color: var(--csga-secondary);
+            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Navigation Brand Styling */
+        .navbar {
+            background: var(--csga-light);
+            border-bottom: 2px solid var(--csga-primary);
+        }
+        
+        .nav-link {
+            color: var(--csga-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--csga-primary);
+        }
+        
+        /* Footer Brand Styling */
+        .footer {
+            background: var(--csga-dark);
+            color: white;
+            border-top: 3px solid var(--csga-primary);
+        }
+        </style>
+    <link rel="stylesheet" href="/css/mobile-advanced.css">
+</head>
+<body>
+<a href="#main-content" class="skip-navigation">Skip to main content</a>>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="catalog-hero csga-section">
+ <h1 class="professional-title professional-title" class="professional-title" class="brand-heading">MCP Server Catalog</h1>
+ <p class="subtitle" class="professional-body">70 AI-Powered Model Context Protocols  Choose from Free, Pro, and Enterprise tiers</p>
+</section>
+
+<div class="catalog-controls">
+ <div class="search-filter-container">
+ <input
+ type="text"
+ class="search-bar"
+ id="searchInput"
+ placeholder="Search MCPs by name or keyword..."
+ >
+ <div class="filter-buttons">
+ <button class="btn-professional" data-tier="all">All</button>
+ <button class="btn-professional" data-tier="Free">Free</button>
+ <button class="btn-professional" data-tier="Pro">Pro</button>
+ <button class="btn-professional" data-tier="Enterprise">Enterprise</button>
+ </div>
+ <div class="category-filter">
+ <label for="categorySelect">Category:</label>
+ <select id="categorySelect">
+ <option value="all">All Categories</option>
+ <option value="AI & ML">AI & ML</option><option value="Cloud">Cloud</option><option value="Communication">Communication</option><option value="Data">Data</option><option value="Defence">Defence</option><option value="DevOps">DevOps</option><option value="Development">Development</option><option value="Enterprise">Enterprise</option><option value="Governance">Governance</option><option value="Infrastructure">Infrastructure</option><option value="Productivity">Productivity</option><option value="Security">Security</option><option value="Sports">Sports</option><option value="Travel">Travel</option>
+ </select>
+ </div>
+ </div>
+ 
+ <div class="stats-bar">
+ <div class="stat-item">
+ <div class="stat-number" id="stat-total">0</div>
+ <div class="stat-label">Total MCPs</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-number" id="stat-free">0</div>
+ <div class="stat-label">Free Tier</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-number" id="stat-pro">0</div>
+ <div class="stat-label">Pro Tier</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-number" id="stat-enterprise">0</div>
+ <div class="stat-label">Enterprise Tier</div>
+ </div>
+ </div>
+</div>
+
+<div class="mcp-grid" id="mcpGrid">
+ <div class="card-professional" data-tier="free" data-category="Development" data-name="Playwright Browser" data-description="AI-powered browser automation with full control over headless Chromium, Firefox, and WebKit instances for web scraping, testing, and interaction.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Development</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Playwright Browser</h3>
+ <p class="mcp-description" class="professional-body">AI-powered browser automation with full control over headless Chromium, Firefox, and WebKit instances for web scraping, testing, and interaction.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/playwright-browser.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Development" data-name="Context7 Docs" data-description="Live library documentation for any NPM package with real-time API references, examples, and code snippets from latest package versions.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Development</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Context7 Docs</h3>
+ <p class="mcp-description" class="professional-body">Live library documentation for any NPM package with real-time API references, examples, and code snippets from latest package versions.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/context7-docs.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Infrastructure" data-name="Filesystem Operations" data-description="Secure file read, write, search, and manipulation with sandbox protection, permissions management, and atomic operations.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Infrastructure</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Filesystem Operations</h3>
+ <p class="mcp-description" class="professional-body">Secure file read, write, search, and manipulation with sandbox protection, permissions management, and atomic operations.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/filesystem-ops.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="AI & ML" data-name="Memory Graph" data-description="Persistent AI memory storage with graph-based retrieval, semantic search, and conversation history management for multi-turn AI interactions.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">AI & ML</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Memory Graph</h3>
+ <p class="mcp-description" class="professional-body">Persistent AI memory storage with graph-based retrieval, semantic search, and conversation history management for multi-turn AI interactions.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/memory-graph.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Infrastructure" data-name="Fetch HTTP" data-description="Web requests with automatic robots.txt compliance, header management, and retry policies for reliable API interactions.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Infrastructure</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Fetch HTTP</h3>
+ <p class="mcp-description" class="professional-body">Web requests with automatic robots.txt compliance, header management, and retry policies for reliable API interactions.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/fetch-http.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="AI & ML" data-name="Sequential Thinking" data-description="Structured problem-solving chains with step-by-step reasoning, validation, and iterative refinement for complex AI tasks.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">AI & ML</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Sequential Thinking</h3>
+ <p class="mcp-description" class="professional-body">Structured problem-solving chains with step-by-step reasoning, validation, and iterative refinement for complex AI tasks.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/sequential-thinking.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Development" data-name="Git Operations" data-description="Full Git version control operations via AI including commits, branches, merges, and repository management.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Development</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Git Operations</h3>
+ <p class="mcp-description" class="professional-body">Full Git version control operations via AI including commits, branches, merges, and repository management.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/git-operations.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Data" data-name="SQLite Database" data-description="Local database operations with SQL query execution, schema management, and transaction support for embedded data needs.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Data</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">SQLite Database</h3>
+ <p class="mcp-description" class="professional-body">Local database operations with SQL query execution, schema management, and transaction support for embedded data needs.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/sqlite-db.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Infrastructure" data-name="Time Zones" data-description="Global timezone operations with conversions, scheduling, and daylight saving time handling for international applications.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Infrastructure</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Time Zones</h3>
+ <p class="mcp-description" class="professional-body">Global timezone operations with conversions, scheduling, and daylight saving time handling for international applications.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/time-zones.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Development" data-name="Puppeteer Headless" data-description="Headless Chrome automation for testing, scraping, and performance analysis with full JavaScript rendering support.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Development</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Puppeteer Headless</h3>
+ <p class="mcp-description" class="professional-body">Headless Chrome automation for testing, scraping, and performance analysis with full JavaScript rendering support.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/puppeteer-headless.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Data" data-name="CSV Analytics" data-description="Spreadsheet data analysis with parsing, transformation, aggregation, and statistical operations on CSV files.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Data</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">CSV Analytics</h3>
+ <p class="mcp-description" class="professional-body">Spreadsheet data analysis with parsing, transformation, aggregation, and statistical operations on CSV files.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/csv-analytics.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="free" data-category="Data" data-name="JSON Transformer" data-description="JSON and API data transformation with schema mapping, validation, and conversion utilities for data integration.">
+ <div class="mcp-badges">
+ <span class="tier-badge free">free</span>
+ <span class="category-badge">Data</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">JSON Transformer</h3>
+ <p class="mcp-description" class="professional-body">JSON and API data transformation with schema mapping, validation, and conversion utilities for data integration.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/json-transformer.html" class="btn-professional">Get Started Free</a>
+</div><div class="card-professional" data-tier="pro" data-category="Development" data-name="GitHub API" data-description="Full GitHub API access for repository management, issue tracking, pull requests, and workflow automation.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Development</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">GitHub API</h3>
+ <p class="mcp-description" class="professional-body">Full GitHub API access for repository management, issue tracking, pull requests, and workflow automation.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/github-api.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="Communication" data-name="Slack Messaging" data-description="Slack workspace automation with message sending, channel management, and workflow integration for team communication.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Communication</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Slack Messaging</h3>
+ <p class="mcp-description" class="professional-body">Slack workspace automation with message sending, channel management, and workflow integration for team communication.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/slack-messaging.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="Productivity" data-name="Notion Workspace" data-description="Notion page and database operations for content management, knowledge bases, and collaborative documentation.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Productivity</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Notion Workspace</h3>
+ <p class="mcp-description" class="professional-body">Notion page and database operations for content management, knowledge bases, and collaborative documentation.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/notion-workspace.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="Productivity" data-name="Linear Issues" data-description="Linear project management with issue creation, tracking, assignment, and workflow state management.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Productivity</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Linear Issues</h3>
+ <p class="mcp-description" class="professional-body">Linear project management with issue creation, tracking, assignment, and workflow state management.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/linear-issues.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="Data" data-name="PostgreSQL Database" data-description="Production database operations with advanced SQL, transactions, and scalability for enterprise applications.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Data</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">PostgreSQL Database</h3>
+ <p class="mcp-description" class="professional-body">Production database operations with advanced SQL, transactions, and scalability for enterprise applications.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/postgres-db.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="Infrastructure" data-name="Brave Search API" data-description="Privacy-first web search API for information retrieval without tracking or profiling concerns.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Infrastructure</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Brave Search API</h3>
+ <p class="mcp-description" class="professional-body">Privacy-first web search API for information retrieval without tracking or profiling concerns.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/brave-search.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="Productivity" data-name="Google Drive" data-description="Google Drive file management with upload, download, folder organization, and sharing control.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Productivity</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Google Drive</h3>
+ <p class="mcp-description" class="professional-body">Google Drive file management with upload, download, folder organization, and sharing control.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/google-drive.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="DevOps" data-name="Sentry Monitoring" data-description="Application error monitoring and performance tracking with real-time alerts and detailed issue analysis.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">DevOps</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Sentry Monitoring</h3>
+ <p class="mcp-description" class="professional-body">Application error monitoring and performance tracking with real-time alerts and detailed issue analysis.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/sentry-monitoring.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="Development" data-name="GitLab API" data-description="GitLab DevOps platform access for repository, pipeline, and infrastructure automation.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Development</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">GitLab API</h3>
+ <p class="mcp-description" class="professional-body">GitLab DevOps platform access for repository, pipeline, and infrastructure automation.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/gitlab-api.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="DevOps" data-name="Docker Compose" data-description="Container management and orchestration for multi-container application deployment and scaling.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">DevOps</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Docker Compose</h3>
+ <p class="mcp-description" class="professional-body">Container management and orchestration for multi-container application deployment and scaling.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/docker-compose.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="Cloud" data-name="AWS Cloud" data-description="AWS service management including EC2, S3, Lambda, RDS, and more for flexible cloud infrastructure.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">Cloud</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">AWS Cloud</h3>
+ <p class="mcp-description" class="professional-body">AWS service management including EC2, S3, Lambda, RDS, and more for flexible cloud infrastructure.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/aws-cloud.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="pro" data-category="DevOps" data-name="Vercel Deploy" data-description="Frontend deployment automation with edge functions, analytics, and continuous deployment from Git.">
+ <div class="mcp-badges">
+ <span class="tier-badge pro">pro</span>
+ <span class="category-badge">DevOps</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Vercel Deploy</h3>
+ <p class="mcp-description" class="professional-body">Frontend deployment automation with edge functions, analytics, and continuous deployment from Git.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/vercel-deploy.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#pro'">Add to Pro Plan</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Enterprise" data-name="PMCP Gateway" data-description="Progressive MCP meta-server for unified access to all MCPs with load balancing, caching, and enterprise features.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Enterprise</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">PMCP Gateway</h3>
+ <p class="mcp-description" class="professional-body">Progressive MCP meta-server for unified access to all MCPs with load balancing, caching, and enterprise features.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/pmcp-gateway.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Governance" data-name="AI Governance" data-description="ISO 42001 compliance automation for AI systems with policy enforcement, audit trails, and risk management.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Governance</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">AI Governance</h3>
+ <p class="mcp-description" class="professional-body">ISO 42001 compliance automation for AI systems with policy enforcement, audit trails, and risk management.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/ai-governance.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Defence" data-name="DSRB Defence" data-description="Defence-grade security review with threat modeling, vulnerability assessment, and security audit automation.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Defence</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">DSRB Defence</h3>
+ <p class="mcp-description" class="professional-body">Defence-grade security review with threat modeling, vulnerability assessment, and security audit automation.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/dsrb-defence.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Security" data-name="Threat Intelligence" data-description="Real-time cyber threat feeds with indicator enrichment, malware analysis, and threat correlation.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Security</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Threat Intelligence</h3>
+ <p class="mcp-description" class="professional-body">Real-time cyber threat feeds with indicator enrichment, malware analysis, and threat correlation.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/threat-intelligence.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Governance" data-name="Compliance Audit" data-description="Multi-framework compliance checking including HIPAA, GDPR, SOC 2, PCI-DSS, and industry standards.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Governance</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Compliance Audit</h3>
+ <p class="mcp-description" class="professional-body">Multi-framework compliance checking including HIPAA, GDPR, SOC 2, PCI-DSS, and industry standards.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/compliance-audit.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Security" data-name="Vulnerability Scanner" data-description="AI-powered vulnerability detection with CVSS scoring, remediation guidance, and risk prioritization.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Security</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Vulnerability Scanner</h3>
+ <p class="mcp-description" class="professional-body">AI-powered vulnerability detection with CVSS scoring, remediation guidance, and risk prioritization.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/vulnerability-scanner.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Security" data-name="Incident Response" data-description="Automated incident response playbook execution with investigation, containment, and recovery automation.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Security</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Incident Response</h3>
+ <p class="mcp-description" class="professional-body">Automated incident response playbook execution with investigation, containment, and recovery automation.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/incident-response.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Cloud" data-name="Cloud Security" data-description="Multi-cloud security monitoring covering AWS, Azure, GCP with misconfigurations, threats, and compliance.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Cloud</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Cloud Security</h3>
+ <p class="mcp-description" class="professional-body">Multi-cloud security monitoring covering AWS, Azure, GCP with misconfigurations, threats, and compliance.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/cloud-security.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Security" data-name="Red Team Ops" data-description="AI red teaming and adversarial testing with attack simulation, exploitation, and security validation.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Security</span>
+ </div>
+ <span class="mcp-icon">CG</span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Red Team Ops</h3>
+ <p class="mcp-description" class="professional-body">AI red teaming and adversarial testing with attack simulation, exploitation, and security validation.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/red-team-ops.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Governance" data-name="Data Classification" data-description="AI data discovery and labeling with sensitivity classification and regulatory mapping.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Governance</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Data Classification</h3>
+ <p class="mcp-description" class="professional-body">AI data discovery and labeling with sensitivity classification and regulatory mapping.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/data-classification.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Enterprise" data-name="Policy Engine" data-description="Centralized AI policy management with version control, enforcement, and organizational wide compliance.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Enterprise</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Policy Engine</h3>
+ <p class="mcp-description" class="professional-body">Centralized AI policy management with version control, enforcement, and organizational wide compliance.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/policy-engine.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div><div class="card-professional" data-tier="enterprise" data-category="Defence" data-name="Secure Communications" data-description="End-to-end encrypted messaging with zero-knowledge architecture for defence-grade communications.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Defence</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Secure Communications</h3>
+ <p class="mcp-description" class="professional-body">End-to-end encrypted messaging with zero-knowledge architecture for defence-grade communications.</p>
+ <span class="features-count">6 Features</span>
+ <a href="mcp/secure-comms.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="Security" data-name="QuantraNet PQC" data-description="Post-quantum cryptography toolkit for quantum-safe encryption, key exchange, and digital signatures using NIST-approved algorithms.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Security</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">QuantraNet PQC</h3>
+ <p class="mcp-description" class="professional-body">Post-quantum cryptography toolkit for quantum-safe encryption, key exchange, and digital signatures using NIST-approved algorithms.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/quantranet-pqc.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="AI &amp; ML" data-name="Real Estate AI" data-description="AI governance for real estate technology including property valuation, fair housing compliance, and automated underwriting oversight.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">AI &amp; ML</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Real Estate AI</h3>
+ <p class="mcp-description" class="professional-body">AI governance for real estate technology including property valuation, fair housing compliance, and automated underwriting oversight.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/real-estate-ai.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="AI &amp; ML" data-name="Retail AI" data-description="AI governance for retail and e-commerce including pricing algorithms, recommendation systems, and consumer protection compliance.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">AI &amp; ML</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Retail AI</h3>
+ <p class="mcp-description" class="professional-body">AI governance for retail and e-commerce including pricing algorithms, recommendation systems, and consumer protection compliance.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/retail-ai.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="Governance" data-name="Smart Cities AI" data-description="AI governance for smart city infrastructure including traffic management, public safety, and urban planning systems.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Governance</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Smart Cities AI</h3>
+ <p class="mcp-description" class="professional-body">AI governance for smart city infrastructure including traffic management, public safety, and urban planning systems.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/smart-cities-ai.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="Defence" data-name="Space AI" data-description="AI governance for space technology including satellite operations, mission planning, and space debris management systems.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Defence</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Space AI</h3>
+ <p class="mcp-description" class="professional-body">AI governance for space technology including satellite operations, mission planning, and space debris management systems.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/space-ai.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="AI &amp; ML" data-name="Sports Analytics AI" data-description="AI governance for sports analytics including performance prediction, draft evaluation, and fair play compliance.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">AI &amp; ML</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Sports Analytics AI</h3>
+ <p class="mcp-description" class="professional-body">AI governance for sports analytics including performance prediction, draft evaluation, and fair play compliance.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/sports-analytics-ai.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="Enterprise" data-name="Supply Chain AI" data-description="AI governance for supply chain management including demand forecasting, logistics optimization, and supplier risk assessment.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Enterprise</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Supply Chain AI</h3>
+ <p class="mcp-description" class="professional-body">AI governance for supply chain management including demand forecasting, logistics optimization, and supplier risk assessment.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/supply-chain-ai.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="Enterprise" data-name="Telecom AI" data-description="AI governance for telecommunications including network optimization, customer service AI, and regulatory compliance.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Enterprise</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Telecom AI</h3>
+ <p class="mcp-description" class="professional-body">AI governance for telecommunications including network optimization, customer service AI, and regulatory compliance.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/telecom-ai.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="Defence" data-name="Terranova Defence" data-description="Terranova Defence AI governance framework for military autonomous systems, weapons oversight, and coalition interoperability.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Defence</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Terranova Defence</h3>
+ <p class="mcp-description" class="professional-body">Terranova Defence AI governance framework for military autonomous systems, weapons oversight, and coalition interoperability.</p>
+ <span class="features-count">5 Features</span>
+ <a href="mcp/terranova-defence.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="Governance" data-name="THN Global" data-description="THN Global humanitarian AI governance for disaster response, refugee management, and international aid optimization.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">Governance</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">THN Global</h3>
+ <p class="mcp-description" class="professional-body">THN Global humanitarian AI governance for disaster response, refugee management, and international aid optimization.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/thn-global.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+<div class="card-professional" data-tier="enterprise" data-category="AI &amp; ML" data-name="Travel &amp; Hospitality AI" data-description="AI governance for travel and hospitality including booking systems, dynamic pricing, and customer experience personalization.">
+ <div class="mcp-badges">
+ <span class="tier-badge enterprise">enterprise</span>
+ <span class="category-badge">AI &amp; ML</span>
+ </div>
+ <span class="mcp-icon"></span>
+ <h3 class="professional-title mcp-name" class="subsection-title" class="professional-title" class="professional-title">Travel &amp; Hospitality AI</h3>
+ <p class="mcp-description" class="professional-body">AI governance for travel and hospitality including booking systems, dynamic pricing, and customer experience personalization.</p>
+ <span class="features-count">4 Features</span>
+ <a href="mcp/travel-hospitality-ai.html" class="btn-professional">View Details</a><button class="btn-professional" onclick="window.location.href='/pricing#enterprise'">Contact Sales</button>
+</div>
+</div>
+
+<!-- Cross-sell: Upgrade Banner -->
+<style>
+.cat-upgrade-banner{background:linear-gradient(135deg,#0A1628 0%,#0058A4 60%,#1E40AF 100%);padding:56px 32px;margin:56px auto 0;max-width:1200px;border-radius:4px;position:relative;overflow:hidden}
+.cat-upgrade-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.3' opacity='0.08'%3E%3Cpath d='M0 30h60M30 0v60'/%3E%3C/g%3E%3C/svg%3E") repeat}
+.cat-upgrade-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;z-index:1;max-width:1200px;margin:0 auto;flex-wrap:wrap}
+.cat-upgrade-text{flex:1;min-width:280px}
+.cat-upgrade-text h3{font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:10px}
+.cat-upgrade-text h3 span{color:#3182ce}
+.cat-upgrade-text p{color:rgba(255,255,255,0.8);font-size:1.05rem;margin:0;line-height:1.6}
+.cat-upgrade-stats{display:flex;gap:32px;flex-wrap:wrap}
+.cat-upgrade-stat{text-align:center}
+.cat-upgrade-stat-num{display:block;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2rem;font-weight:700;color:#3182ce}
+.cat-upgrade-stat-label{display:block;font-size:0.82rem;color:rgba(255,255,255,0.7);margin-top:2px}
+.cat-upgrade-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.cat-upgrade-cta{display:inline-flex;align-items:center;padding:14px 28px;border-radius:12px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all .25s ease}
+.cat-upgrade-cta.gold{background:linear-gradient(135deg,#A30000,#3182ce,#1e40af);color:#0A1628}
+.cat-upgrade-cta.gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(204,0,0,0.4)}
+.cat-upgrade-cta.outline{border:2px solid rgba(255,255,255,0.4);color:#fff;background:transparent}
+.cat-upgrade-cta.outline:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+@media(max-width:768px){.cat-upgrade-inner{flex-direction:column;text-align:center}.cat-upgrade-stats{justify-content:center}.cat-upgrade-ctas{justify-content:center}}
+</style>
+<div class="cat-upgrade-banner">
+ <div class="cat-upgrade-inner">
+  <div class="cat-upgrade-text">
+   <h3 class="professional-title professional-title" class="professional-title">Unlock <span>All 70 MCPs</span> with Enterprise</h3>
+   <p class="professional-body">Get unlimited API calls, priority support, custom MCP development, dedicated account management, and SLA guarantees.</p>
+  </div>
+  <div class="cat-upgrade-stats">
+   <div class="cat-upgrade-stat"><span class="cat-upgrade-stat-num">70</span><span class="cat-upgrade-stat-label">MCP Servers</span></div>
+   <div class="cat-upgrade-stat"><span class="cat-upgrade-stat-num">99.9%</span><span class="cat-upgrade-stat-label">Uptime SLA</span></div>
+   <div class="cat-upgrade-stat"><span class="cat-upgrade-stat-num">24/7</span><span class="cat-upgrade-stat-label">Support</span></div>
+  </div>
+  <div class="cat-upgrade-ctas">
+   <a href="/pricing.html#enterprise" class="cat-upgrade-cta gold">Compare Plans </a>
+   <a href="/members.html" class="cat-upgrade-cta outline">Start Free</a>
+  </div>
+ </div>
+</div>
+
+<section class="comparison-section csga-section">
+ <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Tier Comparison</h2>
+ <table class="comparison-table">
+ <thead>
+ <tr>
+ <th>Feature</th>
+ <th>Free</th>
+ <th>Pro</th>
+ <th>Enterprise</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Number of MCPs</strong></td>
+ <td>12 MCPs</td>
+ <td>12 MCPs</td>
+ <td>12 MCPs</td>
+ </tr>
+ <tr>
+ <td><strong>API Rate Limits</strong></td>
+ <td>100 req/min</td>
+ <td>1,000 req/min</td>
+ <td>Custom</td>
+ </tr>
+ <tr>
+ <td><strong>Support</strong></td>
+ <td>Community</td>
+ <td>Email</td>
+ <td>24/7 Phone</td>
+ </tr>
+ <tr>
+ <td><strong>SLA</strong></td>
+ <td>None</td>
+ <td>99.5%</td>
+ <td>99.99%</td>
+ </tr>
+ <tr>
+ <td><strong>Advanced Analytics</strong></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ </tr>
+ <tr>
+ <td><strong>Custom Integration</strong></td>
+ <td></td>
+ <td>Limited</td>
+ <td>Full</td>
+ </tr>
+ <tr>
+ <td><strong>CASA-CA30 Certification</strong></td>
+ <td></td>
+ <td>Optional</td>
+ <td>Required</td>
+ </tr>
+ <tr>
+ <td><strong>Pricing</strong></td>
+ <td>Free</td>
+ <td>$99/mo</td>
+ <td>Custom Quote</td>
+ </tr>
+ </tbody>
+ </table>
+</section>
+
+<section style="max-width:1200px;margin:80px auto 60px;padding:0 20px;">
+ <div style="text-align:center;margin-bottom:50px;">
+ <span style="display:inline-block;background:linear-gradient(135deg,#A30000,#3182ce);color:#fff;padding:6px 20px;border-radius:4px;font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">Global Council Membership</span>
+ <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2.8rem;font-weight:700;color:#0F172A;margin-bottom:12px;" class="section-title" class="professional-title" class="professional-title" class="brand-heading">Join the CSGA Global Council</h2>
+ <p style="font-size:1.15rem;color:#475569;max-width:700px;margin:0 auto;" class="professional-body">Get MCP access, governance tools, training, and a seat at the table. Monthly &amp; yearly options to fit every budget.</p>
+ <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:24px;">
+ <span id="catMemLblM" style="font-weight:600;color:#0058A4;">Monthly</span>
+ <label style="position:relative;display:inline-block;width:52px;height:28px;cursor:pointer;">
+ <input type="checkbox" id="catMemToggle" onchange="catMemBilling()" style="opacity:0;width:0;height:0;">
+ <span style="position:absolute;inset:0;background:#ccc;border-radius:28px;transition:.3s;"></span>
+ <span id="catMemDot" style="position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:.3s;"></span>
+ </label>
+ <span id="catMemLblY" style="font-weight:500;color:#94a3b8;">Yearly <span style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:8px;font-size:0.75rem;font-weight:700;">Save 17%</span></span>
+ </div>
+ </div>
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+ <div style="background:#fff;border-radius:12px;padding:32px 28px;box-shadow:0 4px 20px rgba(0,0,0,0.06);border:2px solid #e2e8f0;text-align:center;">
+ <div style="font-size:2rem;margin-bottom:8px;"></div>
+ <h3 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:1.3rem;font-weight:700;color:#0F172A;" class="subsection-title" class="professional-title" class="professional-title">Personal</h3>
+ <p style="font-size:0.9rem;color:#64748b;margin:6px 0 16px;" class="professional-body">Individual practitioners &amp; researchers</p>
+ <div class="catMemPrice" data-m="35" data-y="350"><span style="font-size:2.6rem;font-weight:700;color:#0058A4;">$35</span><span style="color:#64748b;font-size:0.95rem;">/mo</span></div>
+ <ul style="text-align:left;list-style:none;padding:0;margin:20px 0;font-size:0.9rem;color:#334155;line-height:2.2;">
+ <li> 12 Free MCP servers</li><li> Community forum access</li><li> Monthly governance digest</li><li> Certificate of membership</li>
+ </ul>
+ <a href="/global-council" style="display:block;padding:14px;background:#0058A4;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;transition:all .2s;">Join Now</a>
+ </div>
+ <div style="background:#fff;border-radius:12px;padding:32px 28px;box-shadow:0 8px 32px rgba(0,88,164,0.15);border:2px solid #0058A4;text-align:center;position:relative;">
+ <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#3182ce,#ff3333);color:#fff;padding:5px 20px;border-radius:4px;font-size:0.8rem;font-weight:700;text-transform:uppercase;">Most Popular</div>
+ <div style="font-size:2rem;margin-bottom:8px;"></div>
+ <h3 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:1.3rem;font-weight:700;color:#0F172A;" class="subsection-title" class="professional-title" class="professional-title">Small Business</h3>
+ <p style="font-size:0.9rem;color:#64748b;margin:6px 0 16px;" class="professional-body">SMBs building compliant AI</p>
+ <div class="catMemPrice" data-m="249" data-y="2500"><span style="font-size:2.6rem;font-weight:700;color:#0058A4;">$249</span><span style="color:#64748b;font-size:0.95rem;">/mo</span></div>
+ <ul style="text-align:left;list-style:none;padding:0;margin:20px 0;font-size:0.9rem;color:#334155;line-height:2.2;">
+ <li> All Pro MCP servers</li><li> CASA-CA30 certification path</li><li> Quarterly strategy sessions</li><li> Compliance dashboard</li><li> Priority email support</li>
+ </ul>
+ <a href="/global-council" style="display:block;padding:14px;background:#3182ce;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;transition:all .2s;">Join Now</a>
+ </div>
+ <div style="background:#fff;border-radius:12px;padding:32px 28px;box-shadow:0 4px 20px rgba(0,0,0,0.06);border:2px solid #e2e8f0;text-align:center;">
+ <div style="font-size:2rem;margin-bottom:8px;"></div>
+ <h3 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:1.3rem;font-weight:700;color:#0F172A;" class="subsection-title" class="professional-title" class="professional-title">Enterprise</h3>
+ <p style="font-size:0.9rem;color:#64748b;margin:6px 0 16px;" class="professional-body">Large organisations &amp; government</p>
+ <div class="catMemPrice" data-m="999" data-y="10000"><span style="font-size:2.6rem;font-weight:700;color:#0058A4;">$999</span><span style="color:#64748b;font-size:0.95rem;">/mo</span></div>
+ <ul style="text-align:left;list-style:none;padding:0;margin:20px 0;font-size:0.9rem;color:#334155;line-height:2.2;">
+ <li> All Enterprise MCPs</li><li> Full CASA certification</li><li> Board advisory seat</li><li> Custom AI governance roadmap</li><li> 24/7 dedicated support</li><li> On-premise deployment</li>
+ </ul>
+ <a href="/global-council" style="display:block;padding:14px;background:#0058A4;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;transition:all .2s;">Contact Sales</a>
+ </div>
+ </div>
+ <p style="text-align:center;margin-top:20px;font-size:0.95rem;color:#64748b;" class="professional-body">All 6 membership tiers available on the <a href="/global-council" style="color:#0058A4;font-weight:600;">Global Council page</a></p>
+</section>
+<script>
+function catMemBilling(){
+ const on=document.getElementById('catMemToggle').checked;
+ document.getElementById('catMemDot').style.left=on?'27px':'3px';
+ document.getElementById('catMemToggle').parentElement.querySelector('span:nth-child(2)').style.background=on?'#0058A4':'#ccc';
+ document.getElementById('catMemLblM').style.color=on?'#94a3b8':'#0058A4';
+ document.getElementById('catMemLblM').style.fontWeight=on?'500':'600';
+ document.getElementById('catMemLblY').style.color=on?'#0058A4':'#94a3b8';
+ document.getElementById('catMemLblY').style.fontWeight=on?'600':'500';
+ document.querySelectorAll('.catMemPrice').forEach(el=>{
+ const m=el.dataset.m,y=el.dataset.y;
+ if(on){el.innerHTML='<span style="font-size:2.6rem;font-weight:700;color:#0058A4;">$'+y+'</span><span style="color:#64748b;font-size:0.95rem;">/yr</span>';}
+ else{el.innerHTML='<span style="font-size:2.6rem;font-weight:700;color:#0058A4;">$'+m+'</span><span style="color:#64748b;font-size:0.95rem;">/mo</span>';}
+ });
+}
+</script>
+
+<section class="cta-section csga-section" style="background:linear-gradient(135deg,#0A1628 0%,#0F2847 50%,#0058A4 100%);padding:80px 32px;text-align:center;">
+ <div style="max-width:720px;margin:0 auto;">
+  <span style="display:inline-block;background:rgba(204,0,0,0.15);color:#3182ce;padding:6px 18px;border-radius:4px;font-size:0.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;">Get Started Today</span>
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2.4rem;font-weight:700;color:#fff;margin-bottom:14px;" class="section-title" class="professional-title" class="professional-title" class="brand-heading">Start Building with 12 Free MCPs</h2>
+  <p style="color:rgba(255,255,255,0.75);font-size:1.1rem;line-height:1.7;margin-bottom:32px;" class="professional-body">No credit card required. Deploy AI governance, cybersecurity, and compliance tools instantly  upgrade anytime to unlock all 70 MCP servers.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;">
+   <a href="/pricing.html" class="btn-professional" style="background:linear-gradient(135deg,#A30000,#3182ce,#1e40af);color:#0A1628;padding:16px 36px;border-radius:12px;font-weight:700;font-size:1.05rem;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;">View Pricing Plans <span style="font-size:1.2rem;"></span></a>
+   <a href="/members.html" style="border:2px solid rgba(255,255,255,0.35);color:#fff;padding:16px 36px;border-radius:12px;font-weight:600;font-size:1.05rem;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;">Create Free Account</a>
+  </div>
+  <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;color:rgba(255,255,255,0.6);font-size:0.88rem;">
+   <span> 12 MCPs Free Forever</span>
+   <span> No Credit Card</span>
+   <span> CSOAI Certified</span>
+   <span> Instant Deploy</span>
+  </div>
+ </div>
+</section>
+
+<script>
+ // Filtering and search functionality
+ const searchInput = document.getElementById('searchInput');
+ const filterButtons = document.querySelectorAll('.filter-btn');
+ const categorySelect = document.getElementById('categorySelect');
+ const mcpGrid = document.getElementById('mcpGrid');
+ const mcpCards = document.querySelectorAll('.mcp-card');
+ let currentTierFilter = 'all';
+ let currentCategoryFilter = 'all';
+ let currentSearchTerm = '';
+ function filterMCPs() {
+ mcpCards.forEach(card => {
+ const tier = card.getAttribute('data-tier');
+ const category = card.getAttribute('data-category');
+ const name = card.getAttribute('data-name').toLowerCase();
+ const description = card.getAttribute('data-description').toLowerCase();
+ const tierMatch = currentTierFilter === 'all' || tier === currentTierFilter;
+ const categoryMatch = currentCategoryFilter === 'all' || category === currentCategoryFilter;
+ const searchMatch = currentSearchTerm === '' ||
+ name.includes(currentSearchTerm) ||
+ description.includes(currentSearchTerm);
+ card.style.display = tierMatch && categoryMatch && searchMatch ? 'flex' : 'none';
+ });
+ }
+ searchInput.addEventListener('input', (e) => {
+ currentSearchTerm = e.target.value.toLowerCase().trim();
+ filterMCPs();
+ });
+ filterButtons.forEach(btn => {
+ btn.addEventListener('click', () => {
+ filterButtons.forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+ currentTierFilter = btn.getAttribute('data-tier');
+ filterMCPs();
+ });
+ });
+ categorySelect.addEventListener('change', (e) => {
+ currentCategoryFilter = e.target.value;
+ filterMCPs();
+ });
+
+ // Dynamic tier counter  fixes hardcoded "0" bug
+ function updateTierCounts() {
+   const cards = document.querySelectorAll('.mcp-card');
+   let total = 0, free = 0, pro = 0, enterprise = 0;
+   cards.forEach(card => {
+     total++;
+     const tier = card.getAttribute('data-tier');
+     if (tier === 'free') free++;
+     else if (tier === 'pro') pro++;
+     else if (tier === 'enterprise') enterprise++;
+   });
+   document.getElementById('stat-total').textContent = total;
+   document.getElementById('stat-free').textContent = free;
+   document.getElementById('stat-pro').textContent = pro;
+   document.getElementById('stat-enterprise').textContent = enterprise;
+ }
+ updateTierCounts();
+</script>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/CSGA-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero     <script src="/js/advanced-enhancements.js"></script>
+    <script src="/js/performance-enhancements.js"></script>
+    <script src="/js/kimi-design.js"></script>
+    <script src="/js/bmcc-excellence.js"></script>
+</body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/CSGA-inner-pages-enhancement.js"></script>
+    <script src="/js/advanced-enhancements.js"></script>
+    <script src="/js/performance-enhancements.js"></script>
+    <script src="/js/kimi-design.js"></script>
+    <script src="/js/bmcc-excellence.js"></script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Defence-Grade Cyber Protection - CSGA Global</title>
+ <meta name="description" content="Military-grade cyber defence solutions aligned with Five Eyes standards. CASA-CA30 certified protection for critical infrastructure and government agencies.">
+ 
+ 
+ <style>
+.hero-defence {
+ background: linear-gradient(135deg, rgba(0, 88, 164, 0.88), rgba(51, 0, 0, 0.85)),
+ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230A1628" width="1200" height="600"/><g stroke="%23333" stroke-width="1" opacity="0.2"><line x1="0" y1="0" x2="1200" y2="600"/><line x1="1200" y1="0" x2="0" y2="600"/><line x1="600" y1="0" x2="600" y2="600"/></g></svg>');
+ background-size: cover;
+ background-position: center;
+ padding: 120px 20px;
+ text-align: center;
+ color: white;
+ min-height: 500px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ .hero-defence h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.5rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+ letter-spacing: -1px;
+ }
+ .hero-defence .subtitle {
+ font-size: 1.3rem;
+ font-weight: 300;
+ max-width: 600px;
+ margin: 0 auto;
+ color: rgba(255, 255, 255, 0.95);
+ }
+ .certification-callout {
+ background: #CC0000;
+ border: 3px solid #990000;
+ padding: 30px;
+ margin: 50px auto;
+ max-width: 600px;
+ border-radius: 12px;
+ text-align: center;
+ }
+ .certification-callout h3 {
+ color: white;
+ font-size: 1.5rem;
+ margin-bottom: 10px;
+ text-transform: uppercase;
+ font-weight: 700;
+ letter-spacing: 1px;
+ }
+ .certification-callout p {
+ color: rgba(255, 255, 255, 0.95);
+ font-size: 0.95rem;
+ line-height: 1.6;
+ margin: 0;
+ }
+ .capabilities-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .capabilities-title {
+ text-align: center;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ margin-bottom: 50px;
+ }
+ .capabilities-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 30px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .capability-card {
+ background: linear-gradient(135deg, #f8f9fa 0%, #eff2f5 100%);
+ border-left: 5px solid #CC0000;
+ padding: 35px;
+ border-radius: 12px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ }
+ .capability-card h3 {
+ color: #0058A4;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.2rem;
+ margin-bottom: 15px;
+ }
+ .capability-card p {
+ color: #555;
+ line-height: 1.6;
+ font-size: 0.95rem;
+ }
+ .mcps-defence-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+ }
+ .mcps-defence-content {
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ .mcps-defence-title {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 15px;
+ }
+ .certification-notice {
+ text-align: center;
+ padding: 20px;
+ background: #CC0000;
+ color: white;
+ border-radius: 12px;
+ margin-bottom: 30px;
+ font-weight: 500;
+ }
+ .mcp-defence-list {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 20px;
+ }
+ .mcp-defence-badge {
+ background: #0058A4;
+ color: white;
+ padding: 15px 20px;
+ border-radius: 12px;
+ font-weight: 500;
+ text-align: center;
+ border-left: 4px solid #0058A4;
+ }
+ .platform-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .platform-content {
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ .platform-title {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 40px;
+ }
+ .platform-box {
+ background: white;
+ border: 2px solid #CC0000;
+ padding: 40px;
+ border-radius: 12px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ }
+ .platform-box h3 {
+ color: #0058A4;
+ margin-bottom: 20px;
+ font-size: 1.3rem;
+ }
+ .platform-features {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+ gap: 20px;
+ margin-top: 20px;
+ }
+ .feature-item {
+ padding: 15px;
+ background: #f8f9fa;
+ border-radius: 12px;
+ border-left: 3px solid #0058A4;
+ }
+ .feature-item strong {
+ color: #0058A4;
+ }
+ .partnerships-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .partnerships-content {
+ max-width: 1000px;
+ margin: 0 auto;
+ text-align: center;
+ }
+ .partnerships-title {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ margin-bottom: 40px;
+ }
+ .partnerships-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 25px;
+ }
+ .partnership-item {
+ background: white;
+ padding: 30px;
+ border-radius: 12px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ }
+ .partnership-item h4 {
+ color: #0058A4;
+ margin-bottom: 10px;
+ }
+ .partnership-item p {
+ font-size: 0.9rem;
+ color: #666;
+ }
+ .cta-defence-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #A30000, #CC0000);
+ text-align: center;
+ color: white;
+ }
+ .cta-defence-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.5rem;
+ margin-bottom: 30px;
+ }
+ .cta-button {
+ background: #CC0000;
+ color: white;
+ padding: 15px 40px;
+ border: none;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.25s ease;
+ text-decoration: none;
+ display: inline-block;
+ }
+ .cta-button:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ box-shadow: 0 10px 25px rgba(204, 0, 0, 0.3);
+ }
+ @media (max-width: 768px) {
+ .hero-defence h1 {
+ font-size: 2.2rem;
+ }
+ .capabilities-grid {
+ grid-template-columns: 1fr;
+ }
+ .platform-features {
+ grid-template-columns: 1fr;
+ }
+ .cta-defence-section h2 {
+ font-size: 1.8rem;
+ }
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/cyber-defence">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Defence-Grade Cyber Protection - CSGA Global">
+ <meta property="og:description" content="Military-grade cyber defence solutions aligned with Five Eyes standards. CASA-CA30 certified protection for critical infrastructure and government agencies.">
+ <meta property="og:url" content="https://csga-global.vercel.app/cyber-defence">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Defence-Grade Cyber Protection - CSGA Global">
+ <meta name="twitter:description" content="Military-grade cyber defence solutions aligned with Five Eyes standards. CASA-CA30 certified protection for critical infrastructure and government agencies.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Defence-Grade Cyber Protection - CSGA Global","description":"Military-grade cyber defence solutions aligned with Five Eyes standards. CASA-CA30 certified protection for critical infrastructure and government agencies.","url":"https://csga-global.vercel.app/cyber-defence","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="hero-defence">
+ <div style="text-align: center;">
+ <h1 class="professional-title"><h1 class="professional-title" class="professional-title">Defence-Grade Cyber Protection</h1>
+ <p class="subtitle" class="professional-body">Military-grade security solutions for critical infrastructure and government agencies</p>
+ </div>
+</section>
+<section style="padding: 60px 20px; background: white;">
+ <div class="certification-callout">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">⚠️ CASA-CA30 Certification Required</h3>
+ <p class="professional-body">Defence-grade MCPs and services require CASA-CA30 (Australian Government Certifications) approval. Contact our Defence Team to initiate the security clearance process.</p>
+ </div>
+</section>
+<section class="capabilities-section">
+ <h2 class="professional-title capabilities-title" class="section-title" class="professional-title">Defence Capabilities</h2>
+ <div class="capabilities-grid">
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Nation-State Threat Protection</h3>
+ <p class="professional-body">Detect and neutralize sophisticated threat actors with military-grade detection systems and advanced behavioral analysis.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Critical Infrastructure Defence</h3>
+ <p class="professional-body">Specialized protection for SCADA systems, industrial control systems, and critical national infrastructure assets.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Military-Grade Encryption</h3>
+ <p class="professional-body">Quantum-resistant encryption standards compliant with NSA Suite B and Five Eyes intelligence sharing protocols.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Five Eyes Alignment</h3>
+ <p class="professional-body">Full compliance with intelligence sharing standards across Australia, Canada, New Zealand, UK, and USA partnerships.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Network Isolation</h3>
+ <p class="professional-body">Air-gapped and segregated network architectures for maximum security of sensitive government operations.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Continuous Audit Trail</h3>
+ <p class="professional-body">Immutable logging and forensic analysis capabilities for government compliance and accountability requirements.</p>
+ </div>
+ </div>
+</section>
+<section class="mcps-defence-section">
+ <div class="mcps-defence-content">
+ <h2 class="professional-title mcps-defence-title" class="section-title" class="professional-title">Defence MCPs (Enterprise Tier)</h2>
+ <div class="certification-notice">
+ <div class="feature-icon-professional">SEC</div> CASA-CA30 Certification Required for Access
+ </div>
+ <div class="mcp-defence-list">
+ <div class="mcp-defence-badge">DSRB Defence MCP</div>
+ <div class="mcp-defence-badge">Threat Intelligence MCP</div>
+ <div class="mcp-defence-badge">Incident Response MCP</div>
+ <div class="mcp-defence-badge">Cloud Security MCP</div>
+ <div class="mcp-defence-badge">Red Team Operations MCP</div>
+ <div class="mcp-defence-badge">Secure Communications MCP</div>
+ </div>
+ </div>
+</section>
+<section class="platform-section">
+ <div class="platform-content">
+ <h2 class="professional-title platform-title" class="section-title" class="professional-title">DefenceOS Platform Overview</h2>
+ <div class="platform-box">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Integrated Defence Operating System</h3>
+ <p class="professional-body">DefenceOS provides a unified platform for managing all enterprise-grade security operations. Built with military-standard security practices, DefenceOS integrates our suite of enterprise MCPs into a seamless operations center.</p>
+ <div class="platform-features">
+ <div class="feature-item">
+ <strong>24/7 SOC</strong>
+ <p class="professional-body">Security Operations Center with cleared personnel</p>
+ </div>
+ <div class="feature-item">
+ <strong>Threat Hunting</strong>
+ <p class="professional-body">Proactive intelligence gathering and analysis</p>
+ </div>
+ <div class="feature-item">
+ <strong>Incident Response</strong>
+ <p class="professional-body">Rapid response teams with government protocols</p>
+ </div>
+ <div class="feature-item">
+ <strong>Forensics</strong>
+ <p class="professional-body">Deep analysis and evidence preservation</p>
+ </div>
+ <div class="feature-item">
+ <strong>Red Team Ops</strong>
+ <p class="professional-body">Authorized adversarial testing services</p>
+ </div>
+ <div class="feature-item">
+ <strong>Compliance</strong>
+ <p class="professional-body">Government standards and audit alignment</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="partnerships-section">
+ <div class="partnerships-content">
+ <h2 class="professional-title partnerships-title" class="section-title" class="professional-title">Government & Military Partnerships</h2>
+ <div class="partnerships-grid">
+ <div class="partnership-item">
+ <h4>Australian Government</h4>
+ <p class="professional-body">CASA-CA30 certified provider for critical infrastructure protection</p>
+ </div>
+ <div class="partnership-item">
+ <h4>Five Eyes Alliance</h4>
+ <p class="professional-body">Aligned with international intelligence sharing agreements</p>
+ </div>
+ <div class="partnership-item">
+ <h4>Defence Industry</h4>
+ <p class="professional-body">Supporting defence contractors and security agencies</p>
+ </div>
+ <div class="partnership-item">
+ <h4>Critical Infrastructure</h4>
+ <p class="professional-body">Protecting energy, water, telecommunications sectors</p>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="cta-defence-section">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Request a Defence Briefing</h2>
+ <p style="font-size: 1.1rem; margin-bottom: 30px;" class="professional-body">Speak with our Defence Solutions team about protecting your critical assets</p>
+ <button class="btn-professional">Schedule a Classified Briefing</button>
+</section>
+<!-- ═══════ CTA Section ═══════ -->
+<section style="position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+ <div style="position:absolute;inset:0;z-index:0">
+ <div style="position:absolute;inset:-40px;background:linear-gradient(135deg,#0A1628,#0D2847,#0058A4);z-index:0"></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
+ </div>
+ <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:20px;padding:8px 18px;margin-bottom:24px">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#CC0000" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/ class="professional-body"></svg>
+ <span style="color:#CC0000;font-size:0.85rem;font-weight:600">Free Access &mdash; No Credit Card Required</span>
+ </div>
+ <h2 style="color:#fff;font-size:2.6rem;line-height:1.2;margin-bottom:20px;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+ <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;line-height:1.7;margin-bottom:36px" class="professional-body">Purpose-built for Five Eyes defence requirements. Access classified-ready MCP servers, CSOAI standards, and TSO-CSRT threat intelligence.</p>
+ <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+ <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:#CC0000;color:#0A1628;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 15px rgba(204,0,0,0.3)" onmouseover="this.style.background='#A30000';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#CC0000';this.style.transform='none'">View Plans &amp; Pricing</a>
+ <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:transparent;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;border:2px solid rgba(255,255,255,0.3);transition:all .3s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">Request a Demo</a>
+ </div>
+ </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

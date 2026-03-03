@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>AI Governance & Ethical AI - CSGA Global</title>
+ <meta name="description" content="Ethical AI governance solutions aligned with EU AI Act, UK AI Framework, and US Executive Orders. CSOAI-certified AI risk assessment and compliance.">
+ 
+ 
+ <style>
+.hero-ai-governance {
+ background: linear-gradient(135deg, rgba(0, 88, 164, 0.85), rgba(0, 88, 164, 0.85)),
+ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230A1628" width="1200" height="600"/><circle cx="600" cy="300" r="200" fill="%23004080" opacity="0.1"/><circle cx="300" cy="150" r="100" fill="%23d4a853" opacity="0.05"/><circle cx="900" cy="450" r="150" fill="%23004080" opacity="0.08"/></svg>');
+ background-size: cover;
+ background-position: center;
+ padding: 120px 20px;
+ text-align: center;
+ color: white;
+ min-height: 500px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ .hero-ai-governance h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.5rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ }
+ .hero-ai-governance .subtitle {
+ font-size: 1.3rem;
+ font-weight: 300;
+ max-width: 700px;
+ margin: 0 auto;
+ color: rgba(255, 255, 255, 0.95);
+ }
+ .brain-icon {
+ font-size: 4rem;
+ margin-bottom: 20px;
+ }
+ .standards-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .standards-content {
+ max-width: 1000px;
+ margin: 0 auto;
+ text-align: center;
+ }
+ .standards-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ margin-bottom: 20px;
+ }
+ .standards-content p {
+ font-size: 1.1rem;
+ line-height: 1.7;
+ color: #333;
+ margin-bottom: 15px;
+ }
+ .pillars-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ gap: 30px;
+ padding: 80px 20px;
+ max-width: 1200px;
+ margin: 0 auto;
+ background: #f8f9fa;
+ }
+ .pillar-card {
+ background: white;
+ border-radius: 12px;
+ padding: 40px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ transition: all 0.25s ease;
+ border-top: 4px solid #0058A4;
+ }
+ .pillar-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+ }
+ .pillar-card h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.3rem;
+ color: #0058A4;
+ margin-bottom: 15px;
+ }
+ .pillar-icon {
+ font-size: 2.5rem;
+ margin-bottom: 15px;
+ }
+ .pillar-card p {
+ color: #555;
+ line-height: 1.6;
+ font-size: 0.95rem;
+ }
+ .methodology-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .methodology-content {
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ .methodology-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 40px;
+ }
+ .methodology-box {
+ background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+ padding: 40px;
+ border-radius: 12px;
+ border-left: 5px solid #3182ce;
+ }
+ .methodology-box h3 {
+ color: #0058A4;
+ margin-bottom: 20px;
+ font-size: 1.2rem;
+ }
+ .assessment-steps {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 20px;
+ margin-top: 25px;
+ }
+ .step {
+ background: white;
+ padding: 20px;
+ border-radius: 12px;
+ border-left: 3px solid #0058A4;
+ }
+ .step-number {
+ font-weight: 700;
+ color: #3182ce;
+ margin-bottom: 5px;
+ }
+ .regulatory-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #f8f9fa 0%, #eff2f5 100%);
+ }
+ .regulatory-content {
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .regulatory-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .regulatory-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 30px;
+ }
+ .regulatory-item {
+ background: white;
+ padding: 35px;
+ border-radius: 12px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ border-left: 5px solid #0058A4;
+ }
+ .regulatory-item h3 {
+ color: #0058A4;
+ margin-bottom: 15px;
+ font-size: 1.2rem;
+ }
+ .regulatory-item p {
+ color: #555;
+ font-size: 0.95rem;
+ line-height: 1.6;
+ }
+ .mcps-governance-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .mcps-governance-content {
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ .mcps-governance-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .mcp-governance-list {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 20px;
+ }
+ .mcp-governance-badge {
+ background: #3182ce;
+ color: white;
+ padding: 12px 20px;
+ border-radius: 12px;
+ font-weight: 500;
+ text-align: center;
+ }
+ .cta-ai-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #A30000, #3182ce);
+ text-align: center;
+ color: white;
+ }
+ .cta-ai-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.5rem;
+ margin-bottom: 30px;
+ }
+ .cta-button {
+ background: #3182ce;
+ color: white;
+ padding: 15px 40px;
+ border: none;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.25s ease;
+ text-decoration: none;
+ display: inline-block;
+ }
+ .cta-button:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ box-shadow: 0 10px 25px rgba(204, 0, 0, 0.3);
+ }
+ @media (max-width: 768px) {
+ .hero-ai-governance h1 {
+ font-size: 2.2rem;
+ }
+ .pillars-grid {
+ grid-template-columns: 1fr;
+ padding: 40px 20px;
+ }
+ .assessment-steps {
+ grid-template-columns: 1fr;
+ }
+ .regulatory-grid {
+ grid-template-columns: 1fr;
+ }
+ .cta-ai-section h2 {
+ font-size: 1.8rem;
+ }
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/ai-governance">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="AI Governance & Ethical AI - CSGA Global">
+ <meta property="og:description" content="Ethical AI governance solutions aligned with EU AI Act, UK AI Framework, and US Executive Orders. CSOAI-certified AI risk assessment and compliance.">
+ <meta property="og:url" content="https://csga-global.vercel.app/ai-governance">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="AI Governance & Ethical AI - CSGA Global">
+ <meta name="twitter:description" content="Ethical AI governance solutions aligned with EU AI Act, UK AI Framework, and US Executive Orders. CSOAI-certified AI risk assessment and compliance.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AI Governance & Ethical AI - CSGA Global","description":"Ethical AI governance solutions aligned with EU AI Act, UK AI Framework, and US Executive Orders. CSOAI-certified AI risk assessment and compliance.","url":"https://csga-global.vercel.app/ai-governance","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- üö® EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- üì± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- üé® EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- üìù EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- üöÄ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- üö® EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- üöÄ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- üèõÔ∏è Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- üö® EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- üì± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- üé® EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- üìù EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- üöÄ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- üö® EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- üöÄ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- üèõÔ∏è Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="hero-ai-governance">
+ <div style="text-align: center;">
+ <div class="brain-icon"></div>
+ <h1 class="professional-title professional-title" class="professional-title">AI Governance & Ethical AI</h1>
+ <p class="subtitle" class="professional-body">Build responsible AI systems aligned with CSOAI standards and global regulations</p>
+  <div class="hero-ai-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+   <a href="/csoai-standards.html" class="btn-professional" style="display: inline-flex; align-items: center; gap: 8px; background: #3182ce; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.25s ease; box-shadow: 0 4px 20px rgba(204, 0, 0, 0.3);"> Download Framework</a>
+   <a href="/contact.html" class="btn-professional" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.25s ease; backdrop-filter: blur(10px);">§ù Book Consultation</a>
+  </div>
+ </div>
+</section>
+<section class="standards-section">
+ <div class="standards-content">
+ <h2 class="professional-title professional-title" class="professional-title">CSOAI Standards for AI Governance</h2>
+ <p class="professional-body">The CSOAI (Cyber Security for Organizational AI) framework provides comprehensive standards for implementing ethical AI governance across your organization. Our approach ensures that AI systems remain transparent, accountable, fair, and safe while delivering business value.</p>
+ <p class="professional-body">We help organizations navigate the complex landscape of AI regulation while building AI systems that stakeholders trust and society benefits from.</p>
+ </div>
+</section>
+<section class="pillars-grid">
+ <div class="card-professional">
+ <div class="pillar-icon">ë</div>
+ <h3 class="professional-title professional-title" class="professional-title">Transparency</h3>
+ <p class="professional-body">Make AI decision-making processes understandable to stakeholders through explainable AI (XAI) and clear documentation of model behavior.</p>
+ </div>
+ <div class="card-professional">
+ <div class="pillar-icon">ñ</div>
+ <h3 class="professional-title professional-title" class="professional-title">Accountability</h3>
+ <p class="professional-body">Establish clear responsibility structures and audit trails for AI decisions with human oversight and escalation protocols.</p>
+ </div>
+ <div class="card-professional">
+ <div class="pillar-icon">ï</div>
+ <h3 class="professional-title professional-title" class="professional-title">Fairness</h3>
+ <p class="professional-body">Identify and mitigate bias in AI systems, ensuring equitable outcomes across different demographic groups and use cases.</p>
+ </div>
+ <div class="card-professional">
+ <div class="pillar-icon"></div>
+ <h3 class="professional-title professional-title" class="professional-title">Safety</h3>
+ <p class="professional-body">Implement robust safeguards against AI system failures, adversarial attacks, and misuse of AI capabilities.</p>
+ </div>
+</section>
+<section class="methodology-section">
+ <div class="methodology-content">
+ <h2 class="professional-title professional-title" class="professional-title">AI Risk Assessment Methodology</h2>
+ <div class="methodology-box">
+ <h3 class="professional-title professional-title" class="professional-title">Comprehensive Risk Analysis Framework</h3>
+ <p class="professional-body">Our AI Risk Assessment methodology evaluates AI systems across multiple dimensions: model performance, bias and fairness, security vulnerabilities, regulatory compliance, and operational risks. We provide actionable recommendations to strengthen governance.</p>
+ <div class="assessment-steps">
+ <div class="step">
+ <div class="step-number">Step 1</div>
+ <p class="professional-body">System Inventory & Audit</p>
+ </div>
+ <div class="step">
+ <div class="step-number">Step 2</div>
+ <p class="professional-body">Risk Classification</p>
+ </div>
+ <div class="step">
+ <div class="step-number">Step 3</div>
+ <p class="professional-body">Impact Assessment</p>
+ </div>
+ <div class="step">
+ <div class="step-number">Step 4</div>
+ <p class="professional-body">Control Design</p>
+ </div>
+ <div class="step">
+ <div class="step-number">Step 5</div>
+ <p class="professional-body">Monitoring Plan</p>
+ </div>
+ <div class="step">
+ <div class="step-number">Step 6</div>
+ <p class="professional-body">Continuous Review</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="regulatory-section">
+ <div class="regulatory-content">
+ <h2 class="professional-title professional-title" class="professional-title">Regulatory Alignment</h2>
+ <div class="regulatory-grid">
+ <div class="regulatory-item">
+ <h3 class="professional-title professional-title" class="professional-title">EU AI Act</h3>
+ <p class="professional-body">Compliance framework for high-risk AI systems with requirements for transparency, documentation, and human oversight aligned with European regulations.</p>
+ </div>
+ <div class="regulatory-item">
+ <h3 class="professional-title professional-title" class="professional-title">UK AI Framework</h3>
+ <p class="professional-body">Flexible, principles-based approach to AI governance built around transparency, accountability, and fairness across sectors.</p>
+ </div>
+ <div class="regulatory-item">
+ <h3 class="professional-title professional-title" class="professional-title">US Executive Orders</h3>
+ <p class="professional-body">Alignment with US government AI governance requirements for federal agencies and contractors handling sensitive data.</p>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="mcps-governance-section">
+ <div class="mcps-governance-content">
+ <h2 class="professional-title professional-title" class="professional-title">AI Governance MCPs</h2>
+ <div class="mcp-governance-list">
+ <div class="mcp-governance-badge">AI Risk Assessment MCP</div>
+ <div class="mcp-governance-badge">Bias Detection MCP</div>
+ <div class="mcp-governance-badge">Model Explainability MCP</div>
+ <div class="mcp-governance-badge">Compliance Auditor MCP</div>
+ <div class="mcp-governance-badge">Governance Workflow MCP</div>
+ <div class="mcp-governance-badge">Fairness Metrics MCP</div>
+ </div>
+ </div>
+</section>
+<section class="cta-ai-section">
+ <h2 class="professional-title professional-title" class="professional-title">Start Your AI Governance Journey</h2>
+ <p style="font-size: 1.1rem; margin-bottom: 30px;" class="professional-body">Build responsible AI systems that deliver value and earn stakeholder trust</p>
+ <button class="btn-professional">Schedule an AI Governance Consultation</button>
+</section>
+<!-- ïïïïïïï CTA Section ïïïïïïï -->
+<section style="position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+ <div style="position:absolute;inset:0;z-index:0">
+ <div style="position:absolute;inset:-40px;background:linear-gradient(135deg,#0A1628,#0D2847,#0058A4);z-index:0"></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
+ </div>
+ <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:20px;padding:8px 18px;margin-bottom:24px">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#3182ce" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/ class="professional-body"></svg>
+ <span style="color:#3182ce;font-size:0.85rem;font-weight:600">Free Access &mdash; No Credit Card Required</span>
+ </div>
+ <h2 style="color:#fff;font-size:2.6rem;line-height:1.2;margin-bottom:20px;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+ <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;line-height:1.7;margin-bottom:36px" class="professional-body">500+ standards mapped, 70 MCP servers deployed, and real-time compliance monitoring. Join the organisations building trustworthy AI with CSGA.</p>
+ <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+ <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:#3182ce;color:#0A1628;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 15px rgba(204,0,0,0.3)" onmouseover="this.style.background='#A30000';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#3182ce';this.style.transform='none'">View Plans &amp; Pricing</a>
+ <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:transparent;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;border:2px solid rgba(255,255,255,0.3);transition:all .3s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">Request a Demo</a>
+ </div>
+ </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

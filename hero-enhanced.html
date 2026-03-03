@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Hero Section - CSGA Global</title>
+    
+    <style>
+        /* Enhanced Hero Section with Advanced Animations */
+        .hero-enhanced {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a1628 0%, #1e293b 50%, #334155 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Animated background particles */
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(204, 0, 0, 0.1);
+            border-radius: 50%;
+            animation: floatUp 15s linear infinite;
+            opacity: 0;
+        }
+        
+        .particle:nth-child(1) { left: 10%; width: 4px; height: 4px; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; width: 6px; height: 6px; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 30%; width: 3px; height: 3px; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 40%; width: 5px; height: 5px; animation-delay: 6s; }
+        .particle:nth-child(5) { left: 50%; width: 4px; height: 4px; animation-delay: 8s; }
+        .particle:nth-child(6) { left: 60%; width: 7px; height: 7px; animation-delay: 10s; }
+        .particle:nth-child(7) { left: 70%; width: 3px; height: 3px; animation-delay: 12s; }
+        .particle:nth-child(8) { left: 80%; width: 5px; height: 5px; animation-delay: 14s; }
+        .particle:nth-child(9) { left: 90%; width: 4px; height: 4px; animation-delay: 16s; }
+        
+        @keyframes floatUp {
+            0% {
+                bottom: -10px;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 100vh;
+                opacity: 0;
+                transform: translateX(-20px) rotate(360deg);
+            }
+        }
+        
+        /* Hero content with advanced typography */
+        .hero-content-enhanced {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(204, 0, 0, 0.1);
+            border: 1px solid rgba(204, 0, 0, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            animation: badgeGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes badgeGlow {
+            from { box-shadow: 0 0 20px rgba(204, 0, 0, 0.3); }
+            to { box-shadow: 0 0 30px rgba(204, 0, 0, 0.6); }
+        }
+        
+        .hero-title-enhanced {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleReveal 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        @keyframes titleReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle-enhanced {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            animation: subtitleReveal 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes subtitleReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Advanced CTA buttons */
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: ctaReveal 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes ctaReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-primary-enhanced {
+            background: linear-gradient(135deg, #cc0000, #dc2626);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .cta-primary-enhanced:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(204, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-primary-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .cta-primary-enhanced:hover::before {
+            left: 100%;
+        }
+        
+        .cta-secondary-enhanced {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 16px 32px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-secondary-enhanced:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Stats section */
+        .hero-stats {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: statsReveal 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards;
+            opacity: 0;
+            transform: translateX(-50%) translateY(30px);
+        }
+        
+        @keyframes statsReveal {
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #cc0000;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            animation: bounce 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-enhanced {
+                min-height: 90vh;
+                padding: 20px 0;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-primary-enhanced,
+            .cta-secondary-enhanced {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+                bottom: 20px;
+                padding: 15px 25px;
+            }
+            
+            .stat-item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 6px 16px;
+            }
+            
+            .hero-stats {
+                display: none; /* Hide on very small screens */
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="/css/mobile-advanced.css">
+</head>
+<body>
+    <section class="hero-enhanced">
+        <!-- Animated particles background -->
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <!-- Hero content -->
+        <div class="hero-content-enhanced">
+            <div class="hero-badge">
+                <span>🧠</span>
+                Constitutional AI Enhanced • March 2026
+            </div>
+            
+            <h1 class="hero-title-enhanced">
+                The FAA for <span style="color: #cc0000;">Artificial Intelligence</span>
+            </h1>
+            
+            <p class="hero-subtitle-enhanced">
+                Independent Constitutional AI governance that enterprises trust. Get the benefits of Constitutional AI without vendor dependency. CASA certification launching March 3rd.
+            </p>
+            
+            <div class="hero-cta-group">
+                <a href="/casa" class="cta-primary-enhanced">
+                    <span>🏆</span>
+                    Get CASA Certified
+                    <span style="font-size: 0.8rem;">→</span>
+                </a>
+                
+                <a href="/mcp" class="cta-secondary-enhanced">
+                    <span>🔌</span>
+                    Explore MCPs
+                    <span style="font-size: 0.8rem;">↗</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Statistics -->
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">154</span>
+                <span class="stat-label">Pages Enhanced</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">$256M</span>
+                <span class="stat-label">Partner Valuation</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Constitutional AI</span>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span style="font-size: 1.5rem;">↓</span>
+        </div>
+    </section>
+    
+    <script>
+        // Enhanced hero interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const heroStats = document.querySelector('.hero-stats');
+            
+            // Smooth scroll on indicator click
+            scrollIndicator.addEventListener('click', () => {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animated counter for stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            observer.observe(heroStats);
+            
+            function animateStats() {
+                statNumbers.forEach((stat, index) => {
+                    const finalValue = stat.textContent;
+                    const isNumber = /^\d+/.test(finalValue);
+                    
+                    if (isNumber) {
+                        const target = parseInt(finalValue);
+                        let current = 0;
+                        const increment = target / 50;
+                        
+                        const counter = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(counter);
+                            }
+                            
+                            if (finalValue.includes('$')) {
+                                stat.textContent = '$' + Math.floor(current) + 'M';
+                            } else if (finalValue.includes('%')) {
+                                stat.textContent = Math.floor(current) + '%';
+                            } else {
+                                stat.textContent = Math.floor(current);
+                            }
+                        }, 50);
+                    }
+                });
+            }
+            
+            // Parallax effect for background
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallaxBackground = document.querySelector('.hero-enhanced');
+                const speed = 0.5;
+                
+                parallaxBackground.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+            
+            // Dynamic particle generation
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.width = particle.style.height = (Math.random() * 5 + 3) + 'px';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                
+                document.querySelector('.hero-particles').appendChild(particle);
+                
+                // Remove particle after animation
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 25000);
+            }
+            
+            // Create new particles periodically
+            setInterval(createParticle, 3000);
+        });
+    </script>
+    <script src="/js/advanced-enhancements.js"></script>
+    <script src="/js/performance-enhancements.js"></script>
+    <script src="/js/bmcc-excellence.js"></script>
+</body>
+</html>

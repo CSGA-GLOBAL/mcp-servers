@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Veterans Cyber Careers - CSGA Global</title>
+ <meta name="description" content="Free cybersecurity and AI governance training for military veterans. Transition your military skills into high-demand cyber careers with CSGA Global.">
+ 
+ 
+ <style>
+.vet-hero {
+ background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(0, 88, 164, 0.85) 100%),
+ url('https://images.unsplash.com/photo-1579912437766-7896df6d3cd3?w=1200&h=500&fit=crop') center/cover;
+ color: white;
+ padding: 100px 20px;
+ text-align: center;
+ }
+ .vet-hero h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.5rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ line-height: 1.2;
+ }
+ .vet-hero p {
+ font-size: 1.2rem;
+ font-weight: 300;
+ max-width: 700px;
+ margin: 0 auto 30px;
+ }
+ .vet-badge {
+ display: inline-block;
+ background: rgba(204,0,0,0.2);
+ border: 1px solid #CC0000;
+ color: #CC0000;
+ padding: 8px 20px;
+ border-radius: 30px;
+ font-weight: 600;
+ font-size: 0.9rem;
+ margin-bottom: 25px;
+ }
+ .vet-stats {
+ display: flex;
+ justify-content: center;
+ gap: 50px;
+ margin-top: 40px;
+ flex-wrap: wrap;
+ }
+ .vet-stat {
+ text-align: center;
+ }
+ .vet-stat strong {
+ display: block;
+ font-size: 2.5rem;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ color: #CC0000;
+ }
+ .vet-stat span {
+ font-size: 0.9rem;
+ opacity: 0.9;
+ }
+ .section-pad {
+ padding: 70px 20px;
+ }
+ .section-pad h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 15px;
+ }
+ .section-sub {
+ text-align: center;
+ color: #666;
+ max-width: 700px;
+ margin: 0 auto 40px;
+ font-size: 1.05rem;
+ }
+ .why-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+ gap: 25px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .why-card {
+ background: white;
+ border-radius: 12px;
+ padding: 30px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+ border-top: 3px solid #0058A4;
+ }
+ .why-card h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.15rem;
+ color: #0A1628;
+ margin: 0 0 12px 0;
+ }
+ .why-card p {
+ color: #555;
+ font-size: 0.95rem;
+ line-height: 1.7;
+ }
+ .pathway-section {
+ background: #f5f7fa;
+ }
+ .pathway-timeline {
+ max-width: 800px;
+ margin: 0 auto;
+ position: relative;
+ }
+ .pathway-timeline::before {
+ content: '';
+ position: absolute;
+ left: 30px;
+ top: 0;
+ bottom: 0;
+ width: 3px;
+ background: linear-gradient(to bottom, #0058A4, #CC0000);
+ }
+ .pathway-step {
+ position: relative;
+ padding: 0 0 35px 75px;
+ }
+ .pathway-step:last-child {
+ padding-bottom: 0;
+ }
+ .step-num {
+ position: absolute;
+ left: 10px;
+ top: 0;
+ width: 42px;
+ height: 42px;
+ border-radius: 50%;
+ background: #0058A4;
+ color: white;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 700;
+ font-size: 1.1rem;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ z-index: 1;
+ }
+ .pathway-step:last-child .step-num {
+ background: #CC0000;
+ color: #0A1628;
+ }
+ .pathway-step h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.2rem;
+ color: #0A1628;
+ margin: 0 0 8px;
+ }
+ .pathway-step p {
+ color: #555;
+ font-size: 0.95rem;
+ line-height: 1.7;
+ margin: 0;
+ }
+ .pathway-step .step-duration {
+ display: inline-block;
+ background: #E8F4FD;
+ color: #0058A4;
+ padding: 3px 12px;
+ border-radius: 4px;
+ font-size: 0.8rem;
+ font-weight: 600;
+ margin-top: 8px;
+ }
+ .partners-strip {
+ background: #0A1628;
+ color: white;
+ padding: 50px 20px;
+ text-align: center;
+ }
+ .partners-strip h2 {
+ color: white;
+ margin-bottom: 10px;
+ }
+ .partners-strip p {
+ color: #93C5FD;
+ margin-bottom: 35px;
+ }
+ .partner-logos {
+ display: flex;
+ justify-content: center;
+ gap: 50px;
+ flex-wrap: wrap;
+ align-items: center;
+ opacity: 0.8;
+ }
+ .partner-logos span {
+ font-size: 1.1rem;
+ font-weight: 600;
+ color: #93C5FD;
+ padding: 10px 20px;
+ border: 1px solid rgba(147,197,253,0.3);
+ border-radius: 8px;
+ }
+ .vet-testimonials {
+ background: white;
+ }
+ .testimonial-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 25px;
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ .testimonial-card {
+ background: #f9f9f9;
+ border-radius: 12px;
+ padding: 30px;
+ border-left: 4px solid #CC0000;
+ }
+ .testimonial-card blockquote {
+ font-style: italic;
+ color: #444;
+ line-height: 1.7;
+ margin: 0 0 15px;
+ font-size: 0.95rem;
+ }
+ .testimonial-card .author {
+ font-weight: 600;
+ color: #0A1628;
+ font-size: 0.9rem;
+ }
+ .testimonial-card .role {
+ color: #666;
+ font-size: 0.85rem;
+ }
+ .vet-cta {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ color: white;
+ padding: 70px 20px;
+ text-align: center;
+ }
+ .vet-cta h2 {
+ color: white;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ margin-bottom: 15px;
+ }
+ .vet-cta p {
+ font-size: 1.1rem;
+ margin-bottom: 30px;
+ max-width: 600px;
+ margin-left: auto;
+ margin-right: auto;
+ opacity: 0.9;
+ }
+ .vet-cta .cta-btn {
+ display: inline-block;
+ background: #CC0000;
+ color: #0A1628;
+ padding: 14px 35px;
+ border-radius: 6px;
+ text-decoration: none;
+ font-weight: 700;
+ font-size: 1rem;
+ transition: background 0.3s;
+ margin: 0 10px 10px 0;
+ }
+ .vet-cta .cta-btn:hover {
+ background: #e5bd68;
+ }
+ .vet-cta .cta-btn-outline {
+ display: inline-block;
+ border: 2px solid white;
+ color: white;
+ padding: 12px 35px;
+ border-radius: 6px;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 1rem;
+ transition: all 0.25s;
+ }
+ .vet-cta .cta-btn-outline:hover {
+ background: white;
+ color: #0A1628;
+ }
+ @media (max-width: 768px) {
+ .vet-hero h1 { font-size: 2.2rem; }
+ .vet-stats { gap: 25px; }
+ .vet-stat strong { font-size: 1.8rem; }
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/veterans">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Veterans Cyber Careers - CSGA Global">
+ <meta property="og:description" content="Free cybersecurity and AI governance training for military veterans. Transition your military skills into high-demand cyber careers with CSGA Global.">
+ <meta property="og:url" content="https://csga-global.vercel.app/veterans">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Veterans Cyber Careers - CSGA Global">
+ <meta name="twitter:description" content="Free cybersecurity and AI governance training for military veterans. Transition your military skills into high-demand cyber careers with CSGA Global.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Veterans Cyber Careers - CSGA Global","description":"Free cybersecurity and AI governance training for military veterans. Transition your military skills into high-demand cyber careers with CSGA Global.","url":"https://csga-global.vercel.app/veterans","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="vet-hero">
+ <span class="vet-badge">Active Since January 2026</span>
+ <h1 class="professional-title"><h1 class="professional-title" class="professional-title">Veterans Cyber Careers</h1>
+ <p class="professional-body">Free cybersecurity and AI governance training for military veterans transitioning to high-demand civilian careers</p>
+ <div class="vet-stats">
+ <div class="vet-stat"><strong>100%</strong><span>Free for Veterans</span></div>
+ <div class="vet-stat"><strong>36</strong><span>MOOCs Available</span></div>
+ <div class="vet-stat"><strong>6</strong><span>Certification Tracks</span></div>
+ <div class="vet-stat"><strong>5</strong><span>Allied Nations</span></div>
+ </div>
+</section>
+<section class="section-pad" style="background:white;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Why Veterans Excel in Cyber</h2>
+ <p class="section-sub" class="professional-body">Military training builds exactly the skills the cybersecurity industry needs most</p>
+ <div class="why-grid">
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Security Clearance Ready</h3>
+ <p class="professional-body">Many veterans already hold or can quickly obtain security clearances essential for defence and government cyber roles.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Mission-Critical Discipline</h3>
+ <p class="professional-body">Military training instils the precision, attention to detail, and operational rigour that cybersecurity demands.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Threat Assessment Skills</h3>
+ <p class="professional-body">Experience evaluating real-world threats translates directly to cyber threat intelligence and risk management.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Team Leadership</h3>
+ <p class="professional-body">Military leadership experience is invaluable for SOC management, incident response coordination, and CISO roles.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Resilience Under Pressure</h3>
+ <p class="professional-body">Veterans are uniquely prepared for the high-stakes, time-sensitive nature of cyber incident response.</p>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Cross-Domain Expertise</h3>
+ <p class="professional-body">Military backgrounds spanning signals intelligence, comms, and electronic warfare map directly to cyber domains.</p>
+ </div>
+ </div>
+</section>
+<section class="section-pad pathway-section">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Your Pathway to Cyber Careers</h2>
+ <p class="section-sub" class="professional-body">A structured programme to take you from military service to a certified cyber professional</p>
+ <div class="pathway-timeline">
+ <div class="pathway-step">
+ <div class="step-num">1</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Skills Assessment &amp; Orientation</h3>
+ <p class="professional-body">We map your military experience to cybersecurity competency frameworks, identifying transferable skills and any gaps. Personalised learning plan created.</p>
+ <span class="step-duration">Week 1-2</span>
+ </div>
+ <div class="pathway-step">
+ <div class="step-num">2</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Foundation MOOCs</h3>
+ <p class="professional-body">Complete core cybersecurity and AI governance courses from our library of 36 free MOOCs. Self-paced learning with mentor support.</p>
+ <span class="step-duration">Weeks 3-10</span>
+ </div>
+ <div class="pathway-step">
+ <div class="step-num">3</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Specialisation Track</h3>
+ <p class="professional-body">Choose your career path: AI Governance, Cybersecurity Operations, Defence Cyber, MCP Implementation, or Compliance &amp; Audit.</p>
+ <span class="step-duration">Weeks 11-20</span>
+ </div>
+ <div class="pathway-step">
+ <div class="step-num">4</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">CASA Certification</h3>
+ <p class="professional-body">Earn industry-recognised CASA certification at Level 1, 2, or 3. Exam fees waived for eligible veterans.</p>
+ <span class="step-duration">Weeks 21-24</span>
+ </div>
+ <div class="pathway-step">
+ <div class="step-num">5</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Career Placement Support</h3>
+ <p class="professional-body">CV optimisation, interview preparation, and direct introductions to our network of employer partners across Five Eyes nations.</p>
+ <span class="step-duration">Ongoing</span>
+ </div>
+ </div>
+</section>
+<section class="partners-strip">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Supporting Veterans Across Allied Nations</h2>
+ <p class="professional-body">Working with military transition programmes across Five Eyes and NATO partners</p>
+ <div class="partner-logos">
+ <span>UK MoD</span>
+ <span>US DoD / SkillBridge</span>
+ <span>Canadian Forces</span>
+ <span>ADF (Australia)</span>
+ <span>NZDF</span>
+ </div>
+</section>
+<section class="section-pad vet-testimonials">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Veteran Success Stories</h2>
+ <p class="section-sub" class="professional-body">Hear from veterans who have successfully transitioned into cyber careers</p>
+ <div class="testimonial-grid">
+ <div class="card-professional">
+ <blockquote>The CSGA programme recognised my signals intelligence background and fast-tracked me through the foundations. I had my CASA Level 2 certification within 4 months.</blockquote>
+ <div class="author">James M.</div>
+ <div class="role">Former Royal Signals, now SOC Analyst</div>
+ </div>
+ <div class="card-professional">
+ <blockquote>As a veteran, the structured learning path felt natural. The mentorship from industry professionals made all the difference in my transition to civilian cyber security.</blockquote>
+ <div class="author">Sarah T.</div>
+ <div class="role">Former US Army Intelligence, now AI Governance Consultant</div>
+ </div>
+ <div class="card-professional">
+ <blockquote>CSGA understood that my military project management and threat assessment skills were directly transferable. The programme filled the technical gaps efficiently.</blockquote>
+ <div class="author">David K.</div>
+ <div class="role">Former Canadian Forces, now Cyber Risk Manager</div>
+ </div>
+ </div>
+</section>
+<section class="vet-cta">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Ready to Start Your Cyber Career?</h2>
+ <p class="professional-body">All training is completely free for verified military veterans and service members. No hidden costs, ever.</p>
+ <a href="/contact.html" class="btn-professional">Apply Now</a>
+ <a href="/education.html" class="btn-professional">Browse Courses</a>
+</section>
+<!-- ═══════ CTA Section ═══════ -->
+<section style="position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+ <div style="position:absolute;inset:0;z-index:0">
+ <div style="position:absolute;inset:-40px;background:linear-gradient(135deg,#0A1628,#0D2847,#0058A4);z-index:0"></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
+ </div>
+ <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:20px;padding:8px 18px;margin-bottom:24px">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#CC0000" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/ class="professional-body"></svg>
+ <span style="color:#CC0000;font-size:0.85rem;font-weight:600">Free Access &mdash; No Credit Card Required</span>
+ </div>
+ <h2 style="color:#fff;font-size:2.6rem;line-height:1.2;margin-bottom:20px;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+ <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;line-height:1.7;margin-bottom:36px" class="professional-body">Free training, mentorship, and job placement support for veterans transitioning into cybersecurity and AI governance roles.</p>
+ <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+ <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:#CC0000;color:#0A1628;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 15px rgba(204,0,0,0.3)" onmouseover="this.style.background='#A30000';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#CC0000';this.style.transform='none'">View Plans &amp; Pricing</a>
+ <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:transparent;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;border:2px solid rgba(255,255,255,0.3);transition:all .3s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">Request a Demo</a>
+ </div>
+ </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!-- <span class="professional-icon-text" data-context="success">AWARD</span> BMCC-Level Professional Homepage Enhancement -->
+<div class="bmcc-level-enhancement">
+    <!-- <span class="professional-icon-text" data-context="warning">URGENT</span> Urgent Notice Hero -->
+    <section class="hero-section fade-in-up csga-section">
+        <div class="hero-content">
+            <span class="urgent-notice"><span class="professional-icon-text" data-context="warning">WARN</span> Critical AI Governance Gap</span>
+            
+            <h1 class="hero-title" class="brand-heading">CASA ANALYST Certification</h1>
+            
+            <p class="hero-subtitle">
+                The world's first accredited AI governance and safety certification. 
+                200-hour BMCC program launching March 3, 2026.
+                Limited early access slots available.
+            </p>
+            
+            <!-- <span class="professional-icon-text" data-context="info">TARGET</span> Key Benefits Grid -->
+            <div class="key-benefits">
+                <div class="benefit-card">
+                    <div class="professional-icon-enhanced" data-context="info">CERT</div>
+                    <div class="benefit-text">BMCC-Accredited Certification</div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="professional-icon-enhanced" data-context="security">VERIFY</div>
+                    <div class="benefit-text">Human 1-2-1 Verification (AI-Proof)</div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="professional-icon-enhanced" data-context="success">CAREER</div>
+                    <div class="benefit-text">$150K+ AI governance and safety Role Readiness</div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="professional-icon-enhanced" data-context="warning">URGENT</div>
+                    <div class="benefit-text">Limited Early Access Slots</div>
+                </div>
+            </div>
+            
+            <!-- <span class="professional-icon-text" data-context="success">LAUNCH</span> Professional CTA Group -->
+            <div class="cta-group">
+                <a href="/certification" class="cta-primary">
+                    Get CASA Certified →
+                </a>
+                <a href="/contact" class="cta-secondary">
+                    Enterprise Pricing
+                </a>
+            </div>
+            
+            <!-- <span class="professional-icon-text" data-context="info">GOV</span> Trust Indicators -->
+            <div class="trust-indicators">
+                <div class="trust-title">Trusted by Industry Leaders</div>
+                <div class="trust-logos">
+                    <div class="trust-logo">BMCC • CUNY</div>
+                    <div class="trust-logo">Terranova Group</div>
+                    <div class="trust-logo">CSGA Global</div>
+                    <div class="trust-logo">DSRB • Canada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- <span class="professional-icon-text" data-context="info">DESIGN</span> Enhanced Professional Styling -->
+<style>
+.bmcc-level-enhancement {
+    position: relative;
+    z-index: 10;
+}
+
+/* <span class="professional-icon-text" data-context="success">AWARD</span> Professional Enhancement Overrides */
+.bmcc-level-enhancement .hero-section {
+    margin-top: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+}
+
+.bmcc-level-enhancement .urgent-notice {
+    position: relative;
+    z-index: 10;
+}
+
+.bmcc-level-enhancement .hero-title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* <span class="professional-icon-text" data-context="info">TARGET</span> Benefit Card Enhancements */
+.bmcc-level-enhancement .benefit-card:nth-child(1) .professional-icon-enhanced {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+.bmcc-level-enhancement .benefit-card:nth-child(2) .professional-icon-enhanced {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.bmcc-level-enhancement .benefit-card:nth-child(3) .professional-icon-enhanced {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.bmcc-level-enhancement .benefit-card:nth-child(4) .professional-icon-enhanced {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* <span class="professional-icon-text" data-context="success">LAUNCH</span> CTA Enhancement */
+.bmcc-level-enhancement .cta-primary {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    position: relative;
+    overflow: hidden;
+}
+
+.bmcc-level-enhancement .cta-primary:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+/* <span class="professional-icon-text" data-context="info">MOBILE</span> Mobile Enhancements */
+@media (max-width: 768px) {
+    .bmcc-level-enhancement .hero-section {
+        padding: 60px 0;
+    }
+    
+    .bmcc-level-enhancement .hero-content {
+        padding: 0 16px;
+    }
+}
+</style>
+
+<!-- <span class="professional-icon-text" data-context="info">DESIGN</span> Professional JavaScript Enhancements -->
+<script>
+// <span class="professional-icon-text" data-context="success">AWARD</span> BMCC-Level Professional Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.benefit-card, .cta-group').forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Professional button interactions
+    document.querySelectorAll('.cta-primary, .cta-secondary').forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Professional icon hover effects
+    document.querySelectorAll('.professional-icon-enhanced').forEach(icon => {
+        icon.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1) rotate(5deg)';
+        });
+        
+        icon.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+    });
+});
+
+// <span class="professional-icon-text" data-context="info">TARGET</span> Professional Scroll Effects
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    const heroSection = document.querySelector('.hero-section');
+    
+    if (heroSection) {
+        heroSection.style.transform = `translateY(${rate}px)`;
+    }
+});
+</script>

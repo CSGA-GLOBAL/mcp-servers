@@ -1,0 +1,429 @@
+/* 🛡️ CSGA Hero Slider & Mobile Navigation Fixes */
+/* Fix hero images alignment, branding, and mobile menu navigation */
+
+/* 🎯 Hero Slider Improvements */
+.hero-slider, .slider, [class*="slider"], .carousel, [class*="carousel"] {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero slide styling with better text visibility */
+.hero-slide, .slide, [class*="slide"] {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay for text readability */
+.hero-slide::before, .slide::before, [class*="slide"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(26, 32, 44, 0.8) 0%, 
+    rgba(49, 130, 206, 0.6) 50%, 
+    rgba(30, 58, 138, 0.8) 100%
+  ) !important;
+  z-index: 1;
+}
+
+/* CSGA branded overlay pattern */
+.hero-slide::after, .slide::after, [class*="slide"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%233182ce" fill-opacity="0.1"><rect x="0" y="0" width="2" height="2"/><rect x="58" y="58" width="2" height="2"/><polygon points="30,10 35,20 30,30 25,20"/></g></svg>') repeat;
+  z-index: 1;
+}
+
+/* Hero content with proper z-index and alignment */
+.hero-content, .slide-content, [class*="slide-content"] {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #ffffff !important;
+  max-width: 800px;
+  padding: 3rem 2rem;
+  margin: 0 auto;
+}
+
+/* Hero headings with CSGA branding */
+.hero-content h1, .hero-content h2, 
+.slide-content h1, .slide-content h2,
+[class*="slide-content"] h1, [class*="slide-content"] h2 {
+  color: #ffffff !important;
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 1.5rem !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  background: linear-gradient(135deg, #ffffff, #4299e1) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  line-height: 1.2 !important;
+}
+
+/* Hero paragraphs with better readability */
+.hero-content p, .slide-content p, [class*="slide-content"] p {
+  color: #ffffff !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 2rem !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+}
+
+/* CSGA branded buttons in hero */
+.hero-content .btn, .hero-content button,
+.slide-content .btn, .slide-content button,
+[class*="slide-content"] .btn, [class*="slide-content"] button {
+  background: linear-gradient(135deg, #3182ce, #4299e1) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 1rem 2rem !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  border-radius: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.025em !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4) !important;
+  margin: 0.5rem !important;
+}
+
+.hero-content .btn:hover, .hero-content button:hover,
+.slide-content .btn:hover, .slide-content button:hover,
+[class*="slide-content"] .btn:hover, [class*="slide-content"] button:hover {
+  background: linear-gradient(135deg, #2c5282, #3182ce) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(49, 130, 206, 0.6) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Slider navigation with CSGA styling */
+.slider-nav, .carousel-nav, [class*="nav"]:not(.navbar) {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 4;
+}
+
+.slider-dot, .carousel-dot, [class*="dot"] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(49, 130, 206, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active, .carousel-dot.active, [class*="dot"].active {
+  background: #3182ce;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(49, 130, 206, 0.6);
+}
+
+/* 📱 MOBILE NAVIGATION IMPROVEMENTS */
+
+/* Mobile menu button styling */
+.mobile-menu-btn, .navbar-toggler, .menu-toggle, 
+[class*="mobile"], [class*="toggle"] {
+  display: none;
+  background: linear-gradient(135deg, #1a202c, #3182ce) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  padding: 0.75rem !important;
+  border-radius: 0.5rem !important;
+  font-size: 1.125rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+.mobile-menu-btn:hover, .navbar-toggler:hover, .menu-toggle:hover {
+  background: linear-gradient(135deg, #2d3748, #4299e1) !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3) !important;
+}
+
+/* Mobile menu styling */
+.mobile-menu, .navbar-collapse, .nav-mobile, 
+[class*="mobile-menu"], [class*="nav-mobile"] {
+  position: fixed !important;
+  top: 0 !important;
+  right: -100% !important;
+  width: 280px !important;
+  height: 100vh !important;
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%) !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 9999 !important;
+  padding: 2rem 0 !important;
+  overflow-y: auto !important;
+  transition: right 0.3s ease !important;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+.mobile-menu.open, .navbar-collapse.show, .nav-mobile.open,
+[class*="mobile-menu"].open, [class*="nav-mobile"].open {
+  right: 0 !important;
+}
+
+/* Mobile menu close button */
+.mobile-menu-close, .navbar-close, [class*="close"] {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  background: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.25rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.mobile-menu-close:hover, .navbar-close:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transform: rotate(90deg) !important;
+}
+
+/* CSGA logo in mobile menu */
+.mobile-menu-logo, .navbar-brand-mobile {
+  padding: 1rem 2rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  margin-bottom: 1rem !important;
+}
+
+.mobile-menu-logo .csga-brand-text {
+  color: #ffffff !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+}
+
+/* Mobile navigation links */
+.mobile-menu ul, .navbar-nav, .nav-mobile ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.mobile-menu li, .navbar-nav .nav-item, .nav-mobile li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.mobile-menu a, .navbar-nav .nav-link, .nav-mobile a {
+  display: block !important;
+  padding: 1rem 2rem !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 1.125rem !important;
+  transition: all 0.3s ease !important;
+  border-left: 4px solid transparent !important;
+}
+
+.mobile-menu a:hover, .navbar-nav .nav-link:hover, .nav-mobile a:hover,
+.mobile-menu a:focus, .navbar-nav .nav-link:focus, .nav-mobile a:focus {
+  background: rgba(49, 130, 206, 0.2) !important;
+  border-left-color: #3182ce !important;
+  padding-left: 2.5rem !important;
+  color: #4299e1 !important;
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay, .navbar-overlay, [class*="overlay"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 9998 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.3s ease !important;
+}
+
+.mobile-menu-overlay.open, .navbar-overlay.open, [class*="overlay"].open {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 📱 Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .mobile-menu-btn, .navbar-toggler, .menu-toggle {
+    display: block !important;
+  }
+  
+  .desktop-nav, .navbar-nav:not(.mobile), .nav-desktop {
+    display: none !important;
+  }
+  
+  /* Hero adjustments for tablets */
+  .hero-content h1, .hero-content h2,
+  .slide-content h1, .slide-content h2 {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-content p, .slide-content p {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hero mobile adjustments */
+  .hero-slide, .slide {
+    min-height: 50vh !important;
+  }
+  
+  .hero-content, .slide-content {
+    padding: 2rem 1rem !important;
+  }
+  
+  .hero-content h1, .hero-content h2,
+  .slide-content h1, .slide-content h2 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-content p, .slide-content p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-content .btn, .slide-content .btn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+    margin: 0.25rem !important;
+  }
+  
+  /* Mobile menu width adjustment */
+  .mobile-menu, .navbar-collapse, .nav-mobile {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+  
+  /* Slider navigation for mobile */
+  .slider-nav, .carousel-nav {
+    bottom: 1rem !important;
+  }
+  
+  .slider-dot, .carousel-dot {
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  .hero-slide, .slide {
+    min-height: 40vh !important;
+  }
+  
+  .hero-content h1, .hero-content h2,
+  .slide-content h1, .slide-content h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  .hero-content p, .slide-content p {
+    font-size: 0.875rem !important;
+  }
+  
+  .mobile-menu a, .navbar-nav .nav-link, .nav-mobile a {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* 🎯 CSGA Specific Enhancements */
+
+/* Add CSGA security badges to hero */
+.hero-badges, .slide-badges {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 4;
+}
+
+.hero-badge, .slide-badge {
+  background: rgba(49, 130, 206, 0.9);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* CSGA branded loading states */
+.slider-loading, .carousel-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: linear-gradient(135deg, #1a202c, #3182ce);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.slider-loading::before {
+  content: '🛡️ ';
+  margin-right: 0.5rem;
+}
+
+/* Ensure text is always readable */
+.hero-content *, .slide-content * {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Force proper contrasts */
+.hero-slide[style*="background-image"]::before,
+.slide[style*="background-image"]::before {
+  background: linear-gradient(135deg, 
+    rgba(26, 32, 44, 0.9) 0%, 
+    rgba(49, 130, 206, 0.7) 50%, 
+    rgba(30, 58, 138, 0.9) 100%
+  ) !important;
+}
+
+/* Accessibility improvements */
+.mobile-menu-btn:focus, .navbar-toggler:focus {
+  outline: 2px solid #4299e1 !important;
+  outline-offset: 2px !important;
+}
+
+.mobile-menu a:focus, .navbar-nav .nav-link:focus {
+  outline: 2px solid #4299e1 !important;
+  outline-offset: -2px !important;
+}

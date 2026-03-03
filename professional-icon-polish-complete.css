@@ -1,0 +1,381 @@
+/* 🛡️ CSGA Professional Icon System - Replace All Emoji Icons */
+/* Professional, enterprise-grade visual elements */
+
+:root {
+  --icon-primary: #3182ce;
+  --icon-secondary: #1e40af;
+  --icon-neutral: #6b7280;
+  --icon-success: #059669;
+  --icon-warning: #d97706;
+  --icon-danger: #dc2626;
+}
+
+/* Professional Icon Base Class */
+.professional-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--icon-primary), var(--icon-secondary));
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.2);
+  transition: all 0.3s ease;
+}
+
+.professional-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(49, 130, 206, 0.3);
+}
+
+.professional-icon.large {
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+}
+
+.professional-icon.small {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+}
+
+/* Specific Professional Icons */
+.icon-ai { background: linear-gradient(135deg, #3182ce, #1e40af); }
+.icon-ai::before { content: "AI"; }
+
+.icon-security { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.icon-security::before { content: "SEC"; }
+
+.icon-governance { background: linear-gradient(135deg, #059669, #047857); }
+.icon-governance::before { content: "GOV"; }
+
+.icon-compliance { background: linear-gradient(135deg, #d97706, #c2410c); }
+.icon-compliance::before { content: "CMP"; }
+
+.icon-education { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+.icon-education::before { content: "EDU"; }
+
+.icon-research { background: linear-gradient(135deg, #0891b2, #0e7490); }
+.icon-research::before { content: "RES"; }
+
+.icon-enterprise { background: linear-gradient(135deg, #374151, #1f2937); }
+.icon-enterprise::before { content: "ENT"; }
+
+.icon-defense { background: linear-gradient(135deg, #991b1b, #7f1d1d); }
+.icon-defense::before { content: "DEF"; }
+
+.icon-support { background: linear-gradient(135deg, #059669, #047857); }
+.icon-support::before { content: "SUP"; }
+
+.icon-contact { background: linear-gradient(135deg, #3182ce, #2563eb); }
+.icon-contact::before { content: "CON"; }
+
+.icon-training { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+.icon-training::before { content: "TRN"; }
+
+.icon-certification { background: linear-gradient(135deg, #d97706, #c2410c); }
+.icon-certification::before { content: "CRT"; }
+
+.icon-partnership { background: linear-gradient(135deg, #059669, #047857); }
+.icon-partnership::before { content: "PTN"; }
+
+.icon-database { background: linear-gradient(135deg, #6b7280, #4b5563); }
+.icon-database::before { content: "DB"; }
+
+.icon-api { background: linear-gradient(135deg, #3182ce, #2563eb); }
+.icon-api::before { content: "API"; }
+
+.icon-cloud { background: linear-gradient(135deg, #0891b2, #0e7490); }
+.icon-cloud::before { content: "CLD"; }
+
+.icon-analytics { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+.icon-analytics::before { content: "ANL"; }
+
+.icon-monitoring { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.icon-monitoring::before { content: "MON"; }
+
+/* Feature Card Professional Icons */
+.feature-icon-professional {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3182ce, #1e40af);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 24px rgba(49, 130, 206, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-icon-professional:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(49, 130, 206, 0.3);
+}
+
+/* Hero Section Professional Icons */
+.hero-icon-professional {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 36px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 auto 32px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-icon-professional:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge Professional Icons */
+.badge-icon-professional {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #3182ce, #1e40af);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Department Icons for Contact Page */
+.dept-icon-professional {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #3182ce, #1e40af);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 auto 16px;
+  box-shadow: 0 6px 16px rgba(49, 130, 206, 0.2);
+}
+
+/* Specialized Sector Icons */
+.sector-icon-professional {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #059669, #047857);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 auto 20px;
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.2);
+}
+
+/* MCP Service Icons */
+.mcp-icon-professional {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+}
+
+/* Navigation Icons */
+.nav-icon-professional {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #3182ce, #1e40af);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Professional Typography Enhancement */
+.professional-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.professional-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.professional-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.7;
+}
+
+/* Professional Button Styles */
+.btn-professional {
+  background: linear-gradient(135deg, #3182ce, #1e40af);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.3);
+}
+
+.btn-professional:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(49, 130, 206, 0.4);
+  color: white;
+}
+
+.btn-professional-secondary {
+  background: rgba(49, 130, 206, 0.1);
+  color: #3182ce;
+  border: 2px solid rgba(49, 130, 206, 0.2);
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-professional-secondary:hover {
+  background: rgba(49, 130, 206, 0.15);
+  border-color: rgba(49, 130, 206, 0.3);
+  color: #1e40af;
+  transform: translateY(-1px);
+}
+
+/* Professional Card Enhancements */
+.card-professional {
+  background: white;
+  border: 1px solid rgba(49, 130, 206, 0.1);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.card-professional:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(49, 130, 206, 0.1);
+  border-color: rgba(49, 130, 206, 0.2);
+}
+
+/* Remove all emoji dependencies */
+.no-emoji {
+  font-family: 'Space Grotesk', 'Inter', sans-serif !important;
+}
+
+/* Hide emoji fallbacks */
+.emoji-hide {
+  display: none !important;
+}
+
+/* Professional spacing and alignment */
+.professional-spacing {
+  padding: 2rem 1.5rem;
+}
+
+.professional-alignment {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Media queries for responsive professional icons */
+@media (max-width: 768px) {
+  .feature-icon-professional {
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
+  }
+  
+  .hero-icon-professional {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+  
+  .professional-icon.large {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-icon-professional {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+  
+  .hero-icon-professional {
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
+  }
+}

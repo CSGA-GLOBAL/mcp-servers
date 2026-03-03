@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Gaming AI Governance  AI-Powered MCP | CSGA Global</title>
+ <meta name="description" content="Govern AI systems in game design, matchmaking, monetization, player safety, and content moderation  ensuring fair play, child protection, and regulatory compliance.">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
+
+ <link rel="stylesheet" href="../components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
+    <meta property="og:image" content="/images/csga-logo-social.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CSGAGlobal">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- ðŸ›ï¸ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
+    <meta property="og:image" content="/images/csga-logo-social.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CSGAGlobal">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- ðŸ›ï¸ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+<div id="site-header"></div>
+
+<div class="breadcrumb">
+ <a href="/">Home</a> <span>&gt;</span> <a href="/catalog.html">MCP Catalog</a> <span>&gt;</span> <span>Gaming AI Governance</span>
+</div>
+
+<section class="sf-hero">
+ <div class="sf-hero-inner">
+ <div class="hero-icon-professional">PRO</div>
+ <h1 class="professional-title professional-title" class="professional-title">Gaming AI Governance MCP Server</h1>
+ <p class="sf-hero-sub" class="professional-body">Govern AI systems in game design, matchmaking, monetization, player safety, and content moderation  ensuring fair play, child protection, and regulatory compliance</p>
+ <div class="sf-hero-badges">
+ <span class="sf-badge sf-badge-tier">Professional Tier</span>
+ <span class="sf-badge sf-badge-cat">Governance</span>
+ <span class="sf-badge sf-badge-price" style="background:rgba(59,130,246,.2);border:1.5px solid rgba(59,130,246,.4);color:#60a5fa">Professional Â· $199/mo</span>
+ </div>
+ <div class="sf-hero-ctas">
+ <a href="../pricing.html#professional" class="btn-professional">Start Free Trial  $199/mo</a>
+ <a href="#features" class="btn-professional">See Features †</a>
+ </div>
+ <p class="sf-hero-note" class="professional-body">14-day free trial Â· Professional  $199/mo Â· Cancel anytime</p>
+ <div class="sf-cert-warn"> For game publishers, esports platforms, and regulators</div>
+ <div class="sf-hero-stats">
+ <div class="sf-hero-stat"><strong>3</strong><span>AI Tools</span></div>
+ <div class="sf-hero-stat"><strong>4</strong><span>Use Cases</span></div>
+ <div class="sf-hero-stat"><strong></strong><span>API Calls/mo</span></div>
+ </div>
+ </div>
+</section>
+
+<div class="social-proof-mini" style="text-align:center;padding:12px 20px;background:rgba(0,88,164,.04);border-bottom:1px solid rgba(0,88,164,.08);display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;font-size:.82rem;">
+ <span style="color:#10B981;font-weight:600;">œ 14-day free trial</span>
+ <span style="color:#94a3b8;">|</span>
+ <span style="color:#64748B;">Used by <strong style="color:#0058A4;">120+</strong> game studios</span>
+ <span style="color:#94a3b8;">|</span>
+ <span style="color:#10B981;font-weight:600;">30-day money-back guarantee</span>
+</div>
+
+<div class="sf-trust">
+ <div class="sf-trust-inner">
+ <div class="sf-trust-item"><strong>3.2B</strong>Global Gamers</div>
+ <div class="sf-trust-item"><strong>$250B</strong>Gaming Industry</div>
+ <div class="sf-trust-item"><strong>40+</strong>Countries w/ Loot Box Laws</div>
+ <div class="sf-trust-item"><strong>70%</strong>Games Using AI Matchmaking</div>
+ <div class="sf-trust-item"><strong>99.9%</strong>Uptime SLA</div>
+ </div>
+</div>
+
+<section class="sf-problem">
+ <div class="sf-ps-grid">
+ <div class="sf-ps-text">
+ <h3 style="color:#3182ce" class="subsection-title" class="professional-title" class="professional-title">Without Gaming AI Governance</h3>
+ <p class="professional-body">Game publishers face mounting challenges governing AI-driven systems without purpose-built tooling:</p>
+ <ul class="sf-ps-list">
+ <li>AI matchmaking lacks fairness auditing, creating skill-gap complaints and player churn</li>
+ <li>Monetization AI-driven loot boxes invite regulatory scrutiny and child protection violations</li>
+ <li>Content moderation delays escalate toxic behavior and platform liability exposure</li>
+ <li>No unified approach to player safety, esports integrity, or regulatory compliance</li>
+ </ul>
+ </div>
+ <div class="sf-ps-visual problem"></div>
+ </div>
+</section>
+
+<section class="sf-solution">
+ <div class="sf-ps-grid">
+ <div class="sf-ps-visual solution"></div>
+ <div class="sf-ps-text">
+ <h3 style="color:#28a745" class="subsection-title" class="professional-title" class="professional-title">With Gaming AI Governance</h3>
+ <p class="professional-body">Deploy AI-powered governance that transforms how game studios operate safely and compliantly:</p>
+ <ul class="sf-ps-list sol">
+ <li>Audit AI matchmaking systems in real-time to ensure fairness and skill-based progression</li>
+ <li>Govern AI-driven monetization to comply with loot box regulations and child protection laws</li>
+ <li>Accelerate content moderation with flagged violations and regulatory audit trails</li>
+ <li>Scale player safety and esports integrity across millions of concurrent players</li>
+ </ul>
+ </div>
+ </div>
+</section>
+
+<section class="sf-section" id="features">
+ <h2 class="professional-title sf-section-title" class="section-title" class="professional-title" class="professional-title">Powerful AI Governance Tools for Gaming</h2>
+ <p class="sf-section-sub" class="professional-body">Three purpose-built tools for governing AI across game design, monetization, and player safety.</p>
+ <div class="sf-features">
+ <div class="card-professional">
+ <div class="feature-icon-professional">FTR</div>
+ <h4>Matchmaking Fairness Auditor</h4>
+ <p class="professional-body">Audit AI matchmaking and skill-based systems for fairness, variance, and algorithmic transparency</p>
+ </div>
+ <div class="card-professional">
+ <div class="feature-icon-professional">FTR</div>
+ <h4>Monetization AI Governor</h4>
+ <p class="professional-body">Govern AI-driven loot boxes, dynamic pricing, and microtransactions for regulatory compliance</p>
+ </div>
+ <div class="card-professional">
+ <div class="feature-icon-professional">FTR</div>
+ <h4>Player Safety Validator</h4>
+ <p class="professional-body">Validate AI content moderation and child protection systems against regulatory standards</p>
+ </div>
+ </div>
+</section>
+
+<section class="sf-metrics">
+ <div class="sf-metrics-inner">
+ <div class="sf-metric"><div class="sf-metric-num">3.2B</div><div class="sf-metric-label">Global Gamers</div></div>
+ <div class="sf-metric"><div class="sf-metric-num">$250B</div><div class="sf-metric-label">Gaming Industry Value</div></div>
+ <div class="sf-metric"><div class="sf-metric-num">40+</div><div class="sf-metric-label">Countries Regulating Loot Boxes</div></div>
+ <div class="sf-metric"><div class="sf-metric-num">70%</div><div class="sf-metric-label">Games Using AI Matchmaking</div></div>
+ </div>
+</section>
+
+<section style="background:#f8f9fb;padding:80px 20px">
+ <div style="max-width:1200px;margin:0 auto">
+ <h2 class="professional-title sf-section-title" class="section-title" class="professional-title" class="professional-title">Real-World Use Cases</h2>
+ <p class="sf-section-sub" class="professional-body">See how game studios, esports platforms, and regulators use Gaming AI Governance.</p>
+ <div class="sf-usecases-wrap">
+ <div class="sf-usecase">
+ <h4>® Game Publishers</h4>
+ <p class="professional-body">Audit AI matchmaking fairness, govern loot box monetization systems, and ensure player safety compliance across all titles and platforms.</p>
+ </div>
+ <div class="sf-usecase">
+ <h4>† Esports Organizations</h4>
+ <p class="professional-body">Validate competitive integrity in AI-powered ranking systems, anti-cheat mechanisms, and prize pool allocations for tournaments and leagues.</p>
+ </div>
+ <div class="sf-usecase">
+ <h4> Platform Operators</h4>
+ <p class="professional-body">Monitor cross-game player safety, content moderation AI systems, and regulatory compliance across millions of concurrent users.</p>
+ </div>
+ <div class="sf-usecase">
+ <h4>– Regulators &amp; Policy Bodies</h4>
+ <p class="professional-body">Audit game publishers for compliance with loot box laws, child protection standards, and emerging AI governance requirements.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="sf-section">
+ <h2 class="professional-title sf-section-title" class="section-title" class="professional-title" class="professional-title">Technical Specifications</h2>
+ <p class="sf-section-sub" class="professional-body">Built on the MCP v1.0 standard with enterprise-grade security and compliance.</p>
+ <div class="sf-specs">
+ <div class="sf-specs-grid">
+ <div><div class="sf-spec-label">Protocol</div><div class="sf-spec-value">MCP v1.0 (Model Context Protocol)</div></div>
+ <div><div class="sf-spec-label">Authentication</div><div class="sf-spec-value">API Key / OAuth2 / SSO</div></div>
+ <div><div class="sf-spec-label">Rate Limits</div><div class="sf-spec-value">Custom (unlimited for Professional+)</div></div>
+ <div><div class="sf-spec-label">Platforms</div><div class="sf-spec-value">Linux, macOS, Windows, Docker, Cloud</div></div>
+ <div><div class="sf-spec-label">Languages</div><div class="sf-spec-value">Python, JavaScript, Go, REST API, C#</div></div>
+ <div><div class="sf-spec-label">Compliance</div><div class="sf-spec-value">ISO 27001 Â· CSOAI Â· GDPR Â· COPPA</div></div>
+ <div><div class="sf-spec-label">Encryption</div><div class="sf-spec-value">TLS 1.3 / AES-256 at rest</div></div>
+ <div><div class="sf-spec-label">Uptime SLA</div><div class="sf-spec-value">99.9% (Professional) / 99.99% (Enterprise)</div></div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="sf-section">
+ <h2 class="professional-title sf-section-title" class="section-title" class="professional-title" class="professional-title">Quick Start Integration</h2>
+ <p class="sf-section-sub" class="professional-body">Copy, paste, and run. Get your first fairness audit in under a minute.</p>
+ <div class="sf-code-wrap">
+ <div class="sf-code"><button class="sf-code-copy" onclick="navigator.clipboard.writeText(this.parentElement.innerText.replace('Copy',''))">Copy</button><span class="kw">import</span> mcp_client
+<span class="cmt"># Initialize Gaming AI Governance client</span>
+client = mcp_client.<span class="kw">Client</span>(
+ server_id=<span class="str">"gaming-ai-governance"</span>,
+ api_key=<span class="str">"YOUR_API_KEY"</span>
+)
+<span class="cmt"># Audit matchmaking fairness</span>
+connection = client.<span class="kw">connect</span>()
+result = connection.<span class="kw">execute</span>({
+ <span class="str">"tool"</span>: <span class="str">"matchmaking_fairness_auditor"</span>,
+ <span class="str">"params"</span>: {<span class="str">"matchmaking_data"</span>: game_logs}
+})
+<span class="kw">print</span>(result)
+</div>
+ <p style="text-align:center;color:#888;font-size:.9rem;margin-top:15px" class="professional-body">Full SDK documentation available for Python, Node.js, Go, and C#</p>
+ </div>
+</section>
+
+<section style="background:#f8f9fb;padding:80px 20px">
+ <div style="max-width:800px;margin:0 auto">
+ <h2 class="professional-title sf-section-title" class="section-title" class="professional-title" class="professional-title">Frequently Asked Questions</h2>
+ <p class="sf-section-sub" class="professional-body">Everything you need to know about Gaming AI Governance.</p>
+ <div class="sf-faq-item" onclick="this.classList.toggle('open')">
+ <div class="sf-faq-q"><span>What is Gaming AI Governance?</span><span class="sf-faq-arrow">–</span></div>
+ <div class="sf-faq-a">Gaming AI Governance is a purpose-built MCP server for governing AI systems in game design, matchmaking, monetization, player safety, and content moderation. It ensures fair play, regulatory compliance with loot box laws and child protection standards, and operational transparency across game studios and esports platforms.</div>
+ </div>
+ <div class="sf-faq-item" onclick="this.classList.toggle('open')">
+ <div class="sf-faq-q"><span>What plan do I need for Gaming AI Governance?</span><span class="sf-faq-arrow">–</span></div>
+ <div class="sf-faq-a">Gaming AI Governance is classified as <strong>Professional</strong> ($199/mo individually, or $1,999/yr). It's also included in membership plans starting at Professional ($199/mo). <a href="../pricing.html" style="color:#3182ce">View all plans †</a></div>
+ </div>
+ <div class="sf-faq-item" onclick="this.classList.toggle('open')">
+ <div class="sf-faq-q"><span>Can this audit loot box systems for regulatory compliance?</span><span class="sf-faq-arrow">–</span></div>
+ <div class="sf-faq-a">Yes. The Monetization AI Governor tool audits AI-driven loot boxes, dynamic pricing, and microtransactions against regulations in 40+ countries including COPPA (US), PEGI guidelines (Europe), and local gambling-adjacent laws. Results are exportable for regulatory submissions.</div>
+ </div>
+ <div class="sf-faq-item" onclick="this.classList.toggle('open')">
+ <div class="sf-faq-q"><span>How quickly can I integrate Gaming AI Governance?</span><span class="sf-faq-arrow">–</span></div>
+ <div class="sf-faq-a">Most game studios deploy within 15-30 minutes using our Python SDK or REST API. Our quick start guide provides copy-paste code examples. Enterprise customers receive white-glove onboarding and custom integration support.</div>
+ </div>
+ <div class="sf-faq-item" onclick="this.classList.toggle('open')">
+ <div class="sf-faq-q"><span>Is Gaming AI Governance compliant with industry standards?</span><span class="sf-faq-arrow">–</span></div>
+ <div class="sf-faq-a">Yes. All CSGA MCPs are built to CSOAI standards and ISO 27001:2022 aligned. Gaming AI Governance specifically supports COPPA (child protection), GDPR (privacy), and emerging international loot box regulations. Enterprise tier includes audit-ready compliance documentation.</div>
+ </div>
+ </div>
+</section>
+
+<section class="sf-section">
+ <div class="sf-mooc">
+ <div style="font-size:3rem;margin-bottom:15px"></div>
+ <h3 class="professional-title professional-title" class="professional-title">Free Training Course</h3>
+ <p class="professional-body">Master gaming AI governance with our comprehensive MOOC  self-paced, hands-on, and completely free.</p>
+ <a href="../training.html#gaming-ai" class="btn-professional" style="background:#0058A4">Gaming AI Governance &amp; Regulatory Compliance</a>
+ </div>
+</section>
+
+<section style="background:#f8f9fb;padding:80px 20px">
+ <div style="max-width:1200px;margin:0 auto">
+ <h2 class="professional-title sf-section-title" class="section-title" class="professional-title" class="professional-title">Related MCPs in Governance</h2>
+ <p class="sf-section-sub" class="professional-body">Extend your capabilities with complementary MCP servers.</p>
+ <div class="sf-related-grid">
+ <a href="media-advertising-ai.html" class="card-professional">
+ <span class="sf-related-icon">º</span>
+ <strong>Media &amp; Advertising AI Governance</strong>
+ <p class="professional-body">Govern AI in content recommendation, ad targeting, and algorithmic content distribution...</p>
+ <span class="sf-related-link">Learn More</span>
+ </a>
+ <a href="biometrics-ai.html" class="card-professional">
+ <span class="sf-related-icon">‘</span>
+ <strong>Biometrics AI Governance</strong>
+ <p class="professional-body">Govern AI facial recognition, biometric authentication, and surveillance systems...</p>
+ <span class="sf-related-link">Learn More</span>
+ </a>
+ <a href="employment-ai.html" class="card-professional">
+ <span class="sf-related-icon">¼</span>
+ <strong>Employment AI Governance</strong>
+ <p class="professional-body">Govern AI recruitment, performance management, and workforce analytics for fairness...</p>
+ <span class="sf-related-link">Learn More</span>
+ </a>
+ <a href="ai-governance.html" class="card-professional">
+ <span class="sf-related-icon"></span>
+ <strong>AI Governance (General)</strong>
+ <p class="professional-body">ISO 42001 compliance automation for AI systems with policy enforcement and audits...</p>
+ <span class="sf-related-link">Learn More</span>
+ </a>
+ </div>
+ </div>
+</section>
+
+<style>.mcp-pw{background:linear-gradient(135deg,#0A1628,#0F2847,#0058A4);padding:60px 24px;text-align:center}.mcp-pw-in{max-width:900px;margin:0 auto}.mcp-pw h3{font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:8px}.mcp-pw h3 span{color:#3182ce}.mcp-pw-in>p{color:rgba(255,255,255,0.6);font-size:.95rem;margin-bottom:32px}.mcp-pw-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:24px}.mcp-pw-c{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:16px;padding:28px 24px;text-align:left;transition:all .3s}.mcp-pw-c:hover{border-color:rgba(204,0,0,0.5);transform:translateY(-4px)}.mcp-pw-c.ft{border-color:rgba(204,0,0,0.6);background:rgba(204,0,0,0.08)}.mcp-pw-t{display:inline-block;padding:4px 12px;border-radius:12px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}.mcp-pw-t.s{background:rgba(204,0,0,0.2);color:#1e40af}.mcp-pw-t.b{background:rgba(0,88,164,0.3);color:#93C5FD}.mcp-pw-t.f{background:rgba(40,167,69,0.2);color:#8eff8e}.mcp-pw-c h4{color:#fff;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:8px}.mcp-pw-c .pr{font-size:1.6rem;font-weight:700;color:#3182ce;margin-bottom:4px}.mcp-pw-c .pn{font-size:.78rem;color:rgba(255,255,255,0.5);margin-bottom:16px}.mcp-pw-c ul{list-style:none;padding:0;margin:0 0 20px}.mcp-pw-c li{color:rgba(255,255,255,0.75);font-size:.85rem;padding:4px 0 4px 20px;position:relative}.mcp-pw-c li::before{content:"œ";position:absolute;left:0;color:#3182ce;font-weight:700}.mcp-pw-c .cc{display:block;text-align:center;padding:12px 20px;border-radius:10px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s}.mcp-pw-c .cc.p{background:linear-gradient(135deg,#A30000,#3182ce,#1e40af);color:#fff}.mcp-pw-c .cc.p:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(204,0,0,0.35)}.mcp-pw-c .cc.o{border:2px solid rgba(255,255,255,0.3);color:#fff}.mcp-pw-c .cc.o:hover{border-color:#fff;background:rgba(255,255,255,0.06)}.mcp-pw-c .cc.bl{background:#0058A4;color:#fff}.mcp-pw-c .cc.bl:hover{background:#006cc5;transform:translateY(-2px)}.mcp-pw-bt{color:rgba(255,255,255,0.5);font-size:.82rem;margin-top:8px}.mcp-pw-bt a{color:#3182ce;text-decoration:none;font-weight:600}.mcp-pw-bt a:hover{text-decoration:underline}@media(max-width:700px){.mcp-pw-g{grid-template-columns:1fr}}</style>
+
+<section class="mcp-pw">
+ <div class="mcp-pw-in">
+ <h3 class="professional-title professional-title" class="professional-title">Get <span>Gaming AI Governance</span></h3>
+ <p class="professional-body">Choose the plan that fits your studio  from individual MCP access to full platform membership.</p>
+ <div class="mcp-pw-g">
+ <div class="mcp-pw-c">
+ <span class="mcp-pw-t s">Professional Â· This MCP</span>
+ <h4>Individual MCP</h4>
+ <div class="pr">$199<span style="font-size:0.5em;font-weight:400;color:rgba(255,255,255,0.6)">/mo</span></div>
+ <div class="pn">or $1,999/yr Â· 10,000 API credits/mo</div>
+ <ul>
+ <li>Full Gaming AI Governance access</li>
+ <li>10,000 API credits/month</li>
+ <li>24/7 priority support</li>
+ <li>14-day free trial</li>
+ </ul>
+ <a href="../pricing.html" class="cc p">Buy This MCP  $199/mo</a>
+ </div>
+ <div class="mcp-pw-c">
+ <span class="mcp-pw-t b">Best Value</span>
+ <h4>– Governance Suite</h4>
+ <div class="pr">$399<span style="font-size:0.5em;font-weight:400;color:rgba(255,255,255,0.6)">/mo</span></div>
+ <div class="pn">Multiple MCPs Â· Save vs individual</div>
+ <ul>
+ <li>Gaming AI Governance included</li>
+ <li>Bundle savings vs individual</li>
+ <li>Shared API credits pool</li>
+ <li>Priority support</li>
+ </ul>
+ <a href="../pricing.html#ecosystems" class="cc bl">– Get Governance Suite</a>
+ </div>
+ <div class="mcp-pw-c ft">
+ <span class="mcp-pw-t f">Full Access</span>
+ <h4>Enterprise Membership</h4>
+ <div class="pr">$499<span style="font-size:0.5em;font-weight:400;color:rgba(255,255,255,0.6)">/mo</span></div>
+ <div class="pn">All 70 MCPs Â· Unlimited API credits</div>
+ <ul>
+ <li>Access to all 70 MCPs</li>
+ <li>Unlimited API credits</li>
+ <li>24/7 dedicated support</li>
+ <li>Unlimited team members</li>
+ </ul>
+ <a href="../pricing.html#enterprise" class="cc o">View Enterprise Plan †</a>
+ </div>
+ </div>
+ <p class="mcp-pw-bt" class="professional-body">All plans include Smithery deployment Â· <a href="../pricing.html">Compare all plans †</a></p>
+ </div>
+</section>
+
+<section class="sf-final-cta">
+ <h2 class="professional-title professional-title" class="professional-title">Ready to Deploy Gaming AI Governance?</h2>
+ <p class="professional-body">Professional Â· $199/mo Â· 14-day free trial Â· Cancel anytime</p>
+ <a href="../pricing.html#professional" class="btn-professional">Start Free Trial</a>
+ <div class="sf-final-trust">
+ <div class="sf-final-trust-item"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5L12 1zm-1 14l-4-4 1.41-1.41L11 12.17l6.59-6.59L19 7l-8 8z"/ class="professional-body"></svg> ISO 27001 Aligned</div>
+ <div class="sf-final-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/ class="professional-body"></svg> CSOAI Certified</div>
+ <div class="sf-final-trust-item"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/ class="professional-body"></svg> 120+ Game Studios</div>
+ </div>
+</section>
+
+<div style="text-align:center;padding:30px 20px">
+ <p class="professional-body">– <a href="../blog/gaming-ai.html" style="color: #3182ce;font-weight:600;text-decoration:none">Gaming AI Governance  In-Depth Blog Post</a></p>
+</div>
+
+<div class="sf-sticky" id="stickyBar">
+ <span class="sf-sticky-name">® Gaming AI Governance</span>
+ <span class="sf-sticky-price">Professional Â· $199/mo</span>
+ <a href="../pricing.html#professional" class="btn-professional">$199/mo  Free Trial</a>
+</div>
+
+<script>
+// Sticky CTA bar  show after scrolling past hero
+const sticky = document.getElementById('stickyBar');
+const observer = new IntersectionObserver(([e]) => {
+ sticky.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0 });
+observer.observe(document.querySelector('.sf-hero'));
+
+// Scroll reveal animations
+const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children');
+const revealObserver = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('visible');
+ }
+ });
+}, { threshold: 0.1 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+</script>
+
+<div id="site-footer"></div>
+
+<script src="../components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

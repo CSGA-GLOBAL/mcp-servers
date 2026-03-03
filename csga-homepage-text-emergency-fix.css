@@ -1,0 +1,207 @@
+/* 🚨 CSGA HOMEPAGE TEXT EMERGENCY FIX */
+/* CRITICAL: Fix ALL black text on blue/dark backgrounds */
+
+/* GLOBAL OVERRIDE FOR ALL SECTIONS */
+section,
+div[class*="section"],
+div[id*="section"],
+.hero,
+.hero-section,
+.hero-visual,
+.hero-dashboard,
+.dashboard,
+.card,
+.feature,
+.stats,
+.cta,
+.banner {
+    position: relative !important;
+}
+
+/* FORCE WHITE TEXT ON ALL DARK/BLUE BACKGROUNDS */
+section *,
+div[class*="section"] *,
+div[id*="section"] *,
+.hero *,
+.hero-section *,
+.hero-visual *,
+.hero-dashboard *,
+.dashboard *,
+.card *,
+.feature *,
+.stats *,
+.cta *,
+.banner *,
+[style*="background"] *,
+[class*="bg-"] * {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* SPECIFIC OVERRIDES FOR PROBLEMATIC ELEMENTS */
+.hero-title,
+.hero-subtitle,
+.hero-badge,
+.hero-stat-number,
+.hero-stat-label,
+.dashboard-title,
+.dashboard-status,
+.metric-label,
+.metric-value,
+.metric-change {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* HEADINGS - ABSOLUTE OVERRIDE */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #ffffff !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* PARAGRAPHS AND TEXT */
+p, span, div, a, li {
+    color: #f7fafc !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* BUTTONS */
+.btn,
+.button,
+.btn-primary,
+.btn-secondary,
+.cta-button {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* STATS AND NUMBERS */
+.stat,
+.metric,
+.number,
+.counter {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* BADGES AND LABELS */
+.badge,
+.label,
+.tag,
+.status {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* DASHBOARD COMPONENTS */
+.dashboard-header *,
+.dashboard-metrics *,
+.metric-card *,
+.status-dot + * {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* NAVIGATION */
+.nav *,
+.navbar *,
+.navigation * {
+    color: #ffffff !important;
+}
+
+/* OVERRIDE ANY INLINE STYLES */
+[style*="color: black"],
+[style*="color: #000"],
+[style*="color: #333"],
+[style*="color: #1a202c"],
+[style*="color: rgb(0,0,0)"],
+[style*="color: rgb(51,51,51)"] {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* ENSURE READABILITY ON BLUE BACKGROUNDS */
+[style*="background: #3182ce"] *,
+[style*="background-color: #3182ce"] *,
+[style*="background: #1e40af"] *,
+[style*="background-color: #1e40af"] *,
+[style*="background: blue"] *,
+[style*="background-color: blue"] *,
+.bg-blue *,
+.bg-primary *,
+.bg-csga-primary * {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* DARK OVERLAY FOR ANY PROBLEMATIC BACKGROUNDS */
+.hero::before,
+.hero-section::before,
+[class*="hero"]::before,
+section[style*="background"]::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    ) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* ENSURE CONTENT IS ABOVE OVERLAY */
+.hero > *,
+.hero-section > *,
+[class*="hero"] > *,
+section[style*="background"] > * {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* MOBILE RESPONSIVENESS - STRONGER SHADOWS */
+@media (max-width: 768px) {
+    * {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 1) !important;
+    }
+    
+    h1, h2, h3 {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 1) !important;
+    }
+}
+
+/* HIGH CONTRAST MODE */
+@media (prefers-contrast: high) {
+    * {
+        color: #ffffff !important;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 1) !important;
+    }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+    }
+}
+
+/* FORCE APPLY TO ANY MISSED ELEMENTS */
+body * {
+    --text-color: #ffffff !important;
+}
+
+/* ULTIMATE OVERRIDE - NUCLEAR OPTION */
+* {
+    --force-white-text: #ffffff !important;
+}
+
+*:not(input):not(textarea):not(select):not([type="text"]):not([type="email"]):not([type="password"]) {
+    color: var(--force-white-text) !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}

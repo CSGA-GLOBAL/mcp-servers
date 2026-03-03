@@ -1,0 +1,30 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f172a"/>
+            <stop offset="25%" stop-color="#1e3a8a"/>
+            <stop offset="50%" stop-color="#0f172a"/>
+            <stop offset="75%" stop-color="#1e40af"/>
+            <stop offset="100%" stop-color="#0f172a"/>
+        </linearGradient>
+        <pattern id="heroGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(59, 130, 246, 0.05)" stroke-width="1"/>
+        </pattern>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="1920" height="1080" fill="url(#heroBg)"/>
+    <rect width="1920" height="1080" fill="url(#heroGrid)"/>
+    
+    <!-- AI Circuits -->
+    <circle cx="300" cy="200" r="2" fill="rgba(59, 130, 246, 0.3)"/>
+    <circle cx="500" cy="150" r="1.5" fill="rgba(16, 185, 129, 0.3)"/>
+    <circle cx="700" cy="300" r="2.5" fill="rgba(239, 68, 68, 0.3)"/>
+    <circle cx="1200" cy="400" r="2" fill="rgba(245, 158, 11, 0.3)"/>
+    <circle cx="1500" cy="250" r="1.8" fill="rgba(139, 92, 246, 0.3)"/>
+    
+    <!-- Connection Lines -->
+    <line x1="300" y1="200" x2="500" y2="150" stroke="rgba(59, 130, 246, 0.2)" stroke-width="1"/>
+    <line x1="500" y1="150" x2="700" y2="300" stroke="rgba(16, 185, 129, 0.2)" stroke-width="1"/>
+    <line x1="700" y1="300" x2="1200" y2="400" stroke="rgba(239, 68, 68, 0.2)" stroke-width="1"/>
+</svg>

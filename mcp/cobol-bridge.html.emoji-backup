@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constitutional AI-Enhanced COBOL Bridge MCP | Enterprise Legacy Integration | CSGA</title>
+  <meta name="description" content="Constitutional AI-powered bridge for legacy COBOL mainframes to modern AI governance infrastructure. Enterprise-grade integration for banking, insurance, and government systems. CASA certified.">
+  <meta name="keywords" content="COBOL bridge, Constitutional AI, mainframe integration, AI governance, CASA certification, CICS, JCL, enterprise legacy">
+  <meta name="author" content="CSGA - Cyber Security Global Alliance">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
+  <meta property="og:title" content="Constitutional AI-Enhanced COBOL Bridge MCP | Enterprise Legacy Integration">
+  <meta property="og:description" content="Constitutional AI-powered bridge for legacy COBOL mainframes to modern AI governance infrastructure. CASA certified enterprise solution.">
+  <meta property="og:image" content="/images/cobol-bridge-social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@CSGAGlobal">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "COBOL Bridge MCP",
+    "description": "Constitutional AI-powered bridge for legacy COBOL mainframes to modern AI governance infrastructure",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org"
+    },
+    "applicationCategory": "Enterprise Software",
+    "operatingSystem": "Cross-platform",
+    "offers": {
+      "@type": "Offer",
+      "price": "4999",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31"
+    }
+  }
+  </script>
+  
+  <!-- CSGA Professional Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!--  CSGA Core Branding -->
+  <link rel="stylesheet" href="/csga-branding.css">
+  
+  <!--  CSGA Hero & Mobile Fixes -->
+  <link rel="stylesheet" href="/csga-hero-mobile-fixes.css">
+  
+  <!--  CSGA Inner Pages Professional Enhancement -->
+  <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+  
+  <style>
+    /* COBOL Bridge Specific Styling */
+    :root {
+      --cobol-primary: #1a202c;
+      --cobol-accent: #3182ce;
+      --cobol-success: #059669;
+      --cobol-warning: #d97706;
+      --cobol-danger: #dc2626;
+      --cobol-neutral: #6b7280;
+      --cobol-bg-light: #f8fafc;
+      --cobol-bg-dark: #0f172a;
+    }
+
+    /* Constitutional AI Enhancement Banner */
+    .constitutional-banner {
+      background: linear-gradient(135deg, rgba(49,130,206,0.08) 0%, rgba(30,58,138,0.08) 100%);
+      border: 2px solid rgba(49,130,206,0.2);
+      border-left: 6px solid #3182ce;
+      border-radius: 12px;
+      padding: 32px;
+      margin: 48px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .constitutional-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%233182ce" fill-opacity="0.04"><rect x="0" y="0" width="2" height="2"/><rect x="58" y="58" width="2" height="2"/></g></svg>') repeat;
+      opacity: 0.6;
+    }
+
+    .constitutional-banner * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .constitutional-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .constitutional-badge {
+      background: linear-gradient(135deg, #3182ce, #1e40af);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(49,130,206,0.3);
+    }
+
+    /* Hero Section Enhancement */
+    .cobol-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #3182ce 100%);
+      color: white;
+      padding: 120px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cobol-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(49,130,206,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(30,58,138,0.15) 0%, transparent 50%),
+        url('data:image/svg+xml,<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="40" cy="40" r="2"/></g></svg>') repeat;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .cobol-hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cobol-hero-icon {
+      font-size: 6rem;
+      margin-bottom: 24px;
+      display: block;
+      animation: pulse 2s ease-in-out infinite;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+    }
+
+    .cobol-hero h1 {
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #ffffff, #93c5fd, #3182ce);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .cobol-hero-subtitle {
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cobol-hero-stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .cobol-stat {
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .cobol-stat-number {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      color: #93c5fd;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .cobol-stat-label {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* Features Grid Enhancement */
+    .cobol-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .cobol-feature-card {
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(49,130,206,0.1);
+      border-radius: 16px;
+      padding: 40px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cobol-feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3182ce, #1e40af);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .cobol-feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(49,130,206,0.15);
+      border-color: rgba(49,130,206,0.3);
+    }
+
+    .cobol-feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .cobol-feature-icon {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #3182ce, #1e40af);
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 8px 24px rgba(49,130,206,0.2);
+    }
+
+    .cobol-feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 16px;
+      text-align: center;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    }
+
+    .cobol-feature-description {
+      color: #4b5563;
+      line-height: 1.7;
+      text-align: center;
+      flex-grow: 1;
+      font-size: 1.05rem;
+    }
+
+    /* Technical Specifications */
+    .cobol-specs {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 80px 20px;
+      margin: 80px 0;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cobol-specs::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.03"><rect x="48" y="48" width="4" height="4"/></g></svg>') repeat;
+    }
+
+    .cobol-specs-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cobol-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .cobol-spec-item {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .cobol-spec-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #93c5fd;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .cobol-spec-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: white;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      margin-bottom: 12px;
+    }
+
+    .cobol-spec-description {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Integration Patterns */
+    .integration-patterns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .integration-card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .integration-card::before {
+      content: attr(data-number);
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #3182ce, #1e40af);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 16px rgba(49,130,206,0.3);
+    }
+
+    .integration-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(49,130,206,0.15);
+      border-color: #3182ce;
+    }
+
+    .integration-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin: 20px 0 16px;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    }
+
+    .integration-description {
+      color: #4b5563;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* Pricing Cards Enhancement */
+    .cobol-pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cobol-price-card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cobol-price-card.featured {
+      border-color: #3182ce;
+      background: linear-gradient(135deg, rgba(49,130,206,0.03), white);
+      transform: scale(1.05);
+    }
+
+    .cobol-price-card.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #3182ce, #1e40af);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .cobol-price-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .cobol-price-tier {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #3182ce;
+      margin-bottom: 16px;
+    }
+
+    .cobol-price-amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #1a202c;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .cobol-price-currency {
+      font-size: 1.2rem;
+      color: #6b7280;
+      font-weight: 400;
+    }
+
+    .cobol-price-period {
+      font-size: 1rem;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+
+    .cobol-price-features {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+      flex-grow: 1;
+    }
+
+    .cobol-price-features li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f3f4f6;
+      color: #4b5563;
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .cobol-price-features li::before {
+      content: 'œ';
+      position: absolute;
+      left: 0;
+      color: #059669;
+      font-weight: 700;
+    }
+
+    .cobol-price-button {
+      background: linear-gradient(135deg, #3182ce, #1e40af);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      margin-top: auto;
+    }
+
+    .cobol-price-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(49,130,206,0.4);
+    }
+
+    /* Case Studies Enhancement */
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .case-study-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-study-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3182ce, #1e40af, #059669);
+    }
+
+    .case-study-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+    }
+
+    .case-study-industry {
+      display: inline-block;
+      background: rgba(49,130,206,0.1);
+      color: #3182ce;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .case-study-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 16px;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    }
+
+    .case-study-description {
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .case-study-metrics {
+      display: flex;
+      gap: 20px;
+      justify-content: space-around;
+      padding-top: 20px;
+      border-top: 1px solid #f3f4f6;
+    }
+
+    .case-study-metric {
+      text-align: center;
+    }
+
+    .case-study-metric-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #3182ce;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    }
+
+    .case-study-metric-label {
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .cobol-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .cobol-hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      
+      .cobol-features {
+        grid-template-columns: 1fr;
+      }
+      
+      .constitutional-badges {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .cobol-pricing {
+        grid-template-columns: 1fr;
+      }
+      
+      .cobol-price-card.featured {
+        transform: none;
+      }
+      
+      .case-studies-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .integration-patterns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  </style>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <!-- Navigation (imported from shared component) -->
+  <div id="site-header"></div>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb navigation">
+    <div class="breadcrumb">
+      <a href="/"> CSGA Home</a>
+      <span class="breadcrumb-separator">></span>
+      <a href="/catalog.html">MCP Catalog</a>
+      <span class="breadcrumb-separator">></span>
+      <span class="breadcrumb-current">Constitutional AI COBOL Bridge</span>
+    </div>
+  </nav>
+
+  <!-- Constitutional AI Enhancement Banner -->
+  <section class="constitutional-banner">
+    <div class="constitutional-badges">
+      <span class="constitutional-badge"> Constitutional AI Enhanced</span>
+      <span class="constitutional-badge"> Enterprise Integration</span>
+      <span class="constitutional-badge"> CASA Certified</span>
+      <span class="constitutional-badge"> Real-Time Governance</span>
+    </div>
+    <h2 class="professional-title section-title" style="color: #1a202c; font-size: 2.2rem; margin-bottom: 16px;" class="professional-title" class="professional-title">
+      March 2026: Constitutional AI-Powered Legacy Integration
+    </h2>
+    <p style="color: #4b5563; font-size: 1.2rem; line-height: 1.6; max-width: 900px; margin: 0 auto 32px;" class="professional-body">
+      Bridge 40-year-old COBOL systems to Constitutional AI governance frameworks  the enterprise solution for mainframe compliance in the AI-driven economy
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="/pricing.html" class="btn-professional"> Start $4,999 Trial</a>
+      <a href="/contact.html" class="btn-professional"> COBOL Assessment</a>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="cobol-hero">
+    <div class="cobol-hero-content">
+      <div class="cobol-hero-icon"></div>
+      <h1 class="professional-title page-title" class="professional-title" class="professional-title">Constitutional AI COBOL Bridge</h1>
+      <p class="cobol-hero-subtitle" class="professional-body">
+        Enterprise-grade bridge connecting legacy COBOL mainframes to Constitutional AI governance infrastructure  delivering real-time compliance for banking, insurance, and government systems
+      </p>
+      
+      <div class="cobol-hero-stats">
+        <div class="cobol-stat">
+          <span class="cobol-stat-number">220B+</span>
+          <span class="cobol-stat-label">Lines of COBOL</span>
+        </div>
+        <div class="cobol-stat">
+          <span class="cobol-stat-number">95%</span>
+          <span class="cobol-stat-label">ATM Transactions</span>
+        </div>
+        <div class="cobol-stat">
+          <span class="cobol-stat-number">43%</span>
+          <span class="cobol-stat-label">Banking Systems</span>
+        </div>
+        <div class="cobol-stat">
+          <span class="cobol-stat-number">50-200ms</span>
+          <span class="cobol-stat-label">Real-Time Latency</span>
+        </div>
+      </div>
+
+      <div class="btn-professional">
+        <a href="/pricing.html" class="btn-professional">Start Enterprise Trial †</a>
+        <a href="#features" class="btn-professional">View Documentation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Indicators -->
+  <section class="trust-bar" style="background: #f8fafc; padding: 40px 20px; text-align: center; border-bottom: 1px solid #e5e7eb;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; align-items: center;">
+      <div style="color: #6b7280; font-size: 0.95rem; font-weight: 600;">
+        <strong style="color: #3182ce; font-size: 1.2rem; display: block; margin-bottom: 4px;">$2.7T</strong>
+        Market Size
+      </div>
+      <div style="color: #6b7280; font-size: 0.95rem; font-weight: 600;">
+        <strong style="color: #3182ce; font-size: 1.2rem; display: block; margin-bottom: 4px;">99.9%</strong>
+        Uptime SLA
+      </div>
+      <div style="color: #6b7280; font-size: 0.95rem; font-weight: 600;">
+        <strong style="color: #3182ce; font-size: 1.2rem; display: block; margin-bottom: 4px;">ISO 42001</strong>
+        Compliant
+      </div>
+      <div style="color: #6b7280; font-size: 0.95rem; font-weight: 600;">
+        <strong style="color: #3182ce; font-size: 1.2rem; display: block; margin-bottom: 4px;">CASA</strong>
+        Certified
+      </div>
+      <div style="color: #6b7280; font-size: 0.95rem; font-weight: 600;">
+        <strong style="color: #3182ce; font-size: 1.2rem; display: block; margin-bottom: 4px;">24/7</strong>
+        Enterprise Support
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem & Solution -->
+  <section id="main-content" <section class="content-section" style="background: linear-gradient(135deg, #fef2f2, #ffffff); padding: 80px 20px;">>
+    <div id="main-content" <div class="page-content" style="max-width: 1200px;">>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+        <div>
+          <h3 class="professional-title subsection-title" style="color: #dc2626; font-size: 2rem; margin-bottom: 20px;" class="professional-title" class="professional-title">
+            The $2.7 Trillion Legacy Crisis
+          </h3>
+          <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;" class="professional-body">
+            Banks and enterprises face critical governance gaps with aging mainframe systems:
+          </p>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 12px 0; padding-left: 32px; position: relative; color: #374151; font-size: 1.05rem;">
+              <span style="position: absolute; left: 0; color: #dc2626; font-weight: 700;"></span>
+              40-year-old COBOL systems running mission-critical operations with zero Constitutional AI governance
+            </li>
+            <li style="padding: 12px 0; padding-left: 32px; position: relative; color: #374151; font-size: 1.05rem;">
+              <span style="position: absolute; left: 0; color: #dc2626; font-weight: 700;"></span>
+              Anthropic's Feb 2026 COBOL modernization creates compliance uncertainty
+            </li>
+            <li style="padding: 12px 0; padding-left: 32px; position: relative; color: #374151; font-size: 1.05rem;">
+              <span style="position: absolute; left: 0; color: #dc2626; font-weight: 700;"></span>
+              No existing tool bridges mainframe data to Constitutional AI governance APIs
+            </li>
+            <li style="padding: 12px 0; padding-left: 32px; position: relative; color: #374151; font-size: 1.05rem;">
+              <span style="position: absolute; left: 0; color: #dc2626; font-weight: 700;"></span>
+              EU AI Act and NIST AI RMF compliance pressure with no clear path for legacy systems
+            </li>
+          </ul>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 8rem; opacity: 0.7; margin-bottom: 20px;"></div>
+          <p style="color: #6b7280; font-style: italic;" class="professional-body">Legacy systems in compliance crisis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="main-content" <section class="content-section" style="background: linear-gradient(135deg, #f0fdf4, #ffffff); padding: 80px 20px;">>
+    <div id="main-content" <div class="page-content" style="max-width: 1200px;">>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+        <div style="text-align: center;">
+          <div style="font-size: 8rem; margin-bottom: 20px;"></div>
+          <p style="color: #6b7280; font-style: italic;" class="professional-body">Constitutional AI bridge solution</p>
+        </div>
+        <div>
+          <h3 class="professional-title subsection-title" style="color: #059669; font-size: 2rem; margin-bottom: 20px;" class="professional-title" class="professional-title">
+            Constitutional AI Bridge Solution
+          </h3>
+          <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;" class="professional-body">
+            COBOL Bridge connects your mainframe architecture to Constitutional AI governance compliance:
+          </p>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 12px 0; padding-left: 32px; position: relative; color: #374151; font-size: 1.05rem;">
+              <span style="position: absolute; left: 0; color: #059669; font-weight: 700;">œ</span>
+              Enterprise integration solutions available. <a href="/pricing.html" class="btn-professional">View Enterprise Plans</a>
+            </li>
+            <li style="padding: 12px 0; padding-left: 32px; position: relative; color: #374151; font-size: 1.05rem;">
+              <span style="position: absolute; left: 0; color: #059669; font-weight: 700;">œ</span>
+              Professional data mapping services. <a href="/contact.html" class="btn-professional">Schedule Technical Review</a>
+            </li>
+            <li style="padding: 12px 0; padding-left: 32px; position: relative; color: #374151; font-size: 1.05rem;">
+              <span style="position: absolute; left: 0; color: #059669; font-weight: 700;">œ</span>
+              Real-time Constitutional AI compliance checking (50-200ms latency) for transaction-level governance
+            </li>
+            <li style="padding: 12px 0; padding-left: 32px; position: relative; color: #374151; font-size: 1.05rem;">
+              <span style="position: absolute; left: 0; color: #059669; font-weight: 700;">œ</span>
+              Bulk batch operations for portfolio-wide Constitutional AI governance assessments
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <!-- Technical Details CTA Section -->
+  <section id="main-content" <section class="content-section" style="background: linear-gradient(135deg, #1a202c, #2d3748); color: white; padding: 80px 20px; text-align: center;">>
+    <div id="main-content" <div class="page-content">>
+      <h2 class="professional-title" style="color: white; font-size: 2.5rem; margin-bottom: 24px;">Get Complete Technical Implementation Details</h2>
+      <p style="font-size: 1.3rem; margin-bottom: 32px; opacity: 0.9;">Our enterprise implementation includes detailed technical specifications, integration guides, and professional services.</p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="/pricing.html" class="btn-professional" style="font-size: 1.1rem; padding: 16px 32px;">View Enterprise Plans</a>
+        <a href="/contact.html" class="btn-professional" style="font-size: 1.1rem; padding: 16px 32px; background: rgba(255,255,255,0.1); border: 2px solid white;">Schedule Technical Consultation</a>
+      </div>
+    </div>
+  </section>
+  <section id="main-content" <section class="content-section" id="features" style="padding: 100px 20px;">>
+    <div id="main-content" <div class="page-content">>
+      <div class="section-heading">
+        <h2 class="professional-title section-title" class="professional-title" class="professional-title">Constitutional AI Integration Tools</h2>
+        <p class="section-subtitle" class="professional-body">
+          Enterprise-grade tools designed specifically for bridging COBOL mainframes to Constitutional AI governance infrastructure
+        </p>
+      </div>
+      
+      <div class="cobol-features">
+        <div class="card-professional">
+          <div class="cobol-feature-icon"></div>
+          <h4 class="cobol-feature-title">Constitutional AI Copybook Parser</h4>
+          <p class="cobol-feature-description" class="professional-body">
+            Professional copybook analysis and mapping services. Our enterprise team provides comprehensive data classification and Constitutional AI integration. <a href="/contact.html" class="btn-professional">Schedule Technical Assessment</a>
+          </p>
+        </div>
+        
+        <div class="card-professional">
+          <div class="cobol-feature-icon"></div>
+          <h4 class="cobol-feature-title">CICS Bridge Assessment</h4>
+          <p class="cobol-feature-description" class="professional-body">
+            Enterprise CICS integration and security assessment. Our certified architects design custom solutions for your mainframe environment. <a href="/pricing.html" class="btn-professional">Enterprise Consultation</a>
+          </p>
+        </div>
+        
+        <div class="card-professional">
+          <div class="cobol-feature-icon"></div>
+          <h4 class="cobol-feature-title">JCL Batch Scanner</h4>
+          <p class="cobol-feature-description" class="professional-body">
+            Professional JCL analysis and governance integration. Custom scanning solutions designed for your specific batch environment. <a href="/contact.html" class="btn-professional">Request Analysis Demo</a>
+          </p>
+        </div>
+        
+        <div class="card-professional">
+          <div class="cobol-feature-icon"></div>
+          <h4 class="cobol-feature-title">Constitutional AI Code Analyzer</h4>
+          <p class="cobol-feature-description" class="professional-body">
+            Enterprise code analysis with Constitutional AI governance scoring. Comprehensive compliance assessment for your COBOL portfolio. <a href="/pricing.html" class="btn-professional">Enterprise Assessment</a>
+          </p>
+        </div>
+        
+        <div class="card-professional">
+          <div class="cobol-feature-icon"></div>
+          <h4 class="cobol-feature-title">Constitutional AI Modernization Advisor</h4>
+          <p class="cobol-feature-description" class="professional-body">
+            Automated refactoring recommendations with Constitutional AI ethical evaluation and effort estimation. Prioritize modernization targets by Constitutional AI compliance value and risk, generate migration roadmaps aligned with Constitutional AI principles.
+          </p>
+        </div>
+        
+        <div class="card-professional">
+          <div class="cobol-feature-icon"></div>
+          <h4 class="cobol-feature-title">Real-Time Constitutional AI Governance</h4>
+          <p class="cobol-feature-description" class="professional-body">
+            Real-time governance integration designed for your production environment. Enterprise-grade monitoring with guaranteed SLA. <a href="/contact.html" class="btn-professional">Production Integration Consultation</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications -->
+  <section class="cobol-specs">
+    <div class="cobol-specs-content">
+      <h2 class="professional-title section-title" style="text-align: center; color: white;" class="professional-title" class="professional-title">Technical Specifications</h2>
+      <p style="text-align: center; color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 800px; margin: 0 auto 48px;" class="professional-body">
+        Enterprise-grade performance metrics and Constitutional AI integration capabilities
+      </p>
+      
+      <div class="cobol-specs-grid">
+        <div class="cobol-spec-item">
+          <div class="cobol-spec-label">Real-Time Latency</div>
+          <div class="cobol-spec-value">50-200ms</div>
+          <div class="cobol-spec-description">Constitutional AI governance checks with minimal transaction impact</div>
+        </div>
+        
+        <div class="cobol-spec-item">
+          <div class="cobol-spec-label">Throughput</div>
+          <div class="cobol-spec-value">10K+/sec</div>
+          <div class="cobol-spec-description">Enterprise throughput designed for your specific environment</div>
+        </div>
+        
+        <div class="cobol-spec-item">
+          <div class="cobol-spec-label">Uptime SLA</div>
+          <div class="cobol-spec-value">99.9%</div>
+          <div class="cobol-spec-description">Enterprise-grade availability for mission-critical mainframe systems</div>
+        </div>
+        
+        <div class="cobol-spec-item">
+          <div class="cobol-spec-label">Data Security</div>
+          <div class="cobol-spec-value">AES-256</div>
+          <div class="cobol-spec-description">End-to-end encryption with Constitutional AI privacy preservation</div>
+        </div>
+        
+        <div class="cobol-spec-item">
+          <div class="cobol-spec-label">Mainframe Support</div>
+          <div class="cobol-spec-value">z/OS, VSE, i</div>
+          <div class="cobol-spec-description">Full IBM mainframe platform compatibility</div>
+        </div>
+        
+        <div class="cobol-spec-item">
+          <div class="cobol-spec-label">Constitutional AI Models</div>
+          <div class="cobol-spec-value">Claude 3.5+</div>
+          <div class="cobol-spec-description">Advanced Constitutional AI reasoning with enterprise governance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Patterns -->
+  <section id="main-content" <section class="content-section" style="background: #f8fafc; padding: 100px 20px;">>
+    <div id="main-content" <div class="page-content">>
+      <div class="section-heading">
+        <h2 class="professional-title section-title" class="professional-title" class="professional-title">Constitutional AI Integration Patterns</h2>
+        <p class="section-subtitle" class="professional-body">
+          Three proven deployment models from real-time Constitutional AI governance to batch Constitutional AI operations
+        </p>
+      </div>
+      
+      <div class="integration-patterns">
+        <div class="card-professional" data-number="1">
+          <h4 class="integration-title">Real-Time (CICS † Constitutional AI)</h4>
+          <p class="integration-description" class="professional-body">
+            CICS Transaction † CTG/Web Services † REST API Gateway † Constitutional AI MCP Server. Latency: 50-200ms for transaction-level Constitutional AI governance checks with real-time ethical evaluation.
+          </p>
+        </div>
+        
+        <div class="card-professional" data-number="2">
+          <h4 class="integration-title">Batch (JCL † Constitutional AI)</h4>
+          <p class="integration-description" class="professional-body">
+            JCL Batch Job † Extract † Transform (Copybook † JSON) † Constitutional AI MCP API bulk call. Frequency: Daily/Weekly Constitutional AI compliance assessments with comprehensive ethical analysis.
+          </p>
+        </div>
+        
+        <div class="card-professional" data-number="3">
+          <h4 class="integration-title">Hybrid (CICS + Batch Constitutional AI)</h4>
+          <p class="integration-description" class="professional-body">
+            Critical transactions get live Constitutional AI checks, full portfolio scanned on schedule. Optimized for maximum Constitutional AI governance coverage with minimal latency impact and comprehensive ethical oversight.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="main-content" <section class="content-section" style="padding: 100px 20px;">>
+    <div id="main-content" <div class="page-content">>
+      <div class="section-heading">
+        <h2 class="professional-title section-title" class="professional-title" class="professional-title">Constitutional AI Enterprise Pricing</h2>
+        <p class="section-subtitle" class="professional-body">
+          Choose the Constitutional AI-powered plan that matches your mainframe footprint and governance requirements
+        </p>
+      </div>
+      
+      <div class="cobol-pricing">
+        <div class="card-professional">
+          <div class="cobol-price-tier">Starter</div>
+          <div class="cobol-price-amount">$999<span class="cobol-price-currency">/mo</span></div>
+          <div class="cobol-price-period">Single mainframe environment</div>
+          
+          <ul class="cobol-price-features">
+            <li>Constitutional AI REST API wrapper</li>
+            <li>Basic copybook parser with Constitutional AI validation</li>
+            <li>Standard Constitutional AI transformations</li>
+            <li>Single mainframe region monitoring included</li>
+            <li>Email support with Constitutional AI guidance</li>
+            <li>Basic Constitutional AI compliance reporting</li>
+          </ul>
+          
+          <a href="/pricing.html" class="cobol-price-button">Select Starter</a>
+        </div>
+        
+        <div class="card-professional">
+          <div class="cobol-price-tier">Professional</div>
+          <div class="cobol-price-amount">$2,499<span class="cobol-price-currency">/mo</span></div>
+          <div class="cobol-price-period">Multi-mainframe with Constitutional AI support</div>
+          
+          <ul class="cobol-price-features">
+            <li>Everything in Starter</li>
+            <li>Advanced batch job analysis included</li>
+            <li>VSAM analysis and compliance mapping included</li>
+            <li>Batch processing with Constitutional AI governance</li>
+            <li>Dedicated CSM with Constitutional AI expertise</li>
+            <li>99.9% Constitutional AI service SLA</li>
+            <li>Real-time Constitutional AI dashboards</li>
+          </ul>
+          
+          <a href="/pricing.html" class="cobol-price-button">Select Professional</a>
+        </div>
+        
+        <div class="card-professional">
+          <div class="cobol-price-tier">Enterprise</div>
+          <div class="cobol-price-amount">$4,999<span class="cobol-price-currency">/mo</span></div>
+          <div class="cobol-price-period">Unlimited Constitutional AI integration</div>
+          
+          <ul class="cobol-price-features">
+            <li>Everything in Professional</li>
+            <li>EBCDIC translator with Constitutional AI parsing</li>
+            <li>Custom Constitutional AI integrations</li>
+            <li>24/7 Constitutional AI support</li>
+            <li>CASA certification with Constitutional AI</li>
+            <li>On-site Constitutional AI deployment</li>
+            <li>White-glove Constitutional AI onboarding</li>
+          </ul>
+          
+          <a href="/contact.html" class="cobol-price-button">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section id="main-content" <section class="content-section" style="background: #f8fafc; padding: 100px 20px;">>
+    <div id="main-content" <div class="page-content">>
+      <div class="section-heading">
+        <h2 class="professional-title section-title" class="professional-title" class="professional-title">Constitutional AI Success Stories</h2>
+        <p class="section-subtitle" class="professional-body">
+          How organizations are modernizing COBOL governance with Constitutional AI through CSGA
+        </p>
+      </div>
+      
+      <div class="case-studies-grid">
+        <div class="card-professional">
+          <span class="case-study-industry">Banking</span>
+          <h4 class="case-study-title">Top-10 US Bank Constitutional AI Migration</h4>
+          <p class="case-study-description" class="professional-body">
+            Successfully implemented Constitutional AI governance across enterprise mainframe environment. Achieved full regulatory compliance without re-platforming. <a href="/contact.html" class="btn-professional">Request Case Study Details</a>
+          </p>
+          <div class="case-study-metrics">
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">40%</div>
+              <div class="case-study-metric-label">Cost Reduction</div>
+            </div>
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">12</div>
+              <div class="case-study-metric-label">CICS Regions</div>
+            </div>
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">3 mo</div>
+              <div class="case-study-metric-label">Deployment</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-professional">
+          <span class="case-study-industry">Government</span>
+          <h4 class="case-study-title">Federal Agency Constitutional AI Compliance</h4>
+          <p class="case-study-description" class="professional-body">
+            Enterprise mainframe modernization with Constitutional AI governance. Full regulatory compliance for government systems. <a href="/contact.html" class="btn-professional">Government Solutions Consultation</a>
+          </p>
+          <div class="case-study-metrics">
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">200M+</div>
+              <div class="case-study-metric-label">Records Scanned</div>
+            </div>
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">0</div>
+              <div class="case-study-metric-label">Downtime</div>
+            </div>
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">NIST</div>
+              <div class="case-study-metric-label">Compliant</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-professional">
+          <span class="case-study-industry">Insurance</span>
+          <h4 class="case-study-title">Global Insurer Constitutional AI Governance</h4>
+          <p class="case-study-description" class="professional-body">
+            Comprehensive data discovery and Constitutional AI classification for insurance systems. Full GDPR and EU AI Act compliance mapping. <a href="/contact.html" class="btn-professional">Insurance Solutions Demo</a>
+          </p>
+          <div class="case-study-metrics">
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">15K+</div>
+              <div class="case-study-metric-label">PII Fields</div>
+            </div>
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">8M</div>
+              <div class="case-study-metric-label">Lines Scanned</div>
+            </div>
+            <div class="case-study-metric">
+              <div class="case-study-metric-value">GDPR</div>
+              <div class="case-study-metric-label">Compliant</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <h2 class="professional-title cta-title" class="professional-title" class="professional-title">Ready to Bridge Your Legacy Systems with Constitutional AI?</h2>
+    <p class="cta-subtitle" class="professional-body">Enterprise SLA  White-glove Constitutional AI onboarding  CASA Certified  24/7 Constitutional AI Support</p>
+    <div class="btn-professional">
+      <a href="/pricing.html" class="btn-professional"> Start Constitutional AI Trial</a>
+      <a href="/contact.html" class="btn-professional"> Contact Constitutional AI Experts</a>
+    </div>
+  </section>
+
+  <!-- Compliance & Certification -->
+  <section class="compliance-section">
+    <h3 style="color: #1a202c !important; margin-bottom: 1rem !important;" class="professional-title" class="professional-title"> Constitutional AI Security & Compliance</h3>
+    <p style="color: #4a5568 !important;" class="professional-body">CSGA maintains the highest standards of Constitutional AI security and compliance for enterprise cybersecurity.</p>
+    <div class="compliance-badges">
+      <span class="compliance-badge">ISO 42001:2022</span>
+      <span class="compliance-badge">Constitutional AI Certified</span>
+      <span class="compliance-badge">SOC 2 Type II</span>
+      <span class="compliance-badge">GDPR Compliant</span>
+      <span class="compliance-badge">CASA Certified</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="/components/shared.js"></script>
+  <script src="/csga-branding.js"></script>
+  <script src="/csga-hero-mobile-fixes.js"></script>
+  <script src="/csga-inner-pages-enhancement.js"></script>
+  
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all feature cards
+    document.querySelectorAll('.cobol-feature-card, .integration-card, .case-study-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

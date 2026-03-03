@@ -1,0 +1,193 @@
+/* 🎨 CSGA Color Contrast Emergency Fix */
+/* Fix critical WCAG 2.1 AA contrast violations */
+
+/* CRITICAL: Ensure all text meets contrast requirements */
+body {
+  color: #1a202c !important;
+  background-color: #ffffff !important;
+}
+
+/* CRITICAL: Fix low contrast text */
+.text-gray-600,
+.text-gray-500,
+.text-gray-400 {
+  color: #4b5563 !important; /* Meets 4.5:1 contrast ratio */
+}
+
+/* CRITICAL: Fix form elements */
+input,
+textarea,
+select {
+  color: #1a202c !important;
+  background-color: #ffffff !important;
+  border: 2px solid #d1d5db !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3182ce !important;
+  outline: 2px solid #3182ce !important;
+  outline-offset: 2px !important;
+}
+
+/* CRITICAL: Fix button contrast */
+.btn-secondary,
+.button-secondary {
+  color: #1a202c !important;
+  background-color: #f7fafc !important;
+  border: 2px solid #3182ce !important;
+}
+
+.btn-secondary:hover,
+.button-secondary:hover {
+  background-color: #edf2f7 !important;
+  color: #1a202c !important;
+}
+
+/* CRITICAL: Fix link contrast */
+a {
+  color: #2563eb !important;
+}
+
+a:hover {
+  color: #1d4ed8 !important;
+}
+
+/* CRITICAL: Fix navigation contrast */
+.nav-link,
+.navbar-link {
+  color: #1a202c !important;
+}
+
+.nav-link:hover,
+.navbar-link:hover {
+  color: #3182ce !important;
+  background-color: #f7fafc !important;
+}
+
+/* CRITICAL: Fix card text contrast */
+.card,
+.card-professional {
+  background-color: #ffffff !important;
+  color: #1a202c !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.card h3,
+.card h4,
+.card-professional h3,
+.card-professional h4 {
+  color: #1a202c !important;
+}
+
+.card p,
+.card-professional p {
+  color: #374151 !important;
+}
+
+/* CRITICAL: Fix footer contrast */
+.footer {
+  background-color: #1a202c !important;
+  color: #f7fafc !important;
+}
+
+.footer a {
+  color: #93c5fd !important;
+}
+
+.footer a:hover {
+  color: #dbeafe !important;
+}
+
+/* CRITICAL: Fix alert/notification contrast */
+.alert,
+.notification {
+  border-radius: 8px !important;
+  padding: 16px !important;
+  border: 2px solid !important;
+}
+
+.alert-info {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  border-color: #3182ce !important;
+}
+
+.alert-success {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border-color: #059669 !important;
+}
+
+.alert-warning {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #d97706 !important;
+}
+
+.alert-error {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+  border-color: #dc2626 !important;
+}
+
+/* CRITICAL: Fix table contrast */
+table {
+  background-color: #ffffff !important;
+  color: #1a202c !important;
+  border-collapse: collapse !important;
+}
+
+th {
+  background-color: #f9fafb !important;
+  color: #1a202c !important;
+  border: 1px solid #e5e7eb !important;
+  font-weight: 600 !important;
+}
+
+td {
+  color: #374151 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+tr:nth-child(even) {
+  background-color: #f9fafb !important;
+}
+
+/* CRITICAL: Fix code contrast */
+code,
+pre {
+  background-color: #f3f4f6 !important;
+  color: #1a202c !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+}
+
+pre {
+  padding: 16px !important;
+}
+
+/* CRITICAL: Ensure focus indicators are visible */
+*:focus {
+  outline: 2px solid #3182ce !important;
+  outline-offset: 2px !important;
+}
+
+/* CRITICAL: Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute !important;
+  top: -40px !important;
+  left: 6px !important;
+  background: #3182ce !important;
+  color: white !important;
+  padding: 8px !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  z-index: 9999 !important;
+}
+
+.skip-to-content:focus {
+  top: 6px !important;
+}

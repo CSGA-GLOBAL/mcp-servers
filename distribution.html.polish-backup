@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Distribution — 70+ Model Context Protocol Servers | CSGA Global</title>
+    <meta name="description" content="CSGA distributes 70+ Model Context Protocol servers across 12 platforms including npm, Docker, Smithery, PyPI, and Cloudflare Workers. Enterprise-grade MCPs for AI governance, cybersecurity, and industry solutions.">
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="MCP Distribution Hub — 70+ AI-Powered Model Context Protocols | CSGA Global">
+    <meta property="og:description" content="Discover CSGA's 70+ MCP servers across 12 platforms including npm, Docker, Smithery, PyPI, and more. Enterprise AI governance, cybersecurity, and industry solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://csga.global/distribution.html">
+    <meta property="og:image" content="https://csga.global/og-distribution.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MCP Distribution Hub — 70+ AI-Powered Model Context Protocols | CSGA Global">
+    <meta name="twitter:description" content="Discover CSGA's 70+ MCP servers across 12 platforms including npm, Docker, Smithery, PyPI, and more for enterprise AI solutions.">
+    <meta name="twitter:image" content="https://csga.global/og-distribution.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://csga.global/distribution.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #CC0000;
+            --gold-light: #1e40af;
+            --gold-dark: #A30000;
+            --blue: #0058A4;
+            --dark: #0F172A;
+            --darker: #0B1120;
+            --light: #FFFFFF;
+            --teal: #0D9488;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0A1628 0%, #0F172A 100%);
+            color: var(--light);
+            padding: 120px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(13, 148, 136, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(204, 0, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: rgba(13, 148, 136, 0.2);
+            border: 1px solid var(--teal);
+            border-radius: 6px;
+            color: var(--teal);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--teal);
+            color: var(--light);
+            border: 2px solid var(--teal);
+        }
+
+        .btn-primary:hover {
+            background-color: #0f766e;
+            border-color: #0f766e;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--light);
+            transform: translateY(-2px);
+        }
+
+        /* Distribution Channels Section */
+        .channels-section {
+            padding: 100px 24px;
+            background-color: var(--gray-50);
+        }
+
+        .channels-header {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .channels-header .section-title {
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .channels-header .section-subtitle {
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .channels-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .channel-card {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 40px 32px;
+            transition: all 0.25s ease;
+            border: 1px solid var(--gray-200);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal), #06b6d4);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--teal);
+            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.1);
+        }
+
+        .channel-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .channel-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--teal), #06b6d4);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+            flex-shrink: 0;
+        }
+
+        .channel-card h3 {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .channel-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            flex-grow: 1;
+            line-height: 1.8;
+        }
+
+        .channel-features {
+            margin-bottom: 24px;
+        }
+
+        .channel-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--gray-700);
+            margin-bottom: 10px;
+        }
+
+        .channel-feature::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .channel-link {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .channel-link:hover {
+            color: var(--teal);
+            gap: 12px;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 100px 24px;
+            background-color: var(--light);
+        }
+
+        .how-it-works-header {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .how-it-works-header .section-title {
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .how-it-works-header .section-subtitle {
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .steps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            position: relative;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+            padding: 40px 32px;
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.05) 0%, rgba(13, 148, 136, 0.02) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(13, 148, 136, 0.1);
+            transition: all 0.25s ease;
+        }
+
+        .step-item:hover {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1) 0%, rgba(13, 148, 136, 0.05) 100%);
+            border-color: var(--teal);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--teal), #06b6d4);
+            color: white;
+            border-radius: 50%;
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .step-item h4 {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .step-item p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* MCP Catalog Section */
+        .catalog-section {
+            padding: 100px 24px;
+            background-color: var(--gray-50);
+        }
+
+        .catalog-header {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .catalog-header .section-title {
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .catalog-header .section-subtitle {
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .catalog-table thead {
+            background-color: var(--gray-900);
+            color: white;
+        }
+
+        .catalog-table th {
+            padding: 16px;
+            text-align: left;
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--teal);
+        }
+
+        .catalog-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 14px;
+        }
+
+        .catalog-table tbody tr:hover {
+            background-color: var(--gray-50);
+        }
+
+        .catalog-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .mcp-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .mcp-category {
+            color: var(--gray-600);
+            font-size: 13px;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 70px;
+        }
+
+        .tier-free {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #166534;
+        }
+
+        .tier-pro {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #1e40af;
+        }
+
+        .tier-enterprise {
+            background-color: rgba(217, 119, 6, 0.1);
+            color: #92400e;
+        }
+
+        .availability-cell {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .availability-check {
+            font-size: 16px;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 24px;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-header .section-title {
+            color: var(--light);
+            margin-bottom: 24px;
+        }
+
+        .pricing-header .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1) 0%, rgba(13, 148, 136, 0.05) 100%);
+            border: 1px solid rgba(13, 148, 136, 0.3);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--teal);
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.15) 0%, rgba(13, 148, 136, 0.08) 100%);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--teal);
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-card p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-details {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 24px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-link {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-link:hover {
+            gap: 12px;
+            color: #06b6d4;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 24px;
+            background-color: var(--gray-50);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-content .section-title {
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .cta-content .section-subtitle {
+            color: var(--gray-600);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 24px 20px;
+        }
+
+        .footer-ecosystem {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ecosystem-title {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+
+        .ecosystem-badge {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 13px;
+            text-align: center;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .ecosystem-badge:hover {
+            background-color: rgba(13, 148, 136, 0.1);
+            border-color: var(--teal);
+            color: var(--teal);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-link {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--teal);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--teal);
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .channels-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 24px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .channels-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .catalog-table {
+                font-size: 12px;
+            }
+
+            .catalog-table th,
+            .catalog-table td {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-legal {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content reveal">
+            <div class="section-tag">MCP DISTRIBUTION</div>
+            <h1 class="professional-title section-title" class="page-title" class="professional-title">MCP Distribution Hub</h1>
+            <p class="section-subtitle" class="professional-body">CSGA distributes 70+ Model Context Protocol servers across 12 platforms — npm, Docker, PyPI, Smithery, Cloudflare Workers, and more. Enterprise-grade MCPs for AI governance, cybersecurity, and industry solutions.</p>
+            <div class="hero-buttons">
+                <a href="./mcp/" class="btn-professional">Explore MCP Hub</a>
+                <a href="#pricing" class="btn-professional">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Distribution Channels Section -->
+    <section class="channels-section">
+        <div class="channels-header">
+            <h2 class="professional-title section-title reveal" class="section-title" class="professional-title">Distribution Channels</h2>
+            <p class="section-subtitle reveal" class="professional-body">Access 70+ MCPs through 12 distribution channels tailored to your deployment preferences and operational needs.</p>
+        </div>
+
+        <div class="channels-grid">
+            <!-- CSGA MCP Hub -->
+            <div class="card-professional">
+                <div class="channel-icon"><div class="feature-icon-professional">GLB</div></div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">CSGA MCP Hub</h3>
+                <p class="professional-body">Complete catalog with full documentation, integrated pricing management, and dashboard access for enterprise deployments.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">Full 70 MCP catalog</div>
+                    <div class="channel-feature">Comprehensive documentation</div>
+                    <div class="channel-feature">Dashboard analytics</div>
+                    <div class="channel-feature">Direct pricing integration</div>
+                    <div class="channel-feature">Enterprise support</div>
+                </div>
+                <a href="./mcp/" class="channel-link">Access Hub →</a>
+            </div>
+
+            <!-- Smithery.ai Marketplace -->
+            <div class="card-professional">
+                <div class="channel-icon">🛍️</div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Smithery.ai Marketplace</h3>
+                <p class="professional-body">47+ MCPs available for instant deployment via Smithery's managed platform with integrated marketplace discovery and billing.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">47+ MCPs available</div>
+                    <div class="channel-feature">One-click deployment</div>
+                    <div class="channel-feature">Managed marketplace</div>
+                    <div class="channel-feature">Integrated billing</div>
+                    <div class="channel-feature">Auto-scaling support</div>
+                </div>
+                <a href="https://smithery.ai" class="channel-link" target="_blank">Visit Smithery →</a>
+            </div>
+
+            <!-- GitHub Open Source -->
+            <div class="card-professional">
+                <div class="channel-icon"><div class="feature-icon-professional">TLS</div></div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">GitHub Open Source</h3>
+                <p class="professional-body">All 70 MCPs available as open-source repositories with full source code, enabling self-hosted deployment and community contributions.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">All 70 MCPs open source</div>
+                    <div class="channel-feature">Self-hosted deployment</div>
+                    <div class="channel-feature">Community contributions</div>
+                    <div class="channel-feature">Full source access</div>
+                    <div class="channel-feature">MIT/Apache licensed</div>
+                </div>
+                <a href="https://github.com/CSGA-GLOBAL" class="channel-link" target="_blank">View Repos →</a>
+            </div>
+
+            <!-- npm Registry -->
+            <div class="card-professional">
+                <div class="channel-icon">📦</div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">npm Registry</h3>
+                <p class="professional-body">All MCPs published under the @csga-global scope. Install directly into your Node.js projects with npm or pnpm.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">@csga-global/* scope</div>
+                    <div class="channel-feature">npm install ready</div>
+                    <div class="channel-feature">TypeScript types included</div>
+                    <div class="channel-feature">OIDC provenance signing</div>
+                    <div class="channel-feature">Semantic versioning</div>
+                </div>
+                <a href="https://www.npmjs.com/org/csga-global" class="channel-link" target="_blank">View on npm →</a>
+            </div>
+
+            <!-- Docker Hub + GHCR -->
+            <div class="card-professional">
+                <div class="channel-icon">🐳</div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Docker Hub &amp; GHCR</h3>
+                <p class="professional-body">OCI container images for production deployment. Pull from Docker Hub or GitHub Container Registry with Cosign-verified signatures.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">OCI-compliant images</div>
+                    <div class="channel-feature">Cosign keyless signatures</div>
+                    <div class="channel-feature">CycloneDX SBOMs</div>
+                    <div class="channel-feature">Multi-arch (amd64/arm64)</div>
+                    <div class="channel-feature">Air-gapped deployment</div>
+                </div>
+                <a href="https://hub.docker.com/u/csgaglobal" class="channel-link" target="_blank">View on Docker Hub →</a>
+            </div>
+
+            <!-- Official MCP Registry -->
+            <div class="card-professional">
+                <div class="channel-icon">🏛️</div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Official MCP Registry</h3>
+                <p class="professional-body">Listed on the official Model Context Protocol registry at registry.modelcontextprotocol.io for maximum discoverability.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">Official registry listing</div>
+                    <div class="channel-feature">Standardised metadata</div>
+                    <div class="channel-feature">Protocol compliance</div>
+                    <div class="channel-feature">Verified publisher</div>
+                    <div class="channel-feature">Auto-discovery support</div>
+                </div>
+                <a href="https://registry.modelcontextprotocol.io" class="channel-link" target="_blank">View Registry →</a>
+            </div>
+
+            <!-- PyPI -->
+            <div class="card-professional">
+                <div class="channel-icon">🐍</div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">PyPI (Python)</h3>
+                <p class="professional-body">Python packages for data science and ML workflows. Install via pip with csga-* prefix for all CSGA MCP servers.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">csga-* package prefix</div>
+                    <div class="channel-feature">pip install ready</div>
+                    <div class="channel-feature">OIDC Trusted Publishing</div>
+                    <div class="channel-feature">Type hints included</div>
+                    <div class="channel-feature">Python 3.10+</div>
+                </div>
+                <a href="https://pypi.org/search/?q=csga" class="channel-link" target="_blank">View on PyPI →</a>
+            </div>
+
+            <!-- Cloudflare Workers -->
+            <div class="card-professional">
+                <div class="channel-icon"><div class="feature-icon-professional">PWR</div></div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Cloudflare Workers</h3>
+                <p class="professional-body">MCP-over-HTTP deployment on Cloudflare's global edge network. Sub-50ms latency with OAuth 2.1 authentication.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">Edge-deployed globally</div>
+                    <div class="channel-feature">MCP-over-HTTP (SSE)</div>
+                    <div class="channel-feature">OAuth 2.1 auth</div>
+                    <div class="channel-feature">Sub-50ms latency</div>
+                    <div class="channel-feature">Auto-scaling</div>
+                </div>
+                <a href="#" class="channel-link">Coming Soon →</a>
+            </div>
+
+            <!-- Docker MCP Catalog -->
+            <div class="card-professional">
+                <div class="channel-icon"><div class="feature-icon-professional">DOC</div></div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Docker MCP Catalog</h3>
+                <p class="professional-body">Featured in Docker's official MCP Catalog for seamless container-native deployment with Docker Desktop integration.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">Docker Desktop integration</div>
+                    <div class="channel-feature">One-click deploy</div>
+                    <div class="channel-feature">Container-native</div>
+                    <div class="channel-feature">Curated catalog</div>
+                    <div class="channel-feature">Health monitoring</div>
+                </div>
+                <a href="https://hub.docker.com/catalogs" class="channel-link" target="_blank">View Catalog →</a>
+            </div>
+
+            <!-- Discovery Platforms -->
+            <div class="card-professional">
+                <div class="channel-icon"><div class="feature-icon-professional">SCN</div></div>
+                <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Discovery Platforms</h3>
+                <p class="professional-body">Listed on PulseMCP, mcp.so, Glama, and OpenTools for maximum visibility across the MCP ecosystem.</p>
+                <div class="channel-features">
+                    <div class="channel-feature">PulseMCP directory</div>
+                    <div class="channel-feature">mcp.so marketplace</div>
+                    <div class="channel-feature">Glama catalog</div>
+                    <div class="channel-feature">OpenTools listing</div>
+                    <div class="channel-feature">SEO-optimised profiles</div>
+                </div>
+                <a href="https://www.pulsemcp.com" class="channel-link" target="_blank">Browse Directories →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="how-it-works-header">
+            <h2 class="professional-title section-title reveal" class="section-title" class="professional-title">How It Works</h2>
+            <p class="section-subtitle reveal" class="professional-body">Get started with CSGA MCPs in three simple steps. From discovery to deployment in minutes.</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-item reveal">
+                <div class="step-number">1</div>
+                <h4>Browse Catalog</h4>
+                <p class="professional-body">Explore 70+ MCPs across 7 categories. Search by use case, tier, or availability. Review comprehensive documentation and feature details.</p>
+            </div>
+
+            <div class="step-item reveal">
+                <div class="step-number">2</div>
+                <h4>Subscribe to Tier</h4>
+                <p class="professional-body">Choose your pricing tier (Free, Pro, or Enterprise). Deploy via npm, Docker, Smithery, Cloudflare Workers, or self-hosted GitHub.</p>
+            </div>
+
+            <div class="step-item reveal">
+                <div class="step-number">3</div>
+                <h4>Deploy & Integrate</h4>
+                <p class="professional-body">Deploy MCPs instantly to your environment. Integrate with your AI stack. Access 24/7 enterprise support and documentation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full MCP Catalog Section -->
+    <section class="catalog-section">
+        <div class="catalog-header">
+            <h2 class="professional-title section-title reveal" class="section-title" class="professional-title">Complete MCP Catalog</h2>
+            <p class="section-subtitle reveal" class="professional-body">All 70 MCPs with categories, pricing tiers, and availability across distribution channels.</p>
+        </div>
+
+        <div class="catalog-container reveal">
+            <table class="catalog-table">
+                <thead>
+                    <tr>
+                        <th>MCP Name</th>
+                        <th>Category</th>
+                        <th>Tier</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- AI Governance & Compliance -->
+                    <tr>
+                        <td class="mcp-name">AI Governance Engine</td>
+                        <td class="mcp-category">AI Governance & Compliance</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Compliance Audit</td>
+                        <td class="mcp-category">AI Governance & Compliance</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Data Classification</td>
+                        <td class="mcp-category">AI Governance & Compliance</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">DSRB Defence</td>
+                        <td class="mcp-category">AI Governance & Compliance</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Policy Engine</td>
+                        <td class="mcp-category">AI Governance & Compliance</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">ProofOfAI</td>
+                        <td class="mcp-category">AI Governance & Compliance</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <!-- Collaboration & Productivity -->
+                    <tr>
+                        <td class="mcp-name">Google Drive</td>
+                        <td class="mcp-category">Collaboration & Productivity</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Notion Workspace</td>
+                        <td class="mcp-category">Collaboration & Productivity</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Slack Messaging</td>
+                        <td class="mcp-category">Collaboration & Productivity</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <!-- Cybersecurity & Defence -->
+                    <tr>
+                        <td class="mcp-name">Cloud Security</td>
+                        <td class="mcp-category">Cybersecurity & Defence</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Incident Response</td>
+                        <td class="mcp-category">Cybersecurity & Defence</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">QuantraNet PQC</td>
+                        <td class="mcp-category">Cybersecurity & Defence</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Red Team Ops</td>
+                        <td class="mcp-category">Cybersecurity & Defence</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Secure Comms</td>
+                        <td class="mcp-category">Cybersecurity & Defence</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">TerraNoVa Defence</td>
+                        <td class="mcp-category">Cybersecurity & Defence</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Threat Intelligence</td>
+                        <td class="mcp-category">Cybersecurity & Defence</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Vulnerability Scanner</td>
+                        <td class="mcp-category">Cybersecurity & Defence</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <!-- Data & Analytics -->
+                    <tr>
+                        <td class="mcp-name">Brave Search</td>
+                        <td class="mcp-category">Data & Analytics</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">CSV Analytics</td>
+                        <td class="mcp-category">Data & Analytics</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Context7 Docs</td>
+                        <td class="mcp-category">Data & Analytics</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Memory Graph</td>
+                        <td class="mcp-category">Data & Analytics</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">PostgreSQL DB</td>
+                        <td class="mcp-category">Data & Analytics</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">SQLite DB</td>
+                        <td class="mcp-category">Data & Analytics</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Time Zones</td>
+                        <td class="mcp-category">Data & Analytics</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <!-- Developer Tools -->
+                    <tr>
+                        <td class="mcp-name">AWS Cloud</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Docker Compose</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Fetch HTTP</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Filesystem Ops</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Git Operations</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">GitHub API</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">GitLab API</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">JSON Transformer</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Linear Issues</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Playwright Browser</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Puppeteer Headless</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Sentry Monitoring</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Sequential Thinking</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-free">Free</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Vercel Deploy</td>
+                        <td class="mcp-category">Developer Tools</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <!-- Industry AI Solutions -->
+                    <tr>
+                        <td class="mcp-name">AI Economy Infrastructure</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Agriculture AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Autonomous Vehicles AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Construction AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Employment AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Energy AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Financial AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Gaming AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Healthcare AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Insurance AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Law Enforcement AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Legal Tech AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Maritime AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Media & Advertising AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Mining AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Real Estate AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Retail AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Smart Cities AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Space AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Sports Analytics AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Supply Chain AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Telecom AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Travel & Hospitality AI</td>
+                        <td class="mcp-category">Industry AI Solutions</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <!-- Platform & Infrastructure -->
+                    <tr>
+                        <td class="mcp-name">Biometrics AI</td>
+                        <td class="mcp-category">Platform & Infrastructure</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">COBOL Bridge</td>
+                        <td class="mcp-category">Platform & Infrastructure</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">Digital Human Library</td>
+                        <td class="mcp-category">Platform & Infrastructure</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">OneOS Education</td>
+                        <td class="mcp-category">Platform & Infrastructure</td>
+                        <td><span class="tier-badge tier-pro">Pro</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ ✓ ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">PMCP Gateway</td>
+                        <td class="mcp-category">Platform & Infrastructure</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="mcp-name">THN Global</td>
+                        <td class="mcp-category">Platform & Infrastructure</td>
+                        <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                        <td class="availability-cell"><span class="availability-check">✓ — ✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Pricing Overview Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-container">
+            <div class="pricing-header">
+                <h2 class="professional-title section-title reveal" class="section-title" class="professional-title">Pricing Overview</h2>
+                <p class="section-subtitle reveal" class="professional-body">Choose the tier that fits your organization's needs. All tiers include 24/7 support and automatic updates.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="card-professional">
+                    <h3 class="professional-title"><h3 class="professional-title" class="professional-title">LVP - Free</h3>
+                    <p class="professional-body">$0/month</p>
+                    <div class="pricing-details">
+                        24+ free MCPs • Basic support • Community access • 5GB storage • Standard uptime SLA
+                    </div>
+                    <a href="/pricing.html" class="pricing-link">View Full Details →</a>
+                </div>
+
+                <div class="card-professional">
+                    <h3 class="professional-title"><h3 class="professional-title" class="professional-title">MVP - Pro</h3>
+                    <p class="professional-body">$29/month</p>
+                    <div class="pricing-details">
+                        47+ MCPs • Priority support • 100GB storage • Advanced analytics • 99.5% uptime SLA
+                    </div>
+                    <a href="/pricing.html" class="pricing-link">View Full Details →</a>
+                </div>
+
+                <div class="card-professional">
+                    <h3 class="professional-title"><h3 class="professional-title" class="professional-title">HVP - Enterprise</h3>
+                    <p class="professional-body">$79/month</p>
+                    <div class="pricing-details">
+                        All 70 MCPs • 24/7 dedicated support • Unlimited storage • Custom integrations • 99.99% uptime SLA
+                    </div>
+                    <a href="/pricing.html" class="pricing-link">View Full Details →</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 20px;" class="professional-body">For detailed pricing information including membership bundles and volume discounts, visit our pricing page.</p>
+                <a href="/pricing.html" class="btn-professional">View Complete Pricing →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2 class="professional-title section-title" class="section-title" class="professional-title">Ready to Deploy?</h2>
+            <p class="section-subtitle" class="professional-body">Start exploring CSGA's 70+ MCP servers today. Find the perfect solution for your AI integration needs.</p>
+            <div class="btn-professional">
+                <a href="./mcp/" class="btn-professional">Explore MCP Hub</a>
+                <a href="/pricing.html" class="btn-professional">View Pricing</a>
+                <a href="/contact.html" class="btn-professional">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Ecosystem Bar -->
+        <div class="footer-ecosystem">
+            <div class="ecosystem-title">Distribution Channels</div>
+            <div class="ecosystem-grid">
+                <div class="ecosystem-badge">CSGA MCP Hub</div>
+                <div class="ecosystem-badge">Smithery.ai</div>
+                <div class="ecosystem-badge">GitHub Open Source</div>
+                <div class="ecosystem-badge">70 MCPs</div>
+                <div class="ecosystem-badge">Free Tier</div>
+                <div class="ecosystem-badge">Pro Tier</div>
+                <div class="ecosystem-badge">Enterprise Tier</div>
+                <div class="ecosystem-badge">Self-Hosted</div>
+                <div class="ecosystem-badge">Managed Deployment</div>
+                <div class="ecosystem-badge">24/7 Support</div>
+            </div>
+        </div>
+
+        <!-- Main Footer Grid -->
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Distribution</h4>
+                <a href="./mcp/" class="footer-link">MCP Hub</a>
+                <a href="https://smithery.ai" class="footer-link">Smithery.ai</a>
+                <a href="https://github.com/CSGA-GLOBAL" class="footer-link">GitHub Repos</a>
+                <a href="/distribution.html" class="footer-link">Distribution</a>
+                <a href="/catalog.html" class="footer-link">MCP Catalog</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Platform</h4>
+                <a href="./mcp/" class="footer-link">Overview</a>
+                <a href="/pricing.html" class="footer-link">Pricing</a>
+                <a href="/catalog.html" class="footer-link">All MCPs</a>
+                <a href="/sdk.html" class="footer-link">API Docs</a>
+                <a href="/dashboard.html" class="footer-link">Dashboard</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <a href="/blog/" class="footer-link">Blog</a>
+                <a href="/research.html" class="footer-link">Research</a>
+                <a href="/case-studies.html" class="footer-link">Case Studies</a>
+                <a href="/events.html" class="footer-link">Events</a>
+                <a href="/sdk.html" class="footer-link">Documentation</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="/about.html" class="footer-link">About CSGA</a>
+                <a href="/partners.html" class="footer-link">Partners</a>
+                <a href="/about.html" class="footer-link">Careers</a>
+                <a href="/about.html" class="footer-link">Press</a>
+                <a href="/contact.html" class="footer-link">Contact</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="/privacy.html" class="footer-link">Privacy</a>
+                <a href="/terms.html" class="footer-link">Terms</a>
+                <a href="/cybersecurity.html" class="footer-link">Security</a>
+                <a href="/ai-governance.html" class="footer-link">Compliance</a>
+                <a href="/cookies.html" class="footer-link">Cookies</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <a href="https://linkedin.com/company/csga-global" class="footer-link">LinkedIn</a>
+                <a href="https://twitter.com/csga_global" class="footer-link">Twitter/X</a>
+                <a href="https://github.com/csga-global" class="footer-link">GitHub</a>
+                <a href="https://slack.csga.global" class="footer-link">Slack</a>
+                <a href="mailto:hello@csga.global" class="footer-link">Email</a>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div>&copy; 2026 CSGA Global. All rights reserved.</div>
+            <div class="footer-legal">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/cybersecurity.html">Security</a>
+                <a href="/accessibility.html">Accessibility</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

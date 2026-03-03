@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>About CSGA Global - Leadership, Mission & Heritage</title>
+ <meta name="description" content="CSGA Global is the commercial arm of the CSOAI Group  developing AI governance standards, cybersecurity solutions, and defence systems across 36 sectors with a 52-article constitutional framework.">
+ 
+ 
+ <style>
+.hero-about {
+ background: linear-gradient(135deg, rgba(10, 22, 40, 0.88), rgba(0, 88, 164, 0.82)),
+ url('assets/media/thought-leader.jpg');
+ background-size: cover;
+ background-position: center top;
+ padding: 100px 20px 80px;
+ text-align: center;
+ color: white;
+ min-height: 480px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ .hero-about-inner { max-width: 800px; margin: 0 auto; }
+ .hero-about h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.2rem;
+ font-weight: 700;
+ margin-bottom: 18px;
+ text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ }
+ .hero-about .subtitle {
+ font-size: 1.15rem;
+ font-weight: 300;
+ max-width: 650px;
+ margin: 0 auto 30px;
+ color: rgba(255, 255, 255, 0.95);
+ line-height: 1.7;
+ }
+ .hero-stats {
+ display: flex;
+ justify-content: center;
+ gap: 40px;
+ flex-wrap: wrap;
+ margin-top: 10px;
+ }
+ .hero-stat { text-align: center; }
+ .hero-stat .num {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ font-weight: 700;
+ color: #3182ce;
+ display: block;
+ }
+ .hero-stat .label {
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.8);
+ margin-top: 4px;
+ }
+ /* Heritage Section */
+ .heritage-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .heritage-inner {
+ max-width: 1100px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: 1fr 380px;
+ gap: 60px;
+ align-items: start;
+ }
+ .heritage-text h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ margin-bottom: 20px;
+ }
+ .heritage-text p {
+ font-size: 1rem;
+ line-height: 1.85;
+ color: #333;
+ margin-bottom: 16px;
+ }
+ .heritage-sidebar {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ border-radius: 12px;
+ padding: 35px 30px;
+ color: white;
+ }
+ .heritage-sidebar h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.2rem;
+ margin-bottom: 24px;
+ color: #3182ce;
+ }
+ .heritage-sidebar .fact {
+ margin-bottom: 20px;
+ padding-bottom: 20px;
+ border-bottom: 1px solid rgba(255,255,255,0.1);
+ }
+ .heritage-sidebar .fact:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+ .heritage-sidebar .fact-num {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.6rem;
+ font-weight: 700;
+ color: #3182ce;
+ }
+ .heritage-sidebar .fact-label {
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.8);
+ margin-top: 2px;
+ }
+ /* Mission & Vision */
+ .mission-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .mission-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ .mission-card {
+ background: white;
+ padding: 40px 35px;
+ border-radius: 12px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+ border-top: 4px solid #0058A4;
+ }
+ .mission-card.vision { border-top-color: #3182ce; }
+ .mission-card h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.6rem;
+ color: #0058A4;
+ margin-bottom: 18px;
+ }
+ .mission-card.vision h2 { color: #b8922e; }
+ .mission-card p {
+ font-size: 0.95rem;
+ line-height: 1.8;
+ color: #444;
+ margin-bottom: 14px;
+ }
+ /* Values Section */
+ .values-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .values-header {
+ text-align: center;
+ max-width: 700px;
+ margin: 0 auto 50px;
+ }
+ .values-header h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ margin-bottom: 12px;
+ }
+ .values-header p { color: #666; font-size: 1rem; line-height: 1.6; }
+ .values-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 24px;
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ .value-card {
+ background: #f8f9fa;
+ padding: 28px 24px;
+ border-radius: 12px;
+ border-left: 4px solid #0058A4;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+ .value-card:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+ }
+ .value-card .val-icon {
+ width: 44px;
+ height: 44px;
+ background: linear-gradient(135deg, #A30000, #3182ce);
+ border-radius: 8px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 14px;
+ color: white;
+ font-size: 1.2rem;
+ }
+ .value-card h4 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ color: #0A1628;
+ font-size: 1.05rem;
+ margin-bottom: 8px;
+ }
+ .value-card p { font-size: 0.88rem; color: #555; line-height: 1.6; }
+ /* Ecosystem Section */
+ .ecosystem-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .ecosystem-content { max-width: 1200px; margin: 0 auto; }
+ .ecosystem-content > h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 12px;
+ }
+ .ecosystem-subtitle {
+ text-align: center;
+ color: #666;
+ font-size: 1rem;
+ max-width: 650px;
+ margin: 0 auto 50px;
+ line-height: 1.6;
+ }
+ .ecosystem-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 24px;
+ }
+ .eco-entity {
+ background: white;
+ padding: 28px 24px;
+ border-radius: 12px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+ border-top: 3px solid #3182ce;
+ transition: transform 0.2s ease;
+ }
+ .eco-entity:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+ .eco-entity .eco-icon {
+ width: 48px;
+ height: 48px;
+ background: linear-gradient(135deg, #A30000, #3182ce);
+ border-radius: 12px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 16px;
+ color: white;
+ font-size: 1.3rem;
+ }
+ .eco-entity h4 {
+ color: #0058A4;
+ margin-bottom: 8px;
+ font-size: 1rem;
+ font-weight: 700;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .eco-entity p {
+ font-size: 0.88rem;
+ color: #555;
+ line-height: 1.6;
+ margin-bottom: 12px;
+ }
+ .eco-entity a {
+ color: #0058A4;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 0.85rem;
+ }
+ .eco-entity a:hover { text-decoration: underline; }
+ /* Leadership Section */
+ .team-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .team-content { max-width: 1100px; margin: 0 auto; }
+ .team-content > h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 12px;
+ }
+ .team-subtitle {
+ text-align: center;
+ color: #666;
+ font-size: 1rem;
+ max-width: 600px;
+ margin: 0 auto 50px;
+ }
+ .leadership-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ margin-bottom: 40px;
+ }
+ .advisory-grid {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 24px;
+ margin-bottom: 40px;
+ }
+ .leader-card {
+ background: #f8f9fa;
+ border-radius: 12px;
+ padding: 35px 30px;
+ text-align: center;
+ border-top: 4px solid #0058A4;
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
+ .leader-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+ }
+ .leader-card.secondary { border-top-color: #3182ce; }
+ .leader-card.gold { border-top-color: #3182ce; }
+ .leader-avatar {
+ width: 140px;
+ height: 140px;
+ border-radius: 50%;
+ margin: 0 auto 20px;
+ overflow: hidden;
+ border: 4px solid #0058A4;
+ box-shadow: 0 4px 15px rgba(0,88,164,0.2);
+ }
+ .leader-card.secondary .leader-avatar,
+ .leader-card.gold .leader-avatar { border-color: #3182ce; box-shadow: 0 4px 15px rgba(204,0,0,0.2); }
+ .leader-avatar img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ }
+ .leader-card h3 {
+ color: #0A1628;
+ font-size: 1.3rem;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ margin-bottom: 4px;
+ }
+ .leader-card .role {
+ color: #0058A4;
+ font-weight: 600;
+ font-size: 0.9rem;
+ margin-bottom: 14px;
+ }
+ .leader-card.secondary .role,
+ .leader-card.gold .role { color: #b8922e; }
+ .leader-card .bio {
+ font-size: 0.9rem;
+ color: #555;
+ line-height: 1.7;
+ text-align: left;
+ margin-bottom: 14px;
+ }
+ .leader-card .leader-link {
+ color: #0058A4;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 0.85rem;
+ display: inline-flex;
+ align-items: center;
+ gap: 4px;
+ }
+ .leader-card .leader-link:hover { text-decoration: underline; }
+ .advisory-card {
+ background: #f8f9fa;
+ border-radius: 12px;
+ padding: 24px 18px;
+ text-align: center;
+ border-top: 3px solid #3182ce;
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
+ .advisory-card:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+ }
+ .advisory-avatar {
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ margin: 0 auto 14px;
+ overflow: hidden;
+ border: 3px solid #3182ce;
+ }
+ .advisory-avatar img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ }
+ .advisory-card h4 {
+ color: #0A1628;
+ font-size: 1rem;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ margin-bottom: 4px;
+ }
+ .advisory-card .adv-role {
+ color: #b8922e;
+ font-weight: 600;
+ font-size: 0.8rem;
+ margin-bottom: 8px;
+ }
+ .advisory-card .adv-bio {
+ font-size: 0.8rem;
+ color: #666;
+ line-height: 1.6;
+ }
+ @media (max-width: 768px) {
+ .advisory-grid { grid-template-columns: 1fr 1fr; }
+ .leadership-grid { grid-template-columns: 1fr; }
+ }
+ @media (max-width: 500px) {
+ .advisory-grid { grid-template-columns: 1fr; }
+ }
+ /* Advisory / Council Banner */
+ .council-banner {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ border-radius: 12px;
+ padding: 35px 40px;
+ display: grid;
+ grid-template-columns: 1fr auto;
+ gap: 30px;
+ align-items: center;
+ color: white;
+ }
+ .council-banner h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.3rem;
+ margin-bottom: 8px;
+ color: #3182ce;
+ }
+ .council-banner p {
+ font-size: 0.92rem;
+ color: rgba(255,255,255,0.85);
+ line-height: 1.6;
+ }
+ .council-banner a {
+ background: #3182ce;
+ color: #0A1628;
+ padding: 12px 28px;
+ border-radius: 8px;
+ text-decoration: none;
+ font-weight: 700;
+ font-size: 0.95rem;
+ white-space: nowrap;
+ transition: all 0.2s ease;
+ }
+ .council-banner a:hover {
+ background: #e8bc6a;
+ transform: translateY(-2px);
+ }
+ /* Timeline */
+ .timeline-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .timeline-content { max-width: 900px; margin: 0 auto; }
+ .timeline-content > h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .timeline { position: relative; padding: 20px 0; }
+ .timeline::before {
+ content: '';
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 3px;
+ height: 100%;
+ background: linear-gradient(to bottom, #0058A4, #3182ce);
+ }
+ .timeline-item {
+ margin-bottom: 50px;
+ width: 48%;
+ position: relative;
+ }
+ .timeline-item:nth-child(odd) {
+ margin-left: 0;
+ text-align: right;
+ padding-right: 4%;
+ }
+ .timeline-item:nth-child(even) {
+ margin-left: 52%;
+ text-align: left;
+ padding-left: 4%;
+ }
+ .timeline-marker {
+ position: absolute;
+ width: 20px;
+ height: 20px;
+ background: #0058A4;
+ border: 3px solid white;
+ border-radius: 50%;
+ left: 50%;
+ transform: translateX(-50%);
+ top: 0;
+ box-shadow: 0 2px 8px rgba(0,88,164,0.3);
+ }
+ .timeline-item:nth-child(odd) .timeline-marker {
+ left: 100%;
+ margin-left: 10px;
+ }
+ .timeline-item:nth-child(even) .timeline-marker {
+ left: 0;
+ margin-left: -10px;
+ }
+ .timeline-content-box {
+ background: white;
+ padding: 25px;
+ border-radius: 12px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ border-left: 3px solid #3182ce;
+ }
+ .timeline-year {
+ font-weight: 700;
+ color: #0058A4;
+ font-size: 1.1rem;
+ margin-bottom: 5px;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .timeline-content-box h4 {
+ color: #0A1628;
+ font-size: 0.95rem;
+ margin-bottom: 6px;
+ }
+ .timeline-content-box p {
+ color: #555;
+ font-size: 0.9rem;
+ line-height: 1.6;
+ }
+ /* Governance Section */
+ .governance-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .governance-inner {
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+ .governance-inner > h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 12px;
+ }
+ .governance-subtitle {
+ text-align: center;
+ color: #666;
+ font-size: 1rem;
+ max-width: 650px;
+ margin: 0 auto 50px;
+ line-height: 1.6;
+ }
+ .governance-grid {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 24px;
+ }
+ .gov-card {
+ background: #f8f9fa;
+ padding: 30px 28px;
+ border-radius: 12px;
+ border-left: 4px solid #0058A4;
+ }
+ .gov-card h4 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ color: #0A1628;
+ font-size: 1.05rem;
+ margin-bottom: 10px;
+ }
+ .gov-card p { font-size: 0.9rem; color: #555; line-height: 1.7; }
+ /* CTA */
+ .cta-about-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ text-align: center;
+ color: white;
+ }
+ .cta-about-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ margin-bottom: 16px;
+ }
+ .cta-about-section > p {
+ font-size: 1.05rem;
+ margin-bottom: 30px;
+ max-width: 550px;
+ margin-left: auto;
+ margin-right: auto;
+ color: rgba(255,255,255,0.9);
+ }
+ .cta-button {
+ background: #3182ce;
+ color: white;
+ padding: 15px 40px;
+ border: none;
+ border-radius: 12px;
+ font-size: 1.05rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.25s ease;
+ text-decoration: none;
+ display: inline-block;
+ }
+ .cta-button:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ box-shadow: 0 10px 25px rgba(204, 0, 0, 0.3);
+ }
+ @media (max-width: 768px) {
+ .hero-about h1 { font-size: 2.2rem; }
+ .hero-stats { gap: 24px; }
+ .hero-stat .num { font-size: 1.6rem; }
+ .heritage-inner { grid-template-columns: 1fr; }
+ .mission-grid { grid-template-columns: 1fr; }
+ .values-grid { grid-template-columns: 1fr; }
+ .ecosystem-grid { grid-template-columns: 1fr; }
+ .leadership-grid { grid-template-columns: 1fr; }
+ .governance-grid { grid-template-columns: 1fr; }
+ .council-banner { grid-template-columns: 1fr; text-align: center; }
+ .council-banner a { justify-self: center; }
+ .timeline::before { left: 20px; }
+ .timeline-item {
+ width: 100%;
+ margin-left: 0 !important;
+ padding-left: 60px !important;
+ text-align: left !important;
+ padding-right: 0 !important;
+ }
+ .timeline-item:nth-child(odd) .timeline-marker,
+ .timeline-item:nth-child(even) .timeline-marker {
+ left: 20px;
+ margin-left: 0;
+ }
+ .cta-about-section h2 { font-size: 1.8rem; }
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/about">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="About CSGA Global - Leadership, Mission & Heritage">
+ <meta property="og:description" content="CSGA Global is the commercial arm of the CSOAI Group  developing AI governance standards, cybersecurity solutions, and defence systems across 36 sectors with a 52-article constitutional framework.">
+ <meta property="og:url" content="https://csga-global.vercel.app/about">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="About CSGA Global - Leadership, Mission & Heritage">
+ <meta name="twitter:description" content="CSGA Global is the commercial arm of the CSOAI Group  developing AI governance standards, cybersecurity solutions, and defence systems across 36 sectors with a 52-article constitutional framework.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"About CSGA Global - Leadership, Mission & Heritage","description":"CSGA Global is the commercial arm of the CSOAI Group \u2014 developing AI governance standards, cybersecurity solutions, and defence systems across 36 sectors with a 52-article constitutional framework.","url":"https://csga-global.vercel.app/about","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="hero-about">
+ <div class="hero-about-inner">
+ <h1 class="professional-title professional-title" class="professional-title">About CSGA Global</h1>
+ <p class="subtitle" class="professional-body">The commercial arm of the CSOAI Group &mdash; delivering AI governance standards, cybersecurity solutions, and defence-grade compliance across 36 industry sectors worldwide.</p>
+ <div class="hero-stats">
+ <div class="hero-stat"><span class="num">52</span><span class="label">Constitutional Articles</span></div>
+ <div class="hero-stat"><span class="num">17</span><span class="label">Global Crosswalks</span></div>
+ <div class="hero-stat"><span class="num">36</span><span class="label">Industry Sectors</span></div>
+ <div class="hero-stat"><span class="num">13</span><span class="label">MCP Servers</span></div>
+ <div class="hero-stat"><span class="num">8</span><span class="label">Production Sites</span></div>
+ </div>
+ </div>
+</section>
+
+<section class="heritage-section">
+ <div class="heritage-inner">
+ <div class="heritage-text">
+ <h2 class="professional-title professional-title" class="professional-title">Our Heritage &amp; Origins</h2>
+ <p class="professional-body">CSGA Global was founded on a simple but urgent premise: as AI systems become deeply embedded in critical infrastructure, governance cannot be an afterthought. It must be constitutional &mdash; principled, enforceable, and internationally portable.</p>
+ <p class="professional-body">Born from the convergence of cybersecurity expertise and AI ethics research, the CSOAI Group set out to build not just another compliance checklist, but a living constitutional framework that bridges the gap between technical implementation and regulatory obligation across jurisdictions.</p>
+ <p class="professional-body">Today, our 52-article constitutional framework &mdash; mapped to 17 international standards including ISO 42001, NIST AI RMF, the EU AI Act, and NATO STANAG protocols &mdash; serves as the foundation for organisations seeking responsible AI adoption at scale.</p>
+ <p class="professional-body">From healthcare and financial services to defence and critical national infrastructure, CSGA Global provides the standards, platforms, certifications, and human expertise that make trustworthy AI a reality rather than an aspiration.</p>
+ </div>
+ <div class="heritage-sidebar">
+ <h3 class="professional-title professional-title" class="professional-title">Key Facts</h3>
+ <div class="fact"><div class="fact-num">12,847+</div><div class="fact-label">Professionals on Platform</div></div>
+ <div class="fact"><div class="fact-num">500+</div><div class="fact-label">Hours of MOOC Content</div></div>
+ <div class="fact"><div class="fact-num">5</div><div class="fact-label">Five Eyes Nations Served</div></div>
+ <div class="fact"><div class="fact-num">4-Tier</div><div class="fact-label">CASA Certification Levels</div></div>
+ <div class="fact"><div class="fact-num">36</div><div class="fact-label">MOOC Programmes</div></div>
+ </div>
+ </div>
+</section>
+
+<!-- Key Partnerships Section -->
+<section class="partnerships-section" style="background: linear-gradient(135deg, #f8fafc, #ffffff); padding: 80px 20px;">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <div style="margin-bottom: 48px;">
+      <span style="display: inline-block; background: rgba(49,130,206,0.1); color: #3182ce; padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Strategic Partnerships</span>
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 16px;" class="section-title" class="professional-title" class="professional-title">Global Alliance Network</h2>
+      <p style="font-size: 1.1rem; color: #4b5563; max-width: 800px; margin: 0 auto;" class="professional-body">CSGA operates through strategic partnerships with leading academic institutions and defense organizations worldwide.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px;">
+      <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <h3 style="color: #1a202c; font-size: 1.3rem; margin-bottom: 16px;" class="subsection-title" class="professional-title" class="professional-title"> Academic Partnership</h3>
+        <p style="color: #4b5563; font-size: 1.05rem; line-height: 1.6;" class="professional-body">In partnership with the Borough of Manhattan Community College (BMCC) and the City University of New York (CUNY), delivering workforce-ready cybersecurity and AI education aligned to real-world operational needs.</p>
+      </div>
+      <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <h3 style="color: #1a202c; font-size: 1.3rem; margin-bottom: 16px;" class="subsection-title" class="professional-title" class="professional-title"> Defense Alliance</h3>
+        <p style="color: #4b5563; font-size: 1.05rem; line-height: 1.6;" class="professional-body">Strategic alignment with the Council for the Safety of Artificial Intelligence (CSOAI) and Terranova Aerospace and Defense Group to advance global AI safety, ethics, and governance across defense and civilian sectors.</p>
+      </div>
+      <div style="background: white; padding: 32px; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <h3 style="color: #1a202c; font-size: 1.3rem; margin-bottom: 16px;" class="subsection-title" class="professional-title" class="professional-title"> Global Network</h3>
+        <p style="color: #4b5563; font-size: 1.05rem; line-height: 1.6;" class="professional-body">International alliance offering members access to resources, briefings, research, events, and collaborative opportunities across the Five Eyes nations and beyond.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mission-section">
+ <div class="mission-grid">
+ <div class="card-professional">
+ <h2 class="professional-title professional-title" class="professional-title">Our Mission</h2>
+ <p class="professional-body">To establish the CSOAI constitutional framework as the definitive standard for ethical, effective AI governance &mdash; enabling organisations across 36 industry sectors to deploy AI systems with confidence, accountability, and full regulatory alignment.</p>
+ <p class="professional-body">We achieve this through a comprehensive ecosystem of standards, platforms, education, and professional services that translate constitutional principles into practical, auditable implementation.</p>
+ </div>
+ <div class="card-professional">
+ <h2 class="professional-title professional-title" class="professional-title">Our Vision</h2>
+ <p class="professional-body">A future where AI systems operate in genuine cognitive symbiosis with human decision-makers &mdash; where cybersecurity is proactive rather than reactive, and technological advancement is guided by constitutional principles of safety, accountability, and transparency.</p>
+ <p class="professional-body">Through strategic alliance with Terranova Aerospace and Defense Group, our MCP servers, CASA certification programme, and defence-grade compliance tools, CSGA Global is already delivering this vision to organisations across the Five Eyes alliance and beyond.</p>
+ </div>
+ </div>
+</section>
+
+<section class="values-section">
+ <div class="values-header">
+ <h2 class="professional-title professional-title" class="professional-title">Core Values</h2>
+ <p class="professional-body">The principles that guide every standard we write, every platform we build, and every certification we issue.</p>
+ </div>
+ <div class="values-grid">
+ <div class="card-professional">
+ <div class="val-icon">&#9878;</div>
+ <h4>Constitutional Integrity</h4>
+ <p class="professional-body">Every governance decision rooted in principled, auditable frameworks that withstand regulatory scrutiny across jurisdictions.</p>
+ </div>
+ <div class="card-professional">
+ <div class="val-icon">&#9733;</div>
+ <h4>Technical Excellence</h4>
+ <p class="professional-body">Rigorous standards and deep domain expertise ensuring our platforms and certifications meet the highest technical benchmarks.</p>
+ </div>
+ <div class="card-professional">
+ <div class="val-icon">&#9851;</div>
+ <h4>Responsible Innovation</h4>
+ <p class="professional-body">Advancing AI capabilities while maintaining unwavering commitment to safety, ethics, and societal benefit.</p>
+ </div>
+ <div class="card-professional">
+ <div class="val-icon">&#9741;</div>
+ <h4>Allied Collaboration</h4>
+ <p class="professional-body">Working across Five Eyes nations, NATO partners, and international bodies to build interoperable governance standards.</p>
+ </div>
+ <div class="card-professional">
+ <div class="val-icon">&#9881;</div>
+ <h4>Operational Transparency</h4>
+ <p class="professional-body">Clear, honest communication about capabilities, limitations, and the real-world impact of our AI governance solutions.</p>
+ </div>
+ <div class="card-professional">
+ <div class="val-icon">&#9889;</div>
+ <h4>Defence-Grade Security</h4>
+ <p class="professional-body">Treating every deployment with the rigour and threat awareness demanded by national security and critical infrastructure protection.</p>
+ </div>
+ </div>
+</section>
+
+<section class="ecosystem-section">
+ <div class="ecosystem-content">
+ <h2 class="professional-title professional-title" class="professional-title">The CSOAI Group Ecosystem</h2>
+ <p class="ecosystem-subtitle" class="professional-body">A comprehensive, integrated ecosystem of standards, platforms, and services delivering constitutional AI governance at scale.</p>
+ <div class="ecosystem-grid">
+ <div class="eco-entity">
+ <div class="eco-icon">&#9733;</div>
+ <h4>CSGA Global</h4>
+ <p class="professional-body">The commercial arm delivering AI governance solutions, cybersecurity services, and compliance tooling to organisations across 36 industry sectors.</p>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#9878;</div>
+ <h4>CSOAI Standards</h4>
+ <p class="professional-body">The 52-article constitutional framework with 17 global regulatory crosswalks including ISO 42001, NIST AI RMF, EU AI Act, and NATO protocols.</p>
+ <a href="csoai-standards">View Standards &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon"><div class="dept-icon-professional">RES</div></div>
+ <h4>CSGA AI Research Institute</h4>
+ <p class="professional-body">Advanced research in AI safety, cognitive symbiosis, and the intersection of machine learning with constitutional governance principles.</p>
+ <a href="research">View Research &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#9881;</div>
+ <h4>OneOS Platform</h4>
+ <p class="professional-body">The integrated learning and operations platform serving 12,847+ professionals with 36 MOOC programmes, certification tracking, and compliance dashboards.</p>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon"><div class="dept-icon-professional">VET</div></div>
+ <h4>CASA Certification</h4>
+ <p class="professional-body">4-tier Certified AI Safety Analyst programme accrediting professionals from Foundation through to Lead Auditor level across all 36 sectors.</p>
+ <a href="certification">View Certification &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#128268;</div>
+ <h4>MCP Marketplace</h4>
+ <p class="professional-body">13 machine-readable compliance protocol servers enabling automated AI governance assessment, policy enforcement, and real-time compliance monitoring.</p>
+ <a href="pricing">View MCP Servers &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#128737;</div>
+ <h4>TSO-CSRT</h4>
+ <p class="professional-body">Threat and Security Operations &mdash; Cyber Security Response Team providing 24/7 threat intelligence, incident response, and security operations for CSOAI-certified organisations.</p>
+ <a href="tso-csrt">View TSO-CSRT &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#127963;</div>
+ <h4>Defence Systems</h4>
+ <p class="professional-body">DefenceOS and military AI governance solutions supporting NATO-aligned defence forces with classified-environment compliance and operational safety assurance.</p>
+ <a href="cyber-defence">View Defence &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon"><div class="dept-icon-professional">EDU</div></div>
+ <h4>BMCC Cyber</h4>
+ <p class="professional-body">Cybersecurity education and training provider in partnership with the City University of New York (CUNY), delivering accredited programmes, workforce development, and professional upskilling pathways.</p>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon">&#128506;</div>
+ <h4>17 Framework Crosswalks</h4>
+ <p class="professional-body">Comprehensive regulatory mapping to ISO 42001, NIST AI RMF, EU AI Act, NATO STANAG, GDPR, SOC 2, HIPAA, and 10 additional international frameworks.</p>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon"><div class="dept-icon-professional">EVT</div></div>
+ <h4>36 Sector Implementations</h4>
+ <p class="professional-body">Sector-specific AI governance implementations spanning healthcare, finance, defence, energy, transport, government, education, and critical national infrastructure.</p>
+ <a href="casa-sectors">View Sectors &rarr;</a>
+ </div>
+ <div class="eco-entity">
+ <div class="eco-icon"><div class="dept-icon-professional">MCP</div></div>
+ <h4>8 Production Sites</h4>
+ <p class="professional-body">The live CSOAI Group digital ecosystem including CSGA Global, OneOS, BMCC Cyber, and sector-specific portals serving the global community.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="team-section">
+ <div class="team-content">
+ <h2 class="professional-title professional-title" class="professional-title">Leadership</h2>
+ <p class="team-subtitle" class="professional-body">The founding team bringing together AI governance, cybersecurity, and constitutional framework expertise.</p>
+ <div class="leadership-grid">
+ <div class="card-professional">
+ <div class="leader-avatar">
+ <img src="assets/team/csga-president.jpg" alt="Nick Templeman" loading="lazy">
+ </div>
+ <h3 class="professional-title professional-title" class="professional-title">Nick Templeman</h3>
+ <div class="role">Founder &amp; Chief Executive Officer</div>
+ <div class="bio">Nick is the architect of the CSOAI constitutional framework and the driving force behind CSGA Global&rsquo;s mission to make AI governance practical, enforceable, and internationally portable. With a background spanning AI research, cognitive symbiosis, and organisational transformation, he leads the strategic vision for the CSOAI Group ecosystem &mdash; from the 52-article framework and 17 global crosswalks to the MCP Marketplace and CASA certification programme.</div>
+ </div>
+ <div class="card-professional">
+ <div class="leader-avatar">
+ <img src="assets/team/james-castle-headshot.jpg" alt="James Castle" loading="lazy">
+ </div>
+ <h3 class="professional-title professional-title" class="professional-title">James Castle</h3>
+ <div class="role">Co-Founder &amp; Chief Security Architect</div>
+ <div class="bio">James brings deep cybersecurity and defence expertise to CSGA Global, overseeing security architecture, threat intelligence, and the technical integrity of all CSOAI-certified systems and MCP deployments. His work ensures that every standard, platform, and certification meets defence-grade security requirements across Five Eyes jurisdictions.</div>
+ <a href="https://jamescastle.ca" target="_blank" rel="noopener" class="leader-link">jamescastle.ca &rarr;</a>
+ </div>
+ </div>
+ <h3 style="text-align:center; font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; color: #0A1628; font-size: 1.6rem; margin-bottom: 8px;" class="subsection-title" class="professional-title" class="professional-title">Advisory Board &amp; Senior Associates</h3>
+ <p style="text-align:center; color: #666; max-width: 600px; margin: 0 auto 30px; font-size: 0.95rem;" class="professional-body">Subject-matter experts guiding CSGA Global&rsquo;s strategic direction across cybersecurity, AI governance, and international defence.</p>
+ <div class="advisory-grid">
+ <div class="card-professional">
+ <div class="advisory-avatar">
+ <img src="assets/team/dr-chris-golden.jpg" alt="Dr. Chris Golden" loading="lazy">
+ </div>
+ <h4>Dr. Chris Golden</h4>
+ <div class="adv-role">Chief Science Officer</div>
+ <div class="adv-bio">AI research &amp; cognitive symbiosis lead, driving the scientific foundations of the CSOAI framework.</div>
+ </div>
+ <div class="card-professional">
+ <div class="advisory-avatar">
+ <img src="assets/team/samir-azizi.jpg" alt="Samir Azizi" loading="lazy">
+ </div>
+ <h4>Samir Azizi</h4>
+ <div class="adv-role">Director of Operations</div>
+ <div class="adv-bio">Operational strategy &amp; global partnership development across Five Eyes and emerging markets.</div>
+ </div>
+ <div class="card-professional">
+ <div class="advisory-avatar">
+ <img src="assets/team/terry-temple.jpg" alt="Terry Temple" loading="lazy">
+ </div>
+ <h4>Terry Temple</h4>
+ <div class="adv-role">Senior Defence Advisor</div>
+ <div class="adv-bio">Defence intelligence &amp; NATO standards alignment for CSOAI compliance architecture.</div>
+ </div>
+ <div class="card-professional">
+ <div class="advisory-avatar">
+ <img src="assets/team/dr-eyal-pinko.jpg" alt="Dr. Eyal Pinko" loading="lazy">
+ </div>
+ <h4>Dr. Eyal Pinko</h4>
+ <div class="adv-role">Cyber Intelligence Advisor</div>
+ <div class="adv-bio">Former Israeli Navy intelligence officer specialising in cyber threat analysis &amp; national security AI governance.</div>
+ </div>
+ </div>
+ <div class="council-banner">
+ <div>
+ <h3 class="professional-title professional-title" class="professional-title">CSGA Global Council</h3>
+ <p class="professional-body">Our advisory council brings together senior leaders from cybersecurity, AI governance, defence, and international standards bodies to guide strategic direction and ensure the CSOAI framework remains at the forefront of responsible AI development.</p>
+ </div>
+ <a href="global-council">View Council &rarr;</a>
+ </div>
+ </div>
+</section>
+
+<section class="timeline-section">
+ <div class="timeline-content">
+ <h2 class="professional-title professional-title" class="professional-title">Our Journey</h2>
+ <div class="timeline">
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2022 &mdash; Foundation</div>
+ <h4>CSOAI Group Established</h4>
+ <p class="professional-body">Founded to bridge the critical gap between AI governance and cybersecurity standards, recognising that constitutional principles must underpin all AI deployment.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2023 &mdash; Framework</div>
+ <h4>Constitutional Framework Authored</h4>
+ <p class="professional-body">52-article CSOAI constitutional framework completed with 17 global regulatory crosswalks mapping to ISO 42001, NIST AI RMF, EU AI Act, and NATO STANAG protocols.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2024 &mdash; Platform Launch</div>
+ <h4>OneOS &amp; CASA Certification</h4>
+ <p class="professional-body">OneOS learning platform launched with 36 MOOC programmes. CASA certification programme rolled out across all 36 industry sectors with 4-tier accreditation pathway.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2024 &mdash; Scale</div>
+ <h4>MCP Marketplace &amp; Ecosystem Growth</h4>
+ <p class="professional-body">13 MCP servers deployed for automated compliance. 8 production sites launched. Platform surpasses 12,847 active professionals across multiple global markets.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content-box">
+ <div class="timeline-year">2025 &mdash; Defence &amp; Research</div>
+ <h4>DefenceOS &amp; AI Research Institute</h4>
+ <p class="professional-body">Expansion into defence with DefenceOS for NATO-aligned forces. CSGA AI Research Institute established for advanced AI safety research. Partner certification programmes launched across Five Eyes nations.</p>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker" style="background: #3182ce;"></div>
+ <div class="timeline-content-box" style="border-left-color: #3182ce;">
+ <div class="timeline-year" style="color: #3182ce;">2026 &mdash; Future</div>
+ <h4>Global Expansion &amp; Next-Gen Standards</h4>
+ <p class="professional-body">Scaling to additional allied nations, next-generation AI safety standards, expanded veterans transition programme, and deepening academic &amp; defence partnerships.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="governance-section">
+ <div class="governance-inner">
+ <h2 class="professional-title professional-title" class="professional-title">Governance &amp; Transparency</h2>
+ <p class="governance-subtitle" class="professional-body">How we hold ourselves accountable to the same constitutional principles we advocate for our clients.</p>
+ <div class="governance-grid">
+ <div class="card-professional">
+ <h4>Constitutional Compliance</h4>
+ <p class="professional-body">All CSGA Global operations are governed by our own 52-article framework. We undergo the same compliance assessments we deliver to clients, ensuring our standards are battle-tested and practical.</p>
+ </div>
+ <div class="card-professional">
+ <h4>Independent Oversight</h4>
+ <p class="professional-body">The CSGA Global Council provides independent strategic oversight, reviewing framework updates, certification standards, and organisational governance on a quarterly basis.</p>
+ </div>
+ <div class="card-professional">
+ <h4>Regulatory Alignment</h4>
+ <p class="professional-body">Continuous monitoring and mapping to 17 international regulatory frameworks ensures our standards evolve with the global regulatory landscape, from the EU AI Act to NATO defence protocols.</p>
+ </div>
+ <div class="card-professional">
+ <h4>Open Research</h4>
+ <p class="professional-body">The CSGA AI Research Institute publishes its findings openly, contributing to the global body of knowledge on AI safety, cognitive symbiosis, and constitutional governance principles.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="cta-about-section">
+ <h2 class="professional-title professional-title" class="professional-title">Join the Constitutional AI Movement</h2>
+ <p style="font-size: 1.05rem; margin-bottom: 30px; max-width: 580px; margin-left: auto; margin-right: auto; color: rgba(255,255,255,0.9);" class="professional-body">12,847+ professionals across 36 sectors already trust CSGA Global for AI governance standards, cybersecurity solutions, and professional certification.</p>
+ <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+ <a href="members" class="btn-professional" style="text-decoration: none;">Become a Member</a>
+ <a href="education" style="background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: white; padding: 15px 36px; border-radius: 12px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.2s ease;">Explore Education</a>
+ <a href="contact" style="border: 2px solid white; color: white; padding: 15px 36px; border-radius: 12px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.2s ease;">Contact Us</a>
+ </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero <section class="faq-professional-section"><div class="container"><div class="faq-header-professional"><h2 class="faq-title-professional">Frequently Asked Questions</h2><p class="faq-subtitle-professional">Get answers to common questions about our AI governance solutions</p></div><div class="faq-grid-professional"><div class="faq-item-professional"><div class="faq-question-professional"><h3>What makes CSGA different from other AI governance providers?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>CSGA is "The FAA for AI" - we provide Constitutional AI governance with Byzantine Council architecture, CASA certification, and enterprise compliance solutions trusted by Fortune 500 companies.</p></div></div><div class="faq-item-professional"><div class="faq-question-professional"><h3>How quickly can we implement CSGA governance frameworks?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>Implementation typically takes 2-4 weeks for initial deployment, with full enterprise integration in 6-8 weeks. Our expert team provides white-glove onboarding and 24/7 support.</p></div></div><div class="faq-item-professional"><div class="faq-question-professional"><h3>What compliance standards does CSGA support?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>CSGA supports ISO 27001, SOC 2 Type II, GDPR, CCPA, NIST frameworks, and emerging AI governance standards. Our CASA certification ensures comprehensive compliance.</p></div></div></div><div class="faq-cta-professional"><h3>Ready to get started?</h3><p>Our expert team is ready to help you implement world-class AI governance</p><a href="/contact" class="btn-professional-primary">Schedule Consultation</a></div></div></section><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".faq-item-professional").forEach(item=>{const question=item.querySelector(".faq-question-professional");question.addEventListener("click",function(){const isActive=item.classList.contains("active");document.querySelectorAll(".faq-item-professional").forEach(otherItem=>{if(otherItem!==item){otherItem.classList.remove("active")}});if(isActive){item.classList.remove("active")}else{item.classList.add("active")}})})});</script></body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+<section class="faq-professional-section"><div class="container"><div class="faq-header-professional"><h2 class="faq-title-professional">Frequently Asked Questions</h2><p class="faq-subtitle-professional">Get answers to common questions about our AI governance solutions</p></div><div class="faq-grid-professional"><div class="faq-item-professional"><div class="faq-question-professional"><h3>What makes CSGA different from other AI governance providers?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>CSGA is "The FAA for AI" - we provide Constitutional AI governance with Byzantine Council architecture, CASA certification, and enterprise compliance solutions trusted by Fortune 500 companies.</p></div></div><div class="faq-item-professional"><div class="faq-question-professional"><h3>How quickly can we implement CSGA governance frameworks?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>Implementation typically takes 2-4 weeks for initial deployment, with full enterprise integration in 6-8 weeks. Our expert team provides white-glove onboarding and 24/7 support.</p></div></div><div class="faq-item-professional"><div class="faq-question-professional"><h3>What compliance standards does CSGA support?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>CSGA supports ISO 27001, SOC 2 Type II, GDPR, CCPA, NIST frameworks, and emerging AI governance standards. Our CASA certification ensures comprehensive compliance.</p></div></div></div><div class="faq-cta-professional"><h3>Ready to get started?</h3><p>Our expert team is ready to help you implement world-class AI governance</p><a href="/contact" class="btn-professional-primary">Schedule Consultation</a></div></div></section><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".faq-item-professional").forEach(item=>{const question=item.querySelector(".faq-question-professional");question.addEventListener("click",function(){const isActive=item.classList.contains("active");document.querySelectorAll(".faq-item-professional").forEach(otherItem=>{if(otherItem!==item){otherItem.classList.remove("active")}});if(isActive){item.classList.remove("active")}else{item.classList.add("active")}})})});</script></body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ProofOf AI  Verifiable AI Provenance | CSGA Global MCP</title>
+ <meta name="description" content="Blockchain-backed AI provenance with immutable audit trails, cryptographic proof of AI decisions, and verifiable compliance across regulatory frameworks.">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
+
+ <link rel="stylesheet" href="../components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
+    <meta property="og:image" content="/images/csga-logo-social.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CSGAGlobal">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- ðŸ›ï¸ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
+    <meta property="og:image" content="/images/csga-logo-social.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CSGAGlobal">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- ðŸ›ï¸ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+<!-- HEADER BAR -->
+<div id="site-header"></div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">Home</a> º <a href="../catalog.html">MCP Catalog</a> º ProofOf AI
+</div>
+
+<!-- HERO SECTION -->
+<section class="sf-hero">
+  <div class="sf-hero-inner">
+    <div class="hero-icon-professional">PRO</div>
+    <h1 class="professional-title professional-title" class="professional-title">ProofOf AI  Verifiable AI Provenance</h1>
+    <p class="sf-hero-sub" class="professional-body">Blockchain-backed AI provenance with immutable audit trails, cryptographic proof of AI decisions, and verifiable compliance across 40+ regulatory frameworks.</p>
+    <div class="sf-hero-badges">
+      <span class="sf-badge">Compliance Tier</span>
+      <span class="sf-badge">Audit & Governance</span>
+      <span class="sf-badge" style="background:rgba(204,0,0,.2);border:1.5px solid rgba(204,0,0,.4);color:#1e40af">MVP Â· $199/mo</span>
+    </div>
+    <div class="sf-hero-ctas">
+      <a href="#pricing" class="btn-professional">Get Started Free</a>
+      <a href="#features" class="btn-professional">View Documentation †</a>
+    </div>
+    <p class="sf-hero-note" class="professional-body">14-day free trial Â· MVP  $199/mo Â· Cancel anytime</p>
+    <div class="sf-hero-stats reveal-scale">
+      <div class="sf-hero-stat">
+        <strong>$15B</strong>
+        <span>AI Audit Market 2028</span>
+      </div>
+      <div class="sf-hero-stat">
+        <strong>99.99%</strong>
+        <span>Tamper-Proof Records</span>
+      </div>
+      <div class="sf-hero-stat">
+        <strong>500+</strong>
+        <span>Enterprise Deployments</span>
+      </div>
+      <div class="sf-hero-stat">
+        <strong>40+</strong>
+        <span>Regulatory Frameworks</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="sf-problem">
+  <div class="sf-problem-inner">
+    <div class="section-heading">
+      <span class="tag">THE CHALLENGE</span>
+      <h2 class="professional-title professional-title" class="professional-title">Why Proof of AI Matters</h2>
+      <p class="professional-body">AI decisions lack cryptographic verification, making compliance and accountability impossible at scale.</p>
+    </div>
+    <div class="grid grid-3 stagger-children">
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">AI Decisions Without Proof</h3>
+        <p class="professional-body">Current AI systems generate decisions without cryptographic proof or verifiable evidence chains, making compliance audits impossible.</p>
+      </div>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Tamperabe Audit Trails</h3>
+        <p class="professional-body">Traditional audit logs can be modified retroactively, undermining trust in governance and regulatory proof-of-compliance claims.</p>
+      </div>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Cross-Border Verification</h3>
+        <p class="professional-body">Regulators across jurisdictions lack unified cryptographic proofs of AI compliance, requiring duplicate documentation and manual verification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION SECTION: MCP TOOLS -->
+<section class="sf-solution" id="features">
+  <div class="sf-solution-inner container">
+    <div class="section-heading">
+      <span class="tag">OUR SOLUTION</span>
+      <h2 class="professional-title professional-title" class="professional-title">Verifiable AI Provenance Tools</h2>
+      <p class="professional-body">Cryptographic proof chains, immutable logging, and regulatory verification  built for enterprise AI governance.</p>
+    </div>
+    <div class="grid grid-3 stagger-children">
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">provenance_chain_validator</h3>
+        <p class="professional-body">Creates and validates cryptographic proof chains for AI decision provenance. Generate immutable proof that specific AI decisions were made at specific times with verifiable evidence.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;" class="professional-body">MCP Tool  Python SDK</p>
+      </div>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">immutable_audit_logger</h3>
+        <p class="professional-body">Logs AI governance events to blockchain-backed immutable audit trails. Every decision, modification, and governance action is permanently recorded with cryptographic proof.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;" class="professional-body">MCP Tool  REST API</p>
+      </div>
+      <div class="card-professional">
+        <div class="icon-circle">œ…</div>
+        <h3 class="professional-title professional-title" class="professional-title">compliance_proof_generator</h3>
+        <p class="professional-body">Generates verifiable cryptographic proofs of regulatory compliance. Demonstrate adherence to ISO 42001, SOX, GDPR, and 37+ other frameworks with cryptographic evidence.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;" class="professional-body">MCP Tool  GraphQL API</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS SECTION -->
+<section class="sf-section">
+  <div class="sf-section-inner">
+    <div class="section-heading">
+      <span class="tag">PROCESS</span>
+      <h2 class="professional-title professional-title" class="professional-title">How ProofOf AI Works</h2>
+    </div>
+    <div class="grid grid-4 stagger-children">
+      <div class="card-professional">
+        <h3 style="color: var(--gold);" class="subsection-title" class="professional-title" class="professional-title">1. Capture</h3>
+        <p class="professional-body">AI decisions are captured with full context: model version, training data, parameters, and decision timestamp. All data immutably recorded.</p>
+      </div>
+      <div class="card-professional">
+        <h3 style="color: var(--gold);" class="subsection-title" class="professional-title" class="professional-title">2. Cryptograph</h3>
+        <p class="professional-body">Generate cryptographic proof chains using SHA-256 hashing and blockchain anchoring. Each decision becomes tamper-proof with verifiable timestamps.</p>
+      </div>
+      <div class="card-professional">
+        <h3 style="color: var(--gold);" class="subsection-title" class="professional-title" class="professional-title">3. Verify</h3>
+        <p class="professional-body">Audit systems can verify proofs without trusting original AI systems. Cryptographic validation proves authenticity and integrity of all decisions.</p>
+      </div>
+      <div class="card-professional">
+        <h3 style="color: var(--gold);" class="subsection-title" class="professional-title" class="professional-title">4. Comply</h3>
+        <p class="professional-body">Generate regulatory proof reports for SOX, GDPR, ISO 42001, and 37+ frameworks. Prove compliance with cryptographic evidence across jurisdictions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES SECTION -->
+<section class="sf-section" style="background: var(--color-light-gray);">
+  <div class="sf-section-inner">
+    <div class="section-heading">
+      <span class="tag">APPLICATIONS</span>
+      <h2 class="professional-title professional-title" class="professional-title">Enterprise Use Cases</h2>
+    </div>
+    <div class="grid grid-4 stagger-children">
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Financial Compliance Proof</h3>
+        <p class="professional-body">Prove AI credit decisions, fraud detection, and risk assessments meet SOX requirements with cryptographic evidence chains.</p>
+      </div>
+      <div class="card-professional">
+        <div class="icon-circle">¥</div>
+        <h3 class="professional-title professional-title" class="professional-title">Healthcare AI Auditing</h3>
+        <p class="professional-body">Verify diagnostic AI decisions and treatment recommendations meet HIPAA and medical board standards with immutable proof.</p>
+      </div>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Government AI Accountability</h3>
+        <p class="professional-body">Demonstrate government AI systems (hiring, benefits, adjudication) comply with transparency laws and due process requirements.</p>
+      </div>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Cross-Border Verification</h3>
+        <p class="professional-body">Generate compliance proofs recognized across EU, US, UK, and APAC regulatory jurisdictions using cryptographic standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS SECTION -->
+<section class="sf-metrics">
+  <div class="section-heading" style="margin-bottom: 48px;">
+    <span class="tag">IMPACT</span>
+    <h2 class="professional-title professional-title" class="professional-title">Verified Across Enterprise</h2>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric-item reveal-scale">
+      <div class="metric-number">99.99%</div>
+      <div class="metric-label">Audit Trail Integrity</div>
+    </div>
+    <div class="metric-item reveal-scale">
+      <div class="metric-number">2.3ms</div>
+      <div class="metric-label">Proof Generation</div>
+    </div>
+    <div class="metric-item reveal-scale">
+      <div class="metric-number">500+</div>
+      <div class="metric-label">Enterprises Verified</div>
+    </div>
+    <div class="metric-item reveal-scale">
+      <div class="metric-number">40+</div>
+      <div class="metric-label">Compliance Frameworks</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-heading" style="margin-bottom: 48px;">
+      <h2 class="professional-title professional-title" class="professional-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does ProofOf AI create tamper-proof audit trails?</span>
+        <span class="faq-toggle">–¼</span>
+      </div>
+      <div class="faq-answer">
+        <p class="professional-body">ProofOf AI uses SHA-256 cryptographic hashing combined with blockchain anchoring. Each AI decision is hashed with its full context and timestamp, then cryptographically linked to previous decisions. Any modification to historical records would change the hash, breaking the chain and flagging tampering. Blockchain anchoring provides external verification of the proof chain.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Which regulatory frameworks does ProofOf AI support?</span>
+        <span class="faq-toggle">–¼</span>
+      </div>
+      <div class="faq-answer">
+        <p class="professional-body">ProofOf AI generates compliance proofs for 40+ frameworks including ISO 42001, SOX (financial), GDPR (EU), CCPA (California), HIPAA (healthcare), FDA 21 CFR Part 11 (medical devices), FINRA (securities), PCI DSS (payments), and industry-specific standards. Each proof includes framework-specific evidence requirements and attestation formats.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can regulators verify proofs without accessing our AI systems?</span>
+        <span class="faq-toggle">–¼</span>
+      </div>
+      <div class="faq-answer">
+        <p class="professional-body">Yes. ProofOf AI generates self-verifying cryptographic proofs that auditors can validate independently. Regulators receive a proof bundle containing decision hashes, timestamps, evidence chains, and blockchain anchors. They can verify the cryptographic signatures and audit trail integrity without accessing the original AI systems, training data, or infrastructure.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What's the performance impact on AI inference?</span>
+        <span class="faq-toggle">–¼</span>
+      </div>
+      <div class="faq-answer">
+        <p class="professional-body">Minimal impact. Decision capture and hashing adds <1ms latency. Proof generation happens asynchronously and can be batched. ProofOf AI integrates as middleware in decision pipelines without blocking inference. Enterprise deployments report <0.5% performance overhead with cryptographic verification enabled.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does ProofOf AI handle high-volume decision logging?</span>
+        <span class="faq-toggle">–¼</span>
+      </div>
+      <div class="faq-answer">
+        <p class="professional-body">ProofOf AI uses batch verification and Merkle tree aggregation to handle millions of decisions daily. Decisions are grouped into blocks, cryptographically aggregated, then anchored to blockchain. Enterprise deployments support 100k+ decisions/second with streaming audit logs and real-time proof verification dashboards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED MCPs SECTION -->
+<section class="related-mcps">
+  <div class="related-inner">
+    <div class="section-heading" style="margin-bottom: 48px;">
+      <h2 class="professional-title professional-title" class="professional-title">Related MCPs</h2>
+      <p class="professional-body">Extend ProofOf AI with complementary governance and compliance tools</p>
+    </div>
+    <div class="grid grid-3 stagger-children">
+      <a href="./ai-governance.html" class="mcp-link reveal">
+        <h3 class="professional-title professional-title" class="professional-title">AI Governance</h3>
+        <p class="professional-body">ISO 42001 compliance automation, policy enforcement, and risk management for AI systems</p>
+      </a>
+      <a href="./compliance-audit.html" class="mcp-link reveal">
+        <h3 class="professional-title professional-title" class="professional-title">Compliance Audit</h3>
+        <p class="professional-body">Automated auditing, evidence collection, and regulatory reporting for financial and healthcare AI</p>
+      </a>
+      <a href="./data-classification.html" class="mcp-link reveal">
+        <h3 class="professional-title professional-title" class="professional-title">Data Classification</h3>
+        <p class="professional-body">Automatic data sensitivity classification and governance for training datasets and decision records</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section class="mcp-pw" id="pricing">
+  <div class="mcp-pw-inner">
+    <div class="section-heading" style="margin-bottom: 48px;">
+      <span class="tag">PRICING</span>
+      <h2 class="professional-title professional-title" class="professional-title">Scalable Plans for Every Stage</h2>
+    </div>
+    <div class="card-professional">
+      <div class="card-professional">
+        <h3 class="professional-title professional-title" class="professional-title">Community</h3>
+        <p class="pricing-label" class="professional-body">Free forever</p>
+        <div class="pricing-price">$0</div>
+        <p class="pricing-period" class="professional-body">/month</p>
+        <ul class="pricing-features">
+          <li>œ 100 proofs/day</li>
+          <li>œ 1 compliance framework</li>
+          <li>œ Basic audit logging</li>
+          <li>œ Community support</li>
+          <li>œ Priority support</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#" class="btn-professional">Start Free</a>
+        </div>
+      </div>
+      <div class="card-professional" style="border: 2px solid var(--gold); transform: scale(1.05);">
+        <h3 class="professional-title professional-title" class="professional-title">Professional</h3>
+        <p class="pricing-label" class="professional-body">Most popular</p>
+        <div class="pricing-price">$199</div>
+        <p class="pricing-period" class="professional-body">/month</p>
+        <ul class="pricing-features">
+          <li>œ 10,000 proofs/day</li>
+          <li>œ 10 compliance frameworks</li>
+          <li>œ Immutable audit trails</li>
+          <li>œ Email support</li>
+          <li>œ Compliance reporting</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#" class="btn-professional">Get Started</a>
+        </div>
+      </div>
+      <div class="card-professional">
+        <h3 class="professional-title professional-title" class="professional-title">Enterprise</h3>
+        <p class="pricing-label" class="professional-body">Custom solution</p>
+        <div class="pricing-price">$499</div>
+        <p class="pricing-period" class="professional-body">+/month</p>
+        <ul class="pricing-features">
+          <li>œ Unlimited proofs</li>
+          <li>œ All regulatory frameworks</li>
+          <li>œ Blockchain anchoring</li>
+          <li>œ 24/7 priority support</li>
+          <li>œ Custom integrations</li>
+        </ul>
+        <div class="pricing-cta">
+          <a href="#" class="btn-professional">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sf-final-cta">
+  <div class="sf-final-cta-inner">
+    <h2 class="professional-title professional-title" class="professional-title">Start Proving Your AI Today</h2>
+    <p class="professional-body">Join 500+ enterprises generating verifiable cryptographic proof of AI governance and compliance</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#" class="btn-professional">Get Started Free</a>
+      <a href="#" class="btn-professional">Schedule Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- STICKY FLOATING CTA -->
+<div class="sf-sticky" id="stickyBtn">
+  <span>Get Started Free †</span>
+</div>
+
+<script>
+// ===================== SCROLL REVEAL ANIMATIONS =====================
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  observer.observe(el);
+});
+
+document.querySelectorAll('.stagger-children').forEach(el => {
+  observer.observe(el);
+});
+
+// ===================== FAQ ACCORDION =====================
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.parentElement;
+    const isActive = item.classList.contains('active');
+
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  });
+});
+
+// ===================== STICKY FLOATING BUTTON =====================
+const stickyBtn = document.getElementById('stickyBtn');
+const pricingSection = document.getElementById('pricing');
+
+window.addEventListener('scroll', () => {
+  const pricingRect = pricingSection.getBoundingClientRect();
+
+  if (pricingRect.top < 0) {
+    stickyBtn.classList.add('show');
+  } else {
+    stickyBtn.classList.remove('show');
+  }
+});
+
+stickyBtn.addEventListener('click', () => {
+  pricingSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+// ===================== SMOOTH SCROLL FOR ANCHOR LINKS =====================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// ===================== NAVBAR ACTIVE STATE =====================
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (window.pageYOffset >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+<div id="site-footer"></div>
+<script src="../components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

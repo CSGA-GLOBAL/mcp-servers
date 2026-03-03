@@ -1,0 +1,627 @@
+/* 🎯 CSGA Global Correct Branding - Matching csga-global.org and BMCC styles */
+/* Cybersecurity focused design with proper CSGA colors */
+
+:root {
+  /* 🎯 CSGA Brand Colors - Based on actual csga-global.org */
+  --csga-primary: #1a202c;         /* Dark navy/slate - cybersecurity professional */
+  --csga-secondary: #2d3748;       /* Medium slate for sections */
+  --csga-accent: #3182ce;          /* Professional blue - cybersecurity theme */
+  --csga-accent-light: #4299e1;    /* Light blue for hovers */
+  --csga-accent-dark: #2c5282;     /* Dark blue for emphasis */
+  --csga-background: #ffffff;      /* Pure white */
+  --csga-surface: #f7fafc;         /* Very light gray */
+  --csga-text: #1a202c;            /* Dark text */
+  --csga-text-secondary: #4a5568;  /* Secondary text */
+  --csga-text-muted: #718096;      /* Muted text */
+  --csga-border: #e2e8f0;          /* Light borders */
+  --csga-red: #e53e3e;             /* Warning/alert red */
+  --csga-orange: #dd6b20;          /* Warning orange */
+  
+  /* 🔒 Cybersecurity Theme Colors */
+  --cyber-blue: #1e3a8a;           /* Deep cyber blue */
+  --cyber-teal: #0891b2;           /* Cyber teal accent */
+  --cyber-gray: #374151;           /* Professional cyber gray */
+  --cyber-dark: #111827;           /* Dark backgrounds */
+  --cyber-light: #f1f5f9;          /* Light sections */
+  
+  /* 📐 Spacing System */
+  --csga-space-1: 0.25rem;   /* 4px */
+  --csga-space-2: 0.5rem;    /* 8px */
+  --csga-space-3: 0.75rem;   /* 12px */
+  --csga-space-4: 1rem;      /* 16px */
+  --csga-space-5: 1.25rem;   /* 20px */
+  --csga-space-6: 1.5rem;    /* 24px */
+  --csga-space-8: 2rem;      /* 32px */
+  --csga-space-10: 2.5rem;   /* 40px */
+  --csga-space-12: 3rem;     /* 48px */
+  --csga-space-16: 4rem;     /* 64px */
+  --csga-space-20: 5rem;     /* 80px */
+  
+  /* 🔤 Typography Scale - Professional & Clean */
+  --csga-text-xs: 0.75rem;     /* 12px */
+  --csga-text-sm: 0.875rem;    /* 14px */
+  --csga-text-base: 1rem;      /* 16px */
+  --csga-text-lg: 1.125rem;    /* 18px */
+  --csga-text-xl: 1.25rem;     /* 20px */
+  --csga-text-2xl: 1.5rem;     /* 24px */
+  --csga-text-3xl: 1.875rem;   /* 30px */
+  --csga-text-4xl: 2.25rem;    /* 36px */
+  --csga-text-5xl: 3rem;       /* 48px */
+  --csga-text-6xl: 3.75rem;    /* 60px */
+  
+  /* 🎭 Professional Shadows */
+  --csga-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --csga-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --csga-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --csga-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --csga-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* 📐 Border Radius */
+  --csga-radius-sm: 0.375rem;  /* 6px */
+  --csga-radius: 0.5rem;       /* 8px */
+  --csga-radius-md: 0.75rem;   /* 12px */
+  --csga-radius-lg: 1rem;      /* 16px */
+  --csga-radius-xl: 1.5rem;    /* 24px */
+  --csga-radius-full: 9999px;  /* Full radius */
+  
+  /* ⚡ Transitions */
+  --csga-transition-fast: 150ms ease-in-out;
+  --csga-transition: 200ms ease-in-out;
+  --csga-transition-slow: 300ms ease-in-out;
+}
+
+/* 🧹 Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  color: var(--csga-text) !important;
+  background: var(--csga-background) !important;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 🚫 CRITICAL FIX: Remove ALL Problematic Color Combinations */
+.bg-blue-50, .bg-blue-100, .bg-blue-200, .bg-blue-300,
+.bg-blue-400, .bg-blue-500, .bg-blue-600, .bg-blue-700,
+.bg-blue-800, .bg-blue-900, .bg-blue-950,
+[class*="bg-blue"] {
+  background: var(--csga-background) !important;
+  color: var(--csga-text) !important;
+  border: 1px solid var(--csga-border) !important;
+}
+
+/* ✅ Professional Dark Backgrounds with Light Text */
+.bg-slate-800, .bg-slate-900, .bg-gray-800, .bg-gray-900,
+.bg-stone-800, .bg-stone-900, .dark-bg,
+[class*="bg-slate-9"], [class*="bg-gray-9"] {
+  background: linear-gradient(135deg, var(--cyber-dark) 0%, var(--csga-primary) 100%) !important;
+  color: #ffffff !important;
+}
+
+/* 🔤 Typography - Professional & Clean */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: var(--csga-primary) !important;
+  margin-bottom: var(--csga-space-4);
+  font-family: inherit;
+}
+
+h1 { font-size: var(--csga-text-4xl); }
+h2 { font-size: var(--csga-text-3xl); }
+h3 { font-size: var(--csga-text-2xl); }
+h4 { font-size: var(--csga-text-xl); }
+h5 { font-size: var(--csga-text-lg); }
+h6 { font-size: var(--csga-text-base); }
+
+p {
+  color: var(--csga-text-secondary) !important;
+  font-size: var(--csga-text-base);
+  line-height: 1.6;
+  margin-bottom: var(--csga-space-4);
+}
+
+.text-muted {
+  color: var(--csga-text-muted) !important;
+}
+
+/* 🔗 Links - CSGA Blue Theme */
+a {
+  color: var(--csga-accent) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--csga-transition);
+}
+
+a:hover, a:focus {
+  color: var(--csga-accent-light) !important;
+  text-decoration: underline;
+}
+
+/* 🎯 Buttons - Professional Blue Theme */
+.btn, button:not(.unstyled), [class*="btn-"], input[type="submit"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: var(--csga-space-3) var(--csga-space-6) !important;
+  border: none !important;
+  border-radius: var(--csga-radius) !important;
+  font-weight: 600 !important;
+  font-size: var(--csga-text-base) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: var(--csga-transition) !important;
+  gap: var(--csga-space-2) !important;
+  min-height: 44px !important;
+}
+
+.btn-primary, [class*="btn-primary"] {
+  background: linear-gradient(135deg, var(--csga-accent), var(--csga-accent-light)) !important;
+  color: #ffffff !important;
+  box-shadow: var(--csga-shadow-sm) !important;
+}
+
+.btn-primary:hover, [class*="btn-primary"]:hover {
+  background: linear-gradient(135deg, var(--csga-accent-dark), var(--csga-accent)) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: var(--csga-shadow-md) !important;
+  text-decoration: none !important;
+}
+
+.btn-secondary, [class*="btn-secondary"] {
+  background: var(--csga-surface) !important;
+  color: var(--csga-text) !important;
+  border: 1px solid var(--csga-border) !important;
+}
+
+.btn-secondary:hover, [class*="btn-secondary"]:hover {
+  background: #ffffff !important;
+  border-color: var(--csga-accent) !important;
+  transform: translateY(-1px) !important;
+}
+
+.btn-outline, [class*="btn-outline"] {
+  background: transparent !important;
+  color: var(--csga-accent) !important;
+  border: 2px solid var(--csga-accent) !important;
+}
+
+.btn-outline:hover, [class*="btn-outline"]:hover {
+  background: var(--csga-accent) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 📦 Cards - Professional Design */
+.card, [class*="card"], .feature, [class*="feature"], 
+.service, [class*="service"], .pricing-card, [class*="pricing"] {
+  background: var(--csga-background) !important;
+  border: 1px solid var(--csga-border) !important;
+  border-radius: var(--csga-radius-lg) !important;
+  box-shadow: var(--csga-shadow-sm) !important;
+  padding: var(--csga-space-6) !important;
+  transition: var(--csga-transition) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover, [class*="card"]:hover,
+.feature:hover, [class*="feature"]:hover,
+.service:hover, [class*="service"]:hover,
+.pricing-card:hover, [class*="pricing"]:hover {
+  box-shadow: var(--csga-shadow-lg) !important;
+  transform: translateY(-4px) !important;
+  border-color: var(--csga-accent) !important;
+}
+
+/* 🏆 Hero Sections - Cybersecurity Professional Theme */
+.hero, .banner, [class*="hero"], [class*="banner"],
+section:first-of-type {
+  background: linear-gradient(135deg, var(--cyber-dark) 0%, var(--csga-primary) 50%, var(--cyber-blue) 100%) !important;
+  color: #ffffff !important;
+  padding: var(--csga-space-20) 0 !important;
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before, .banner::before, [class*="hero"]::before, [class*="banner"]::before,
+section:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%233182ce" fill-opacity="0.08"><rect x="0" y="0" width="2" height="2"/><rect x="58" y="58" width="2" height="2"/></g></svg>') repeat;
+  opacity: 0.3;
+}
+
+.hero *, .banner *, [class*="hero"] *, [class*="banner"] *,
+section:first-of-type * {
+  position: relative;
+  z-index: 2;
+  color: #ffffff !important;
+}
+
+.hero h1, .banner h1, [class*="hero"] h1, [class*="banner"] h1,
+section:first-of-type h1 {
+  font-size: var(--csga-text-5xl) !important;
+  font-weight: 800 !important;
+  margin-bottom: var(--csga-space-6) !important;
+  background: linear-gradient(135deg, #ffffff, var(--csga-accent-light)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.hero p, .banner p, [class*="hero"] p, [class*="banner"] p,
+section:first-of-type p {
+  font-size: var(--csga-text-xl) !important;
+  color: #cbd5e1 !important;
+  margin-bottom: var(--csga-space-8) !important;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 🔧 Navigation - Professional */
+nav, .nav, .navbar, header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid var(--csga-border) !important;
+  padding: var(--csga-space-4) 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+nav a, .nav a, .navbar a {
+  color: var(--csga-text) !important;
+  font-weight: 500;
+  padding: var(--csga-space-2) var(--csga-space-4);
+  border-radius: var(--csga-radius);
+  transition: var(--csga-transition);
+}
+
+nav a:hover, .nav a:hover, .navbar a:hover {
+  color: var(--csga-accent) !important;
+  background: rgba(49, 130, 206, 0.1);
+  text-decoration: none;
+}
+
+/* 🏢 CSGA Logo Area */
+.logo, .navbar-brand, [class*="logo"], [class*="brand"] {
+  display: flex;
+  align-items: center;
+  gap: var(--csga-space-3);
+  font-weight: 700;
+  font-size: var(--csga-text-lg);
+  color: var(--csga-primary) !important;
+}
+
+.logo img, .navbar-brand img, [class*="logo"] img, [class*="brand"] img {
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+}
+
+/* 🦶 Footer - Cybersecurity Professional */
+footer {
+  background: linear-gradient(135deg, var(--cyber-dark) 0%, var(--csga-primary) 100%) !important;
+  color: #ffffff !important;
+  padding: var(--csga-space-16) 0 var(--csga-space-8) 0 !important;
+  margin-top: var(--csga-space-20);
+}
+
+footer * {
+  color: #ffffff !important;
+}
+
+footer a {
+  color: var(--csga-accent-light) !important;
+}
+
+footer a:hover {
+  color: #ffffff !important;
+}
+
+/* 📊 Stats & Numbers - Cybersecurity Theme */
+.stat, [class*="stat"], .metric, [class*="metric"] {
+  text-align: center;
+  padding: var(--csga-space-4);
+}
+
+.stat-number, [class*="stat-number"], .metric-number, [class*="metric-number"] {
+  display: block;
+  font-size: var(--csga-text-4xl) !important;
+  font-weight: 800 !important;
+  color: var(--csga-accent) !important;
+  line-height: 1 !important;
+  margin-bottom: var(--csga-space-2);
+}
+
+.stat-label, [class*="stat-label"], .metric-label, [class*="metric-label"] {
+  font-size: var(--csga-text-sm) !important;
+  color: var(--csga-text-muted) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* 🎨 Sections */
+section {
+  padding: var(--csga-space-16) 0 !important;
+}
+
+.container, [class*="container"] {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 var(--csga-space-4) !important;
+}
+
+/* 🏷️ Badges - Cybersecurity Theme */
+.badge, [class*="badge"] {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--csga-space-1) var(--csga-space-3);
+  border-radius: var(--csga-radius-full);
+  font-size: var(--csga-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.badge-primary {
+  background: var(--csga-accent);
+  color: #ffffff;
+}
+
+.badge-secondary {
+  background: var(--csga-surface);
+  color: var(--csga-text);
+}
+
+.badge-outline {
+  background: transparent;
+  color: var(--csga-accent);
+  border: 1px solid var(--csga-accent);
+}
+
+.badge-cyber {
+  background: var(--cyber-teal);
+  color: #ffffff;
+}
+
+/* 🎯 Call-to-Action Sections */
+.cta, [class*="cta"] {
+  background: linear-gradient(135deg, var(--cyber-dark) 0%, var(--csga-primary) 100%) !important;
+  color: #ffffff !important;
+  padding: var(--csga-space-16) 0 !important;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before, [class*="cta"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%233182ce" fill-opacity="0.05"><polygon points="6,0 14,7 6,14 -2,7"/></g></svg>') repeat;
+}
+
+.cta *, [class*="cta"] * {
+  position: relative;
+  z-index: 2;
+  color: #ffffff !important;
+}
+
+/* 🔒 Cybersecurity Specific Styling */
+.cyber-section {
+  background: linear-gradient(135deg, var(--cyber-light) 0%, var(--csga-background) 100%);
+  border-left: 4px solid var(--csga-accent);
+  padding: var(--csga-space-8);
+  border-radius: var(--csga-radius-lg);
+  margin: var(--csga-space-6) 0;
+}
+
+.cyber-alert {
+  background: rgba(229, 62, 62, 0.1);
+  border: 1px solid var(--csga-red);
+  color: var(--csga-red);
+  padding: var(--csga-space-4);
+  border-radius: var(--csga-radius);
+  margin: var(--csga-space-4) 0;
+}
+
+.cyber-warning {
+  background: rgba(221, 107, 32, 0.1);
+  border: 1px solid var(--csga-orange);
+  color: var(--csga-orange);
+  padding: var(--csga-space-4);
+  border-radius: var(--csga-radius);
+  margin: var(--csga-space-4) 0;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  :root {
+    --csga-text-4xl: 2rem;
+    --csga-text-3xl: 1.75rem;
+    --csga-text-5xl: 2.5rem;
+  }
+  
+  .container, [class*="container"] {
+    padding: 0 var(--csga-space-6) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --csga-text-4xl: 1.875rem;
+    --csga-text-3xl: 1.5rem;
+    --csga-text-5xl: 2.25rem;
+    --csga-space-16: 3rem;
+    --csga-space-20: 4rem;
+  }
+  
+  section {
+    padding: var(--csga-space-12) 0 !important;
+  }
+  
+  .container, [class*="container"] {
+    padding: 0 var(--csga-space-4) !important;
+  }
+  
+  .grid, [class*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: var(--csga-space-4) !important;
+  }
+  
+  .flex, [class*="flex"] {
+    flex-direction: column !important;
+    gap: var(--csga-space-4) !important;
+  }
+  
+  .btn, button:not(.unstyled), [class*="btn-"] {
+    width: 100%;
+    margin-bottom: var(--csga-space-2);
+  }
+  
+  .hero, .banner, [class*="hero"], [class*="banner"],
+  section:first-of-type {
+    padding: var(--csga-space-16) 0 !important;
+    min-height: 60vh;
+    text-align: center;
+  }
+  
+  .hero h1, .banner h1, [class*="hero"] h1, [class*="banner"] h1,
+  section:first-of-type h1 {
+    font-size: var(--csga-text-4xl) !important;
+  }
+  
+  .hero p, .banner p, [class*="hero"] p, [class*="banner"] p,
+  section:first-of-type p {
+    font-size: var(--csga-text-lg) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --csga-text-4xl: 1.75rem;
+    --csga-text-3xl: 1.375rem;
+    --csga-text-5xl: 2rem;
+  }
+  
+  .container, [class*="container"] {
+    padding: 0 var(--csga-space-3) !important;
+  }
+}
+
+/* ⚡ Performance & Accessibility */
+* {
+  scroll-behavior: smooth;
+}
+
+:focus {
+  outline: 2px solid var(--csga-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--csga-accent);
+  color: #ffffff;
+}
+
+/* 🎭 Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* 🔥 Loading States */
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--csga-border);
+  border-top: 2px solid var(--csga-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 🎨 Utility Classes */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+.bg-surface { background: var(--csga-surface) !important; }
+.bg-white { background: var(--csga-background) !important; }
+.bg-cyber { background: var(--cyber-light) !important; }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--csga-accent), var(--csga-accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow { box-shadow: var(--csga-shadow) !important; }
+.shadow-lg { box-shadow: var(--csga-shadow-lg) !important; }
+.shadow-xl { box-shadow: var(--csga-shadow-xl) !important; }
+
+.rounded { border-radius: var(--csga-radius) !important; }
+.rounded-lg { border-radius: var(--csga-radius-lg) !important; }
+.rounded-xl { border-radius: var(--csga-radius-xl) !important; }

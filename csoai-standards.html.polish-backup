@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>CSOAI Standards & Frameworks - CSGA Global</title>
+ <meta name="description" content="CSOAI standards, frameworks, and crosswalks. CSOAI-100 through CSOAI-500. Learn how CSOAI aligns with ISO 27001, NIST CSF, GDPR, and NIS2.">
+ 
+ 
+ <style>
+.csoai-hero {
+ background: linear-gradient(135deg, rgba(10, 22, 40, 0.8) 0%, rgba(0, 88, 164, 0.8) 100%),
+ url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop') center/cover;
+ color: white;
+ padding: 80px 20px;
+ text-align: center;
+ }
+ .csoai-hero h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.5rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ line-height: 1.2;
+ }
+ .csoai-hero p {
+ font-size: 1.2rem;
+ font-weight: 300;
+ max-width: 700px;
+ margin: 0 auto;
+ }
+ .standards-intro {
+ padding: 60px 20px;
+ background: white;
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ .standards-intro h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ color: #0A1628;
+ margin-bottom: 20px;
+ }
+ .standards-intro p {
+ font-size: 1.05rem;
+ line-height: 1.7;
+ color: #333;
+ margin: 15px 0;
+ }
+ .frameworks-section {
+ padding: 60px 20px;
+ background: #f9f9f9;
+ }
+ .frameworks-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .frameworks-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 30px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .framework-card {
+ background: white;
+ border-radius: 12px;
+ padding: 30px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+ border-top: 4px solid #0058A4;
+ transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+ }
+ .framework-card:hover {
+ transform: translateY(-8px);
+ box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+ }
+ .framework-id {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 0.9rem;
+ font-weight: 700;
+ color: #CC0000;
+ text-transform: uppercase;
+ margin-bottom: 8px;
+ }
+ .framework-card h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.3rem;
+ color: #0A1628;
+ margin: 0 0 15px 0;
+ }
+ .framework-card p {
+ color: #666;
+ line-height: 1.6;
+ margin: 0;
+ font-size: 0.95rem;
+ }
+ .crosswalks-section {
+ padding: 60px 20px;
+ background: white;
+ }
+ .crosswalks-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .crosswalk-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 20px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .crosswalk-item {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ color: white;
+ padding: 25px;
+ border-radius: 12px;
+ text-align: center;
+ }
+ .crosswalk-item h4 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.1rem;
+ margin: 0 0 10px 0;
+ }
+ .crosswalk-item p {
+ font-size: 0.9rem;
+ line-height: 1.5;
+ margin: 0;
+ }
+ .charter-section {
+ padding: 60px 20px;
+ background: #f9f9f9;
+ }
+ .charter-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 40px;
+ }
+ .charter-content {
+ max-width: 900px;
+ margin: 0 auto;
+ background: white;
+ padding: 40px;
+ border-radius: 12px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+ }
+ .charter-content h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.3rem;
+ color: #0A1628;
+ margin-top: 25px;
+ margin-bottom: 15px;
+ }
+ .charter-content h3:first-child {
+ margin-top: 0;
+ }
+ .charter-content p {
+ color: #333;
+ line-height: 1.7;
+ margin: 0 0 15px 0;
+ }
+ .csoai-link {
+ display: block;
+ text-align: center;
+ padding: 25px;
+ background: linear-gradient(135deg, #CC0000, #e5bd68);
+ border-radius: 12px;
+ margin-top: 40px;
+ }
+ .csoai-link a {
+ color: #0A1628;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 1.1rem;
+ }
+ .csoai-link a:hover {
+ text-decoration: underline;
+ }
+ .standards-cta {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ color: white;
+ padding: 60px 20px;
+ text-align: center;
+ }
+ .standards-cta h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ margin-bottom: 20px;
+ }
+ .standards-cta p {
+ font-size: 1.1rem;
+ margin-bottom: 30px;
+ max-width: 600px;
+ margin-left: auto;
+ margin-right: auto;
+ }
+ .cta-button {
+ display: inline-block;
+ background: #CC0000;
+ color: #0A1628;
+ padding: 14px 35px;
+ border-radius: 6px;
+ text-decoration: none;
+ font-weight: 600;
+ transition: background 0.3s ease;
+ }
+ .cta-button:hover {
+ background: #e5bd68;
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/csoai-standards">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="CSOAI Standards & Frameworks - CSGA Global">
+ <meta property="og:description" content="CSOAI standards, frameworks, and crosswalks. CSOAI-100 through CSOAI-500. Learn how CSOAI aligns with ISO 27001, NIST CSF, GDPR, and NIS2.">
+ <meta property="og:url" content="https://csga-global.vercel.app/csoai-standards">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="CSOAI Standards & Frameworks - CSGA Global">
+ <meta name="twitter:description" content="CSOAI standards, frameworks, and crosswalks. CSOAI-100 through CSOAI-500. Learn how CSOAI aligns with ISO 27001, NIST CSF, GDPR, and NIS2.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CSOAI Standards & Frameworks - CSGA Global","description":"CSOAI standards, frameworks, and crosswalks. CSOAI-100 through CSOAI-500. Learn how CSOAI aligns with ISO 27001, NIST CSF, GDPR, and NIS2.","url":"https://csga-global.vercel.app/csoai-standards","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="csoai-hero">
+ <h1 class="professional-title"><h1 class="professional-title" class="professional-title">CSOAI Standards & Frameworks</h1>
+ <p class="professional-body">Cyber Security & Organizational AI governance standards for secure, ethical, and compliant AI deployment</p>
+</section>
+<section class="standards-intro">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">What is CSOAI?</h2>
+ <p class="professional-body">CSOAI (Cyber Security and Organizational AI) is a comprehensive standards body and governance framework designed to ensure that artificial intelligence systems are deployed securely, ethically, and in alignment with organizational and national security objectives.</p>
+ <p class="professional-body">Our mission is to advance AI security research while establishing internationally recognized standards for AI governance, cybersecurity, and enterprise-grade security protocols.</p>
+ <p class="professional-body"><strong>Governance Structure:</strong> CSOAI operates through international consensus-building, partnering with standards bodies (ISO, NIST), defence organizations (NATO, UK MoD), and industry leaders to create frameworks that protect critical infrastructure and advance responsible AI.</p>
+</section>
+<section class="frameworks-section">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Framework Catalog</h2>
+ <div class="frameworks-grid">
+ <div class="card-professional">
+ <div class="framework-id">CSOAI-100</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">AI Governance Framework</h3>
+ <p class="professional-body">Foundational governance model for organizational AI deployment, including leadership structures, risk management, ethical guidelines, and stakeholder alignment.</p>
+ </div>
+ <div class="card-professional">
+ <div class="framework-id">CSOAI-200</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Cybersecurity Standards</h3>
+ <p class="professional-body">Technical security requirements for AI systems, including data protection, access controls, encryption, audit logging, and compliance with NIST cybersecurity framework.</p>
+ </div>
+ <div class="card-professional">
+ <div class="framework-id">CSOAI-300</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Defence Security Requirements</h3>
+ <p class="professional-body">National security and defence-grade specifications for AI systems in military, intelligence, and critical infrastructure contexts, aligned with Five Eyes standards.</p>
+ </div>
+ <div class="card-professional">
+ <div class="framework-id">CSOAI-400</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">MCP Implementation Guide</h3>
+ <p class="professional-body">Model Context Protocol (MCP) architecture, interoperability standards, and best practices for AI system integration and communication protocols.</p>
+ </div>
+ <div class="card-professional">
+ <div class="framework-id">CSOAI-500</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Ethical AI Assessment</h3>
+ <p class="professional-body">Frameworks for evaluating AI systems for bias, fairness, transparency, explainability, and responsible decision-making in sensitive applications.</p>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="crosswalks-section">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Standards Crosswalks & Alignment</h2>
+ <p style="text-align: center; margin-bottom: 40px; color: #666;" class="professional-body">CSOAI frameworks are designed to map to and complement existing international standards:</p>
+ <div class="crosswalk-grid">
+ <div class="crosswalk-item">
+ <h4>ISO 27001</h4>
+ <p class="professional-body">Information Security Management System - CSOAI-200 and CSOAI-400 align with ISO 27001 security controls</p>
+ </div>
+ <div class="crosswalk-item">
+ <h4>NIST CSF</h4>
+ <p class="professional-body">Cybersecurity Framework - CSOAI maps to NIST Identify, Protect, Detect, Respond, and Recover functions</p>
+ </div>
+ <div class="crosswalk-item">
+ <h4>GDPR</h4>
+ <p class="professional-body">General Data Protection Regulation - CSOAI-100 and CSOAI-500 address data privacy, consent, and algorithmic transparency requirements</p>
+ </div>
+ <div class="crosswalk-item">
+ <h4>NIS2 Directive</h4>
+ <p class="professional-body">Network and Information Security - CSOAI-300 aligns with European critical infrastructure security obligations</p>
+ </div>
+ <div class="crosswalk-item">
+ <h4>UK DSOP</h4>
+ <p class="professional-body">Defence and Security of Procurement - CSOAI-300 complies with UK Ministry of Defence security standards</p>
+ </div>
+ <div class="crosswalk-item">
+ <h4>NATO Standards</h4>
+ <p class="professional-body">Allied Framework - CSOAI-300 supports NATO information security and AI governance requirements</p>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="charter-section">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <div class="charter-content">
+ <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 2rem; color: #0A1628; text-align: center; margin-top: 0;" class="section-title" class="professional-title">CSOAI Partnership Charter</h2>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">What It Means to Adopt CSOAI</h3>
+ <p class="professional-body">Organizations that adopt the CSOAI Partnership Charter commit to:</p>
+ <ul style="color: #333; line-height: 1.8;">
+ <li>Implementing CSOAI frameworks across AI governance and cybersecurity operations</li>
+ <li>Regular audits and certifications against CSOAI standards (CASA-CA30)</li>
+ <li>Transparent reporting on governance metrics and security posture</li>
+ <li>Participation in CSOAI community forums and continuous improvement initiatives</li>
+ <li>Alignment with AI security research and ethical AI principles</li>
+ </ul>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Benefits of Partnership</h3>
+ <ul style="color: #333; line-height: 1.8;">
+ <li>Industry recognition and credibility through CSOAI certification</li>
+ <li>Access to cutting-edge research on AI security and AI governance</li>
+ <li>Collaboration with government, defence, and industry leaders</li>
+ <li>Early access to framework updates and emerging standards</li>
+ <li>Inclusion in CSOAI member directory and partnership network</li>
+ </ul>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">How to Get Started</h3>
+ <p class="professional-body">Contact the CSOAI Membership Team to discuss partnership options, certification pathways, and implementation support tailored to your organization's needs.</p>
+ <div class="csoai-link">
+ <a href="https://csoai.org" target="_blank">Visit CSOAI.org for Full Documentation</a>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="standards-cta">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Download Framework Guide</h2>
+ <p class="professional-body">Get the complete CSOAI Standards Framework guide including implementation roadmaps, control mappings, and certification pathways</p>
+ <a href="#download" class="btn-professional">Download Guide (PDF)</a>
+</section>
+<!-- ═══════ CTA Section ═══════ -->
+<section style="position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+ <div style="position:absolute;inset:0;z-index:0">
+ <div style="position:absolute;inset:-40px;background:linear-gradient(135deg,#0A1628,#0D2847,#0058A4);z-index:0"></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
+ </div>
+ <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:4px;padding:8px 18px;margin-bottom:24px">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#CC0000" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/ class="professional-body"></svg>
+ <span style="color:#CC0000;font-size:0.85rem;font-weight:600">Free Access &mdash; No Credit Card Required</span>
+ </div>
+ <h2 style="color:#fff;font-size:2.6rem;line-height:1.2;margin-bottom:20px;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+ <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;line-height:1.7;margin-bottom:36px" class="professional-body">500+ mapped standards, automated compliance checking, and continuous monitoring. Get started with the framework trusted by governments and enterprises.</p>
+ <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+ <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:#CC0000;color:#0A1628;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 15px rgba(204,0,0,0.3)" onmouseover="this.style.background='#A30000';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#CC0000';this.style.transform='none'">View Plans &amp; Pricing</a>
+ <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:transparent;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;border:2px solid rgba(255,255,255,0.3);transition:all .3s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">Request a Demo</a>
+ </div>
+ </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

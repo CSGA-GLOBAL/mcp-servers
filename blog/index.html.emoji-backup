@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Blog & News - CSGA Global</title>
+ <meta name="description" content="Latest articles about MCP integrations, security, and AI governance">
+ 
+ 
+ <style>
+/* Blog-specific styling */
+ .blog-hero {
+ background: linear-gradient(135deg, #0A1628 0%, #0d2847 50%, #0058A4 100%);
+ padding: 100px 20px 80px;
+ text-align: center;
+ color: white;
+ margin-bottom: 60px;
+ position: relative;
+ overflow: hidden;
+ }
+ .blog-hero::after {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: radial-gradient(ellipse at 30% 50%, rgba(0,88,164,0.3) 0%, transparent 60%),
+ radial-gradient(ellipse at 70% 50%, rgba(204,0,0,0.1) 0%, transparent 50%);
+ pointer-events: none;
+ }
+ .blog-hero > * { position: relative; z-index: 1; }
+ .blog-hero h1 {
+ font-size: 3.2em;
+ font-weight: 800;
+ margin: 0 0 20px 0;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ animation: fadeInUp 0.7s ease-out;
+ }
+ .blog-hero p {
+ font-size: 1.2em;
+ max-width: 600px;
+ margin: 0 auto;
+ opacity: 0.9;
+ animation: fadeInUp 0.7s ease-out 0.15s both;
+ }
+ .blog-container {
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 0 20px;
+ }
+ .filter-section {
+ margin-bottom: 50px;
+ display: flex;
+ gap: 12px;
+ flex-wrap: wrap;
+ justify-content: center;
+ }
+ .filter-btn {
+ padding: 10px 22px;
+ border: 2px solid #e5e7eb;
+ background: white;
+ color: #374151;
+ border-radius: 25px;
+ cursor: pointer;
+ font-weight: 500;
+ transition: all 0.3s ease;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .filter-btn:hover {
+ border-color: #0058A4;
+ color: #0058A4;
+ transform: translateY(-2px);
+ box-shadow: 0 4px 12px rgba(0,88,164,0.15);
+ }
+ .filter-btn.active {
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ color: white;
+ border-color: transparent;
+ box-shadow: 0 4px 16px rgba(0,88,164,0.3);
+ }
+ .blog-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 30px;
+ margin-bottom: 60px;
+ }
+ .blog-card {
+ background: white;
+ border: 1px solid #e5e7eb;
+ border-radius: 16px;
+ padding: 30px;
+ transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+ position: relative;
+ overflow: hidden;
+ }
+ .blog-card::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0;
+ height: 4px;
+ background: linear-gradient(90deg, #3182ce, #0058A4);
+ transform: scaleX(0);
+ transform-origin: left;
+ transition: transform 0.4s ease;
+ }
+ .blog-card:hover {
+ box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+ transform: translateY(-8px);
+ border-color: rgba(0,88,164,0.2);
+ }
+ .blog-card:hover::before {
+ transform: scaleX(1);
+ }
+ .blog-card-header {
+ margin-bottom: 15px;
+ }
+ .category-badge {
+ display: inline-block;
+ padding: 6px 12px;
+ border-radius: 6px;
+ color: white;
+ font-size: 0.85em;
+ font-weight: 600;
+ }
+ .blog-card-title {
+ font-size: 1.3em;
+ font-weight: 700;
+ margin: 15px 0;
+ color: #1f2937;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .blog-card-excerpt {
+ color: #6b7280;
+ font-size: 0.95em;
+ line-height: 1.6;
+ margin-bottom: 15px;
+ }
+ .blog-card-meta {
+ display: flex;
+ gap: 15px;
+ font-size: 0.85em;
+ color: #9ca3af;
+ margin-bottom: 20px;
+ }
+ .blog-card-link {
+ color: #0058A4;
+ text-decoration: none;
+ font-weight: 600;
+ display: inline-block;
+ margin-top: 10px;
+ transition: all 0.3s ease;
+ }
+ .blog-card-link:hover {
+ color: #3182ce;
+ letter-spacing: 0.5px;
+ }
+ .newsletter-cta {
+ background: linear-gradient(135deg, #0A1628 0%, #0d2847 60%, #0058A4 100%);
+ padding: 80px 40px;
+ border-radius: 20px;
+ text-align: center;
+ color: white;
+ margin-bottom: 60px;
+ position: relative;
+ overflow: hidden;
+ }
+ .newsletter-cta::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: radial-gradient(ellipse at 50% 0%, rgba(204,0,0,0.15) 0%, transparent 60%);
+ pointer-events: none;
+ }
+ .newsletter-cta > * { position: relative; z-index: 1; }
+ .newsletter-cta h2 {
+ font-size: 2.4em;
+ margin: 0 0 15px 0;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .newsletter-form {
+ display: flex;
+ gap: 10px;
+ max-width: 500px;
+ margin: 20px auto 0;
+ }
+ .newsletter-form input {
+ flex: 1;
+ padding: 14px 20px;
+ border: none;
+ border-radius: 12px;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1em;
+ }
+ .newsletter-form button {
+ padding: 14px 32px;
+ background: linear-gradient(135deg, #3182ce, #c49a45);
+ color: #0A1628;
+ border: none;
+ border-radius: 12px;
+ font-weight: 700;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ }
+ .newsletter-form button:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 8px 24px rgba(204,0,0,0.4);
+ }
+ @media (max-width: 768px) {
+ .blog-grid {
+ grid-template-columns: 1fr;
+ }
+ .blog-hero h1 {
+ font-size: 2em;
+ }
+ .filter-section {
+ justify-content: flex-start;
+ }
+ .newsletter-form {
+ flex-direction: column;
+ }
+ }
+ .blog-card.hidden {
+ display: none;
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/blog">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Blog & News - CSGA Global">
+ <meta property="og:description" content="Latest articles about MCP integrations, security, and AI governance">
+ <meta property="og:url" content="https://csga-global.vercel.app/blog">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Blog & News - CSGA Global">
+ <meta name="twitter:description" content="Latest articles about MCP integrations, security, and AI governance">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Blog & News - CSGA Global","description":"Latest articles about MCP integrations, security, and AI governance","url":"https://csga-global.vercel.app/blog","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="../components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<div class="blog-hero">
+ <div class="blog-container">
+ <h1 class="professional-title professional-title" class="professional-title">Blog & News</h1>
+ <p class="professional-body">Latest insights on MCPs, security, and platform integrations</p>
+ </div>
+</div>
+<div class="blog-container">
+ <div class="filter-section">
+ <button class="btn-professional" data-filter="all">All</button><button class="btn-professional" data-filter="ai-ml">AI & ML</button><button class="btn-professional" data-filter="data">Data</button><button class="btn-professional" data-filter="defence">Defence</button><button class="btn-professional" data-filter="development">Development</button><button class="btn-professional" data-filter="infrastructure">Infrastructure</button><button class="btn-professional" data-filter="security">Security</button>
+ </div>
+ <div class="blog-grid">
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Policy Engine</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-02-05</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/policy-engine.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="security">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #EF4444;">Security</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Data Sensitivity Classification</h3>
+ <p class="card-professional" class="professional-body">Automatically classify and protect sensitive data.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-02-04</span>
+ <span class="blog-reading-time">8 min read</span>
+ </div>
+ <a href="../blog/data-classification.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Vulnerability Scanner</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-31</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/vulnerability-scanner.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="defence">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #DC2626;">Defence</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Secure Communications Platform</h3>
+ <p class="card-professional" class="professional-body">End-to-end encrypted communications for sensitive operations.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-31</span>
+ <span class="blog-reading-time">8 min read</span>
+ </div>
+ <a href="../blog/secure-comms.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Compliance Audit</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-30</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/compliance-audit.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="defence">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #DC2626;">Defence</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Red Team Offensive Security Testing</h3>
+ <p class="card-professional" class="professional-body">Conduct comprehensive offensive security assessments.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-30</span>
+ <span class="blog-reading-time">9 min read</span>
+ </div>
+ <a href="../blog/red-team-ops.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Threat Intelligence</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-29</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/threat-intelligence.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="defence">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #DC2626;">Defence</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Cloud Security Posture Management</h3>
+ <p class="card-professional" class="professional-body">Continuously monitor and improve cloud security posture.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-29</span>
+ <span class="blog-reading-time">9 min read</span>
+ </div>
+ <a href="../blog/cloud-security.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="defence">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #DC2626;">Defence</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Incident Response Automation</h3>
+ <p class="card-professional" class="professional-body">Automate incident response workflows and investigation.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-28</span>
+ <span class="blog-reading-time">8 min read</span>
+ </div>
+ <a href="../blog/incident-response.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">AI Governance</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-27</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/ai-governance.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">PMCP Gateway</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-26</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/pmcp-gateway.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="defence">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #DC2626;">Defence</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Defence Security Requirements Board (DSRB)</h3>
+ <p class="card-professional" class="professional-body">Ensure compliance with UK Defence Security Requirements Board standards.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-26</span>
+ <span class="blog-reading-time">10 min read</span>
+ </div>
+ <a href="../blog/dsrb-defence.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Vercel Deploy</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-25</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/vercel-deploy.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">AWS Cloud</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-24</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/aws-cloud.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Docker Compose</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-23</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/docker-compose.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">GitLab API</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-22</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/gitlab-api.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Sentry Monitoring</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-21</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/sentry-monitoring.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Google Drive</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-20</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/google-drive.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">PostgreSQL Database</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-18</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/postgres-db.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Linear Issues</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-17</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/linear-issues.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Notion Workspace</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-16</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/notion-workspace.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Slack Messaging</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-15</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/slack-messaging.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">GitHub API</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-14</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/github-api.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">JSON Transformer</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-13</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/json-transformer.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">CSV Analytics</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-12</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/csv-analytics.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Puppeteer Headless</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-11</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/puppeteer-headless.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Time Zones</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-10</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/time-zones.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="ai-ml">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #F59E0B;">AI & ML</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Memory Graph Knowledge Management</h3>
+ <p class="card-professional" class="professional-body">Build and query knowledge graphs for contextual AI reasoning.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-09</span>
+ <span class="blog-reading-time">8 min read</span>
+ </div>
+ <a href="../blog/memory-graph.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">SQLite Database</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-09</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/sqlite-db.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="ai-ml">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #F59E0B;">AI & ML</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Sequential Thinking AI Framework</h3>
+ <p class="card-professional" class="professional-body">Multi-step reasoning and problem decomposition for complex AI tasks.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-08</span>
+ <span class="blog-reading-time">9 min read</span>
+ </div>
+ <a href="../blog/sequential-thinking.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Git Operations</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-08</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/git-operations.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Fetch HTTP</h3>
+ <p class="card-professional" class="professional-body">Explore this MCP integration</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-06</span>
+ <span class="blog-reading-time">5 min read</span>
+ </div>
+ <a href="../blog/fetch-http.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="data">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #EC4899;">Data</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Brave Search Integration</h3>
+ <p class="card-professional" class="professional-body">Privacy-first web search API with real-time indexing and no tracking.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-06</span>
+ <span class="blog-reading-time">6 min read</span>
+ </div>
+ <a href="../blog/brave-search.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="infrastructure">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #8B5CF6;">Infrastructure</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Filesystem Operations & Management</h3>
+ <p class="card-professional" class="professional-body">Comprehensive file system operations with permission management and batch processing.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-04</span>
+ <span class="blog-reading-time">7 min read</span>
+ </div>
+ <a href="../blog/filesystem-ops.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Context7 Documentation Indexing</h3>
+ <p class="card-professional" class="professional-body">Index and search NPM package documentation programmatically with Context7.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-03</span>
+ <span class="blog-reading-time">6 min read</span>
+ </div>
+ <a href="../blog/context7-docs.html" class="card-professional">Read More</a>
+ </article>
+ <article class="card-professional" data-category="development">
+ <div class="card-professional">
+ <span class="category-badge" style="background-color: #3B82F6;">Development</span>
+ </div>
+ <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Playwright Browser Automation</h3>
+ <p class="card-professional" class="professional-body">Master end-to-end browser automation with Playwright. Cross-browser testing made simple.</p>
+ <div class="card-professional">
+ <span class="blog-date">2026-01-02</span>
+ <span class="blog-reading-time">8 min read</span>
+ </div>
+ <a href="../blog/playwright-browser.html" class="card-professional">Read More</a>
+ </article>
+ </div>
+ <div class="newsletter-cta">
+ <h2 class="professional-title professional-title" class="professional-title">Stay Updated</h2>
+ <p class="professional-body">Subscribe to our newsletter for weekly insights on security and integration patterns</p>
+ <form class="newsletter-form">
+ <input type="email" placeholder="Enter your email" required>
+ <button type="submit">Subscribe</button>
+ </form>
+ </div>
+</div>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+ btn.addEventListener('click', function() {
+ const filter = this.dataset.filter;
+ document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+ this.classList.add('active');
+ document.querySelectorAll('.blog-card').forEach(card => {
+ if (filter === 'all') {
+ card.classList.remove('hidden');
+ } else {
+ if (card.dataset.category === filter) {
+ card.classList.remove('hidden');
+ } else {
+ card.classList.add('hidden');
+ }
+ }
+ });
+ });
+});
+</script>
+
+<div id="site-footer"></div>
+<script src="../components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

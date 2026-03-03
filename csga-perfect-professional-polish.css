@@ -1,0 +1,488 @@
+/* 🛡️ CSGA Perfect Professional Polish - Final Version */
+/* Clean, executive-ready professional design system */
+
+:root {
+  /* CSGA Professional Brand Colors */
+  --csga-primary: #3182ce;
+  --csga-secondary: #1e40af;
+  --csga-dark: #1a202c;
+  --csga-light: #f7fafc;
+  --csga-success: #059669;
+  --csga-warning: #d97706;
+  --csga-danger: #dc2626;
+  --csga-neutral: #6b7280;
+  
+  /* Professional Typography */
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  
+  /* Professional Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Professional Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  /* Professional Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* Professional Icon System - Clean and Executive Ready */
+.professional-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+  border-radius: var(--radius-md);
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+/* Icon Sizes */
+.professional-icon--xs {
+  width: 20px;
+  height: 20px;
+  font-size: 8px;
+}
+
+.professional-icon--sm {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.professional-icon--md {
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.professional-icon--lg {
+  width: 64px;
+  height: 64px;
+  font-size: 20px;
+  border-radius: var(--radius-lg);
+}
+
+.professional-icon--xl {
+  width: 96px;
+  height: 96px;
+  font-size: 28px;
+  border-radius: var(--radius-xl);
+}
+
+.professional-icon--hero {
+  width: 120px;
+  height: 120px;
+  font-size: 36px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  border: 2px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Icon Hover Effects */
+.professional-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.professional-icon--hero:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific Professional Icon Types */
+.icon-cobol::before { content: "CBL"; }
+.icon-ai::before { content: "AI"; }
+.icon-security::before { content: "SEC"; }
+.icon-governance::before { content: "GOV"; }
+.icon-compliance::before { content: "CMP"; }
+.icon-enterprise::before { content: "ENT"; }
+.icon-defense::before { content: "DEF"; }
+.icon-banking::before { content: "BNK"; }
+.icon-education::before { content: "EDU"; }
+.icon-research::before { content: "RES"; }
+.icon-analytics::before { content: "ANL"; }
+.icon-contact::before { content: "CON"; }
+.icon-support::before { content: "SUP"; }
+.icon-documentation::before { content: "DOC"; }
+.icon-configuration::before { content: "CFG"; }
+.icon-scanning::before { content: "SCN"; }
+.icon-power::before { content: "PWR"; }
+.icon-financial::before { content: "FIN"; }
+.icon-growth::before { content: "GRW"; }
+.icon-global::before { content: "GLB"; }
+.icon-messaging::before { content: "MSG"; }
+.icon-library::before { content: "LIB"; }
+.icon-shield::before { content: "SHD"; }
+
+/* Professional Color Variants */
+.professional-icon--success {
+  background: linear-gradient(135deg, var(--csga-success), #047857);
+}
+
+.professional-icon--warning {
+  background: linear-gradient(135deg, var(--csga-warning), #c2410c);
+}
+
+.professional-icon--danger {
+  background: linear-gradient(135deg, var(--csga-danger), #b91c1c);
+}
+
+.professional-icon--neutral {
+  background: linear-gradient(135deg, var(--csga-neutral), #4b5563);
+}
+
+/* Professional Typography System */
+.professional-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--csga-dark);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.professional-subtitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--csga-neutral);
+  line-height: 1.4;
+}
+
+.professional-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.professional-caption {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--csga-neutral);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Professional Button System */
+.btn-professional {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-professional:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-professional--secondary {
+  background: rgba(49, 130, 206, 0.1);
+  color: var(--csga-primary);
+  border: 2px solid rgba(49, 130, 206, 0.2);
+}
+
+.btn-professional--secondary:hover {
+  background: rgba(49, 130, 206, 0.15);
+  border-color: rgba(49, 130, 206, 0.3);
+  color: var(--csga-secondary);
+}
+
+/* Professional Card System */
+.card-professional {
+  background: white;
+  border: 1px solid rgba(49, 130, 206, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card-professional:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(49, 130, 206, 0.2);
+}
+
+.card-professional__header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.card-professional__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--csga-dark);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-professional__subtitle {
+  font-family: var(--font-body);
+  color: var(--csga-neutral);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Professional Badge System */
+.badge-professional {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 6px 12px;
+  background: rgba(49, 130, 206, 0.1);
+  color: var(--csga-primary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 20px;
+  border: 1px solid rgba(49, 130, 206, 0.2);
+}
+
+.badge-professional--success {
+  background: rgba(5, 150, 105, 0.1);
+  color: var(--csga-success);
+  border-color: rgba(5, 150, 105, 0.2);
+}
+
+.badge-professional--warning {
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--csga-warning);
+  border-color: rgba(217, 119, 6, 0.2);
+}
+
+/* Professional Layout Utilities */
+.professional-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.professional-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.professional-grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.professional-grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.professional-grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.professional-flex {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.professional-flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.professional-flex--between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.professional-flex--wrap {
+  flex-wrap: wrap;
+}
+
+/* Professional Spacing Utilities */
+.mt-professional { margin-top: var(--spacing-lg); }
+.mb-professional { margin-bottom: var(--spacing-lg); }
+.py-professional { padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg); }
+.px-professional { padding-left: var(--spacing-lg); padding-right: var(--spacing-lg); }
+
+/* Professional Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+  }
+  
+  .professional-icon--hero {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+  
+  .professional-icon--xl {
+    width: 72px;
+    height: 72px;
+    font-size: 24px;
+  }
+  
+  .professional-icon--lg {
+    width: 56px;
+    height: 56px;
+    font-size: 18px;
+  }
+  
+  .btn-professional {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .card-professional {
+    padding: var(--spacing-lg);
+  }
+  
+  .professional-grid--2,
+  .professional-grid--3,
+  .professional-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Professional Animation System */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* Professional Focus States for Accessibility */
+.professional-icon:focus,
+.btn-professional:focus,
+.card-professional:focus {
+  outline: 2px solid var(--csga-primary);
+  outline-offset: 2px;
+}
+
+/* Professional Print Styles */
+@media print {
+  .professional-icon {
+    background: var(--csga-dark) !important;
+  }
+  
+  .card-professional {
+    border: 2px solid var(--csga-dark);
+  }
+  
+  .btn-professional {
+    border: 2px solid var(--csga-dark);
+    background: transparent !important;
+    color: var(--csga-dark) !important;
+  }
+}
+
+/* Hide unprofessional elements */
+.emoji-removed,
+.emoji-hide,
+[title*="emoji"] {
+  display: none !important;
+}
+
+/* Clean up any remaining emoji artifacts */
+.clean-text {
+  font-family: var(--font-body) !important;
+}
+
+/* Professional COBOL-specific styling */
+.cobol-hero-icon {
+  width: 120px !important;
+  height: 120px !important;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)) !important;
+  border: 2px solid rgba(255,255,255,0.2) !important;
+  border-radius: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  font-size: 36px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  margin: 0 auto 32px !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+.cobol-hero-icon::before {
+  content: "CBL" !important;
+}
+
+.cobol-feature-icon {
+  width: 80px !important;
+  height: 80px !important;
+  background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary)) !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin: 0 auto 24px !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.cobol-feature-icon:nth-child(1)::before { content: "AI" !important; }
+.cobol-feature-icon:nth-child(2)::before { content: "SEC" !important; }
+.cobol-feature-icon:nth-child(3)::before { content: "INT" !important; }
+.cobol-feature-icon:nth-child(4)::before { content: "GOV" !important; }
+.cobol-feature-icon:nth-child(5)::before { content: "CMP" !important; }
+.cobol-feature-icon:nth-child(6)::before { content: "ENT" !important; }

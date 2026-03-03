@@ -1,0 +1,27 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="governanceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1e40af"/>
+            <stop offset="100%" stop-color="#3b82f6"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Balance Base -->
+    <rect x="14" y="24" width="4" height="6" fill="url(#governanceGradient)"/>
+    <rect x="10" y="28" width="12" height="2" fill="url(#governanceGradient)"/>
+    
+    <!-- Central Post -->
+    <rect x="15" y="8" width="2" height="16" fill="url(#governanceGradient)"/>
+    
+    <!-- Balance Beam -->
+    <rect x="6" y="8" width="20" height="2" fill="url(#governanceGradient)"/>
+    
+    <!-- Left Scale -->
+    <path d="M8 8L6 12h4z" fill="#ffffff" stroke="url(#governanceGradient)" stroke-width="1"/>
+    
+    <!-- Right Scale -->
+    <path d="M24 8L22 12h4z" fill="#ffffff" stroke="url(#governanceGradient)" stroke-width="1"/>
+    
+    <!-- Balance Point -->
+    <circle cx="16" cy="8" r="2" fill="url(#governanceGradient)" stroke="#ffffff" stroke-width="1"/>
+</svg>

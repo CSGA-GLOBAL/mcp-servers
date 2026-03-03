@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSGA MCP Server Catalog - 76 AI governance Model Context Protocol servers. Install via npm, subscribe for managed access.">
+    <meta name="keywords" content="MCP servers, AI governance, Model Context Protocol, npm, CSOAI, compliance, AI safety">
+    <meta name="author" content="CSGA">
+
+    <title>MCP Server Catalog - CSGA Global</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="MCP Server Catalog - CSGA Global">
+    <meta property="og:description" content="76 AI governance MCP servers covering every compliance domain. Install via npm or subscribe for managed access.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://csga-global.vercel.app/mcp-catalog">
+    <meta property="og:image" content="https://csga-global.org/img/og-image.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./components/shared.css">
+
+    <style>
+        .catalog-controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background: rgba(0, 230, 118, 0.08);
+        }
+        .mcp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 16px;
+        }
+        .mcp-card {
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        .mcp-card:hover {
+            border-color: var(--accent-green);
+            box-shadow: 0 4px 20px rgba(0, 230, 118, 0.06);
+        }
+        .mcp-card__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .mcp-card__name {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .mcp-card__tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .tag-governance { background: rgba(0, 230, 118, 0.12); color: #00e676; }
+        .tag-security { background: rgba(255, 82, 82, 0.12); color: #ff5252; }
+        .tag-industry { background: rgba(41, 121, 255, 0.12); color: #448aff; }
+        .tag-defence { background: rgba(255, 171, 64, 0.12); color: #ffab40; }
+        .tag-devops { background: rgba(0, 229, 255, 0.12); color: #00e5ff; }
+        .tag-data { background: rgba(234, 128, 252, 0.12); color: #ea80fc; }
+        .tag-infrastructure { background: rgba(255, 213, 79, 0.12); color: #ffd54f; }
+        .tag-societal { background: rgba(29, 233, 182, 0.12); color: #1de9b6; }
+        .mcp-card__desc {
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .mcp-card__install {
+            display: block;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            margin-bottom: 12px;
+            overflow-x: auto;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .mcp-card__install:hover {
+            border-color: var(--accent-green);
+        }
+        .mcp-card__install::before {
+            content: '$ ';
+            color: var(--text-muted);
+        }
+        .mcp-card__links {
+            display: flex;
+            gap: 8px;
+        }
+        .mcp-card__links a {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .mcp-card__links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* Individual pricing tiers */
+        .tier-badges {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .tier-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .tier-badge:hover {
+            border-color: var(--accent-green);
+            box-shadow: var(--shadow-glow-green);
+        }
+        .tier-badge__label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .tier-badge__price {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .tier-badge__price span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        .tier-badge__desc {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+        .lvp .tier-badge__label { color: var(--accent-blue); }
+        .mvp .tier-badge__label { color: var(--accent-green); }
+        .hvp .tier-badge__label { color: var(--accent-cyan); }
+        .catalog-count {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+        }
+    </style>
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body class="dark-theme">
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <!-- Dynamic Header (loaded by shared.js) -->
+    <div id="site-header"></div>
+
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero__bg"></div>
+        <div class="container">
+            <h1 class="professional-title professional-title" class="professional-title">MCP Server Catalog</h1>
+            <p class="section-subtitle" class="professional-body">76 AI governance servers built on the Model Context Protocol. Install via npm or subscribe for managed access.</p>
+        </div>
+    </section>
+
+    <!-- Per-Server Pricing -->
+    <section class="section fade-in">
+        <div class="container">
+            <div class="section-label">INDIVIDUAL SERVER PRICING</div>
+            <h2 class="professional-title section-title" class="section-title" class="professional-title" class="professional-title">Per-Server Access Tiers</h2>
+
+            <div class="tier-badges">
+                <a href="https://buy.stripe.com/cNi5kF3Qt23ucVUflbdMI0a" target="_blank" class="tier-badge lvp">
+                    <div class="tier-badge__label">LVP</div>
+                    <div class="tier-badge__price">&pound;9 <span>/mo</span></div>
+                    <div class="tier-badge__desc">Low-Value Protocol</div>
+                </a>
+                <a href="https://buy.stripe.com/00wbJ3gDf6jKf426OFdMI0b" target="_blank" class="tier-badge mvp">
+                    <div class="tier-badge__label">MVP</div>
+                    <div class="tier-badge__price">&pound;29 <span>/mo</span></div>
+                    <div class="tier-badge__desc">Mid-Value Protocol</div>
+                </a>
+                <a href="https://buy.stripe.com/bJeaEZ0Eh8rS098a0RdMI0c" target="_blank" class="tier-badge hvp">
+                    <div class="tier-badge__label">HVP</div>
+                    <div class="tier-badge__price">&pound;79 <span>/mo</span></div>
+                    <div class="tier-badge__desc">High-Value Protocol</div>
+                </a>
+            </div>
+
+            <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; max-width: 700px; margin: 0 auto 16px;" class="professional-body">Need multiple servers? Consider an <a href="members" style="color: var(--accent-green);">ecosystem bundle</a> starting at &pound;39/mo, or a <a href="members#pricing" style="color: var(--accent-green);">membership tier</a> with bundled server access.</p>
+        </div>
+    </section>
+
+    <!-- Full Catalog -->
+    <section class="section fade-in" id="servers">
+        <div class="container">
+            <div class="section-label">ALL SERVERS</div>
+            <h2 class="professional-title section-title" class="section-title" class="professional-title" class="professional-title">Full Catalog</h2>
+
+            <div class="catalog-controls">
+                <button class="btn-professional" data-filter="all">All (76)</button>
+                <button class="btn-professional" data-filter="governance">Governance</button>
+                <button class="btn-professional" data-filter="security">Security</button>
+                <button class="btn-professional" data-filter="industry">Industry</button>
+                <button class="btn-professional" data-filter="defence">Defence &amp; Intel</button>
+                <button class="btn-professional" data-filter="devops">DevOps</button>
+                <button class="btn-professional" data-filter="data">Data</button>
+                <button class="btn-professional" data-filter="infrastructure">Infrastructure</button>
+                <button class="btn-professional" data-filter="societal">Societal</button>
+            </div>
+
+            <div class="catalog-count" id="catalog-count">Showing 76 servers</div>
+
+            <div class="mcp-grid" id="mcp-grid">
+
+                <!-- GOVERNANCE CATEGORY -->
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Policy Engine</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI policy creation, validation, and enforcement engine with regulatory mapping.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/policy-engine')">npm i @csgaglobal/policy-engine</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/policy-engine" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/policy-engine" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Impact Assessment</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Algorithmic, human rights, data protection, and societal impact evaluations.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/impact-assessment')">npm i @csgaglobal/impact-assessment</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/impact-assessment" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/impact-assessment" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Transparency Reporting</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI transparency and accountability reporting with audit trails.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/transparency-reporting')">npm i @csgaglobal/transparency-reporting</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/transparency-reporting" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/transparency-reporting" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Stakeholder Engagement</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Manage AI governance stakeholder communications and consultations.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/stakeholder-engagement')">npm i @csgaglobal/stakeholder-engagement</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/stakeholder-engagement" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/stakeholder-engagement" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Ethical Review</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI ethics review boards, assessments and decision frameworks.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/ethical-review')">npm i @csgaglobal/ethical-review</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/ethical-review" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/ethical-review" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Compliance Reporting</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Automated compliance reports for EU AI Act, NIST, ISO 42001 frameworks.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/compliance-reporting')">npm i @csgaglobal/compliance-reporting</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/compliance-reporting" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/compliance-reporting" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Consent Management</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI data consent tracking, preferences, and compliance management.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/consent-management')">npm i @csgaglobal/consent-management</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/consent-management" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/consent-management" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Bias Detection</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Detect and measure algorithmic bias across protected attributes.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/bias-detection')">npm i @csgaglobal/bias-detection</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/bias-detection" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/bias-detection" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Explainability Engine</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Generate human-readable explanations for AI model decisions.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/explainability-engine')">npm i @csgaglobal/explainability-engine</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/explainability-engine" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/explainability-engine" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Sovereign AI Governance</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">National AI sovereignty frameworks, data residency, and regulatory compliance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/sovereign-ai-governance')">npm i @csgaglobal/sovereign-ai-governance</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/sovereign-ai-governance" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/sovereign-ai-governance" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="governance">
+                    <div class="card-professional">
+                        <div class="card-professional">Frontier Model Governance</div>
+                        <span class="card-professional">Governance</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Safety controls for frontier AI models including capability assessments.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/frontier-model-governance')">npm i @csgaglobal/frontier-model-governance</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/frontier-model-governance" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/frontier-model-governance" target="_blank">GitHub</a></div>
+                </div>
+
+                <!-- SECURITY CATEGORY -->
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">Incident Response</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI security incident detection, response playbooks, and recovery.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/incident-response')">npm i @csgaglobal/incident-response</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/incident-response" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/incident-response" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">Vulnerability Management</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI system vulnerability scanning, tracking and remediation.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/vulnerability-management')">npm i @csgaglobal/vulnerability-management</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/vulnerability-management" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/vulnerability-management" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">Red Team Testing</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Adversarial testing, prompt injection defence, and safety evaluations.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/red-team-testing')">npm i @csgaglobal/red-team-testing</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/red-team-testing" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/red-team-testing" target="_blank">GitHub</a></div>
+                </div>
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">Access Control</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI system access management, RBAC, and permission governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/access-control')">npm i @csgaglobal/access-control</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/access-control" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/access-control" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">Cybersecurity AI</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI-powered cybersecurity threat detection and defence tools.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/cybersecurity-ai')">npm i @csgaglobal/cybersecurity-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/cybersecurity-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/cybersecurity-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">Biosecurity AI</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Biological threat detection and dual-use research governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/biosecurity-ai')">npm i @csgaglobal/biosecurity-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/biosecurity-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/biosecurity-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">QuantraNet PQC</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Post-quantum cryptography readiness assessment and migration tools.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/quantranet-pqc')">npm i @csgaglobal/quantranet-pqc</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/quantranet-pqc" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/quantranet-pqc" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">Disaster Recovery</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI system disaster recovery planning, testing, and execution.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/disaster-recovery')">npm i @csgaglobal/disaster-recovery</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/disaster-recovery" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/disaster-recovery" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">Audit Logging</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Comprehensive AI system audit trails and tamper-proof logging.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/audit-logging')">npm i @csgaglobal/audit-logging</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/audit-logging" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/audit-logging" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="security">
+                    <div class="card-professional">
+                        <div class="card-professional">THN Global</div>
+                        <span class="card-professional">Security</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Threat hunting and global threat intelligence aggregation.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/thn-global')">npm i @csgaglobal/thn-global</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/thn-global" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/thn-global" target="_blank">GitHub</a></div>
+                </div>
+
+                <!-- DEVOPS CATEGORY -->
+                <div class="card-professional" data-category="devops">
+                    <div class="card-professional">
+                        <div class="card-professional">Model Registry</div>
+                        <span class="card-professional">DevOps</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI model versioning, metadata tracking, and lifecycle management.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/model-registry')">npm i @csgaglobal/model-registry</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/model-registry" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/model-registry" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="devops">
+                    <div class="card-professional">
+                        <div class="card-professional">Model Validation</div>
+                        <span class="card-professional">DevOps</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Pre-deployment model testing, validation suites, and approval gates.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/model-validation')">npm i @csgaglobal/model-validation</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/model-validation" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/model-validation" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="devops">
+                    <div class="card-professional">
+                        <div class="card-professional">Training Data Governance</div>
+                        <span class="card-professional">DevOps</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Training data quality, provenance, and rights management.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/training-data-governance')">npm i @csgaglobal/training-data-governance</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/training-data-governance" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/training-data-governance" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="devops">
+                    <div class="card-professional">
+                        <div class="card-professional">Performance Monitoring</div>
+                        <span class="card-professional">DevOps</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Real-time AI model performance metrics and drift detection.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/performance-monitoring')">npm i @csgaglobal/performance-monitoring</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/performance-monitoring" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/performance-monitoring" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="devops">
+                    <div class="card-professional">
+                        <div class="card-professional">Monitoring Dashboard</div>
+                        <span class="card-professional">DevOps</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Unified AI system health dashboard with alerts and SLAs.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/monitoring-dashboard')">npm i @csgaglobal/monitoring-dashboard</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/monitoring-dashboard" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/monitoring-dashboard" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="devops">
+                    <div class="card-professional">
+                        <div class="card-professional">Deployment Governance</div>
+                        <span class="card-professional">DevOps</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI deployment pipelines with governance gates and rollback controls.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/deployment-governance')">npm i @csgaglobal/deployment-governance</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/deployment-governance" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/deployment-governance" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="devops">
+                    <div class="card-professional">
+                        <div class="card-professional">Continuous Monitoring</div>
+                        <span class="card-professional">DevOps</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Continuous AI system observation, anomaly detection, and alerting.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/continuous-monitoring')">npm i @csgaglobal/continuous-monitoring</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/continuous-monitoring" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/continuous-monitoring" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="devops">
+                    <div class="card-professional">
+                        <div class="card-professional">API Gateway</div>
+                        <span class="card-professional">DevOps</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Centralized AI API management with rate limiting and governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/api-gateway')">npm i @csgaglobal/api-gateway</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/api-gateway" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/api-gateway" target="_blank">GitHub</a></div>
+                </div>
+
+                <!-- DATA CATEGORY -->
+                <div class="card-professional" data-category="data">
+                    <div class="card-professional">
+                        <div class="card-professional">Data Classification</div>
+                        <span class="card-professional">Data</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Automated data sensitivity classification and labelling.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/data-classification')">npm i @csgaglobal/data-classification</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/data-classification" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/data-classification" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="data">
+                    <div class="card-professional">
+                        <div class="card-professional">Risk Assessment</div>
+                        <span class="card-professional">Data</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI risk scoring, mitigation planning, and risk register management.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/risk-assessment')">npm i @csgaglobal/risk-assessment</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/risk-assessment" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/risk-assessment" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="data">
+                    <div class="card-professional">
+                        <div class="card-professional">Supply Chain Verification</div>
+                        <span class="card-professional">Data</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI supply chain integrity verification and provenance tracking.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/supply-chain-verification')">npm i @csgaglobal/supply-chain-verification</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/supply-chain-verification" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/supply-chain-verification" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="data">
+                    <div class="card-professional">
+                        <div class="card-professional">Sports Analytics AI</div>
+                        <span class="card-professional">Data</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Sports data analytics with AI fairness and integrity controls.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/sports-analytics-ai')">npm i @csgaglobal/sports-analytics-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/sports-analytics-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/sports-analytics-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="data">
+                    <div class="card-professional">
+                        <div class="card-professional">Media AI</div>
+                        <span class="card-professional">Data</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">AI content moderation, deepfake detection, and media governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/media-ai')">npm i @csgaglobal/media-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/media-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/media-ai" target="_blank">GitHub</a></div>
+                </div>
+                <!-- INDUSTRY CATEGORY -->
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Manufacturing AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Smart manufacturing, quality control, and Industry 4.0 AI governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/manufacturing-ai')">npm i @csgaglobal/manufacturing-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/manufacturing-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/manufacturing-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Retail AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Retail AI governance for pricing, recommendations, and customer analytics.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/retail-ai')">npm i @csgaglobal/retail-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/retail-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/retail-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Real Estate AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Property valuation AI governance and fair housing compliance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/real-estate-ai')">npm i @csgaglobal/real-estate-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/real-estate-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/real-estate-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Transportation AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Autonomous vehicle and transport AI safety governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/transportation-ai')">npm i @csgaglobal/transportation-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/transportation-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/transportation-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Pharmaceutical AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Drug discovery AI governance, clinical trial compliance, and safety.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/pharmaceutical-ai')">npm i @csgaglobal/pharmaceutical-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/pharmaceutical-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/pharmaceutical-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Insurance AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Insurance underwriting and claims AI fairness governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/insurance-ai')">npm i @csgaglobal/insurance-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/insurance-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/insurance-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Legal AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Legal tech AI governance, contract analysis, and judicial AI oversight.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/legal-ai')">npm i @csgaglobal/legal-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/legal-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/legal-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Education AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Educational AI governance, student privacy, and algorithmic fairness.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/education-ai')">npm i @csgaglobal/education-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/education-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/education-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Telecom AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Telecoms network AI governance and spectrum management.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/telecom-ai')">npm i @csgaglobal/telecom-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/telecom-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/telecom-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Travel &amp; Hospitality AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Travel pricing AI fairness and hospitality service governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/travel-hospitality-ai')">npm i @csgaglobal/travel-hospitality-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/travel-hospitality-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/travel-hospitality-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Construction AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Construction site AI safety and building information modelling governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/construction-ai')">npm i @csgaglobal/construction-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/construction-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/construction-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Agriculture AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Precision agriculture AI and food supply chain governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/agriculture-ai')">npm i @csgaglobal/agriculture-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/agriculture-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/agriculture-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Logistics AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Logistics and delivery optimisation AI governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/logistics-ai')">npm i @csgaglobal/logistics-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/logistics-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/logistics-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="industry">
+                    <div class="card-professional">
+                        <div class="card-professional">Supply Chain AI</div>
+                        <span class="card-professional">Industry</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">End-to-end supply chain AI management and risk governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/supply-chain-ai')">npm i @csgaglobal/supply-chain-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/supply-chain-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/supply-chain-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <!-- DEFENCE & INTEL CATEGORY -->
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Defense AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Military AI governance, autonomous weapons oversight, and LAWS compliance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/defense-ai')">npm i @csgaglobal/defense-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/defense-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/defense-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Weapons Systems AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Autonomous weapons safety controls and human oversight governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/weapons-systems-ai')">npm i @csgaglobal/weapons-systems-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/weapons-systems-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/weapons-systems-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Intelligence AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Intelligence community AI governance and OSINT compliance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/intelligence-ai')">npm i @csgaglobal/intelligence-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/intelligence-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/intelligence-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Nuclear Safety AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Nuclear facility AI safety controls and regulatory compliance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/nuclear-safety-ai')">npm i @csgaglobal/nuclear-safety-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/nuclear-safety-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/nuclear-safety-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Space AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Space operations AI governance and satellite system safety.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/space-ai')">npm i @csgaglobal/space-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/space-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/space-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Aerospace AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Aerospace AI safety, avionics governance, and flight system compliance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/aerospace-ai')">npm i @csgaglobal/aerospace-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/aerospace-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/aerospace-ai" target="_blank">GitHub</a></div>
+                </div>
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Aviation AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Commercial aviation AI safety and air traffic management governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/aviation-ai')">npm i @csgaglobal/aviation-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/aviation-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/aviation-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Maritime AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Maritime AI navigation, shipping, and naval operations governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/maritime-ai')">npm i @csgaglobal/maritime-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/maritime-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/maritime-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="defence">
+                    <div class="card-professional">
+                        <div class="card-professional">Autonomous Systems AI</div>
+                        <span class="card-professional">Defence</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Autonomous vehicle and robotics safety governance framework.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/autonomous-systems-ai')">npm i @csgaglobal/autonomous-systems-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/autonomous-systems-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/autonomous-systems-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <!-- INFRASTRUCTURE CATEGORY -->
+                <div class="card-professional" data-category="infrastructure">
+                    <div class="card-professional">
+                        <div class="card-professional">Critical Infrastructure AI</div>
+                        <span class="card-professional">Infrastructure</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Critical national infrastructure AI protection and governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/critical-infrastructure-ai')">npm i @csgaglobal/critical-infrastructure-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/critical-infrastructure-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/critical-infrastructure-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="infrastructure">
+                    <div class="card-professional">
+                        <div class="card-professional">Energy AI</div>
+                        <span class="card-professional">Infrastructure</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Energy grid AI optimisation, smart grid governance, and sustainability.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/energy-ai')">npm i @csgaglobal/energy-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/energy-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/energy-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="infrastructure">
+                    <div class="card-professional">
+                        <div class="card-professional">Smart Cities AI</div>
+                        <span class="card-professional">Infrastructure</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Smart city AI governance, urban planning, and citizen privacy.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/smart-cities-ai')">npm i @csgaglobal/smart-cities-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/smart-cities-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/smart-cities-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="infrastructure">
+                    <div class="card-professional">
+                        <div class="card-professional">Government AI</div>
+                        <span class="card-professional">Infrastructure</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Public sector AI governance, e-government, and citizen services.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/government-ai')">npm i @csgaglobal/government-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/government-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/government-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <!-- SOCIETAL CATEGORY -->
+                <div class="card-professional" data-category="societal">
+                    <div class="card-professional">
+                        <div class="card-professional">Election Integrity AI</div>
+                        <span class="card-professional">Societal</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Election security AI, disinformation detection, and voting system governance.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/election-integrity-ai')">npm i @csgaglobal/election-integrity-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/election-integrity-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/election-integrity-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="societal">
+                    <div class="card-professional">
+                        <div class="card-professional">Climate AI</div>
+                        <span class="card-professional">Societal</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Climate modelling AI governance and environmental impact tracking.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/climate-ai')">npm i @csgaglobal/climate-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/climate-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/climate-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="societal">
+                    <div class="card-professional">
+                        <div class="card-professional">Pandemic Response AI</div>
+                        <span class="card-professional">Societal</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Pandemic surveillance AI, contact tracing governance, and health response.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/pandemic-response-ai')">npm i @csgaglobal/pandemic-response-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/pandemic-response-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/pandemic-response-ai" target="_blank">GitHub</a></div>
+                </div>
+
+                <div class="card-professional" data-category="societal">
+                    <div class="card-professional">
+                        <div class="card-professional">Financial Stability AI</div>
+                        <span class="card-professional">Societal</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">Financial system AI risk governance and systemic stability monitoring.</p>
+                    <code class="card-professional" onclick="navigator.clipboard.writeText('npm i @csgaglobal/financial-stability-ai')">npm i @csgaglobal/financial-stability-ai</code>
+                    <div class="card-professional"><a href="https://www.npmjs.com/package/@csgaglobal/financial-stability-ai" target="_blank">npm</a> <a href="https://github.com/CSGA-GLOBAL/mcp-servers/tree/main/packages/financial-stability-ai" target="_blank">GitHub</a></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade-in">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="professional-title cta-title" class="section-title" class="professional-title" class="professional-title">Ready to Govern Your AI?</h2>
+                <p class="cta-description" class="professional-body">
+                    Start with a single server at &pound;9/mo, grab an ecosystem bundle, or unlock everything with an Enterprise membership.
+                </p>
+                <div class="btn-professional">
+                    <a href="members#pricing" class="btn-professional">View Memberships</a>
+                    <a href="contact" class="btn-professional">Talk to Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Footer (loaded by shared.js) -->
+    <div id="site-footer"></div>
+
+    <!-- JavaScript -->
+    <script src="./components/shared.js"></script>
+    <script>
+        // Category filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                let count = 0;
+                document.querySelectorAll('.mcp-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                        count++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                document.getElementById('catalog-count').textContent = 'Showing ' + count + ' server' + (count !== 1 ? 's' : '');
+            });
+        });
+
+        // Click-to-copy install commands
+        document.querySelectorAll('.mcp-card__install').forEach(el => {
+            el.addEventListener('click', function() {
+                const orig = this.textContent;
+                this.textContent = 'Copied!';
+                this.style.color = '#1de9b6';
+                setTimeout(() => {
+                    this.textContent = orig;
+                    this.style.color = '';
+                }, 1500);
+            });
+        });
+    </script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>TSO-CSRT: Cyber Security Response Team - CSGA Global</title>
+ <meta name="description" content="TSO-CSRT emergency incident response. 24/7 cyber security response team for critical incidents and emergencies.">
+ 
+ 
+ <style>
+.tso-hero {
+ background: linear-gradient(135deg, rgba(204, 0, 0, 0.8) 0%, rgba(10, 22, 40, 0.8) 100%),
+ url('https://images.unsplash.com/photo-1550355291-bbee04a92027?w=1200&h=400&fit=crop') center/cover;
+ color: white;
+ padding: 80px 20px;
+ text-align: center;
+ }
+ .tso-hero h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.5rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ line-height: 1.2;
+ }
+ .tso-hero p {
+ font-size: 1.2rem;
+ font-weight: 300;
+ max-width: 700px;
+ margin: 0 auto;
+ }
+ .tso-about {
+ padding: 60px 20px;
+ background: white;
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ .tso-about h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ color: #0A1628;
+ margin-bottom: 20px;
+ }
+ .tso-about p {
+ font-size: 1.05rem;
+ line-height: 1.7;
+ color: #333;
+ margin: 15px 0;
+ }
+ .emergency-alert {
+ background: #CC0000;
+ color: white;
+ padding: 20px;
+ border-radius: 12px;
+ margin: 30px 0;
+ border-left: 4px solid #990000;
+ }
+ .emergency-alert strong {
+ display: block;
+ margin-bottom: 8px;
+ }
+ .process-section {
+ padding: 60px 20px;
+ background: #f9f9f9;
+ }
+ .process-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .process-steps {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 30px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .process-step {
+ background: white;
+ border-radius: 12px;
+ padding: 30px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+ border-top: 4px solid #CC0000;
+ text-align: center;
+ }
+ .step-number {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #CC0000;
+ margin-bottom: 15px;
+ }
+ .process-step h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.2rem;
+ color: #0A1628;
+ margin: 0 0 12px 0;
+ }
+ .process-step p {
+ color: #666;
+ line-height: 1.6;
+ margin: 0;
+ font-size: 0.95rem;
+ }
+ .capabilities-section {
+ padding: 60px 20px;
+ background: white;
+ }
+ .capabilities-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .capabilities-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 30px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .capability {
+ background: #f9f9f9;
+ border-radius: 12px;
+ padding: 25px;
+ border-left: 4px solid #0058A4;
+ }
+ .capability h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.1rem;
+ color: #0A1628;
+ margin: 0 0 12px 0;
+ }
+ .capability p {
+ color: #666;
+ line-height: 1.6;
+ margin: 0;
+ font-size: 0.9rem;
+ }
+ .response-metrics {
+ padding: 40px;
+ background: linear-gradient(135deg, #0A1628, #0058A4);
+ color: white;
+ border-radius: 12px;
+ margin-top: 40px;
+ }
+ .response-metrics h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.1rem;
+ margin-bottom: 20px;
+ }
+ .metrics-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ gap: 20px;
+ }
+ .metric {
+ text-align: center;
+ }
+ .metric-value {
+ font-size: 1.8rem;
+ font-weight: 700;
+ color: #CC0000;
+ }
+ .metric-label {
+ font-size: 0.85rem;
+ margin-top: 8px;
+ }
+ .emergency-contact {
+ padding: 60px 20px;
+ background: #f9f9f9;
+ }
+ .emergency-contact h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0A1628;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .contact-cards {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 30px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .contact-card {
+ background: white;
+ border-radius: 12px;
+ padding: 30px;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+ border-top: 4px solid #CC0000;
+ text-align: center;
+ }
+ .contact-card h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.1rem;
+ color: #0A1628;
+ margin: 0 0 15px 0;
+ }
+ .contact-info {
+ font-size: 1rem;
+ color: #333;
+ margin-bottom: 10px;
+ font-weight: 600;
+ }
+ .contact-method {
+ font-size: 0.9rem;
+ color: #666;
+ margin-bottom: 8px;
+ }
+ .tso-cta {
+ background: linear-gradient(135deg, #CC0000, #990000);
+ color: white;
+ padding: 60px 20px;
+ text-align: center;
+ }
+ .tso-cta h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2rem;
+ margin-bottom: 20px;
+ }
+ .tso-cta p {
+ font-size: 1.1rem;
+ margin-bottom: 30px;
+ max-width: 600px;
+ margin-left: auto;
+ margin-right: auto;
+ }
+ .cta-button {
+ display: inline-block;
+ background: #CC0000;
+ color: #0A1628;
+ padding: 14px 35px;
+ border-radius: 6px;
+ text-decoration: none;
+ font-weight: 600;
+ transition: background 0.3s ease;
+ }
+ .cta-button:hover {
+ background: #e5bd68;
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/tso-csrt">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="TSO-CSRT: Cyber Security Response Team - CSGA Global">
+ <meta property="og:description" content="TSO-CSRT emergency incident response. 24/7 cyber security response team for critical incidents and emergencies.">
+ <meta property="og:url" content="https://csga-global.vercel.app/tso-csrt">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="TSO-CSRT: Cyber Security Response Team - CSGA Global">
+ <meta name="twitter:description" content="TSO-CSRT emergency incident response. 24/7 cyber security response team for critical incidents and emergencies.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"TSO-CSRT: Cyber Security Response Team - CSGA Global","description":"TSO-CSRT emergency incident response. 24/7 cyber security response team for critical incidents and emergencies.","url":"https://csga-global.vercel.app/tso-csrt","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="tso-hero">
+ <h1 class="professional-title"><h1 class="professional-title" class="professional-title">TSO-CSRT</h1>
+ <p class="professional-body">24/7 Cyber Security Response Team for Critical Incidents & Emergencies</p>
+</section>
+<section class="tso-about">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">What is TSO-CSRT?</h2>
+ <p class="professional-body">The Threat Security Operations - Cyber Security Response Team (TSO-CSRT) is CSGA's elite emergency response unit dedicated to rapid incident response, threat mitigation, and recovery support for critical infrastructure and defence-sector organizations facing cyber attacks, data breaches, and security emergencies.</p>
+ <div class="emergency-alert">
+ <strong>🚨 Report a Cyber Emergency</strong>
+ <p class="professional-body">24/7 Emergency Hotline: +44 (0) 20 XXXX XXXX | Email: emergency@csga-global.org | Secure Messaging: Use SOC Portal</p>
+ </div>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">How TSO-CSRT Operates</h2>
+ <p class="professional-body"><strong>Rapid Response:</strong> On-call incident response teams available immediately upon notification. Average response time: 15 minutes for critical incidents.</p>
+ <p class="professional-body"><strong>Deep Expertise:</strong> Forensic specialists, malware analysts, threat hunters, and defence security experts with government and military experience.</p>
+ <p class="professional-body"><strong>Confidentiality:</strong> All incident information classified and protected under security clearance protocols. Legal privilege and confidentiality maintained throughout engagement.</p>
+ <p class="professional-body"><strong>Continuity Support:</strong> Beyond incident response, we provide recovery planning, system restoration, and post-incident analysis.</p>
+</section>
+<section class="process-section">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Incident Response Process</h2>
+ <div class="process-steps">
+ <div class="process-step">
+ <div class="step-number">1</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Detection & Activation</h3>
+ <p class="professional-body">Report confirmed or suspected incident. TSO-CSRT team activated immediately with incident commander assigned.</p>
+ </div>
+ <div class="process-step">
+ <div class="step-number">2</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Containment</h3>
+ <p class="professional-body">Isolate affected systems, preserve evidence, and prevent spread of compromise to minimize damage and impact.</p>
+ </div>
+ <div class="process-step">
+ <div class="step-number">3</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Investigation & Analysis</h3>
+ <p class="professional-body">Forensic analysis, threat identification, compromise assessment, and root cause determination.</p>
+ </div>
+ <div class="process-step">
+ <div class="step-number">4</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Recovery & Hardening</h3>
+ <p class="professional-body">System restoration, vulnerability remediation, and security hardening to prevent recurrence.</p>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="capabilities-section">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">TSO-CSRT Capabilities</h2>
+ <div class="capabilities-grid">
+ <div class="capability">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title"><div class="feature-icon-professional">SCN</div> Forensic Analysis</h3>
+ <p class="professional-body">Digital forensics, malware analysis, log analysis, and evidence collection for legal proceedings.</p>
+ </div>
+ <div class="capability">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title"><div class="feature-icon-professional">TGT</div> Threat Hunting</h3>
+ <p class="professional-body">Advanced threat detection, threat actor identification, and attack pattern analysis.</p>
+ </div>
+ <div class="capability">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title"><div class="feature-icon-professional">SHD</div> Incident Management</h3>
+ <p class="professional-body">Structured incident command, coordination with stakeholders, and communication strategy.</p>
+ </div>
+ <div class="capability">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">💾 Data Recovery</h3>
+ <p class="professional-body">System restoration, data recovery, and backup validation for business continuity.</p>
+ </div>
+ <div class="capability">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">⚖️ Compliance & Reporting</h3>
+ <p class="professional-body">Regulatory reporting, incident documentation, and post-incident review documentation.</p>
+ </div>
+ <div class="capability">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">🏛️ Governmental Coordination</h3>
+ <p class="professional-body">Liaison with law enforcement, NCSC, and national security agencies as required.</p>
+ </div>
+ </div>
+ <div class="response-metrics">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">TSO-CSRT Performance Metrics</h3>
+ <div class="metrics-grid">
+ <div class="metric">
+ <div class="metric-value">15 min</div>
+ <div class="metric-label">Average Response Time</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">98%</div>
+ <div class="metric-label">Case Success Rate</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">24/7</div>
+ <div class="metric-label">Availability</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">100</div>
+ <div class="metric-label">Incident Cases</div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="emergency-contact">
+ <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Emergency Contact</h2>
+ <div class="card-professional">
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">🚨 Critical Incident (24/7)</h3>
+ <div class="contact-info">+44 (0) 20 XXXX XXXX</div>
+ <div class="contact-method">Immediate Response</div>
+ <div class="contact-method">Available anytime</div>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">📧 Secure Email Report</h3>
+ <div class="contact-info">emergency@csga-global.org</div>
+ <div class="contact-method">PGP Encrypted</div>
+ <div class="contact-method">Response within 1 hour</div>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">🔐 SOC Secure Portal</h3>
+ <div class="contact-info">portal.csga-global.org</div>
+ <div class="contact-method">Classified incident reports</div>
+ <div class="contact-method">Real-time collaboration</div>
+ </div>
+ </div>
+ </div>
+</section>
+<section class="tso-cta">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Report an Emergency</h2>
+ <p class="professional-body">If you are experiencing a cyber security incident or emergency, contact TSO-CSRT immediately</p>
+ <a href="tel:+442030000000" class="btn-professional">Call Emergency Hotline</a>
+</section>
+<!-- ═══════ CTA Section ═══════ -->
+<section style="position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+ <div style="position:absolute;inset:0;z-index:0">
+ <div style="position:absolute;inset:-40px;background:linear-gradient(135deg,#0A1628,#0D2847,#0058A4);z-index:0"></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
+ </div>
+ <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:20px;padding:8px 18px;margin-bottom:24px">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#CC0000" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/ class="professional-body"></svg>
+ <span style="color:#CC0000;font-size:0.85rem;font-weight:600">Free Access &mdash; No Credit Card Required</span>
+ </div>
+ <h2 style="color:#fff;font-size:2.6rem;line-height:1.2;margin-bottom:20px;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+ <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;line-height:1.7;margin-bottom:36px" class="professional-body">TSO-CSRT delivers AI-specific threat feeds, incident response, and vulnerability alerts. Protect your AI systems with defence-grade intelligence.</p>
+ <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+ <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:#CC0000;color:#0A1628;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 15px rgba(204,0,0,0.3)" onmouseover="this.style.background='#A30000';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#CC0000';this.style.transform='none'">View Plans &amp; Pricing</a>
+ <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:transparent;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;border:2px solid rgba(255,255,255,0.3);transition:all .3s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">Request a Demo</a>
+ </div>
+ </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

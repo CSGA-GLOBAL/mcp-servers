@@ -1,0 +1,353 @@
+/* 🚨 CSGA HERO READABILITY EMERGENCY FIX */
+/* Fix critical black text on blue background issues */
+
+:root {
+  --hero-overlay-dark: rgba(26, 32, 44, 0.85);
+  --hero-overlay-medium: rgba(45, 55, 72, 0.75);
+  --hero-text-primary: #ffffff;
+  --hero-text-secondary: #f7fafc;
+  --hero-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  --hero-text-shadow-light: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* CRITICAL: Fix all hero sections with readability issues */
+.hero,
+.hero-section,
+.cobol-hero,
+.main-hero,
+.page-hero,
+.landing-hero,
+.section-hero {
+  position: relative;
+  color: var(--hero-text-primary) !important;
+}
+
+/* Ensure proper overlay for text readability */
+.hero::before,
+.hero-section::before,
+.cobol-hero::before,
+.main-hero::before,
+.page-hero::before,
+.landing-hero::before,
+.section-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--hero-overlay-dark) 0%,
+    var(--hero-overlay-medium) 50%,
+    var(--hero-overlay-dark) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure all hero content is above overlay */
+.hero-content,
+.hero > *,
+.hero-section > *,
+.cobol-hero > *,
+.main-hero > *,
+.page-hero > *,
+.landing-hero > *,
+.section-hero > * {
+  position: relative;
+  z-index: 2;
+  color: var(--hero-text-primary) !important;
+}
+
+/* CRITICAL: All hero text must be white with shadow */
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero h5,
+.hero h6,
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section h4,
+.hero-section h5,
+.hero-section h6,
+.cobol-hero h1,
+.cobol-hero h2,
+.cobol-hero h3,
+.cobol-hero h4,
+.cobol-hero h5,
+.cobol-hero h6,
+.main-hero h1,
+.main-hero h2,
+.main-hero h3,
+.main-hero h4,
+.main-hero h5,
+.main-hero h6,
+.page-hero h1,
+.page-hero h2,
+.page-hero h3,
+.page-hero h4,
+.page-hero h5,
+.page-hero h6,
+.landing-hero h1,
+.landing-hero h2,
+.landing-hero h3,
+.landing-hero h4,
+.landing-hero h5,
+.landing-hero h6,
+.section-hero h1,
+.section-hero h2,
+.section-hero h3,
+.section-hero h4,
+.section-hero h5,
+.section-hero h6 {
+  color: var(--hero-text-primary) !important;
+  text-shadow: var(--hero-text-shadow) !important;
+  font-weight: 700 !important;
+}
+
+/* CRITICAL: All hero paragraphs and subtitles */
+.hero p,
+.hero-section p,
+.cobol-hero p,
+.main-hero p,
+.page-hero p,
+.landing-hero p,
+.section-hero p,
+.hero-subtitle,
+.hero-description,
+.hero-text,
+.cobol-hero-subtitle {
+  color: var(--hero-text-secondary) !important;
+  text-shadow: var(--hero-text-shadow-light) !important;
+  font-weight: 500 !important;
+}
+
+/* CRITICAL: Hero buttons must be visible */
+.hero .btn,
+.hero .button,
+.hero .cta-button,
+.hero .btn-professional,
+.hero-section .btn,
+.hero-section .button,
+.hero-section .cta-button,
+.hero-section .btn-professional,
+.cobol-hero .btn,
+.cobol-hero .button,
+.cobol-hero .cta-button,
+.cobol-hero .btn-professional {
+  background: linear-gradient(135deg, #3182ce, #1e40af) !important;
+  color: white !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  text-shadow: none !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero .btn:hover,
+.hero .button:hover,
+.hero .cta-button:hover,
+.hero .btn-professional:hover,
+.hero-section .btn:hover,
+.hero-section .button:hover,
+.hero-section .cta-button:hover,
+.hero-section .btn-professional:hover,
+.cobol-hero .btn:hover,
+.cobol-hero .button:hover,
+.cobol-hero .cta-button:hover,
+.cobol-hero .btn-professional:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  color: white !important;
+}
+
+/* CRITICAL: Breadcrumbs and navigation in hero areas */
+.hero .breadcrumb,
+.hero-section .breadcrumb,
+.cobol-hero .breadcrumb {
+  color: var(--hero-text-secondary) !important;
+}
+
+.hero .breadcrumb a,
+.hero-section .breadcrumb a,
+.cobol-hero .breadcrumb a {
+  color: var(--hero-text-primary) !important;
+  text-shadow: var(--hero-text-shadow-light) !important;
+}
+
+/* CRITICAL: Fix specific hero class variations */
+.hero-title,
+.page-title {
+  color: var(--hero-text-primary) !important;
+  text-shadow: var(--hero-text-shadow) !important;
+  font-weight: 700 !important;
+}
+
+.hero-lead,
+.hero-intro,
+.page-subtitle {
+  color: var(--hero-text-secondary) !important;
+  text-shadow: var(--hero-text-shadow-light) !important;
+  font-weight: 500 !important;
+}
+
+/* CRITICAL: Constitutional AI banner text */
+.constitutional-banner,
+.constitutional-banner h1,
+.constitutional-banner h2,
+.constitutional-banner h3,
+.constitutional-banner p {
+  color: var(--hero-text-primary) !important;
+  text-shadow: var(--hero-text-shadow) !important;
+}
+
+/* CRITICAL: Hero stats and metrics */
+.hero-stats,
+.hero-metrics,
+.cobol-hero-stats,
+.cobol-stat {
+  color: var(--hero-text-primary) !important;
+}
+
+.hero-stat-number,
+.cobol-stat-number {
+  color: var(--hero-text-primary) !important;
+  text-shadow: var(--hero-text-shadow) !important;
+  font-weight: 800 !important;
+}
+
+.hero-stat-label,
+.cobol-stat-label {
+  color: var(--hero-text-secondary) !important;
+  text-shadow: var(--hero-text-shadow-light) !important;
+  font-weight: 500 !important;
+}
+
+/* CRITICAL: Badges in hero areas */
+.hero .badge,
+.hero-section .badge,
+.cobol-hero .badge,
+.constitutional-badge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: var(--hero-text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  text-shadow: var(--hero-text-shadow-light) !important;
+}
+
+/* CRITICAL: Override any existing dark text */
+.hero [style*="color: #000"],
+.hero [style*="color: black"],
+.hero [style*="color: #333"],
+.hero [style*="color: #1a202c"],
+.hero-section [style*="color: #000"],
+.hero-section [style*="color: black"],
+.hero-section [style*="color: #333"],
+.hero-section [style*="color: #1a202c"],
+.cobol-hero [style*="color: #000"],
+.cobol-hero [style*="color: black"],
+.cobol-hero [style*="color: #333"],
+.cobol-hero [style*="color: #1a202c"] {
+  color: var(--hero-text-primary) !important;
+  text-shadow: var(--hero-text-shadow) !important;
+}
+
+/* CRITICAL: Fix any background images that might conflict */
+.hero[style*="background-image"],
+.hero-section[style*="background-image"],
+.cobol-hero[style*="background-image"] {
+  background-blend-mode: overlay !important;
+}
+
+/* CRITICAL: Ensure links in hero are visible */
+.hero a:not(.btn):not(.button),
+.hero-section a:not(.btn):not(.button),
+.cobol-hero a:not(.btn):not(.button) {
+  color: var(--hero-text-primary) !important;
+  text-shadow: var(--hero-text-shadow-light) !important;
+  text-decoration: underline !important;
+}
+
+.hero a:not(.btn):not(.button):hover,
+.hero-section a:not(.btn):not(.button):hover,
+.cobol-hero a:not(.btn):not(.button):hover {
+  color: #93c5fd !important;
+}
+
+/* CRITICAL: Mobile responsiveness for hero text */
+@media (max-width: 768px) {
+  .hero h1,
+  .hero-section h1,
+  .cobol-hero h1,
+  .hero-title,
+  .page-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
+  }
+  
+  .hero p,
+  .hero-section p,
+  .cobol-hero p,
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .hero .btn,
+  .hero .btn-professional,
+  .hero-section .btn,
+  .hero-section .btn-professional,
+  .cobol-hero .btn,
+  .cobol-hero .btn-professional {
+    padding: 14px 24px !important;
+    font-size: 1rem !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+/* CRITICAL: Extra small screens */
+@media (max-width: 480px) {
+  .hero h1,
+  .hero-section h1,
+  .cobol-hero h1,
+  .hero-title,
+  .page-title {
+    font-size: 2rem !important;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9) !important;
+  }
+  
+  .hero p,
+  .hero-section p,
+  .cobol-hero p,
+  .hero-subtitle {
+    font-size: 1rem !important;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+/* CRITICAL: Print styles - ensure hero text is readable when printed */
+@media print {
+  .hero,
+  .hero-section,
+  .cobol-hero,
+  .main-hero,
+  .page-hero {
+    background: #1a202c !important;
+    color: white !important;
+  }
+  
+  .hero *,
+  .hero-section *,
+  .cobol-hero *,
+  .main-hero *,
+  .page-hero * {
+    color: white !important;
+    text-shadow: none !important;
+  }
+}

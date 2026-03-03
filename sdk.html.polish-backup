@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDK & API Documentation — CSGA MCP Platform</title>
+  <meta name="description" content="Developer documentation for the CSGA MCP Platform. RESTful APIs, SDK quickstart, authentication, webhooks, and integration guides for 70 MCP servers.">
+  <meta property="og:title" content="SDK & API Documentation — CSGA MCP Platform">
+  <meta property="og:description" content="Developer documentation for the CSGA MCP Platform. RESTful APIs, SDK quickstart, authentication, webhooks, and integration guides for 70 MCP servers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.csga.global/sdk.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SDK & API Documentation — CSGA MCP Platform">
+  <meta name="twitter:description" content="Developer documentation for the CSGA MCP Platform. RESTful APIs, SDK quickstart, authentication, webhooks, and integration guides.">
+  <link rel="canonical" href="https://www.csga.global/sdk.html">
+  
+  
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<!-- HERO SECTION -->
+<section style="background: linear-gradient(135deg, rgba(0, 88, 164, 0.85), rgba(0, 88, 164, 0.85)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><rect fill=%220A1628%22 width=%221200%22 height=%22600%22/><path fill=%22%23d4a853%22 opacity=%220.1%22 d=%22M0 0 L100 100 L200 0 L300 100 L400 0 L500 100 L600 0 L700 100 L800 0 L900 100 L1000 0 L1100 100 L1200 0 L1200 600 L0 600 Z%22/ class="professional-body"></svg>'); background-size: cover; background-position: center; padding: 100px 20px; text-align: center; color: white; min-height: 500px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <div class="container">
+    <h1 style="color: #fff; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);" class="page-title" class="professional-title">Build with the CSGA MCP Platform</h1>
+    <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.95); max-width: 700px; margin: 0 auto 36px; line-height: 1.6;" class="professional-body">API-first architecture. 70 MCP servers. Enterprise-grade security and governance at every layer.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#quickstart" class="btn-professional">Get Started</a>
+      <a href="/catalog.html" class="btn-professional" style="background: transparent; border: 2px solid rgba(255,255,255,0.4); color: #fff;">Explore Catalog</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUICKSTART SECTION -->
+<section id="quickstart" style="background: #F8FAFC;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span class="section-label">Get Started</span>
+      <h2 class="professional-title section-title" class="section-title" class="professional-title">Quickstart Guide</h2>
+      <p class="section-subtitle" class="professional-body">Three simple steps to integrate the CSGA MCP Platform into your application.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card-professional">
+        <div class="icon-circle" style="background: linear-gradient(135deg, rgba(204, 0, 0, 0.15), rgba(230, 57, 70, 0.15));">📦</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Installation</h3>
+        <p class="professional-body">Install the SDK via npm for your preferred runtime environment.</p>
+        <div class="code-block">npm install @csgaglobal/mcp-sdk</div>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle" style="background: linear-gradient(135deg, rgba(204, 0, 0, 0.15), rgba(230, 57, 70, 0.15));"><div class="feature-icon-professional">CFG</div></div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Initialize</h3>
+        <p class="professional-body">Set up your connection to the CSGA platform with API credentials.</p>
+        <div class="code-block">const mcp = new MCPClient({
+  apiKey: process.env.CSGA_API_KEY,
+  endpoint: 'https://api.csga.global'
+});</div>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle" style="background: linear-gradient(135deg, rgba(204, 0, 0, 0.15), rgba(230, 57, 70, 0.15));">🔑</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Authenticate</h3>
+        <p class="professional-body">Use API keys or OAuth 2.0 for secure authentication.</p>
+        <div class="code-block">const token = await mcp.auth.login({
+  apiKey: YOUR_API_KEY
+});</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- API REFERENCE SECTION -->
+<section style="background: #ffffff;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span class="section-label">API Reference</span>
+      <h2 class="professional-title section-title" class="section-title" class="professional-title">Available APIs</h2>
+      <p class="section-subtitle" class="professional-body">Build powerful integrations with our comprehensive REST API endpoints.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card-professional">
+        <div class="icon-circle">🖥️</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">MCP Server API</h3>
+        <p class="professional-body">Deploy, manage, and orchestrate MCP servers. Full CRUD operations for your server ecosystem.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;" class="professional-body">GET /api/v1/mcps</p>
+        <p style="font-size: 0.9rem; color: #666;" class="professional-body">Retrieve all available MCP servers with metadata and capabilities.</p>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle">🏛️</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Governance API</h3>
+        <p class="professional-body">Manage policies, compliance checks, and governance rules across your MCP infrastructure.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;" class="professional-body">POST /api/v1/policies</p>
+        <p style="font-size: 0.9rem; color: #666;" class="professional-body">Create and enforce governance policies for AI safety.</p>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle"><div class="feature-icon-professional">SHD</div></div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Security API</h3>
+        <p class="professional-body">Vulnerability scanning, threat intelligence feeds, and security posture management.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;" class="professional-body">POST /api/v1/scan</p>
+        <p style="font-size: 0.9rem; color: #666;" class="professional-body">Scan MCPs for vulnerabilities and security compliance.</p>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle">🔔</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Webhook API</h3>
+        <p class="professional-body">Real-time event notifications for deployment, policy, and security events.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;" class="professional-body">POST /api/v1/webhooks</p>
+        <p style="font-size: 0.9rem; color: #666;" class="professional-body">Register webhook endpoints for event-driven architecture.</p>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle"><div class="feature-icon-professional">ANL</div></div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Analytics API</h3>
+        <p class="professional-body">Usage metrics, audit logs, and detailed analytics for your MCP infrastructure.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;" class="professional-body">GET /api/v1/analytics</p>
+        <p style="font-size: 0.9rem; color: #666;" class="professional-body">Monitor performance and usage patterns across MCPs.</p>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle">💾</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Data API</h3>
+        <p class="professional-body">Query and manage data across your MCP ecosystem with enterprise-grade consistency.</p>
+        <p style="color: #0058A4; font-weight: 600; margin-top: 16px;" class="professional-body">GET /api/v1/data</p>
+        <p style="font-size: 0.9rem; color: #666;" class="professional-body">Access unified data layer across all MCP servers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SDK FEATURES SECTION -->
+<section style="background: #F8FAFC;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span class="section-label">SDKs Available</span>
+      <h2 class="professional-title section-title" class="section-title" class="professional-title">Multiple Language Support</h2>
+      <p class="section-subtitle" class="professional-body">Build in your language of choice. Full feature parity across all SDKs.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card-professional">
+        <div class="icon-circle">🟦</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">TypeScript/JavaScript</h3>
+        <p class="professional-body">Full-featured SDK for Node.js and browser environments. Type-safe with TypeScript support.</p>
+        <div style="margin-top: 24px;">
+          <button class="btn-professional" style="width: 100%;">View on npm</button>
+        </div>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle">🐍</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Python SDK</h3>
+        <p class="professional-body">Async-first SDK for Python 3.8+. Perfect for data science and ML workflows.</p>
+        <div style="margin-top: 24px; opacity: 0.6; pointer-events: none;">
+          <button class="btn-professional" style="width: 100%;">Coming Soon</button>
+        </div>
+      </div>
+
+      <div class="card-professional">
+        <div class="icon-circle">🔘</div>
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Go SDK</h3>
+        <p class="professional-body">High-performance SDK for Go. Ideal for cloud-native and microservices architecture.</p>
+        <div style="margin-top: 24px; opacity: 0.6; pointer-events: none;">
+          <button class="btn-professional" style="width: 100%;">Coming Soon</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 60px; background: #ffffff; border-radius: 12px; padding: 40px; border: 1px solid rgba(0, 0, 0, 0.06);">
+      <h3 style="text-align: center; margin-bottom: 40px;" class="subsection-title" class="professional-title">Rate Limits & Quotas</h3>
+      <div class="grid grid-3">
+        <div style="text-align: center; padding: 24px; border-right: 1px solid rgba(0, 0, 0, 0.06);">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--blue); margin-bottom: 8px;">1,000</div>
+          <p style="margin: 0; font-weight: 600;" class="professional-body">Requests/Min</p>
+          <p style="margin: 0; font-size: 0.9rem; color: #666;" class="professional-body">Free Tier</p>
+        </div>
+        <div style="text-align: center; padding: 24px; border-right: 1px solid rgba(0, 0, 0, 0.06);">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 8px;">10,000</div>
+          <p style="margin: 0; font-weight: 600;" class="professional-body">Requests/Min</p>
+          <p style="margin: 0; font-size: 0.9rem; color: #666;" class="professional-body">Pro Tier</p>
+        </div>
+        <div style="text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; font-weight: 700; color: var(--dark); margin-bottom: 8px;">∞</div>
+          <p style="margin: 0; font-weight: 600;" class="professional-body">Unlimited</p>
+          <p style="margin: 0; font-size: 0.9rem; color: #666;" class="professional-body">Enterprise</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHENTICATION SECTION -->
+<section style="background: #ffffff;">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span class="section-label">Security</span>
+      <h2 class="professional-title section-title" class="section-title" class="professional-title">Authentication & Authorization</h2>
+      <p class="section-subtitle" class="professional-body">Enterprise-grade security for all API interactions and integrations.</p>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom: 48px;">
+      <div class="card-professional">
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">API Keys</h3>
+        <p class="professional-body">Simple API keys for development and testing. Scoped to specific resources and actions.</p>
+        <div class="code-block">Authorization: Bearer YOUR_API_KEY</div>
+        <p style="margin-top: 16px; font-size: 0.9rem;" class="professional-body">Best for: Development, server-to-server auth</p>
+      </div>
+
+      <div class="card-professional">
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">OAuth 2.0</h3>
+        <p class="professional-body">Industry-standard OAuth 2.0 for user-facing applications and third-party integrations.</p>
+        <div class="code-block">grant_type=authorization_code
+&code=AUTH_CODE
+&client_id=YOUR_CLIENT_ID</div>
+        <p style="margin-top: 16px; font-size: 0.9rem;" class="professional-body">Best for: User-facing apps, SaaS</p>
+      </div>
+
+      <div class="card-professional">
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">JWT Tokens</h3>
+        <p class="professional-body">JSON Web Tokens for stateless authentication and fine-grained access control.</p>
+        <div class="code-block">Authorization: Bearer eyJhbGc...</div>
+        <p style="margin-top: 16px; font-size: 0.9rem;" class="professional-body">Best for: Microservices, API gateways</p>
+      </div>
+
+      <div class="card-professional">
+        <h3 class="professional-title"><h3 class="professional-title" class="professional-title">mTLS Certificates</h3>
+        <p class="professional-body">Mutual TLS for ultra-secure server-to-server communication in regulated environments.</p>
+        <div class="code-block">client_cert.pem + client_key.pem</div>
+        <p style="margin-top: 16px; font-size: 0.9rem;" class="professional-body">Best for: Classified, on-prem deployments</p>
+      </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, rgba(204, 0, 0, 0.05), rgba(230, 57, 70, 0.05)); border-left: 4px solid var(--gold); padding: 24px; border-radius: 12px;">
+      <h4 style="color: var(--dark); margin-bottom: 12px;">Security Best Practices</h4>
+      <ul style="list-style: none; padding: 0; color: #475569; line-height: 1.8;">
+        <li>✓ Rotate API keys every 90 days</li>
+        <li>✓ Use environment variables for credentials</li>
+        <li>✓ Enable rate limiting and DDoS protection</li>
+        <li>✓ Audit all API access logs regularly</li>
+        <li>✓ Implement request signing for sensitive operations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<div class="cta-banner">
+  <div class="container">
+    <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Ready to Build?</h2>
+    <p class="professional-body">Join hundreds of organizations using the CSGA MCP Platform to accelerate AI governance and cybersecurity.</p>
+    <div>
+      <a href="/dashboard.html" class="btn-professional">Get Your API Key</a>
+      <a href="/catalog.html" class="btn-professional" style="background: transparent; border: 2px solid rgba(255,255,255,0.4); color: #fff;">View Full Docs</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

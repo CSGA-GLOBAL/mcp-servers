@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — CSGA Global</title>
+    <meta name="description" content="Frequently asked questions about CSGA Global, MCPs, pricing, and certifications">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://csga-global.vercel.app/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FAQ — CSGA Global">
+    <meta property="og:description" content="Frequently asked questions about CSGA Global, MCPs, pricing, and certifications">
+    <meta property="og:url" content="https://csga-global.vercel.app/">
+    <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+    <meta property="og:site_name" content="CSGA Global">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ — CSGA Global">
+    <meta name="twitter:description" content="Frequently asked questions about CSGA Global, MCPs, pricing, and certifications">
+    <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+    
+    <style>
+:root {
+    --gold: #CC0000;
+    --gold-light: #1e40af;
+    --gold-dark: #A30000;
+    --gold-glow: rgba(204, 0, 0, 0.3);
+  }
+
+/* ============================================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================================ */
+/* Stagger children */
+
+/* Smooth scroll */
+
+/* Section title styling consistent */
+
+/* Consistent section padding */
+section, .section {
+    padding: 72px 32px;
+}
+
+/* Better responsive */
+@media (max-width: 1024px) {
+    .home-showcase-grid,
+    .home-pricing-grid,
+    .home-blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .home-mcps-grid { grid-template-columns: repeat(3, 1fr); }
+    .home-sectors-grid { grid-template-columns: repeat(3, 1fr); }
+    .home-trust-content { grid-template-columns: 1fr; }
+    .home-stats-bar { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .home-hero h1 { font-size: 2.5rem; }
+    .home-showcase-grid,
+    .home-pricing-grid,
+    .home-blog-grid { grid-template-columns: 1fr; }
+    .home-mcps-grid { grid-template-columns: repeat(2, 1fr); }
+    .home-sectors-grid { grid-template-columns: repeat(2, 1fr); }
+    .home-stats-bar { grid-template-columns: 1fr; }
+    section, .section { padding: 48px 20px; }
+}
+</style>
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<!-- TOP BAR: Logo + CTA -->
+<div style="background: linear-gradient(170deg, #001A3D 0%, #003366 35%, #004080 65%, #002B5C 100%); padding: 64px 32px; text-align: center;">
+    <h1 style="font-size: 2.5rem; font-weight: 700; color: #FFFFFF; text-shadow: 0 2px 20px rgba(0,0,0,0.3); font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; margin-bottom: 12px;" class="page-title" class="professional-title">Frequently Asked Questions</h1>
+    <p style="color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 600px; margin: 0 auto;" class="professional-body">Everything you need to know about CSGA Global, our MCP platform, pricing, and certifications.</p>
+</div>
+
+<section style="padding: 72px 32px; max-width: 960px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                What is CSGA Global?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                CSGA Global (Cyber Security Global Alliance) is the world's first AI governance and Model Context Protocol (MCP) platform. We provide enterprise-grade tools, training, and certification for organisations implementing responsible AI systems.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                What are MCPs?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Model Context Protocols (MCPs) are standardised integration tools that connect AI models to external systems — databases, APIs, cloud services, and security tools. CSGA Global offers 70 MCPs across Free, Pro, and Enterprise tiers.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Is the Free tier really free?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Yes. Our Free tier includes 12 MCPs with community support, basic API access, and self-paced MOOCs — all at no cost. No credit card required to get started.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                What does Pro include?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Pro (£49/month or £470/year) adds 12 advanced MCPs, priority support, advanced analytics, team collaboration features, and access to professional certification tracks.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                What is Enterprise pricing?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Enterprise (£199/month or £1,910/year) includes all 70 MCPs, dedicated support, custom integrations, SLA guarantees, SSO/SAML, compliance reporting, and white-label options.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Can I buy individual MCPs?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Yes. Individual MCPs are available at £9/month (Pro) or £29/month (Enterprise). We also offer a 5-MCP bundle at £69/month. Annual discounts of 20% are available.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                What certifications do you offer?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                We offer 6 professional certification tracks: CSOAI Certified Professional, MCP Developer, AI Governance Specialist, Cyber Defence Analyst, Enterprise Security Architect, and CASA Compliance Officer.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Are the MOOCs accredited?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Our 36 MOOCs are designed to CSOAI standards and align with ISO 42001, NIST AI RMF, and EU AI Act frameworks. Certification exams are independently assessed.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                How does CSGA relate to CSOAI?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                CSGA Global is the commercial platform of the CSOAI Group (Cyber Security of Organizational AI). CSOAI develops the standards; CSGA delivers the tools and training.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                Do you support government/defence use?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Yes. Our Enterprise tier includes CA-30 compliance, DSRB-aligned security controls, and specialised defence MCPs. Contact us for government pricing and deployment options.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                What support is available?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Free tier: community forums. Pro: priority email support (24h response). Enterprise: dedicated account manager, phone support, and custom SLA.
+            </div>
+        </details>
+
+        <details style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); padding: 0; overflow: hidden;">
+            <summary style="padding: 20px 24px; font-weight: 600; font-size: 1.05rem; color: #0F172A; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                How do I get started?
+                <span style="color: #0058A4; font-size: 1.2rem; transition: transform 0.2s;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; line-height: 1.7;">
+                Visit our Pricing page, choose your tier, and sign up. Free tier is instant. Pro and Enterprise include a guided onboarding session.
+            </div>
+        </details>
+
+    </div>
+</section>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is CSGA Global?","acceptedAnswer":{"@type":"Answer","text":"CSGA Global (Cyber Security Global Alliance) is the world's first AI governance and Model Context Protocol (MCP) platform. We provide enterprise-grade tools, training, and certification for organisations implementing responsible AI systems."}},{"@type":"Question","name":"What are MCPs?","acceptedAnswer":{"@type":"Answer","text":"Model Context Protocols (MCPs) are standardised integration tools that connect AI models to external systems \u2014 databases, APIs, cloud services, and security tools. CSGA Global offers 70 MCPs across Free, Pro, and Enterprise tiers."}},{"@type":"Question","name":"Is the Free tier really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our Free tier includes 12 MCPs with community support, basic API access, and self-paced MOOCs \u2014 all at no cost. No credit card required to get started."}},{"@type":"Question","name":"What does Pro include?","acceptedAnswer":{"@type":"Answer","text":"Pro (\u00a349/month or \u00a3470/year) adds 12 advanced MCPs, priority support, advanced analytics, team collaboration features, and access to professional certification tracks."}},{"@type":"Question","name":"What is Enterprise pricing?","acceptedAnswer":{"@type":"Answer","text":"Enterprise (\u00a3199/month or \u00a31,910/year) includes all 70 MCPs, dedicated support, custom integrations, SLA guarantees, SSO/SAML, compliance reporting, and white-label options."}},{"@type":"Question","name":"Can I buy individual MCPs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Individual MCPs are available at \u00a39/month (Pro) or \u00a329/month (Enterprise). We also offer a 5-MCP bundle at \u00a369/month. Annual discounts of 20% are available."}},{"@type":"Question","name":"What certifications do you offer?","acceptedAnswer":{"@type":"Answer","text":"We offer 6 professional certification tracks: CSOAI Certified Professional, MCP Developer, AI Governance Specialist, Cyber Defence Analyst, Enterprise Security Architect, and CASA Compliance Officer."}},{"@type":"Question","name":"Are the MOOCs accredited?","acceptedAnswer":{"@type":"Answer","text":"Our 36 MOOCs are designed to CSOAI standards and align with ISO 42001, NIST AI RMF, and EU AI Act frameworks. Certification exams are independently assessed."}},{"@type":"Question","name":"How does CSGA relate to CSOAI?","acceptedAnswer":{"@type":"Answer","text":"CSGA Global is the commercial platform of the CSOAI Group (Cyber Security of Organizational AI). CSOAI develops the standards; CSGA delivers the tools and training."}},{"@type":"Question","name":"Do you support government/defence use?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our Enterprise tier includes CA-30 compliance, DSRB-aligned security controls, and specialised defence MCPs. Contact us for government pricing and deployment options."}},{"@type":"Question","name":"What support is available?","acceptedAnswer":{"@type":"Answer","text":"Free tier: community forums. Pro: priority email support (24h response). Enterprise: dedicated account manager, phone support, and custom SLA."}},{"@type":"Question","name":"How do I get started?","acceptedAnswer":{"@type":"Answer","text":"Visit our Pricing page, choose your tier, and sign up. Free tier is instant. Pro and Enterprise include a guided onboarding session."}}],"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","summary","details div"]}}</script>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body></html>

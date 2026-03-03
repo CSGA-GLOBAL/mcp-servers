@@ -1,0 +1,17 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="securityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#3b82f6"/>
+            <stop offset="100%" stop-color="#1e40af"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Shield Background -->
+    <path d="M16 2L6 6v8c0 6.5 4.03 12.6 10 14.8C22.97 26.6 26 20.5 26 14V6L16 2z" 
+          fill="url(#securityGradient)" stroke="#1e40af" stroke-width="1"/>
+    
+    <!-- Lock Symbol -->
+    <rect x="12" y="12" width="8" height="8" fill="none" stroke="#ffffff" stroke-width="1.5" rx="1"/>
+    <path d="M13 12V10a3 3 0 116 0v2" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="16" cy="16" r="1.5" fill="#ffffff"/>
+</svg>

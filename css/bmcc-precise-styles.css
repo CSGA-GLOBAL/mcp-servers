@@ -1,0 +1,358 @@
+/* BMCC Cyber Precise Pattern Styles */
+
+/* Threat Level Indicators */
+.threat-level-badge {
+    background: var(--alert-red);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    animation: threatPulse 2s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes threatPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* HALT-Style Certification Focus */
+.certification-box-halt {
+    background: rgba(239, 68, 68, 0.1);
+    border: 2px solid var(--alert-red);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.certification-box-halt::before {
+    content: '⚠️';
+    position: absolute;
+    top: -12px;
+    left: 30px;
+    background: var(--alert-red);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Specific Threat Domain Styling */
+.governance-domains {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.domain-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 3px solid var(--cyber-blue);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.domain-item:hover {
+    background: rgba(30, 90, 245, 0.1);
+    transform: translateY(-5px);
+    border-left-color: var(--security-teal);
+    box-shadow: 0 8px 25px rgba(30, 90, 245, 0.1);
+}
+
+.domain-item.selected {
+    border-left-color: var(--security-teal);
+    background: rgba(0, 212, 170, 0.1);
+}
+
+.domain-emoji {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.domain-title {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.domain-desc {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Time-Based Promise Styling */
+.time-promise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.time-promise-card {
+    background: linear-gradient(135deg, var(--cyber-blue) 0%, var(--security-teal) 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.time-promise-card:hover {
+    transform: translateY(-5px);
+}
+
+.time-number {
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: 'JetBrains Mono', monospace;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.time-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.time-detail {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Target Audience Grid */
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    background: var(--surface-1);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--surface-2);
+}
+
+.audience-item {
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.audience-item:hover {
+    transform: scale(1.05);
+}
+
+.audience-emoji {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.audience-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: var(--cyber-blue);
+}
+
+.audience-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.3;
+}
+
+/* HALT-Style Action Buttons */
+.btn-halt-style {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 16px 32px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-halt-style:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(30, 90, 245, 0.4);
+}
+
+.btn-halt-style::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-halt-style:hover::before {
+    left: 100%;
+}
+
+/* Team Pricing Section */
+.team-pricing-section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.team-pricing-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.btn-team-pricing {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-team-pricing:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 90, 245, 0.3);
+}
+
+.btn-enterprise {
+    background: transparent;
+    color: var(--cyber-blue);
+    border: 1px solid var(--cyber-blue);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-enterprise:hover {
+    background: rgba(30, 90, 245, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Fast-Track Option Highlight */
+.fast-track-highlight {
+    background: rgba(30, 90, 245, 0.1);
+    border: 1px solid var(--cyber-blue);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+.fast-track-label {
+    color: var(--cyber-blue);
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.fast-track-description {
+    color: white;
+    line-height: 1.5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .governance-domains {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .time-promise-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .team-pricing-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-team-pricing,
+    .btn-enterprise {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+    
+    .threat-level-badge {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .domain-item {
+        padding: 15px;
+    }
+    
+    .domain-emoji {
+        font-size: 1.5rem;
+    }
+    
+    .time-number {
+        font-size: 2.5rem;
+    }
+    
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .audience-emoji {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animation Classes */
+.animate-threat-pulse {
+    animation: threatPulse 2s ease-in-out infinite;
+}
+
+.animate-domain-hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-domain-hover:hover {
+    transform: translateY(-5px);
+}

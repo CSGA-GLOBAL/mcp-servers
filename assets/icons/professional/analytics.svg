@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="analyticsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f59e0b"/>
+            <stop offset="100%" stop-color="#d97706"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Chart Bars -->
+    <rect x="6" y="18" width="4" height="10" fill="url(#analyticsGradient)" rx="1"/>
+    <rect x="12" y="12" width="4" height="16" fill="url(#analyticsGradient)" rx="1"/>
+    <rect x="18" y="8" width="4" height="20" fill="url(#analyticsGradient)" rx="1"/>
+    <rect x="24" y="14" width="4" height="14" fill="url(#analyticsGradient)" rx="1"/>
+    
+    <!-- Growth Arrow -->
+    <path d="M2 26L8 20l4 4 8-8 4-4" stroke="#d97706" stroke-width="2" fill="none"/>
+    <path d="M24 8l4 0 0 4" stroke="#d97706" stroke-width="2" fill="none"/>
+</svg>

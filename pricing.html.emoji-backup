@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Pricing - CSGA Global</title>
+ <meta name="description" content="Simple, transparent pricing for CSGA Global AI governance and cybersecurity solutions.">
+ 
+ 
+ <style>
+.hero-pricing {
+ background: linear-gradient(135deg, rgba(0, 88, 164, 0.85), rgba(0, 88, 164, 0.85)),
+ url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230A1628" width="1200" height="600"/><path fill="%23d4a853" opacity="0.1" d="M0 0 L100 100 L200 0 L300 100 L400 0 L500 100 L600 0 L700 100 L800 0 L900 100 L1000 0 L1100 100 L1200 0 L1200 600 L0 600 Z"/ class="professional-body"></svg>');
+ background-size: cover;
+ background-position: center;
+ padding: 100px 20px;
+ text-align: center;
+ color: white;
+ min-height: 400px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ .hero-pricing h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 3.2rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ }
+ .hero-pricing .subtitle {
+ font-size: 1.2rem;
+ font-weight: 300;
+ max-width: 600px;
+ margin: 0 auto;
+ color: rgba(255, 255, 255, 0.95);
+ }
+ .pricing-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .pricing-container {
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .pricing-cards {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 24px;
+ margin-bottom: 60px;
+ }
+ @media (max-width: 1100px) {
+ .pricing-cards { grid-template-columns: repeat(2, 1fr) !important; }
+ }
+ .pricing-card {
+ background: white;
+ border: 2px solid #ddd;
+ border-radius: 12px;
+ padding: 40px;
+ transition: all 0.25s ease;
+ position: relative;
+ }
+ .pricing-card.featured {
+ border-color: #0058A4;
+ box-shadow: 0 10px 30px rgba(0, 88, 164, 0.15);
+ transform: scale(1.05);
+ }
+ .pricing-card h3 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 1.5rem;
+ color: #0058A4;
+ margin-bottom: 10px;
+ }
+ .pricing-card .description {
+ color: #666;
+ font-size: 0.9rem;
+ margin-bottom: 25px;
+ min-height: 40px;
+ }
+ .price {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: #3182ce;
+ margin-bottom: 10px;
+ }
+ .price-period {
+ color: #999;
+ font-size: 0.9rem;
+ margin-bottom: 30px;
+ }
+ .features-list {
+ list-style: none;
+ padding: 0;
+ margin-bottom: 30px;
+ }
+ .features-list li {
+ padding: 10px 0;
+ border-bottom: 1px solid #eee;
+ color: #555;
+ font-size: 0.95rem;
+ }
+ .features-list li:last-child {
+ border-bottom: none;
+ }
+ .features-list li::before {
+ content: 'œ';
+ color: #0058A4;
+ font-weight: bold;
+ margin-right: 10px;
+ }
+ .pricing-btn {
+ width: 100%;
+ padding: 12px;
+ border: none;
+ border-radius: 12px;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.25s ease;
+ font-size: 0.95rem;
+ }
+ .pricing-btn.primary {
+ background: #3182ce;
+ color: white;
+ }
+ .pricing-btn.primary:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ }
+ .pricing-btn.secondary {
+ background: #f0f4f8;
+ color: #0058A4;
+ border: 2px solid #3182ce;
+ }
+ .pricing-btn.secondary:hover {
+ background: #3182ce;
+ color: white;
+ }
+ .comparison-section {
+ padding: 80px 20px;
+ background: #f8f9fa;
+ }
+ .comparison-container {
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .comparison-container h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .comparison-table {
+ width: 100%;
+ background: white;
+ border-collapse: collapse;
+ border-radius: 12px;
+ overflow: hidden;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+ }
+ .comparison-table th,
+ .comparison-table td {
+ padding: 20px;
+ text-align: left;
+ border-bottom: 1px solid #eee;
+ }
+ .comparison-table th {
+ background: #0058A4;
+ color: white;
+ font-weight: 600;
+ }
+ .comparison-table tr:last-child td {
+ border-bottom: none;
+ }
+ .comparison-table .feature-name {
+ font-weight: 500;
+ color: #0058A4;
+ }
+ .comparison-table .check {
+ color: #0058A4;
+ font-weight: bold;
+ }
+ .faq-section {
+ padding: 80px 20px;
+ background: white;
+ }
+ .faq-container {
+ max-width: 900px;
+ margin: 0 auto;
+ }
+ .faq-container h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.2rem;
+ color: #0058A4;
+ text-align: center;
+ margin-bottom: 50px;
+ }
+ .faq-item {
+ background: #f8f9fa;
+ padding: 25px;
+ margin-bottom: 20px;
+ border-radius: 12px;
+ border-left: 4px solid #3182ce;
+ }
+ .faq-item h3 {
+ color: #0058A4;
+ margin-bottom: 12px;
+ cursor: pointer;
+ font-size: 1rem;
+ }
+ .faq-item p {
+ color: #555;
+ font-size: 0.95rem;
+ line-height: 1.6;
+ margin: 0;
+ }
+ .cta-pricing-section {
+ padding: 80px 20px;
+ background: linear-gradient(135deg, #A30000, #3182ce);
+ text-align: center;
+ color: white;
+ }
+ .cta-pricing-section h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.5rem;
+ margin-bottom: 30px;
+ }
+ .cta-button {
+ background: #3182ce;
+ color: white;
+ padding: 15px 40px;
+ border: none;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.25s ease;
+ text-decoration: none;
+ display: inline-block;
+ }
+ .cta-button:hover {
+ background: #b30000;
+ transform: translateY(-2px);
+ box-shadow: 0 10px 25px rgba(204, 0, 0, 0.3);
+ }
+ @media (max-width: 768px) {
+ .hero-pricing h1 {
+ font-size: 2rem;
+ }
+ .pricing-card.featured {
+ transform: scale(1);
+ }
+ .pricing-cards {
+ grid-template-columns: 1fr !important;
+ }
+ .comparison-table {
+ font-size: 0.85rem;
+ }
+ .comparison-table th,
+ .comparison-table td {
+ padding: 15px;
+ }
+ .cta-pricing-section h2 {
+ font-size: 1.8rem;
+ }
+ }
+ 
+/*  Ecosystem Bundles  */
+.eco-section{padding:80px 24px;background:#f8fafc}
+.eco-container{max-width:1200px;margin:0 auto}
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.eco-card{background:#fff;border-radius:12px;padding:32px 24px;border:2px solid #e8ecf0;transition:all .25s;position:relative}
+.eco-card:hover{border-color:#0058A4;transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,88,164,.12)}
+.eco-icon{font-size:2.2rem;margin-bottom:12px}
+.eco-card h3{font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:1.15rem;color:#0A1628;margin-bottom:6px}
+.eco-desc{color:#666;font-size:.9rem;margin-bottom:16px}
+.eco-price{font-size:2rem;font-weight:700;color:#0058A4;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+.eco-price span{font-size:.9rem;font-weight:400;color:#666}
+.eco-annual{font-size:.85rem;color:#16a34a;font-weight:500;margin-bottom:16px}
+.eco-list{list-style:none;padding:0;margin:0 0 20px}
+.eco-list li{padding:5px 0;font-size:.85rem;color:#444;border-bottom:1px solid #f0f2f5}
+.eco-list li::before{content:"œ ";color:#0058A4;font-weight:700}
+@media(max-width:900px){.eco-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.eco-grid{grid-template-columns:1fr}}
+/*  Per-MCP Pricing  */
+.per-mcp-section{padding:80px 24px;background:#fff}
+.per-mcp-container{max-width:900px;margin:0 auto}
+.per-mcp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.per-mcp-card{background:#fff;border-radius:12px;padding:32px 24px;border:2px solid #e8ecf0;text-align:center;transition:all .25s;position:relative}
+.per-mcp-card.featured{border-color:#0058A4;box-shadow:0 8px 32px rgba(0,88,164,.15)}
+.per-mcp-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,88,164,.12)}
+.per-mcp-tier{display:inline-block;color:#fff;padding:4px 16px;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:.5px;margin-bottom:12px}
+.per-mcp-card h3{font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:1.2rem;color:#0A1628;margin-bottom:8px}
+.per-mcp-price{font-size:2.5rem;font-weight:700;color:#0A1628;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+.per-mcp-price span{font-size:1rem;font-weight:400;color:#666}
+.per-mcp-period{color:#666;font-size:.9rem;margin-bottom:20px}
+.per-mcp-list{list-style:none;padding:0;margin:0 0 24px;text-align:left}
+.per-mcp-list li{padding:8px 0;font-size:.9rem;color:#444;border-bottom:1px solid #f0f2f5}
+.per-mcp-list li::before{content:"œ ";color:#0058A4;font-weight:700}
+@media(max-width:600px){.per-mcp-grid{grid-template-columns:1fr}}
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/pricing">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Pricing - CSGA Global">
+ <meta property="og:description" content="Simple, transparent pricing for CSGA Global AI governance and cybersecurity solutions.">
+ <meta property="og:url" content="https://csga-global.vercel.app/pricing">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Pricing - CSGA Global">
+ <meta name="twitter:description" content="Simple, transparent pricing for CSGA Global AI governance and cybersecurity solutions.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pricing - CSGA Global","description":"Simple, transparent pricing for CSGA Global AI governance and cybersecurity solutions.","url":"https://csga-global.vercel.app/pricing","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- ðŸš¨ EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- ðŸ“± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- ðŸŽ¨ EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- ðŸ“ EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- ðŸš€ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- ðŸš¨ EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- ðŸš€ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="hero-pricing">
+ <div style="text-align: center;">
+ <h1 class="professional-title professional-title" class="professional-title">Simple, Transparent Pricing</h1>
+ <p class="subtitle" class="professional-body">6 membership tiers, individual MCP pricing, and ecosystem bundles  all with free trials</p>
+ </div>
+</section>
+
+<!-- ••• SOCIAL PROOF BANNER ••• -->
+<div class="social-proof-bar reveal" style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);padding:20px 32px;text-align:center;border-bottom:1px solid #bae6fd;">
+ <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;">
+  <div style="display:flex;align-items:center;gap:8px;">
+   <svg width="20" height="20" viewBox="0 0 24 24" fill="#0058A4" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/ class="professional-body"></svg>
+   <span style="font-weight:700;color:#0058A4;font-size:.95rem;">Trusted by 340+ organisations worldwide</span>
+  </div>
+  <span style="color:#94a3b8;">|</span>
+  <div style="display:flex;align-items:center;gap:6px;">
+   <span style="color:#3182ce;font-weight:700;">… 4.8/5</span>
+   <span style="color:#64748B;font-size:.88rem;">from 127 enterprise reviews</span>
+  </div>
+  <span style="color:#94a3b8;">|</span>
+  <div style="font-size:.88rem;color:#64748B;">
+   <strong style="color:#10B981;">30-day money-back guarantee</strong> on all paid plans
+  </div>
+ </div>
+</div>
+<section class="pricing-section">
+ <div class="pricing-container">
+ <div style="display:flex;justify-content:center;margin-bottom:40px;gap:8px">
+ <button id="toggle-monthly" onclick="toggleBilling('monthly')" style="padding:10px 24px;border-radius:8px;border:2px solid #0058A4;background:#0058A4;color:#fff;font-weight:600;cursor:pointer;transition:all .25s">Monthly</button>
+ <button id="toggle-annual" onclick="toggleBilling('annual')" style="padding:10px 24px;border-radius:8px;border:2px solid #e0e0e0;background:#fff;color:#333;font-weight:600;cursor:pointer;transition:all .25s">Annual <span style="background:#3182ce;color:#fff;padding:2px 8px;border-radius:8px;font-size:.7rem;margin-left:4px">Save 20%</span></button>
+ </div>
+
+  <div style="text-align:center;margin-bottom:24px;padding:10px 20px;background:linear-gradient(135deg,#fef2f2,#fff1f2);border:1px solid #fecaca;border-radius:8px;max-width:600px;margin:0 auto 28px;">
+   <span style="font-size:.88rem;color:#3182ce;font-weight:600;">¥ Annual plans save 20%  lock in today's pricing before Q2 rate increase</span>
+  </div>
+ <div class="card-professional" style="grid-template-columns:repeat(3,1fr)">
+ <!-- COMMUNITY -->
+ <div class="card-professional">
+ <h3 class="professional-title professional-title" class="professional-title">Community</h3>
+ <p class="description" class="professional-body">Start with 3 core MCPs  free forever</p>
+ <div class="price">$0</div>
+ <div class="price-period">Forever free</div>
+ <ul class="features-list">
+ <li>3 Core MCPs (Governance, Standards, OneOS)</li>
+ <li>100 API credits/month</li>
+ <li>Community Discord access</li>
+ <li>Basic documentation</li>
+ <li>No credit card required</li>
+ </ul>
+ <button class="btn-professional" onclick="handleCheckout('community')">Get Started Free</button>
+  <p style="text-align:center;color:#64748B;font-size:.78rem;margin-top:8px;" class="professional-body">Upgrade to Starter anytime †</p>
+ </div>
+ <!-- STARTER -->
+ <div class="card-professional">
+ <h3 class="professional-title professional-title" class="professional-title">Starter</h3>
+ <p class="description" class="professional-body">5 MCPs for small teams getting started</p>
+ <div style="display:flex;align-items:baseline;gap:6px">
+ <div class="price tier-price" data-monthly="79" data-annual="759">$79</div>
+ <div class="price-period tier-period">/ month</div>
+ </div>
+ <div class="tier-annual-note" style="color:#0058A4;font-size:.85rem;margin-bottom:20px;font-weight:500;display:none">Billed annually ($759/yr  save 20%)</div>
+ <ul class="features-list">
+ <li>5 MCPs (LVP/MVP mix)</li>
+ <li>2,500 API credits/month</li>
+ <li>Email support (48h SLA)</li>
+ <li>Standard documentation</li>
+ <li>Monthly webinars</li>
+ <li>Up to 3 team members</li>
+ <li>14-day free trial</li>
+ </ul>
+ <button class="btn-professional" onclick="handleCheckout('starter')">Start 14-Day Free Trial</button>
+ <p style="text-align:center;color:#999;font-size:.8rem;margin-top:8px" class="professional-body">No credit card required</p>
+ </div>
+ <!-- PROFESSIONAL (FEATURED) -->
+ <div class="card-professional">
+ <div style="position:absolute;top:-14px;right:20px;background:#3182ce;color:#fff;padding:4px 16px;border-radius:4px;font-size:.8rem;font-weight:600">MOST POPULAR</div>
+ <h3 class="professional-title professional-title" class="professional-title">Professional</h3>
+ <p class="description" class="professional-body">12 MCPs for scaling AI governance teams</p>
+   <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;padding:6px 12px;background:#f0fdf4;border-radius:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#10B981"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/ class="professional-body"></svg><span style="font-size:.78rem;color:#10B981;font-weight:600;">73% of teams choose Professional</span></div>
+ <div style="display:flex;align-items:baseline;gap:6px">
+ <div class="price tier-price" data-monthly="199" data-annual="1910">$199</div>
+ <div class="price-period tier-period">/ month</div>
+ </div>
+ <div class="tier-annual-note" style="color:#0058A4;font-size:.85rem;margin-bottom:20px;font-weight:500;display:none">Billed annually ($1,910/yr  save 20%)</div>
+ <ul class="features-list">
+ <li>12 MCPs (any sector, LVP/MVP/HVP)</li>
+ <li>10,000 API credits/month</li>
+ <li>Priority email (24h SLA)</li>
+ <li>Full docs + code samples</li>
+ <li>Weekly webinars + 1:1 onboarding</li>
+ <li>Up to 10 team members</li>
+ <li>Custom workflows &amp; API access</li>
+ <li>14-day free trial</li>
+ </ul>
+ <button class="btn-professional" onclick="handleCheckout('professional')">Start 14-Day Free Trial</button>
+ <p style="text-align:center;color:#999;font-size:.8rem;margin-top:8px" class="professional-body">No credit card required</p>
+ </div>
+ </div>
+ <!-- ENTERPRISE ROW -->
+ <div class="card-professional" style="grid-template-columns:repeat(3,1fr);margin-top:32px">
+ <!-- ENTERPRISE SECTOR -->
+ <div class="card-professional">
+ <div style="position:absolute;top:-14px;right:20px;background:#3182ce;color:#fff;padding:4px 16px;border-radius:4px;font-size:.8rem;font-weight:600">BEST VALUE</div>
+ <h3 class="professional-title professional-title" class="professional-title">Enterprise Sector</h3>
+ <p class="description" class="professional-body">All MCPs in one sector with dedicated support</p>
+ <div style="display:flex;align-items:baseline;gap:6px">
+ <div class="price tier-price" data-monthly="499" data-annual="4790">$499</div>
+ <div class="price-period tier-period">/ month</div>
+ </div>
+ <div class="tier-annual-note" style="color:#0058A4;font-size:.85rem;margin-bottom:20px;font-weight:500;display:none">Billed annually ($4,790/yr  save 20%)</div>
+ <ul class="features-list">
+ <li>All MCPs in 1 sector</li>
+ <li>50,000 API credits/month</li>
+ <li>Dedicated Slack channel (8h SLA)</li>
+ <li>Custom integrations</li>
+ <li>Quarterly business reviews</li>
+ <li>Up to 25 team members</li>
+ <li>30-day free trial</li>
+ </ul>
+ <button class="btn-professional" onclick="handleCheckout('enterprise_sector')">Start 30-Day Trial</button>
+ <p style="text-align:center;color:#999;font-size:.8rem;margin-top:8px" class="professional-body">30-day trial included</p>
+ </div>
+ <!-- ENTERPRISE FULL -->
+ <div class="card-professional">
+ <h3 class="professional-title professional-title" class="professional-title">Enterprise Full</h3>
+ <p class="description" class="professional-body">All 70 MCPs + AI Economy infrastructure</p>
+ <div style="display:flex;align-items:baseline;gap:6px">
+ <div class="price tier-price" data-monthly="1499" data-annual="14390">$1,499</div>
+ <div class="price-period tier-period">/ month</div>
+ </div>
+ <div class="tier-annual-note" style="color:#0058A4;font-size:.85rem;margin-bottom:20px;font-weight:500;display:none">Billed annually ($14,390/yr  save 20%)</div>
+ <ul class="features-list">
+ <li>All 70 MCPs + AI Economy Infra</li>
+ <li>250,000 API credits/month</li>
+ <li>Dedicated CSM (4h SLA)</li>
+ <li>Custom dev (10 hrs/quarter)</li>
+ <li>On-site training (1 day/quarter)</li>
+ <li>Unlimited team members</li>
+ <li>SSO/SAML, audit logs</li>
+ <li>30-day free trial</li>
+ </ul>
+ <button class="btn-professional" onclick="handleCheckout('enterprise_full')">Start 30-Day Trial</button>
+ <p style="text-align:center;color:#999;font-size:.8rem;margin-top:8px" class="professional-body">30-day trial included</p>
+ </div>
+ <!-- ENTERPRISE CUSTOM -->
+ <div class="card-professional" style="border-color:#3182ce;background:linear-gradient(180deg,#fefdf8,#fff)">
+ <div style="position:absolute;top:-14px;right:20px;background:linear-gradient(135deg,#A30000,#3182ce);color:#fff;padding:4px 16px;border-radius:4px;font-size:.8rem;font-weight:600">SOVEREIGN</div>
+ <h3 style="color:#A30000" class="subsection-title" class="professional-title" class="professional-title">Enterprise Custom</h3>
+ <p class="description" class="professional-body">Sovereign, air-gapped, FedRAMP-aligned</p>
+ <div class="price">$2,499+</div>
+ <div class="price-period">starting / month</div>
+ <ul class="features-list">
+ <li>Everything in Enterprise Full</li>
+ <li>COBOL Bridge integration</li>
+ <li>Unlimited API calls</li>
+ <li>Custom MCP development</li>
+ <li>24/7 phone + on-site support</li>
+ <li>Air-gapped / sovereign deployment</li>
+ <li>FedRAMP-aligned infrastructure</li>
+ <li>Security clearance teams</li>
+ <li>Custom SLA guarantees</li>
+ </ul>
+ <button class="btn-professional" style="border-color:#3182ce" onclick="handleCheckout('enterprise_custom')">Contact Sales</button>
+ </div>
+ </div>
+ </div>
+</section>
+<!-- ••• ECOSYSTEM BUNDLES ••• -->
+<section class="eco-section">
+ <div class="eco-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px" class="section-title" class="professional-title" class="professional-title">Product Ecosystem Bundles</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto" class="professional-body">Need a specific vertical? Get a curated bundle of MCPs at a fraction of individual pricing.</p>
+  </div>
+  <div class="eco-grid">
+   <!-- Security -->
+   <div class="card-professional">
+    <div class="eco-icon"></div>
+    <h3 class="professional-title professional-title" class="professional-title">Security &amp; Compliance</h3>
+    <p class="eco-desc" class="professional-body">9 MCPs Â· 25,000 credits/mo</p>
+    <div class="eco-price">$149<span>/mo</span></div>
+    <div class="eco-annual">or $1,499/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>Threat Intelligence</li><li>Vulnerability Scanner</li><li>Compliance Audit</li>
+     <li>Incident Response</li><li>Cloud Security</li><li>Data Classification</li>
+     <li>Red Team Ops</li><li>Secure Comms</li><li>Policy Engine</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('ecosystem_security')">Get Security Suite</button>
+   </div>
+   <!-- Governance -->
+   <div class="card-professional">
+    <div class="eco-icon">–</div>
+    <h3 class="professional-title professional-title" class="professional-title">AI Governance</h3>
+    <p class="eco-desc" class="professional-body">5 MCPs Â· 15,000 credits/mo</p>
+    <div class="eco-price">$99<span>/mo</span></div>
+    <div class="eco-annual">or $999/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>AI Governance</li><li>Policy Engine</li><li>Compliance Audit</li>
+     <li>Data Classification</li><li>DSRB Defence</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('ecosystem_governance')">Get Governance Suite</button>
+   </div>
+   <!-- DevOps -->
+   <div class="card-professional">
+    <div class="eco-icon"></div>
+    <h3 class="professional-title professional-title" class="professional-title">Cloud &amp; DevOps</h3>
+    <p class="eco-desc" class="professional-body">6 MCPs Â· 15,000 credits/mo</p>
+    <div class="eco-price">$79<span>/mo</span></div>
+    <div class="eco-annual">or $799/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>AWS Cloud</li><li>Docker Compose</li><li>Vercel Deploy</li>
+     <li>GitHub API</li><li>GitLab API</li><li>Sentry Monitoring</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('ecosystem_devops')">Get DevOps Suite</button>
+   </div>
+   <!-- Defence -->
+   <div class="card-professional">
+    <div class="eco-icon">–</div>
+    <h3 class="professional-title professional-title" class="professional-title">Defence &amp; Sovereign</h3>
+    <p class="eco-desc" class="professional-body">6 MCPs Â· 30,000 credits/mo</p>
+    <div class="eco-price">$199<span>/mo</span></div>
+    <div class="eco-annual">or $1,999/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>Terranova Defence</li><li>DSRB Defence</li><li>QuantraNet PQC</li>
+     <li>THN Global</li><li>Secure Comms</li><li>Red Team Ops</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('ecosystem_defence')">Get Defence Suite</button>
+   </div>
+   <!-- Industry -->
+   <div class="card-professional">
+    <div class="eco-icon">­</div>
+    <h3 class="professional-title professional-title" class="professional-title">Industry Verticals</h3>
+    <p class="eco-desc" class="professional-body">20 MCPs Â· 20,000 credits/mo</p>
+    <div class="eco-price">$129<span>/mo</span></div>
+    <div class="eco-annual">or $1,299/yr (save 16%)</div>
+    <ul class="eco-list">
+     <li>Real Estate AI</li><li>Retail AI</li><li>Telecom AI</li><li>Supply Chain AI</li>
+     <li>Space AI</li><li>Smart Cities AI</li><li>Sports Analytics AI</li><li>Travel &amp; Hospitality AI</li>
+     <li>Healthcare AI</li><li>Financial AI</li><li>Insurance AI</li><li>Energy AI</li>
+     <li>Agriculture AI</li><li>Construction AI</li><li>Maritime AI</li><li>Mining AI</li>
+     <li>Gaming AI</li><li>Media &amp; Advertising AI</li><li>Legal Tech AI</li><li>Autonomous Vehicles AI</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('ecosystem_industry')">Get Industry Suite</button>
+   </div>
+   <!-- Data -->
+   <div class="card-professional">
+    <div class="eco-icon"></div>
+    <h3 class="professional-title professional-title" class="professional-title">Data &amp; Analytics</h3>
+    <p class="eco-desc" class="professional-body">6 MCPs Â· 10,000 credits/mo</p>
+    <div class="eco-price">$39<span>/mo</span></div>
+    <div class="eco-annual">or $389/yr (save 17%)</div>
+    <ul class="eco-list">
+     <li>CSV Analytics</li><li>PostgreSQL DB</li><li>SQLite DB</li>
+     <li>JSON Transformer</li><li>Notion Workspace</li><li>Google Drive</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('ecosystem_data')">Get Data Suite</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ••• PER-MCP INDIVIDUAL PRICING (LVP / MVP / HVP) ••• -->
+<section class="per-mcp-section">
+ <div class="per-mcp-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px" class="section-title" class="professional-title" class="professional-title">Individual MCP Pricing</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto" class="professional-body">Only need one tool? Buy any MCP individually  no membership required.</p>
+  </div>
+  <div class="per-mcp-grid">
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#16a34a">LVP</div>
+    <h3 class="professional-title professional-title" class="professional-title">Low-Value Product</h3>
+    <div class="per-mcp-price">$9<span>/mo</span></div>
+    <p class="per-mcp-period" class="professional-body">or $87/year (save 19%)</p>
+    <ul class="per-mcp-list">
+     <li>1,000 API credits/month</li>
+     <li>Community support</li>
+     <li>Core utility MCPs</li>
+    </ul>
+    <a href="/mcp/" class="btn-professional">Browse LVP MCPs</a>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#0058A4">MVP</div>
+    <h3 class="professional-title professional-title" class="professional-title">Medium-Value Product</h3>
+    <div class="per-mcp-price">$29<span>/mo</span></div>
+    <p class="per-mcp-period" class="professional-body">or $279/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>5,000 API credits/month</li>
+     <li>Priority email support</li>
+     <li>Sector-specific MCPs</li>
+    </ul>
+    <a href="/mcp/" class="btn-professional">Browse MVP MCPs</a>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#A30000">HVP</div>
+    <h3 class="professional-title professional-title" class="professional-title">High-Value Product</h3>
+    <div class="per-mcp-price">$79<span>/mo</span></div>
+    <p class="per-mcp-period" class="professional-body">or $759/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>15,000 API credits/month</li>
+     <li>Dedicated support</li>
+     <li>Enterprise &amp; defence MCPs</li>
+    </ul>
+    <a href="/mcp/" class="btn-professional">Browse HVP MCPs</a>
+   </div>
+  </div>
+  <p style="text-align:center;color:#999;font-size:.9rem;margin-top:24px" class="professional-body">All individual MCPs include a 14-day free trial. Upgrade to a membership anytime for best value.</p>
+ </div>
+</section>
+
+<!-- ••• COBOL BRIDGE ADD-ON ••• -->
+<section class="per-mcp-section" style="background:#f0f4f8">
+ <div class="per-mcp-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px" class="section-title" class="professional-title" class="professional-title">COBOL Bridge</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto" class="professional-body">Legacy system integration for government and financial institutions  bridge COBOL to modern AI workflows.</p>
+  </div>
+  <div class="per-mcp-grid">
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#0058A4">BASIC</div>
+    <h3 class="professional-title professional-title" class="professional-title">COBOL Bridge Basic</h3>
+    <div class="per-mcp-price">$999<span>/mo</span></div>
+    <p class="per-mcp-period" class="professional-body">or $9,590/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>Single COBOL system integration</li>
+     <li>Read-only data extraction</li>
+     <li>10,000 transactions/month</li>
+     <li>Email support (48h SLA)</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('cobol_basic')">Get Started</button>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#3182ce">PRO</div>
+    <h3 class="professional-title professional-title" class="professional-title">COBOL Bridge Pro</h3>
+    <div class="per-mcp-price">$2,499<span>/mo</span></div>
+    <p class="per-mcp-period" class="professional-body">or $23,990/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>Up to 5 COBOL systems</li>
+     <li>Read/write + batch processing</li>
+     <li>100,000 transactions/month</li>
+     <li>Priority support (24h SLA)</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('cobol_pro')">Get Started</button>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#A30000">ENTERPRISE</div>
+    <h3 class="professional-title professional-title" class="professional-title">COBOL Bridge Enterprise</h3>
+    <div class="per-mcp-price">$4,999<span>/mo</span></div>
+    <p class="per-mcp-period" class="professional-body">or $47,990/year (save 20%)</p>
+    <ul class="per-mcp-list">
+     <li>Unlimited COBOL systems</li>
+     <li>Real-time streaming + CDC</li>
+     <li>Unlimited transactions</li>
+     <li>Dedicated engineer (4h SLA)</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('cobol_enterprise')">Contact Sales</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ••• CASA CERTIFICATION ••• -->
+<section class="per-mcp-section">
+ <div class="per-mcp-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px" class="section-title" class="professional-title" class="professional-title">CASA Certification</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto" class="professional-body">Cognitive AI Safety Assessment  industry-recognised certification for AI governance maturity.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1200px;margin:0 auto">
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#16a34a">CA-10</div>
+    <h3 class="professional-title professional-title" class="professional-title">Foundation</h3>
+    <div class="per-mcp-price">$2,500</div>
+    <p class="per-mcp-period" class="professional-body">one-time assessment</p>
+    <ul class="per-mcp-list">
+     <li>Basic AI safety review</li>
+     <li>Self-assessment toolkit</li>
+     <li>Digital certificate</li>
+     <li>Valid 1 year</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('casa_ca10')">Begin Assessment</button>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#0058A4">CA-20</div>
+    <h3 class="professional-title professional-title" class="professional-title">Intermediate</h3>
+    <div class="per-mcp-price">$7,500</div>
+    <p class="per-mcp-period" class="professional-body">one-time assessment</p>
+    <ul class="per-mcp-list">
+     <li>External auditor review</li>
+     <li>Risk assessment framework</li>
+     <li>Compliance badge</li>
+     <li>Valid 2 years</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('casa_ca20')">Begin Assessment</button>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#3182ce">CA-30</div>
+    <h3 class="professional-title professional-title" class="professional-title">Advanced</h3>
+    <div class="per-mcp-price">$15,000</div>
+    <p class="per-mcp-period" class="professional-body">one-time assessment</p>
+    <ul class="per-mcp-list">
+     <li>Full third-party audit</li>
+     <li>Penetration testing</li>
+     <li>Board-level report</li>
+     <li>Valid 2 years</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('casa_ca30')">Begin Assessment</button>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#A30000">CA-40</div>
+    <h3 class="professional-title professional-title" class="professional-title">Sovereign</h3>
+    <div class="per-mcp-price">$25,000</div>
+    <p class="per-mcp-period" class="professional-body">one-time assessment</p>
+    <ul class="per-mcp-list">
+     <li>FedRAMP / DSRB alignment</li>
+     <li>On-site audit team</li>
+     <li>Continuous monitoring</li>
+     <li>Valid 3 years</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('casa_ca40')">Contact Sales</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ••• CREDIT PACKS ••• -->
+<section class="per-mcp-section" style="background:#f0f4f8">
+ <div class="per-mcp-container">
+  <div style="text-align:center;margin-bottom:48px">
+   <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px" class="section-title" class="professional-title" class="professional-title">API Credit Packs</h2>
+   <p style="color:#666;font-size:1.1rem;max-width:640px;margin:0 auto" class="professional-body">Need extra credits? Purchase one-time credit packs to top up your allocation.</p>
+  </div>
+  <div class="per-mcp-grid">
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#16a34a">STARTER</div>
+    <h3 class="professional-title professional-title" class="professional-title">1,000 Credits</h3>
+    <div class="per-mcp-price">$9</div>
+    <p class="per-mcp-period" class="professional-body">one-time purchase</p>
+    <ul class="per-mcp-list">
+     <li>$0.009 per credit</li>
+     <li>Never expires</li>
+     <li>Stacks with plan credits</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('credits_starter')">Buy Credits</button>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#0058A4">PRO</div>
+    <h3 class="professional-title professional-title" class="professional-title">5,000 Credits</h3>
+    <div class="per-mcp-price">$29</div>
+    <p class="per-mcp-period" class="professional-body">one-time purchase</p>
+    <ul class="per-mcp-list">
+     <li>$0.0058 per credit (36% off)</li>
+     <li>Never expires</li>
+     <li>Stacks with plan credits</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('credits_pro')">Buy Credits</button>
+   </div>
+   <div class="card-professional">
+    <div class="per-mcp-tier" style="background:#A30000">ENTERPRISE</div>
+    <h3 class="professional-title professional-title" class="professional-title">25,000 Credits</h3>
+    <div class="per-mcp-price">$99</div>
+    <p class="per-mcp-period" class="professional-body">one-time purchase</p>
+    <ul class="per-mcp-list">
+     <li>$0.004 per credit (56% off)</li>
+     <li>Never expires</li>
+     <li>Stacks with plan credits</li>
+    </ul>
+    <button class="btn-professional" onclick="handleCheckout('credits_enterprise')">Buy Credits</button>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="comparison-section">
+ <div class="comparison-container">
+ <h2 class="professional-title professional-title" class="professional-title">Feature Comparison</h2>
+ <div style="overflow-x:auto">
+ <table class="comparison-table">
+ <thead>
+ <tr>
+ <th style="min-width:180px">Feature</th>
+ <th>Community</th>
+ <th>Starter</th>
+ <th style="background:#0058A4">Professional</th>
+ <th>Ent. Sector</th>
+ <th>Ent. Full</th>
+ <th style="background:linear-gradient(135deg,#A30000,#3182ce)">Ent. Custom</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="feature-name">Monthly Price</td>
+ <td>Free</td>
+ <td>$79/mo</td>
+ <td>$199/mo</td>
+ <td>$499/mo</td>
+ <td>$1,499/mo</td>
+ <td>$2,499+</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Annual Price</td>
+ <td>Free</td>
+ <td>$759/yr</td>
+ <td>$1,910/yr</td>
+ <td>$4,790/yr</td>
+ <td>$14,390/yr</td>
+ <td>Custom</td>
+ </tr>
+ <tr>
+ <td class="feature-name">MCP Tools</td>
+ <td>3 Core MCPs</td>
+ <td>5 MCPs</td>
+ <td>12 MCPs</td>
+ <td>All in 1 Sector</td>
+ <td class="check">All 70 + AI Economy</td>
+ <td class="check">All  Self-Hosted</td>
+ </tr>
+ <tr>
+ <td class="feature-name">API Credits / Month</td>
+ <td>100</td>
+ <td>2,500</td>
+ <td>10,000</td>
+ <td>50,000</td>
+ <td>250,000</td>
+ <td class="check">Unlimited</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Team Members</td>
+ <td>1</td>
+ <td>3</td>
+ <td>10</td>
+ <td>25</td>
+ <td class="check">Unlimited</td>
+ <td class="check">Unlimited</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Support</td>
+ <td>Community</td>
+ <td>Email (48h)</td>
+ <td>Priority (24h)</td>
+ <td>Dedicated CSM (8h)</td>
+ <td class="check">Dedicated CSM (4h)</td>
+ <td class="check">24/7 On-Site</td>
+ </tr>
+ <tr>
+ <td class="feature-name">API Access</td>
+ <td></td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Custom Workflows</td>
+ <td></td>
+ <td></td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Deployment</td>
+ <td>Smithery Cloud</td>
+ <td>Smithery Cloud</td>
+ <td>Smithery Cloud</td>
+ <td>Hybrid</td>
+ <td>Hybrid</td>
+ <td class="check">Air-Gapped / Sovereign</td>
+ </tr>
+ <tr>
+ <td class="feature-name">SLA</td>
+ <td></td>
+ <td></td>
+ <td>99.5%</td>
+ <td class="check">99.9%</td>
+ <td class="check">99.95%</td>
+ <td class="check">Custom SLA</td>
+ </tr>
+ <tr>
+ <td class="feature-name">SSO / SAML</td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ <td class="check">œ</td>
+ </tr>
+ <tr>
+ <td class="feature-name">CASA Certification</td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td>CA-20</td>
+ <td>CA-30</td>
+ <td class="check">CA-40 (FedRAMP)</td>
+ </tr>
+ <tr>
+ <td class="feature-name">Custom Development</td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td class="check">10 hrs/quarter</td>
+ <td class="check">Unlimited</td>
+ </tr>
+ <tr>
+ <td class="feature-name">COBOL Bridge</td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td>Add-on</td>
+ <td class="check">Included</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</section>
+
+<!-- ••• TESTIMONIALS ••• -->
+<section class="testimonials-section reveal" style="padding:64px 32px;background:#f8fafc;">
+ <div style="max-width:1100px;margin:0 auto;text-align:center;">
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;font-size:2rem;color:#0A1628;margin-bottom:12px;" class="section-title" class="professional-title" class="professional-title">What Our Customers Say</h2>
+  <p style="color:#64748B;font-size:1.05rem;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;" class="professional-body">Industry leaders trust CSGA Global for their AI governance needs</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+   <div style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;border:1px solid #e2e8f0;">
+    <div style="display:flex;gap:3px;margin-bottom:12px;">
+     <span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span>
+    </div>
+    <p style="font-size:.95rem;color:#334155;line-height:1.65;margin-bottom:16px;" class="professional-body">"CSGA's MCP platform reduced our compliance audit time by 60%. The governance scanner alone paid for our Enterprise subscription in the first month."</p>
+    <div style="display:flex;align-items:center;gap:10px;">
+     <div style="width:40px;height:40px;border-radius:50%;background:#0058A4;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">SK</div>
+     <div><div style="font-weight:600;font-size:.88rem;color:#0A1628;">Sarah K.</div><div style="font-size:.78rem;color:#64748B;">CISO, Fortune 500 Financial Services</div></div>
+    </div>
+   </div>
+   <div style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;border:1px solid #e2e8f0;">
+    <div style="display:flex;gap:3px;margin-bottom:12px;">
+     <span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span>
+    </div>
+    <p style="font-size:.95rem;color:#334155;line-height:1.65;margin-bottom:16px;" class="professional-body">"The ecosystem bundles are brilliant. We got Security + Governance for less than what we were paying for individual tools. World-class AI governance platform."</p>
+    <div style="display:flex;align-items:center;gap:10px;">
+     <div style="width:40px;height:40px;border-radius:50%;background:#10B981;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">MR</div>
+     <div><div style="font-weight:600;font-size:.88rem;color:#0A1628;">Marcus R.</div><div style="font-size:.78rem;color:#64748B;">VP Engineering, Defence Contractor</div></div>
+    </div>
+   </div>
+   <div style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;border:1px solid #e2e8f0;">
+    <div style="display:flex;gap:3px;margin-bottom:12px;">
+     <span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span><span style="color:#3182ce;">…</span>
+    </div>
+    <p style="font-size:.95rem;color:#334155;line-height:1.65;margin-bottom:16px;" class="professional-body">"From Community to Professional in 3 weeks. The free trial removed all risk, and the MCP quality justified the investment immediately. Essential for ISO 42001."</p>
+    <div style="display:flex;align-items:center;gap:10px;">
+     <div style="width:40px;height:40px;border-radius:50%;background:#A855F7;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">LW</div>
+     <div><div style="font-weight:600;font-size:.88rem;color:#0A1628;">Leah W.</div><div style="font-size:.78rem;color:#64748B;">Head of AI Compliance, UK Gov Contractor</div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="faq-section">
+ <div class="faq-container">
+ <h2 class="professional-title professional-title" class="professional-title">Frequently Asked Questions</h2>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">Can I upgrade or downgrade my plan?</h3>
+ <p class="professional-body">Yes, you can change your plan at any time through the Stripe billing portal. Upgrades take effect immediately with prorated charges. Downgrades take effect at the end of your current billing period.</p>
+ </div>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">What payment methods do you accept?</h3>
+ <p class="professional-body">We accept all major credit cards (Visa, Mastercard, American Express) and wire transfers for Enterprise plans. Annual subscriptions receive a 20% discount across all tiers.</p>
+ </div>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">Is there a free trial?</h3>
+ <p class="professional-body">All paid memberships (Starter through Enterprise Full) include a 30-day free trial. No credit card required to start the Community tier. Individual MCPs come with a 14-day trial.</p>
+ </div>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">What's included in support?</h3>
+ <p class="professional-body">Community: Forums only. Starter: Email (48h response). Professional: Priority email (24h). Enterprise Sector: Dedicated CSM with 8h SLA. Enterprise Full: Dedicated CSM with 4h SLA and quarterly on-site. Enterprise Custom: 24/7 on-site support with security-cleared teams.</p>
+ </div>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">Can I buy individual MCPs instead of a membership?</h3>
+ <p class="professional-body">Yes! Any MCP can be purchased individually. Low-Value Products start at $9/month, Medium-Value at $29/month, and High-Value at $79/month. Each includes its own credit allocation. Upgrade to a membership anytime for better value.</p>
+ </div>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">What are ecosystem bundles?</h3>
+ <p class="professional-body">Ecosystem bundles are curated groups of MCPs for specific verticals  Security ($149/mo), Governance ($99/mo), DevOps ($79/mo), Defence ($199/mo), Industry ($129/mo), and Data ($39/mo). They cost less than buying individual MCPs separately and include higher credit allocations.</p>
+ </div>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">What is CASA certification?</h3>
+ <p class="professional-body">The Cognitive AI Safety Assessment (CASA) is an industry-recognised certification for AI governance maturity. Four levels (CA-10 through CA-40) provide increasing rigour  from self-assessment ($2,500) to sovereign-grade audits with FedRAMP alignment ($25,000).</p>
+ </div>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">What happens if I exceed my API credits?</h3>
+ <p class="professional-body">Overage billing activates automatically at your tier's overage rate ($0.20-$0.08 per additional credit depending on plan). You can also purchase one-time credit packs starting at $9 for 1,000 credits. Enterprise Custom plans include unlimited API calls.</p>
+ </div>
+ <div class="faq-item">
+ <h3 class="professional-title professional-title" class="professional-title">Do you offer custom deployment options?</h3>
+ <p class="professional-body">Yes. Enterprise Sector and Full plans support hybrid deployment. Enterprise Custom includes air-gapped, sovereign, and FedRAMP-aligned deployment options. Contact our sales team for architecture review.</p>
+ </div>
+ </div>
+</section>
+
+<!-- ••• TRUST BADGES ••• -->
+<section style="padding:48px 32px;background:#fff;text-align:center;" class="reveal">
+ <div style="max-width:900px;margin:0 auto;">
+  <p style="font-size:.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin-bottom:24px;" class="professional-body">TRUSTED BY GLOBAL ENTERPRISES</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;opacity:.65;filter:grayscale(.8);">
+   <img src="assets/logos/bmcc-cyber.jpg" alt="BMCC Cyber" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/dhl.jpg" alt="DHL" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/terranova.png" alt="Terranova" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/csa-group.jpg" alt="CSA Group" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/enterprise-finance.png" alt="Enterprise Finance" style="height:40px;object-fit:contain;">
+   <img src="assets/logos/toronto-dao.png" alt="Toronto DAO" style="height:40px;object-fit:contain;">
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap;">
+   <div style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/ class="professional-body"></svg>SOC 2 Compliant</div>
+   <div style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M9 12l2 2 4-4"/ class="professional-body"><circle cx="12" cy="12" r="10"/></svg>ISO 42001 Aligned</div>
+   <div style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/ class="professional-body"></svg>256-bit Encryption</div>
+   <div style="display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/ class="professional-body"></svg>GDPR Ready</div>
+  </div>
+ </div>
+</section>
+<section class="cta-pricing-section">
+ <h2 class="professional-title professional-title" class="professional-title">Ready to Get Started?</h2>
+ <p style="font-size: 1.1rem; margin-bottom: 16px;" class="professional-body">Start with a membership, ecosystem bundle, or individual MCP  all with free trials included</p>
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,.1);padding:8px 20px;border-radius:4px;margin-bottom:24px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#10B981"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/ class="professional-body"></svg><span style="font-size:.9rem;font-weight:600;color:#10B981;">30-day money-back guarantee Â· No questions asked</span></div>
+ <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+ <button class="btn-professional" onclick="handleCheckout('community')">Start Free</button>
+ <button class="btn-professional" style="background:#0058A4" onclick="handleCheckout('professional')">Try Professional</button>
+ <button class="btn-professional" style="background:linear-gradient(135deg,#A30000,#3182ce)" onclick="handleCheckout('enterprise_custom')">Contact Sales</button>
+ </div>
+</section>
+
+<div id="checkout-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:10000;align-items:center;justify-content:center">
+ <div style="background:#fff;border-radius:12px;max-width:520px;width:90%;padding:40px;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.3)">
+ <button onclick="closeCheckoutModal()" style="position:absolute;top:15px;right:20px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#666">&times;</button>
+ <div id="modal-content"></div>
+ </div>
+</div>
+<script src="/js/pricing-config.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// •••••••••••••••••••••••••••••••••••••••••••••••••••••••
+//  CSGA Global  Pricing Page JavaScript
+//  Uses CSGA_PRICING from /js/pricing-config.js
+// •••••••••••••••••••••••••••••••••••••••••••••••••••••••
+const P = window.CSGA_PRICING || {};
+const STRIPE_CFG = P.stripe || {};
+let currentBilling = 'monthly';
+
+//  Billing Toggle 
+function toggleBilling(mode) {
+ currentBilling = mode;
+ const mBtn = document.getElementById('toggle-monthly');
+ const aBtn = document.getElementById('toggle-annual');
+ const isAnnual = mode === 'annual';
+ // Toggle button styles
+ [mBtn, aBtn].forEach((btn, i) => {
+  const active = i === (isAnnual ? 1 : 0);
+  btn.style.background = active ? '#0058A4' : '#fff';
+  btn.style.color = active ? '#fff' : '#333';
+  btn.style.borderColor = active ? '#0058A4' : '#e0e0e0';
+ });
+ // Update all tier price cards
+ document.querySelectorAll('.tier-price').forEach(el => {
+  const monthly = el.dataset.monthly;
+  const annual = el.dataset.annual;
+  if (!monthly) return;
+  el.textContent = isAnnual ? `$${Number(annual).toLocaleString()}` : `$${Number(monthly).toLocaleString()}`;
+ });
+ document.querySelectorAll('.tier-period').forEach(el => {
+  el.textContent = isAnnual ? '/ year' : '/ month';
+ });
+ document.querySelectorAll('.tier-annual-note').forEach(el => {
+  el.style.display = isAnnual ? 'block' : 'none';
+ });
+}
+
+//  Plan info lookup from CSGA_PRICING 
+const PLAN_INFO = {};
+if (P.memberships) {
+ Object.entries(P.memberships).forEach(([key, m]) => {
+  PLAN_INFO[key] = {
+   name: m.name,
+   icon: key === 'community' ? '' : key === 'starter' ? '' : key === 'professional' ? '¼' : key === 'enterprise_sector' ? '' : key === 'enterprise_full' ? '' : '',
+   mcps: m.mcpCount || '?',
+   monthly: m.monthlyPrice,
+   annual: m.annualPrice,
+   credits: m.credits || 0,
+   team: m.teamMembers || 1,
+   trial: m.trialDays || 0,
+  };
+ });
+}
+
+//  Ecosystem info lookup 
+const ECO_INFO = {};
+if (P.ecosystems) {
+ Object.entries(P.ecosystems).forEach(([key, e]) => {
+  ECO_INFO[key] = { name: e.name, monthly: e.monthlyPrice, annual: e.annualPrice, mcps: e.mcps?.length || 0, credits: e.credits };
+ });
+}
+
+//  Handle checkout for all product types 
+function handleCheckout(plan) {
+ const modal = document.getElementById('checkout-modal');
+ const content = document.getElementById('modal-content');
+
+ //  Community / Free signup 
+ if (plan === 'community') {
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px"></div>
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#0058A4;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">Create Your Free Account</h2>
+  <p style="color:#666;margin-bottom:25px" class="professional-body">Access 3 open-source MCPs with 100 API credits/month  no credit card required.</p>
+  <form id="free-signup-form" onsubmit="handleFreeSignup(event)" style="text-align:left">
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Full Name</label>
+  <input type="text" name="name" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box" placeholder="Jane Smith">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Work Email</label>
+  <input type="email" name="email" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box" placeholder="jane@company.com">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Organisation</label>
+  <input type="text" name="org" style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box" placeholder="Acme Corp">
+  </div>
+  <button type="submit" style="width:100%;padding:14px;background:#0058A4;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:10px">Create Free Account</button>
+  </form>
+  <p style="font-size:.8rem;color:#999;margin-top:15px" class="professional-body">By signing up, you agree to our <a href="/csoai-standards" style="color:#0058A4">Terms of Service</a>.</p>
+  </div>`;
+ }
+ //  Enterprise Custom / Sovereign inquiry 
+ else if (plan === 'enterprise_custom') {
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px"></div>
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#A30000;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">Enterprise Custom / Sovereign</h2>
+  <p style="color:#666;margin-bottom:25px" class="professional-body">Self-hosted, air-gapped, FedRAMP-aligned AI governance for government and defence.</p>
+  <form id="sovereign-form" onsubmit="handleEnterpriseInquiry(event)" style="text-align:left">
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Full Name</label>
+  <input type="text" name="name" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Work Email</label>
+  <input type="email" name="email" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Organisation</label>
+  <input type="text" name="org" required style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box">
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Deployment Requirements</label>
+  <select name="deployment" style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box">
+  <option>On-Premise (Air-Gapped)</option>
+  <option>Private Cloud (FedRAMP)</option>
+  <option>Hybrid (Cloud + On-Prem)</option>
+  <option>Classified Environment</option>
+  </select>
+  </div>
+  <div style="margin-bottom:15px">
+  <label style="display:block;font-weight:600;margin-bottom:5px;color:#333">Additional Details</label>
+  <textarea name="requirements" rows="3" style="width:100%;padding:12px;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;box-sizing:border-box;resize:vertical" placeholder="Compliance requirements, team size, timeline..."></textarea>
+  </div>
+  <button type="submit" style="width:100%;padding:14px;background:linear-gradient(135deg,#A30000,#3182ce);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer">Request Sovereign Demo</button>
+  </form>
+  </div>`;
+ }
+ //  COBOL Bridge enterprise / CASA CA-40 (sales contact) 
+ else if (plan === 'cobol_enterprise' || plan === 'casa_ca40') {
+  const label = plan === 'cobol_enterprise' ? 'COBOL Bridge Enterprise' : 'CASA CA-40 Sovereign';
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px"></div>
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#0058A4;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">${label}</h2>
+  <p style="color:#666;margin-bottom:25px" class="professional-body">This product requires a custom scope discussion with our team.</p>
+  <a href="/contact" style="display:inline-block;padding:14px 30px;background:#0058A4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Contact Sales</a>
+  </div>`;
+ }
+ //  Paid membership tiers (Starter through Enterprise Full) 
+ else if (PLAN_INFO[plan]) {
+  const info = PLAN_INFO[plan];
+  const isAnnual = currentBilling === 'annual';
+  const price = isAnnual ? info.annual : info.monthly;
+  const period = isAnnual ? 'yr' : 'mo';
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">${info.icon}</div>
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#0058A4;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">${info.name}</h2>
+  <p style="color:#666;margin-bottom:20px" class="professional-body">${info.trial}-day free trial, then:</p>
+  <div style="display:flex;gap:10px;justify-content:center;margin-bottom:25px">
+  <button onclick="switchModalBilling('${plan}','monthly')" style="padding:10px 24px;border-radius:8px;border:2px solid ${!isAnnual?'#0058A4':'#e0e0e0'};background:${!isAnnual?'#0058A4':'#fff'};color:${!isAnnual?'#fff':'#333'};font-weight:600;cursor:pointer">Monthly  $${info.monthly.toLocaleString()}/mo</button>
+  <button onclick="switchModalBilling('${plan}','annual')" style="padding:10px 24px;border-radius:8px;border:2px solid ${isAnnual?'#0058A4':'#e0e0e0'};background:${isAnnual?'#0058A4':'#fff'};color:${isAnnual?'#fff':'#333'};font-weight:600;cursor:pointer;position:relative">Annual  $${info.annual.toLocaleString()}/yr <span style="background:#3182ce;color:#fff;padding:2px 8px;border-radius:8px;font-size:.7rem;margin-left:5px">Save 20%</span></button>
+  </div>
+  <ul style="text-align:left;list-style:none;padding:0;margin-bottom:25px">
+  <li style="padding:8px 0;border-bottom:1px solid #f0f0f0">œ… ${info.mcps} MCP tools</li>
+  <li style="padding:8px 0;border-bottom:1px solid #f0f0f0">œ… ${typeof info.credits === 'number' ? info.credits.toLocaleString() : info.credits} API credits/month</li>
+  <li style="padding:8px 0;border-bottom:1px solid #f0f0f0">œ… ${info.team === 'unlimited' ? 'Unlimited' : info.team} team member${info.team === 1 ? '' : 's'}</li>
+  <li style="padding:8px 0;border-bottom:1px solid #f0f0f0">œ… Stripe billing portal</li>
+  <li style="padding:8px 0">œ… ${info.trial}-day free trial included</li>
+  </ul>
+  <button id="stripe-checkout-btn" onclick="initiateStripeCheckout('${plan}','${isAnnual ? 'annual' : 'monthly'}')" style="width:100%;padding:14px;background:#0058A4;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer">Start ${info.trial}-Day Free Trial</button>
+  <p style="font-size:.8rem;color:#999;margin-top:12px" class="professional-body"> Secured by Stripe. Cancel anytime during trial.</p>
+  </div>`;
+ }
+ //  Ecosystem bundles 
+ else if (plan.startsWith('ecosystem_')) {
+  const ecoKey = plan.replace('ecosystem_', '');
+  const eco = ECO_INFO[ecoKey];
+  if (eco) {
+   const isAnnual = currentBilling === 'annual';
+   const price = isAnnual ? eco.annual : eco.monthly;
+   content.innerHTML = `
+   <div style="text-align:center">
+   <div style="font-size:3rem;margin-bottom:15px"></div>
+   <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#0058A4;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">${eco.name} Bundle</h2>
+   <p style="color:#666;margin-bottom:20px" class="professional-body">${eco.mcps} MCPs Â· ${eco.credits.toLocaleString()} credits/mo</p>
+   <div style="font-size:2rem;font-weight:700;color:#0A1628;margin-bottom:5px">$${price.toLocaleString()}<span style="font-size:1rem;color:#666;font-weight:400">/${isAnnual ? 'yr' : 'mo'}</span></div>
+   <button id="stripe-checkout-btn" onclick="initiateStripeCheckout('ecosystem_${ecoKey}','${isAnnual ? 'annual' : 'monthly'}')" style="width:100%;padding:14px;background:#0058A4;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:20px">Subscribe Now</button>
+   <p style="font-size:.8rem;color:#999;margin-top:12px" class="professional-body"> Secured by Stripe. 14-day free trial included.</p>
+   </div>`;
+  }
+ }
+ //  Credit packs, COBOL, CASA (one-time or subscription) 
+ else if (plan.startsWith('credits_') || plan.startsWith('cobol_') || plan.startsWith('casa_')) {
+  let label, price, mode;
+  if (plan === 'credits_starter') { label = '1,000 API Credits'; price = 9; mode = 'payment'; }
+  else if (plan === 'credits_pro') { label = '5,000 API Credits'; price = 29; mode = 'payment'; }
+  else if (plan === 'credits_enterprise') { label = '25,000 API Credits'; price = 99; mode = 'payment'; }
+  else if (plan === 'cobol_basic') { label = 'COBOL Bridge Basic'; price = 999; mode = 'subscription'; }
+  else if (plan === 'cobol_pro') { label = 'COBOL Bridge Pro'; price = 2499; mode = 'subscription'; }
+  else if (plan === 'casa_ca10') { label = 'CASA CA-10 Foundation'; price = 2500; mode = 'payment'; }
+  else if (plan === 'casa_ca20') { label = 'CASA CA-20 Intermediate'; price = 7500; mode = 'payment'; }
+  else if (plan === 'casa_ca30') { label = 'CASA CA-30 Advanced'; price = 15000; mode = 'payment'; }
+  else { label = plan; price = 0; mode = 'payment'; }
+  content.innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">${plan.startsWith('credits') ? '' : plan.startsWith('cobol') ? '' : '…'}</div>
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#0058A4;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">${label}</h2>
+  <div style="font-size:2.5rem;font-weight:700;color:#0A1628;margin:15px 0">$${price.toLocaleString()}</div>
+  <p style="color:#666;margin-bottom:25px" class="professional-body">${mode === 'payment' ? 'One-time purchase' : 'Per month subscription'}</p>
+  <button id="stripe-checkout-btn" onclick="initiateStripeCheckout('${plan}','${mode}')" style="width:100%;padding:14px;background:#0058A4;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer">${mode === 'payment' ? 'Purchase Now' : 'Subscribe Now'}</button>
+  <p style="font-size:.8rem;color:#999;margin-top:12px" class="professional-body"> Secured by Stripe.</p>
+  </div>`;
+ }
+ modal.style.display = 'flex';
+ document.body.style.overflow = 'hidden';
+}
+
+function switchModalBilling(plan, billing) {
+ currentBilling = billing;
+ closeCheckoutModal();
+ handleCheckout(plan);
+}
+function closeCheckoutModal() {
+ document.getElementById('checkout-modal').style.display = 'none';
+ document.body.style.overflow = '';
+}
+document.getElementById('checkout-modal').addEventListener('click', function(e) {
+ if (e.target === this) closeCheckoutModal();
+});
+
+//  Stripe Checkout Session 
+async function initiateStripeCheckout(productKey, billingOrMode) {
+ const btn = document.getElementById('stripe-checkout-btn');
+ btn.textContent = 'Redirecting to Stripe...';
+ btn.disabled = true;
+
+ // Resolve productKey + billing to a real Stripe priceId using CSGA_PRICING config
+ let priceId = null;
+ let checkoutMode = 'subscription';
+ let trialDays = null;
+ let metadata = {};
+
+ // Check memberships (e.g. 'starter', 'professional', 'enterprise_sector', 'enterprise_full')
+ const mem = CSGA_PRICING.memberships[productKey];
+ if (mem) {
+  priceId = billingOrMode === 'annual' ? mem.stripePriceAnnual : mem.stripePriceMonthly;
+  checkoutMode = 'subscription';
+  trialDays = mem.trialDays || null;
+  metadata = { tier: productKey, productType: 'membership' };
+ }
+
+ // Check ecosystem bundles (e.g. 'ecosystem_security', 'ecosystem_governance')
+ if (!priceId && productKey.startsWith('ecosystem_')) {
+  const ecoKey = productKey.replace('ecosystem_', '');
+  const eco = CSGA_PRICING.ecosystems?.[ecoKey];
+  if (eco) {
+   priceId = billingOrMode === 'annual' ? eco.stripePriceAnnual : eco.stripePriceMonthly;
+   checkoutMode = 'subscription';
+   metadata = { bundle: ecoKey, productType: 'ecosystem_bundle' };
+  }
+ }
+
+ // Check MCP class pricing (e.g. 'mcp_lvp', 'mcp_mvp', 'mcp_hvp')
+ if (!priceId && productKey.startsWith('mcp_')) {
+  const cls = productKey.replace('mcp_', '');
+  const mcpClass = CSGA_PRICING.mcpClassification?.[cls];
+  if (mcpClass) {
+   priceId = billingOrMode === 'annual' ? mcpClass.stripePriceAnnual : mcpClass.stripePriceMonthly;
+   checkoutMode = 'subscription';
+   metadata = { mcpClass: cls, productType: 'mcp_individual' };
+  }
+ }
+
+ // Check COBOL Bridge tiers
+ if (!priceId && productKey.startsWith('cobol_')) {
+  const tier = productKey.replace('cobol_', '');
+  const cobol = CSGA_PRICING.cobolBridge?.[tier];
+  if (cobol) {
+   priceId = billingOrMode === 'annual' ? cobol.stripePriceAnnual : cobol.stripePriceMonthly;
+   checkoutMode = 'subscription';
+   metadata = { cobolTier: tier, productType: 'cobol_bridge' };
+  }
+ }
+
+ // Check CASA certifications (one-time payments)
+ if (!priceId && productKey.startsWith('casa_')) {
+  const level = productKey.replace('casa_', '');
+  const casa = CSGA_PRICING.casaCertification?.[level];
+  if (casa) {
+   priceId = casa.stripePrice;
+   checkoutMode = 'payment';
+   metadata = { casaLevel: level, productType: 'casa_certification' };
+  }
+ }
+
+ // Check credit packs (one-time payments)
+ if (!priceId && productKey.startsWith('credits_')) {
+  const pack = productKey.replace('credits_', '');
+  const credit = CSGA_PRICING.creditPacks?.[pack];
+  if (credit) {
+   priceId = credit.stripePrice;
+   checkoutMode = 'payment';
+   metadata = { pack: pack, credits: credit.credits, productType: 'credit_pack' };
+  }
+ }
+
+ // If billingOrMode is 'payment', override mode (for generic one-time products)
+ if (billingOrMode === 'payment') {
+  checkoutMode = 'payment';
+ }
+
+ if (!priceId) {
+  console.error('No price found for productKey:', productKey, 'billing:', billingOrMode);
+  showStripeSetupGuide();
+  btn.textContent = 'Try Again';
+  btn.disabled = false;
+  return;
+ }
+
+ // Use the csga_checkout helper from pricing-config.js if available, otherwise call API directly
+ try {
+  await csga_checkout(priceId, {
+   mode: checkoutMode,
+   trial: trialDays,
+   metadata: metadata,
+  });
+ } catch (err) {
+  console.error('Checkout error:', err);
+  showStripeSetupGuide();
+  btn.textContent = 'Try Again';
+  btn.disabled = false;
+ }
+}
+function showStripeSetupGuide() {
+ document.getElementById('modal-content').innerHTML = `
+ <div style="text-align:center">
+ <div style="font-size:3rem;margin-bottom:15px"></div>
+ <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#0058A4;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">Stripe Integration Ready</h2>
+ <p style="color:#666;margin-bottom:20px" class="professional-body">The checkout flow is configured. To activate live payments:</p>
+ <div style="background:#f8f9fa;border-radius:12px;padding:20px;text-align:left;font-size:.9rem;line-height:1.8">
+ <p class="professional-body"><strong>1.</strong> Add Stripe publishable key in <code>/js/pricing-config.js</code></p>
+ <p class="professional-body"><strong>2.</strong> Create products/prices in Stripe Dashboard and add IDs to config</p>
+ <p class="professional-body"><strong>3.</strong> Deploy serverless functions (<code>/api/*</code>) to Vercel</p>
+ <p class="professional-body"><strong>4.</strong> Set <code>STRIPE_SECRET_KEY</code> and <code>STRIPE_WEBHOOK_SECRET</code> in Vercel env vars</p>
+ </div>
+ <a href="/contact" style="display:inline-block;margin-top:20px;padding:12px 30px;background:#0058A4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Contact Us to Activate</a>
+ </div>`;
+}
+function handleFreeSignup(e) {
+ e.preventDefault();
+ const btn = e.target.querySelector('button[type=submit]');
+ btn.textContent = 'Creating account...';
+ btn.disabled = true;
+ setTimeout(() => {
+  document.getElementById('modal-content').innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px">‰</div>
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#0058A4;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">Welcome to CSGA!</h2>
+  <p style="color:#666;margin-bottom:20px" class="professional-body">Your free account has been registered. Check your email to verify and get started.</p>
+  <a href="/dashboard" style="display:inline-block;padding:14px 30px;background:#0058A4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Go to Dashboard</a>
+  </div>`;
+ }, 1500);
+}
+function handleEnterpriseInquiry(e) {
+ e.preventDefault();
+ const btn = e.target.querySelector('button[type=submit]');
+ btn.textContent = 'Sending...';
+ btn.disabled = true;
+ setTimeout(() => {
+  document.getElementById('modal-content').innerHTML = `
+  <div style="text-align:center">
+  <div style="font-size:3rem;margin-bottom:15px"></div>
+  <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;color:#0058A4;margin-bottom:10px" class="section-title" class="professional-title" class="professional-title">Request Received</h2>
+  <p style="color:#666;margin-bottom:20px" class="professional-body">Our enterprise team will contact you within 24 hours to discuss your requirements and schedule a demo.</p>
+  <a href="/" style="display:inline-block;padding:14px 30px;background:#0058A4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Back to Home</a>
+  </div>`;
+ }, 1500);
+}
+</script>
+
+<!-- ••• STICKY GUARANTEE BAR ••• -->
+<div id="guarantee-bar" style="position:fixed;bottom:0;left:0;right:0;background:#0A1628;color:#fff;padding:12px 32px;display:none;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,.2);">
+ <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+  <div style="display:flex;align-items:center;gap:12px;">
+   <span style="font-size:1.2rem;"></span>
+   <span style="font-weight:600;font-size:.9rem;">30-day money-back guarantee on all paid plans</span>
+   <span style="color:#64748B;font-size:.85rem;">Â· No credit card for trials Â· Cancel anytime</span>
+  </div>
+  <div style="display:flex;gap:10px;">
+   <a href="#" onclick="handleCheckout('professional');return false" style="background:#3182ce;color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none;">Start Free Trial</a>
+   <button onclick="document.getElementById('guarantee-bar').style.display='none'" style="background:none;border:1px solid #334155;color:#94a3b8;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:.8rem;">œ•</button>
+  </div>
+ </div>
+</div>
+<script>
+// Show guarantee bar after scrolling past hero
+window.addEventListener('scroll', function() {
+ var bar = document.getElementById('guarantee-bar');
+ if (!bar) return;
+ if (window.scrollY > 600 && !bar.dataset.dismissed) {
+  bar.style.display = 'block';
+ }
+});
+document.querySelector('#guarantee-bar button')?.addEventListener('click', function() {
+ document.getElementById('guarantee-bar').dataset.dismissed = '1';
+});
+</script>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

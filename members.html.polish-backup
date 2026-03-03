@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSGA Membership Tiers - Join our global cybersecurity alliance. Community, professional, enterprise memberships with exclusive benefits and MCP server access.">
+    <meta name="keywords" content="membership, pricing, CSGA community, cybersecurity alliance, join CSGA, MCP servers, AI governance">
+    <meta name="author" content="CSGA">
+
+    <title>Join CSGA - Membership Tiers</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Join CSGA - Membership Tiers">
+    <meta property="og:description" content="CSGA Membership Tiers - Join our global cybersecurity alliance with MCP server access, AI governance tools, and exclusive benefits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://csga-global.vercel.app/members">
+    <meta property="og:image" content="https://csga-global.vercel.app/img/og-image.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="./components/shared.css">
+
+    <style>
+        .toggle-billing { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 40px; }
+        .toggle-billing span { color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; }
+        .toggle-billing span.active { color: var(--accent-green); }
+        .toggle-switch { position: relative; width: 48px; height: 26px; background: var(--border-subtle); border-radius: 13px; cursor: pointer; transition: background 0.3s; }
+        .toggle-switch.yearly { background: var(--accent-green); }
+        .toggle-switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: #fff; border-radius: 50%; transition: transform 0.3s; }
+        .toggle-switch.yearly::after { transform: translateX(22px); }
+        .save-badge { background: rgba(0, 230, 118, 0.15); color: var(--accent-green); font-size: 0.75rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; margin-left: 4px; }
+        .price-yearly { display: none; }
+        .billing-yearly .price-monthly { display: none; }
+        .billing-yearly .price-yearly { display: block; }
+        .tier-card__trial { color: var(--accent-green); font-size: 0.8rem; font-weight: 600; margin-top: 4px; text-align: center; }
+        .bundle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 768px) { .bundle-grid { grid-template-columns: 1fr; } }
+        .bundle-card { padding: 24px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; transition: all 0.3s; }
+        .bundle-card:hover { border-color: var(--accent-blue); box-shadow: var(--shadow-glow-blue); }
+        .bundle-card h4 { color: var(--text-primary); font-size: 1.05rem; margin-bottom: 4px; }
+        .bundle-card .bundle-price { color: var(--accent-green); font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
+        .bundle-card .bundle-price span { font-size: 0.8rem; font-weight: 400; color: var(--text-secondary); }
+        .bundle-card ul { list-style: none; padding: 0; margin: 0 0 16px 0; }
+        .bundle-card ul li { color: var(--text-secondary); font-size: 0.85rem; padding: 4px 0; padding-left: 16px; position: relative; }
+        .bundle-card ul li::before { content: '>'; position: absolute; left: 0; color: var(--accent-blue); font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 0.75rem; }
+    </style>
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head><body class="dark-theme">
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <!-- Dynamic Header -->
+    <div id="site-header"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero__bg"></div>
+        <div class="container">
+            <h1 class="professional-title professional-title" class="professional-title">Join CSGA</h1>
+            <p class="section-subtitle" class="professional-body">Choose the membership tier that's right for you and join 1,500+ cybersecurity professionals worldwide</p>
+        </div>
+    </section>
+
+    <!-- Pricing Tiers Section -->
+    <section class="section fade-in" id="pricing">
+        <div class="container">
+            <div class="section-label">MEMBERSHIP TIERS</div>
+            <h2 class="professional-title section-title" class="section-title" class="professional-title" class="professional-title">Find Your Perfect Fit</h2>
+
+            <div class="tier-grid">
+                <!-- Community (FREE) -->
+                <div class="card-professional">
+                    <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Community</h3>
+                    <div class="card-professional">Free</div>
+                    <p class="card-professional" class="professional-body">No cost. Forever.</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 20px 0; text-align: center; padding: 12px 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" class="professional-body">
+                        <strong>For:</strong> Government, NGO, Military, Universities, Associations
+                    </p>
+                    <ul class="card-professional">
+                        <li>Portal access &amp; member dashboard</li>
+                        <li>CSGA Job Board access</li>
+                        <li>Digital magazine &amp; publications</li>
+                        <li>Weekly eNews bulletins</li>
+                        <li>Community forum participation</li>
+                    </ul>
+                    <a href="contact" class="btn-professional" style="width: 100%; text-align: center; justify-content: center;">Apply Free</a>
+                </div>
+
+                <!-- Starter -->
+                <div class="card-professional">
+                    <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Starter</h3>
+                    <div class="card-professional">
+                        <span class="price-monthly">&pound;79</span>
+                        <span class="price-yearly">&pound;759</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">
+                        <span class="price-monthly">per month</span>
+                        <span class="price-yearly">per year <span class="save-badge">Save 20%</span></span>
+                    </p>
+                    <p class="card-professional" class="professional-body">14-day free trial</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 20px 0; text-align: center; padding: 12px 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" class="professional-body">
+                        <strong>For:</strong> Startups, SMBs, Consultants, Small Agencies
+                    </p>
+                    <ul class="card-professional">
+                        <li>Everything in Community</li>
+                        <li>3 MCP server licences (LVP tier)</li>
+                        <li>Vendor discounts &amp; partnerships</li>
+                        <li>Quarterly webinars</li>
+                        <li>Business consultation hours</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/4gMfZj2Mp0Zq7BA3CtdMI00" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
+                </div>
+
+                <!-- Professional (FEATURED) -->
+                <div class="card-professional">
+                    <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Professional</h3>
+                    <div class="card-professional">
+                        <span class="price-monthly">&pound;199</span>
+                        <span class="price-yearly">&pound;1,910</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">
+                        <span class="price-monthly">per month</span>
+                        <span class="price-yearly">per year <span class="save-badge">Save 20%</span></span>
+                    </p>
+                    <p class="card-professional" class="professional-body">14-day free trial</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 20px 0; text-align: center; padding: 12px 0; border-top: 1px solid rgba(0, 230, 118, 0.2); border-bottom: 1px solid rgba(0, 230, 118, 0.2);" class="professional-body">
+                        <strong>For:</strong> Mid-size Enterprises, Growing Companies, Departments
+                    </p>
+                    <ul class="card-professional">
+                        <li>Everything in Starter</li>
+                        <li>10 MCP server licences (MVP tier)</li>
+                        <li>Premium resource library</li>
+                        <li>Priority email support</li>
+                        <li>Quarterly member briefings</li>
+                        <li>Custom training modules</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/fZu4gB5YBdMc8FEflbdMI01" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center; background: var(--gradient-green); color: #000;">Get Started</a>
+                </div>
+
+                <!-- Enterprise Sector -->
+                <div class="card-professional">
+                    <h3 class="card-professional" class="subsection-title" class="professional-title" class="professional-title">Enterprise Sector</h3>
+                    <div class="card-professional">
+                        <span class="price-monthly">&pound;499</span>
+                        <span class="price-yearly">&pound;4,790</span>
+                    </div>
+                    <p class="card-professional" class="professional-body">
+                        <span class="price-monthly">per month</span>
+                        <span class="price-yearly">per year <span class="save-badge">Save 20%</span></span>
+                    </p>
+                    <p class="card-professional" class="professional-body">30-day free trial</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 20px 0; text-align: center; padding: 12px 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" class="professional-body">
+                        <strong>For:</strong> Large Enterprises, Government, Fortune 500
+                    </p>
+                    <ul class="card-professional">
+                        <li>Everything in Professional</li>
+                        <li>25 MCP server licences (HVP tier)</li>
+                        <li>1 Ecosystem Bundle included</li>
+                        <li>Dedicated account manager</li>
+                        <li>Executive briefing sessions</li>
+                        <li>On-demand consulting</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/bJedRb3QtaA0bRQ2ypdMI02" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Enterprise Full banner -->
+            <div style="margin-top: 32px; padding: 32px; background: linear-gradient(135deg, rgba(41, 121, 255, 0.08) 0%, rgba(0, 230, 118, 0.08) 100%); border: 1px solid rgba(41, 121, 255, 0.25); border-radius: 16px; text-align: center;">
+                <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.25rem;" class="subsection-title" class="professional-title" class="professional-title">Enterprise Full Access</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 4px;" class="professional-body">&pound;1,499/mo &bull; All 76 MCP servers &bull; All ecosystem bundles &bull; CASA certification path &bull; Dedicated team</p>
+                <p class="card-professional" style="margin-bottom: 16px;" class="professional-body">30-day free trial</p>
+                <a href="https://buy.stripe.com/5kQeVf2Mp6jK8FE5KBdMI03" target="_blank" class="btn-professional" style="background: var(--gradient-cta); color: #fff;">Contact &amp; Subscribe</a>
+            </div>
+        </div>
+    </section>
+    <!-- Ecosystem Bundles Section -->
+    <section class="section fade-in">
+        <div class="container">
+            <div class="section-label">MCP ECOSYSTEM</div>
+            <h2 class="professional-title section-title" class="section-title" class="professional-title" class="professional-title">Ecosystem Bundles</h2>
+            <p class="section-subtitle" style="text-align: center; max-width: 800px; margin: 0 auto 40px;" class="professional-body">Pre-configured bundles of MCP servers grouped by industry and function. Subscribe to a bundle for instant access to a curated set of AI governance tools.</p>
+
+            <div class="bundle-grid">
+                <div class="card-professional">
+                    <h4>Security Bundle</h4>
+                    <div class="bundle-price">&pound;149 <span>/mo</span></div>
+                    <ul>
+                        <li>Threat Intelligence</li>
+                        <li>Incident Response</li>
+                        <li>Vulnerability Management</li>
+                        <li>Red Team Testing</li>
+                        <li>+ more security MCPs</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/8x2dRbfzb23ucVUdd3dMI04" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center; font-size: 0.85rem;">Subscribe</a>
+                </div>
+
+                <div class="card-professional">
+                    <h4>Governance Bundle</h4>
+                    <div class="bundle-price">&pound;99 <span>/mo</span></div>
+                    <ul>
+                        <li>Policy Engine</li>
+                        <li>Impact Assessment</li>
+                        <li>Transparency Reporting</li>
+                        <li>Stakeholder Engagement</li>
+                        <li>+ more governance MCPs</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/28E9AV0EhfUk9JI2ypdMI05" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center; font-size: 0.85rem;">Subscribe</a>
+                </div>
+
+                <div class="card-professional">
+                    <h4>DevOps Bundle</h4>
+                    <div class="bundle-price">&pound;79 <span>/mo</span></div>
+                    <ul>
+                        <li>Performance Monitoring</li>
+                        <li>Model Registry</li>
+                        <li>Model Validation</li>
+                        <li>Training Data Governance</li>
+                        <li>+ more DevOps MCPs</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/aFafZj5YB37yg86dd3dMI06" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center; font-size: 0.85rem;">Subscribe</a>
+                </div>
+
+                <div class="card-professional">
+                    <h4>Defence &amp; Intel Bundle</h4>
+                    <div class="bundle-price">&pound;199 <span>/mo</span></div>
+                    <ul>
+                        <li>Nuclear Safety AI</li>
+                        <li>Weapons Systems AI</li>
+                        <li>Intelligence AI</li>
+                        <li>Space AI</li>
+                        <li>+ more defence MCPs</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/bJe9AV9aNgYo1dc8WNdMI07" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center; font-size: 0.85rem;">Subscribe</a>
+                </div>
+
+                <div class="card-professional">
+                    <h4>Industry Bundle</h4>
+                    <div class="bundle-price">&pound;129 <span>/mo</span></div>
+                    <ul>
+                        <li>Manufacturing AI</li>
+                        <li>Retail AI</li>
+                        <li>Real Estate AI</li>
+                        <li>Transportation AI</li>
+                        <li>+ more industry MCPs</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/9B6cN7gDf23udZY8WNdMI08" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center; font-size: 0.85rem;">Subscribe</a>
+                </div>
+
+                <div class="card-professional">
+                    <h4>Data &amp; Analytics Bundle</h4>
+                    <div class="bundle-price">&pound;39 <span>/mo</span></div>
+                    <ul>
+                        <li>Supply Chain Verification</li>
+                        <li>Risk Assessment</li>
+                        <li>Sports Analytics AI</li>
+                        <li>Media AI</li>
+                        <li>+ more data MCPs</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/28E4gBfzbcI85tsdd3dMI09" target="_blank" class="btn-professional" style="width: 100%; text-align: center; justify-content: center; font-size: 0.85rem;">Subscribe</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 24px;" class="professional-body">Want individual servers? Browse the <a href="mcp-catalog" style="color: var(--accent-green);">full MCP catalog</a> with per-server pricing from &pound;9/mo.</p>
+        </div>
+    </section>
+    <!-- All Benefits Section -->
+    <section class="section fade-in">
+        <div class="container">
+            <div class="section-label">BENEFITS</div>
+            <h2 class="professional-title section-title" class="section-title" class="professional-title" class="professional-title">Included With All Tiers</h2>
+
+            <p class="section-subtitle" style="text-align: center; max-width: 800px; margin: 0 auto 40px;" class="professional-body">Every membership level includes access to our core benefits and community resources.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px;">
+                    <h4 style="color: var(--accent-green); margin-bottom: 12px; font-size: 0.95rem; font-weight: 700;">Learning & Education</h4>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.85rem; margin: 0; padding: 0;">
+                        <li style="margin-bottom: 8px;">Education discounts</li>
+                        <li style="margin-bottom: 8px;">Certification prep materials</li>
+                        <li>MOOC access</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px;">
+                    <h4 style="color: var(--accent-green); margin-bottom: 12px; font-size: 0.95rem; font-weight: 700;">Resources & Publications</h4>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.85rem; margin: 0; padding: 0;">
+                        <li style="margin-bottom: 8px;">Digital magazine</li>
+                        <li style="margin-bottom: 8px;">Research papers</li>
+                        <li>Whitepapers & guides</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px;">
+                    <h4 style="color: var(--accent-green); margin-bottom: 12px; font-size: 0.95rem; font-weight: 700;">Community & Networking</h4>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.85rem; margin: 0; padding: 0;">
+                        <li style="margin-bottom: 8px;">Global community forum</li>
+                        <li style="margin-bottom: 8px;">Member directory</li>
+                        <li>Networking events</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px;">
+                    <h4 style="color: var(--accent-green); margin-bottom: 12px; font-size: 0.95rem; font-weight: 700;">Job Board & Career</h4>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.85rem; margin: 0; padding: 0;">
+                        <li style="margin-bottom: 8px;">CSGA Job Board</li>
+                        <li style="margin-bottom: 8px;">Career resources</li>
+                        <li>Job alerts</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px;">
+                    <h4 style="color: var(--accent-green); margin-bottom: 12px; font-size: 0.95rem; font-weight: 700;">Vendor Support</h4>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.85rem; margin: 0; padding: 0;">
+                        <li style="margin-bottom: 8px;">Partner discounts</li>
+                        <li style="margin-bottom: 8px;">Technology partnerships</li>
+                        <li>Vendor directory</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px;">
+                    <h4 style="color: var(--accent-green); margin-bottom: 12px; font-size: 0.95rem; font-weight: 700;">Communications</h4>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.85rem; margin: 0; padding: 0;">
+                        <li style="margin-bottom: 8px;">eNews bulletins</li>
+                        <li style="margin-bottom: 8px;">Threat alerts</li>
+                        <li>Monthly newsletter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section fade-in">
+        <div class="container">
+            <div class="section-label">QUESTIONS?</div>
+            <h2 class="professional-title section-title" class="section-title" class="professional-title" class="professional-title">Frequently Asked Questions</h2>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; margin-bottom: 16px;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 8px;">Can I change my membership tier?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;" class="professional-body">Yes! You can upgrade or downgrade your tier at any time. Changes take effect at the next billing cycle.</p>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; margin-bottom: 16px;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 8px;">Is there a cancellation fee?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;" class="professional-body">No. You can cancel anytime with no penalties or hidden fees. All billing is handled securely by Stripe.</p>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; margin-bottom: 16px;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 8px;">What are MCP servers?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;" class="professional-body">MCP (Model Context Protocol) servers are AI governance tools that integrate directly with AI assistants like Claude, ChatGPT, and others. Each server handles a specific compliance or safety domain. Browse the <a href="mcp-catalog" style="color: var(--accent-green);">full catalog</a>.</p>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; margin-bottom: 16px;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 8px;">Do you offer annual billing?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;" class="professional-body">Yes. Annual memberships include a 20% discount. Contact <a href="mailto:memberships@csga-global.org" style="color: var(--accent-green);">memberships@csga-global.org</a> to switch to annual billing.</p>
+                </div>
+
+                <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 8px;">How do I get invoices?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;" class="professional-body">All members receive automatic invoices via Stripe. Contact our membership team at <a href="mailto:memberships@csga-global.org" style="color: var(--accent-green);">memberships@csga-global.org</a> for custom billing needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade-in">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="professional-title cta-title" class="section-title" class="professional-title" class="professional-title">Join the Global Cybersecurity Alliance</h2>
+                <p class="cta-description" class="professional-body">
+                    Gain access to world-class AI governance tools, a thriving community of cybersecurity professionals, and 76 MCP servers covering every compliance domain. Your membership is your pathway to a more secure digital world.
+                </p>
+                <div class="btn-professional">
+                    <a href="#pricing" class="btn-professional">View Plans</a>
+                    <a href="contact" class="btn-professional">Questions? Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Footer -->
+    <div id="site-footer"></div>
+
+    <!-- Shared JavaScript -->
+    <script src="./components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

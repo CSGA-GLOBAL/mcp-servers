@@ -3,39 +3,809 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>ProofOf AI — Verifiable AI Provenance | CSGA Global MCP</title>
+ <title>ProofOf AI  Verifiable AI Provenance | CSGA Global MCP</title>
  <meta name="description" content="Blockchain-backed AI provenance with immutable audit trails, cryptographic proof of AI decisions, and verifiable compliance across regulatory frameworks.">
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
  
 
  <link rel="stylesheet" href="../components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/CSGA-inner-pages-enhancement.css">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
+    <meta property="og:image" content="/images/CSGA-logo-social.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CSGAGlobal">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://CSGA-global.org",
+      "logo": "https://CSGA-global.org/images/CSGA-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/CSGA-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/CSGA-perfect-professional-polish.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/CSGA-hero-readability-emergency-fix.css">
+    <!-- <span class="professional-icon-text">MOBILE</span> EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/CSGA-mobile-emergency-fix.css">
+    <!-- <span class="professional-icon-text" data-context="info">ART</span> EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/CSGA-contrast-emergency-fix.css">
+    <!-- <span class="professional-icon-text">DOCS</span> EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/CSGA-typography-emergency-fix.css">
+    <!-- <span class="professional-icon-text">LAUNCH</span> CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/CSGA-2026-global-styles.css">
+    <link rel="stylesheet" href="/CSGA-2026-components.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/CSGA-homepage-text-emergency-fix.css">
+    <!-- <span class="professional-icon-text">LAUNCH</span> Image Optimization -->
+    <link rel="stylesheet" href="/CSGA-image-optimization.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span><span class="professional-icon-text" data-context="info">ICON</span> Professional Icon System -->
+    <link rel="stylesheet" href="/CSGA-professional-icons.css">
+  <!-- CSGA Hero     <!-- <span class="professional-icon-text" data-context="info">GOV</span> Professional Icon Text System -->
+    <link rel="stylesheet" href="/professional-icon-text.css">
+
+        <style>
+        /* 🎨 CSGA Visual Perfection System */
+        
+        /* Typography Excellence */
+        body {
+            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+            font-optical-sizing: auto;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+        
+        /* Perfect Heading Hierarchy */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+        
+        /* Perfect Spacing System */
+        .page-header {
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+        }
+        
+        .page-title {
+            color: white !important;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        /* Breadcrumb Excellence */
+        .breadcrumb-nav {
+            padding: 1rem 0;
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: '→';
+            margin: 0 0.5rem;
+            color: #64748b;
+        }
+        
+        .breadcrumb-item a {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: #1e40af;
+        }
+        
+        .breadcrumb-item.active {
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        /* Skip Navigation */
+        .skip-navigation {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: #1e40af;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 0.5rem 0.5rem;
+            transition: top 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .skip-navigation:focus {
+            top: 0;
+        }
+        
+        /* Contextual CTA Excellence */
+        .contextual-cta {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .cta-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Perfect Button System */
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            text-decoration: none;
+            color: white;
+        }
+        
+        /* Content Excellence */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 2rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Mobile Excellence */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 2rem 0 1rem;
+            }
+            
+            .contextual-cta {
+                margin: 2rem 0;
+                padding: 2rem 1rem;
+            }
+            
+            .btn-primary {
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+                max-width: 300px;
+            }
+        }
+        
+        /* Accessibility Excellence */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus Management */
+        :focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            .contextual-cta, .breadcrumb-nav, .skip-navigation {
+                display: none;
+            }
+        }
+        </style>
+
+        <style>
+        /* 🏛️ CSGA Real Logo Implementation */
+        .CSGA-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .CSGA-logo {
+            height: 48px;
+            width: auto;
+            filter: brightness(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .CSGA-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .CSGA-tagline {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        /* Header Logo */
+        .header .CSGA-logo {
+            height: 40px;
+        }
+        
+        /* Footer Logo */
+        .footer .CSGA-logo {
+            height: 36px;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Logo */
+        @media (max-width: 768px) {
+            .CSGA-logo-container {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .CSGA-logo {
+                height: 36px;
+            }
+            
+            .CSGA-tagline {
+                font-size: 0.8rem;
+            }
+        }
+        </style>
+
+        <style>
+        /* 🎨 CSGA Brand Guidelines Implementation */
+        :root {
+            --csga-primary: #1e40af;
+            --csga-secondary: #3b82f6;
+            --csga-accent: #06b6d4;
+            --csga-success: #10b981;
+            --csga-warning: #f59e0b;
+            --csga-danger: #dc2626;
+            --csga-dark: #0f172a;
+            --csga-light: #f8fafc;
+        }
+        
+        /* Brand Color Application */
+        .bg-primary { background-color: var(--csga-primary); }
+        .bg-secondary { background-color: var(--csga-secondary); }
+        .text-primary { color: var(--csga-primary); }
+        .text-secondary { color: var(--csga-secondary); }
+        
+        /* Brand Typography */
+        .brand-heading {
+            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        /* CSGA Professional Elements */
+        .csga-card {
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.75rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .csga-card:hover {
+            border-color: var(--csga-secondary);
+            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Navigation Brand Styling */
+        .navbar {
+            background: var(--csga-light);
+            border-bottom: 2px solid var(--csga-primary);
+        }
+        
+        .nav-link {
+            color: var(--csga-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--csga-primary);
+        }
+        
+        /* Footer Brand Styling */
+        .footer {
+            background: var(--csga-dark);
+            color: white;
+            border-top: 3px solid var(--csga-primary);
+        }
+        </style>
+</head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/CSGA-inner-pages-enhancement.css">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
+    <meta property="og:image" content="/images/CSGA-logo-social.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CSGAGlobal">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://CSGA-global.org",
+      "logo": "https://CSGA-global.org/images/CSGA-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/CSGA-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/CSGA-perfect-professional-polish.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/CSGA-hero-readability-emergency-fix.css">
+    <!-- <span class="professional-icon-text">MOBILE</span> EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/CSGA-mobile-emergency-fix.css">
+    <!-- <span class="professional-icon-text" data-context="info">ART</span> EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/CSGA-contrast-emergency-fix.css">
+    <!-- <span class="professional-icon-text">DOCS</span> EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/CSGA-typography-emergency-fix.css">
+    <!-- <span class="professional-icon-text">LAUNCH</span> CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/CSGA-2026-global-styles.css">
+    <link rel="stylesheet" href="/CSGA-2026-components.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/CSGA-homepage-text-emergency-fix.css">
+    <!-- <span class="professional-icon-text">LAUNCH</span> Image Optimization -->
+    <link rel="stylesheet" href="/CSGA-image-optimization.css">
+    <!-- <span class="professional-icon-text" data-context="info">ICON</span><span class="professional-icon-text" data-context="info">ICON</span> Professional Icon System -->
+    <link rel="stylesheet" href="/CSGA-professional-icons.css">
+    <!-- <span class="professional-icon-text" data-context="info">GOV</span> Professional Icon Text System -->
+    <link rel="stylesheet" href="/professional-icon-text.css">
+
+        <style>
+        /* 🎨 CSGA Visual Perfection System */
+        
+        /* Typography Excellence */
+        body {
+            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+            font-optical-sizing: auto;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+        
+        /* Perfect Heading Hierarchy */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+        
+        /* Perfect Spacing System */
+        .page-header {
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+        }
+        
+        .page-title {
+            color: white !important;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        /* Breadcrumb Excellence */
+        .breadcrumb-nav {
+            padding: 1rem 0;
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: '→';
+            margin: 0 0.5rem;
+            color: #64748b;
+        }
+        
+        .breadcrumb-item a {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: #1e40af;
+        }
+        
+        .breadcrumb-item.active {
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        /* Skip Navigation */
+        .skip-navigation {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: #1e40af;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 0.5rem 0.5rem;
+            transition: top 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .skip-navigation:focus {
+            top: 0;
+        }
+        
+        /* Contextual CTA Excellence */
+        .contextual-cta {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .cta-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Perfect Button System */
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            text-decoration: none;
+            color: white;
+        }
+        
+        /* Content Excellence */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 2rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Mobile Excellence */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 2rem 0 1rem;
+            }
+            
+            .contextual-cta {
+                margin: 2rem 0;
+                padding: 2rem 1rem;
+            }
+            
+            .btn-primary {
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+                max-width: 300px;
+            }
+        }
+        
+        /* Accessibility Excellence */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus Management */
+        :focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            .contextual-cta, .breadcrumb-nav, .skip-navigation {
+                display: none;
+            }
+        }
+        </style>
+
+        <style>
+        /* 🏛️ CSGA Real Logo Implementation */
+        .CSGA-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .CSGA-logo {
+            height: 48px;
+            width: auto;
+            filter: brightness(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .CSGA-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .CSGA-tagline {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        /* Header Logo */
+        .header .CSGA-logo {
+            height: 40px;
+        }
+        
+        /* Footer Logo */
+        .footer .CSGA-logo {
+            height: 36px;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Logo */
+        @media (max-width: 768px) {
+            .CSGA-logo-container {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .CSGA-logo {
+                height: 36px;
+            }
+            
+            .CSGA-tagline {
+                font-size: 0.8rem;
+            }
+        }
+        </style>
+
+        <style>
+        /* 🎨 CSGA Brand Guidelines Implementation */
+        :root {
+            --csga-primary: #1e40af;
+            --csga-secondary: #3b82f6;
+            --csga-accent: #06b6d4;
+            --csga-success: #10b981;
+            --csga-warning: #f59e0b;
+            --csga-danger: #dc2626;
+            --csga-dark: #0f172a;
+            --csga-light: #f8fafc;
+        }
+        
+        /* Brand Color Application */
+        .bg-primary { background-color: var(--csga-primary); }
+        .bg-secondary { background-color: var(--csga-secondary); }
+        .text-primary { color: var(--csga-primary); }
+        .text-secondary { color: var(--csga-secondary); }
+        
+        /* Brand Typography */
+        .brand-heading {
+            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        /* CSGA Professional Elements */
+        .csga-card {
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.75rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .csga-card:hover {
+            border-color: var(--csga-secondary);
+            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Navigation Brand Styling */
+        .navbar {
+            background: var(--csga-light);
+            border-bottom: 2px solid var(--csga-primary);
+        }
+        
+        .nav-link {
+            color: var(--csga-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--csga-primary);
+        }
+        
+        /* Footer Brand Styling */
+        .footer {
+            background: var(--csga-dark);
+            color: white;
+            border-top: 3px solid var(--csga-primary);
+        }
+        </style>
 </head>
 <body>
+<a href="#main-content" class="skip-navigation">Skip to main content</a>>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
 <!-- HEADER BAR -->
 <div id="site-header"></div>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
-  <a href="/">Home</a> › <a href="../catalog.html">MCP Catalog</a> › ProofOf AI
+  <a href="/">Home</a>  <a href="../catalog.html">MCP Catalog</a>  ProofOf AI
 </div>
 
 <!-- HERO SECTION -->
-<section class="sf-hero">
+<section class="sf-hero csga-section">
   <div class="sf-hero-inner">
-    <span class="sf-hero-icon">🔐</span>
-    <h1>ProofOf AI — Verifiable AI Provenance</h1>
-    <p class="sf-hero-sub">Blockchain-backed AI provenance with immutable audit trails, cryptographic proof of AI decisions, and verifiable compliance across 40+ regulatory frameworks.</p>
+    <div class="hero-icon-professional">PRO</div>
+    <h1 class="professional-title professional-title" class="professional-title" class="brand-heading">ProofOf AI  Verifiable AI Provenance</h1>
+    <p class="sf-hero-sub" class="professional-body">Blockchain-backed AI provenance with immutable audit trails, cryptographic proof of AI decisions, and verifiable compliance across 40+ regulatory frameworks.</p>
     <div class="sf-hero-badges">
       <span class="sf-badge">Compliance Tier</span>
       <span class="sf-badge">Audit & Governance</span>
-      <span class="sf-badge" style="background:rgba(204,0,0,.2);border:1.5px solid rgba(204,0,0,.4);color:#E63946">MVP · $199/mo</span>
+      <span class="sf-badge" style="background:rgba(204,0,0,.2);border:1.5px solid rgba(204,0,0,.4);color:#1e40af">MVP · $199/mo</span>
     </div>
     <div class="sf-hero-ctas">
-      <a href="#pricing" class="btn btn-primary">Get Started Free</a>
-      <a href="#features" class="btn btn-secondary">View Documentation ↓</a>
+      <a href="#pricing" class="btn-professional">Get Started Free</a>
+      <a href="#features" class="btn-professional">View Documentation </a>
     </div>
-    <p class="sf-hero-note">14-day free trial · MVP — $199/mo · Cancel anytime</p>
+    <p class="sf-hero-note" class="professional-body">14-day free trial · MVP  $199/mo · Cancel anytime</p>
     <div class="sf-hero-stats reveal-scale">
       <div class="sf-hero-stat">
         <strong>$15B</strong>
@@ -58,129 +828,129 @@
 </section>
 
 <!-- PROBLEM SECTION -->
-<section class="sf-problem">
+<section class="sf-problem csga-section">
   <div class="sf-problem-inner">
     <div class="section-heading">
       <span class="tag">THE CHALLENGE</span>
-      <h2>Why Proof of AI Matters</h2>
-      <p>AI decisions lack cryptographic verification, making compliance and accountability impossible at scale.</p>
+      <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Why Proof of AI Matters</h2>
+      <p class="professional-body">AI decisions lack cryptographic verification, making compliance and accountability impossible at scale.</p>
     </div>
     <div class="grid grid-3 stagger-children">
-      <div class="card reveal">
-        <div class="icon-circle">⚠️</div>
-        <h3>AI Decisions Without Proof</h3>
-        <p>Current AI systems generate decisions without cryptographic proof or verifiable evidence chains, making compliance audits impossible.</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">AI Decisions Without Proof</h3>
+        <p class="professional-body">Current AI systems generate decisions without cryptographic proof or verifiable evidence chains, making compliance audits impossible.</p>
       </div>
-      <div class="card reveal">
-        <div class="icon-circle">🔓</div>
-        <h3>Tamperabe Audit Trails</h3>
-        <p>Traditional audit logs can be modified retroactively, undermining trust in governance and regulatory proof-of-compliance claims.</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Tamperabe Audit Trails</h3>
+        <p class="professional-body">Traditional audit logs can be modified retroactively, undermining trust in governance and regulatory proof-of-compliance claims.</p>
       </div>
-      <div class="card reveal">
-        <div class="icon-circle">🌍</div>
-        <h3>Cross-Border Verification</h3>
-        <p>Regulators across jurisdictions lack unified cryptographic proofs of AI compliance, requiring duplicate documentation and manual verification.</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Cross-Border Verification</h3>
+        <p class="professional-body">Regulators across jurisdictions lack unified cryptographic proofs of AI compliance, requiring duplicate documentation and manual verification.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SOLUTION SECTION: MCP TOOLS -->
-<section class="sf-solution" id="features">
+<section class="sf-solution csga-section" id="features">
   <div class="sf-solution-inner container">
     <div class="section-heading">
       <span class="tag">OUR SOLUTION</span>
-      <h2>Verifiable AI Provenance Tools</h2>
-      <p>Cryptographic proof chains, immutable logging, and regulatory verification — built for enterprise AI governance.</p>
+      <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Verifiable AI Provenance Tools</h2>
+      <p class="professional-body">Cryptographic proof chains, immutable logging, and regulatory verification  built for enterprise AI governance.</p>
     </div>
     <div class="grid grid-3 stagger-children">
-      <div class="card reveal">
-        <div class="icon-circle">⛓️</div>
-        <h3>provenance_chain_validator</h3>
-        <p>Creates and validates cryptographic proof chains for AI decision provenance. Generate immutable proof that specific AI decisions were made at specific times with verifiable evidence.</p>
-        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;">MCP Tool • Python SDK</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">provenance_chain_validator</h3>
+        <p class="professional-body">Creates and validates cryptographic proof chains for AI decision provenance. Generate immutable proof that specific AI decisions were made at specific times with verifiable evidence.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;" class="professional-body">MCP Tool  Python SDK</p>
       </div>
-      <div class="card reveal">
-        <div class="icon-circle">📋</div>
-        <h3>immutable_audit_logger</h3>
-        <p>Logs AI governance events to blockchain-backed immutable audit trails. Every decision, modification, and governance action is permanently recorded with cryptographic proof.</p>
-        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;">MCP Tool • REST API</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">immutable_audit_logger</h3>
+        <p class="professional-body">Logs AI governance events to blockchain-backed immutable audit trails. Every decision, modification, and governance action is permanently recorded with cryptographic proof.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;" class="professional-body">MCP Tool  REST API</p>
       </div>
-      <div class="card reveal">
-        <div class="icon-circle">✅</div>
-        <h3>compliance_proof_generator</h3>
-        <p>Generates verifiable cryptographic proofs of regulatory compliance. Demonstrate adherence to ISO 42001, SOX, GDPR, and 37+ other frameworks with cryptographic evidence.</p>
-        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;">MCP Tool • GraphQL API</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">compliance_proof_generator</h3>
+        <p class="professional-body">Generates verifiable cryptographic proofs of regulatory compliance. Demonstrate adherence to ISO 42001, SOX, GDPR, and 37+ other frameworks with cryptographic evidence.</p>
+        <p style="margin-top: 12px; font-size: 0.85rem; color: #0058A4; font-weight: 600;" class="professional-body">MCP Tool  GraphQL API</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS SECTION -->
-<section class="sf-section">
+<section class="sf-section csga-section">
   <div class="sf-section-inner">
     <div class="section-heading">
       <span class="tag">PROCESS</span>
-      <h2>How ProofOf AI Works</h2>
+      <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">How ProofOf AI Works</h2>
     </div>
     <div class="grid grid-4 stagger-children">
-      <div class="card reveal">
-        <h3 style="color: var(--gold);">1. Capture</h3>
-        <p>AI decisions are captured with full context: model version, training data, parameters, and decision timestamp. All data immutably recorded.</p>
+      <div class="card-professional">
+        <h3 style="color: var(--gold);" class="subsection-title" class="professional-title" class="professional-title">1. Capture</h3>
+        <p class="professional-body">AI decisions are captured with full context: model version, training data, parameters, and decision timestamp. All data immutably recorded.</p>
       </div>
-      <div class="card reveal">
-        <h3 style="color: var(--gold);">2. Cryptograph</h3>
-        <p>Generate cryptographic proof chains using SHA-256 hashing and blockchain anchoring. Each decision becomes tamper-proof with verifiable timestamps.</p>
+      <div class="card-professional">
+        <h3 style="color: var(--gold);" class="subsection-title" class="professional-title" class="professional-title">2. Cryptograph</h3>
+        <p class="professional-body">Generate cryptographic proof chains using SHA-256 hashing and blockchain anchoring. Each decision becomes tamper-proof with verifiable timestamps.</p>
       </div>
-      <div class="card reveal">
-        <h3 style="color: var(--gold);">3. Verify</h3>
-        <p>Audit systems can verify proofs without trusting original AI systems. Cryptographic validation proves authenticity and integrity of all decisions.</p>
+      <div class="card-professional">
+        <h3 style="color: var(--gold);" class="subsection-title" class="professional-title" class="professional-title">3. Verify</h3>
+        <p class="professional-body">Audit systems can verify proofs without trusting original AI systems. Cryptographic validation proves authenticity and integrity of all decisions.</p>
       </div>
-      <div class="card reveal">
-        <h3 style="color: var(--gold);">4. Comply</h3>
-        <p>Generate regulatory proof reports for SOX, GDPR, ISO 42001, and 37+ frameworks. Prove compliance with cryptographic evidence across jurisdictions.</p>
+      <div class="card-professional">
+        <h3 style="color: var(--gold);" class="subsection-title" class="professional-title" class="professional-title">4. Comply</h3>
+        <p class="professional-body">Generate regulatory proof reports for SOX, GDPR, ISO 42001, and 37+ frameworks. Prove compliance with cryptographic evidence across jurisdictions.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- USE CASES SECTION -->
-<section class="sf-section" style="background: var(--color-light-gray);">
+<section class="sf-section csga-section" style="background: var(--color-light-gray);">
   <div class="sf-section-inner">
     <div class="section-heading">
       <span class="tag">APPLICATIONS</span>
-      <h2>Enterprise Use Cases</h2>
+      <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Enterprise Use Cases</h2>
     </div>
     <div class="grid grid-4 stagger-children">
-      <div class="card reveal">
-        <div class="icon-circle">💰</div>
-        <h3>Financial Compliance Proof</h3>
-        <p>Prove AI credit decisions, fraud detection, and risk assessments meet SOX requirements with cryptographic evidence chains.</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Financial Compliance Proof</h3>
+        <p class="professional-body">Prove AI credit decisions, fraud detection, and risk assessments meet SOX requirements with cryptographic evidence chains.</p>
       </div>
-      <div class="card reveal">
-        <div class="icon-circle">🏥</div>
-        <h3>Healthcare AI Auditing</h3>
-        <p>Verify diagnostic AI decisions and treatment recommendations meet HIPAA and medical board standards with immutable proof.</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Healthcare AI Auditing</h3>
+        <p class="professional-body">Verify diagnostic AI decisions and treatment recommendations meet HIPAA and medical board standards with immutable proof.</p>
       </div>
-      <div class="card reveal">
-        <div class="icon-circle">🏛️</div>
-        <h3>Government AI Accountability</h3>
-        <p>Demonstrate government AI systems (hiring, benefits, adjudication) comply with transparency laws and due process requirements.</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Government AI Accountability</h3>
+        <p class="professional-body">Demonstrate government AI systems (hiring, benefits, adjudication) comply with transparency laws and due process requirements.</p>
       </div>
-      <div class="card reveal">
-        <div class="icon-circle">🌐</div>
-        <h3>Cross-Border Verification</h3>
-        <p>Generate compliance proofs recognized across EU, US, UK, and APAC regulatory jurisdictions using cryptographic standards.</p>
+      <div class="card-professional">
+        <div class="icon-circle"></div>
+        <h3 class="professional-title professional-title" class="professional-title">Cross-Border Verification</h3>
+        <p class="professional-body">Generate compliance proofs recognized across EU, US, UK, and APAC regulatory jurisdictions using cryptographic standards.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- METRICS SECTION -->
-<section class="sf-metrics">
+<section class="sf-metrics csga-section">
   <div class="section-heading" style="margin-bottom: 48px;">
     <span class="tag">IMPACT</span>
-    <h2>Verified Across Enterprise</h2>
+    <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Verified Across Enterprise</h2>
   </div>
   <div class="metrics-grid">
     <div class="metric-item reveal-scale">
@@ -203,137 +973,137 @@
 </section>
 
 <!-- FAQ SECTION -->
-<section class="faq-section">
+<section class="faq-section csga-section">
   <div class="faq-inner">
     <div class="section-heading" style="margin-bottom: 48px;">
-      <h2>Frequently Asked Questions</h2>
+      <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Frequently Asked Questions</h2>
     </div>
     <div class="faq-item">
       <div class="faq-question">
         <span>How does ProofOf AI create tamper-proof audit trails?</span>
-        <span class="faq-toggle">▼</span>
+        <span class="faq-toggle"></span>
       </div>
       <div class="faq-answer">
-        <p>ProofOf AI uses SHA-256 cryptographic hashing combined with blockchain anchoring. Each AI decision is hashed with its full context and timestamp, then cryptographically linked to previous decisions. Any modification to historical records would change the hash, breaking the chain and flagging tampering. Blockchain anchoring provides external verification of the proof chain.</p>
+        <p class="professional-body">ProofOf AI uses SHA-256 cryptographic hashing combined with blockchain anchoring. Each AI decision is hashed with its full context and timestamp, then cryptographically linked to previous decisions. Any modification to historical records would change the hash, breaking the chain and flagging tampering. Blockchain anchoring provides external verification of the proof chain.</p>
       </div>
     </div>
     <div class="faq-item">
       <div class="faq-question">
         <span>Which regulatory frameworks does ProofOf AI support?</span>
-        <span class="faq-toggle">▼</span>
+        <span class="faq-toggle"></span>
       </div>
       <div class="faq-answer">
-        <p>ProofOf AI generates compliance proofs for 40+ frameworks including ISO 42001, SOX (financial), GDPR (EU), CCPA (California), HIPAA (healthcare), FDA 21 CFR Part 11 (medical devices), FINRA (securities), PCI DSS (payments), and industry-specific standards. Each proof includes framework-specific evidence requirements and attestation formats.</p>
+        <p class="professional-body">ProofOf AI generates compliance proofs for 40+ frameworks including ISO 42001, SOX (financial), GDPR (EU), CCPA (California), HIPAA (healthcare), FDA 21 CFR Part 11 (medical devices), FINRA (securities), PCI DSS (payments), and industry-specific standards. Each proof includes framework-specific evidence requirements and attestation formats.</p>
       </div>
     </div>
     <div class="faq-item">
       <div class="faq-question">
         <span>Can regulators verify proofs without accessing our AI systems?</span>
-        <span class="faq-toggle">▼</span>
+        <span class="faq-toggle"></span>
       </div>
       <div class="faq-answer">
-        <p>Yes. ProofOf AI generates self-verifying cryptographic proofs that auditors can validate independently. Regulators receive a proof bundle containing decision hashes, timestamps, evidence chains, and blockchain anchors. They can verify the cryptographic signatures and audit trail integrity without accessing the original AI systems, training data, or infrastructure.</p>
+        <p class="professional-body">Yes. ProofOf AI generates self-verifying cryptographic proofs that auditors can validate independently. Regulators receive a proof bundle containing decision hashes, timestamps, evidence chains, and blockchain anchors. They can verify the cryptographic signatures and audit trail integrity without accessing the original AI systems, training data, or infrastructure.</p>
       </div>
     </div>
     <div class="faq-item">
       <div class="faq-question">
         <span>What's the performance impact on AI inference?</span>
-        <span class="faq-toggle">▼</span>
+        <span class="faq-toggle"></span>
       </div>
       <div class="faq-answer">
-        <p>Minimal impact. Decision capture and hashing adds <1ms latency. Proof generation happens asynchronously and can be batched. ProofOf AI integrates as middleware in decision pipelines without blocking inference. Enterprise deployments report <0.5% performance overhead with cryptographic verification enabled.</p>
+        <p class="professional-body">Minimal impact. Decision capture and hashing adds <1ms latency. Proof generation happens asynchronously and can be batched. ProofOf AI integrates as middleware in decision pipelines without blocking inference. Enterprise deployments report <0.5% performance overhead with cryptographic verification enabled.</p>
       </div>
     </div>
     <div class="faq-item">
       <div class="faq-question">
         <span>How does ProofOf AI handle high-volume decision logging?</span>
-        <span class="faq-toggle">▼</span>
+        <span class="faq-toggle"></span>
       </div>
       <div class="faq-answer">
-        <p>ProofOf AI uses batch verification and Merkle tree aggregation to handle millions of decisions daily. Decisions are grouped into blocks, cryptographically aggregated, then anchored to blockchain. Enterprise deployments support 100k+ decisions/second with streaming audit logs and real-time proof verification dashboards.</p>
+        <p class="professional-body">ProofOf AI uses batch verification and Merkle tree aggregation to handle millions of decisions daily. Decisions are grouped into blocks, cryptographically aggregated, then anchored to blockchain. Enterprise deployments support 100k+ decisions/second with streaming audit logs and real-time proof verification dashboards.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- RELATED MCPs SECTION -->
-<section class="related-mcps">
+<section class="related-mcps csga-section">
   <div class="related-inner">
     <div class="section-heading" style="margin-bottom: 48px;">
-      <h2>Related MCPs</h2>
-      <p>Extend ProofOf AI with complementary governance and compliance tools</p>
+      <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Related MCPs</h2>
+      <p class="professional-body">Extend ProofOf AI with complementary governance and compliance tools</p>
     </div>
     <div class="grid grid-3 stagger-children">
       <a href="./ai-governance.html" class="mcp-link reveal">
-        <h3>AI Governance</h3>
-        <p>ISO 42001 compliance automation, policy enforcement, and risk management for AI systems</p>
+        <h3 class="professional-title professional-title" class="professional-title">AI Governance</h3>
+        <p class="professional-body">ISO 42001 compliance automation, policy enforcement, and risk management for AI systems</p>
       </a>
       <a href="./compliance-audit.html" class="mcp-link reveal">
-        <h3>Compliance Audit</h3>
-        <p>Automated auditing, evidence collection, and regulatory reporting for financial and healthcare AI</p>
+        <h3 class="professional-title professional-title" class="professional-title">Compliance Audit</h3>
+        <p class="professional-body">Automated auditing, evidence collection, and regulatory reporting for financial and healthcare AI</p>
       </a>
       <a href="./data-classification.html" class="mcp-link reveal">
-        <h3>Data Classification</h3>
-        <p>Automatic data sensitivity classification and governance for training datasets and decision records</p>
+        <h3 class="professional-title professional-title" class="professional-title">Data Classification</h3>
+        <p class="professional-body">Automatic data sensitivity classification and governance for training datasets and decision records</p>
       </a>
     </div>
   </div>
 </section>
 
 <!-- PRICING SECTION -->
-<section class="mcp-pw" id="pricing">
+<section class="mcp-pw csga-section" id="pricing">
   <div class="mcp-pw-inner">
     <div class="section-heading" style="margin-bottom: 48px;">
       <span class="tag">PRICING</span>
-      <h2>Scalable Plans for Every Stage</h2>
+      <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">flexible Plans for Every Stage</h2>
     </div>
-    <div class="pricing-cards">
-      <div class="pricing-card reveal">
-        <h3>Community</h3>
-        <p class="pricing-label">Free forever</p>
+    <div class="card-professional">
+      <div class="card-professional">
+        <h3 class="professional-title professional-title" class="professional-title">Community</h3>
+        <p class="pricing-label" class="professional-body">Free forever</p>
         <div class="pricing-price">$0</div>
-        <p class="pricing-period">/month</p>
+        <p class="pricing-period" class="professional-body">/month</p>
         <ul class="pricing-features">
-          <li>✓ 100 proofs/day</li>
-          <li>✓ 1 compliance framework</li>
-          <li>✓ Basic audit logging</li>
-          <li>✓ Community support</li>
-          <li>✗ Priority support</li>
+          <li> 100 proofs/day</li>
+          <li> 1 compliance framework</li>
+          <li> Basic audit logging</li>
+          <li> Community support</li>
+          <li> Priority support</li>
         </ul>
         <div class="pricing-cta">
-          <a href="#" class="btn btn-outline">Start Free</a>
+          <a href="#" class="btn-professional">Start Free</a>
         </div>
       </div>
-      <div class="pricing-card reveal" style="border: 2px solid var(--gold); transform: scale(1.05);">
-        <h3>Professional</h3>
-        <p class="pricing-label">Most popular</p>
+      <div class="card-professional" style="border: 2px solid var(--gold); transform: scale(1.05);">
+        <h3 class="professional-title professional-title" class="professional-title">Professional</h3>
+        <p class="pricing-label" class="professional-body">Most popular</p>
         <div class="pricing-price">$199</div>
-        <p class="pricing-period">/month</p>
+        <p class="pricing-period" class="professional-body">/month</p>
         <ul class="pricing-features">
-          <li>✓ 10,000 proofs/day</li>
-          <li>✓ 10 compliance frameworks</li>
-          <li>✓ Immutable audit trails</li>
-          <li>✓ Email support</li>
-          <li>✓ Compliance reporting</li>
+          <li> 10,000 proofs/day</li>
+          <li> 10 compliance frameworks</li>
+          <li> Immutable audit trails</li>
+          <li> Email support</li>
+          <li> Compliance reporting</li>
         </ul>
         <div class="pricing-cta">
-          <a href="#" class="btn btn-primary">Get Started</a>
+          <a href="#" class="btn-professional">Get Started</a>
         </div>
       </div>
-      <div class="pricing-card reveal">
-        <h3>Enterprise</h3>
-        <p class="pricing-label">Custom solution</p>
+      <div class="card-professional">
+        <h3 class="professional-title professional-title" class="professional-title">Enterprise</h3>
+        <p class="pricing-label" class="professional-body">Custom solution</p>
         <div class="pricing-price">$499</div>
-        <p class="pricing-period">+/month</p>
+        <p class="pricing-period" class="professional-body">+/month</p>
         <ul class="pricing-features">
-          <li>✓ Unlimited proofs</li>
-          <li>✓ All regulatory frameworks</li>
-          <li>✓ Blockchain anchoring</li>
-          <li>✓ 24/7 priority support</li>
-          <li>✓ Custom integrations</li>
+          <li> Unlimited proofs</li>
+          <li> All regulatory frameworks</li>
+          <li> Blockchain anchoring</li>
+          <li> 24/7 priority support</li>
+          <li> Custom integrations</li>
         </ul>
         <div class="pricing-cta">
-          <a href="#" class="btn btn-primary">Contact Sales</a>
+          <a href="#" class="btn-professional">Contact Sales</a>
         </div>
       </div>
     </div>
@@ -341,13 +1111,13 @@
 </section>
 
 <!-- FINAL CTA -->
-<section class="sf-final-cta">
+<section class="sf-final-cta csga-section">
   <div class="sf-final-cta-inner">
-    <h2>Start Proving Your AI Today</h2>
-    <p>Join 500+ enterprises generating verifiable cryptographic proof of AI governance and compliance</p>
+    <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Start Proving Your AI Today</h2>
+    <p class="professional-body">Join 500+ enterprises generating verifiable cryptographic proof of AI governance and compliance</p>
     <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-      <a href="#" class="btn btn-primary">Get Started Free</a>
-      <a href="#" class="btn btn-secondary">Schedule Demo</a>
+      <a href="#" class="btn-professional">Get Started Free</a>
+      <a href="#" class="btn-professional">Schedule Demo</a>
     </div>
   </div>
 </section>
@@ -355,7 +1125,7 @@
 <!-- FOOTER -->
 <!-- STICKY FLOATING CTA -->
 <div class="sf-sticky" id="stickyBtn">
-  <span>Get Started Free →</span>
+  <span>Get Started Free </span>
 </div>
 
 <script>
@@ -447,5 +1217,11 @@ window.addEventListener('scroll', () => {
 
 <div id="site-footer"></div>
 <script src="../components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/CSGA-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/CSGA-inner-pages-enhancement.js"></script>
 </body>
 </html>

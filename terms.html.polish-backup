@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Terms of Service - CSGA Global</title>
+ <meta name="description" content="CSGA Global Terms of Service - Our terms and conditions for using our services.">
+ 
+ 
+ <style>
+.legal-hero {
+ background: linear-gradient(135deg, #A30000, #3182ce);
+ padding: 60px 20px;
+ text-align: center;
+ color: white;
+ }
+ .legal-hero h1 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ font-size: 2.5rem;
+ margin-bottom: 15px;
+ }
+ .legal-content {
+ max-width: 900px;
+ margin: 60px auto;
+ padding: 0 20px;
+ line-height: 1.8;
+ }
+ .legal-content h2 {
+ font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+ color: #0058A4;
+ font-size: 1.5rem;
+ margin-top: 40px;
+ margin-bottom: 20px;
+ }
+ .legal-content h3 {
+ color: #0058A4;
+ font-size: 1.1rem;
+ margin-top: 20px;
+ margin-bottom: 10px;
+ }
+ .legal-content p {
+ color: #555;
+ margin-bottom: 15px;
+ }
+ .legal-content ul {
+ color: #555;
+ margin-bottom: 15px;
+ padding-left: 20px;
+ }
+ .legal-content li {
+ margin-bottom: 8px;
+ }
+ .last-updated {
+ color: #999;
+ font-size: 0.9rem;
+ font-style: italic;
+ margin-bottom: 30px;
+ }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/terms">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Terms of Service - CSGA Global">
+ <meta property="og:description" content="CSGA Global Terms of Service - Our terms and conditions for using our services.">
+ <meta property="og:url" content="https://csga-global.vercel.app/terms">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Terms of Service - CSGA Global">
+ <meta name="twitter:description" content="CSGA Global Terms of Service - Our terms and conditions for using our services.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Terms of Service - CSGA Global","description":"CSGA Global Terms of Service - Our terms and conditions for using our services.","url":"https://csga-global.vercel.app/terms","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="legal-hero">
+ <h1 class="professional-title professional-title" class="professional-title">Terms of Service</h1>
+</section>
+<section id="main-content" <section class="legal-content">>
+ <p class="last-updated" class="professional-body">Last updated: February 2026</p>
+ <h2 class="professional-title professional-title" class="professional-title">1. Terms</h2>
+ <p class="professional-body">By accessing and using the CSGA Global website and services ("Services"), you accept and agree to be bound by the terms and provision of this agreement.</p>
+ <h2 class="professional-title professional-title" class="professional-title">2. License to Use</h2>
+ <p class="professional-body">CSGA Global grants you a limited, non-exclusive, non-transferable license to use our Services for lawful purposes in accordance with these Terms. You agree not to:</p>
+ <ul>
+ <li>Reverse engineer or attempt to discover any source code</li>
+ <li>Rent, lease, or lend the Services</li>
+ <li>Use the Services for illegal activities</li>
+ <li>Interfere with or disrupt the integrity or performance of our Services</li>
+ </ul>
+ <h2 class="professional-title professional-title" class="professional-title">3. User Responsibilities</h2>
+ <p class="professional-body">You are responsible for maintaining the confidentiality of your account information and password. You agree to accept responsibility for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
+ <h2 class="professional-title professional-title" class="professional-title">4. Limitations on Liability</h2>
+ <p class="professional-body">IN NO EVENT SHALL CSGA GLOBAL, ITS DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU FOR ANY DAMAGES ARISING OUT OF YOUR USE OF OR INABILITY TO USE THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+ <h2 class="professional-title professional-title" class="professional-title">5. Disclaimer of Warranties</h2>
+ <p class="professional-body">Our Services are provided on an "AS-IS" and "AS-AVAILABLE" basis. CSGA Global makes no representations or warranties, express or implied, regarding the Services. We do not warrant that the Services will be uninterrupted, timely, secure, or error-free.</p>
+ <h2 class="professional-title professional-title" class="professional-title">6. Indemnification</h2>
+ <p class="professional-body">You agree to indemnify and hold harmless CSGA Global and its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of the Services or violation of these Terms.</p>
+ <h2 class="professional-title professional-title" class="professional-title">7. Changes to Terms</h2>
+ <p class="professional-body">CSGA Global reserves the right to modify these Terms at any time. Your continued use of the Services following the posting of revised Terms means you accept and agree to the changes.</p>
+ <h2 class="professional-title professional-title" class="professional-title">8. Governing Law</h2>
+ <p class="professional-body">These Terms and Conditions are governed by and construed in accordance with the laws of New South Wales, Australia, and you irrevocably submit to the exclusive jurisdiction of the courts located in Sydney.</p>
+
+ <h2 class="professional-title professional-title" class="professional-title">10. Privacy and Data Protection</h2>
+ <p class="professional-body">Your use of our Services is also governed by our Privacy Policy, which outlines how we collect, use, and protect your personal data. By accepting these Terms, you also consent to our Privacy Policy as available at <a href="/privacy">https://csga-global.vercel.app/privacy</a>.</p>
+ <p class="professional-body">We process personal data in accordance with the General Data Protection Regulation (GDPR) and other applicable data protection laws. For details about data processing, your rights, and our Data Protection Officer, please refer to our Privacy Policy.</p>
+ <h2 class="professional-title professional-title" class="professional-title">11. Cookie Policy</h2>
+ <p class="professional-body">Our use of cookies and similar tracking technologies is described in detail in our Cookie Policy. By using our Services, you consent to our use of cookies as outlined in our <a href="/cookies">Cookie Policy</a>.</p>
+ <h2 class="professional-title professional-title" class="professional-title">13. Contact Information</h2>
+ <p class="professional-body">If you have any questions about these Terms of Service, please contact us at:</p>
+ <p class="professional-body"><strong>Email:</strong> legal@csgaglobal.com<br>
+ <strong>Address:</strong> Level 10, 123 Technology Drive, Sydney, NSW 2000, Australia</p>
+</section>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

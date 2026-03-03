@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test page for CSGA Inner Pages Professional Enhancement - showcasing all improvements and features">
+    <meta name="keywords" content="test, CSGA, inner pages, enhancement, cybersecurity">
+    <meta name="author" content="CSGA - Cyber Security Global Alliance">
+    <title>Inner Pages Enhancement Test | CSGA</title>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
+    <meta property="og:title" content="Inner Pages Enhancement Test">
+    <meta property="og:description" content="Test page showcasing CSGA professional inner page enhancements">
+    <meta property="og:image" content="/images/csga-logo-social.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CSGAGlobal">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Inner Pages Enhancement Test",
+      "description": "Test page for CSGA professional inner page enhancements",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CSGA - Cyber Security Global Alliance"
+      }
+    }
+    </script>
+    
+    <!--  CSGA Core Branding -->
+    <link rel="stylesheet" href="/csga-branding.css">
+    
+    <!--  CSGA Hero & Mobile Fixes -->
+    <link rel="stylesheet" href="/csga-hero-mobile-fixes.css">
+    
+    <!--  CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!--  CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- üö® EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- üì± EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- üé® EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- üìù EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- üöÄ CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- üö® EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- üöÄ Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- üèõÔ∏è Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <!-- Navigation -->
+    <nav aria-label="Main navigation" class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo"> CSGA</a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/programs.html">Programs</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu"></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-logo"> CSGA</span>
+            <button class="mobile-menu-close" aria-label="Close mobile menu">úï</button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="/"> Home</a></li>
+            <li><a href="/about.html"> About</a></li>
+            <li><a href="/programs.html"> Programs</a></li>
+            <li><a href="/certification.html">ú Certification</a></li>
+            <li><a href="/contact.html"> Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main id="main-content" <main role="main">>
+        <!-- Page Header Section -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1 class="professional-title page-title" class="professional-title" class="professional-title">Inner Pages Enhancement Test</h1>
+                <p class="page-subtitle" class="professional-body">Comprehensive testing of all CSGA professional inner page enhancements and features</p>
+                <div class="page-meta">
+                    <span class="page-category">™ Test Page</span>
+                    <span class="page-badge">Professional Enhancement</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb navigation">
+            <div class="breadcrumb">
+                <a href="/"> CSGA Home</a>
+                <span class="breadcrumb-separator">></span>
+                <a href="/testing.html">Testing</a>
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-current">Inner Pages Enhancement</span>
+            </div>
+        </nav>
+        
+        <!-- Main Content Area -->
+        <div id="main-content" <div class="page-content">>
+            <div class="content-main">
+                <div class="content-section">
+                    <h2 class="professional-title section-title" class="professional-title" class="professional-title">úÖ Enhancement Features</h2>
+                    <p class="professional-body">This test page demonstrates all the professional enhancements applied to CSGA inner pages:</p>
+                    
+                    <h3 class="professional-title subsection-title" class="professional-title" class="professional-title">® Visual Enhancements</h3>
+                    <ul>
+                        <li><strong>Professional Typography:</strong> Consistent heading hierarchy with CSGA branding colors</li>
+                        <li><strong>Page Headers:</strong> Dynamic headers with gradient backgrounds and cybersecurity patterns</li>
+                        <li><strong>Content Sections:</strong> Organized content with professional styling and borders</li>
+                        <li><strong>Responsive Design:</strong> Mobile-optimized layouts that work on all devices</li>
+                    </ul>
+                    
+                    <h3 class="professional-title subsection-title" class="professional-title" class="professional-title"> Interactive Features</h3>
+                    <ul>
+                        <li><strong>Breadcrumb Navigation:</strong> Auto-generated breadcrumbs for better user orientation</li>
+                        <li><strong>Quick Navigation Sidebar:</strong> Table of contents for easy content jumping</li>
+                        <li><strong>Progress Indicator:</strong> Reading progress bar at the top of the page</li>
+                        <li><strong>Back to Top Button:</strong> Smooth scrolling return to top functionality</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="professional-title section-title" class="professional-title" class="professional-title"> Sample Content</h2>
+                    <p class="professional-body">This section demonstrates how various content types are enhanced:</p>
+                    
+                    <h3 class="professional-title subsection-title" class="professional-title" class="professional-title"> Lists and Tables</h3>
+                    <p class="professional-body">Professional styling for all content types including lists, tables, and code blocks.</p>
+                    
+                    <h3 class="professional-title subsection-title" class="professional-title" class="professional-title"> Code Example</h3>
+                    <pre class="professional-body"><code>// Sample code block with copy functionality
+function enhanceCSGAPages() {
+  console.log('CSGA Inner Pages Enhanced!');
+  return 'Professional cybersecurity experience';
+}</code></pre>
+                </div>
+                
+                <!-- Stats Grid Example -->
+                <div class="stats-grid">
+                    <div class="card-professional">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Organizations</span>
+                    </div>
+                    <div class="card-professional">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                    <div class="card-professional">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="card-professional">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+                
+                <!-- Tags Section -->
+                <div class="tags-section">
+                    <h4 class="tags-title">∑ Tags</h4>
+                    <div class="tags-list">
+                        <a href="#" class="tag">Enhancement</a>
+                        <a href="#" class="tag">Professional</a>
+                        <a href="#" class="tag">Cybersecurity</a>
+                        <a href="#" class="tag">AI Governance</a>
+                        <a href="#" class="tag">CSGA</a>
+                    </div>
+                </div>
+                
+                <!-- Compliance Section -->
+                <div class="compliance-section">
+                    <h3 style="color: #1a202c !important; margin-bottom: 1rem !important;" class="professional-title" class="professional-title"> Security & Compliance</h3>
+                    <p style="color: #4a5568 !important;" class="professional-body">CSGA maintains the highest standards of security and compliance for enterprise cybersecurity.</p>
+                    <div class="compliance-badges">
+                        <span class="compliance-badge">ISO 27001:2022</span>
+                        <span class="compliance-badge">SOC 2 Type II</span>
+                        <span class="compliance-badge">GDPR Compliant</span>
+                        <span class="compliance-badge">WCAG 2.1 AA</span>
+                    </div>
+                </div>
+                
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h2 class="professional-title cta-title" class="professional-title" class="professional-title">Ready to Experience Professional Enhancement?</h2>
+                    <p class="cta-subtitle" class="professional-body">See how CSGA's professional inner page enhancements improve user experience and engagement.</p>
+                    <div class="btn-professional">
+                        <a href="/programs.html" class="btn-professional"> View Programs</a>
+                        <a href="/contact.html" class="btn-professional"> Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="content-sidebar">
+                <div class="card-professional">
+                    <h3 class="professional-title professional-title" class="professional-title"> Quick Navigation</h3>
+                    <ul>
+                        <li><a href="#enhancement-features">Enhancement Features</a></li>
+                        <li><a href="#sample-content">Sample Content</a></li>
+                        <li><a href="#statistics">Statistics</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="card-professional">
+                    <h3 class="professional-title professional-title" class="professional-title"> Need Help?</h3>
+                    <p class="professional-body">Contact our cybersecurity and AI governance experts for personalized assistance.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                        <a href="/contact.html" class="btn-professional" style="text-align: center; padding: 0.75rem; background: #3182ce; color: white; border-radius: 0.5rem; text-decoration: none;">
+                             Contact Us
+                        </a>
+                        <a href="/programs.html" class="btn-professional" style="text-align: center; padding: 0.75rem; border: 1px solid #3182ce; color: #3182ce; border-radius: 0.5rem; text-decoration: none;">
+                             View Programs
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card-professional">
+                    <h3 class="professional-title professional-title" class="professional-title"> Resources</h3>
+                    <ul>
+                        <li><a href="/research.html"> Research Papers</a></li>
+                        <li><a href="/case-studies.html"> Case Studies</a></li>
+                        <li><a href="/cybersecurity.html"> Security Guide</a></li>
+                        <li><a href="/faq.html">ù FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="professional-body">&copy; 2026 CSGA - Cyber Security Global Alliance. All rights reserved.</p>
+            <p class="professional-body">Professional cybersecurity and AI governance solutions worldwide.</p>
+        </div>
+    </footer>
+    
+    <!--  CSGA Core Branding Script -->
+    <script src="/csga-branding.js"></script>
+    
+    <!--  CSGA Hero & Mobile Enhancement Scripts -->
+    <script src="/csga-hero-mobile-fixes.js"></script>
+    
+    <!--  CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

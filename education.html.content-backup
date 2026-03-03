@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Education & Training - CSGA Global</title>
+ <meta name="description" content="35 Free MOOCs on AI governance, AI security, cybersecurity, and MCP. Professional development paths, CASA certification, and academic partnerships across Five Eyes nations.">
+ 
+ 
+ <style>
+/* ── Hero ────────────────────────────────────── */
+ .edu-hero {
+ background: linear-gradient(135deg, rgba(10,22,40,0.92) 0%, rgba(0,88,164,0.88) 100%),
+ url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400&h=500&fit=crop') center/cover;
+ color: #fff; padding: 90px 20px 70px; text-align: center;
+ }
+ .edu-hero h1 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:3.5rem; font-weight:700; margin-bottom:18px; line-height:1.15; }
+ .edu-hero .tagline { font-size:1.25rem; font-weight:300; max-width:720px; margin:0 auto 30px; opacity:0.92; }
+ .edu-hero .hero-badges { display:flex; gap:30px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+ .edu-hero .hero-badge { display:flex; align-items:center; gap:8px; font-size:0.95rem; font-weight:500; }
+ .edu-hero .hero-badge span { font-size:1.6rem; }
+ /* ── Stats bar ───────────────────────────────── */
+ .edu-stats { background:#0A1628; padding:30px 20px; }
+ .edu-stats-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; }
+ .edu-stat { color:#fff; }
+ .edu-stat .num { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:2.4rem; font-weight:700; color:#CC0000; }
+ .edu-stat .label { font-size:0.85rem; opacity:0.8; margin-top:4px; }
+ @media(max-width:700px) { .edu-stats-inner { grid-template-columns:repeat(2,1fr); } }
+ /* ── Philosophy / Heritage ────────────────────── */
+ .edu-philosophy { padding:70px 20px; background:#fff; }
+ .edu-philosophy-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+ .edu-philosophy h2 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:2.2rem; color:#0A1628; margin-bottom:20px; }
+ .edu-philosophy p { color:#444; font-size:1.02rem; line-height:1.75; margin-bottom:16px; }
+ .edu-philosophy .heritage-list { list-style:none; padding:0; margin:20px 0 0; }
+ .edu-philosophy .heritage-list li { padding:10px 0; border-bottom:1px solid #e8e8e8; font-size:0.95rem; color:#333; display:flex; align-items:center; gap:10px; }
+ .edu-philosophy .heritage-list li:last-child { border-bottom:none; }
+ .philosophy-visual { background:linear-gradient(135deg,#0058A4,#0A1628); border-radius:16px; padding:40px; color:#fff; }
+ .philosophy-visual h3 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:1.5rem; margin-bottom:20px; }
+ .philosophy-visual .approach-item { padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.15); }
+ .philosophy-visual .approach-item:last-child { border-bottom:none; }
+ .philosophy-visual .approach-label { font-weight:600; color:#CC0000; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.5px; }
+ .philosophy-visual .approach-desc { font-size:0.92rem; opacity:0.9; margin-top:4px; }
+ @media(max-width:800px) { .edu-philosophy-inner { grid-template-columns:1fr; } }
+ /* ── MOOC filters / grid ─────────────────────── */
+ .moocs-section { padding:70px 20px; background:#f7f8fa; }
+ .moocs-section h2 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:2.2rem; color:#0A1628; text-align:center; margin-bottom:12px; }
+ .moocs-subheading { text-align:center; color:#666; font-size:1.05rem; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto; }
+ .filter-bar { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:40px; max-width:1100px; margin-left:auto; margin-right:auto; }
+ .filter-btn { padding:8px 18px; border-radius:4px; border:1px solid #d0d0d0; background:#fff; color:#555; font-size:0.85rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+ .filter-btn:hover { border-color:#0058A4; color:#0058A4; }
+ .filter-btn.active { background:#0058A4; color:#fff; border-color:#0058A4; }
+ .mooc-category { max-width:1280px; margin:0 auto 40px; }
+ .cat-heading { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:1.35rem; color:#0A1628; margin-bottom:20px; display:flex; align-items:center; gap:10px; }
+ .cat-count { font-size:0.8rem; background:#e8f0f8; color:#0058A4; padding:3px 10px; border-radius:8px; font-weight:500; }
+ .cat-icon { font-size:1.3rem; }
+ .mooc-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:18px; }
+ .mooc-card { background:#fff; border-radius:8px; padding:22px; border-left:3px solid #0058A4; transition:transform 0.2s, box-shadow 0.2s; position:relative; }
+ .mooc-card:hover { transform:translateY(-4px); box-shadow:0 8px 25px rgba(0,0,0,0.08); }
+ .mooc-card h4 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:1rem; color:#0A1628; margin:0 0 8px; line-height:1.4; }
+ .mooc-card p { font-size:0.85rem; color:#666; margin:0 0 12px; line-height:1.5; }
+ .mooc-duration { font-size:0.75rem; color:#0058A4; font-weight:600; background:#e8f0f8; padding:3px 8px; border-radius:4px; display:inline-block; margin-bottom:10px; }
+ .mooc-enroll { font-size:0.82rem; color:#0058A4; text-decoration:none; font-weight:600; }
+ .mooc-enroll:hover { text-decoration:underline; }
+ /* ── Development Paths ────────────────────────── */
+ .paths-section { padding:70px 20px; background:#fff; }
+ .paths-section h2 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:2.2rem; color:#0A1628; text-align:center; margin-bottom:15px; }
+ .paths-subheading { text-align:center; color:#666; font-size:1.05rem; margin-bottom:50px; max-width:700px; margin-left:auto; margin-right:auto; }
+ .paths-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; max-width:1280px; margin:0 auto; }
+ .path-card { background:#fff; border-radius:16px; padding:30px; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-top:4px solid #CC0000; position:relative; }
+ .path-card h3 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:1.15rem; color:#0A1628; margin:0 0 8px; }
+ .path-card .path-desc { font-size:0.88rem; color:#666; margin-bottom:18px; line-height:1.5; }
+ .path-steps { list-style:none; padding:0; margin:0 0 20px; }
+ .path-steps li { padding:10px 0; border-bottom:1px solid #e8e8e8; font-size:0.9rem; color:#333; }
+ .path-steps li:last-child { border-bottom:none; }
+ .path-steps strong { color:#0058A4; }
+ .path-cert { display:inline-flex; align-items:center; gap:6px; background:#f0e6cc; color:#8b6914; padding:6px 14px; border-radius:6px; font-size:0.82rem; font-weight:600; margin-bottom:15px; }
+ .path-link { display:inline-block; background:#0058A4; color:#fff; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem; transition:background 0.3s; }
+ .path-link:hover { background:#003d7a; }
+ /* ── Academic Partnerships ────────────────────── */
+ .partnerships-section { padding:70px 20px; background:#f7f8fa; }
+ .partnerships-section h2 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:2.2rem; color:#0A1628; text-align:center; margin-bottom:15px; }
+ .partnerships-sub { text-align:center; color:#666; font-size:1.05rem; margin-bottom:50px; max-width:700px; margin-left:auto; margin-right:auto; }
+ .partners-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:28px; max-width:1100px; margin:0 auto; }
+ .partner-card { background:#fff; border-radius:8px; padding:28px; box-shadow:0 2px 15px rgba(0,0,0,0.05); }
+ .partner-card .partner-flag { font-size:2rem; margin-bottom:12px; }
+ .partner-card h3 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:1.1rem; color:#0A1628; margin:0 0 10px; }
+ .partner-card p { font-size:0.9rem; color:#555; line-height:1.6; margin:0 0 12px; }
+ .partner-card .partner-focus { font-size:0.82rem; color:#0058A4; font-weight:600; }
+ /* ── Learning Outcomes ────────────────────────── */
+ .outcomes-section { padding:70px 20px; background:#fff; }
+ .outcomes-section h2 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:2.2rem; color:#0A1628; text-align:center; margin-bottom:50px; }
+ .outcomes-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:28px; max-width:1100px; margin:0 auto; }
+ .outcome-card { text-align:center; padding:30px 20px; }
+ .outcome-icon { font-size:2.5rem; margin-bottom:15px; }
+ .outcome-card h3 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:1.1rem; color:#0A1628; margin-bottom:10px; }
+ .outcome-card p { font-size:0.9rem; color:#555; line-height:1.6; }
+ /* ── CTA ─────────────────────────────────────── */
+ .education-cta { background:linear-gradient(135deg,#0A1628,#0058A4); color:#fff; padding:70px 20px; text-align:center; }
+ .education-cta h2 { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size:2rem; margin-bottom:18px; }
+ .education-cta p { font-size:1.1rem; margin-bottom:30px; max-width:620px; margin-left:auto; margin-right:auto; opacity:0.92; }
+ .cta-btn-group { display:flex; gap:15px; justify-content:center; flex-wrap:wrap; }
+ .cta-primary { display:inline-block; background:#CC0000; color:#0A1628; padding:14px 35px; border-radius:6px; text-decoration:none; font-weight:600; transition:background 0.3s; }
+ .cta-primary:hover { background:#e5bd68; }
+ .cta-secondary { display:inline-block; border:2px solid rgba(255,255,255,0.5); color:#fff; padding:12px 30px; border-radius:6px; text-decoration:none; font-weight:600; transition:all 0.25s; }
+ .cta-secondary:hover { background:rgba(255,255,255,0.1); border-color:#fff; }
+</style>
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://csga-global.vercel.app/education">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Education & Training - CSGA Global">
+ <meta property="og:description" content="35 Free MOOCs on AI governance, AI security, cybersecurity, and MCP. Professional development paths, CASA certification, and academic partnerships across Five Eyes nations.">
+ <meta property="og:url" content="https://csga-global.vercel.app/education">
+ <meta property="og:image" content="https://csga-global.vercel.app/og-image.png">
+ <meta property="og:site_name" content="CSGA Global">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Education & Training - CSGA Global">
+ <meta name="twitter:description" content="35 Free MOOCs on AI governance, AI security, cybersecurity, and MCP. Professional development paths, CASA certification, and academic partnerships across Five Eyes nations.">
+ <meta name="twitter:image" content="https://csga-global.vercel.app/og-image.png">
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Education & Training - CSGA Global","description":"35 Free MOOCs on AI governance, AI security, cybersecurity, and MCP. Professional development paths, CASA certification, and academic partnerships across Five Eyes nations.","url":"https://csga-global.vercel.app/education","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://csga-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
+<link rel="stylesheet" href="./components/shared.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+  <!-- CSGA Hero </head> Mobile Fixes -->
+  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Professional Enhancement -->
+    <link rel="stylesheet" href="/csga-inner-pages-enhancement.css">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSGA - Cyber Security Global Alliance",
+      "url": "https://csga-global.org",
+      "logo": "https://csga-global.org/images/csga-logo.png",
+      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Global"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/csga-global",
+        "https://twitter.com/CSGAGlobal"
+      ]
+    }
+    </script>
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Professional Icon System -->
+    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
+    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
+    <link rel="stylesheet" href="/csga-perfect-professional-polish.css">
+    <!-- 🚨 EMERGENCY: Hero Readability Fix -->
+    <link rel="stylesheet" href="/csga-hero-readability-emergency-fix.css">
+    <!-- 📱 EMERGENCY: Mobile Responsiveness Fix -->
+    <link rel="stylesheet" href="/csga-mobile-emergency-fix.css">
+    <!-- 🎨 EMERGENCY: Color Contrast Fix -->
+    <link rel="stylesheet" href="/csga-contrast-emergency-fix.css">
+    <!-- 📝 EMERGENCY: Typography Consistency Fix -->
+    <link rel="stylesheet" href="/csga-typography-emergency-fix.css">
+    <!-- 🚀 CSGA 2026 Global Styles -->
+    <link rel="stylesheet" href="/csga-2026-global-styles.css">
+    <link rel="stylesheet" href="/csga-2026-components.css">
+    <!-- 🚨 EMERGENCY FIX: Black text on blue backgrounds -->
+    <link rel="stylesheet" href="/csga-homepage-text-emergency-fix.css">
+    <!-- 🚀 Image Optimization -->
+    <link rel="stylesheet" href="/csga-image-optimization.css">
+    <!-- 🏛️ Professional Icon System -->
+    <link rel="stylesheet" href="/csga-professional-icons.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div id="site-header"></div>
+
+<section class="edu-hero">
+ <h1 class="professional-title"><h1 class="professional-title" class="professional-title">Education & Training</h1>
+ <p class="tagline" class="professional-body">World-class, free education in AI governance, cybersecurity, and cognitive symbiosis &mdash; developed by practitioners, accredited by the CSGA Global Council</p>
+ <div class="hero-badges">
+ <div class="hero-badge"><span>&#x1F393;</span> 35 Free MOOCs</div>
+ <div class="hero-badge"><span>&#x1F3C6;</span> CASA Certification</div>
+ <div class="hero-badge"><span>&#x1F310;</span> Five Eyes Nations</div>
+ <div class="hero-badge"><span>&#x1F6E1;</span> Defence Accredited</div>
+ </div>
+ <div class="edu-hero-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+  <a href="/catalog.html#education" class="btn-professional" style="display: inline-flex; align-items: center; gap: 8px; background: #CC0000; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.25s ease; box-shadow: 0 4px 20px rgba(204, 0, 0, 0.3);"><div class="feature-icon-professional">EDU</div> Browse Free Courses</a>
+  <a href="/certification.html" class="btn-professional" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.25s ease; backdrop-filter: blur(10px);">🏆 Start CASA Certification</a>
+ </div>
+</section>
+
+<section class="edu-stats">
+ <div class="edu-stats-inner">
+ <div class="edu-stat"><div class="num">35</div><div class="label">Free MOOCs</div></div>
+ <div class="edu-stat"><div class="num">5</div><div class="label">Learning Paths</div></div>
+ <div class="edu-stat"><div class="num">500+</div><div class="label">Hours of Content</div></div>
+ <div class="edu-stat"><div class="num">5</div><div class="label">Allied Nations</div></div>
+ </div>
+</section>
+
+<section class="edu-philosophy">
+ <div class="edu-philosophy-inner">
+ <div>
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Our Educational Philosophy</h2>
+ <p class="professional-body">The CSGA AI Research Institute believes that AI governance education must be free, accessible, and practitioner-led. Our curriculum bridges the gap between academic theory and operational reality &mdash; every course is developed by professionals who have deployed AI governance frameworks in defence, healthcare, finance, and critical infrastructure.</p>
+ <p class="professional-body">Rooted in the principle of cognitive symbiosis, our programmes teach professionals not just to regulate AI, but to work alongside it effectively and safely. This human-AI collaboration approach is unique to the CSGA ecosystem.</p>
+ <ul class="heritage-list">
+ <li>&#x2705; Curriculum aligned to CSOAI-500 standards and ISO 42001</li>
+ <li>&#x2705; Courses developed with Five Eyes nation defence advisors</li>
+ <li>&#x2705; Completely free &mdash; no hidden costs, no premium tiers</li>
+ <li>&#x2705; Stackable credentials toward CASA-CA30 certification</li>
+ <li>&#x2705; Veterans priority enrollment and mentoring support</li>
+ </ul>
+ </div>
+ <div class="philosophy-visual">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Learning Approach</h3>
+ <div class="approach-item">
+ <div class="approach-label">Practitioner-Led</div>
+ <div class="approach-desc">Every course taught by professionals with operational experience in AI governance and cybersecurity</div>
+ </div>
+ <div class="approach-item">
+ <div class="approach-label">Standards-Based</div>
+ <div class="approach-desc">Curriculum mapped to ISO 42001, NIST AI RMF, EU AI Act, and CSOAI-500 framework</div>
+ </div>
+ <div class="approach-item">
+ <div class="approach-label">Hands-On</div>
+ <div class="approach-desc">Case studies from real deployments across defence, healthcare, finance, and critical infrastructure</div>
+ </div>
+ <div class="approach-item">
+ <div class="approach-label">Globally Recognised</div>
+ <div class="approach-desc">Credentials accepted across Five Eyes nations with cross-border professional mobility</div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="moocs-section">
+ <div style="max-width:1280px; margin:0 auto;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">35 Free MOOCs</h2>
+ <p class="moocs-subheading" class="professional-body">Comprehensive online learning covering AI governance, cybersecurity, compliance, MCP technology, and professional development</p>
+ <div class="filter-bar"><button class="btn-professional" data-filter="all">All Courses</button><button class="btn-professional" data-filter="governance">AI Governance & Ethics</button><button class="btn-professional" data-filter="security">Cybersecurity & Defence</button><button class="btn-professional" data-filter="compliance">Compliance & Risk</button><button class="btn-professional" data-filter="technology">MCP & Technology</button><button class="btn-professional" data-filter="professional">Professional Skills</button></div>
+ <div class="mooc-category" id="cat-governance">
+ <h3 class="professional-title cat-heading" class="subsection-title" class="professional-title"><span class="cat-icon">&#x1F3DB;</span> AI Governance & Ethics <span class="cat-count">7 courses</span></h3>
+ <div class="mooc-grid">
+ <div class="card-professional" data-category="governance">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>AI Governance Fundamentals</h4>
+ <p class="professional-body">Leadership and organisational frameworks for responsible AI deployment</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="governance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Ethical AI Assessment</h4>
+ <p class="professional-body">Bias detection, fairness metrics, and responsible AI evaluation</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="governance">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Leadership in AI Governance</h4>
+ <p class="professional-body">Executive strategies for organisational AI governance</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="governance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Policy & Regulation</h4>
+ <p class="professional-body">EU AI Act, NIS2, ISO 42001, and global regulatory frameworks</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="governance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>AI Safety & Alignment</h4>
+ <p class="professional-body">Safe AI system design and alignment principles</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="governance">
+ <div class="mooc-duration">5 weeks</div>
+ <h4>Explainable AI (XAI)</h4>
+ <p class="professional-body">Transparency, interpretability, and accountability methods</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="governance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Cross-Sector AI Standards</h4>
+ <p class="professional-body">Industry-specific governance frameworks across sectors</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ </div>
+ </div>
+ <div class="mooc-category" id="cat-security">
+ <h3 class="professional-title cat-heading" class="subsection-title" class="professional-title"><span class="cat-icon">&#x1F6E1;</span> Cybersecurity & Defence <span class="cat-count">9 courses</span></h3>
+ <div class="mooc-grid">
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Cybersecurity Essentials for AI</h4>
+ <p class="professional-body">Security principles and best practices for AI systems</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">10 weeks</div>
+ <h4>Defence Security Requirements</h4>
+ <p class="professional-body">Military-grade protection standards and DSRB compliance</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Advanced Threat Detection</h4>
+ <p class="professional-body">Machine learning techniques for threat identification</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Incident Response Planning</h4>
+ <p class="professional-body">Crisis management protocols and response playbooks</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Incident Forensics</h4>
+ <p class="professional-body">Digital forensics, evidence handling, and investigation</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Network Security Architecture</h4>
+ <p class="professional-body">Zero-trust networking and micro-segmentation design</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Cryptography for AI Systems</h4>
+ <p class="professional-body">Encryption, key management, and cryptographic protocols</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Penetration Testing Fundamentals</h4>
+ <p class="professional-body">Ethical hacking methodology and vulnerability assessment</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="security">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Critical Infrastructure Protection</h4>
+ <p class="professional-body">Energy, transport, utilities, and SCADA security</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ </div>
+ </div>
+ <div class="mooc-category" id="cat-compliance">
+ <h3 class="professional-title cat-heading" class="subsection-title" class="professional-title"><span class="cat-icon">&#x2696;</span> Compliance & Risk <span class="cat-count">7 courses</span></h3>
+ <div class="mooc-grid">
+ <div class="card-professional" data-category="compliance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Data Privacy & GDPR Compliance</h4>
+ <p class="professional-body">EU GDPR, UK DPA, and international data protection law</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="compliance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Compliance Auditing</h4>
+ <p class="professional-body">Internal and external audit methodology and reporting</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="compliance">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Risk Assessment & Management</h4>
+ <p class="professional-body">Enterprise risk frameworks and quantitative analysis</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="compliance">
+ <div class="mooc-duration">5 weeks</div>
+ <h4>Vendor Risk Management</h4>
+ <p class="professional-body">Third-party security assessment and supply-chain risk</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="compliance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Business Continuity Planning</h4>
+ <p class="professional-body">Disaster recovery, resilience, and continuity strategies</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="compliance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Healthcare AI Compliance</h4>
+ <p class="professional-body">HIPAA, medical device regulations, and clinical AI safety</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="compliance">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Financial Services AI</h4>
+ <p class="professional-body">FCA, PRA, and regulatory compliance for AI in finance</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ </div>
+ </div>
+ <div class="mooc-category" id="cat-technology">
+ <h3 class="professional-title cat-heading" class="subsection-title" class="professional-title"><span class="cat-icon">&#x2699;</span> MCP & Technology <span class="cat-count">7 courses</span></h3>
+ <div class="mooc-grid">
+ <div class="card-professional" data-category="technology">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Introduction to AI Security</h4>
+ <p class="professional-body">Foundations of secure human-AI cognitive symbiosis systems</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="technology">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Model Context Protocol Basics</h4>
+ <p class="professional-body">MCP architecture, server design, and implementation patterns</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="technology">
+ <div class="mooc-duration">10 weeks</div>
+ <h4>Advanced MCP Implementation</h4>
+ <p class="professional-body">Production MCP deployment, optimisation, and scaling</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="technology">
+ <div class="mooc-duration">8 weeks</div>
+ <h4>Cloud Security for AI Systems</h4>
+ <p class="professional-body">AWS, Azure, Google Cloud security for AI workloads</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="technology">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>API Security & Integration</h4>
+ <p class="professional-body">Secure API design, authentication, and deployment</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="technology">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Identity & Access Management</h4>
+ <p class="professional-body">IAM frameworks, RBAC, and zero-trust implementation</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="technology">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Secure SDLC</h4>
+ <p class="professional-body">DevSecOps practices, CI/CD security, and code analysis</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ </div>
+ </div>
+ <div class="mooc-category" id="cat-professional">
+ <h3 class="professional-title cat-heading" class="subsection-title" class="professional-title"><span class="cat-icon">&#x1F4BC;</span> Professional Skills <span class="cat-count">5 courses</span></h3>
+ <div class="mooc-grid">
+ <div class="card-professional" data-category="professional">
+ <div class="mooc-duration">10 weeks</div>
+ <h4>CASA Certification Prep</h4>
+ <p class="professional-body">Comprehensive preparation for CASA-CA30 certification exams</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="professional">
+ <div class="mooc-duration">4 weeks</div>
+ <h4>Security Awareness Training</h4>
+ <p class="professional-body">User education, phishing prevention, and security culture</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="professional">
+ <div class="mooc-duration">6 weeks</div>
+ <h4>Threat Intelligence</h4>
+ <p class="professional-body">Cyber threat analysis, indicators of compromise, and intelligence sharing</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="professional">
+ <div class="mooc-duration">5 weeks</div>
+ <h4>Future of AI Security</h4>
+ <p class="professional-body">Emerging trends in quantum computing, AGI safety, and research frontiers</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ <div class="card-professional" data-category="professional">
+ <div class="mooc-duration">12 weeks</div>
+ <h4>Capstone Project Seminar</h4>
+ <p class="professional-body">Real-world application synthesis and portfolio development</p>
+ <a href="training" class="mooc-enroll">View Course &rarr;</a>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="paths-section">
+ <div style="max-width:1280px; margin:0 auto;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Professional Development Paths</h2>
+ <p class="paths-subheading" class="professional-body">Structured learning journeys that combine multiple MOOCs into career-focused programmes, each culminating in industry-recognised certification</p>
+ <div class="paths-grid">
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">AI Governance Leader</h3>
+ <p class="path-desc" class="professional-body">For executives and senior professionals leading AI governance strategy within organisations</p>
+ <div class="path-cert">&#x1F3C5; CASA-CA30 Level 3</div>
+ <ul class="path-steps">
+ <li><strong>Foundation:</strong> AI Governance Fundamentals + Ethical AI Assessment</li>
+ <li><strong>Intermediate:</strong> Leadership in AI Governance + Policy & Regulation</li>
+ <li><strong>Advanced:</strong> Cross-Sector Standards + Risk Management</li>
+ <li><strong>Capstone:</strong> Governance framework deployment project</li>
+ </ul>
+ <a href="training" class="path-link">Start Path</a>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Security Specialist</h3>
+ <p class="path-desc" class="professional-body">For cybersecurity professionals specialising in AI system protection and defence-grade security</p>
+ <div class="path-cert">&#x1F3C5; CASA-CA30 Level 3</div>
+ <ul class="path-steps">
+ <li><strong>Foundation:</strong> Cybersecurity Essentials + Network Security Architecture</li>
+ <li><strong>Intermediate:</strong> Advanced Threat Detection + Incident Response</li>
+ <li><strong>Advanced:</strong> Defence Security Requirements + Penetration Testing</li>
+ <li><strong>Capstone:</strong> Security assessment of live AI deployment</li>
+ </ul>
+ <a href="training" class="path-link">Start Path</a>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">MCP Implementation Specialist</h3>
+ <p class="path-desc" class="professional-body">For developers and architects building secure Model Context Protocol integrations</p>
+ <div class="path-cert">&#x1F3C5; MCP Specialist Certificate</div>
+ <ul class="path-steps">
+ <li><strong>Foundation:</strong> MCP Basics + Introduction to AI Security</li>
+ <li><strong>Intermediate:</strong> API Security + Cloud Security for AI</li>
+ <li><strong>Advanced:</strong> Advanced MCP Implementation + Secure SDLC</li>
+ <li><strong>Capstone:</strong> Production MCP server deployment</li>
+ </ul>
+ <a href="training" class="path-link">Start Path</a>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Compliance & Risk Professional</h3>
+ <p class="path-desc" class="professional-body">For GRC professionals managing AI compliance across regulated industries</p>
+ <div class="path-cert">&#x1F3C5; CSOAI-500 Compliance</div>
+ <ul class="path-steps">
+ <li><strong>Foundation:</strong> Data Privacy & GDPR + Compliance Auditing</li>
+ <li><strong>Intermediate:</strong> Risk Assessment + Vendor Risk Management</li>
+ <li><strong>Advanced:</strong> Healthcare or Financial Services AI Compliance</li>
+ <li><strong>Capstone:</strong> Regulatory compliance gap analysis</li>
+ </ul>
+ <a href="training" class="path-link">Start Path</a>
+ </div>
+ <div class="card-professional">
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Ethical AI Specialist</h3>
+ <p class="path-desc" class="professional-body">For researchers and practitioners focused on responsible and explainable AI</p>
+ <div class="path-cert">&#x1F3C5; CSOAI-500 Ethics</div>
+ <ul class="path-steps">
+ <li><strong>Foundation:</strong> Ethical AI Assessment + AI Safety & Alignment</li>
+ <li><strong>Intermediate:</strong> Explainable AI + AI Governance Fundamentals</li>
+ <li><strong>Advanced:</strong> Cross-Sector Standards + Future of AI Security</li>
+ <li><strong>Capstone:</strong> Ethical impact assessment of an AI system</li>
+ </ul>
+ <a href="training" class="path-link">Start Path</a>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="partnerships-section">
+ <div style="max-width:1100px; margin:0 auto;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Academic & Defence Partnerships</h2>
+ <p class="partnerships-sub" class="professional-body">Our curriculum is developed in collaboration with academic institutions and defence organisations across Five Eyes nations</p>
+ <div class="partners-grid">
+ <div class="card-professional">
+ <div class="partner-flag">&#x1F1EC;&#x1F1E7;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">United Kingdom</h3>
+ <p class="professional-body">CSGA headquarters and primary research hub. Curriculum development aligned with UK NCSC guidance and MoD cyber standards.</p>
+ <div class="partner-focus">Focus: AI Governance, Defence Security, DSRB</div>
+ </div>
+ <div class="card-professional">
+ <div class="partner-flag">&#x1F1E8;&#x1F1E6;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Canada</h3>
+ <p class="professional-body">Collaborative programmes with Canadian defence and cybersecurity institutions. Bilingual course materials in development.</p>
+ <div class="partner-focus">Focus: Critical Infrastructure, Bilingual Delivery</div>
+ </div>
+ <div class="card-professional">
+ <div class="partner-flag">&#x1F1E6;&#x1F1FA;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Australia</h3>
+ <p class="professional-body">Partnership with Australian cyber centres on Indo-Pacific security training and regional compliance frameworks.</p>
+ <div class="partner-focus">Focus: Indo-Pacific Security, Regional Compliance</div>
+ </div>
+ <div class="card-professional">
+ <div class="partner-flag">&#x1F1F3;&#x1F1FF;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">New Zealand</h3>
+ <p class="professional-body">Specialist programmes in small-nation cybersecurity strategy and public-sector AI governance.</p>
+ <div class="partner-focus">Focus: Public Sector AI, Small-Nation Strategy</div>
+ </div>
+ <div class="card-professional">
+ <div class="partner-flag">&#x1F1FA;&#x1F1F8;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">United States</h3>
+ <p class="professional-body">Aligned with NIST AI Risk Management Framework. Joint programmes with US defence and intelligence education networks.</p>
+ <div class="partner-focus">Focus: NIST Alignment, Defence Intelligence</div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="outcomes-section">
+ <div style="max-width:1100px; margin:0 auto;">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">What You Will Achieve</h2>
+ <div class="outcomes-grid">
+ <div class="card-professional">
+ <div class="outcome-icon">&#x1F4DC;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Industry Certification</h3>
+ <p class="professional-body">Earn CASA-CA30, MCP Specialist, or CSOAI-500 credentials recognised across Five Eyes nations and global enterprises</p>
+ </div>
+ <div class="card-professional">
+ <div class="outcome-icon">&#x1F527;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Practical Skills</h3>
+ <p class="professional-body">Apply governance frameworks, conduct security assessments, and deploy MCP servers through hands-on projects and case studies</p>
+ </div>
+ <div class="card-professional">
+ <div class="outcome-icon">&#x1F91D;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Professional Network</h3>
+ <p class="professional-body">Join a global community of AI governance professionals across defence, healthcare, finance, and critical infrastructure</p>
+ </div>
+ <div class="card-professional">
+ <div class="outcome-icon">&#x1F680;</div>
+ <h3 class="professional-title"><h3 class="professional-title" class="professional-title">Career Advancement</h3>
+ <p class="professional-body">Position yourself for AI governance, compliance officer, and security architect roles in the fastest-growing sector of cybersecurity</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section class="education-cta">
+ <h2 class="professional-title"><h2 class="professional-title" class="professional-title">Start Learning Today &mdash; Completely Free</h2>
+ <p class="professional-body">Access all 35 MOOCs, professional development paths, and certification preparation at no cost. No hidden fees, no premium tiers.</p>
+ <div class="btn-professional">
+ <a href="training" class="cta-primary">Browse All Courses</a>
+ <a href="veterans" class="cta-secondary">Veterans Programme</a>
+ </div>
+</section>
+<!-- ═══════ CTA Section ═══════ -->
+<section style="position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+ <div style="position:absolute;inset:0;z-index:0">
+ <div style="position:absolute;inset:-40px;background:linear-gradient(135deg,#0A1628,#0D2847,#0058A4);z-index:0"></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(0,88,164,0.82) 100%);z-index:1"></div>
+ </div>
+ <div style="position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px" class="reveal">
+ <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:4px;padding:8px 18px;margin-bottom:24px">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#CC0000" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/ class="professional-body"></svg>
+ <span style="color:#CC0000;font-size:0.85rem;font-weight:600">Free Access &mdash; No Credit Card Required</span>
+ </div>
+ <h2 style="color:#fff;font-size:2.6rem;line-height:1.2;margin-bottom:20px;font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif
+ <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;line-height:1.7;margin-bottom:36px" class="professional-body">35 free MOOCs, professional certification paths, and hands-on labs. From cybersecurity fundamentals to advanced AI safety — your learning journey starts here.</p>
+ <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+ <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:#CC0000;color:#0A1628;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;transition:all .3s;box-shadow:0 4px 15px rgba(204,0,0,0.3)" onmouseover="this.style.background='#A30000';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#CC0000';this.style.transform='none'">View Plans &amp; Pricing</a>
+ <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;background:transparent;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;border:2px solid rgba(255,255,255,0.3);transition:all .3s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">Request a Demo</a>
+ </div>
+ </div>
+</section>
+
+<script>
+// MOOC category filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+ btn.addEventListener('click', () => {
+ document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+ const filter = btn.dataset.filter;
+ document.querySelectorAll('.mooc-category').forEach(cat => {
+ if (filter === 'all' || cat.id === 'cat-' + filter) {
+ cat.style.display = 'block';
+ } else {
+ cat.style.display = 'none';
+ }
+ });
+ });
+});
+</script>
+
+<div id="site-footer"></div>
+<script src="./components/shared.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+  <!-- CSGA Hero </body> Mobile Fixes JS -->
+  <script src="/js/hero-mobile-fixes.js"></script>
+    <!-- <div class="feature-icon-professional">SHD</div> CSGA Inner Pages Enhancement Script -->
+    <script src="/csga-inner-pages-enhancement.js"></script>
+</body>
+</html>

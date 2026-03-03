@@ -1,0 +1,621 @@
+/* Advanced Mobile Optimization - CSGA Global
+   Enhanced mobile experience with touch interactions and performance */
+
+/* Mobile-First Responsive Foundation */
+@media screen and (max-width: 1024px) {
+  /* Tablet optimizations */
+  .container {
+    padding: 0 30px;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .dashboard-sidenav {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Mobile tablet optimizations */
+  
+  /* Enhanced touch targets */
+  button, a, .card, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  /* Improved typography hierarchy */
+  .hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  /* Grid system optimization */
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  /* Navigation enhancements */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .main-nav.open {
+    left: 0;
+  }
+  
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+  }
+  
+  /* Form optimization */
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 16px;
+    border-radius: 12px;
+    width: 100%;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    border-color: #cc0000;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.1);
+  }
+  
+  /* Button enhancements */
+  .btn {
+    padding: 16px 24px;
+    font-size: 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Dashboard mobile optimization */
+  .dashboard-sidenav {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    width: 100vw;
+    max-width: 350px;
+  }
+  
+  .dashboard-sidenav.open {
+    transform: translateX(0);
+  }
+  
+  .dashboard-main-content {
+    margin-left: 0 !important;
+    padding: 15px;
+  }
+  
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .mobile-nav-overlay.visible {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Card optimizations */
+  .card {
+    margin-bottom: 20px;
+    border-radius: 16px;
+    padding: 25px;
+  }
+  
+  .service-card {
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  /* Hero section mobile */
+  .hero {
+    padding: 60px 0 40px;
+    min-height: 70vh;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    margin-top: 30px;
+    position: static;
+    transform: none;
+  }
+  
+  /* Table responsiveness */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  table {
+    min-width: 600px;
+  }
+  
+  /* Image optimization */
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .hero-image, .featured-image {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Small mobile optimizations */
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  /* Typography adjustments */
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  /* Enhanced spacing */
+  .section {
+    padding: 40px 0;
+  }
+  
+  .card {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  /* Button optimization */
+  .btn {
+    font-size: 0.9rem;
+    padding: 14px 20px;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Form field spacing */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Dashboard mobile refinements */
+  .dashboard-card {
+    padding: 20px;
+  }
+  
+  .nav-item {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Stats display */
+  .hero-stats {
+    display: none; /* Hide complex stats on very small screens */
+  }
+  
+  /* Partner cards */
+  .partner-card {
+    padding: 25px 20px;
+  }
+  
+  .partner-logo {
+    width: 100px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  /* Ultra-small mobile (old phones) */
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .btn {
+    font-size: 0.85rem;
+    padding: 12px 18px;
+  }
+}
+
+/* Touch and Gesture Enhancements */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch device specific styles */
+  
+  .card:hover {
+    transform: none; /* Disable hover transforms on touch */
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  /* Enhanced tap targets */
+  .nav-item,
+  .dropdown-item,
+  .tab-link {
+    padding: 16px;
+    margin: 2px 0;
+  }
+  
+  /* Touch feedback */
+  .btn:active,
+  .card:active,
+  .nav-item:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Disable problematic animations */
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+  
+  * {
+    -webkit-tap-highlight-color: rgba(204, 0, 0, 0.2);
+  }
+}
+
+/* High DPI Display Optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Retina/high-DPI specific optimizations */
+  
+  .hero {
+    background-size: cover;
+  }
+  
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* SVG icons scaling */
+  .icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+/* Landscape Mobile Optimization */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+    padding: 30px 0;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    margin-bottom: 20px;
+  }
+  
+  .hero-cta-group {
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .dashboard-sidenav {
+    width: 280px;
+  }
+  
+  .section {
+    padding: 30px 0;
+  }
+}
+
+/* iOS Safari Specific Fixes */
+@supports (-webkit-appearance: none) {
+  /* iOS Safari fixes */
+  
+  input, textarea, select {
+    -webkit-appearance: none;
+    border-radius: 12px;
+  }
+  
+  .hero {
+    /* Fix for iOS Safari 100vh issue */
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Fix sticky positioning */
+  .sticky-element {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  
+  /* Smooth scrolling fix */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Android Chrome Specific */
+@media screen and (-webkit-min-device-pixel-ratio: 1) and (max-width: 768px) {
+  /* Android specific optimizations */
+  
+  /* Fix viewport height issues */
+  .hero {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+  
+  /* Better text rendering */
+  body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Performance optimizations */
+  .animate-target {
+    will-change: transform, opacity;
+  }
+  
+  .card {
+    will-change: transform;
+  }
+}
+
+/* Accessibility Enhancements for Mobile */
+@media (prefers-reduced-motion: reduce) {
+  /* Respect reduced motion preferences */
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .parallax-bg {
+    transform: none !important;
+  }
+  
+  .hero-particles {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Dark mode mobile optimizations */
+  
+  .card {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  input, textarea, select {
+    background: #334155;
+    border-color: #475569;
+    color: white;
+  }
+  
+  .mobile-nav-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Performance Optimizations */
+@media screen and (max-width: 768px) {
+  /* GPU acceleration for smooth scrolling */
+  .hero,
+  .dashboard-sidenav,
+  .card,
+  .btn {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Optimize repaints */
+  .animate-target {
+    contain: layout style paint;
+  }
+  
+  /* Lazy loading optimization */
+  img[loading="lazy"] {
+    content-visibility: auto;
+  }
+}
+
+/* Mobile Navigation JavaScript Hook Classes */
+.mobile-nav-open {
+  overflow: hidden;
+}
+
+.mobile-nav-transition {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.touch-device .hover-effect:hover {
+  transform: none;
+}
+
+.touch-feedback {
+  transition: transform 0.1s ease;
+}
+
+.touch-feedback:active {
+  transform: scale(0.95);
+}
+
+/* Print Styles for Mobile */
+@media print {
+  .dashboard-sidenav,
+  .mobile-nav-toggle,
+  .hero-particles,
+  .scroll-indicator {
+    display: none !important;
+  }
+  
+  .dashboard-main-content {
+    margin-left: 0 !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .hero {
+    page-break-inside: avoid;
+  }
+}
+
+/* Custom CSS Variables for Mobile */
+:root {
+  --mobile-safe-area-top: env(safe-area-inset-top, 20px);
+  --mobile-safe-area-bottom: env(safe-area-inset-bottom, 20px);
+  --mobile-safe-area-left: env(safe-area-inset-left, 20px);
+  --mobile-safe-area-right: env(safe-area-inset-right, 20px);
+  --mobile-vh: 1vh;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: var(--mobile-safe-area-top);
+    padding-bottom: var(--mobile-safe-area-bottom);
+  }
+  
+  .container {
+    padding-left: var(--mobile-safe-area-left);
+    padding-right: var(--mobile-safe-area-right);
+  }
+}
+
+/* Advanced Mobile Interactions */
+.swipe-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.swipe-item {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@media screen and (max-width: 480px) {
+  .swipe-item {
+    flex: 0 0 250px;
+  }
+}
+
+/* Mobile Performance Monitoring */
+@media screen and (max-width: 768px) {
+  /* Critical rendering path optimization */
+  .above-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+  
+  .below-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 300px;
+  }
+}
