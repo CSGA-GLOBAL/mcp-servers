@@ -1,947 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Constitutional AI-Enhanced COBOL Bridge MCP | Enterprise Legacy Integration | CSGA</title>
-  <meta name="description" content="Constitutional AI-powered bridge for legacy COBOL mainframes to modern AI governance infrastructure. Professional integration for banking, insurance, and government systems. CASA certified.">
-  <meta name="keywords" content="COBOL bridge, Constitutional AI, mainframe integration, AI governance, CASA certification, enterprise legacy">
-  <meta name="author" content="CSGA - Cyber Security Global Alliance">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
-  <meta property="og:title" content="Constitutional AI-Enhanced COBOL Bridge MCP | Enterprise Legacy Integration">
-  <meta property="og:description" content="Constitutional AI-powered bridge for legacy COBOL mainframes to modern AI governance infrastructure. CASA certified enterprise solution.">
-  <meta property="og:image" content="/images/cobol-bridge-social.png">
-  
-  <!-- Professional Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    /* CSGA Professional Variables */
-    :root {
-      --csga-navy: #0a1628;
-      --csga-blue: #1e5af5;
-      --csga-teal: #00d4aa;
-      --csga-gray: #64748b;
-      --csga-light: #f8fafc;
-      --csga-white: #ffffff;
-      --csga-dark: #1e293b;
-      
-      --cobol-primary: #1a202c;
-      --cobol-accent: #3182ce;
-      --cobol-success: #059669;
-      --cobol-warning: #d97706;
-      --cobol-danger: #dc2626;
-      --cobol-neutral: #6b7280;
-      --cobol-bg-light: #f8fafc;
-      --cobol-bg-dark: #0f172a;
-      
-      --font-primary: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-    }
-
-    /* Reset & Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-primary);
-      line-height: 1.6;
-      color: var(--csga-dark);
-      background: var(--csga-white);
-      overflow-x: hidden;
-    }
-
-    /* Skip Navigation */
-    .skip-navigation {
-      position: absolute;
-      top: -40px;
-      left: 6px;
-      background: var(--cobol-accent);
-      color: white;
-      padding: 8px 16px;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: top 0.3s ease;
-      z-index: 1001;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COBOL Bridge MCP | CSGA Global</title>
+    <meta name="description" content="Constitutional AI-powered bridge for legacy COBOL mainframes to modern AI governance infrastructure.">
     
-    .skip-navigation:focus {
-      top: 6px;
-    }
-
-    /* FIXED NAVIGATION HEADER */
-    .site-header {
-      background: var(--csga-navy);
-      color: var(--csga-white);
-      padding: 1rem 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      backdrop-filter: blur(10px);
-    }
+    <!-- Open Graph -->
+    <meta property="og:title" content="COBOL Bridge MCP | CSGA Global">
+    <meta property="og:description" content="Constitutional AI-powered bridge for legacy COBOL mainframes to modern AI governance infrastructure.">
+    <meta property="og:image" content="https://csga-global.vercel.app/images/mcp-cobol-bridge.jpg">
+    <meta property="og:url" content="https://csga-global.vercel.app/mcp/cobol-bridge">
     
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://csga-global.vercel.app/mcp/cobol-bridge">
     
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--csga-white);
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
+    <!-- CSGA Styles -->
+    <link rel="stylesheet" href="/css/csga-branding.css">
+    <link rel="stylesheet" href="/css/mcp-landing.css">
     
-    .nav-logo:hover {
-      opacity: 0.8;
-    }
-    
-    .nav-logo-shield {
-      width: 32px;
-      height: 32px;
-      background: linear-gradient(135deg, var(--csga-blue), var(--csga-teal));
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 1.2rem;
-    }
-    
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
-    
-    .nav-menu li a {
-      color: var(--csga-white);
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    
-    .nav-menu li a:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--csga-teal);
-    }
-    
-    .nav-cta {
-      background: var(--csga-blue);
-      color: var(--csga-white) !important;
-      padding: 0.7rem 1.5rem !important;
-      border-radius: 25px;
-      font-weight: 600;
-      border: 2px solid var(--csga-blue);
-    }
-    
-    .nav-cta:hover {
-      background: transparent !important;
-      border-color: var(--csga-teal);
-      color: var(--csga-teal) !important;
-    }
-    
-    /* Mobile Menu Toggle */
-    .mobile-menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--csga-white);
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-    }
-    
-    .mobile-menu-toggle:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Mobile Navigation */
-    @media (max-width: 768px) {
-      .mobile-menu-toggle {
-        display: block;
-      }
-      
-      .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--csga-navy);
-        flex-direction: column;
-        padding: 1rem 20px;
-        gap: 0.5rem;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .nav-menu.active {
-        display: flex;
-      }
-      
-      .nav-menu li a {
-        display: block;
-        padding: 1rem;
-        text-align: left;
-        border-radius: 8px;
-      }
-    }
-
-    /* Main Content Padding */
-    .main-content {
-      padding-top: 80px;
-    }
-
-    /* Breadcrumb Navigation */
-    .breadcrumb-nav {
-      background: var(--csga-light);
-      padding: 1rem 0;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .breadcrumb {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-    }
-    
-    .breadcrumb a {
-      color: var(--csga-blue);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    
-    .breadcrumb a:hover {
-      text-decoration: underline;
-    }
-    
-    .breadcrumb-separator {
-      color: var(--csga-gray);
-      font-weight: 600;
-    }
-
-    /* Professional Badge System */
-    .constitutional-banner {
-      background: linear-gradient(135deg, rgba(30, 90, 245, 0.06), rgba(0, 212, 170, 0.06));
-      border: 2px solid rgba(30, 90, 245, 0.15);
-      border-left: 6px solid var(--csga-blue);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 3rem auto;
-      text-align: center;
-      max-width: 1200px;
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-
-    .constitutional-badges {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-    }
-
-    .constitutional-badge {
-      background: rgba(30, 90, 245, 0.1);
-      color: var(--csga-navy);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border: 1px solid rgba(30, 90, 245, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .constitutional-badge::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 4px;
-      background: var(--csga-blue);
-    }
-
-    .constitutional-badge.ca-enhanced::before { background: #1e5af5; }
-    .constitutional-badge.enterprise::before { background: #059669; }
-    .constitutional-badge.casa-cert::before { background: #d97706; }
-    .constitutional-badge.realtime::before { background: #dc2626; }
-
-    /* Hero Section */
-    .cobol-hero {
-      background: linear-gradient(135deg, var(--csga-navy) 0%, var(--cobol-bg-dark) 100%);
-      color: var(--csga-white);
-      padding: 5rem 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cobol-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, rgba(30, 90, 245, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
-      opacity: 0.8;
-    }
-
-    .cobol-hero-content {
-      max-width: 1000px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .cobol-hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--csga-white), var(--csga-teal));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      line-height: 1.2;
-    }
-
-    .cobol-hero-subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cobol-hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin: 3rem 0;
-      flex-wrap: wrap;
-    }
-
-    .cobol-stat {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      min-width: 140px;
-    }
-
-    .cobol-stat-number {
-      display: block;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--csga-teal);
-      font-family: var(--font-mono);
-      margin-bottom: 0.5rem;
-    }
-
-    .cobol-stat-label {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      font-weight: 600;
-    }
-
-    /* Professional Button System */
-    .btn-professional {
-      display: inline-block;
-      background: var(--csga-blue);
-      color: var(--csga-white);
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin: 0.25rem;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-professional::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 3px;
-      background: var(--csga-teal);
-      transition: width 0.3s ease;
-    }
-
-    .btn-professional:hover {
-      background: var(--csga-navy);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(30, 90, 245, 0.3);
-    }
-
-    .btn-professional:hover::before {
-      width: 100%;
-    }
-
-    .btn-professional.secondary {
-      background: transparent;
-      border-color: var(--csga-blue);
-      color: var(--csga-blue);
-    }
-
-    .btn-professional.secondary:hover {
-      background: var(--csga-blue);
-      color: var(--csga-white);
-    }
-
-    .btn-professional.large {
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-    }
-
-    /* Trust Indicators */
-    .trust-bar {
-      background: var(--csga-light);
-      padding: 3rem 20px;
-      text-align: center;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .trust-indicators {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      gap: 4rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .trust-indicator {
-      text-align: center;
-      background: var(--csga-white);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(30, 90, 245, 0.1);
-      position: relative;
-    }
-
-    .trust-indicator::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 3px;
-      background: linear-gradient(to bottom, var(--csga-blue), var(--csga-teal));
-      border-radius: 2px;
-    }
-
-    .trust-value {
-      color: var(--csga-blue);
-      font-size: 1.3rem;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 0.25rem;
-      font-family: var(--font-mono);
-    }
-
-    .trust-label {
-      color: var(--csga-gray);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    /* Features Section */
-    .features-section {
-      padding: 5rem 20px;
-      background: var(--csga-white);
-    }
-
-    .features-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 3rem;
-      color: var(--csga-navy);
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(to right, var(--csga-blue), var(--csga-teal));
-      border-radius: 2px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .feature-card {
-      background: var(--csga-white);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      border: 1px solid rgba(30, 90, 245, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 4px;
-      background: linear-gradient(to bottom, var(--csga-blue), var(--csga-teal));
-    }
-
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(30, 90, 245, 0.2);
-    }
-
-    .feature-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, var(--csga-blue), var(--csga-teal));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      color: var(--csga-white);
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-
-    .feature-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--csga-navy);
-    }
-
-    .feature-description {
-      color: var(--csga-gray);
-      line-height: 1.6;
-    }
-
-    /* Professional Text Badges */
-    .professional-badge {
-      display: inline-block;
-      background: rgba(30, 90, 245, 0.1);
-      color: var(--csga-navy);
-      padding: 0.25rem 0.75rem;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border: 1px solid rgba(30, 90, 245, 0.2);
-    }
-
-    .professional-badge.enterprise { background: rgba(5, 150, 105, 0.1); border-color: rgba(5, 150, 105, 0.2); }
-    .professional-badge.security { background: rgba(217, 119, 6, 0.1); border-color: rgba(217, 119, 6, 0.2); }
-    .professional-badge.compliance { background: rgba(220, 38, 38, 0.1); border-color: rgba(220, 38, 38, 0.2); }
-
-    /* Contact Section */
-    .contact-section {
-      background: var(--csga-navy);
-      color: var(--csga-white);
-      padding: 5rem 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, rgba(30, 90, 245, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
-    }
-
-    .contact-container {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--csga-white), var(--csga-teal));
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .contact-subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .constitutional-banner {
-        margin: 1.5rem;
-        padding: 1.5rem;
-      }
-      
-      .constitutional-badges {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      
-      .cobol-hero {
-        padding: 4rem 16px;
-      }
-      
-      .cobol-hero-stats {
-        gap: 1.5rem;
-      }
-      
-      .trust-indicators {
-        gap: 2rem;
-      }
-      
-      .features-section,
-      .contact-section {
-        padding: 4rem 16px;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .cobol-hero h1 {
-        font-size: 2rem;
-      }
-      
-      .section-title {
-        font-size: 2rem;
-      }
-      
-      .contact-title {
-        font-size: 2rem;
-      }
-    }
-  </style>
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
-
 <body>
-  <!-- Skip Navigation -->
-  <a href="#main-content" class="skip-navigation">Skip to main content</a>
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/" class="nav-logo">
+                    <div class="nav-logo-icon">C</div>
+                    <span class="nav-logo-text">CSGA</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/catalog.html" class="nav-link">MCP Catalog</a></li>
+                <li><a href="/casa-certification" class="nav-link">CASA</a></li>
+                <li><a href="/pricing" class="nav-link">Pricing</a></li>
+                <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- FIXED NAVIGATION HEADER -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="/" class="nav-logo">
-        <div class="nav-logo-shield">C</div>
-        CSGA
-      </a>
-      <nav>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/catalog.html">MCP Catalog</a></li>
-          <li><a href="/casa">CASA Certification</a></li>
-          <li><a href="/partners">Partners</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/pricing" class="nav-cta">Get Started</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-        ☰
-      </button>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb navigation">
-      <div class="breadcrumb">
-        <a href="/">CSGA Home</a>
-        <span class="breadcrumb-separator">→</span>
-        <a href="/catalog.html">MCP Catalog</a>
-        <span class="breadcrumb-separator">→</span>
-        <span>Constitutional AI COBOL Bridge</span>
-      </div>
-    </nav>
-
-    <!-- Constitutional AI Enhancement Banner -->
-    <section class="constitutional-banner">
-      <div class="constitutional-badges">
-        <span class="constitutional-badge ca-enhanced">CONSTITUTIONAL AI ENHANCED</span>
-        <span class="constitutional-badge enterprise">ENTERPRISE INTEGRATION</span>
-        <span class="constitutional-badge casa-cert">CASA CERTIFIED</span>
-        <span class="constitutional-badge realtime">REAL-TIME GOVERNANCE</span>
-      </div>
-      <h2 style="color: var(--csga-navy); font-size: 2.2rem; margin-bottom: 16px; font-weight: 800;">
-        March 2026: Constitutional AI-Powered Legacy Integration
-      </h2>
-      <p style="color: var(--csga-gray); font-size: 1.2rem; line-height: 1.6; max-width: 900px; margin: 0 auto 32px;">
-        Bridge 40-year-old COBOL systems to Constitutional AI governance frameworks — the enterprise solution for mainframe compliance in the AI-driven economy
-      </p>
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="/pricing.html" class="btn-professional large">START $4,999 TRIAL</a>
-        <a href="/contact.html" class="btn-professional large secondary">COBOL ASSESSMENT</a>
-      </div>
-    </section>
-
-    <!-- Hero Section -->
-    <section id="main-content" class="cobol-hero">
-      <div class="cobol-hero-content">
-        <h1>Constitutional AI COBOL Bridge</h1>
-        <p class="cobol-hero-subtitle">
-          Professional bridge connecting legacy COBOL mainframes to Constitutional AI governance infrastructure — delivering real-time compliance for banking, insurance, and government systems
-        </p>
-        
-        <div class="cobol-hero-stats">
-          <div class="cobol-stat">
-            <span class="cobol-stat-number">220B+</span>
-            <span class="cobol-stat-label">Lines of COBOL</span>
-          </div>
-          <div class="cobol-stat">
-            <span class="cobol-stat-number">95%</span>
-            <span class="cobol-stat-label">ATM Transactions</span>
-          </div>
-          <div class="cobol-stat">
-            <span class="cobol-stat-number">43%</span>
-            <span class="cobol-stat-label">Banking Systems</span>
-          </div>
-          <div class="cobol-stat">
-            <span class="cobol-stat-number">50-200ms</span>
-            <span class="cobol-stat-label">Real-Time Latency</span>
-          </div>
+    <!-- MCP Hero Section -->
+    <section class="mcp-hero">
+        <div class="container">
+            <div class="mcp-hero-content">
+                <div class="mcp-breadcrumb">
+                    <a href="/catalog.html">MCP Catalog</a> 
+                    <span>/</span> 
+                    <a href="/mcp/enterprise-integration">Enterprise Integration</a>
+                    <span>/</span>
+                    <span>COBOL Bridge MCP</span>
+                </div>
+                
+                <h1 class="mcp-title">COBOL Bridge MCP</h1>
+                <p class="mcp-description">Constitutional AI-powered bridge for legacy COBOL mainframes to modern AI governance infrastructure.</p>
+                
+                <div class="mcp-meta">
+                    <div class="meta-item">
+                        <strong>Category:</strong> Enterprise Integration
+                    </div>
+                    <div class="meta-item">
+                        <strong>Integration:</strong> Mainframe
+                    </div>
+                    <div class="meta-item">
+                        <strong>Compliance:</strong> ISO 42001, SOC 2, PCI DSS
+                    </div>
+                </div>
+                
+                <div class="mcp-cta">
+                    <button class="btn btn-primary stripe-checkout" data-price-id="price_1OvKJ4SDfj2Fs">
+                        Start $299/month
+                    </button>
+                    <a href="#documentation" class="btn btn-secondary">View Documentation</a>
+                </div>
+            </div>
+            
+            <div class="mcp-hero-image">
+                <img src="/images/mcp-cobol-bridge-hero.jpg" alt="COBOL Bridge MCP" loading="lazy">
+            </div>
         </div>
-
-        <div>
-          <a href="/pricing.html" class="btn-professional large">START ENTERPRISE TRIAL</a>
-          <a href="#features" class="btn-professional large secondary">VIEW DOCUMENTATION</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trust Indicators -->
-    <section class="trust-bar">
-      <div class="trust-indicators">
-        <div class="trust-indicator">
-          <span class="trust-value">$2.7T</span>
-          <span class="trust-label">Market Size</span>
-        </div>
-        <div class="trust-indicator">
-          <span class="trust-value">99.9%</span>
-          <span class="trust-label">Uptime SLA</span>
-        </div>
-        <div class="trust-indicator">
-          <span class="trust-value">ISO 42001</span>
-          <span class="trust-label">Compliant</span>
-        </div>
-        <div class="trust-indicator">
-          <span class="trust-value">CASA</span>
-          <span class="trust-label">Certified</span>
-        </div>
-        <div class="trust-indicator">
-          <span class="trust-value">24/7</span>
-          <span class="trust-label">Enterprise Support</span>
-        </div>
-      </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features-section">
-      <div class="features-container">
-        <h2 class="section-title">Enterprise COBOL Integration Features</h2>
+    <section class="mcp-features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Real-time COBOL system monitoring</h3>
+                    </div>
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Constitutional AI governance integration</h3>
+                    </div>
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Banking & insurance compatibility</h3>
+                    </div>
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Government system integration</h3>
+                    </div>
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Legacy modernization pathways</h3>
+                    </div>
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Compliance automation</h3>
+                    </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="mcp-use-cases">
+        <div class="container">
+            <h2>Use Cases</h2>
+            <div class="use-cases-grid">
+                
+                    <div class="use-case-card">
+                        <h3>Banking transaction processing</h3>
+                        <p>Streamline banking transaction processing with automated cobol bridge integration.</p>
+                    </div>
+                
+                    <div class="use-case-card">
+                        <h3>Insurance claims systems</h3>
+                        <p>Streamline insurance claims systems with automated cobol bridge integration.</p>
+                    </div>
+                
+                    <div class="use-case-card">
+                        <h3>Government legacy systems</h3>
+                        <p>Streamline government legacy systems with automated cobol bridge integration.</p>
+                    </div>
+                
+                    <div class="use-case-card">
+                        <h3>Mainframe modernization</h3>
+                        <p>Streamline mainframe modernization with automated cobol bridge integration.</p>
+                    </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="mcp-pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="pricing-card featured">
+                <h3>Enterprise Plan</h3>
+                <div class="price">$299<span>/month</span></div>
+                <ul class="features-list">
+                    <li>All 70+ MCPs</li><li>Dedicated support</li><li>Custom development</li><li>SLA guarantee</li>
+                </ul>
+                <button class="btn btn-primary btn-large stripe-checkout" data-price-id="price_1OvKJ4SDfj2Fs">
+                    Get Started
+                </button>
+            </div>
+            
+            <div class="pricing-note">
+                <p>Need a custom plan? <a href="/contact">Contact us</a> for enterprise pricing and custom integrations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation -->
+    <section id="documentation" class="mcp-documentation">
+        <div class="container">
+            <h2>Documentation</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <h3>API Reference</h3>
+                    <p>Complete API documentation and endpoints.</p>
+                    <a href="/docs/api/cobol-bridge" class="doc-link">View API Docs →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>Integration Guide</h3>
+                    <p>Step-by-step integration instructions.</p>
+                    <a href="/docs/integration/cobol-bridge" class="doc-link">View Guide →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>Examples</h3>
+                    <p>Code examples and use case implementations.</p>
+                    <a href="/docs/examples/cobol-bridge" class="doc-link">View Examples →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related MCPs -->
+    <section class="related-mcps">
+        <div class="container">
+            <h2>Related MCPs</h2>
+            <div class="related-grid">
+                <!-- Auto-populated with related MCPs from same category -->
+                <div class="related-mcp-card">
+                    <h3>Browse Enterprise Integration MCPs</h3>
+                    <p>Explore all MCPs in the Enterprise Integration category.</p>
+                    <a href="/mcp/enterprise-integration" class="btn btn-secondary">View Category →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CSGA Global</h3>
+                    <p>The world's first AI governance and MCP platform.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>MCPs</h3>
+                    <ul>
+                        <li><a href="/catalog.html">Browse All MCPs</a></li>
+                        <li><a href="/mcp/ai-governance">AI Governance</a></li>
+                        <li><a href="/mcp/cybersecurity-defense">Security</a></li>
+                        <li><a href="/mcp/enterprise-integration">Enterprise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/docs">Documentation</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/support">Support Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Stripe Integration -->
+    <script>
+        const stripe = Stripe('pk_test_your_publishable_key_here'); // Replace with your Stripe key
         
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">BRIDGE</div>
-            <h3 class="feature-title">Legacy System Bridge</h3>
-            <p class="feature-description">
-              Seamlessly connect COBOL mainframes to modern Constitutional AI governance without disrupting existing operations.
-              <span class="professional-badge enterprise">ENTERPRISE</span>
-            </p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">REAL-TIME</div>
-            <h3 class="feature-title">Real-Time Compliance</h3>
-            <p class="feature-description">
-              Monitor COBOL transactions in real-time with Constitutional AI governance frameworks for instant compliance validation.
-              <span class="professional-badge compliance">COMPLIANCE</span>
-            </p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">SECURE</div>
-            <h3 class="feature-title">Enterprise Security</h3>
-            <p class="feature-description">
-              Bank-grade security with zero-trust architecture and end-to-end encryption for all mainframe communications.
-              <span class="professional-badge security">SECURITY</span>
-            </p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">ANALYTICS</div>
-            <h3 class="feature-title">Constitutional AI Analytics</h3>
-            <p class="feature-description">
-              Advanced analytics dashboard with Constitutional AI insights for governance, risk management, and compliance reporting.
-              <span class="professional-badge">ANALYTICS</span>
-            </p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">NO-CODE</div>
-            <h3 class="feature-title">No-Code Integration</h3>
-            <p class="feature-description">
-              Deploy without modifying existing COBOL code through our intelligent API gateway and configuration-driven setup.
-              <span class="professional-badge">NO-CODE</span>
-            </p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">SCALE</div>
-            <h3 class="feature-title">Scalable Architecture</h3>
-            <p class="feature-description">
-              Handle millions of transactions per second with auto-scaling infrastructure and global deployment options.
-              <span class="professional-badge enterprise">SCALE</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-      <div class="contact-container">
-        <h2 class="contact-title">Ready to Modernize Your COBOL Systems?</h2>
-        <p class="contact-subtitle">
-          Get started with a free COBOL assessment and discover how Constitutional AI can transform your legacy infrastructure.
-        </p>
-        <div>
-          <a href="/contact.html" class="btn-professional large">SCHEDULE ASSESSMENT</a>
-          <a href="/pricing.html" class="btn-professional large secondary">VIEW PRICING</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- JavaScript for Mobile Menu -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileToggle = document.getElementById('mobile-toggle');
-      const navMenu = document.getElementById('nav-menu');
-      
-      if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', function() {
-          navMenu.classList.toggle('active');
-          
-          // Update aria-expanded for accessibility
-          const isExpanded = navMenu.classList.contains('active');
-          mobileToggle.setAttribute('aria-expanded', isExpanded);
-          
-          // Update toggle text
-          mobileToggle.textContent = isExpanded ? '✕' : '☰';
-        });
-      }
-      
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (mobileToggle && navMenu && 
-            !mobileToggle.contains(e.target) && 
-            !navMenu.contains(e.target)) {
-          navMenu.classList.remove('active');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-          mobileToggle.textContent = '☰';
-        }
-      });
-      
-      // Close mobile menu on window resize
-      window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && navMenu) {
-          navMenu.classList.remove('active');
-          if (mobileToggle) {
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            mobileToggle.textContent = '☰';
-          }
-        }
-      });
-      
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ 
-              behavior: 'smooth', 
-              block: 'start',
-              inline: 'nearest'
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkoutButtons = document.querySelectorAll('.stripe-checkout');
+            
+            checkoutButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const priceId = this.dataset.priceId;
+                    
+                    stripe.redirectToCheckout({
+                        lineItems: [{
+                            price: priceId,
+                            quantity: 1
+                        }],
+                        mode: 'subscription',
+                        successUrl: window.location.origin + '/success?session_id={CHECKOUT_SESSION_ID}',
+                        cancelUrl: window.location.href
+                    }).then(function(result) {
+                        if (result.error) {
+                            alert(result.error.message);
+                        }
+                    });
+                });
             });
-          }
         });
-      });
-    });
-  </script>
+    </script>
 </body>
 </html>

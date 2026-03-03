@@ -3,2352 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Healthcare AI Governance MCP  HIPAA-compliant AI governance for healthcare systems. Comprehensive tooling for compliance automation, clinical risk assessment, and patient data protection.">
-    <title>Healthcare AI Governance MCP | CSOAI</title>
-    <style>
-        :root {
-            --gold: #3182ce;
-            --gold-light: #1e40af;
-            --bg-dark: #0f0f0f;
-            --bg-card: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
-            --border-color: #333333;
-            --success: #10b981;
-            --warning: #f59e0b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ==================== ANIMATIONS ==================== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(204, 0, 0, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(204, 0, 0, 0.6);
-            }
-        }
-
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ==================== HEADER & NAV ==================== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            color: var(--text-primary);
-        }
-
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        nav {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--gold);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .mega-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.25s;
-            margin-top: 1rem;
-        }
-
-        .nav-item:hover .mega-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .mega-menu a {
-            display: block;
-            padding: 0.75rem 0;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .mega-menu a:hover {
-            color: var(--gold);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            border: none;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.25s;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: var(--bg-card);
-            border-color: var(--gold);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.3);
-        }
-
-        /* ==================== BREADCRUMB ==================== */
-        .breadcrumb {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 2rem 0;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 5rem;
-        }
-
-        .breadcrumb a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        /* ==================== HERO SECTION ==================== */
-        .sf-hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sf-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(204, 0, 0, 0.15), transparent);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .sf-hero-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .sf-hero h1 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .sf-hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .sf-hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-
-        .sf-hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .sf-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            padding-top: 3rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .sf-stat {
-            text-align: center;
-        }
-
-        .sf-stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .sf-stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* ==================== PROBLEM SECTION ==================== */
-        .sf-problem {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .sf-problem h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .sf-problem-content {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .sf-problem-list {
-            list-style: none;
-            margin-top: 2rem;
-        }
-
-        .sf-problem-list li {
-            padding: 1rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--text-secondary);
-        }
-
-        .sf-problem-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            color: #ef4444;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .sf-problem-icon {
-            font-size: 5rem;
-            margin: 2rem 0;
-            opacity: 0.8;
-        }
-
-        /* ==================== SOLUTION SECTION ==================== */
-        .sf-solution {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .sf-solution h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .sf-solution-content {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .sf-solution-list {
-            list-style: none;
-            margin-top: 2rem;
-        }
-
-        .sf-solution-list li {
-            padding: 1rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--text-secondary);
-        }
-
-        .sf-solution-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .sf-solution-icon {
-            font-size: 5rem;
-            margin: 2rem 0;
-            opacity: 0.8;
-        }
-
-        /* ==================== FEATURES SECTION ==================== */
-        .sf-features {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .sf-features h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .sf-features-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            font-size: 1.05rem;
-        }
-
-        .sf-features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .sf-feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.25s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sf-feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s;
-        }
-
-        .sf-feature-card:hover {
-            border-color: var(--gold);
-            background: rgba(204, 0, 0, 0.05);
-            transform: translateY(-5px);
-        }
-
-        .sf-feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .sf-feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .sf-feature-card h3 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .sf-feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .sf-feature-card code {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 0.85rem;
-            color: var(--gold);
-        }
-
-        /* ==================== METRICS SECTION ==================== */
-        .sf-metrics {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-            background: linear-gradient(135deg, rgba(204, 0, 0, 0.1), rgba(230, 57, 70, 0.1));
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .sf-metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .sf-metric-item {
-            text-align: center;
-        }
-
-        .sf-metric-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .sf-metric-text {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-
-        /* ==================== USE CASES SECTION ==================== */
-        .sf-usecases {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .sf-usecases h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            line-height: 1.3;
-        }
-
-        .sf-usecases-wrap {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .sf-usecase-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.25s;
-        }
-
-        .sf-usecase-card:hover {
-            border-color: var(--gold);
-            background: rgba(204, 0, 0, 0.05);
-        }
-
-        .sf-usecase-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .sf-usecase-card h3 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .sf-usecase-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* ==================== QUICK START SECTION ==================== */
-        .sf-quickstart {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .sf-quickstart h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            line-height: 1.3;
-        }
-
-        .sf-code {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            overflow-x: auto;
-            margin-bottom: 2rem;
-        }
-
-        .sf-code pre {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--text-primary);
-        }
-
-        .sf-code-comment {
-            color: #6b7280;
-        }
-
-        .sf-code-string {
-            color: #86efac;
-        }
-
-        .sf-code-key {
-            color: var(--gold);
-        }
-
-        .sf-code-value {
-            color: #93c5fd;
-        }
-
-        /* ==================== FAQ SECTION ==================== */
-        .sf-faq {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .sf-faq h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            line-height: 1.3;
-        }
-
-        .sf-faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .sf-faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            transition: all 0.25s;
-        }
-
-        .sf-faq-item:hover {
-            border-color: var(--gold);
-        }
-
-        .sf-faq-question {
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            user-select: none;
-        }
-
-        .sf-faq-question:hover {
-            background: rgba(204, 0, 0, 0.05);
-        }
-
-        .sf-faq-toggle {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s;
-            color: var(--gold);
-        }
-
-        .sf-faq-item.active .sf-faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .sf-faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .sf-faq-item.active .sf-faq-answer {
-            max-height: 300px;
-        }
-
-        .sf-faq-answer-content {
-            padding: 0 1.5rem 1.5rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        /* ==================== RELATED MCPs ==================== */
-        .sf-related {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(204, 0, 0, 0.05), transparent);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .sf-related h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            line-height: 1.3;
-        }
-
-        .sf-related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .sf-related-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.25s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .sf-related-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-3px);
-        }
-
-        .sf-related-card h3 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .sf-related-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* ==================== PRICING WALL ==================== */
-        .mcp-pw {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .mcp-pw h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .mcp-pw-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            font-size: 1.05rem;
-        }
-
-        .mcp-pw-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .mcp-pw-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            position: relative;
-            transition: all 0.25s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mcp-pw-card.featured {
-            border-color: var(--gold);
-            background: rgba(204, 0, 0, 0.1);
-            transform: scale(1.05);
-        }
-
-        .mcp-pw-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-        }
-
-        .mcp-pw-card.featured:hover {
-            transform: scale(1.05) translateY(-5px);
-        }
-
-        .mcp-pw-badge {
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .mcp-pw-tier {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .mcp-pw-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .mcp-pw-period {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .mcp-pw-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .mcp-pw-features {
-            list-style: none;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .mcp-pw-features li {
-            padding: 0.75rem 0;
-            padding-left: 1.75rem;
-            position: relative;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .mcp-pw-features li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .mcp-pw-cta {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 6px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.25s;
-        }
-
-        .mcp-pw-cta-primary {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: white;
-        }
-
-        .mcp-pw-cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.3);
-        }
-
-        .mcp-pw-cta-secondary {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-        }
-
-        .mcp-pw-cta-secondary:hover {
-            border-color: var(--gold);
-            background: rgba(204, 0, 0, 0.05);
-        }
-
-        /* ==================== FINAL CTA ==================== */
-        .sf-final-cta {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(204, 0, 0, 0.1), rgba(230, 57, 70, 0.1));
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .sf-final-cta h2 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .sf-final-cta p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .sf-final-cta .btn {
-            margin: 0 0.5rem;
-        }
-
-        /* ==================== STICKY BAR ==================== */
-        .sf-sticky {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--border-color);
-            padding: 1rem 0;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-            z-index: 999;
-        }
-
-        .sf-sticky.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .sf-sticky-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .sf-sticky-text {
-            font-size: 0.95rem;
-        }
-
-        .sf-sticky-text strong {
-            color: var(--gold);
-        }
-
-        .sf-sticky-cta {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        /* ==================== FOOTER ==================== */
-        footer {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 2rem 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h4 {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-        }
-
-        .footer-column a {
-            display: block;
-            padding: 0.5rem 0;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .footer-socials a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-socials a:hover {
-            color: var(--gold);
-        }
-
-        /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 1024px) {
-            .sf-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .sf-problem,
-            .sf-solution {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                gap: 1.5rem;
-            }
-
-            .mcp-pw-card.featured {
-                transform: scale(1);
-            }
-
-            .mcp-pw-card.featured:hover {
-                transform: translateY(-5px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .sf-hero h1 {
-                font-size: 2rem;
-            }
-
-            .sf-hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .sf-stats {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .header-content {
-                padding: 0 1rem;
-            }
-
-            .sf-problem h2,
-            .sf-solution h2,
-            .sf-features h2,
-            .sf-usecases h2,
-            .sf-quickstart h2,
-            .sf-faq h2,
-            .sf-related h2,
-            .mcp-pw h2,
-            .sf-final-cta h2 {
-                font-size: 1.8rem;
-            }
-
-            .sf-sticky-content {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
-
- <link rel="stylesheet" href="../components/shared.css">
-    <!--  CSGA Inner Pages Professional Enhancement -->
-    <link rel="stylesheet" href="/CSGA-inner-pages-enhancement.css">
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
-    <meta property="og:image" content="/images/CSGA-logo-social.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@CSGAGlobal">
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "CSGA - Cyber Security Global Alliance",
-      "url": "https://CSGA-global.org",
-      "logo": "https://CSGA-global.org/images/CSGA-logo.png",
-      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "Global"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/CSGA-global",
-        "https://twitter.com/CSGAGlobal"
-      ]
-    }
-    </script>
-    <!--  CSGA Professional Icon System -->
-    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
-    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
-    <link rel="stylesheet" href="/CSGA-perfect-professional-polish.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY: Hero Readability Fix -->
-    <link rel="stylesheet" href="/CSGA-hero-readability-emergency-fix.css">
-    <!-- <span class="professional-icon-text">MOBILE</span> EMERGENCY: Mobile Responsiveness Fix -->
-    <link rel="stylesheet" href="/CSGA-mobile-emergency-fix.css">
-    <!-- <span class="professional-icon-text" data-context="info">ART</span> EMERGENCY: Color Contrast Fix -->
-    <link rel="stylesheet" href="/CSGA-contrast-emergency-fix.css">
-    <!-- <span class="professional-icon-text">DOCS</span> EMERGENCY: Typography Consistency Fix -->
-    <link rel="stylesheet" href="/CSGA-typography-emergency-fix.css">
-    <!-- <span class="professional-icon-text">LAUNCH</span> CSGA 2026 Global Styles -->
-    <link rel="stylesheet" href="/CSGA-2026-global-styles.css">
-    <link rel="stylesheet" href="/CSGA-2026-components.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY FIX: Black text on blue backgrounds -->
-    <link rel="stylesheet" href="/CSGA-homepage-text-emergency-fix.css">
-    <!-- <span class="professional-icon-text">LAUNCH</span> Image Optimization -->
-    <link rel="stylesheet" href="/CSGA-image-optimization.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span><span class="professional-icon-text" data-context="info">ICON</span> Professional Icon System -->
-    <link rel="stylesheet" href="/CSGA-professional-icons.css">
-  <!-- CSGA Hero     <!-- <span class="professional-icon-text" data-context="info">GOV</span> Professional Icon Text System -->
-    <link rel="stylesheet" href="/professional-icon-text.css">
-
-        <style>
-        /* 🎨 CSGA Visual Perfection System */
-        
-        /* Typography Excellence */
-        body {
-            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-            font-optical-sizing: auto;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            line-height: 1.6;
-            color: #1e293b;
-        }
-        
-        /* Perfect Heading Hierarchy */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        
-        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-        h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
-        
-        /* Perfect Spacing System */
-        .page-header {
-            padding: 4rem 0 2rem;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            text-align: center;
-        }
-        
-        .page-title {
-            color: white !important;
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        
-        .page-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-        
-        /* Breadcrumb Excellence */
-        .breadcrumb-nav {
-            padding: 1rem 0;
-            background: rgba(248, 250, 252, 0.8);
-            backdrop-filter: blur(10px);
-        }
-        
-        .breadcrumb {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '→';
-            margin: 0 0.5rem;
-            color: #64748b;
-        }
-        
-        .breadcrumb-item a {
-            color: #3b82f6;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .breadcrumb-item a:hover {
-            color: #1e40af;
-        }
-        
-        .breadcrumb-item.active {
-            color: #64748b;
-            font-weight: 600;
-        }
-        
-        /* Skip Navigation */
-        .skip-navigation {
-            position: absolute;
-            top: -100px;
-            left: 1rem;
-            background: #1e40af;
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 0 0 0.5rem 0.5rem;
-            transition: top 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .skip-navigation:focus {
-            top: 0;
-        }
-        
-        /* Contextual CTA Excellence */
-        .contextual-cta {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            padding: 3rem 0;
-            margin: 3rem 0;
-            text-align: center;
-            border-radius: 1rem;
-            border: 1px solid rgba(59, 130, 246, 0.1);
-        }
-        
-        .cta-content h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-content p {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Perfect Button System */
-        .btn-primary {
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
-            text-decoration: none;
-            color: white;
-        }
-        
-        /* Content Excellence */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        section {
-            padding: 2rem 0;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        /* Mobile Excellence */
-        @media (max-width: 768px) {
-            .page-header {
-                padding: 2rem 0 1rem;
-            }
-            
-            .contextual-cta {
-                margin: 2rem 0;
-                padding: 2rem 1rem;
-            }
-            
-            .btn-primary {
-                display: block;
-                text-align: center;
-                margin: 0 auto;
-                max-width: 300px;
-            }
-        }
-        
-        /* Accessibility Excellence */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Focus Management */
-        :focus {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-        }
-        
-        /* Print Optimization */
-        @media print {
-            .contextual-cta, .breadcrumb-nav, .skip-navigation {
-                display: none;
-            }
-        }
-        </style>
-
-        <style>
-        /* 🏛️ CSGA Real Logo Implementation */
-        .CSGA-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .CSGA-logo {
-            height: 48px;
-            width: auto;
-            filter: brightness(1.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .CSGA-logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .CSGA-tagline {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #64748b;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        
-        /* Header Logo */
-        .header .CSGA-logo {
-            height: 40px;
-        }
-        
-        /* Footer Logo */
-        .footer .CSGA-logo {
-            height: 36px;
-            opacity: 0.8;
-        }
-        
-        /* Mobile Logo */
-        @media (max-width: 768px) {
-            .CSGA-logo-container {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-            
-            .CSGA-logo {
-                height: 36px;
-            }
-            
-            .CSGA-tagline {
-                font-size: 0.8rem;
-            }
-        }
-        </style>
-
-        <style>
-        /* 🎨 CSGA Brand Guidelines Implementation */
-        :root {
-            --csga-primary: #1e40af;
-            --csga-secondary: #3b82f6;
-            --csga-accent: #06b6d4;
-            --csga-success: #10b981;
-            --csga-warning: #f59e0b;
-            --csga-danger: #dc2626;
-            --csga-dark: #0f172a;
-            --csga-light: #f8fafc;
-        }
-        
-        /* Brand Color Application */
-        .bg-primary { background-color: var(--csga-primary); }
-        .bg-secondary { background-color: var(--csga-secondary); }
-        .text-primary { color: var(--csga-primary); }
-        .text-secondary { color: var(--csga-secondary); }
-        
-        /* Brand Typography */
-        .brand-heading {
-            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            font-weight: 700;
-        }
-        
-        /* CSGA Professional Elements */
-        .csga-card {
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 0.75rem;
-            background: white;
-            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .csga-card:hover {
-            border-color: var(--csga-secondary);
-            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        /* Navigation Brand Styling */
-        .navbar {
-            background: var(--csga-light);
-            border-bottom: 2px solid var(--csga-primary);
-        }
-        
-        .nav-link {
-            color: var(--csga-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--csga-primary);
-        }
-        
-        /* Footer Brand Styling */
-        .footer {
-            background: var(--csga-dark);
-            color: white;
-            border-top: 3px solid var(--csga-primary);
-        }
-        </style>
-</head> Mobile Fixes -->
-  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
-    <!--  CSGA Inner Pages Professional Enhancement -->
-    <link rel="stylesheet" href="/CSGA-inner-pages-enhancement.css">
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="CSGA - Cyber Security Global Alliance">
-    <meta property="og:image" content="/images/CSGA-logo-social.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@CSGAGlobal">
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "CSGA - Cyber Security Global Alliance",
-      "url": "https://CSGA-global.org",
-      "logo": "https://CSGA-global.org/images/CSGA-logo.png",
-      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "Global"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/CSGA-global",
-        "https://twitter.com/CSGAGlobal"
-      ]
-    }
-    </script>
-    <!--  CSGA Professional Icon System -->
-    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
-    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
-    <link rel="stylesheet" href="/CSGA-perfect-professional-polish.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY: Hero Readability Fix -->
-    <link rel="stylesheet" href="/CSGA-hero-readability-emergency-fix.css">
-    <!-- <span class="professional-icon-text">MOBILE</span> EMERGENCY: Mobile Responsiveness Fix -->
-    <link rel="stylesheet" href="/CSGA-mobile-emergency-fix.css">
-    <!-- <span class="professional-icon-text" data-context="info">ART</span> EMERGENCY: Color Contrast Fix -->
-    <link rel="stylesheet" href="/CSGA-contrast-emergency-fix.css">
-    <!-- <span class="professional-icon-text">DOCS</span> EMERGENCY: Typography Consistency Fix -->
-    <link rel="stylesheet" href="/CSGA-typography-emergency-fix.css">
-    <!-- <span class="professional-icon-text">LAUNCH</span> CSGA 2026 Global Styles -->
-    <link rel="stylesheet" href="/CSGA-2026-global-styles.css">
-    <link rel="stylesheet" href="/CSGA-2026-components.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY FIX: Black text on blue backgrounds -->
-    <link rel="stylesheet" href="/CSGA-homepage-text-emergency-fix.css">
-    <!-- <span class="professional-icon-text">LAUNCH</span> Image Optimization -->
-    <link rel="stylesheet" href="/CSGA-image-optimization.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span><span class="professional-icon-text" data-context="info">ICON</span> Professional Icon System -->
-    <link rel="stylesheet" href="/CSGA-professional-icons.css">
-    <!-- <span class="professional-icon-text" data-context="info">GOV</span> Professional Icon Text System -->
-    <link rel="stylesheet" href="/professional-icon-text.css">
-
-        <style>
-        /* 🎨 CSGA Visual Perfection System */
-        
-        /* Typography Excellence */
-        body {
-            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-            font-optical-sizing: auto;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            line-height: 1.6;
-            color: #1e293b;
-        }
-        
-        /* Perfect Heading Hierarchy */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        
-        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-        h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
-        
-        /* Perfect Spacing System */
-        .page-header {
-            padding: 4rem 0 2rem;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            text-align: center;
-        }
-        
-        .page-title {
-            color: white !important;
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        
-        .page-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-        
-        /* Breadcrumb Excellence */
-        .breadcrumb-nav {
-            padding: 1rem 0;
-            background: rgba(248, 250, 252, 0.8);
-            backdrop-filter: blur(10px);
-        }
-        
-        .breadcrumb {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '→';
-            margin: 0 0.5rem;
-            color: #64748b;
-        }
-        
-        .breadcrumb-item a {
-            color: #3b82f6;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .breadcrumb-item a:hover {
-            color: #1e40af;
-        }
-        
-        .breadcrumb-item.active {
-            color: #64748b;
-            font-weight: 600;
-        }
-        
-        /* Skip Navigation */
-        .skip-navigation {
-            position: absolute;
-            top: -100px;
-            left: 1rem;
-            background: #1e40af;
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 0 0 0.5rem 0.5rem;
-            transition: top 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .skip-navigation:focus {
-            top: 0;
-        }
-        
-        /* Contextual CTA Excellence */
-        .contextual-cta {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            padding: 3rem 0;
-            margin: 3rem 0;
-            text-align: center;
-            border-radius: 1rem;
-            border: 1px solid rgba(59, 130, 246, 0.1);
-        }
-        
-        .cta-content h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-content p {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Perfect Button System */
-        .btn-primary {
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
-            text-decoration: none;
-            color: white;
-        }
-        
-        /* Content Excellence */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        section {
-            padding: 2rem 0;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        /* Mobile Excellence */
-        @media (max-width: 768px) {
-            .page-header {
-                padding: 2rem 0 1rem;
-            }
-            
-            .contextual-cta {
-                margin: 2rem 0;
-                padding: 2rem 1rem;
-            }
-            
-            .btn-primary {
-                display: block;
-                text-align: center;
-                margin: 0 auto;
-                max-width: 300px;
-            }
-        }
-        
-        /* Accessibility Excellence */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Focus Management */
-        :focus {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-        }
-        
-        /* Print Optimization */
-        @media print {
-            .contextual-cta, .breadcrumb-nav, .skip-navigation {
-                display: none;
-            }
-        }
-        </style>
-
-        <style>
-        /* 🏛️ CSGA Real Logo Implementation */
-        .CSGA-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .CSGA-logo {
-            height: 48px;
-            width: auto;
-            filter: brightness(1.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .CSGA-logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .CSGA-tagline {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #64748b;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        
-        /* Header Logo */
-        .header .CSGA-logo {
-            height: 40px;
-        }
-        
-        /* Footer Logo */
-        .footer .CSGA-logo {
-            height: 36px;
-            opacity: 0.8;
-        }
-        
-        /* Mobile Logo */
-        @media (max-width: 768px) {
-            .CSGA-logo-container {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-            
-            .CSGA-logo {
-                height: 36px;
-            }
-            
-            .CSGA-tagline {
-                font-size: 0.8rem;
-            }
-        }
-        </style>
-
-        <style>
-        /* 🎨 CSGA Brand Guidelines Implementation */
-        :root {
-            --csga-primary: #1e40af;
-            --csga-secondary: #3b82f6;
-            --csga-accent: #06b6d4;
-            --csga-success: #10b981;
-            --csga-warning: #f59e0b;
-            --csga-danger: #dc2626;
-            --csga-dark: #0f172a;
-            --csga-light: #f8fafc;
-        }
-        
-        /* Brand Color Application */
-        .bg-primary { background-color: var(--csga-primary); }
-        .bg-secondary { background-color: var(--csga-secondary); }
-        .text-primary { color: var(--csga-primary); }
-        .text-secondary { color: var(--csga-secondary); }
-        
-        /* Brand Typography */
-        .brand-heading {
-            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            font-weight: 700;
-        }
-        
-        /* CSGA Professional Elements */
-        .csga-card {
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 0.75rem;
-            background: white;
-            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .csga-card:hover {
-            border-color: var(--csga-secondary);
-            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        /* Navigation Brand Styling */
-        .navbar {
-            background: var(--csga-light);
-            border-bottom: 2px solid var(--csga-primary);
-        }
-        
-        .nav-link {
-            color: var(--csga-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--csga-primary);
-        }
-        
-        /* Footer Brand Styling */
-        .footer {
-            background: var(--csga-dark);
-            color: white;
-            border-top: 3px solid var(--csga-primary);
-        }
-        </style>
+    <title>Healthcare Ai MCP | CSGA Global</title>
+    <meta name="description" content="Professional healthcare ai integration for enterprise AI governance.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Healthcare Ai MCP | CSGA Global">
+    <meta property="og:description" content="Professional healthcare ai integration for enterprise AI governance.">
+    <meta property="og:image" content="https://csga-global.vercel.app/images/mcp-healthcare-ai.jpg">
+    <meta property="og:url" content="https://csga-global.vercel.app/mcp/healthcare-ai">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://csga-global.vercel.app/mcp/healthcare-ai">
+    
+    <!-- CSGA Styles -->
+    <link rel="stylesheet" href="/css/csga-branding.css">
+    <link rel="stylesheet" href="/css/mcp-landing.css">
+    
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-<a href="#main-content" class="skip-navigation">Skip to main content</a>>
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-<div id="site-header"></div>
-
-    <!-- HEADER -->
-    <header>
-        <div class="header-content">
-            <a href="/" class="logo">
-                <div class="logo-icon"></div>
-                <span>CSGA</span>
-            </a>
-            <nav class="nav-menu" aria-label="Main navigation">
-                <div class="nav-item">
-                    <a href="#platform">Platform</a>
-                    <div class="mega-menu">
-                        <a href="#mcps">MCP Servers</a>
-                        <a href="#governance">AI Governance</a>
-                        <a href="#compliance">Compliance</a>
-                    </div>
-                </div>
-                <div class="nav-item">
-                    <a href="#solutions">Solutions</a>
-                    <div class="mega-menu">
-                        <a href="#healthcare">Healthcare</a>
-                        <a href="#finance">Financial Services</a>
-                        <a href="#enterprise">Enterprise</a>
-                    </div>
-                </div>
-                <div class="nav-item">
-                    <a href="#learn">Learn</a>
-                    <div class="mega-menu">
-                        <a href="#docs">Documentation</a>
-                        <a href="#tutorials">Tutorials</a>
-                        <a href="#blog">Blog</a>
-                    </div>
-                </div>
-            </nav>
-            <div class="btn-professional">
-                <a href="#login" class="btn-professional">Log In</a>
-                <a href="#join" class="btn-professional">Join</a>
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="/" class="nav-logo">
+                    <div class="nav-logo-icon">C</div>
+                    <span class="nav-logo-text">CSGA</span>
+                </a>
             </div>
-        </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/catalog.html" class="nav-link">MCP Catalog</a></li>
+                <li><a href="/casa-certification" class="nav-link">CASA</a></li>
+                <li><a href="/pricing" class="nav-link">Pricing</a></li>
+                <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- BREADCRUMB -->
-    <div class="breadcrumb">
-        <a href="/">Home</a> / <a href="#mcps">MCP Servers</a> / Healthcare AI Governance
-    </div>
-
-    <!-- HERO SECTION -->
-    <section class="sf-hero scroll-reveal csga-section">
-        <div class="sf-hero-icon"></div>
-        <h1 class="professional-title professional-title" class="professional-title" class="brand-heading">Healthcare AI Governance MCP</h1>
-        <div class="sf-hero-subtitle">HIPAA-compliant AI governance for healthcare systems</div>
-        <p class="professional-body">Comprehensive AI governance tooling for healthcare  covering HIPAA compliance automation, clinical AI risk assessment, patient data protection, FDA AI/ML regulatory alignment, and healthcare AI audit trails.</p>
-        <div class="sf-hero-cta">
-            <a href="#pricing" class="btn-professional">Get Started</a>
-            <a href="#docs" class="btn-professional">View Docs</a>
-        </div>
-        <div class="sf-stats">
-            <div class="sf-stat">
-                <div class="sf-stat-value">99.9%</div>
-                <div class="sf-stat-label">Compliance Rate</div>
+    <!-- MCP Hero Section -->
+    <section class="mcp-hero">
+        <div class="container">
+            <div class="mcp-hero-content">
+                <div class="mcp-breadcrumb">
+                    <a href="/catalog.html">MCP Catalog</a> 
+                    <span>/</span> 
+                    <a href="/mcp/industry-specific">Industry Specific</a>
+                    <span>/</span>
+                    <span>Healthcare Ai MCP</span>
+                </div>
+                
+                <h1 class="mcp-title">Healthcare Ai MCP</h1>
+                <p class="mcp-description">Professional healthcare ai integration for enterprise AI governance.</p>
+                
+                <div class="mcp-meta">
+                    <div class="meta-item">
+                        <strong>Category:</strong> Industry Specific
+                    </div>
+                    <div class="meta-item">
+                        <strong>Integration:</strong> API
+                    </div>
+                    <div class="meta-item">
+                        <strong>Compliance:</strong> ISO 42001
+                    </div>
+                </div>
+                
+                <div class="mcp-cta">
+                    <button class="btn btn-primary stripe-checkout" data-price-id="price_1OvKJ3SDfj2Fs">
+                        Start $99/month
+                    </button>
+                    <a href="#documentation" class="btn btn-secondary">View Documentation</a>
+                </div>
             </div>
-            <div class="sf-stat">
-                <div class="sf-stat-value">10M+</div>
-                <div class="sf-stat-label">PHI Records Checked</div>
-            </div>
-            <div class="sf-stat">
-                <div class="sf-stat-value">45min</div>
-                <div class="sf-stat-label">Audit Time Saved</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROBLEM SECTION -->
-    <section class="sf-problem scroll-reveal csga-section">
-        <div>
-            <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Healthcare AI Compliance Challenges</h2>
-            <p class="professional-body">Healthcare organizations implementing AI face unique regulatory and operational pressures:</p>
-            <ul class="sf-problem-list">
-                <li>HIPAA, FDA, and EMA compliance complexity across AI systems</li>
-                <li>Manual audits of clinical AI models are time-intensive and error-prone</li>
-                <li>Patient data privacy violations carry severe penalties</li>
-                <li>Lack of standardized governance frameworks for healthcare AI</li>
-                <li>Difficulty tracking AI model changes and regulatory alignment</li>
-            </ul>
-        </div>
-        <div class="sf-problem-icon"></div>
-    </section>
-
-    <!-- SOLUTION SECTION -->
-    <section class="sf-solution scroll-reveal csga-section">
-        <div class="sf-solution-icon"></div>
-        <div>
-            <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Automated Healthcare AI Governance</h2>
-            <p class="professional-body">The Healthcare AI Governance MCP provides automated compliance tooling designed specifically for healthcare environments:</p>
-            <ul class="sf-solution-list">
-                <li>Automated HIPAA Privacy Rule, Security Rule, and Breach Notification validation</li>
-                <li>Clinical AI risk assessment aligned with FDA and EMA guidelines</li>
-                <li>Intelligent patient data classification and de-identification</li>
-                <li>Continuous compliance monitoring and audit trail generation</li>
-                <li>Bias detection and fairness analysis for clinical models</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section class="sf-features scroll-reveal csga-section">
-        <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Healthcare AI Governance Tools</h2>
-        <p class="sf-features-subtitle" class="professional-body">Three powerful tools for comprehensive AI compliance in healthcare</p>
-        <div class="sf-features-grid">
-            <div class="card-professional">
-                <div class="feature-icon-professional">FTR</div>
-                <h3 class="professional-title professional-title" class="professional-title">HIPAA Compliance Checker</h3>
-                <p class="professional-body">Validate AI systems against HIPAA Privacy Rule, Security Rule, and Breach Notification requirements. Automatically audit data flows, encryption standards, and access controls.</p>
-                <code>hipaa_compliance_checker</code>
-            </div>
-            <div class="card-professional">
-                <div class="feature-icon-professional">FTR</div>
-                <h3 class="professional-title professional-title" class="professional-title">Clinical AI Risk Assessment</h3>
-                <p class="professional-body">Assess clinical AI/ML models for safety, bias, efficacy, and regulatory compliance (FDA, EMA). Evaluate model performance, identify disparities, and generate compliance reports.</p>
-                <code>clinical_ai_risk_assessment</code>
-            </div>
-            <div class="card-professional">
-                <div class="feature-icon-professional">FTR</div>
-                <h3 class="professional-title professional-title" class="professional-title">Patient Data Classifier</h3>
-                <p class="professional-body">Classify and tag PHI/ePHI data flows through AI systems with de-identification recommendations. Automatic detection of sensitive health information and compliance recommendations.</p>
-                <code>patient_data_classifier</code>
+            
+            <div class="mcp-hero-image">
+                <img src="/images/mcp-healthcare-ai-hero.jpg" alt="Healthcare Ai MCP" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- METRICS SECTION -->
-    <section class="sf-metrics scroll-reveal csga-section">
-        <div class="sf-metrics-grid">
-            <div class="sf-metric-item">
-                <div class="sf-metric-number">847</div>
-                <div class="sf-metric-text">Healthcare organizations using this MCP</div>
-            </div>
-            <div class="sf-metric-item">
-                <div class="sf-metric-number">3.2B</div>
-                <div class="sf-metric-text">AI compliance checks performed</div>
-            </div>
-            <div class="sf-metric-item">
-                <div class="sf-metric-number">847K</div>
-                <div class="sf-metric-text">Clinical models audited</div>
-            </div>
-            <div class="sf-metric-item">
-                <div class="sf-metric-number">99.9%</div>
-                <div class="sf-metric-text">Average compliance rate achieved</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- USE CASES SECTION -->
-    <section class="sf-usecases scroll-reveal csga-section">
-        <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Use Cases</h2>
-        <div class="sf-usecases-wrap">
-            <div class="card-professional">
-                <div class="sf-usecase-icon"></div>
-                <h3 class="professional-title professional-title" class="professional-title">Hospital Systems</h3>
-                <p class="professional-body">Health systems implementing AI for clinical decision support, patient risk prediction, and diagnostic assistance need reliable governance compliance across all deployed models.</p>
-            </div>
-            <div class="card-professional">
-                <div class="sf-usecase-icon"></div>
-                <h3 class="professional-title professional-title" class="professional-title">Pharmaceutical Companies</h3>
-                <p class="professional-body">Pharma firms using AI for drug discovery, clinical trial optimization, and regulatory submissions require FDA-aligned governance and comprehensive audit trails.</p>
-            </div>
-            <div class="card-professional">
-                <div class="sf-usecase-icon"></div>
-                <h3 class="professional-title professional-title" class="professional-title">Health Insurers</h3>
-                <p class="professional-body">Insurers deploying AI for claims processing, fraud detection, and coverage decisions must ensure HIPAA compliance and fairness across member populations.</p>
-            </div>
-            <div class="card-professional">
-                <div class="sf-usecase-icon"></div>
-                <h3 class="professional-title professional-title" class="professional-title">Telehealth Platforms</h3>
-                <p class="professional-body">Digital health providers using AI for patient triage, symptom assessment, and care recommendations need real-time HIPAA compliance monitoring and governance.</p>
+    <!-- Features Section -->
+    <section class="mcp-features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Enterprise-grade integration</h3>
+                    </div>
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Professional support</h3>
+                    </div>
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>API access</h3>
+                    </div>
+                
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Documentation included</h3>
+                    </div>
+                
             </div>
         </div>
     </section>
 
-    <!-- QUICK START SECTION -->
-    <section class="sf-quickstart scroll-reveal csga-section">
-        <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Quick Start Configuration</h2>
-        <div class="sf-code">
-            <pre class="professional-body"><span class="sf-code-comment">// claude_desktop_config.json</span>
-{
-  <span class="sf-code-key">"mcpServers"</span>: {
-    <span class="sf-code-string">"healthcare-ai"</span>: {
-      <span class="sf-code-key">"command"</span>: <span class="sf-code-string">"npx"</span>,
-      <span class="sf-code-key">"args"</span>: [
-        <span class="sf-code-string">"@csoai/healthcare-ai"</span>
-      ],
-      <span class="sf-code-key">"env"</span>: {
-        <span class="sf-code-key">"HIPAA_MODE"</span>: <span class="sf-code-string">"enabled"</span>,
-        <span class="sf-code-key">"FDA_ALIGNMENT"</span>: <span class="sf-code-string">"true"</span>
-      }
-    }
-  }
-}</pre>
-        </div>
-        <p style="text-align: center; color: var(--text-secondary); margin-top: 2rem;" class="professional-body">After configuration, restart Claude Desktop and access tools via the Healthcare AI Governance interface.</p>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="sf-faq scroll-reveal csga-section">
-        <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Frequently Asked Questions</h2>
-        <div class="sf-faq-container">
-            <div class="sf-faq-item">
-                <div class="sf-faq-question">
-                    <span>Is this MCP HIPAA compliant?</span>
-                    <div class="sf-faq-toggle"></div>
-                </div>
-                <div class="sf-faq-answer">
-                    <div class="sf-faq-answer-content">Yes. The Healthcare AI Governance MCP is built with HIPAA compliance as a foundational principle. All tools validate against HIPAA Privacy Rule, Security Rule, and Breach Notification requirements. We offer Business Associate Agreement (BAA) agreements for enterprise customers.</div>
-                </div>
+    <!-- Use Cases -->
+    <section class="mcp-use-cases">
+        <div class="container">
+            <h2>Use Cases</h2>
+            <div class="use-cases-grid">
+                
+                    <div class="use-case-card">
+                        <h3>Enterprise automation</h3>
+                        <p>Streamline enterprise automation with automated healthcare ai integration.</p>
+                    </div>
+                
+                    <div class="use-case-card">
+                        <h3>Compliance management</h3>
+                        <p>Streamline compliance management with automated healthcare ai integration.</p>
+                    </div>
+                
+                    <div class="use-case-card">
+                        <h3>System integration</h3>
+                        <p>Streamline system integration with automated healthcare ai integration.</p>
+                    </div>
+                
             </div>
-
-            <div class="sf-faq-item">
-                <div class="sf-faq-question">
-                    <span>What healthcare regulations does this cover?</span>
-                    <div class="sf-faq-toggle"></div>
-                </div>
-                <div class="sf-faq-answer">
-                    <div class="sf-faq-answer-content">The MCP covers HIPAA (US), FDA AI/ML guidance, EMA AI Act requirements, and state privacy laws (CCPA, GDPR for EU). Clinical risk assessment aligns with FDA premarket and post-market requirements for AI/ML-based software as a medical device (SaMD).</div>
-                </div>
-            </div>
-
-            <div class="sf-faq-item">
-                <div class="sf-faq-question">
-                    <span>Can I integrate this with my existing AI/ML infrastructure?</span>
-                    <div class="sf-faq-toggle"></div>
-                </div>
-                <div class="sf-faq-answer">
-                    <div class="sf-faq-answer-content">Yes. The Healthcare AI Governance MCP is designed to work with any AI system. It integrates via standard APIs and provides compliance checks without requiring modifications to your existing models or infrastructure.</div>
-                </div>
-            </div>
-
-            <div class="sf-faq-item">
-                <div class="sf-faq-question">
-                    <span>How does the bias detection work for clinical models?</span>
-                    <div class="sf-faq-toggle"></div>
-                </div>
-                <div class="sf-faq-answer">
-                    <div class="sf-faq-answer-content">The clinical_ai_risk_assessment tool performs fairness analysis across protected demographic characteristics (age, gender, race, etc.), calculates disparate impact ratios, and identifies underperforming subgroups. Reports highlight bias and recommend mitigation strategies.</div>
-                </div>
-            </div>
-
-            <div class="sf-faq-item">
-                <div class="sf-faq-question">
-                    <span>What patient data types are supported for classification?</span>
-                    <div class="sf-faq-toggle"></div>
-                </div>
-                <div class="sf-faq-answer">
-                    <div class="sf-faq-answer-content">The patient_data_classifier supports all PHI categories: identifiers, medical records, diagnoses, medications, lab results, imaging data, genetic information, and behavioral health data. It provides HIPAA Safe Harbor de-identification recommendations.</div>
-                </div>
-            </div>
-
-            <div class="sf-faq-item">
-                <div class="sf-faq-question">
-                    <span>Is there support for continuous compliance monitoring?</span>
-                    <div class="sf-faq-toggle"></div>
-                </div>
-                <div class="sf-faq-answer">
-                    <div class="sf-faq-answer-content">Yes. Professional and Enterprise tiers include continuous monitoring, automated audit trail generation, alert systems for compliance deviations, and regular compliance reporting for regulatory documentation.</div>
-                </div>
-            </section>
-
-    <!-- RELATED MCPs SECTION -->
-    <section class="sf-related scroll-reveal csga-section">
-        <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Related MCP Servers</h2>
-        <div class="sf-related-grid">
-            <a href="ai-governance.html" class="card-professional">
-                <h3 class="professional-title professional-title" class="professional-title">AI Governance MCP</h3>
-                <p class="professional-body">General-purpose AI governance for any industry with comprehensive compliance frameworks.</p>
-            </a>
-            <a href="#" class="card-professional">
-                <h3 class="professional-title professional-title" class="professional-title">Financial Compliance MCP</h3>
-                <p class="professional-body">Specialized compliance tooling for financial services and regulated financial institutions.</p>
-            </a>
-            <a href="#" class="card-professional">
-                <h3 class="professional-title professional-title" class="professional-title">Data Privacy MCP</h3>
-                <p class="professional-body">GDPR, CCPA, and international data privacy compliance across data workflows.</p>
-            </a>
         </div>
     </section>
 
-    <!-- PRICING SECTION -->
-    <section class="mcp-pw scroll-reveal csga-section" id="pricing">
-        <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Pricing Plans</h2>
-        <p class="mcp-pw-subtitle" class="professional-body">Choose the plan that fits your healthcare organization's needs</p>
-        <div class="mcp-pw-grid">
-            <div class="card-professional">
-                <div class="mcp-pw-tier">Community</div>
-                <div class="mcp-pw-price">Free</div>
-                <div class="mcp-pw-period">Forever</div>
-                <p class="mcp-pw-description" class="professional-body">Perfect for startups and small teams exploring healthcare AI governance.</p>
-                <ul class="mcp-pw-features">
-                    <li>100 compliance checks/day</li>
-                    <li>1 AI system</li>
-                    <li>Basic HIPAA validation</li>
-                    <li>Community support</li>
+    <!-- Pricing -->
+    <section class="mcp-pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="pricing-card featured">
+                <h3>Professional Plan</h3>
+                <div class="price">$99<span>/month</span></div>
+                <ul class="features-list">
+                    <li>25 MCPs included</li><li>Priority support</li><li>Advanced analytics</li><li>Custom integrations</li>
                 </ul>
-                <button class="mcp-pw-cta mcp-pw-cta-secondary">Get Started</button>
+                <button class="btn btn-primary btn-large stripe-checkout" data-price-id="price_1OvKJ3SDfj2Fs">
+                    Get Started
+                </button>
             </div>
-
-            <div class="card-professional">
-                <div class="mcp-pw-badge">Popular</div>
-                <div class="mcp-pw-tier">Professional</div>
-                <div class="mcp-pw-price">$199</div>
-                <div class="mcp-pw-period">/month</div>
-                <p class="mcp-pw-description" class="professional-body">For mid-sized healthcare organizations with multiple AI systems.</p>
-                <ul class="mcp-pw-features">
-                    <li>10K compliance checks/day</li>
-                    <li>Unlimited AI systems</li>
-                    <li>Full HIPAA + FDA validation</li>
-                    <li>Continuous monitoring</li>
-                    <li>Audit trail generation</li>
-                    <li>Email support</li>
-                </ul>
-                <button class="mcp-pw-cta mcp-pw-cta-primary">Start Free Trial</button>
-            </div>
-
-            <div class="card-professional">
-                <div class="mcp-pw-tier">Enterprise</div>
-                <div class="mcp-pw-price">$499+</div>
-                <div class="mcp-pw-period">/month</div>
-                <p class="mcp-pw-description" class="professional-body">For large healthcare systems with complex compliance requirements.</p>
-                <ul class="mcp-pw-features">
-                    <li>Unlimited checks and systems</li>
-                    <li>Custom compliance policies</li>
-                    <li>Dedicated support team</li>
-                    <li>BAA agreements</li>
-                    <li>Multi-tenant deployment</li>
-                    <li>SLA guarantees</li>
-                </ul>
-                <button class="mcp-pw-cta mcp-pw-cta-secondary">Contact Sales</button>
+            
+            <div class="pricing-note">
+                <p>Need a custom plan? <a href="/contact">Contact us</a> for enterprise pricing and custom integrations.</p>
             </div>
         </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
-    <section class="sf-final-cta scroll-reveal csga-section">
-        <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Ready to Govern Your Healthcare AI?</h2>
-        <p class="professional-body">Join hundreds of healthcare organizations ensuring compliance and safety in their AI systems.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center;">
-            <a href="#pricing" class="btn-professional">Get Started Free</a>
-            <a href="#docs" class="btn-professional">View Documentation</a>
+    <!-- Documentation -->
+    <section id="documentation" class="mcp-documentation">
+        <div class="container">
+            <h2>Documentation</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <h3>API Reference</h3>
+                    <p>Complete API documentation and endpoints.</p>
+                    <a href="/docs/api/healthcare-ai" class="doc-link">View API Docs →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>Integration Guide</h3>
+                    <p>Step-by-step integration instructions.</p>
+                    <a href="/docs/integration/healthcare-ai" class="doc-link">View Guide →</a>
+                </div>
+                <div class="doc-card">
+                    <h3>Examples</h3>
+                    <p>Code examples and use case implementations.</p>
+                    <a href="/docs/examples/healthcare-ai" class="doc-link">View Examples →</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- STICKY CTA BAR -->
-    <div class="sf-sticky" id="stickyBar">
-        <div class="sf-sticky-content">
-            <div class="sf-sticky-text">Healthcare AI Governance MCP  <strong>Try free forever</strong></div>
-            <div class="sf-sticky-cta">
-                <a href="#pricing" class="btn-professional" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Get Started</a>
+    <!-- Related MCPs -->
+    <section class="related-mcps">
+        <div class="container">
+            <h2>Related MCPs</h2>
+            <div class="related-grid">
+                <!-- Auto-populated with related MCPs from same category -->
+                <div class="related-mcp-card">
+                    <h3>Browse Industry Specific MCPs</h3>
+                    <p>Explore all MCPs in the Industry Specific category.</p>
+                    <a href="/mcp/industry-specific" class="btn btn-secondary">View Category →</a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- FOOTER -->
-    <div id="site-footer"></div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CSGA Global</h3>
+                    <p>The world's first AI governance and MCP platform.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>MCPs</h3>
+                    <ul>
+                        <li><a href="/catalog.html">Browse All MCPs</a></li>
+                        <li><a href="/mcp/ai-governance">AI Governance</a></li>
+                        <li><a href="/mcp/cybersecurity-defense">Security</a></li>
+                        <li><a href="/mcp/enterprise-integration">Enterprise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/docs">Documentation</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/support">Support Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <!-- SCROLL REVEAL SCRIPT -->
+    <!-- Stripe Integration -->
     <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-
-        // Sticky bar visibility
-        const stickyBar = document.getElementById('stickyBar');
-        const pricingSection = document.querySelector('.mcp-pw');
-
-        const stickyObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    stickyBar.classList.add('visible');
-                } else {
-                    stickyBar.classList.remove('visible');
-                }
-            });
-        }, { threshold: 0.5 });
-
-        stickyObserver.observe(pricingSection);
-
-        // FAQ Toggle
-        document.querySelectorAll('.sf-faq-item').forEach(item => {
-            item.querySelector('.sf-faq-question').addEventListener('click', () => {
-                item.classList.toggle('active');
+        const stripe = Stripe('pk_test_your_publishable_key_here'); // Replace with your Stripe key
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkoutButtons = document.querySelectorAll('.stripe-checkout');
+            
+            checkoutButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const priceId = this.dataset.priceId;
+                    
+                    stripe.redirectToCheckout({
+                        lineItems: [{
+                            price: priceId,
+                            quantity: 1
+                        }],
+                        mode: 'subscription',
+                        successUrl: window.location.origin + '/success?session_id={CHECKOUT_SESSION_ID}',
+                        cancelUrl: window.location.href
+                    }).then(function(result) {
+                        if (result.error) {
+                            alert(result.error.message);
+                        }
+                    });
+                });
             });
         });
     </script>
-<script src="../components/shared.js"></script>
-    <!--  CSGA Inner Pages Enhancement Script -->
-    <script src="/CSGA-inner-pages-enhancement.js"></script>
-  <!-- CSGA Hero </body> Mobile Fixes JS -->
-  <script src="/js/hero-mobile-fixes.js"></script>
-    <!--  CSGA Inner Pages Enhancement Script -->
-    <script src="/CSGA-inner-pages-enhancement.js"></script>
 </body>
 </html>

@@ -1,0 +1,146 @@
+/* MAIN CATALOG PAGE STYLES */
+
+.catalog-hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1e5af5 100%);
+    color: white;
+    padding: 8rem 0 6rem;
+    text-align: center;
+}
+
+.catalog-hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.catalog-hero p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.catalog-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #00d4aa;
+    line-height: 1;
+}
+
+.label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.catalog-categories {
+    padding: 8rem 0;
+    background: white;
+}
+
+.catalog-categories h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0a1628;
+    margin-bottom: 4rem;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    background: linear-gradient(135deg, #1e5af5 0%, #00d4aa 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.category-icon img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a1628;
+    margin-bottom: 1rem;
+}
+
+.category-card p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.category-card .btn {
+    background: linear-gradient(135deg, #1e5af5 0%, #00d4aa 100%);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.category-card .btn:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .catalog-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .catalog-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .category-card {
+        padding: 2rem 1.5rem;
+    }
+}

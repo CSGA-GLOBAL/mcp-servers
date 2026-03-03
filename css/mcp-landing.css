@@ -1,0 +1,341 @@
+/* MCP LANDING PAGE STYLES */
+
+.mcp-hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1e5af5 100%);
+    color: white;
+    padding: 8rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.mcp-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/hero-pattern.svg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+}
+
+.mcp-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.mcp-breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.mcp-breadcrumb a {
+    color: #00d4aa;
+    text-decoration: none;
+}
+
+.mcp-breadcrumb span {
+    margin: 0 0.5rem;
+    opacity: 0.6;
+}
+
+.mcp-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.mcp-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.mcp-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.meta-item strong {
+    color: #00d4aa;
+}
+
+.mcp-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00d4aa 0%, #1e5af5 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #0a1628;
+}
+
+.mcp-features {
+    padding: 6rem 0;
+    background: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #1e5af5 0%, #00d4aa 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0a1628;
+    margin-bottom: 1rem;
+}
+
+.mcp-use-cases {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.use-case-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.use-case-card h3 {
+    color: #0a1628;
+    margin-bottom: 1rem;
+}
+
+.mcp-pricing {
+    padding: 6rem 0;
+    background: white;
+    text-align: center;
+}
+
+.pricing-card {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.pricing-card.featured {
+    border: 2px solid #1e5af5;
+    transform: scale(1.05);
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0a1628;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1e5af5;
+    margin-bottom: 1rem;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: normal;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    color: #64748b;
+}
+
+.features-list li:before {
+    content: "✓";
+    color: #00d4aa;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.btn-large {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+}
+
+.mcp-documentation {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.doc-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.doc-card h3 {
+    color: #0a1628;
+    margin-bottom: 1rem;
+}
+
+.doc-link {
+    color: #1e5af5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.doc-link:hover {
+    color: #00d4aa;
+}
+
+.related-mcps {
+    padding: 6rem 0;
+    background: white;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.related-mcp-card {
+    padding: 2rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0a1628;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .mcp-title {
+        font-size: 2rem;
+    }
+    
+    .mcp-description {
+        font-size: 1rem;
+    }
+    
+    .mcp-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .mcp-cta {
+        flex-direction: column;
+    }
+    
+    .btn {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .features-grid,
+    .use-cases-grid,
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+}
