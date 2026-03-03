@@ -1,9 +1,18 @@
 User-agent: *
 Allow: /
+
+# Sitemaps
 Sitemap: https://csga-global.vercel.app/sitemap.xml
 
-User-agent: Googlebot
-Allow: /
+# Optimize for search engines
+Crawl-delay: 1
 
-User-agent: Bingbot
-Allow: /
+# Block sensitive areas (none currently)
+# Disallow: /admin/
+# Disallow: /api/private/
+
+# Allow important pages
+Allow: /catalog.html
+Allow: /mcp/
+Allow: /casa-certification/
+Allow: /pricing/
