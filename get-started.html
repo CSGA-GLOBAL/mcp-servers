@@ -1,6 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started - CSGA Global</title>
+<meta name="description" content="Start your CSGA Global journey. Choose your path: membership, CASA certification, COBOL Bridge, or MCP integration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/components/shared.css">
+<style>
+.gs-hero{background:linear-gradient(135deg,#003D75 0%,#0058A4 100%);color:#fff;text-align:center;padding:120px 24px 80px}
+.gs-hero h1{font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;margin:0 0 16px}
+.gs-hero p{font-size:1.15rem;opacity:.9;max-width:620px;margin:0 auto 32px}
+.gs-hero .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.gs-hero .btn-w{background:#fff;color:#0058A4;padding:14px 32px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.95rem;transition:all .2s}
+.gs-hero .btn-w:hover{background:#f0f7ff;transform:translateY(-1px)}
+.gs-hero .btn-o{border:2px solid rgba(255,255,255,.4);color:#fff;padding:12px 28px;border-radius:10px;font-weight:500;text-decoration:none;font-size:.95rem;transition:all .2s}
+.gs-hero .btn-o:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.paths-section{background:#F7F9FC;padding:80px 24px}
+.paths-wrap{max-width:1200px;margin:0 auto}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#0A1628;text-align:center;margin:0 0 12px}
+.section-sub{text-align:center;color:#64748b;margin:0 0 48px;font-size:1rem}
+.paths-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:60px}
+.path-card{background:#fff;border-radius:16px;padding:36px 32px;border:1px solid #e5e7eb;transition:all .3s;position:relative;overflow:hidden}
+.path-card:hover{border-color:#0058A4;box-shadow:0 12px 32px rgba(0,88,164,.1);transform:translateY(-3px)}
+.path-card .badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:16px}
+.badge-blue{background:rgba(0,88,164,.1);color:#0058A4}
+.badge-red{background:rgba(204,0,0,.1);color:#CC0000}
+.badge-green{background:rgba(16,185,129,.1);color:#10b981}
+.badge-purple{background:rgba(139,92,246,.1);color:#8b5cf6}
+.path-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#0A1628;margin:0 0 12px}
+.path-card p{color:#64748b;font-size:.95rem;line-height:1.7;margin:0 0 20px}
+.path-card ul{list-style:none;padding:0;margin:0 0 24px}
+.path-card ul li{padding:8px 0;color:#475569;font-size:.9rem;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f1f5f9}
+.path-card ul li:last-child{border:none}
+.check-icon{color:#10b981;font-weight:700}.path-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.9rem;transition:all .2s}
+.path-btn-blue{background:#0058A4;color:#fff}
+.path-btn-blue:hover{background:#004a8c}
+.path-btn-red{background:#CC0000;color:#fff}
+.path-btn-red:hover{background:#a80000}
+.steps-section{background:#fff;padding:80px 24px}
+.steps-wrap{max-width:900px;margin:0 auto}
+.steps-list{display:flex;flex-direction:column;gap:0;position:relative}
+.steps-list::before{content:'';position:absolute;left:24px;top:30px;bottom:30px;width:2px;background:linear-gradient(to bottom,#0058A4,#CC0000)}
+.step-item{display:flex;gap:24px;align-items:flex-start;padding:24px 0}
+.step-num{width:48px;height:48px;min-width:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;background:#0058A4;position:relative;z-index:1}
+.step-item:nth-child(2) .step-num{background:#0068c0}
+.step-item:nth-child(3) .step-num{background:#8b5cf6}
+.step-item:nth-child(4) .step-num{background:#CC0000}
+.step-content h4{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;color:#0A1628;margin:0 0 6px}
+.step-content p{color:#64748b;font-size:.9rem;line-height:1.6;margin:0}
+.faq-section{background:#F7F9FC;padding:80px 24px}
+.faq-wrap{max-width:800px;margin:0 auto}
+.faq-item{background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:12px;border:1px solid #e5e7eb}
+.faq-item h4{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#0A1628;margin:0 0 8px;cursor:pointer}
+.faq-item p{color:#64748b;font-size:.9rem;line-height:1.6;margin:0}
+.cta-bar{background:linear-gradient(135deg,#003D75,#0058A4);padding:60px 24px;text-align:center;color:#fff}
+.cta-bar h2{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;margin:0 0 12px}
+.cta-bar p{opacity:.9;margin:0 0 28px;font-size:1rem}
+.cta-bar a{background:#CC0000;color:#fff;padding:14px 36px;border-radius:10px;font-weight:600;text-decoration:none;font-size:1rem;transition:all .2s;display:inline-block}
+.cta-bar a:hover{background:#a80000;transform:translateY(-1px)}
+@media(max-width:900px){.paths-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.gs-hero h1{font-size:2rem}.gs-hero .hero-btns{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<section class="gs-hero">
+<h1>Get Started with CSGA Global</h1>
+<p>Choose your path to AI governance excellence. Whether you're seeking certification, compliance tools, or COBOL modernisation, we have a solution for you.</p>
+<div class="hero-btns">
+<a href="/pricing" class="btn-w">View Pricing</a>
+<a href="/contact" class="btn-o">Talk to Sales</a>
+</div>
+</section>
+
+<section class="paths-section">
+<div class="paths-wrap">
+<h2 class="section-title">Choose Your Path</h2>
+<p class="section-sub">Four ways to begin your CSGA Global journey</p>
+<div class="paths-grid">
+
+<div class="path-card">
+<span class="badge badge-blue">Most Popular</span>
+<h3>MCP Server Integration</h3>
+<p>Deploy production-ready Model Context Protocol servers with built-in governance, compliance monitoring, and audit trails.</p>
+<ul>
+<li><span class="check-icon">✓</span> Pre-built governance guardrails</li>
+<li><span class="check-icon">✓</span> Real-time compliance monitoring</li>
+<li><span class="check-icon">✓</span> SOC 2 / ISO 27001 aligned</li>
+<li><span class="check-icon">✓</span> Full audit trail &amp; logging</li>
+</ul>
+<a href="/pricing" class="path-btn path-btn-blue">Start Free Trial →</a>
+</div>
+
+<div class="path-card">
+<span class="badge badge-red">Certification</span>
+<h3>CASA Certification</h3>
+<p>Earn the Certified AI Safety Auditor credential. Globally recognised certification for AI governance professionals.</p>
+<ul>
+<li><span class="check-icon">✓</span> Self-paced online learning</li>
+<li><span class="check-icon">✓</span> Proctored examination</li>
+<li><span class="check-icon">✓</span> Digital badge &amp; certificate</li>
+<li><span class="check-icon">✓</span> CPD credits included</li>
+</ul>
+<a href="/casa-certification" class="path-btn path-btn-red">Learn More →</a>
+</div>
+
+<div class="path-card">
+<span class="badge badge-green">Legacy Systems</span>
+<h3>COBOL Bridge</h3>
+<p>AI-powered COBOL analysis, modernisation planning, and risk assessment for legacy mainframe systems.</p>
+<ul>
+<li><span class="check-icon">✓</span> Automated code analysis</li>
+<li><span class="check-icon">✓</span> Migration risk scoring</li>
+<li><span class="check-icon">✓</span> Modernisation roadmaps</li>
+<li><span class="check-icon">✓</span> Business logic extraction</li>
+</ul>
+<a href="/pricing" class="path-btn path-btn-blue">Explore Plans →</a>
+</div>
+
+<div class="path-card">
+<span class="badge badge-purple">Enterprise</span>
+<h3>Governance Pro Suite</h3>
+<p>Comprehensive AI governance platform with policy management, risk assessment, and regulatory compliance tools.</p>
+<ul>
+<li><span class="check-icon">✓</span> Policy lifecycle management</li>
+<li><span class="check-icon">✓</span> Automated risk assessments</li>
+<li><span class="check-icon">✓</span> EU AI Act compliance</li>
+<li><span class="check-icon">✓</span> Custom reporting dashboards</li>
+</ul>
+<a href="/contact" class="path-btn path-btn-red">Contact Sales →</a>
+</div>
+
+</div>
+</div>
+</section>
+<section class="steps-section">
+<div class="steps-wrap">
+<h2 class="section-title">How It Works</h2>
+<p class="section-sub">Get up and running in four simple steps</p>
+<div class="steps-list">
+<div class="step-item">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Choose Your Plan</h4>
+<p>Select the package that fits your organisation's needs. Start with a free trial or go straight to a paid plan for full access.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Set Up Your Environment</h4>
+<p>Follow our guided setup wizard to configure your MCP servers, connect your infrastructure, and set governance policies.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Configure Governance</h4>
+<p>Define compliance rules, risk thresholds, and audit requirements. Our templates make it easy to align with major frameworks.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Go Live</h4>
+<p>Deploy to production with confidence. Real-time monitoring and alerting keep you compliant from day one.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="faq-section">
+<div class="faq-wrap">
+<h2 class="section-title">Common Questions</h2>
+<p class="section-sub">Quick answers to get you started</p>
+<div class="faq-item">
+<h4>Do I need technical experience to get started?</h4>
+<p>Not at all. Our platform includes guided setup wizards and comprehensive documentation. For CASA certification, no coding experience is required.</p>
+</div>
+<div class="faq-item">
+<h4>How long does CASA certification take?</h4>
+<p>Most candidates complete the programme in 4–6 weeks of part-time study. The examination can be scheduled at your convenience.</p>
+</div>
+<div class="faq-item">
+<h4>Can I switch plans later?</h4>
+<p>Yes. You can upgrade or downgrade at any time. When upgrading, you only pay the difference. Downgrades take effect at your next billing cycle.</p>
+</div>
+<div class="faq-item">
+<h4>Is there a free trial?</h4>
+<p>Yes. All MCP server plans include a 14-day free trial with full access to features. No credit card required to start.</p>
+</div>
+<div class="faq-item">
+<h4>What support is included?</h4>
+<p>All plans include email support. Professional and Enterprise plans include priority support with dedicated account managers and SLA guarantees.</p>
+</div>
+</div>
+</section>
+
+<section class="cta-bar">
+<h2>Ready to Begin?</h2>
+<p>Join hundreds of organisations building responsible AI with CSGA Global.</p>
+<a href="/pricing">View Plans &amp; Pricing →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/components/shared.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get Started — CSGA Global</title>
