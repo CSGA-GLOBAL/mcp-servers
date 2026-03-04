@@ -1,1316 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Contact CSGA Global - Get in Touch</title>
- <meta name="description" content="Contact CSGA Global for AI governance consulting, CASA certification, MCP server support, defence partnerships, and membership enquiries.">
- 
- 
- <style>
-/*  Hero  */
- .cnt-hero {
- background: linear-gradient(135deg, rgba(10,22,40,0.92), rgba(0,88,164,0.88));
- color: white; padding: 100px 20px 80px; text-align: center;
- }
- .cnt-hero-badge {
- display: inline-block; background: rgba(204,0,0,0.15); border: 1px solid rgba(204,0,0,0.4);
- color: #3182ce; padding: 6px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;
- letter-spacing: 0.5px; margin-bottom: 24px;
- }
- .cnt-hero h1 {
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 3.2rem; font-weight: 700;
- margin: 0 0 20px 0;
- }
- .cnt-hero p {font-size: 1.15rem; font-weight: 300; max-width: 650px; margin: 0 auto; opacity: 0.92;}
- /*  Section shared  */
- .cnt-section {padding: 80px 20px;}
- .cnt-section.alt {background: #f8f9fb;}
- .cnt-inner {max-width: 1200px; margin: 0 auto;}
- .cnt-section-badge {
- display: inline-block; background: rgba(0,88,164,0.08); color: #0058A4;
- padding: 5px 14px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;
- text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;
- }
- .cnt-section h2 {
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 2.2rem; color: #0A1628;
- margin: 0 0 16px 0;
- }
- .cnt-section-sub {color: #555; font-size: 1.05rem; line-height: 1.6; max-width: 700px; margin-bottom: 50px;}
- /*  Contact Grid (form + sidebar)  */
- .cnt-grid {display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px;}
- .cnt-form-card {
- background: white; border-radius: 4px; padding: 40px;
- box-shadow: 0 4px 20px rgba(0,0,0,0.06);
- }
- .cnt-form-card h2 {
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 1.6rem; color: #0A1628;
- margin: 0 0 8px 0;
- }
- .cnt-form-card .cnt-form-sub {color: #666; font-size: 0.95rem; margin-bottom: 28px;}
- .cnt-form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 16px;}
- .cnt-fg {margin-bottom: 20px;}
- .cnt-fg label {
- display: block; font-weight: 600; color: #0A1628; margin-bottom: 6px; font-size: 0.88rem;
- }
- .cnt-fg input, .cnt-fg textarea, .cnt-fg select {
- width: 100%; padding: 12px 16px; border: 1px solid #ddd; border-radius: 8px;
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 0.95rem; transition: border-color 0.2s;
- box-sizing: border-box; background: #fafbfc;
- }
- .cnt-fg input:focus, .cnt-fg textarea:focus, .cnt-fg select:focus {
- outline: none; border-color: #0058A4; box-shadow: 0 0 0 3px rgba(0,88,164,0.08);
- background: white;
- }
- .cnt-fg textarea {resize: vertical; min-height: 120px;}
- .cnt-submit {
- background: #0058A4; color: white; padding: 14px 32px; border: none;
- border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%;
- font-size: 1rem; font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; transition: all 0.2s;
- }
- .cnt-submit:hover {background: #003d7a; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,88,164,0.25);}
- /*  Sidebar  */
- .cnt-sidebar {display: flex; flex-direction: column; gap: 20px;}
- .cnt-info-card {
- background: white; border-radius: 12px; padding: 28px;
- box-shadow: 0 2px 12px rgba(0,0,0,0.04); border-left: 4px solid #0058A4;
- transition: transform 0.2s;
- }
- .cnt-info-card:hover {transform: translateX(4px);}
- .cnt-info-card h3 {
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; color: #0A1628; font-size: 1.05rem;
- margin: 0 0 10px 0;
- }
- .cnt-info-card p {color: #555; font-size: 0.92rem; line-height: 1.6; margin: 0 0 6px 0;}
- .cnt-info-card a {color: #0058A4; text-decoration: none; font-weight: 600;}
- .cnt-info-card a:hover {text-decoration: underline;}
- .cnt-info-card .cnt-sub-contact {font-size: 0.84rem; color: #777; margin-top: 8px;}
- /*  Department Contacts  */
- .cnt-depts {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;}
- .cnt-dept {
- background: white; border-radius: 12px; padding: 28px;
- box-shadow: 0 2px 12px rgba(0,0,0,0.04); text-align: center;
- border-top: 3px solid #3182ce; transition: transform 0.2s;
- }
- .cnt-dept:hover {transform: translateY(-3px);}
- .cnt-dept-icon {
- width: 50px; height: 50px; border-radius: 12px; display: flex;
- align-items: center; justify-content: center; margin: 0 auto 14px;
- font-size: 1.4rem; background: rgba(0,88,164,0.08);
- }
- .cnt-dept h3 {
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 1.05rem; color: #0A1628;
- margin: 0 0 8px 0;
- }
- .cnt-dept p {color: #555; font-size: 0.88rem; line-height: 1.5; margin: 0 0 10px 0;}
- .cnt-dept a {color: #0058A4; text-decoration: none; font-weight: 600; font-size: 0.9rem;}
- .cnt-dept a:hover {text-decoration: underline;}
- /*  Global Presence  */
- .cnt-offices {display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;}
- .cnt-office {
- background: white; border-radius: 12px; padding: 28px;
- box-shadow: 0 2px 10px rgba(0,0,0,0.04);
- }
- .cnt-office-flag {font-size: 1.8rem; margin-bottom: 12px;}
- .cnt-office h3 {
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 1.05rem; color: #0A1628;
- margin: 0 0 8px 0;
- }
- .cnt-office p {color: #555; font-size: 0.88rem; line-height: 1.5; margin: 0 0 6px 0;}
- .cnt-office .cnt-office-hours {
- font-size: 0.82rem; color: #0058A4; font-weight: 600; margin-top: 10px;
- }
- /*  Response Times  */
- .cnt-response {
- display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
- }
- .cnt-resp-card {
- background: white; border-radius: 12px; padding: 28px; text-align: center;
- box-shadow: 0 2px 10px rgba(0,0,0,0.04);
- }
- .cnt-resp-time {
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 2rem; color: #0058A4;
- font-weight: 700; margin-bottom: 8px;
- }
- .cnt-resp-card h3 {
- font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 1rem; color: #0A1628;
- margin: 0 0 6px 0;
- }
- .cnt-resp-card p {color: #555; font-size: 0.88rem; line-height: 1.5; margin: 0;}
- /*  FAQ  */
- .cnt-faq {max-width: 800px; margin: 0 auto;}
- .cnt-faq-item {
- background: white; border-radius: 12px; margin-bottom: 12px;
- box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;
- }
- .cnt-faq-q {
- padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between;
- align-items: center; font-weight: 600; color: #0A1628; font-size: 0.95rem;
- transition: background 0.2s;
- }
- .cnt-faq-q:hover {background: #f8f9fb;}
- .cnt-faq-q::after {content: "+"; font-size: 1.3rem; color: #0058A4; font-weight: 700; transition: transform 0.2s;}
- .cnt-faq-item.open .cnt-faq-q::after {content: "&#8722;";}
- .cnt-faq-a {
- max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
- }
- .cnt-faq-item.open .cnt-faq-a {max-height: 300px;}
- .cnt-faq-a-inner {padding: 0 24px 20px; color: #555; font-size: 0.92rem; line-height: 1.65;}
- /*  Social  */
- .cnt-social {
- display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
- }
- .cnt-social-link {
- display: inline-flex; align-items: center; gap: 10px;
- background: white; color: #0A1628; padding: 12px 24px; border-radius: 8px;
- text-decoration: none; font-weight: 600; font-size: 0.9rem;
- box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.2s;
- }
- .cnt-social-link:hover {transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.1);}
- .cnt-social-icon {font-size: 1.2rem;}
- /*  CTA  */
- .cnt-cta {
- background: linear-gradient(135deg, #0A1628, #0058A4);
- color: white; padding: 80px 20px; text-align: center;
- }
- .cnt-cta h2 {font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 2.2rem; margin: 0 0 16px 0;}
- .cnt-cta p {font-size: 1.05rem; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9;}
- .cnt-cta-btns {display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;}
- .cnt-cta-btn {
- display: inline-block; background: #3182ce; color: #0A1628;
- padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700;
- }
- .cnt-cta-btn:hover {background: #e5bd68;}
- .cnt-cta-btn.outline {background: transparent; border: 2px solid rgba(255,255,255,0.4); color: white;}
- .cnt-cta-btn.outline:hover {border-color: white; background: rgba(255,255,255,0.08);}
- /*  Responsive  */
- @media (max-width: 900px) {
- .cnt-hero h1 {font-size: 2.4rem;}
- .cnt-grid {grid-template-columns: 1fr;}
- .cnt-form-row {grid-template-columns: 1fr;}
- }
- @media (max-width: 600px) {
- .cnt-hero h1 {font-size: 1.9rem;}
- }
-</style>
- <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
- <link rel="canonical" href="https://CSGA-global.vercel.app/contact">
- <link rel="icon" type="image/svg+xml" href="/favicon.svg">
- <meta property="og:type" content="website">
- <meta property="og:title" content="Contact CSGA Global - Get in Touch">
- <meta property="og:description" content="Contact CSGA Global for AI governance consulting, CASA certification, MCP server support, defence partnerships, and membership enquiries.">
- <meta property="og:url" content="https://CSGA-global.vercel.app/contact">
- <meta property="og:image" content="https://CSGA-global.vercel.app/og-image.png">
- <meta property="og:site_name" content="CSGA Global">
- <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:title" content="Contact CSGA Global - Get in Touch">
- <meta name="twitter:description" content="Contact CSGA Global for AI governance consulting, CASA certification, MCP server support, defence partnerships, and membership enquiries.">
- <meta name="twitter:image" content="https://CSGA-global.vercel.app/og-image.png">
- <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Contact CSGA Global - Get in Touch","description":"Contact CSGA Global for AI governance consulting, CASA certification, MCP server support, defence partnerships, and membership enquiries.","url":"https://CSGA-global.vercel.app/contact","isPartOf":{"@type":"WebSite","name":"CSGA Global","url":"https://CSGA-global.vercel.app"},"publisher":{"@type":"Organization","name":"CSGA Global"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero-title",".page-intro"]}}</script>
-<link rel="stylesheet" href="./components/shared.css">
-    <!--  CSGA Inner Pages Professional Enhancement -->
-    <link rel="stylesheet" href="/CSGA-inner-pages-enhancement.css">
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "CSGA - Cyber Security Global Alliance",
-      "url": "https://CSGA-global.org",
-      "logo": "https://CSGA-global.org/images/CSGA-logo.png",
-      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "Global"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/CSGA-global",
-        "https://twitter.com/CSGAGlobal"
-      ]
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — CSGA Global</title>
+  <meta name="description" content="Get in touch with CSGA Global. Sales enquiries, support, partnership opportunities, and enterprise consultations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+
+    /* FIXED NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1050; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); height: 72px; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-logo span { background: linear-gradient(135deg, #3182ce, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
+    .nav-cta:hover { opacity: 0.9; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #e2e8f0; margin: 5px 0; transition: 0.3s; }
+
+    .page-content { padding-top: 72px; }
+
+    /* HERO */
+    .hero { padding: 80px 24px 60px; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(49,130,206,0.15) 0%, transparent 60%); }
+    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+
+    /* LAYOUT */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 60px 24px 80px; }
+
+    /* FORM */
+    .form-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 36px; }
+    .form-card h2 { font-size: 1.5rem; margin-bottom: 24px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: #94a3b8; margin-bottom: 6px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: #3182ce; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+    .form-group select option { background: #1e293b; color: #e2e8f0; }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .submit-btn { width: 100%; padding: 14px; border: none; border-radius: 8px; background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
+    .submit-btn:hover { opacity: 0.9; }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .form-success { display: none; text-align: center; padding: 40px 20px; }
+    .form-success h3 { font-size: 1.3rem; margin-bottom: 8px; color: #10b981; }
+    .form-success p { color: #94a3b8; }
+
+    /* INFO SIDEBAR */
+    .info-side h2 { font-size: 1.5rem; margin-bottom: 24px; }
+    .info-block { margin-bottom: 32px; }
+    .info-block h4 { font-size: 1rem; margin-bottom: 8px; color: #e2e8f0; }
+    .info-block p { color: #94a3b8; font-size: 0.9rem; }
+    .info-block a { color: #3182ce; text-decoration: none; }
+    .info-block a:hover { text-decoration: underline; }
+
+    .quick-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
+    .ql-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-decoration: none; color: #e2e8f0; transition: border-color 0.3s; }
+    .ql-card:hover { border-color: rgba(49,130,206,0.4); }
+    .ql-card .ql-icon { font-size: 1.4rem; margin-bottom: 8px; }
+    .ql-card h4 { font-size: 0.9rem; margin-bottom: 4px; }
+    .ql-card p { color: #64748b; font-size: 0.8rem; }
+
+    /* FOOTER */
+    .footer { background: #020617; border-top: 1px solid rgba(255,255,255,0.06); padding: 60px 24px 32px; }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand p { color: #64748b; font-size: 0.9rem; margin-top: 12px; line-height: 1.6; }
+    .footer h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 16px; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 8px; }
+    .footer ul a { color: #64748b; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer ul a:hover { color: #e2e8f0; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { color: #475569; font-size: 0.85rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(15,23,42,0.98); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .nav-links.active { display: flex; }
+      .hamburger { display: block; }
+      .hero h1 { font-size: 2rem; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .quick-links { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
-    </script>
-    <!--  CSGA Professional Icon System -->
-    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
-    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
-    <link rel="stylesheet" href="/CSGA-perfect-professional-polish.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY: Hero Readability Fix -->
-    <link rel="stylesheet" href="/CSGA-hero-readability-emergency-fix.css">
-    <!-- <span class="professional-icon-text">MOBILE</span> EMERGENCY: Mobile Responsiveness Fix -->
-    <link rel="stylesheet" href="/CSGA-mobile-emergency-fix.css">
-    <!-- <span class="professional-icon-text" data-context="info">ART</span> EMERGENCY: Color Contrast Fix -->
-    <link rel="stylesheet" href="/CSGA-contrast-emergency-fix.css">
-    <!-- <span class="professional-icon-text">DOCS</span> EMERGENCY: Typography Consistency Fix -->
-    <link rel="stylesheet" href="/CSGA-typography-emergency-fix.css">
-    <!-- <span class="professional-icon-text">LAUNCH</span> CSGA 2026 Global Styles -->
-    <link rel="stylesheet" href="/CSGA-2026-global-styles.css">
-    <link rel="stylesheet" href="/CSGA-2026-components.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY FIX: Black text on blue backgrounds -->
-    <link rel="stylesheet" href="/CSGA-homepage-text-emergency-fix.css">
-    <!-- <span class="professional-icon-text">LAUNCH</span> Image Optimization -->
-    <link rel="stylesheet" href="/CSGA-image-optimization.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span><span class="professional-icon-text" data-context="info">ICON</span> Professional Icon System -->
-    <link rel="stylesheet" href="/CSGA-professional-icons.css">
-  <!-- CSGA Hero     <!-- <span class="professional-icon-text" data-context="info">GOV</span> Professional Icon Text System -->
-    <link rel="stylesheet" href="/professional-icon-text.css">
-
-        <style>
-        /* 🎨 CSGA Visual Perfection System */
-        
-        /* Typography Excellence */
-        body {
-            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-            font-optical-sizing: auto;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            line-height: 1.6;
-            color: #1e293b;
-        }
-        
-        /* Perfect Heading Hierarchy */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        
-        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-        h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
-        
-        /* Perfect Spacing System */
-        .page-header {
-            padding: 4rem 0 2rem;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            text-align: center;
-        }
-        
-        .page-title {
-            color: white !important;
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        
-        .page-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-        
-        /* Breadcrumb Excellence */
-        .breadcrumb-nav {
-            padding: 1rem 0;
-            background: rgba(248, 250, 252, 0.8);
-            backdrop-filter: blur(10px);
-        }
-        
-        .breadcrumb {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '→';
-            margin: 0 0.5rem;
-            color: #64748b;
-        }
-        
-        .breadcrumb-item a {
-            color: #3b82f6;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .breadcrumb-item a:hover {
-            color: #1e40af;
-        }
-        
-        .breadcrumb-item.active {
-            color: #64748b;
-            font-weight: 600;
-        }
-        
-        /* Skip Navigation */
-        .skip-navigation {
-            position: absolute;
-            top: -100px;
-            left: 1rem;
-            background: #1e40af;
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 0 0 0.5rem 0.5rem;
-            transition: top 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .skip-navigation:focus {
-            top: 0;
-        }
-        
-        /* Contextual CTA Excellence */
-        .contextual-cta {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            padding: 3rem 0;
-            margin: 3rem 0;
-            text-align: center;
-            border-radius: 1rem;
-            border: 1px solid rgba(59, 130, 246, 0.1);
-        }
-        
-        .cta-content h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-content p {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Perfect Button System */
-        .btn-primary {
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
-            text-decoration: none;
-            color: white;
-        }
-        
-        /* Content Excellence */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        section {
-            padding: 2rem 0;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        /* Mobile Excellence */
-        @media (max-width: 768px) {
-            .page-header {
-                padding: 2rem 0 1rem;
-            }
-            
-            .contextual-cta {
-                margin: 2rem 0;
-                padding: 2rem 1rem;
-            }
-            
-            .btn-primary {
-                display: block;
-                text-align: center;
-                margin: 0 auto;
-                max-width: 300px;
-            }
-        }
-        
-        /* Accessibility Excellence */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Focus Management */
-        :focus {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-        }
-        
-        /* Print Optimization */
-        @media print {
-            .contextual-cta, .breadcrumb-nav, .skip-navigation {
-                display: none;
-            }
-        }
-        </style>
-
-        <style>
-        /* 🏛️ CSGA Real Logo Implementation */
-        .CSGA-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .CSGA-logo {
-            height: 48px;
-            width: auto;
-            filter: brightness(1.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .CSGA-logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .CSGA-tagline {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #64748b;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        
-        /* Header Logo */
-        .header .CSGA-logo {
-            height: 40px;
-        }
-        
-        /* Footer Logo */
-        .footer .CSGA-logo {
-            height: 36px;
-            opacity: 0.8;
-        }
-        
-        /* Mobile Logo */
-        @media (max-width: 768px) {
-            .CSGA-logo-container {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-            
-            .CSGA-logo {
-                height: 36px;
-            }
-            
-            .CSGA-tagline {
-                font-size: 0.8rem;
-            }
-        }
-        </style>
-
-        <style>
-        /* 🎨 CSGA Brand Guidelines Implementation */
-        :root {
-            --csga-primary: #1e40af;
-            --csga-secondary: #3b82f6;
-            --csga-accent: #06b6d4;
-            --csga-success: #10b981;
-            --csga-warning: #f59e0b;
-            --csga-danger: #dc2626;
-            --csga-dark: #0f172a;
-            --csga-light: #f8fafc;
-        }
-        
-        /* Brand Color Application */
-        .bg-primary { background-color: var(--csga-primary); }
-        .bg-secondary { background-color: var(--csga-secondary); }
-        .text-primary { color: var(--csga-primary); }
-        .text-secondary { color: var(--csga-secondary); }
-        
-        /* Brand Typography */
-        .brand-heading {
-            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            font-weight: 700;
-        }
-        
-        /* CSGA Professional Elements */
-        .csga-card {
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 0.75rem;
-            background: white;
-            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .csga-card:hover {
-            border-color: var(--csga-secondary);
-            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        /* Navigation Brand Styling */
-        .navbar {
-            background: var(--csga-light);
-            border-bottom: 2px solid var(--csga-primary);
-        }
-        
-        .nav-link {
-            color: var(--csga-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--csga-primary);
-        }
-        
-        /* Footer Brand Styling */
-        .footer {
-            background: var(--csga-dark);
-            color: white;
-            border-top: 3px solid var(--csga-primary);
-        }
-        </style>
-    <link rel="stylesheet" href="/css/mobile-advanced.css">
-</head> Mobile Fixes -->
-  <link rel="stylesheet" href="/css/hero-mobile-fixes.css">
-    <!--  CSGA Inner Pages Professional Enhancement -->
-    <link rel="stylesheet" href="/CSGA-inner-pages-enhancement.css">
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "CSGA - Cyber Security Global Alliance",
-      "url": "https://CSGA-global.org",
-      "logo": "https://CSGA-global.org/images/CSGA-logo.png",
-      "description": "Global leadership in cybersecurity resilience and trusted AI governance",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "Global"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/CSGA-global",
-        "https://twitter.com/CSGAGlobal"
-      ]
-    }
-    </script>
-    <!--  CSGA Professional Icon System -->
-    <link rel="stylesheet" href="/professional-icon-polish-complete.css">
-    <!-- <div class="professional-icon professional-icon--lg icon-shield"></div> CSGA Perfect Professional Polish -->
-    <link rel="stylesheet" href="/CSGA-perfect-professional-polish.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY: Hero Readability Fix -->
-    <link rel="stylesheet" href="/CSGA-hero-readability-emergency-fix.css">
-    <!-- <span class="professional-icon-text">MOBILE</span> EMERGENCY: Mobile Responsiveness Fix -->
-    <link rel="stylesheet" href="/CSGA-mobile-emergency-fix.css">
-    <!-- <span class="professional-icon-text" data-context="info">ART</span> EMERGENCY: Color Contrast Fix -->
-    <link rel="stylesheet" href="/CSGA-contrast-emergency-fix.css">
-    <!-- <span class="professional-icon-text">DOCS</span> EMERGENCY: Typography Consistency Fix -->
-    <link rel="stylesheet" href="/CSGA-typography-emergency-fix.css">
-    <!-- <span class="professional-icon-text">LAUNCH</span> CSGA 2026 Global Styles -->
-    <link rel="stylesheet" href="/CSGA-2026-global-styles.css">
-    <link rel="stylesheet" href="/CSGA-2026-components.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> EMERGENCY FIX: Black text on blue backgrounds -->
-    <link rel="stylesheet" href="/CSGA-homepage-text-emergency-fix.css">
-    <!-- <span class="professional-icon-text">LAUNCH</span> Image Optimization -->
-    <link rel="stylesheet" href="/CSGA-image-optimization.css">
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span><span class="professional-icon-text" data-context="info">ICON</span> Professional Icon System -->
-    <link rel="stylesheet" href="/CSGA-professional-icons.css">
-    <!-- <span class="professional-icon-text" data-context="info">GOV</span> Professional Icon Text System -->
-    <link rel="stylesheet" href="/professional-icon-text.css">
-
-        <style>
-        /* 🎨 CSGA Visual Perfection System */
-        
-        /* Typography Excellence */
-        body {
-            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-            font-optical-sizing: auto;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            line-height: 1.6;
-            color: #1e293b;
-        }
-        
-        /* Perfect Heading Hierarchy */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        
-        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-        h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
-        
-        /* Perfect Spacing System */
-        .page-header {
-            padding: 4rem 0 2rem;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            text-align: center;
-        }
-        
-        .page-title {
-            color: white !important;
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        
-        .page-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-        
-        /* Breadcrumb Excellence */
-        .breadcrumb-nav {
-            padding: 1rem 0;
-            background: rgba(248, 250, 252, 0.8);
-            backdrop-filter: blur(10px);
-        }
-        
-        .breadcrumb {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '→';
-            margin: 0 0.5rem;
-            color: #64748b;
-        }
-        
-        .breadcrumb-item a {
-            color: #3b82f6;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .breadcrumb-item a:hover {
-            color: #1e40af;
-        }
-        
-        .breadcrumb-item.active {
-            color: #64748b;
-            font-weight: 600;
-        }
-        
-        /* Skip Navigation */
-        .skip-navigation {
-            position: absolute;
-            top: -100px;
-            left: 1rem;
-            background: #1e40af;
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 0 0 0.5rem 0.5rem;
-            transition: top 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .skip-navigation:focus {
-            top: 0;
-        }
-        
-        /* Contextual CTA Excellence */
-        .contextual-cta {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            padding: 3rem 0;
-            margin: 3rem 0;
-            text-align: center;
-            border-radius: 1rem;
-            border: 1px solid rgba(59, 130, 246, 0.1);
-        }
-        
-        .cta-content h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-content p {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Perfect Button System */
-        .btn-primary {
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
-            text-decoration: none;
-            color: white;
-        }
-        
-        /* Content Excellence */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        section {
-            padding: 2rem 0;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        /* Mobile Excellence */
-        @media (max-width: 768px) {
-            .page-header {
-                padding: 2rem 0 1rem;
-            }
-            
-            .contextual-cta {
-                margin: 2rem 0;
-                padding: 2rem 1rem;
-            }
-            
-            .btn-primary {
-                display: block;
-                text-align: center;
-                margin: 0 auto;
-                max-width: 300px;
-            }
-        }
-        
-        /* Accessibility Excellence */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Focus Management */
-        :focus {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-        }
-        
-        /* Print Optimization */
-        @media print {
-            .contextual-cta, .breadcrumb-nav, .skip-navigation {
-                display: none;
-            }
-        }
-        </style>
-
-        <style>
-        /* 🏛️ CSGA Real Logo Implementation */
-        .CSGA-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .CSGA-logo {
-            height: 48px;
-            width: auto;
-            filter: brightness(1.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .CSGA-logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .CSGA-tagline {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #64748b;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        
-        /* Header Logo */
-        .header .CSGA-logo {
-            height: 40px;
-        }
-        
-        /* Footer Logo */
-        .footer .CSGA-logo {
-            height: 36px;
-            opacity: 0.8;
-        }
-        
-        /* Mobile Logo */
-        @media (max-width: 768px) {
-            .CSGA-logo-container {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-            
-            .CSGA-logo {
-                height: 36px;
-            }
-            
-            .CSGA-tagline {
-                font-size: 0.8rem;
-            }
-        }
-        </style>
-
-        <style>
-        /* 🎨 CSGA Brand Guidelines Implementation */
-        :root {
-            --csga-primary: #1e40af;
-            --csga-secondary: #3b82f6;
-            --csga-accent: #06b6d4;
-            --csga-success: #10b981;
-            --csga-warning: #f59e0b;
-            --csga-danger: #dc2626;
-            --csga-dark: #0f172a;
-            --csga-light: #f8fafc;
-        }
-        
-        /* Brand Color Application */
-        .bg-primary { background-color: var(--csga-primary); }
-        .bg-secondary { background-color: var(--csga-secondary); }
-        .text-primary { color: var(--csga-primary); }
-        .text-secondary { color: var(--csga-secondary); }
-        
-        /* Brand Typography */
-        .brand-heading {
-            background: linear-gradient(135deg, var(--csga-primary), var(--csga-secondary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            font-weight: 700;
-        }
-        
-        /* CSGA Professional Elements */
-        .csga-card {
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 0.75rem;
-            background: white;
-            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .csga-card:hover {
-            border-color: var(--csga-secondary);
-            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        /* Navigation Brand Styling */
-        .navbar {
-            background: var(--csga-light);
-            border-bottom: 2px solid var(--csga-primary);
-        }
-        
-        .nav-link {
-            color: var(--csga-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--csga-primary);
-        }
-        
-        /* Footer Brand Styling */
-        .footer {
-            background: var(--csga-dark);
-            color: white;
-            border-top: 3px solid var(--csga-primary);
-        }
-        </style>
-    <link rel="stylesheet" href="/css/mobile-advanced.css">
+  </style>
 </head>
 <body>
-<a href="#main-content" class="skip-navigation">Skip to main content</a>>
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-<div id="site-header"></div>
 
-<section class="cnt-hero csga-section">
- <div class="cnt-hero-badge">We Are Here to Help</div>
- <h1 class="professional-title professional-title" class="professional-title" class="brand-heading">Get in Touch</h1>
- <p class="professional-body">Whether you have questions about AI governance, need partnership information, or want to explore membership options, our team is ready to assist.</p>
- <div class="cnt-hero-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
-  <a href="#cnt-form-card" class="btn-professional" style="display: inline-flex; align-items: center; gap: 8px; background: #3182ce; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.25s ease; box-shadow: 0 4px 20px rgba(204, 0, 0, 0.3);"> Send Message Now</a>
-  <a href="#locations" class="btn-professional" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.25s ease; backdrop-filter: blur(10px);"> Our Offices</a>
- </div>
-</section>
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">CSGA <span>Global</span></a>
+      <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/mcp/">MCP Catalog</a></li>
+        <li><a href="/casa-certification">CASA</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/get-started" class="nav-cta">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<section class="cnt-section csga-section">
- <div class="cnt-inner">
- <div class="cnt-grid">
- <div class="card-professional">
- <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Send Us a Message</h2>
- <p class="cnt-form-sub" class="professional-body">Fill out the form below and we will get back to you within one business day.</p>
- <form onsubmit="event.preventDefault(); this.querySelector('.cnt-submit').textContent='Message Sent!'; this.querySelector('.cnt-submit').style.background='#28a745'; setTimeout(function(){ alert('Thank you for your message. Our team will respond within 24 hours.'); }, 300);">
- <div class="cnt-form-row">
- <div class="cnt-fg">
- <label for="cnt-fname">First Name *</label>
- <input type="text" id="cnt-fname" name="fname" required placeholder="John">
- </div>
- <div class="cnt-fg">
- <label for="cnt-lname">Last Name *</label>
- <input type="text" id="cnt-lname" name="lname" required placeholder="Smith">
- </div>
- </div>
- <div class="cnt-form-row">
- <div class="cnt-fg">
- <label for="cnt-email">Email Address *</label>
- <input type="email" id="cnt-email" name="email" required placeholder="john@company.com">
- </div>
- <div class="cnt-fg">
- <label for="cnt-org">Organisation</label>
- <input type="text" id="cnt-org" name="org" placeholder="Company name">
- </div>
- </div>
- <div class="cnt-fg">
- <label for="cnt-dept">Department / Enquiry Type *</label>
- <select id="cnt-dept" name="dept" required>
- <option value="">Select a department...</option>
- <option value="general">General Enquiry</option>
- <option value="membership">Membership &amp; Pricing</option>
- <option value="certification">CASA Certification</option>
- <option value="education">Education &amp; Training</option>
- <option value="defence">Defence &amp; Government</option>
- <option value="enterprise">Enterprise Solutions</option>
- <option value="research">Research &amp; Publications</option>
- <option value="events">Events &amp; Speaking</option>
- <option value="media">Media &amp; Press</option>
- <option value="careers">Careers</option>
- </select>
- </div>
- <div class="cnt-fg">
- <label for="cnt-subject">Subject *</label>
- <input type="text" id="cnt-subject" name="subject" required placeholder="How can we help?">
- </div>
- <div class="cnt-fg">
- <label for="cnt-message">Message *</label>
- <textarea id="cnt-message" name="message" required placeholder="Tell us about your needs..."></textarea>
- </div>
- <button type="submit" class="cnt-submit">Send Message</button>
- </form>
- </div>
- <div class="cnt-sidebar">
- <div class="card-professional">
- <h3 class="professional-title professional-title" class="professional-title">&#9993; General Enquiries</h3>
- <p class="professional-body"><a href="mailto:hello@csgaglobal.com">hello@csgaglobal.com</a></p>
- <div class="cnt-sub-contact">For general questions about CSGA and our services</div>
- </div>
- <div class="card-professional">
- <h3 class="professional-title professional-title" class="professional-title"><div class="dept-icon-professional">ENT</div> Enterprise &amp; Sales</h3>
- <p class="professional-body"><a href="mailto:sales@csgaglobal.com">sales@csgaglobal.com</a></p>
- <div class="cnt-sub-contact">For enterprise licensing, custom training, and bulk pricing</div>
- </div>
- <div class="card-professional">
- <h3 class="professional-title professional-title" class="professional-title"><div class="dept-icon-professional">SUP</div> Technical Support</h3>
- <p class="professional-body"><a href="mailto:support@csgaglobal.com">support@csgaglobal.com</a></p>
- <div class="cnt-sub-contact">MCP server support and platform assistance</div>
- </div>
- <div class="card-professional">
- <h3 class="professional-title professional-title" class="professional-title"><div class="dept-icon-professional">DEF</div> Defence &amp; Government</h3>
- <p class="professional-body"><a href="mailto:defence@csgaglobal.com">defence@csgaglobal.com</a></p>
- <div class="cnt-sub-contact">Five Eyes partnerships and classified programmes</div>
- </div>
- <div class="card-professional">
- <h3 class="professional-title professional-title" class="professional-title"><div class="dept-icon-professional">MED</div> Media &amp; Press</h3>
- <p class="professional-body"><a href="mailto:media@csgaglobal.com">media@csgaglobal.com</a></p>
- <div class="cnt-sub-contact">Press enquiries, interviews, and media kits</div>
- </div>
- </div>
- </div>
- </div>
-</section>
+  <div class="page-content">
 
-<section class="cnt-section alt csga-section">
- <div class="cnt-inner">
- <div style="text-align: center;">
- <div class="cnt-section-badge">Departments</div>
- <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Reach the Right Team</h2>
- <p class="cnt-section-sub" style="text-align: center; margin-left: auto; margin-right: auto;" class="professional-body">Each department has a dedicated team ready to help with your specific needs.</p>
- </div>
- <div class="cnt-depts">
- <div class="cnt-dept">
- <div class="cnt-dept-icon"><div class="dept-icon-professional">EDU</div></div>
- <h3 class="professional-title professional-title" class="professional-title">Education &amp; Training</h3>
- <p class="professional-body">MOOCs, workshops, CASA certification preparation, and professional development programmes.</p>
- <a href="mailto:education@csgaglobal.com">education@csgaglobal.com</a>
- </div>
- <div class="cnt-dept">
- <div class="cnt-dept-icon"><div class="dept-icon-professional">RES</div></div>
- <h3 class="professional-title professional-title" class="professional-title">Research &amp; Standards</h3>
- <p class="professional-body">CSOAI framework development, research collaboration, academic partnerships, and publications.</p>
- <a href="mailto:research@csgaglobal.com">research@csgaglobal.com</a>
- </div>
- <div class="cnt-dept">
- <div class="cnt-dept-icon"><div class="dept-icon-professional">MBR</div></div>
- <h3 class="professional-title professional-title" class="professional-title">Membership Services</h3>
- <p class="professional-body">Account management, tier upgrades, community access, and member benefits enquiries.</p>
- <a href="mailto:members@csgaglobal.com">members@csgaglobal.com</a>
- </div>
- <div class="cnt-dept">
- <div class="cnt-dept-icon"><div class="dept-icon-professional">VET</div></div>
- <h3 class="professional-title professional-title" class="professional-title">Veterans Programme</h3>
- <p class="professional-body">Military transition support, veteran-specific scholarships, and defence career pathways.</p>
- <a href="mailto:veterans@csgaglobal.com">veterans@csgaglobal.com</a>
- </div>
- <div class="cnt-dept">
- <div class="cnt-dept-icon"><div class="dept-icon-professional">MCP</div></div>
- <h3 class="professional-title professional-title" class="professional-title">MCP Server Platform</h3>
- <p class="professional-body">Technical implementation, server deployment, API access, and integration support.</p>
- <a href="mailto:mcp@csgaglobal.com">mcp@csgaglobal.com</a>
- </div>
- <div class="cnt-dept">
- <div class="cnt-dept-icon"><div class="dept-icon-professional">EVT</div></div>
- <h3 class="professional-title professional-title" class="professional-title">Events &amp; Partnerships</h3>
- <p class="professional-body">CSOAI Summit, speaking opportunities, sponsorships, and partner programme applications.</p>
- <a href="mailto:events@csgaglobal.com">events@csgaglobal.com</a>
- </div>
- </div>
- </div>
-</section>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Contact Us</h1>
+      <p>Sales enquiries, technical support, partnership opportunities, or enterprise consultations — we're here to help.</p>
+    </section>
 
-<section class="cnt-section csga-section">
- <div class="cnt-inner">
- <div class="cnt-section-badge">Global Presence</div>
- <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Our Offices</h2>
- <p class="cnt-section-sub" class="professional-body">CSGA operates across the Five Eyes nations with regional offices providing local support and engagement.</p>
- <div class="cnt-offices">
- <div class="cnt-office">
- <div class="cnt-office-flag">&#127462;&#127482;</div>
- <h3 class="professional-title professional-title" class="professional-title">Sydney, Australia</h3>
- <p class="professional-body">Global Headquarters</p>
- <p class="professional-body">Level 10, 123 Technology Drive<br>Sydney, NSW 2000</p>
- <div class="cnt-office-hours">Mon&#8211;Fri 9:00 AM &#8211; 5:00 PM AEDT</div>
- </div>
- <div class="cnt-office">
- <div class="cnt-office-flag">&#127468;&#127463;</div>
- <h3 class="professional-title professional-title" class="professional-title">London, United Kingdom</h3>
- <p class="professional-body">European Operations</p>
- <p class="professional-body">30 Finsbury Square<br>London, EC2A 1AG</p>
- <div class="cnt-office-hours">Mon&#8211;Fri 9:00 AM &#8211; 5:00 PM GMT</div>
- </div>
- <div class="cnt-office">
- <div class="cnt-office-flag">&#127482;&#127480;</div>
- <h3 class="professional-title professional-title" class="professional-title">Washington DC, USA</h3>
- <p class="professional-body">Defence &amp; Government Relations</p>
- <p class="professional-body">1200 18th Street NW<br>Washington, DC 20036</p>
- <div class="cnt-office-hours">Mon&#8211;Fri 9:00 AM &#8211; 5:00 PM EST</div>
- </div>
- <div class="cnt-office">
- <div class="cnt-office-flag">&#127464;&#127462;</div>
- <h3 class="professional-title professional-title" class="professional-title">Toronto, Canada</h3>
- <p class="professional-body">North American Operations</p>
- <p class="professional-body">100 King Street West<br>Toronto, ON M5X 1A9</p>
- <div class="cnt-office-hours">Mon&#8211;Fri 9:00 AM &#8211; 5:00 PM EST</div>
- </div>
- <div class="cnt-office">
- <div class="cnt-office-flag">&#127475;&#127487;</div>
- <h3 class="professional-title professional-title" class="professional-title">Wellington, New Zealand</h3>
- <p class="professional-body">APAC Liaison</p>
- <p class="professional-body">Level 7, 50 Manners Street<br>Wellington 6011</p>
- <div class="cnt-office-hours">Mon&#8211;Fri 9:00 AM &#8211; 5:00 PM NZDT</div>
- </div>
- </div>
- </div>
-</section>
+    <!-- CONTACT FORM + INFO -->
+    <section class="container">
+      <div class="contact-layout">
 
-<section class="cnt-section alt csga-section">
- <div class="cnt-inner">
- <div style="text-align: center;">
- <div class="cnt-section-badge">Support Levels</div>
- <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Response Times</h2>
- <p class="cnt-section-sub" style="text-align: center; margin-left: auto; margin-right: auto;" class="professional-body">Our response times vary by enquiry type and membership tier. Defence clients receive priority 24/7 support.</p>
- </div>
- <div class="cnt-response">
- <div class="card-professional">
- <div class="cnt-resp-time">&lt; 24h</div>
- <h3 class="professional-title professional-title" class="professional-title">General Enquiries</h3>
- <p class="professional-body">Standard response time for general questions, membership, and education enquiries.</p>
- </div>
- <div class="card-professional">
- <div class="cnt-resp-time">&lt; 4h</div>
- <h3 class="professional-title professional-title" class="professional-title">Enterprise Support</h3>
- <p class="professional-body">Priority response for Professional and Enterprise tier members during business hours.</p>
- </div>
- <div class="card-professional">
- <div class="cnt-resp-time">&lt; 1h</div>
- <h3 class="professional-title professional-title" class="professional-title">Defence Clients</h3>
- <p class="professional-body">Emergency 24/7 support line for defence and government partners with active contracts.</p>
- </div>
- <div class="card-professional">
- <div class="cnt-resp-time">48h</div>
- <h3 class="professional-title professional-title" class="professional-title">Research &amp; Media</h3>
- <p class="professional-body">Dedicated team handles research collaboration, press enquiries, and partnership proposals.</p>
- </div>
- </div>
- </div>
-</section>
+        <!-- Form -->
+        <div class="form-card">
+          <h2>Send a Message</h2>
 
-<section class="cnt-section csga-section">
- <div class="cnt-inner">
- <div style="text-align: center;">
- <div class="cnt-section-badge">Common Questions</div>
- <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Before You Reach Out</h2>
- <p class="cnt-section-sub" style="text-align: center; margin-left: auto; margin-right: auto;" class="professional-body">Quick answers to frequently asked questions about getting started with CSGA.</p>
- </div>
- <div class="cnt-faq">
- <div class="cnt-faq-item">
- <div class="cnt-faq-q">How do I become a CSGA member?</div>
- <div class="cnt-faq-a"><div class="cnt-faq-a-inner">Visit our <a href="members" style="color:#0058A4;font-weight:600;">Membership page</a> to explore our tiers. Community membership is free and gives you access to basic resources, newsletters, and community forums. Professional and Enterprise tiers offer additional benefits including certification access and priority support.</div></div>
- </div>
- <div class="cnt-faq-item">
- <div class="cnt-faq-q">What is the CASA-CA30 certification?</div>
- <div class="cnt-faq-a"><div class="cnt-faq-a-inner">CASA-CA30 (Constitutional AI Security Auditor) is our professional certification for AI governance specialists. It covers AI risk assessment, constitutional AI principles, CSOAI framework implementation, and MCP server governance. Visit our <a href="education" style="color:#0058A4;font-weight:600;">Education page</a> for details.</div></div>
- </div>
- <div class="cnt-faq-item">
- <div class="cnt-faq-q">Do you offer enterprise training programmes?</div>
- <div class="cnt-faq-a"><div class="cnt-faq-a-inner">Yes. We provide customised training programmes for organisations including on-site workshops, virtual cohort training, and executive briefings. Enterprise packages include dedicated instructors, custom curriculum aligned to your industry, and bulk certification pricing. Contact our sales team for details.</div></div>
- </div>
- <div class="cnt-faq-item">
- <div class="cnt-faq-q">How can my organisation partner with CSGA?</div>
- <div class="cnt-faq-a"><div class="cnt-faq-a-inner">We offer several partnership models: technology partnerships, consulting partnerships, academic partnerships, and strategic alliances. Partners gain access to co-marketing opportunities, joint research programmes, and early access to standards development. Email partnerships@csgaglobal.com to start a conversation.</div></div>
- </div>
- <div class="cnt-faq-item">
- <div class="cnt-faq-q">Are there discounts for veterans or students?</div>
- <div class="cnt-faq-a"><div class="cnt-faq-a-inner">Absolutely. Veterans receive up to 50% off Professional membership and certification fees through our <a href="veterans" style="color:#0058A4;font-weight:600;">Veterans Support Programme</a>. Full-time students and educators qualify for academic pricing. Contact our membership team for eligibility details.</div></div>
- </div>
- <div class="cnt-faq-item">
- <div class="cnt-faq-q">What security clearances are needed for Defence programmes?</div>
- <div class="cnt-faq-a"><div class="cnt-faq-a-inner">Requirements vary by programme. Our Defence AI Forum and classified training tracks require appropriate national security clearances. For Five Eyes collaborative programmes, clearances must be recognised by participating nations. Contact our defence team at defence@csgaglobal.com for specific requirements.</div></div>
- </div>
- </div>
- </div>
-</section>
+          <!--
+            FORMSPREE SETUP:
+            1. Go to https://formspree.io and sign up (free tier = 50 submissions/mo)
+            2. Create a new form → copy your form ID (e.g., xrgvkpzl)
+            3. Replace YOUR_FORM_ID below with your actual Formspree ID
+            4. That's it — submissions go to your email
+          -->
+          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-<section class="cnt-section alt csga-section">
- <div class="cnt-inner" style="text-align: center;">
- <div class="cnt-section-badge">Connect With Us</div>
- <h2 style="font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; font-size: 2rem; color: #0A1628; margin: 0 0 30px 0;" class="section-title" class="professional-title" class="professional-title" class="brand-heading">Follow CSGA Global</h2>
- <div class="cnt-social">
- <a href="#" class="cnt-social-link"><span class="cnt-social-icon">&#128279;</span> LinkedIn</a>
- <a href="#" class="cnt-social-link"><span class="cnt-social-icon">&#120143;</span> X / Twitter</a>
- <a href="#" class="cnt-social-link"><span class="cnt-social-icon"><div class="dept-icon-professional">MCP</div></span> GitHub</a>
- <a href="#" class="cnt-social-link"><span class="cnt-social-icon">&#9654;</span> YouTube</a>
- <a href="#" class="cnt-social-link"><span class="cnt-social-icon">&#128214;</span> Blog</a>
- </div>
- </div>
-</section>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="John Smith">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="john@company.com">
+              </div>
+            </div>
 
-<section class="cnt-cta csga-section">
- <h2 class="professional-title professional-title" class="professional-title" class="brand-heading">Ready to Get Started?</h2>
- <p class="professional-body">Join thousands of AI governance professionals building a more secure, accountable future for AI systems worldwide.</p>
- <div class="btn-professional">
- <a href="members" class="btn-professional">Join CSGA Community</a>
- <a href="events" class="btn-professional">Explore Events</a>
- </div>
-</section>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Organisation</label>
+                <input type="text" id="company" name="company" placeholder="Acme Corp">
+              </div>
+              <div class="form-group">
+                <label for="subject">Enquiry Type *</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Sales Enquiry">Sales Enquiry</option>
+                  <option value="Enterprise Consultation">Enterprise Consultation</option>
+                  <option value="CASA Certification">CASA Certification</option>
+                  <option value="COBOL Bridge">COBOL Bridge</option>
+                  <option value="MCP Integration">MCP Integration</option>
+                  <option value="Partnership">Partnership Opportunity</option>
+                  <option value="Technical Support">Technical Support</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
 
-<script>
-document.querySelectorAll('.cnt-faq-q').forEach(function(q) {
- q.addEventListener('click', function() {
- var item = this.parentElement;
- var wasOpen = item.classList.contains('open');
- document.querySelectorAll('.cnt-faq-item').forEach(function(i) { i.classList.remove('open'); });
- if (!wasOpen) item.classList.add('open');
- });
-});
-</script>
+            <!-- Hidden field to capture plan from URL params -->
+            <input type="hidden" id="plan" name="plan" value="">
 
-<!-- Compliance & Certification -->
-<section class="compliance-section csga-section">
-  <h3 style="color: #1a202c !important; margin-bottom: 1rem !important;" class="professional-title" class="professional-title"> Security & Compliance</h3>
-  <p style="color: #4a5568 !important;" class="professional-body">CSGA maintains the highest standards of security and compliance for enterprise cybersecurity.</p>
-  <div class="compliance-badges">
-    <span class="compliance-badge">ISO 27001:2022</span>
-    <span class="compliance-badge">SOC 2 Type II</span>
-    <span class="compliance-badge">GDPR Compliant</span>
-    <span class="compliance-badge">WCAG 2.1 AA</span>
-    <span class="compliance-badge">CASA Certified</span>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. We'll respond within one business day.</p>
+          </div>
+        </div>
+
+        <!-- Info sidebar -->
+        <div class="info-side">
+          <h2>Get in Touch</h2>
+
+          <div class="info-block">
+            <h4>General Enquiries</h4>
+            <p><a href="mailto:info@csga.co.uk">info@csga.co.uk</a></p>
+          </div>
+
+          <div class="info-block">
+            <h4>Sales &amp; Enterprise</h4>
+            <p>For custom pricing, volume licences, or enterprise deployments, our team typically responds within one business day.</p>
+          </div>
+
+          <div class="info-block">
+            <h4>Technical Support</h4>
+            <p>Community members can use the <a href="https://github.com/CSGA-GLOBAL/mcp-servers/issues" target="_blank">GitHub Issues</a> board. Paid plan members get priority email support.</p>
+          </div>
+
+          <div class="info-block">
+            <h4>Partnership Opportunities</h4>
+            <p>Interested in integrating CSGA into your platform or becoming a reseller? We'd love to hear from you.</p>
+          </div>
+
+          <div class="quick-links">
+            <a href="/pricing" class="ql-card">
+              <div class="ql-icon">💰</div>
+              <h4>View Pricing</h4>
+              <p>Plans from free to enterprise</p>
+            </a>
+            <a href="/docs" class="ql-card">
+              <div class="ql-icon">📖</div>
+              <h4>Documentation</h4>
+              <p>Guides &amp; API reference</p>
+            </a>
+            <a href="/casa-certification" class="ql-card">
+              <div class="ql-icon">🏅</div>
+              <h4>CASA Program</h4>
+              <p>AI certification tiers</p>
+            </a>
+            <a href="https://github.com/CSGA-GLOBAL" target="_blank" class="ql-card">
+              <div class="ql-icon">🔧</div>
+              <h4>GitHub</h4>
+              <p>Open-source repos</p>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
   </div>
-</section>
-<div id="site-footer"></div>
-<script src="./components/shared.js"></script>
-    <!--  CSGA Inner Pages Enhancement Script -->
-    <script src="/CSGA-inner-pages-enhancement.js"></script>
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> Comprehensive Testing -->
-    <script src="/functionality-testing.js"></script>
-    <script src="/run-comprehensive-testing.js"></script>
-  <!-- CSGA Hero <section class="faq-professional-section csga-section">
-            <nav aria-label="breadcrumb" class="breadcrumb-nav">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                </ol>
-            </nav>
-<div class="container"><div class="faq-header-professional"><h2 class="faq-title-professional" class="brand-heading">Frequently Asked Questions</h2><p class="faq-subtitle-professional">Get answers to common questions about our AI governance solutions</p></div><div class="faq-grid-professional"><div class="faq-item-professional"><div class="faq-question-professional"><h3>What makes CSGA different from other AI governance providers?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>CSGA is "The The FAA for AI" - we provide Constitutional AI governance with Byzantine Council architecture, CASA certification, and enterprise compliance solutions trusted by Fortune 500 companies.</p></div></div><div class="faq-item-professional"><div class="faq-question-professional"><h3>How quickly can we implement CSGA governance frameworks?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>Implementation typically takes 2-4 weeks for initial deployment, with full enterprise integration in 6-8 weeks. Our expert team provides white-glove onboarding and 24/7 support.</p></div></div><div class="faq-item-professional"><div class="faq-question-professional"><h3>What compliance standards does CSGA support?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>CSGA supports ISO 27001, SOC 2 Type II, GDPR, CCPA, NIST frameworks, and emerging AI governance standards. Our CASA certification ensures comprehensive compliance.</p></div></div></div><div class="faq-cta-professional"><h3>Ready to get started?</h3><p>Our expert team is ready to help you implement world-class AI governance</p><a href="/contact" class="btn-professional-primary">Schedule Consultation</a></div></div></section><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".faq-item-professional").forEach(item=>{const question=item.querySelector(".faq-question-professional");question.addEventListener("click",function(){const isActive=item.classList.contains("active");document.querySelectorAll(".faq-item-professional").forEach(otherItem=>{if(otherItem!==item){otherItem.classList.remove("active")}});if(isActive){item.classList.remove("active")}else{item.classList.add("active")}})})});</script>    <script src="/js/advanced-enhancements.js"></script>
-    <script src="/js/performance-enhancements.js"></script>
-    <script src="/js/kimi-design.js"></script>
-    <script src="/js/bmcc-excellence.js"></script>
-    <script src="/js/bmcc-precise.js"></script>
-</body> Mobile Fixes JS -->
-  <script src="/js/hero-mobile-fixes.js"></script>
-    <!--  CSGA Inner Pages Enhancement Script -->
-    <script src="/CSGA-inner-pages-enhancement.js"></script>
-    <!-- <span class="professional-icon-text" data-context="info">ICON</span> Comprehensive Testing -->
-    <script src="/functionality-testing.js"></script>
-    <script src="/run-comprehensive-testing.js"></script>
-<section class="faq-professional-section csga-section">
-            <nav aria-label="breadcrumb" class="breadcrumb-nav">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                </ol>
-            </nav>
-<div class="container"><div class="faq-header-professional"><h2 class="faq-title-professional" class="brand-heading">Frequently Asked Questions</h2><p class="faq-subtitle-professional">Get answers to common questions about our AI governance solutions</p></div><div class="faq-grid-professional"><div class="faq-item-professional"><div class="faq-question-professional"><h3>What makes CSGA different from other AI governance providers?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>CSGA is "The The FAA for AI" - we provide Constitutional AI governance with Byzantine Council architecture, CASA certification, and enterprise compliance solutions trusted by Fortune 500 companies.</p></div></div><div class="faq-item-professional"><div class="faq-question-professional"><h3>How quickly can we implement CSGA governance frameworks?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>Implementation typically takes 2-4 weeks for initial deployment, with full enterprise integration in 6-8 weeks. Our expert team provides white-glove onboarding and 24/7 support.</p></div></div><div class="faq-item-professional"><div class="faq-question-professional"><h3>What compliance standards does CSGA support?</h3><span class="faq-icon-professional">+</span></div><div class="faq-answer-professional"><p>CSGA supports ISO 27001, SOC 2 Type II, GDPR, CCPA, NIST frameworks, and emerging AI governance standards. Our CASA certification ensures comprehensive compliance.</p></div></div></div><div class="faq-cta-professional"><h3>Ready to get started?</h3><p>Our expert team is ready to help you implement world-class AI governance</p><a href="/contact" class="btn-professional-primary">Schedule Consultation</a></div></div></section><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".faq-item-professional").forEach(item=>{const question=item.querySelector(".faq-question-professional");question.addEventListener("click",function(){const isActive=item.classList.contains("active");document.querySelectorAll(".faq-item-professional").forEach(otherItem=>{if(otherItem!==item){otherItem.classList.remove("active")}});if(isActive){item.classList.remove("active")}else{item.classList.add("active")}})})});</script>    <script src="/js/advanced-enhancements.js"></script>
-    <script src="/js/performance-enhancements.js"></script>
-    <script src="/js/kimi-design.js"></script>
-    <script src="/js/bmcc-excellence.js"></script>
-    <script src="/js/bmcc-precise.js"></script>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px;">CSGA Global</h3>
+        <p>AI governance infrastructure for the cognitive era. Research, certifications, and open-source tooling for responsible AI deployment.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pricing">Membership</a></li>
+          <li><a href="/mcp/">MCP Catalog</a></li>
+          <li><a href="/casa-certification">CASA Certification</a></li>
+          <li><a href="/pricing#cobol">COBOL Bridge</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="https://csoai.org" target="_blank">CSOAI Research</a></li>
+          <li><a href="https://github.com/CSGA-GLOBAL" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/get-started">Get Started</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CSGA Global — AI Research Institute. All rights reserved.</p>
+      <p style="color: #475569; font-size: 0.85rem;">Part of the <a href="https://csoai.org" target="_blank" style="color: #64748b;">CSOAI</a> ecosystem</p>
+    </div>
+  </footer>
+
+  <script>
+    // Capture ?plan= param from URL (from pricing page redirects)
+    const urlParams = new URLSearchParams(window.location.search);
+    const plan = urlParams.get('plan');
+    if (plan) {
+      document.getElementById('plan').value = plan;
+      // Pre-fill message if coming from a specific plan
+      const planNames = {
+        community: 'Community (Free)',
+        enterprise_custom: 'Enterprise Custom',
+        cobol_enterprise: 'COBOL Bridge Enterprise'
+      };
+      if (planNames[plan]) {
+        document.getElementById('message').placeholder = 'I\'m interested in the ' + planNames[plan] + ' plan...';
+      }
+    }
+
+    // Form submission with Formspree AJAX
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('submitBtn');
+    const success = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          btn.textContent = 'Error — Try Again';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        btn.textContent = 'Error — Try Again';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
 </body>
 </html>
