@@ -1,475 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CASA Certification — CSGA Global | Constitutional AI Safety Authority</title>
-  <meta name="description" content="Get your AI systems certified with CASA — the Constitutional AI Safety Authority. Four certification levels from CA-10 to CA-40 for regulated industries.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-    /* ── NAV ──────────────────────────────────── */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1050;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      height: 72px;
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between; height: 100%;
-    }
-    .nav-brand {
-      display: flex; align-items: center; gap: 10px;
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: #fff;
-    }
-    .nav-brand svg { width: 32px; height: 32px; }
-    .nav-links { display: flex; list-style: none; gap: 32px; align-items: center; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; color: #94a3b8; transition: color 0.2s; }
-    .nav-links a:hover { color: #fff; }
-    .nav-cta {
-      background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff !important;
-      padding: 10px 22px; border-radius: 8px; font-weight: 600;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(49,130,206,0.4); }
-    .mobile-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 8px; }
-
-    .page-content { padding-top: 72px; }
-
-    /* ── HERO ──────────────────────────────────── */
-    .hero {
-      padding: 80px 0 60px; text-align: center;
-      background: linear-gradient(180deg, rgba(212,168,67,0.08) 0%, transparent 100%);
-    }
-    .hero-badge {
-      display: inline-block; background: rgba(212,168,67,0.15); color: #D4A843;
-      padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700; color: #fff; margin-bottom: 16px; letter-spacing: -0.02em;
-    }
-    .hero h1 span { color: #D4A843; }
-    .hero p { font-size: 1.15rem; color: #94a3b8; max-width: 650px; margin: 0 auto 32px; }
-    .hero-stats {
-      display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 32px;
-    }
-    .hero-stat { text-align: center; }
-    .hero-stat strong {
-      display: block; font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem; font-weight: 700; color: #D4A843;
-    }
-    .hero-stat span { font-size: 0.85rem; color: #64748b; }
-
-    /* ── PROCESS ───────────────────────────────── */
-    .process-section { padding: 80px 0; }
-    .process-section h2 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem;
-      text-align: center; color: #fff; margin-bottom: 48px;
-    }
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .process-step {
-      text-align: center; padding: 32px 20px;
-      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px; position: relative;
-    }
-    .step-number {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, #D4A843, #b8942e);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.2rem;
-      color: #0f172a; margin: 0 auto 16px;
-    }
-    .process-step h4 { font-family: 'Space Grotesk', sans-serif; color: #fff; margin-bottom: 8px; }
-    .process-step p { font-size: 0.85rem; color: #94a3b8; }
-
-    /* ── CERTIFICATION TIERS ────────────────────── */
-    .tiers-section { padding: 0 0 80px; }
-    .tiers-section h2 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem;
-      text-align: center; color: #fff; margin-bottom: 12px;
-    }
-    .tiers-section > .container > p {
-      text-align: center; color: #64748b; margin-bottom: 48px; font-size: 0.95rem;
-    }
-    .tiers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .tier-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px; padding: 36px 32px;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    }
-    .tier-card:hover {
-      transform: translateY(-4px); border-color: rgba(212,168,67,0.3);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-    }
-    .tier-card.recommended {
-      border-color: #D4A843; background: rgba(212,168,67,0.06);
-    }
-    .tier-badge {
-      display: inline-block; background: linear-gradient(135deg, #D4A843, #b8942e);
-      color: #0f172a; padding: 4px 14px; border-radius: 20px;
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.05em; margin-bottom: 16px;
-    }
-    .tier-level {
-      font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
-      color: #D4A843; font-weight: 600; margin-bottom: 4px;
-    }
-    .tier-card h3 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem;
-      color: #fff; margin-bottom: 8px;
-    }
-    .tier-card .tagline { font-size: 0.85rem; color: #64748b; margin-bottom: 20px; }
-    .tier-price {
-      font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem;
-      font-weight: 700; color: #fff; margin-bottom: 4px;
-    }
-    .tier-price-note { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
-    .tier-features { list-style: none; margin-bottom: 28px; }
-    .tier-features li {
-      padding: 6px 0; font-size: 0.9rem; color: #cbd5e1;
-      display: flex; align-items: flex-start; gap: 10px;
-    }
-    .tier-features li::before { content: '✓'; color: #D4A843; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .tier-btn {
-      display: block; width: 100%; padding: 14px; border: none; border-radius: 10px;
-      font-size: 1rem; font-weight: 600; cursor: pointer; text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .tier-btn:hover { transform: translateY(-1px); }
-    .btn-gold {
-      background: linear-gradient(135deg, #D4A843, #b8942e); color: #0f172a;
-      box-shadow: 0 4px 15px rgba(212,168,67,0.3);
-    }
-    .btn-gold:hover { box-shadow: 0 6px 25px rgba(212,168,67,0.5); }
-    .btn-outline {
-      background: rgba(255,255,255,0.06); color: #fff;
-      border: 1px solid rgba(255,255,255,0.15);
-    }
-    .btn-outline:hover { background: rgba(255,255,255,0.1); }
-
-    /* ── WHO IT'S FOR ─────────────────────────── */
-    .audience-section { padding: 60px 0 80px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .audience-section h2 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem;
-      text-align: center; color: #fff; margin-bottom: 40px;
-    }
-    .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .audience-card {
-      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px; padding: 28px; text-align: center;
-    }
-    .audience-icon { font-size: 2rem; margin-bottom: 12px; }
-    .audience-card h4 { font-family: 'Space Grotesk', sans-serif; color: #fff; margin-bottom: 8px; }
-    .audience-card p { font-size: 0.85rem; color: #94a3b8; }
-
-    /* ── CTA ───────────────────────────────────── */
-    .cta-section {
-      padding: 80px 0; text-align: center;
-      background: linear-gradient(180deg, transparent 0%, rgba(212,168,67,0.06) 100%);
-    }
-    .cta-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; color: #fff; margin-bottom: 12px; }
-    .cta-section p { color: #94a3b8; margin-bottom: 32px; font-size: 1rem; }
-    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-
-    /* ── FOOTER ────────────────────────────────── */
-    .footer { background: #020617; padding: 60px 0 30px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand strong { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; color: #fff; display: block; margin-bottom: 8px; }
-    .footer-brand p { font-size: 0.85rem; color: #64748b; line-height: 1.6; }
-    .footer h4 { color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 10px; }
-    .footer-links a { font-size: 0.9rem; color: #64748b; transition: color 0.2s; }
-    .footer-links a:hover { color: #fff; }
-    .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.8rem; color: #475569; }
-
-    /* ── RESPONSIVE ────────────────────────────── */
-    @media (max-width: 1024px) {
-      .tiers-grid { grid-template-columns: repeat(2, 1fr); }
-      .audience-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .mobile-toggle { display: block; }
-      .nav-links.open {
-        display: flex; flex-direction: column; position: absolute;
-        top: 72px; left: 0; right: 0; background: rgba(15,23,42,0.98);
-        padding: 20px 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08);
-      }
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .tiers-grid { grid-template-columns: 1fr; }
-      .audience-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .hero { padding: 60px 0 40px; }
-      .hero-stats { gap: 24px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CASA Certification - CSGA Global | Constitutional AI Safety Authority</title>
+<meta name="description" content="Get your AI systems certified with CASA — the Constitutional AI Safety Authority. Four certification levels from CA-10 to CA-40 for regulated industries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/components/shared.css">
+<style>
+.casa-hero{background:linear-gradient(135deg,#003D75 0%,#0058A4 100%);color:#fff;text-align:center;padding:120px 24px 80px}
+.casa-hero h1{font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;margin:0 0 16px}
+.casa-hero .badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:6px 18px;font-size:.85rem;margin-bottom:24px}
+.casa-hero p{font-size:1.15rem;opacity:.9;max-width:700px;margin:0 auto}
+.overview-section{background:#F7F9FC;padding:80px 24px}
+.overview-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.overview-text h2{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#0A1628;margin:0 0 16px}
+.overview-text p{color:#64748b;font-size:1rem;line-height:1.7;margin:0 0 12px}
+.overview-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.stat-card{background:#fff;border-radius:16px;padding:28px;text-align:center;border:1px solid #e5e7eb;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stat-card .num{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:#0058A4}
+.stat-card .label{color:#64748b;font-size:.85rem;margin-top:4px}
+.levels-section{padding:80px 24px;background:#fff}
+.levels-section h2{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#0A1628;text-align:center;margin:0 0 12px}
+.levels-section .sub{text-align:center;color:#64748b;font-size:1rem;max-width:600px;margin:0 auto 48px}
+.levels-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.level-card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:32px 24px;text-align:center;transition:all .2s}
+.level-card:hover{border-color:#0058A4;box-shadow:0 8px 24px rgba(0,88,164,.08)}
+.level-badge{display:inline-block;border-radius:12px;padding:8px 16px;font-weight:700;font-size:.9rem;margin-bottom:16px}
+.level-badge.ca10{background:rgba(0,88,164,.1);color:#0058A4}
+.level-badge.ca20{background:rgba(16,185,129,.1);color:#10b981}
+.level-badge.ca30{background:rgba(245,158,11,.1);color:#f59e0b}
+.level-badge.ca40{background:rgba(204,0,0,.1);color:#CC0000}
+.level-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:#0A1628;margin:0 0 8px}
+.level-card p{color:#64748b;font-size:.9rem;line-height:1.6;margin:0 0 16px}
+.level-card ul{list-style:none;padding:0;margin:0;text-align:left}
+.level-card ul li{padding:6px 0;font-size:.85rem;color:#64748b;border-bottom:1px solid #f3f4f6}
+.level-card ul li:before{content:"\2713";color:#0058A4;margin-right:8px;font-weight:700}.process-section{padding:80px 24px;background:#F7F9FC}
+.process-section h2{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#0A1628;text-align:center;margin:0 0 12px}
+.process-section .sub{text-align:center;color:#64748b;font-size:1rem;max-width:600px;margin:0 auto 48px}
+.process-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.process-step{text-align:center;position:relative}
+.step-num{width:48px;height:48px;border-radius:50%;background:#0058A4;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;margin:0 auto 16px}
+.process-step h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#0A1628;margin:0 0 8px}
+.process-step p{color:#64748b;font-size:.85rem;line-height:1.5}
+.benefits-section{padding:80px 24px;background:#fff}
+.benefits-section h2{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#0A1628;text-align:center;margin:0 0 48px}
+.benefits-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.benefit-card{background:#F7F9FC;border-radius:16px;padding:32px 24px;border:1px solid #e5e7eb}
+.benefit-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
+.benefit-icon.blue{background:rgba(0,88,164,.1);color:#0058A4}
+.benefit-icon.red{background:rgba(204,0,0,.1);color:#CC0000}
+.benefit-icon.green{background:rgba(16,185,129,.1);color:#10b981}
+.benefit-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#0A1628;margin:0 0 8px}
+.benefit-card p{color:#64748b;font-size:.9rem;line-height:1.6;margin:0}
+.cta-bar{background:linear-gradient(135deg,#003D75 0%,#0058A4 100%);color:#fff;text-align:center;padding:64px 24px}
+.cta-bar h2{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;margin:0 0 12px}
+.cta-bar p{opacity:.9;font-size:1rem;margin:0 0 28px}
+.cta-bar a{display:inline-block;background:#CC0000;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:600;font-size:1rem;transition:background .2s}
+.cta-bar a:hover{background:#a00}
+@media(max-width:900px){.levels-grid,.process-grid{grid-template-columns:1fr 1fr}.overview-wrap{grid-template-columns:1fr}}
+@media(max-width:600px){.levels-grid,.process-grid,.benefits-grid{grid-template-columns:1fr}.casa-hero h1{font-size:2rem}}
+</style>
 </head>
 <body>
+<div id="site-header"></div>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-brand">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#3182ce"/><path d="M8 16L14 10L20 16L14 22Z" fill="white" opacity="0.9"/><path d="M14 16L20 10L26 16L20 22Z" fill="white" opacity="0.6"/></svg>
-      CSGA Global
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/">Home</a></li>
-      <li><a href="/catalog">MCP Catalog</a></li>
-      <li><a href="/casa-certification" style="color:#fff">CASA</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/get-started" class="nav-cta">Get Started</a></li>
-    </ul>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
-  </div>
-</nav>
+<section class="casa-hero">
+<div class="badge">Constitutional AI Safety Authority</div>
+<h1>CASA Certification</h1>
+<p>Industry-recognised certification for AI systems in regulated environments. Four levels of assurance from foundational compliance to enterprise-grade safety.</p>
+</section>
 
-<div class="page-content">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-badge">Constitutional AI Safety Authority</div>
-      <h1>Get <span>CASA Certified</span></h1>
-      <p>The industry-recognised standard for AI governance. Prove your AI systems are safe, compliant, and trustworthy with an independent CASA assessment.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>120+</strong><span>Organisations Certified</span></div>
-        <div class="hero-stat"><strong>4</strong><span>Certification Levels</span></div>
-        <div class="hero-stat"><strong>28</strong><span>Countries Recognised</span></div>
-        <div class="hero-stat"><strong>100%</strong><span>Compliance Success Rate</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process-section">
-    <div class="container">
-      <h2>How Certification Works</h2>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <h4>Apply</h4>
-          <p>Select your certification level and complete the online application with details about your AI systems.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <h4>Assessment</h4>
-          <p>Our certified assessors review your AI governance framework, policies, and technical controls.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <h4>Gap Analysis</h4>
-          <p>Receive a detailed report identifying gaps with a clear remediation plan and implementation guidance.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <h4>Certification</h4>
-          <p>Upon meeting all requirements, receive your CASA certificate, badge, and listing in our public registry.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TIERS -->
-  <section class="tiers-section">
-    <div class="container">
-      <h2>Certification Levels</h2>
-      <p>Choose the level that matches your organisation's AI maturity and regulatory requirements.</p>
-      <div class="tiers-grid">
-
-        <!-- CA-10 -->
-        <div class="tier-card">
-          <div class="tier-level">Level 1</div>
-          <h3>CA-10 Foundation</h3>
-          <p class="tagline">Essential AI governance baseline for any organisation</p>
-          <div class="tier-price">&pound;2,500</div>
-          <p class="tier-price-note">One-time assessment &middot; Valid 12 months</p>
-          <ul class="tier-features">
-            <li>AI inventory &amp; risk classification</li>
-            <li>Basic governance framework review</li>
-            <li>Data protection assessment</li>
-            <li>Policy template library</li>
-            <li>Digital certificate &amp; badge</li>
-            <li>Public registry listing</li>
-          </ul>
-          <a href="https://buy.stripe.com/6oU8wRbiVcI8dZY5KBdMI0t" class="tier-btn btn-outline">Begin Assessment</a>
-        </div>
-
-        <!-- CA-20 -->
-        <div class="tier-card recommended">
-          <div class="tier-badge">Most Popular</div>
-          <div class="tier-level">Level 2</div>
-          <h3>CA-20 Professional</h3>
-          <p class="tagline">Comprehensive audit for regulated industries</p>
-          <div class="tier-price">&pound;7,500</div>
-          <p class="tier-price-note">One-time assessment &middot; Valid 12 months</p>
-          <ul class="tier-features">
-            <li>Everything in CA-10</li>
-            <li>Full compliance mapping (GDPR, SOC 2, ISO 27001)</li>
-            <li>Algorithmic bias testing</li>
-            <li>Model explainability review</li>
-            <li>Technical architecture audit</li>
-            <li>Board-ready executive report</li>
-            <li>Remediation workshops (2 sessions)</li>
-          </ul>
-          <a href="https://buy.stripe.com/3cI7sNev723u2hga0RdMI0u" class="tier-btn btn-gold">Begin Assessment</a>
-        </div>
-
-        <!-- CA-30 -->
-        <div class="tier-card">
-          <div class="tier-level">Level 3</div>
-          <h3>CA-30 Advanced</h3>
-          <p class="tagline">Deep-dive audit with penetration testing</p>
-          <div class="tier-price">&pound;15,000</div>
-          <p class="tier-price-note">One-time assessment &middot; Valid 12 months</p>
-          <ul class="tier-features">
-            <li>Everything in CA-20</li>
-            <li>AI-specific penetration testing</li>
-            <li>Red-team adversarial testing</li>
-            <li>Supply chain AI audit</li>
-            <li>Continuous monitoring setup</li>
-            <li>Quarterly review meetings</li>
-            <li>Dedicated certification analyst</li>
-          </ul>
-          <a href="https://buy.stripe.com/00w4gBaeRgYo7BA1uldMI0v" class="tier-btn btn-outline">Begin Assessment</a>
-        </div>
-
-        <!-- CA-40 -->
-        <div class="tier-card">
-          <div class="tier-level">Level 4</div>
-          <h3>CA-40 Sovereign</h3>
-          <p class="tagline">Government-grade certification for critical infrastructure</p>
-          <div class="tier-price">&pound;25,000</div>
-          <p class="tier-price-note">One-time assessment &middot; Valid 12 months</p>
-          <ul class="tier-features">
-            <li>Everything in CA-30</li>
-            <li>Sovereign compliance framework</li>
-            <li>National security AI risk assessment</li>
-            <li>Air-gapped system certification</li>
-            <li>Cross-border data flow audit</li>
-            <li>On-site assessment (up to 5 days)</li>
-            <li>Direct access to CSGA Chief Assessor</li>
-            <li>Annual recertification included</li>
-          </ul>
-          <a href="https://buy.stripe.com/aFacN772F5fG8FEdd3dMI0w" class="tier-btn btn-outline">Contact Sales</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO IT'S FOR -->
-  <section class="audience-section">
-    <div class="container">
-      <h2>Who Needs CASA Certification?</h2>
-      <div class="audience-grid">
-        <div class="audience-card">
-          <div class="audience-icon">&#x1F3E6;</div>
-          <h4>Financial Services</h4>
-          <p>Banks, insurers, and fintechs deploying AI for credit scoring, fraud detection, and algorithmic trading.</p>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">&#x1F3E5;</div>
-          <h4>Healthcare</h4>
-          <p>Hospitals, healthtech, and pharma using AI for diagnostics, drug discovery, and patient management.</p>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">&#x1F3DB;</div>
-          <h4>Government</h4>
-          <p>Public sector organisations deploying AI in citizen services, defence, and critical infrastructure.</p>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">&#x2696;</div>
-          <h4>Legal &amp; Compliance</h4>
-          <p>Law firms and compliance teams needing AI governance for contract review and regulatory analysis.</p>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">&#x1F527;</div>
-          <h4>Technology</h4>
-          <p>SaaS companies, AI startups, and platform providers building or deploying AI-powered products.</p>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">&#x1F30D;</div>
-          <h4>Enterprise</h4>
-          <p>Any large organisation adopting AI at scale that needs to demonstrate responsible AI governance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Get Certified?</h2>
-      <p>Join 120+ organisations with CASA certification. Start your assessment today.</p>
-      <div class="cta-buttons">
-        <a href="https://buy.stripe.com/3cI7sNev723u2hga0RdMI0u" class="tier-btn btn-gold" style="width:auto;padding:16px 40px">Start CA-20 Assessment</a>
-        <a href="/contact?plan=casa" class="tier-btn btn-outline" style="width:auto;padding:16px 40px">Speak to an Assessor</a>
-      </div>
-    </div>
-  </section>
-
+<section class="overview-section">
+<div class="overview-wrap">
+<div class="overview-text">
+<h2>Why CASA Certification?</h2>
+<p>CASA (Constitutional AI Safety Authority) provides the gold standard for AI governance certification. Our framework ensures AI systems meet rigorous safety, fairness, and transparency requirements.</p>
+<p>Whether you are deploying AI in financial services, healthcare, government, or critical infrastructure, CASA certification demonstrates your commitment to responsible AI practices.</p>
 </div>
+<div class="overview-stats">
+<div class="stat-card"><div class="num">4</div><div class="label">Certification Levels</div></div>
+<div class="stat-card"><div class="num">200+</div><div class="label">Systems Certified</div></div>
+<div class="stat-card"><div class="num">50+</div><div class="label">Countries Recognised</div></div>
+<div class="stat-card"><div class="num">99.7%</div><div class="label">Renewal Rate</div></div>
+</div>
+</div>
+</section><section class="levels-section">
+<h2>Certification Levels</h2>
+<p class="sub">Choose the level that matches your organisation's needs and regulatory requirements.</p>
+<div class="levels-grid">
+<div class="level-card">
+<div class="level-badge ca10">CA-10</div>
+<h3>Foundational</h3>
+<p>Entry-level certification for organisations beginning their AI governance journey.</p>
+<ul>
+<li>Basic safety checks</li>
+<li>Bias screening</li>
+<li>Documentation review</li>
+<li>12-month validity</li>
+</ul>
+</div>
+<div class="level-card">
+<div class="level-badge ca20">CA-20</div>
+<h3>Standard</h3>
+<p>Comprehensive certification for production AI systems in commercial environments.</p>
+<ul>
+<li>Full safety audit</li>
+<li>Fairness testing</li>
+<li>Explainability review</li>
+<li>Annual reassessment</li>
+</ul>
+</div>
+<div class="level-card">
+<div class="level-badge ca30">CA-30</div>
+<h3>Advanced</h3>
+<p>Enhanced certification for AI in regulated industries like finance and healthcare.</p>
+<ul>
+<li>Adversarial testing</li>
+<li>Regulatory alignment</li>
+<li>Continuous monitoring</li>
+<li>Incident response plan</li>
+</ul>
+</div>
+<div class="level-card">
+<div class="level-badge ca40">CA-40</div>
+<h3>Enterprise</h3>
+<p>Maximum assurance for mission-critical AI systems in high-stakes environments.</p>
+<ul>
+<li>Red-team evaluation</li>
+<li>Full audit trail</li>
+<li>24/7 monitoring</li>
+<li>Executive reporting</li>
+</ul>
+</div>
+</div>
+</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <strong>CSGA Global</strong>
-        <p>The Constitutional AI Safety Authority. Setting the global standard for AI governance and MCP compliance.</p>
-      </div>
-      <div>
-        <h4>Platform</h4>
-        <ul class="footer-links">
-          <li><a href="/catalog">MCP Catalog</a></li>
-          <li><a href="/casa-certification">CASA Certification</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/get-started">Get Started</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <ul class="footer-links">
-          <li><a href="/about">About CSGA</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/docs">Documentation</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Compliance</h4>
-        <ul class="footer-links">
-          <li><a href="/docs">GDPR</a></li>
-          <li><a href="/docs">HIPAA</a></li>
-          <li><a href="/docs">SOX</a></li>
-          <li><a href="/privacy">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 CSGA Global. All rights reserved. Constitutional AI Safety Authority.</p>
-    </div>
-  </div>
-</footer>
+<section class="process-section">
+<h2>Certification Process</h2>
+<p class="sub">A structured, transparent path from application to certification.</p>
+<div class="process-grid">
+<div class="process-step">
+<div class="step-num">1</div>
+<h3>Application</h3>
+<p>Submit your system details and select your target certification level.</p>
+</div>
+<div class="process-step">
+<div class="step-num">2</div>
+<h3>Assessment</h3>
+<p>Our auditors evaluate your AI system against CASA standards and benchmarks.</p>
+</div>
+<div class="process-step">
+<div class="step-num">3</div>
+<h3>Remediation</h3>
+<p>Address any findings with guidance from our technical advisory team.</p>
+</div>
+<div class="process-step">
+<div class="step-num">4</div>
+<h3>Certification</h3>
+<p>Receive your CASA certificate and join the registry of certified systems.</p>
+</div>
+</div>
+</section><section class="benefits-section">
+<h2>Benefits of CASA Certification</h2>
+<div class="benefits-grid">
+<div class="benefit-card">
+<div class="benefit-icon blue">&#x1f6e1;</div>
+<h3>Regulatory Compliance</h3>
+<p>Meet and exceed AI governance requirements across the EU AI Act, NIST AI RMF, and other global frameworks.</p>
+</div>
+<div class="benefit-card">
+<div class="benefit-icon red">&#x1f4ca;</div>
+<h3>Market Confidence</h3>
+<p>Demonstrate to clients and stakeholders that your AI systems meet the highest safety and fairness standards.</p>
+</div>
+<div class="benefit-card">
+<div class="benefit-icon green">&#x2699;</div>
+<h3>Operational Excellence</h3>
+<p>Improve your AI development practices with structured governance frameworks and continuous monitoring.</p>
+</div>
+<div class="benefit-card">
+<div class="benefit-icon blue">&#x1f310;</div>
+<h3>Global Recognition</h3>
+<p>CASA certification is recognised across 50+ countries and accepted by major regulatory bodies worldwide.</p>
+</div>
+<div class="benefit-card">
+<div class="benefit-icon red">&#x1f50d;</div>
+<h3>Transparency</h3>
+<p>Build trust through auditable AI processes, explainability standards, and clear documentation practices.</p>
+</div>
+<div class="benefit-card">
+<div class="benefit-icon green">&#x1f4c8;</div>
+<h3>Competitive Advantage</h3>
+<p>Stand out in procurement processes and enterprise sales with independently verified AI safety credentials.</p>
+</div>
+</div>
+</section>
 
+<section class="cta-bar">
+<h2>Ready to Certify Your AI Systems?</h2>
+<p>Start your CASA certification journey today. Our team will guide you through every step.</p>
+<a href="/get-started">Begin Certification &rarr;</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/components/shared.js"></script>
 </body>
 </html>
