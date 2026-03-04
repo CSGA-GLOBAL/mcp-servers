@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started — CSGA Global</title>
+  <meta name="description" content="Start your CSGA Global journey. Choose your path: membership, CASA certification, COBOL Bridge, or MCP integration.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+
+    /* -- FIXED NAV -- */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1050; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); height: 72px; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-logo span { background: linear-gradient(135deg, #3182ce, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
+    .nav-cta:hover { opacity: 0.9; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #e2e8f0; margin: 5px 0; transition: 0.3s; }
+
+    /* -- PAGE CONTENT -- */
+    .page-content { padding-top: 72px; }
+
+    /* -- HERO -- */
+    .hero { padding: 80px 24px 60px; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(49,130,206,0.15) 0%, transparent 60%); }
+    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+
+    /* -- STEP INDICATORS -- */
+    .steps-bar { display: flex; justify-content: center; gap: 8px; margin-bottom: 60px; flex-wrap: wrap; }
+    .step-pill { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; color: #94a3b8; }
+    .step-pill .num { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; }
+
+    /* -- PATH CARDS -- */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 12px; }
+    .section-sub { text-align: center; color: #94a3b8; margin-bottom: 48px; font-size: 1.05rem; }
+
+    .paths-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 80px; }
+    .path-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; transition: border-color 0.3s, transform 0.2s; }
+    .path-card:hover { border-color: rgba(49,130,206,0.4); transform: translateY(-2px); }
+    .path-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+    .path-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
+    .path-card .price { font-size: 0.95rem; color: #3182ce; font-weight: 600; margin-bottom: 12px; }
+    .path-card p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.7; }
+    .path-card ul { list-style: none; margin-bottom: 24px; }
+    .path-card ul li { color: #94a3b8; font-size: 0.9rem; padding: 4px 0; padding-left: 20px; position: relative; }
+    .path-card ul li::before { content: "\2713"; position: absolute; left: 0; color: #3182ce; font-weight: 700; }
+    .path-btn { display: inline-block; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: opacity 0.2s; }
+    .path-btn-primary { background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff; }
+    .path-btn-outline { border: 1px solid rgba(255,255,255,0.15); color: #e2e8f0; }
+    .path-btn:hover { opacity: 0.85; }
+
+    .icon-membership { background: linear-gradient(135deg, rgba(49,130,206,0.2), rgba(30,64,175,0.2)); }
+    .icon-casa { background: linear-gradient(135deg, rgba(212,168,67,0.2), rgba(180,140,50,0.2)); }
+    .icon-cobol { background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(5,150,105,0.2)); }
+    .icon-mcp { background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(109,40,217,0.2)); }
+
+    /* -- QUICK START SECTION -- */
+    .quickstart { padding: 80px 24px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .qs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .qs-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; text-align: center; }
+    .qs-card .qs-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 16px; }
+    .qs-card h4 { font-size: 1.1rem; margin-bottom: 8px; }
+    .qs-card p { color: #94a3b8; font-size: 0.9rem; }
+
+    /* -- FAQ MINI -- */
+    .faq-section { padding: 80px 24px; }
+    .faq-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; margin-bottom: 12px; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .faq-item h4 { font-size: 1rem; margin-bottom: 8px; }
+    .faq-item p { color: #94a3b8; font-size: 0.9rem; }
+
+    /* -- CTA -- */
+    .cta-section { padding: 80px 24px; text-align: center; }
+    .cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+    .cta-section p { color: #94a3b8; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* -- FOOTER -- */
+    .footer { background: #020617; border-top: 1px solid rgba(255,255,255,0.06); padding: 60px 24px 32px; }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand p { color: #64748b; font-size: 0.9rem; margin-top: 12px; line-height: 1.6; }
+    .footer h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 16px; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 8px; }
+    .footer ul a { color: #64748b; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer ul a:hover { color: #e2e8f0; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { color: #475569; font-size: 0.85rem; }
+
+    /* -- RESPONSIVE -- */
+    @media (max-width: 1024px) {
+      .paths-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(15,23,42,0.98); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .nav-links.active { display: flex; }
+      .hamburger { display: block; }
+      .hero h1 { font-size: 2rem; }
+      .paths-grid { grid-template-columns: 1fr; }
+      .qs-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">CSGA <span>Global</span></a>
+      <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/mcp/">MCP Catalog</a></li>
+        <li><a href="/casa-certification">CASA</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/get-started" class="nav-cta">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Get Started with CSGA Global</h1>
+      <p>Choose the path that fits your organisation. From free community access to enterprise-grade AI governance — we'll guide you every step of the way.</p>
+
+      <div class="steps-bar">
+        <div class="step-pill"><span class="num">1</span> Choose your path</div>
+        <div class="step-pill"><span class="num">2</span> Select a plan</div>
+        <div class="step-pill"><span class="num">3</span> Set up your workspace</div>
+        <div class="step-pill"><span class="num">4</span> Start building</div>
+      </div>
+    </section>
+
+    <!-- CHOOSE YOUR PATH -->
+    <section class="container" style="padding: 0 24px 40px;">
+      <h2 class="section-title">Choose Your Path</h2>
+      <p class="section-sub">Each path is designed for a different stage of your AI governance journey.</p>
+
+      <div class="paths-grid">
+
+        <!-- Membership -->
+        <div class="path-card">
+          <div class="path-icon icon-membership">🏢</div>
+          <h3>CSGA Membership</h3>
+          <div class="price">From Free → £1,499/mo</div>
+          <p>Access the CSGA ecosystem with tiered membership. Get AI governance frameworks, compliance tools, community support, and dedicated advisory services.</p>
+          <ul>
+            <li>Community tier — always free</li>
+            <li>Starter, Professional &amp; Enterprise tiers</li>
+            <li>14 or 30-day free trial on paid plans</li>
+            <li>Cancel or change plans anytime</li>
+          </ul>
+          <a href="/pricing" class="path-btn path-btn-primary">View Plans &amp; Pricing</a>
+        </div>
+
+        <!-- CASA Certification -->
+        <div class="path-card">
+          <div class="path-icon icon-casa">🏅</div>
+          <h3>CASA Certification</h3>
+          <div class="price" style="color: #D4A843;">From £2,500 one-time</div>
+          <p>Certify your AI systems with the Cognitive System Assurance Architecture. Four tiers from foundational awareness to enterprise-wide governance.</p>
+          <ul>
+            <li>CA-10 Awareness through CA-40 Mastery</li>
+            <li>Internationally recognised certification</li>
+            <li>Digital badge &amp; verification portal</li>
+            <li>Full assessment report included</li>
+          </ul>
+          <a href="/casa-certification" class="path-btn path-btn-primary" style="background: linear-gradient(135deg, #D4A843, #b08c32);">Explore CASA</a>
+        </div>
+
+        <!-- COBOL Bridge -->
+        <div class="path-card">
+          <div class="path-icon icon-cobol">🔄</div>
+          <h3>COBOL Bridge</h3>
+          <div class="price" style="color: #10b981;">From £999/mo</div>
+          <p>Modernise legacy COBOL systems with AI-powered translation, analysis, and migration tooling. Purpose-built for financial services, government, and insurance.</p>
+          <ul>
+            <li>Automated COBOL → modern language translation</li>
+            <li>Dependency mapping &amp; risk analysis</li>
+            <li>Pro &amp; Enterprise tiers for large estates</li>
+            <li>Dedicated migration specialist support</li>
+          </ul>
+          <a href="/pricing#cobol" class="path-btn path-btn-primary" style="background: linear-gradient(135deg, #10b981, #059669);">View COBOL Plans</a>
+        </div>
+
+        <!-- MCP Integration -->
+        <div class="path-card">
+          <div class="path-icon icon-mcp">🔌</div>
+          <h3>MCP Integration</h3>
+          <div class="price" style="color: #8b5cf6;">76 MCPs across 7 categories</div>
+          <p>Deploy pre-built Model Context Protocol servers for your industry. From smart cities to maritime operations — connect AI to your domain data.</p>
+          <ul>
+            <li>Smart Cities, Maritime, Healthcare &amp; more</li>
+            <li>Ecosystem bundles from £39/mo</li>
+            <li>Individual MCPs or full catalog access</li>
+            <li>API credits for pay-as-you-go usage</li>
+          </ul>
+          <a href="/mcp/" class="path-btn path-btn-primary" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">Browse MCPs</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUICK START STEPS -->
+    <section class="quickstart">
+      <div class="container">
+        <h2 class="section-title">Quick Start Guide</h2>
+        <p class="section-sub">Up and running in three simple steps.</p>
+
+        <div class="qs-grid">
+          <div class="qs-card">
+            <div class="qs-num">1</div>
+            <h4>Create Your Account</h4>
+            <p>Start with the free Community tier. No credit card required. Instant access to documentation, community forums, and basic governance resources.</p>
+          </div>
+          <div class="qs-card">
+            <div class="qs-num">2</div>
+            <h4>Choose Your Tools</h4>
+            <p>Select the membership, MCPs, or certifications that fit your needs. Mix and match — every product works independently or together.</p>
+          </div>
+          <div class="qs-card">
+            <div class="qs-num">3</div>
+            <h4>Deploy &amp; Govern</h4>
+            <p>Integrate MCPs into your stack, apply governance frameworks, and start certifying your AI systems. Our team is here to help at every step.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="section-title">Common Questions</h2>
+        <p class="section-sub">Quick answers to help you get started.</p>
+
+        <div class="faq-item">
+          <h4>Do I need a paid plan to get started?</h4>
+          <p>No. The Community tier is completely free and gives you access to documentation, community forums, and basic resources. Upgrade anytime when you need more.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I try paid plans before committing?</h4>
+          <p>Yes. Starter and Professional memberships include a 14-day free trial. Enterprise plans include a 30-day trial. Cancel anytime during the trial at no cost.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What currencies do you accept?</h4>
+          <p>All prices are in GBP (£). Stripe handles currency conversion automatically if you're paying from another currency.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I combine membership with CASA or MCP products?</h4>
+          <p>Absolutely. Every product works independently. Higher membership tiers include discounts on CASA certifications and MCP bundles.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do I get support?</h4>
+          <p>Community members get forum access. Starter and above get email support. Professional includes priority support, and Enterprise plans include a dedicated account manager.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Ready to Begin?</h2>
+      <p>Start with the free Community tier or jump straight to the plan that fits your organisation.</p>
+      <div class="cta-buttons">
+        <a href="/pricing" class="path-btn path-btn-primary">View Pricing</a>
+        <a href="/contact" class="path-btn path-btn-outline">Contact Sales</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px;">CSGA Global</h3>
+        <p>AI governance infrastructure for the cognitive era. Research, certifications, and open-source tooling for responsible AI deployment.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pricing">Membership</a></li>
+          <li><a href="/mcp/">MCP Catalog</a></li>
+          <li><a href="/casa-certification">CASA Certification</a></li>
+          <li><a href="/pricing#cobol">COBOL Bridge</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="https://csoai.org" target="_blank">CSOAI Research</a></li>
+          <li><a href="https://github.com/CSGA-GLOBAL" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/get-started">Get Started</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CSGA Global — AI Research Institute. All rights reserved.</p>
+      <p style="color: #475569; font-size: 0.85rem;">Part of the <a href="https://csoai.org" target="_blank" style="color: #64748b;">CSOAI</a> ecosystem</p>
+    </div>
+  </footer>
+
+</body>
+</html>
