@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — CSGA Global</title>
+  <meta name="description" content="CSGA Global documentation hub. Guides for MCP integration, CASA certification, API reference, and governance frameworks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+
+    /* ── FIXED NAV ───────────────────────────── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1050; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); height: 72px; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-logo span { background: linear-gradient(135deg, #3182ce, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
+    .nav-cta:hover { opacity: 0.9; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #e2e8f0; margin: 5px 0; transition: 0.3s; }
+
+    .page-content { padding-top: 72px; }
+
+    /* ── HERO ──────────────────────────────── */
+    .hero { padding: 80px 24px 60px; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(49,130,206,0.15) 0%, transparent 60%); }
+    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 32px; }
+    .search-box { max-width: 560px; margin: 0 auto; position: relative; }
+    .search-box input { width: 100%; padding: 14px 20px 14px 48px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #e2e8f0; font-size: 1rem; font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s; }
+    .search-box input:focus { border-color: #3182ce; }
+    .search-box input::placeholder { color: #64748b; }
+    .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #64748b; font-size: 1.1rem; }
+
+    /* ── CATEGORY GRID ─────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 12px; }
+    .section-sub { text-align: center; color: #94a3b8; margin-bottom: 48px; font-size: 1.05rem; }
+
+    .docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 80px; }
+    .doc-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; transition: border-color 0.3s, transform 0.2s; }
+    .doc-card:hover { border-color: rgba(49,130,206,0.4); transform: translateY(-2px); }
+    .doc-icon { font-size: 2rem; margin-bottom: 16px; }
+    .doc-card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; }
+    .doc-card p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.7; }
+    .doc-links { display: flex; flex-direction: column; gap: 8px; }
+    .doc-links a { color: #3182ce; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .doc-links a:hover { color: #63b3ed; }
+    .doc-links a::before { content: "→ "; }
+
+    /* ── RESOURCES BAR ─────────────────────── */
+    .resources { padding: 80px 24px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .res-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+    .res-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; text-align: center; text-decoration: none; color: #e2e8f0; transition: border-color 0.3s; }
+    .res-card:hover { border-color: rgba(49,130,206,0.4); }
+    .res-card .res-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .res-card h4 { font-size: 1rem; margin-bottom: 4px; }
+    .res-card p { color: #64748b; font-size: 0.85rem; }
+
+    /* ── FOOTER ────────────────────────────── */
+    .footer { background: #020617; border-top: 1px solid rgba(255,255,255,0.06); padding: 60px 24px 32px; }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand p { color: #64748b; font-size: 0.9rem; margin-top: 12px; line-height: 1.6; }
+    .footer h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 16px; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 8px; }
+    .footer ul a { color: #64748b; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer ul a:hover { color: #e2e8f0; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { color: #475569; font-size: 0.85rem; }
+
+    /* ── RESPONSIVE ────────────────────────── */
+    @media (max-width: 1024px) { .docs-grid { grid-template-columns: repeat(2, 1fr); } .res-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(15,23,42,0.98); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .nav-links.active { display: flex; }
+      .hamburger { display: block; }
+      .hero h1 { font-size: 2rem; }
+      .docs-grid { grid-template-columns: 1fr; }
+      .res-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ──────────────────────── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">CSGA <span>Global</span></a>
+      <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/mcp/">MCP Catalog</a></li>
+        <li><a href="/casa-certification">CASA</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/get-started" class="nav-cta">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <!-- ── HERO ───────────────────────────── -->
+    <section class="hero">
+      <h1>Documentation</h1>
+      <p>Everything you need to integrate, certify, and govern AI systems with CSGA Global.</p>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search documentation..." id="docSearch">
+      </div>
+    </section>
+
+    <!-- ── DOCS CATEGORIES ──────────────────── -->
+    <section class="container" style="padding: 60px 24px;">
+
+      <div class="docs-grid">
+
+        <!-- Getting Started -->
+        <div class="doc-card">
+          <div class="doc-icon">🚀</div>
+          <h3>Getting Started</h3>
+          <p>New to CSGA? Start here. Account setup, first integration, and platform overview in under 15 minutes.</p>
+          <div class="doc-links">
+            <a href="/get-started">Quick start guide</a>
+            <a href="/pricing">Plans &amp; pricing overview</a>
+            <a href="/contact">Request a demo</a>
+          </div>
+        </div>
+
+        <!-- MCP Integration -->
+        <div class="doc-card">
+          <div class="doc-icon">🔌</div>
+          <h3>MCP Integration</h3>
+          <p>Deploy and configure Model Context Protocol servers. Covers installation, authentication, and customisation for all 76 MCPs.</p>
+          <div class="doc-links">
+            <a href="https://github.com/CSGA-GLOBAL/mcp-servers" target="_blank">MCP server repository</a>
+            <a href="/mcp/">Browse MCP catalog</a>
+            <a href="https://github.com/CSGA-GLOBAL/mcp-servers#readme" target="_blank">Installation guide</a>
+          </div>
+        </div>
+
+        <!-- CASA Certification -->
+        <div class="doc-card">
+          <div class="doc-icon">🏅</div>
+          <h3>CASA Certification</h3>
+          <p>Understand the Cognitive System Assurance Architecture. Preparation guides, assessment criteria, and certification process.</p>
+          <div class="doc-links">
+            <a href="/casa-certification">CASA program overview</a>
+            <a href="/casa-certification#process">Certification process</a>
+            <a href="/casa-certification#tiers">Tier comparison</a>
+          </div>
+        </div>
+
+        <!-- API Reference -->
+        <div class="doc-card">
+          <div class="doc-icon">⚡</div>
+          <h3>API Reference</h3>
+          <p>RESTful API documentation for programmatic access to CSGA services. Authentication, endpoints, rate limits, and SDKs.</p>
+          <div class="doc-links">
+            <a href="https://github.com/CSGA-GLOBAL" target="_blank">API endpoints</a>
+            <a href="/pricing#credits">API credit packs</a>
+            <a href="https://github.com/CSGA-GLOBAL" target="_blank">SDK downloads</a>
+          </div>
+        </div>
+
+        <!-- COBOL Bridge -->
+        <div class="doc-card">
+          <div class="doc-icon">🔄</div>
+          <h3>COBOL Bridge</h3>
+          <p>Legacy modernisation documentation. System requirements, migration workflows, and integration with existing mainframe estates.</p>
+          <div class="doc-links">
+            <a href="/pricing#cobol">COBOL Bridge plans</a>
+            <a href="https://github.com/CSGA-GLOBAL" target="_blank">Technical architecture</a>
+            <a href="/contact">Migration consultation</a>
+          </div>
+        </div>
+
+        <!-- Governance Frameworks -->
+        <div class="doc-card">
+          <div class="doc-icon">📋</div>
+          <h3>Governance Frameworks</h3>
+          <p>AI governance best practices, compliance templates, and regulatory mapping. Aligned with EU AI Act, NIST, and ISO standards.</p>
+          <div class="doc-links">
+            <a href="https://csoai.org" target="_blank">CSOAI research</a>
+            <a href="https://github.com/CSGA-GLOBAL" target="_blank">Framework templates</a>
+            <a href="/contact">Advisory services</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── QUICK RESOURCES ──────────────────── -->
+    <section class="resources">
+      <div class="container">
+        <h2 class="section-title">Quick Resources</h2>
+        <p class="section-sub">Jump to commonly used resources.</p>
+
+        <div class="res-grid">
+          <a href="https://github.com/CSGA-GLOBAL/mcp-servers" target="_blank" class="res-card">
+            <div class="res-icon">📦</div>
+            <h4>GitHub Repository</h4>
+            <p>Source code &amp; releases</p>
+          </a>
+          <a href="/pricing#credits" class="res-card">
+            <div class="res-icon">🔑</div>
+            <h4>API Credits</h4>
+            <p>Purchase credit packs</p>
+          </a>
+          <a href="https://csoai.org" target="_blank" class="res-card">
+            <div class="res-icon">🔬</div>
+            <h4>CSOAI Research</h4>
+            <p>Papers &amp; publications</p>
+          </a>
+          <a href="/contact" class="res-card">
+            <div class="res-icon">💬</div>
+            <h4>Support</h4>
+            <p>Get help from our team</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ── FOOTER ──────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px;">CSGA Global</h3>
+        <p>AI governance infrastructure for the cognitive era. Research, certifications, and open-source tooling for responsible AI deployment.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/pricing">Membership</a></li>
+          <li><a href="/mcp/">MCP Catalog</a></li>
+          <li><a href="/casa-certification">CASA Certification</a></li>
+          <li><a href="/pricing#cobol">COBOL Bridge</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="https://csoai.org" target="_blank">CSOAI Research</a></li>
+          <li><a href="https://github.com/CSGA-GLOBAL" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/get-started">Get Started</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CSGA Global — AI Research Institute. All rights reserved.</p>
+      <p style="color: #475569; font-size: 0.85rem;">Part of the <a href="https://csoai.org" target="_blank" style="color: #64748b;">CSOAI</a> ecosystem</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple client-side doc search filter
+    document.getElementById('docSearch').addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.doc-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
