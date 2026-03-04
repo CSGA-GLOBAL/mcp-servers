@@ -1,339 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — CSGA Global</title>
-  <meta name="description" content="Get in touch with CSGA Global. Sales enquiries, support, partnership opportunities, and enterprise consultations.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
-    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
-
-    /* FIXED NAV */
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1050; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); height: 72px; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; }
-    .nav-logo span { background: linear-gradient(135deg, #3182ce, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: #fff; }
-    .nav-cta { background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
-    .nav-cta:hover { opacity: 0.9; }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: #e2e8f0; margin: 5px 0; transition: 0.3s; }
-
-    .page-content { padding-top: 72px; }
-
-    /* HERO */
-    .hero { padding: 80px 24px 60px; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(49,130,206,0.15) 0%, transparent 60%); }
-    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
-
-    /* LAYOUT */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 60px 24px 80px; }
-
-    /* FORM */
-    .form-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 36px; }
-    .form-card h2 { font-size: 1.5rem; margin-bottom: 24px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: #94a3b8; margin-bottom: 6px; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea { width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: #3182ce; }
-    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
-    .form-group select option { background: #1e293b; color: #e2e8f0; }
-    .form-group textarea { min-height: 120px; resize: vertical; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .submit-btn { width: 100%; padding: 14px; border: none; border-radius: 8px; background: linear-gradient(135deg, #3182ce, #1e40af); color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
-    .submit-btn:hover { opacity: 0.9; }
-    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .form-success { display: none; text-align: center; padding: 40px 20px; }
-    .form-success h3 { font-size: 1.3rem; margin-bottom: 8px; color: #10b981; }
-    .form-success p { color: #94a3b8; }
-
-    /* INFO SIDEBAR */
-    .info-side h2 { font-size: 1.5rem; margin-bottom: 24px; }
-    .info-block { margin-bottom: 32px; }
-    .info-block h4 { font-size: 1rem; margin-bottom: 8px; color: #e2e8f0; }
-    .info-block p { color: #94a3b8; font-size: 0.9rem; }
-    .info-block a { color: #3182ce; text-decoration: none; }
-    .info-block a:hover { text-decoration: underline; }
-
-    .quick-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
-    .ql-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-decoration: none; color: #e2e8f0; transition: border-color 0.3s; }
-    .ql-card:hover { border-color: rgba(49,130,206,0.4); }
-    .ql-card .ql-icon { font-size: 1.4rem; margin-bottom: 8px; }
-    .ql-card h4 { font-size: 0.9rem; margin-bottom: 4px; }
-    .ql-card p { color: #64748b; font-size: 0.8rem; }
-
-    /* FOOTER */
-    .footer { background: #020617; border-top: 1px solid rgba(255,255,255,0.06); padding: 60px 24px 32px; }
-    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
-    .footer-brand p { color: #64748b; font-size: 0.9rem; margin-top: 12px; line-height: 1.6; }
-    .footer h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 16px; }
-    .footer ul { list-style: none; }
-    .footer ul li { margin-bottom: 8px; }
-    .footer ul a { color: #64748b; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    .footer ul a:hover { color: #e2e8f0; }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
-    .footer-bottom p { color: #475569; font-size: 0.85rem; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(15,23,42,0.98); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-      .nav-links.active { display: flex; }
-      .hamburger { display: block; }
-      .hero h1 { font-size: 2rem; }
-      .contact-layout { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .quick-links { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - CSGA Global</title>
+<meta name="description" content="Get in touch with CSGA Global. Contact our sales, support, or partnerships team for AI governance solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/components/shared.css">
+<style>
+.contact-hero{background:linear-gradient(135deg,#003D75 0%,#0058A4 100%);color:#fff;text-align:center;padding:120px 24px 80px}
+.contact-hero h1{font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;margin:0 0 16px}
+.contact-hero p{font-size:1.15rem;opacity:.9;max-width:600px;margin:0 auto}
+.contact-section{background:#F7F9FC;padding:80px 24px}
+.contact-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.info-card{background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;display:flex;gap:16px;align-items:flex-start;transition:all .2s}
+.info-card:hover{border-color:#0058A4;box-shadow:0 8px 24px rgba(0,88,164,.08)}
+.info-icon{width:48px;height:48px;min-width:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.info-icon.blue{background:rgba(0,88,164,.1);color:#0058A4}
+.info-icon.red{background:rgba(204,0,0,.1);color:#CC0000}
+.info-icon.green{background:rgba(16,185,129,.1);color:#10b981}
+.info-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#0A1628;margin:0 0 6px}
+.info-card p{color:#64748b;font-size:.9rem;line-height:1.6;margin:0}
+.info-card a{color:#0058A4;text-decoration:none;font-weight:500}
+.info-card a:hover{color:#CC0000}
+.contact-form-wrap{background:#fff;border-radius:16px;padding:36px 32px;border:1px solid #e5e7eb;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.contact-form-wrap h2{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#0A1628;margin:0 0 8px}
+.contact-form-wrap .form-sub{color:#64748b;font-size:.9rem;margin:0 0 28px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-weight:600;color:#0A1628;font-size:.85rem;margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid #d1d5db;border-radius:10px;font-size:.9rem;font-family:'Inter',sans-serif;color:#0A1628;background:#fff;transition:border .2s;box-sizing:border-box}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#0058A4;box-shadow:0 0 0 3px rgba(0,88,164,.1)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit-btn{width:100%;padding:14px;background:#CC0000;color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.submit-btn:hover{background:#a80000;transform:translateY(-1px)}.offices-section{background:#fff;padding:80px 24px}
+.offices-wrap{max-width:1100px;margin:0 auto}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#0A1628;text-align:center;margin:0 0 12px}
+.section-sub{text-align:center;color:#64748b;margin:0 0 48px;font-size:1rem}
+.offices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.office-card{background:#F7F9FC;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;text-align:center;transition:all .2s}
+.office-card:hover{border-color:#0058A4;box-shadow:0 8px 24px rgba(0,88,164,.08)}
+.office-card .flag{font-size:2rem;margin-bottom:12px}
+.office-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;color:#0A1628;margin:0 0 8px}
+.office-card p{color:#64748b;font-size:.85rem;line-height:1.6;margin:0}
+.cta-bar{background:linear-gradient(135deg,#003D75,#0058A4);padding:60px 24px;text-align:center;color:#fff}
+.cta-bar h2{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;margin:0 0 12px}
+.cta-bar p{opacity:.9;margin:0 0 28px;font-size:1rem}
+.cta-bar a{background:#CC0000;color:#fff;padding:14px 36px;border-radius:10px;font-weight:600;text-decoration:none;font-size:1rem;transition:all .2s;display:inline-block}
+.cta-bar a:hover{background:#a80000;transform:translateY(-1px)}
+@media(max-width:900px){.contact-wrap{grid-template-columns:1fr}.offices-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.contact-hero h1{font-size:2rem}.form-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+<div id="site-header"></div>
 
-  <!-- NAVIGATION -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">CSGA <span>Global</span></a>
-      <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/mcp/">MCP Catalog</a></li>
-        <li><a href="/casa-certification">CASA</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/get-started" class="nav-cta">Get Started</a></li>
-      </ul>
-    </div>
-  </nav>
+<section class="contact-hero">
+<h1>Contact Us</h1>
+<p>Have a question about our AI governance solutions? Our team is here to help you find the right path forward.</p>
+</section>
 
-  <div class="page-content">
+<section class="contact-section">
+<div class="contact-wrap">
+<div class="contact-info">
+<div class="info-card">
+<div class="info-icon blue">✉</div>
+<div>
+<h3>General Enquiries</h3>
+<p>Questions about our platform, pricing, or capabilities.</p>
+<a href="mailto:info@csga-global.com">info@csga-global.com</a>
+</div>
+</div>
+<div class="info-card">
+<div class="info-icon red">📞</div>
+<div>
+<h3>Sales &amp; Partnerships</h3>
+<p>Discuss enterprise solutions, volume licensing, or strategic partnerships.</p>
+<a href="mailto:sales@csga-global.com">sales@csga-global.com</a>
+</div>
+</div>
+<div class="info-card">
+<div class="info-icon green">🛡</div>
+<div>
+<h3>Technical Support</h3>
+<p>Need help with integration, configuration, or troubleshooting?</p>
+<a href="mailto:support@csga-global.com">support@csga-global.com</a>
+</div>
+</div>
+<div class="info-card">
+<div class="info-icon blue">🎓</div>
+<div>
+<h3>CASA Certification</h3>
+<p>Questions about the certification programme, exams, or CPD credits.</p>
+<a href="mailto:certification@csga-global.com">certification@csga-global.com</a>
+</div>
+</div>
+</div>
+<div class="contact-form-wrap">
+<h2>Send Us a Message</h2>
+<p class="form-sub">We typically respond within one business day.</p>
+<form id="contactForm" onsubmit="handleSubmit(event)">
+<div class="form-row">
+<div class="form-group">
+<label for="firstName">First Name *</label>
+<input type="text" id="firstName" name="firstName" required placeholder="John">
+</div>
+<div class="form-group">
+<label for="lastName">Last Name *</label>
+<input type="text" id="lastName" name="lastName" required placeholder="Smith">
+</div>
+</div>
+<div class="form-group">
+<label for="email">Work Email *</label>
+<input type="email" id="email" name="email" required placeholder="john@company.com">
+</div>
+<div class="form-group">
+<label for="company">Company</label>
+<input type="text" id="company" name="company" placeholder="Acme Corp">
+</div>
+<div class="form-group">
+<label for="subject">Subject *</label>
+<select id="subject" name="subject" required>
+<option value="">Select a topic...</option>
+<option value="sales">Sales &amp; Pricing</option>
+<option value="support">Technical Support</option>
+<option value="certification">CASA Certification</option>
+<option value="partnership">Partnership Enquiry</option>
+<option value="cobol">COBOL Bridge</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label for="message">Message *</label>
+<textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+</div>
+<button type="submit" class="submit-btn">Send Message →</button>
+</form>
+</div>
+</div>
+</section>
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Contact Us</h1>
-      <p>Sales enquiries, technical support, partnership opportunities, or enterprise consultations — we're here to help.</p>
-    </section>
+<section class="offices-section">
+<div class="offices-wrap">
+<h2 class="section-title">Our Offices</h2>
+<p class="section-sub">Global presence, local expertise</p>
+<div class="offices-grid">
+<div class="office-card">
+<div class="flag">🇬🇧</div>
+<h3>London, UK</h3>
+<p>European Headquarters<br>AI Governance Centre of Excellence</p>
+</div>
+<div class="office-card">
+<div class="flag">🇺🇸</div>
+<h3>New York, USA</h3>
+<p>Americas Office<br>Enterprise Sales &amp; Partnerships</p>
+</div>
+<div class="office-card">
+<div class="flag">🇸🇬</div>
+<h3>Singapore</h3>
+<p>Asia-Pacific Office<br>Regional Operations</p>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- CONTACT FORM + INFO -->
-    <section class="container">
-      <div class="contact-layout">
+<section class="cta-bar">
+<h2>Prefer to Chat Live?</h2>
+<p>Book a 30-minute consultation with our AI governance specialists.</p>
+<a href="/get-started">Book a Call →</a>
+</section>
 
-        <!-- Form -->
-        <div class="form-card">
-          <h2>Send a Message</h2>
-
-          <!--
-            FORMSPREE SETUP:
-            1. Go to https://formspree.io and sign up (free tier = 50 submissions/mo)
-            2. Create a new form → copy your form ID (e.g., xrgvkpzl)
-            3. Replace YOUR_FORM_ID below with your actual Formspree ID
-            4. That's it — submissions go to your email
-          -->
-          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="John Smith">
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required placeholder="john@company.com">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="company">Organisation</label>
-                <input type="text" id="company" name="company" placeholder="Acme Corp">
-              </div>
-              <div class="form-group">
-                <label for="subject">Enquiry Type *</label>
-                <select id="subject" name="subject" required>
-                  <option value="" disabled selected>Select an option</option>
-                  <option value="Sales Enquiry">Sales Enquiry</option>
-                  <option value="Enterprise Consultation">Enterprise Consultation</option>
-                  <option value="CASA Certification">CASA Certification</option>
-                  <option value="COBOL Bridge">COBOL Bridge</option>
-                  <option value="MCP Integration">MCP Integration</option>
-                  <option value="Partnership">Partnership Opportunity</option>
-                  <option value="Technical Support">Technical Support</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Hidden field to capture plan from URL params -->
-            <input type="hidden" id="plan" name="plan" value="">
-
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" required placeholder="Tell us about your requirements..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
-          </form>
-
-          <div class="form-success" id="formSuccess">
-            <h3>Message Sent!</h3>
-            <p>Thank you for reaching out. We'll respond within one business day.</p>
-          </div>
-        </div>
-
-        <!-- Info sidebar -->
-        <div class="info-side">
-          <h2>Get in Touch</h2>
-
-          <div class="info-block">
-            <h4>General Enquiries</h4>
-            <p><a href="mailto:info@csga.co.uk">info@csga.co.uk</a></p>
-          </div>
-
-          <div class="info-block">
-            <h4>Sales &amp; Enterprise</h4>
-            <p>For custom pricing, volume licences, or enterprise deployments, our team typically responds within one business day.</p>
-          </div>
-
-          <div class="info-block">
-            <h4>Technical Support</h4>
-            <p>Community members can use the <a href="https://github.com/CSGA-GLOBAL/mcp-servers/issues" target="_blank">GitHub Issues</a> board. Paid plan members get priority email support.</p>
-          </div>
-
-          <div class="info-block">
-            <h4>Partnership Opportunities</h4>
-            <p>Interested in integrating CSGA into your platform or becoming a reseller? We'd love to hear from you.</p>
-          </div>
-
-          <div class="quick-links">
-            <a href="/pricing" class="ql-card">
-              <div class="ql-icon">💰</div>
-              <h4>View Pricing</h4>
-              <p>Plans from free to enterprise</p>
-            </a>
-            <a href="/docs" class="ql-card">
-              <div class="ql-icon">📖</div>
-              <h4>Documentation</h4>
-              <p>Guides &amp; API reference</p>
-            </a>
-            <a href="/casa-certification" class="ql-card">
-              <div class="ql-icon">🏅</div>
-              <h4>CASA Program</h4>
-              <p>AI certification tiers</p>
-            </a>
-            <a href="https://github.com/CSGA-GLOBAL" target="_blank" class="ql-card">
-              <div class="ql-icon">🔧</div>
-              <h4>GitHub</h4>
-              <p>Open-source repos</p>
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px;">CSGA Global</h3>
-        <p>AI governance infrastructure for the cognitive era. Research, certifications, and open-source tooling for responsible AI deployment.</p>
-      </div>
-      <div>
-        <h4>Products</h4>
-        <ul>
-          <li><a href="/pricing">Membership</a></li>
-          <li><a href="/mcp/">MCP Catalog</a></li>
-          <li><a href="/casa-certification">CASA Certification</a></li>
-          <li><a href="/pricing#cobol">COBOL Bridge</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="/docs">Documentation</a></li>
-          <li><a href="https://csoai.org" target="_blank">CSOAI Research</a></li>
-          <li><a href="https://github.com/CSGA-GLOBAL" target="_blank">GitHub</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/get-started">Get Started</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 CSGA Global — AI Research Institute. All rights reserved.</p>
-      <p style="color: #475569; font-size: 0.85rem;">Part of the <a href="https://csoai.org" target="_blank" style="color: #64748b;">CSOAI</a> ecosystem</p>
-    </div>
-  </footer>
-
-  <script>
-    // Capture ?plan= param from URL (from pricing page redirects)
-    const urlParams = new URLSearchParams(window.location.search);
-    const plan = urlParams.get('plan');
-    if (plan) {
-      document.getElementById('plan').value = plan;
-      // Pre-fill message if coming from a specific plan
-      const planNames = {
-        community: 'Community (Free)',
-        enterprise_custom: 'Enterprise Custom',
-        cobol_enterprise: 'COBOL Bridge Enterprise'
-      };
-      if (planNames[plan]) {
-        document.getElementById('message').placeholder = 'I\'m interested in the ' + planNames[plan] + ' plan...';
-      }
-    }
-
-    // Form submission with Formspree AJAX
-    const form = document.getElementById('contactForm');
-    const btn = document.getElementById('submitBtn');
-    const success = document.getElementById('formSuccess');
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          form.style.display = 'none';
-          success.style.display = 'block';
-        } else {
-          btn.textContent = 'Error — Try Again';
-          btn.disabled = false;
-        }
-      } catch (err) {
-        btn.textContent = 'Error — Try Again';
-        btn.disabled = false;
-      }
-    });
-  </script>
-
+<div id="site-footer"></div>
+<script src="/components/shared.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.submit-btn');
+  btn.textContent = 'Message Sent \u2713';
+  btn.style.background = '#10b981';
+  setTimeout(() => { btn.textContent = 'Send Message \u2192'; btn.style.background = '#CC0000'; }, 3000);
+}
+</script>
 </body>
 </html>
